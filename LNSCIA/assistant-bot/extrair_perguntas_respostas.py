@@ -57,6 +57,7 @@ def extrair_perguntas_respostas_bomcondutor(inicio=1, fim=100):
                 "id": i,
                 "pergunta": pergunta,
                 "respostas": respostas
+                #"correta": respostaCorreta
             }
             
             # Verificar se há uma imagem na questão
