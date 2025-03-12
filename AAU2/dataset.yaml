@@ -1,0 +1,14 @@
+names:
+- Trafic Light Signal
+- Stop Signal
+- Speedlimit Signal
+- Crosswalk Signal
+- Crosswalk
+- Pedestrian
+- Bus
+- Car
+- Truck
+nc: 9
+test: /Users/jorgecunha/PycharmProjects/AI_Detection_Cars/AAU2/dataset/test/images
+train: /Users/jorgecunha/PycharmProjects/AI_Detection_Cars/AAU2/dataset/train/images
+val: /Users/jorgecunha/PycharmProjects/AI_Detection_Cars/AAU2/dataset/val/images
