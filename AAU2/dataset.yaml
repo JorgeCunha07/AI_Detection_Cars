@@ -9,6 +9,6 @@ names:
 - Car
 - Truck
 nc: 9
-test: /Users/jorgecunha/PycharmProjects/AI_Detection_Cars/AAU2/dataset/test/images
-train: /Users/jorgecunha/PycharmProjects/AI_Detection_Cars/AAU2/dataset/train/images
-val: /Users/jorgecunha/PycharmProjects/AI_Detection_Cars/AAU2/dataset/val/images
+test: \Users\Jorge Cunha\Desktop\Python\AI_Detection_Cars\AAU2\dataset\test\images
+train: \Users\Jorge Cunha\Desktop\Python\AI_Detection_Cars\AAU2\dataset\train\images
+val: \Users\Jorge Cunha\Desktop\Python\AI_Detection_Cars\AAU2\dataset\val\images
