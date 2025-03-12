@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "pergunta": "A distância de segurança deve ser sempre a que me permita imobilizar o ciclomotor sem perigo de acidente.",
+        "respostas": [
+            "Certo. (correta)",
+            "Errado."
+        ],
+        "explicacao": {
+            "texto": "",
+            "materiais": []
+        },
+        "imagem_url": "https://www.bomcondutor.pt/assets/images/questions/1.jpg",
+        "imagem_salva": "./imagens/imagem_questao_1.jpg"
+    }
+]
