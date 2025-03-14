@@ -1,0 +1,14 @@
+names:
+- Trafic Light Signal
+- Stop Signal
+- Speedlimit Signal
+- Crosswalk Signal
+- Crosswalk
+- Pedestrian
+- Bus
+- Car
+- Truck
+nc: 9
+test: \Users\Jorge Cunha\Desktop\Python\AI_Detection_Cars\AAU2\DetectObjects_JC\dataset\test\images
+train: \Users\Jorge Cunha\Desktop\Python\AI_Detection_Cars\AAU2\DetectObjects_JC\dataset\train\images
+val: \Users\Jorge Cunha\Desktop\Python\AI_Detection_Cars\AAU2\DetectObjects_JC\dataset\val\images
