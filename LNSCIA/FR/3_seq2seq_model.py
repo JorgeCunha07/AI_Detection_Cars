@@ -1,27 +1,26 @@
 import numpy as np
 import pickle
 import tensorflow as tf
-
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input, LSTM, Dense, Embedding
 from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
 from nltk.translate.bleu_score import sentence_bleu
 from rouge import Rouge
 
-# Carregar tokenizadores
+# Carregar os tokenizadores
 with open('./models/label_tokenizer.pkl', 'rb') as f:
     label_tokenizer = pickle.load(f)
 with open('./models/description_tokenizer.pkl', 'rb') as f:
     description_tokenizer = pickle.load(f)
 
-# Carregar dados pré-processados
+# Carregar os dados pré-processados
 label_train = np.load('./models/label_train.npy')
 label_test = np.load('./models/label_test.npy')
 desc_train = np.load('./models/desc_train.npy')
 desc_test = np.load('./models/desc_test.npy')
 
 # Parâmetros do modelo
-latent_dim = 256
+latent_dim = 512  # Dimensão do embedding definida para 512
 label_vocab_size = len(label_tokenizer.word_index) + 1
 desc_vocab_size = len(description_tokenizer.word_index) + 1
 
@@ -30,11 +29,11 @@ decoder_input_data = desc_train[:, :-1]
 decoder_target_data = desc_train[:, 1:]
 decoder_target_data = np.expand_dims(decoder_target_data, -1)
 
-# Definir as entradas do encoder e decoder
+# Definir entradas do encoder e decoder
 encoder_inputs = Input(shape=(None,), name='encoder_inputs')
 decoder_inputs = Input(shape=(None,), name='decoder_inputs')
 
-# Definir as camadas de embedding separadas (para serem reutilizadas)
+# Camadas de embedding
 encoder_embedding_layer = Embedding(input_dim=label_vocab_size,
                                     output_dim=latent_dim,
                                     mask_zero=True,
@@ -62,7 +61,7 @@ model = Model([encoder_inputs, decoder_inputs], decoder_outputs)
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 model.summary()
 
-# Callbacks para um treino mais robusto
+# Callbacks para treino
 callbacks = [
     EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True),
     ReduceLROnPlateau(monitor='val_loss', patience=3)
@@ -89,23 +88,20 @@ decoder_state_input_h = Input(shape=(latent_dim,), name='input_h')
 decoder_state_input_c = Input(shape=(latent_dim,), name='input_c')
 decoder_states_inputs = [decoder_state_input_h, decoder_state_input_c]
 
-# Para inferência, reutilizamos a camada de embedding do decoder
 decoder_embedding_inf = decoder_embedding_layer(decoder_inputs)
-decoder_outputs_inf, state_h_inf, state_c_inf = decoder_lstm(decoder_embedding_inf, initial_state=decoder_states_inputs)
-decoder_states_inf = [state_h_inf, state_c_inf]
+decoder_outputs_inf, h_inf, c_inf = decoder_lstm(decoder_embedding_inf, initial_state=decoder_states_inputs)
+decoder_states_inf = [h_inf, c_inf]
 decoder_outputs_inf = decoder_dense(decoder_outputs_inf)
 decoder_model = Model(
     [decoder_inputs] + decoder_states_inputs,
     [decoder_outputs_inf] + decoder_states_inf
 )
 
-# Função para decodificar uma sequência de entrada (inferência)
+# Função de inferência
 def decode_sequence(input_seq, max_length=50):
-    # Obter os estados iniciais do encoder
     states_value = encoder_model.predict(input_seq)
-    # Verificar se o token 'startseq' existe no vocabulário
     if 'startseq' not in description_tokenizer.word_index:
-        raise ValueError("O token 'startseq' não foi encontrado no vocabulário. Verifique os dados de entrada.")
+        raise ValueError("Token 'startseq' não encontrado no vocabulário.")
     target_seq = np.array([[description_tokenizer.word_index['startseq']]])
     stop_condition = False
     decoded_sentence = []
@@ -117,12 +113,11 @@ def decode_sequence(input_seq, max_length=50):
             stop_condition = True
         else:
             decoded_sentence.append(sampled_word)
-        # Atualizar a sequência de entrada do decoder com o token gerado
         target_seq = np.array([[sampled_token_index]])
         states_value = [h, c]
     return ' '.join(decoded_sentence)
 
-# Gerar descrições para alguns exemplos do conjunto de teste
+# Exemplos de inferência
 generated_descriptions = []
 print("\nExemplos de inferência:")
 for seq in label_test[:10]:
@@ -131,7 +126,7 @@ for seq in label_test[:10]:
     generated_descriptions.append(decoded_sentence)
     print("Gerado:", decoded_sentence)
 
-# Funções para calcular métricas BLEU e ROUGE
+# Funções de avaliação: BLEU e ROUGE
 def calculate_bleu(reference, candidate):
     return sentence_bleu([reference.split()], candidate.split())
 
@@ -140,11 +135,10 @@ def calculate_rouge(reference, candidate):
     scores = rouge.get_scores(candidate, reference)
     return scores[0]['rouge-1']['f']
 
-# Avaliar as métricas para os primeiros exemplos
+# Calcular métricas para os primeiros exemplos
 bleu_scores = []
 rouge_scores = []
 for i in range(min(len(desc_test), len(generated_descriptions))):
-    # Converter a sequência de tokens de referência para string
     reference_tokens = [description_tokenizer.index_word.get(idx, '') for idx in desc_test[i] if idx != 0]
     reference_sentence = ' '.join(reference_tokens)
     candidate_sentence = generated_descriptions[i]
