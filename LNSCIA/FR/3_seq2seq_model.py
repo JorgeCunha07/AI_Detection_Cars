@@ -1,6 +1,7 @@
 import numpy as np
 import pickle
 import tensorflow as tf
+
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input, LSTM, Dense, Embedding
 from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
@@ -8,16 +9,16 @@ from nltk.translate.bleu_score import sentence_bleu
 from rouge import Rouge
 
 # Carregar tokenizadores
-with open('label_tokenizer.pkl', 'rb') as f:
+with open('./models/label_tokenizer.pkl', 'rb') as f:
     label_tokenizer = pickle.load(f)
-with open('description_tokenizer.pkl', 'rb') as f:
+with open('./models/description_tokenizer.pkl', 'rb') as f:
     description_tokenizer = pickle.load(f)
 
 # Carregar dados pré-processados
-label_train = np.load('label_train.npy')
-label_test = np.load('label_test.npy')
-desc_train = np.load('desc_train.npy')
-desc_test = np.load('desc_test.npy')
+label_train = np.load('./models/label_train.npy')
+label_test = np.load('./models/label_test.npy')
+desc_train = np.load('./models/desc_train.npy')
+desc_test = np.load('./models/desc_test.npy')
 
 # Parâmetros do modelo
 latent_dim = 256
@@ -78,7 +79,7 @@ model.fit(
 )
 
 # Salvar o modelo treinado
-model.save('seq2seq_model.h5')
+model.save('./models/seq2seq_model.h5')
 
 # Construir o modelo do encoder para inferência
 encoder_model = Model(encoder_inputs, encoder_states)

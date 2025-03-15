@@ -6,7 +6,7 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # Carregar os dados sintéticos
-with open('synthetic_data_realistic.json', 'r', encoding='utf-8') as f:
+with open('./data/synthetic_data_realistic.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
 # Extrair os rótulos e as descrições
@@ -40,21 +40,21 @@ label_train, label_test, desc_train, desc_test = train_test_split(
 )
 
 # Salvar as sequências padronizadas
-np.save('label_train.npy', label_train)
-np.save('label_test.npy', label_test)
-np.save('desc_train.npy', desc_train)
-np.save('desc_test.npy', desc_test)
+np.save('./models/label_train.npy', label_train)
+np.save('./models/label_test.npy', label_test)
+np.save('./models/desc_train.npy', desc_train)
+np.save('./models/desc_test.npy', desc_test)
 
 # Salvar os tokenizadores para uso posterior
-with open('label_tokenizer.pkl', 'wb') as handle:
+with open('./models/label_tokenizer.pkl', 'wb') as handle:
     pickle.dump(label_tokenizer, handle)
 
-with open('description_tokenizer.pkl', 'wb') as handle:
+with open('./models/description_tokenizer.pkl', 'wb') as handle:
     pickle.dump(description_tokenizer, handle)
 
 # Opcional: Salvar parâmetros de pré-processamento (comprimentos máximos)
 preprocess_params = {'max_label_length': max_label_length, 'max_desc_length': max_desc_length}
-with open('preprocess_params.pkl', 'wb') as handle:
+with open('./models/preprocess_params.pkl', 'wb') as handle:
     pickle.dump(preprocess_params, handle)
 
 print("Pré-processamento concluído e dados guardados.")
