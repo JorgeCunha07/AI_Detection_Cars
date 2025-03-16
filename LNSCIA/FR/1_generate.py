@@ -2,37 +2,46 @@ import json
 import random
 
 # ---------------------------
-# Parte 1: Geração de Dados Sintéticos
+# Dados Sintéticos mais Ricos
 # ---------------------------
 possible_labels = [
     "sinal de trânsito", "semáforo", "peão", "passadeira",
     "carro", "autocarro", "bicicleta", "ciclista", "estacionamento",
-    "rua movimentada", "avenida", "estrada"
+    "rua movimentada", "avenida", "estrada", "mota", "camião", "rotunda"
 ]
 
-weather_conditions = ["ensolarado", "nublado", "chuvoso", "tempestuoso", "com nevoeiro"]
-time_of_day = ["de manhã", "à tarde", "à noite", "ao entardecer"]
+weather_conditions = ["ensolarado", "nublado", "chuvoso", "tempestuoso", "com nevoeiro", "vento forte"]
+time_of_day = ["de manhã cedo", "no fim da manhã", "à tarde", "ao entardecer", "à noite", "de madrugada"]
 locations = [
-    "em uma rua movimentada", "no coração de uma avenida",
-    "num bairro residencial", "próximo a um parque",
-    "perto de um shopping", "na periferia da cidade"
+    "em uma rua movimentada", "no coração de uma grande avenida",
+    "num bairro residencial tranquilo", "próximo a um parque verdejante",
+    "perto de um shopping movimentado", "na periferia da cidade",
+    "junto a uma escola", "perto de uma estação de metro"
 ]
 
+traffic_density = ["trânsito leve", "trânsito moderado", "trânsito intenso", "engarrafamento"]
+object_behaviors = ["em movimento rápido", "parados no semáforo", "aguardando para atravessar",
+                    "estacionados", "circulando lentamente", "cruzando a via"]
+
+# Templates mais variados e detalhados
 templates = [
-    "Num cenário {location}, nota-se a presença de {objects} sob um clima {weather} {time}.",
-    "Observa-se {objects} em um ambiente {location}, onde o dia se mostra {weather} {time}.",
-    "A imagem capta {objects} situados {location}, com condições {weather} {time} ao fundo.",
-    "Em meio a {location}, os elementos como {objects} se destacam num dia {weather} {time}.",
-    "Durante um {weather} {time}, {objects} aparecem {location}, compondo uma cena singular."
+    "Num cenário {location}, percebe-se {objects}, todos {behavior}, sob condições de clima {weather} {time}, com {traffic}.",
+    "Observa-se claramente {objects} {behavior}, situados {location}, num dia particularmente {weather} {time}, caracterizado por {traffic}.",
+    "A cena mostra {objects}, atualmente {behavior}, em um ambiente {location}, sob um clima {weather} {time}, com {traffic} ao fundo.",
+    "Durante um momento {weather} {time}, nota-se {objects} que estão {behavior} {location}, criando uma paisagem marcada por {traffic}.",
+    "No contexto {location}, destacam-se {objects}, vistos {behavior}, numa altura do dia {weather} {time} e com {traffic}.",
+    "Sob o céu {weather} {time}, {objects} podem ser observados {behavior} {location}, onde se percebe claramente {traffic}."
 ]
+
 
 def generate_objects():
-    num_objects = random.choice([2, 3])
+    num_objects = random.choice([2, 3, 4])
     selected = random.sample(possible_labels, k=num_objects)
     if num_objects == 2:
         return " e ".join(selected)
     else:
         return ", ".join(selected[:-1]) + " e " + selected[-1]
+
 
 def generate_synthetic_data(num_samples=1000):
     synthetic_data = []
@@ -41,13 +50,18 @@ def generate_synthetic_data(num_samples=1000):
         weather = random.choice(weather_conditions)
         time = random.choice(time_of_day)
         location = random.choice(locations)
+        traffic = random.choice(traffic_density)
+        behavior = random.choice(object_behaviors)
         template = random.choice(templates)
         description = template.format(
             objects=objects,
             weather=weather,
             time=time,
-            location=location
+            location=location,
+            traffic=traffic,
+            behavior=behavior
         )
+        # Adiciona tokens especiais
         description = "startseq " + description + " endseq"
         labels = [obj.strip() for obj in objects.replace(",", " e ").split(" e ")]
         synthetic_example = {
@@ -58,24 +72,12 @@ def generate_synthetic_data(num_samples=1000):
         synthetic_data.append(synthetic_example)
     return synthetic_data
 
-# Gerar dados sintéticos
+
+# Gerar dados sintéticos enriquecidos
 synthetic_data = generate_synthetic_data(1000)
 
-# ---------------------------
-# Parte 2: Carregar Dados Reais e Combinar
-# ---------------------------
-try:
-    with open('./data/real_data/real_data.json', 'r', encoding='utf-8') as f:
-        real_data = json.load(f)
-except FileNotFoundError:
-    print("Arquivo './data/real_data/real_data.json' não encontrado. Usando apenas dados sintéticos.")
-    real_data = []
-
-# Combinar os dados: os reais podem já estar no mesmo formato (com 'description') ou conter outros campos
-combined_data = synthetic_data + real_data
-
-# Salvar o conjunto combinado
+# Salvar somente dados sintéticos enriquecidos para teste
 with open('./data/synthetic_and_real_data.json', 'w', encoding='utf-8') as f:
-    json.dump(combined_data, f, indent=4, ensure_ascii=False)
+    json.dump(synthetic_data, f, indent=4, ensure_ascii=False)
 
-print("Conjunto combinado (dados sintéticos e reais) salvo com sucesso!")
+print("Dados sintéticos enriquecidos salvos com sucesso!")
