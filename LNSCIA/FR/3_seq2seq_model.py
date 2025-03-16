@@ -78,7 +78,7 @@ model.fit(
 )
 
 # Salvar o modelo treinado
-model.save('./models/seq2seq_model.h5')
+model.save('./models/seq2seq_model.keras')
 
 # Construir o modelo do encoder para inferência
 encoder_model = Model(encoder_inputs, encoder_states)
