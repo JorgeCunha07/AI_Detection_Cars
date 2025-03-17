@@ -1,6 +1,0 @@
-# Projeto de Geração de Descrição com Transformers
-
-Este projeto tem como objetivo desenvolver um componente de geração de texto que, a partir de um input de palavras-chave (simulado a partir do output de um modelo de visão computacional), gere uma descrição textual completa. A solução utiliza uma arquitetura Transformer implementada em Python com TensorFlow/Keras.
-
-## Estrutura do Projeto
-
