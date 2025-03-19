@@ -1,0 +1,72 @@
+Filters Applied:
+	Image Captioning
+	Road Images
+	Road Extraction
+	Traffic Scene
+	Journals
+	Early Access Articles
+
+Caption Generation From Road Images for Traffic Scene Modeling
+https://ieeexplore.ieee.org/document/9415428
+
+"Neste estudo de modelação de cenas de trânsito, propomos uma rede de legendagem de imagens que incorpora a atenção aos elementos num mecanismo de codificador-descodificador para gerar legendas de cenas mais razoáveis."
+
+Change-Agent: Toward Interactive Comprehensive Remote Sensing Change Interpretation and Analysis
+https://ieeexplore.ieee.org/document/10591792
+
+"A monitorização das alterações na superfície terrestre é crucial para a compreensão dos processos naturais e dos impactos humanos, necessitando de metodologias de interpretação precisas e abrangentes. As imagens de satélite de deteção remota (SR) oferecem uma perspetiva única para a monitorização destas alterações, o que levou ao aparecimento da interpretação de alterações de imagens de SR (RSICI) como um importante foco de investigação."
+
+OpenGraph: Open-Vocabulary Hierarchical 3D Graph Representation in Large-Scale Outdoor Environments
+https://ieeexplore.ieee.org/document/10638699
+
+"As representações do ambiente dotadas de uma semântica sofisticada são essenciais para facilitar uma interação perfeita entre robôs e humanos, permitindo-lhes realizar eficazmente várias tarefas. A representação de vocabulário aberto, alimentada por modelos de linguagem visual (VLMs), possui vantagens inerentes, incluindo a aprendizagem zero e a cognição de conjunto aberto."
+
+The Traffic Scene Understanding and Prediction Based on Image Captioning
+https://ieeexplore.ieee.org/abstract/document/9306804
+
+"A compreensão da cena do tráfego é a tecnologia central dos sistemas de transporte inteligentes (ITS) e dos sistemas avançados de assistência ao condutor (ADAS), e está a tornar-se cada vez mais importante para os veículos inteligentes ou autónomos. Os métodos recentes para a compreensão do cenário de tráfego, como o Reconhecimento de Sinais de Trânsito (TSR), a Deteção de Peões e a Deteção de Veículos, têm três grandes deficiências."
+
+
+Partially Supervised Image Captioning Model for Urban Road Views
+https://link.springer.com/chapter/10.1007/978-981-16-7610-9_5
+"A geração automática de um retrato linguístico caraterístico de uma imagem tem suscitado interesse devido à sua importância em aplicações práticas e ao facto de associar dois campos importantes da inteligência artificial: o processamento da linguagem natural e a visão computacional. Este artigo propõe um modelo parcialmente supervisionado para gerar descrições de imagens com base em etiquetas de segmentação de instâncias."
+
+Deep Learning Approaches on Image Captioning: A Review
+https://dl.acm.org/doi/full/10.1145/3617592
+"A legendagem de imagens é uma área de investigação de grande importância, cujo objetivo é gerar descrições em linguagem natural para conteúdos visuais sob a forma de imagens fixas. O advento da aprendizagem profunda e, mais recentemente, das técnicas de pré-treinamento da linguagem visual revolucionou o campo, levando a métodos mais sofisticados e a um melhor desempenho. Neste artigo de pesquisa, fornecemos uma revisão estruturada dos métodos de aprendizagem profunda na legendagem de imagens, apresentando uma taxonomia abrangente e discutindo cada categoria de método em pormenor."
+
+
+ Filters Applied: 
+	NLG 
+	Text Generation
+	Natural Language Generation
+	Text-to-Text Generation
+	Prompt-based Text Generation
+	Automatic Text Generation
+	Language Models for Text Generation
+	Few-shot Text Generation
+	Text Completion Models
+	Transformer-based Text Generation
+	Neural Text Generation
+	Journals
+	Early Access Articles
+	
+Adapting Knowledge for Few-Shot Table-to-Text Generation
+https://ieeexplore.ieee.org/document/10602781
+"Os modelos de linguagem pré-treinados (PLM) registaram progressos notáveis nas tarefas de geração de tabelas para texto. No entanto, a falta de conhecimento específico do domínio torna difícil colmatar a lacuna topológica entre dados tabulares e texto, especialmente em aplicações do mundo real com recursos limitados. Para atenuar a limitação da insuficiência de dados rotulados, propomos uma nova estrutura: Adapt-Knowledge-to-Generate (AKG). A ideia central do AKG é adaptar o conhecimento específico do domínio não rotulado ao modelo, o que traz pelo menos três benefícios: 1) injecta a representação de descrições normais relacionadas com tabelas para colmatar a lacuna topológica entre dados tabulares e textos; 2) permite-nos utilizar plenamente grandes quantidades de conhecimentos específicos do domínio não rotulados, o que pode atenuar as deficiências inerentes aos PLMs de falta de conhecimentos do domínio; 3) permite-nos conceber várias tarefas para utilizar os conhecimentos específicos do domínio. Realizámos experiências e análises exaustivas em três conjuntos de dados de geração de linguagem natural (NLG) de domínio aberto e de poucos disparos: Humanos, Canções e Livros."
+
+Keyphrase Enhanced Diverse Beam Search: A Content-Introducing Approach to Neural Text Generation
+https://ieeexplore.ieee.org/document/8726288
+"A geração neural de textos tem sido uma tarefa desafiante, entre as quais a representação do texto e a pesquisa de feixes são técnicas cruciais. Ao melhorar estas técnicas, propomos neste artigo um novo modelo para gerar textos de maior qualidade. Em primeiro lugar, tiramos partido das caraterísticas contextuais globais e locais, combinando a estrutura da rede neural recorrente (RNN) e da rede neural convolucional (CNN) para aprender uma representação conjunta do texto de partida. Em seguida, introduzimos uma pesquisa modificada de feixes diversos para promover a diversidade nas frases geradas durante a descodificação e, depois, classificamos estas frases de acordo com a sua pontuação de saliência, que mede a coocorrência de frases-chave com o texto de origem. Este mecanismo de classificação promove a relevância semântica entre o texto de origem e a frase gerada. Para avaliar o nosso modelo, realizámos experiências exaustivas em duas tarefas de geração neural, incluindo a sumarização de documentos e a geração de títulos. Os resultados em ambas as tarefas mostram que o nosso modelo proposto contribui para uma melhoria promissora do desempenho em comparação com as linhas de base do estado da arte."
+
+Content Order-Controllable MR-to-Text
+https://ieeexplore.ieee.org/document/10320352
+"A ordem do conteúdo é fundamental na geração de linguagem natural (NLG) para enfatizar o foco de uma passagem de texto gerada. Neste artigo, propomos um novo método MR (representação do significado) para texto que controla a ordem dos valores MR numa passagem de texto gerada com base nas restrições de ordem dadas. Utilizamos um conjunto de dados de MR-texto com anotações adicionais da ordem dos valores para treinar o nosso modelo de MR-texto controlável por ordem. Também o utilizamos para treinar um modelo texto-para-RM para verificar se a passagem de texto gerada reflecte corretamente o RM original. Além disso, aumentamos o conjunto de dados com pares MR-texto sintéticos para atenuar a discrepância no número de atributos não vazios entre as condições de treino e de teste e utilizamo-lo para treinar outro modelo MR-texto controlável por ordem. Os nossos métodos propostos demonstram um melhor desempenho de NLG do que os métodos de base sem restrições de ordem em avaliações automáticas e subjectivas. Em particular, o conjunto de dados aumentado reduz efetivamente o número de erros de eliminação, inserção e substituição nas passagens de texto geradas."
+
+Controllable Text Generation Using Semantic Control Grammar
+https://ieeexplore.ieee.org/document/10058188
+"A geração de texto controlável é a principal técnica para controlar atributos específicos, como tópicos e palavras-chave, e obter dados aumentados. Este trabalho propõe uma nova estrutura de geração de texto controlável para melhorar a controlabilidade dos modelos de geração. Em primeiro lugar, introduzimos a gramática de controlo semântico, um formato de entrada controlável para gerar frases que satisfaçam as restrições. Em segundo lugar, adoptamos um método de geração e classificação para obter frases controladas semanticamente classificadas. São efectuadas experiências e análises exaustivas em conjuntos de dados de referência, de compreensão da linguagem natural, de geração de dados para texto e de classificação de textos. Através de avaliações automáticas, mostramos que o nosso método conduz a uma melhoria em relação a linhas de base fortes. Os resultados mostram que o nosso modelo pode controlar os atributos de frases e palavras e gerar semanticamente frases naturais. Além disso, as nossas técnicas melhoram a qualidade de geração do modelo."
+
+Computer vision for road imaging and pothole detection: a state-of-the-art review of systems and algorithms
+https://academic.oup.com/tse/article/4/4/tdac026/6835624
+"Os algoritmos de visão por computador têm sido utilizados para imagens de estradas em 3D e deteção de buracos há mais de duas décadas. No entanto, existe uma falta de artigos de investigação sistemática sobre técnicas de visão computacional de última geração (SoTA), especialmente modelos de aprendizagem profunda, desenvolvidos para lidar com estes problemas. Este artigo apresenta em primeiro lugar os sistemas de deteção empregues para a aquisição de dados rodoviários 2D e 3D, incluindo câmaras fotográficas, scanners laser e Microsoft Kinect. De seguida, analisa de forma abrangente os algoritmos de visão computacional do SoTA, incluindo (1) o processamento clássico de imagens 2-D, (2) a modelação e segmentação de nuvens de pontos 3-D e (3) a aprendizagem automática/profunda, desenvolvidos para a deteção de buracos nas estradas. O artigo discute também os desafios existentes e as tendências de desenvolvimento futuro das abordagens de deteção de buracos na estrada baseadas em visão computacional: as abordagens clássicas baseadas no processamento de imagens 2D e na modelação e segmentação de nuvens de pontos 3D já se tornaram história; e redes neuronais convolucionais (CNNs) demonstraram resultados convincentes na deteção de buracos nas estradas e prometem quebrar o estrangulamento com os futuros avanços na aprendizagem auto/não supervisionada para segmentação semântica multimodal. Acreditamos que esta investigação pode servir de orientação prática para o desenvolvimento de sistemas de avaliação das condições das estradas de última geração."

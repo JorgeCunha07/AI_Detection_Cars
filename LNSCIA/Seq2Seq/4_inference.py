@@ -60,7 +60,7 @@ def generate_text(labels_input):
     return ' '.join(generated_text)
 
 
-labels_test = ["chuva", "estrada movimentada", "semaforo vermelho", "peao", "passadeira"]
+labels_test = ["sol", "semaforo", "peao"]
 generated_description = generate_text(labels_test)
 
 print(generated_description)

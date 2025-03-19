@@ -1,0 +1,123 @@
+[
+    {
+        "origem": "IMTT_Manual_Ensino_Conducao.pdf",
+        "contexto": "Capítulo 1 - Caracterização da Tarefa da Condução",
+        "tipo": "Definição",
+        "trecho": "A condução é uma tarefa complexa e dinâmica, que envolve vários processos psicológicos por parte do condutor. Ainda que funcione de forma integrada, pode decompor-se em etapas: Recolha da informação, Tratamento da informação, Acção. A complexidade reside na adaptação sensório-motora contínua do condutor para controlar o veículo e tomar decisões adequadas, tendo por base as ações dos diferentes elementos que compõem o sistema rodoviário.",
+        "resumo": "Detalha as etapas essenciais da condução, enfatizando a contínua adaptação sensório-motora, a tomada de decisão e o controle seguro do veículo.",
+        "temas": [
+            "condução",
+            "processos psicológicos",
+            "adaptação sensório-motora",
+            "decisão",
+            "controle do veículo",
+            "segurança rodoviária"
+        ],
+        "tipo": "Definição",
+        "fonte_dados": "manual"
+    },
+    {
+        "origem": "Decreto-Lei n.º 114/94, de 3 de maio",
+        "contexto": "Artigo 24.º - Princípios gerais de velocidade",
+        "trecho": "Os condutores devem regular a velocidade dos veículos de forma a que, atendendo às características e estado da via, do veículo e da carga, às condições meteorológicas e ambientais, à intensidade do trânsito e a quaisquer outras circunstâncias relevantes, possam, em condições de segurança, executar as manobras cuja necessidade seja de prever e, especialmente, fazer parar o veículo no espaço livre e visível à sua frente.",
+        "resumo": "Instrui os condutores a ajustarem a velocidade às condições da via, veículo, carga, clima e tráfego para assegurar a execução segura das manobras e capacidade de paragem segura.",
+        "temas": [
+            "velocidade",
+            "condições da via",
+            "condições meteorológicas",
+            "tráfego",
+            "manobras",
+            "segurança rodoviária"
+        ],
+        "tipo": "Regra",
+        "fonte_dados": "documento real"
+    },
+    {
+        "origem": "Decreto-Lei n.º 114/94, de 3 de maio",
+        "contexto": "Artigo 36.º - Regra geral de ultrapassagem",
+        "tipo": "Regra",
+        "trecho": "O condutor que pretenda ultrapassar deve certificar-se de que o pode fazer sem perigo de colisão com veículo que transite no mesmo sentido ou em sentido contrário e que dispõe de espaço livre suficiente para o efeito.",
+        "resumo": "Define as condições obrigatórias para ultrapassagem segura, exigindo ao condutor verificar previamente espaço e ausência de risco de colisão.",
+        "temas": [
+            "ultrapassagem",
+            "manobras seguras",
+            "colisão",
+            "segurança rodoviária"
+        ],
+        "fonte_dados": "documento real",
+        "tipo": "Regra"
+    },
+    {
+        "origem": "IMTT_Manual_Ensino_Conducao.pdf",
+        "contexto": "Plano de Formação – Nível Estratégico",
+        "tipo": "Recomendação",
+        "trecho": "Este nível estratégico corresponde também à preparação e planeamento da viagem, cuidando do estado do veículo, selecionando as vias mais adequadas para chegar ao seu destino, observando as regras legais de circulação rodoviária, o tráfego, o tempo disponível e eventuais acidentes na via.",
+        "resumo": "Explica a importância do planeamento prévio da viagem, incluindo cuidados com o veículo, escolha de rotas adequadas, respeito às normas e consideração de incidentes na via.",
+        "temas": [
+            "planeamento da viagem",
+            "estado do veículo",
+            "rotas",
+            "normas de trânsito",
+            "condições do tráfego",
+            "segurança rodoviária"
+        ],
+        "fonte_dados": "manual"
+    },
+    {
+        "origem": "perguntas_respostas_bomcondutor.json",
+        "contexto": "Pergunta ID 54",
+        "tipo": "Pergunta de Exame",
+        "trecho": "Quanto maior for a velocidade a que circulo maior será a distância de paragem.",
+        "resumo": "Salienta a relação direta entre velocidade e distância de paragem, alertando sobre a importância de gerir a velocidade para segurança.",
+        "temas": [
+            "velocidade",
+            "distância de paragem",
+            "segurança rodoviária"
+        ],
+        "fonte_dados": "exame"
+    },
+    {
+        "origem": "perguntas_respostas_bomcondutor.json",
+        "contexto": "Pergunta ID 1",
+        "tipo": "Pergunta de Exame",
+        "trecho": "A distância de segurança deve ser sempre a que me permita imobilizar o ciclomotor sem perigo de acidente.",
+        "resumo": "Explica que a distância de segurança é crucial para evitar acidentes, permitindo ao condutor imobilizar o veículo de forma segura diante de situações inesperadas.",
+        "temas": [
+            "distância de segurança",
+            "prevenção de acidentes",
+            "segurança rodoviária",
+            "controle do veículo"
+        ],
+        "fonte_dados": "exame"
+    },
+    {
+        "origem": "IMTT_Manual_Ensino_Conducao.pdf",
+        "contexto": "Nível Tático do Plano de Formação",
+        "tipo": "Instrução de Formação",
+        "trecho": "O condutor deve adaptar a sua condução de acordo com as constantes alterações ocorridas no ambiente rodoviário. Por exemplo, quando encontra utentes vulneráveis na via, como as crianças, deve moderar especialmente a velocidade e aumentar a atenção.",
+        "resumo": "Instrui condutores sobre a necessidade de adaptação contínua da condução, com foco em reduzir velocidade e intensificar atenção na presença de utentes vulneráveis.",
+        "temas": [
+            "adaptação da condução",
+            "utentes vulneráveis",
+            "crianças",
+            "velocidade moderada",
+            "atenção",
+            "segurança rodoviária"
+        ],
+        "fonte_dados": "manual"
+    },
+    {
+        "origem": "perguntas_respostas_bomcondutor.json",
+        "contexto": "Pergunta ID 58",
+        "tipo": "Pergunta de Exame",
+        "trecho": "A sinalização vertical existente adverte-me para: Aproximação de passagem de nível sem guarda a 300 metros.",
+        "resumo": "Reforça que a sinalização vertical serve para advertir o condutor sobre a aproximação de áreas potencialmente perigosas, destacando especificamente uma passagem de nível sem guarda.",
+        "temas": [
+            "sinalização vertical",
+            "passagem de nível",
+            "advertência",
+            "segurança rodoviária"
+        ],
+        "fonte_dados": "exame"
+    }
+]
