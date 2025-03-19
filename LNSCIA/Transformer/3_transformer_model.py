@@ -124,3 +124,129 @@ transformer_model.fit(
 )
 
 transformer_model.save('./models/transformer_model.keras')
+
+
+'''
+PS C:\Users\CarlosMoutinho(11408\Documents\GitHub\AI_Detection_Cars\LNSCIA\Transformer> & "C:/Users/CarlosMoutinho(11408/AppData/Local/Programs/Python/Python311/python.exe" "c:/Users/CarlosMoutinho(11408/Documents/GitHub/AI_Detection_Cars/LNSCIA/Transformer/3_transformer_model.py"
+2025-03-18 14:18:58.910099: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-03-18 14:18:59.824988: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-03-18 14:19:02.460541: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING:tensorflow:From C:\Users\CarlosMoutinho(11408\AppData\Local\Programs\Python\Python311\Lib\site-packages\keras\src\backend\tensorflow\core.py:219: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+Model: "functional"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                  ┃ Output Shape              ┃         Param # ┃ Connected to               ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ encoder_inputs (InputLayer)   │ (None, None)              │               0 │ -                          │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ embedding (Embedding)         │ (None, None, 512)         │           9,728 │ encoder_inputs[0][0]       │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ add_positional_encoding       │ (None, None, 512)         │               0 │ embedding[0][0]            │
+│ (AddPositionalEncoding)       │                           │                 │                            │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ multi_head_attention          │ (None, None, 512)         │       8,401,408 │ add_positional_encoding[0… │
+│ (MultiHeadAttention)          │                           │                 │ add_positional_encoding[0… │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ dropout_1 (Dropout)           │ (None, None, 512)         │               0 │ multi_head_attention[0][0] │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ decoder_inputs (InputLayer)   │ (None, None)              │               0 │ -                          │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ add (Add)                     │ (None, None, 512)         │               0 │ add_positional_encoding[0… │
+│                               │                           │                 │ dropout_1[0][0]            │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ embedding_1 (Embedding)       │ (None, None, 512)         │          76,288 │ decoder_inputs[0][0]       │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ layer_normalization           │ (None, None, 512)         │           1,024 │ add[0][0]                  │
+│ (LayerNormalization)          │                           │                 │                            │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ add_positional_encoding_1     │ (None, None, 512)         │               0 │ embedding_1[0][0]          │
+│ (AddPositionalEncoding)       │                           │                 │                            │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ dense (Dense)                 │ (None, None, 2048)        │       1,050,624 │ layer_normalization[0][0]  │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ multi_head_attention_1        │ (None, None, 512)         │       8,401,408 │ add_positional_encoding_1… │
+│ (MultiHeadAttention)          │                           │                 │ add_positional_encoding_1… │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ dense_1 (Dense)               │ (None, None, 512)         │       1,049,088 │ dense[0][0]                │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ dropout_4 (Dropout)           │ (None, None, 512)         │               0 │ multi_head_attention_1[0]… │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ dropout_2 (Dropout)           │ (None, None, 512)         │               0 │ dense_1[0][0]              │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ add_2 (Add)                   │ (None, None, 512)         │               0 │ add_positional_encoding_1… │
+│                               │                           │                 │ dropout_4[0][0]            │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ add_1 (Add)                   │ (None, None, 512)         │               0 │ layer_normalization[0][0], │
+│                               │                           │                 │ dropout_2[0][0]            │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ layer_normalization_2         │ (None, None, 512)         │           1,024 │ add_2[0][0]                │
+│ (LayerNormalization)          │                           │                 │                            │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ layer_normalization_1         │ (None, None, 512)         │           1,024 │ add_1[0][0]                │
+│ (LayerNormalization)          │                           │                 │                            │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ multi_head_attention_2        │ (None, None, 512)         │       8,401,408 │ layer_normalization_2[0][… │
+│ (MultiHeadAttention)          │                           │                 │ layer_normalization_1[0][… │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ dropout_6 (Dropout)           │ (None, None, 512)         │               0 │ multi_head_attention_2[0]… │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ add_3 (Add)                   │ (None, None, 512)         │               0 │ layer_normalization_2[0][… │
+│                               │                           │                 │ dropout_6[0][0]            │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ layer_normalization_3         │ (None, None, 512)         │           1,024 │ add_3[0][0]                │
+│ (LayerNormalization)          │                           │                 │                            │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ dense_2 (Dense)               │ (None, None, 2048)        │       1,050,624 │ layer_normalization_3[0][… │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ dense_3 (Dense)               │ (None, None, 512)         │       1,049,088 │ dense_2[0][0]              │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ dropout_7 (Dropout)           │ (None, None, 512)         │               0 │ dense_3[0][0]              │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ add_4 (Add)                   │ (None, None, 512)         │               0 │ layer_normalization_3[0][… │
+│                               │                           │                 │ dropout_7[0][0]            │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ layer_normalization_4         │ (None, None, 512)         │           1,024 │ add_4[0][0]                │
+│ (LayerNormalization)          │                           │                 │                            │
+├───────────────────────────────┼───────────────────────────┼─────────────────┼────────────────────────────┤
+│ dense_4 (Dense)               │ (None, None, 149)         │          76,437 │ layer_normalization_4[0][… │
+└───────────────────────────────┴───────────────────────────┴─────────────────┴────────────────────────────┘
+ Total params: 29,571,221 (112.81 MB)
+ Trainable params: 29,571,221 (112.81 MB)
+ Non-trainable params: 0 (0.00 B)
+Epoch 1/50
+10/10 ━━━━━━━━━━━━━━━━━━━━ 268s 21s/step - accuracy: 0.1120 - loss: 8.3697 - val_accuracy: 0.0324 - val_loss: 4.4580 - learning_rate: 0.0010
+Epoch 2/50
+10/10 ━━━━━━━━━━━━━━━━━━━━ 91s 9s/step - accuracy: 0.1799 - loss: 4.4179 - val_accuracy: 0.2269 - val_loss: 4.2329 - learning_rate: 0.0010
+Epoch 3/50
+10/10 ━━━━━━━━━━━━━━━━━━━━ 125s 13s/step - accuracy: 0.2299 - loss: 4.2579 - val_accuracy: 0.2269 - val_loss: 4.1933 - learning_rate: 0.0010
+Epoch 4/50
+10/10 ━━━━━━━━━━━━━━━━━━━━ 99s 11s/step - accuracy: 0.2322 - loss: 4.2235 - val_accuracy: 0.2269 - val_loss: 4.1981 - learning_rate: 0.0010
+Epoch 5/50
+10/10 ━━━━━━━━━━━━━━━━━━━━ 61s 4s/step - accuracy: 0.2308 - loss: 4.2126 - val_accuracy: 0.2269 - val_loss: 4.1715 - learning_rate: 0.0010
+Epoch 6/50
+10/10 ━━━━━━━━━━━━━━━━━━━━ 86s 9s/step - accuracy: 0.2296 - loss: 4.2107 - val_accuracy: 0.2269 - val_loss: 4.1715 - learning_rate: 0.0010
+Epoch 7/50
+10/10 ━━━━━━━━━━━━━━━━━━━━ 98s 10s/step - accuracy: 0.2325 - loss: 4.2005 - val_accuracy: 0.2269 - val_loss: 4.1718 - learning_rate: 0.0010
+Epoch 8/50
+10/10 ━━━━━━━━━━━━━━━━━━━━ 33s 3s/step - accuracy: 0.2292 - loss: 4.2070 - val_accuracy: 0.2269 - val_loss: 4.1742 - learning_rate: 0.0010
+Epoch 9/50
+10/10 ━━━━━━━━━━━━━━━━━━━━ 101s 11s/step - accuracy: 0.2306 - loss: 4.2017 - val_accuracy: 0.2269 - val_loss: 4.1701 - learning_rate: 1.0000e-04
+Epoch 10/50
+10/10 ━━━━━━━━━━━━━━━━━━━━ 31s 3s/step - accuracy: 0.2293 - loss: 4.1966 - val_accuracy: 0.2269 - val_loss: 4.1686 - learning_rate: 1.0000e-04
+Epoch 11/50
+10/10 ━━━━━━━━━━━━━━━━━━━━ 52s 5s/step - accuracy: 0.2319 - loss: 4.1979 - val_accuracy: 0.2269 - val_loss: 4.1687 - learning_rate: 1.0000e-04
+Epoch 12/50
+10/10 ━━━━━━━━━━━━━━━━━━━━ 30s 3s/step - accuracy: 0.2316 - loss: 4.1948 - val_accuracy: 0.2269 - val_loss: 4.1686 - learning_rate: 1.0000e-04
+Epoch 13/50
+10/10 ━━━━━━━━━━━━━━━━━━━━ 71s 8s/step - accuracy: 0.2297 - loss: 4.1993 - val_accuracy: 0.2269 - val_loss: 4.1688 - learning_rate: 1.0000e-04
+Epoch 14/50
+10/10 ━━━━━━━━━━━━━━━━━━━━ 32s 3s/step - accuracy: 0.2278 - loss: 4.2073 - val_accuracy: 0.2269 - val_loss: 4.1688 - learning_rate: 1.0000e-05
+Epoch 15/50
+10/10 ━━━━━━━━━━━━━━━━━━━━ 30s 3s/step - accuracy: 0.2294 - loss: 4.1963 - val_accuracy: 0.2269 - val_loss: 4.1689 - learning_rate: 1.0000e-05
+Epoch 16/50
+10/10 ━━━━━━━━━━━━━━━━━━━━ 39s 4s/step - accuracy: 0.2298 - loss: 4.1995 - val_accuracy: 0.2269 - val_loss: 4.1690 - learning_rate: 1.0000e-05
+Epoch 17/50
+10/10 ━━━━━━━━━━━━━━━━━━━━ 65s 3s/step - accuracy: 0.2345 - loss: 4.1832 - val_accuracy: 0.2269 - val_loss: 4.1690 - learning_rate: 1.0000e-06
+
+'''

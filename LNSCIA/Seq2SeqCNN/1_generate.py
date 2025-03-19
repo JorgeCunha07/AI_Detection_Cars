@@ -4,23 +4,6 @@ import random
 # ---------------------------
 # Dados Sintéticos mais Ricos
 # ---------------------------
-
-'''
-Labeis:
-Peões
-Carros
-Autocarros
-Camioes
-Passadeiras
-Semaforo
-
-Limite de velocidade
-Sinal de stop
-Sinais de obrigracao
-Sinal de proibido
-Passagem de nível
-Obras na via
-'''
 possible_labels = [
     "sinal de trânsito", "semáforo", "peão", "passadeira",
     "carro", "autocarro", "bicicleta", "ciclista", "estacionamento",
