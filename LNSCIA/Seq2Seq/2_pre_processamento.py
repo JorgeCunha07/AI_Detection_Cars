@@ -6,7 +6,7 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # Carregar o dataset combinado
-with open('./data/synthetic_and_real_data.json', 'r', encoding='utf-8') as f:
+with open('./data/goat_data.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
 # Extrair os textos para os rótulos e as descrições.
