@@ -60,11 +60,9 @@ def generate_text(labels_input):
     return ' '.join(generated_text)
 
 
-labels_test = ["sol", "semaforo", "peao"]
+labels_test = ["nublado", "semaforo", "peao", "passadeira"]
 generated_description = generate_text(labels_test)
 
 print(generated_description)
 
-'''
-durante um momento nublado de madrugada, nota-se estrada, passadeira e passadeira que estão parados no semáforo perto de um shopping movimentado, criando uma paisagem marcada por trânsito leve.
-'''
+"no contexto próximo a um parque verdejante, destacam-se camião e carro, vistos aguardando para atravessar, numa altura do dia ensolarado no fim da manhã e com trânsito leve."

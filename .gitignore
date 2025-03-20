@@ -2,3 +2,5 @@
 LNSCIA/FR/data/synthetic_data_realistic.json
 LNSCIA/FR/old/bdd100k_labels_images_val.json
 LNSCIA/Transformer/models/transformer_model.keras
+LNSCIA/Word2Vec/cc.pt.300.vec
+LNSCIA/Word2Vec/cc.pt.300.vec.gz
