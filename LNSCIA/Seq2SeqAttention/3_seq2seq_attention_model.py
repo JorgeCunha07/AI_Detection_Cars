@@ -67,7 +67,7 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=
 # Treinamento do modelo
 model.fit(
     [label_train, decoder_input_data], decoder_target_data,
-    batch_size=64,
+    batch_size=32,
     epochs=50,
     validation_split=0.2,
     callbacks=[

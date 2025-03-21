@@ -71,7 +71,7 @@ callbacks = [
 model.fit(
     [label_train, decoder_input_data],
     decoder_target_data,
-    batch_size=64,
+    batch_size=256,
     epochs=50,
     validation_split=0.2,
     callbacks=callbacks
@@ -147,3 +147,14 @@ for i in range(min(len(desc_test), len(generated_descriptions))):
 
 print(f"\nBLEU Score Médio: {sum(bleu_scores)/len(bleu_scores):.4f}")
 print(f"ROUGE Score Médio: {sum(rouge_scores)/len(rouge_scores):.4f}")
+
+# Resultado esperado
+# The hypothesis contains 0 counts of 4-gram overlaps.
+# Therefore the BLEU score evaluates to 0, independently of
+# how many N-gram overlaps of lower order it contains.
+# Consider using lower n-gram order or use SmoothingFunction()
+#  warnings.warn(_msg)
+# Tempo de execucao SEM GPU: 1h 15min (aproximadamente)
+# Epoch 50/50
+# BLEU Score Médio: 0.1953
+# ROUGE Score Médio: 0.4369

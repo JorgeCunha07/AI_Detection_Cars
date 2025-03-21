@@ -1,100 +1,97 @@
 import json
 import random
 
-# ---------------------------
-# Dados Sintéticos mais Ricos
-# ---------------------------
+# Categorias organizadas claramente
+categories = {
+    "veiculos": ["carro", "autocarro", "camião"],
+    "pessoas": ["peão", "ciclista"],
+    "infraestrutura": ["passadeira", "semáforo", "passagem de nível"],
+    "sinais_transito": ["limite de velocidade", "sinal de stop", "sinais de obrigação", "sinal de proibido", "obras na via"]
+}
 
-'''
-Labeis:
-Peões
-Carros
-Autocarros
-Camioes
-Passadeiras
-Semaforo
-
-Limite de velocidade
-Sinal de stop
-Sinais de obrigracao
-Sinal de proibido
-Passagem de nível
-Obras na via
-'''
-possible_labels = [
-    "sinal de trânsito", "semáforo", "peão", "passadeira",
-    "carro", "autocarro", "bicicleta", "ciclista", "estacionamento",
-    "rua movimentada", "avenida", "estrada", "mota", "camião", "rotunda"
-]
-
-weather_conditions = ["ensolarado", "nublado", "chuvoso", "tempestuoso", "com nevoeiro", "vento forte"]
-time_of_day = ["de manhã cedo", "no fim da manhã", "à tarde", "ao entardecer", "à noite", "de madrugada"]
+weather_conditions = ["céu limpo", "nublado", "chuvoso", "tempestuoso", "com nevoeiro", "vento forte"]
+time_of_day = ["de manhã cedo", "a meio da manhã", "à tarde", "ao entardecer", "à noite", "de madrugada"]
 traffic_density = ["trânsito leve", "trânsito moderado", "trânsito intenso", "engarrafamento"]
 
 locations = [
-    "em uma rua movimentada", "no coração de uma grande avenida",
-    "num bairro residencial tranquilo", "próximo a um parque verdejante",
-    "perto de um shopping movimentado", "na periferia da cidade",
-    "junto a uma escola", "perto de uma estação de metro"
+    "numa rua movimentada", "no centro de uma grande avenida",
+    "num bairro residencial tranquilo", "próximo de um parque",
+    "perto de um centro comercial movimentado", "nos arredores da cidade",
+    "junto a uma escola", "próximo de uma estação de metro"
 ]
 
-object_behaviors = ["em movimento rápido", "parados no semáforo", "aguardando para atravessar",
-                    "estacionados", "circulando lentamente", "cruzando a via"]
+object_behaviors = [
+    "a circular rapidamente", "parados no semáforo", "a aguardar para atravessar",
+    "estacionados", "a circular lentamente", "a atravessar a via", "em obras"
+]
 
-# Templates mais variados e detalhados
+# Templates mais variados e em português de Portugal
 templates = [
-    "Num cenário {location}, percebe-se {objects}, todos {behavior}, sob condições de clima {weather} {time}, com {traffic}.",
-    "Observa-se claramente {objects} {behavior}, situados {location}, num dia particularmente {weather} {time}, caracterizado por {traffic}.",
-    "A cena mostra {objects}, atualmente {behavior}, em um ambiente {location}, sob um clima {weather} {time}, com {traffic} ao fundo.",
-    "Durante um momento {weather} {time}, nota-se {objects} que estão {behavior} {location}, criando uma paisagem marcada por {traffic}.",
-    "No contexto {location}, destacam-se {objects}, vistos {behavior}, numa altura do dia {weather} {time} e com {traffic}.",
-    "Sob o céu {weather} {time}, {objects} podem ser observados {behavior} {location}, onde se percebe claramente {traffic}."
+    "{time}, num dia {weather}, observam-se {veiculos} {behavior}, enquanto {pessoas} estão {pessoas_behavior}, {location}, com {traffic}.",
+    "Durante a {time}, sob um clima {weather}, podem ver-se {pessoas} {pessoas_behavior}, bem como {infraestrutura} e {sinais_transito} visíveis {location}, além de {veiculos} {behavior}, com {traffic}.",
+    "Com o tempo {weather}, {location}, é possível notar {veiculos} {behavior}, enquanto {pessoas} encontram-se {pessoas_behavior}. Também se destacam {infraestrutura} e {sinais_transito}, numa situação de {traffic}.",
+    "{location}, {time}, sob um céu {weather}, destacam-se {veiculos} {behavior}, {pessoas} que estão {pessoas_behavior}, além de {infraestrutura} e {sinais_transito}, com {traffic}.",
+    "Num ambiente {location}, os {veiculos} encontram-se {behavior}, enquanto os {pessoas} estão {pessoas_behavior}, num dia {weather} {time}, com {infraestrutura}, {sinais_transito} e {traffic}.",
+    "A cena {weather}, situada {location} {time}, inclui {veiculos} {behavior}, {pessoas} {pessoas_behavior}, e infraestruturas como {infraestrutura} e {sinais_transito}, sob condições de {traffic}.",
+    "É possível ver claramente {pessoas} {pessoas_behavior} e {veiculos} {behavior} {location}, com a presença de {infraestrutura} e {sinais_transito}, num dia {weather}, enfrentando {traffic}.",
+    "Ao longo de {location}, a {time}, sob um céu {weather}, {pessoas} podem ser vistas {pessoas_behavior}, enquanto {veiculos} passam {behavior}, com {infraestrutura} e {sinais_transito} em destaque, numa situação de {traffic}.",
+    "Uma imagem típica {location} mostra {veiculos} {behavior}, com {pessoas} {pessoas_behavior}, num dia {weather} {time}, acompanhado por {infraestrutura}, {sinais_transito} e {traffic}."
 ]
 
-def generate_objects():
-    num_objects = random.choice([2, 3, 4])
-    selected = random.sample(possible_labels, k=num_objects)
-    if num_objects == 2:
-        return " e ".join(selected)
-    else:
-        return ", ".join(selected[:-1]) + " e " + selected[-1]
+# Função que escolhe aleatoriamente elementos das categorias
+def choose_from_category(category_name, min_items=1, max_items=2):
+    items = categories[category_name]
+    chosen_items = random.sample(items, k=random.randint(min_items, min(max_items, len(items))))
+    return chosen_items
 
-
+# Geração de dados sintéticos mais organizada e realista
 def generate_synthetic_data(num_samples=1000):
     synthetic_data = []
     for _ in range(num_samples):
-        objects = generate_objects()
+        veiculos = choose_from_category("veiculos")
+        pessoas = choose_from_category("pessoas")
+        infraestrutura = choose_from_category("infraestrutura")
+        sinais_transito = choose_from_category("sinais_transito")
+
         weather = random.choice(weather_conditions)
         time = random.choice(time_of_day)
         location = random.choice(locations)
         traffic = random.choice(traffic_density)
         behavior = random.choice(object_behaviors)
+        pessoas_behavior = random.choice(["a aguardar para atravessar", "a caminhar pela via", "à espera junto ao semáforo"])
+
         template = random.choice(templates)
         description = template.format(
-            objects=objects,
+            veiculos=", ".join(veiculos),
+            pessoas=", ".join(pessoas),
+            infraestrutura=", ".join(infraestrutura),
+            sinais_transito=", ".join(sinais_transito),
             weather=weather,
             time=time,
             location=location,
             traffic=traffic,
-            behavior=behavior
+            behavior=behavior,
+            pessoas_behavior=pessoas_behavior
         )
-        # Adiciona tokens especiais
-        description = "startseq " + description + " endseq"
-        labels = [obj.strip() for obj in objects.replace(",", " e ").split(" e ")]
+
+        description = f"startseq {description} endseq"
+
+        labels = veiculos + pessoas + infraestrutura + sinais_transito
+
         synthetic_example = {
             "labels": labels,
             "description": description,
             "origem": "sintético"
         }
+
         synthetic_data.append(synthetic_example)
     return synthetic_data
 
+# Gerar dados sintéticos organizados
+synthetic_data = generate_synthetic_data(100000)
 
-# Gerar dados sintéticos enriquecidos
-synthetic_data = generate_synthetic_data(1000)
-
-# Salvar somente dados sintéticos enriquecidos para teste
+# Salvar dados sintéticos
 with open('./data/synthetic_and_real_data.json', 'w', encoding='utf-8') as f:
     json.dump(synthetic_data, f, indent=4, ensure_ascii=False)
 
-print("Dados sintéticos enriquecidos salvos com sucesso!")
+print("Dados sintéticos organizados e realistas salvos com sucesso!")

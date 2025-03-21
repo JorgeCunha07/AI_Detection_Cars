@@ -57,11 +57,22 @@ def generate_text(labels_input):
 
     return ' '.join(generated_text)
 
-labels_test = ["sol", "semaforo", "peao", "camião"]
+labels_test = ["carro", "peão", "semáforo", "sinal de stop"]
 generated_description = generate_text(labels_test)
-
 print(generated_description)
 
-'''
-num cenário próximo a um parque verdejante, percebe-se estrada, e passadeira, todos em movimento rápido, sob condições de clima nublado à noite, com trânsito intenso.
-'''
+labels_test = ["autocarro", "passadeira", "limite de velocidade", "engarrafamento"]
+generated_description = generate_text(labels_test)
+print(generated_description)
+
+labels_test = ["camião", "ciclista", "sinal de proibido", "vento forte"]
+generated_description = generate_text(labels_test)
+print(generated_description)
+
+labels_test = ["carro", "peão", "passadeira", "trânsito intenso"]
+generated_description = generate_text(labels_test)
+print(generated_description)
+
+labels_test = ["autocarro", "camião", "semáforo", "obras na via"]
+generated_description = generate_text(labels_test)
+print(generated_description)

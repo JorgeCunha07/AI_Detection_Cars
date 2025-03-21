@@ -4,6 +4,23 @@ import random
 # ---------------------------
 # Dados Sintéticos mais Ricos
 # ---------------------------
+
+'''
+Labeis:
+Peões
+Carros
+Autocarros
+Camioes
+Passadeiras
+Semaforo
+
+Limite de velocidade
+Sinal de stop
+Sinais de obrigracao
+Sinal de proibido
+Passagem de nível
+Obras na via
+'''
 possible_labels = [
     "sinal de trânsito", "semáforo", "peão", "passadeira",
     "carro", "autocarro", "bicicleta", "ciclista", "estacionamento",
@@ -12,6 +29,8 @@ possible_labels = [
 
 weather_conditions = ["ensolarado", "nublado", "chuvoso", "tempestuoso", "com nevoeiro", "vento forte"]
 time_of_day = ["de manhã cedo", "no fim da manhã", "à tarde", "ao entardecer", "à noite", "de madrugada"]
+traffic_density = ["trânsito leve", "trânsito moderado", "trânsito intenso", "engarrafamento"]
+
 locations = [
     "em uma rua movimentada", "no coração de uma grande avenida",
     "num bairro residencial tranquilo", "próximo a um parque verdejante",
@@ -19,7 +38,6 @@ locations = [
     "junto a uma escola", "perto de uma estação de metro"
 ]
 
-traffic_density = ["trânsito leve", "trânsito moderado", "trânsito intenso", "engarrafamento"]
 object_behaviors = ["em movimento rápido", "parados no semáforo", "aguardando para atravessar",
                     "estacionados", "circulando lentamente", "cruzando a via"]
 
