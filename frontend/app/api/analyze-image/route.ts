@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
     const buffer = Buffer.from(bytes)
 
     // Convert to base64
-    const base64Image = buffer.toString("base64")
+    // const base64Image = buffer.toString("base64")
 
     // Generate description using OpenAI's vision capabilities
     const { text } = await generateText({
