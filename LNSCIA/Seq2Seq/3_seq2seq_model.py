@@ -156,5 +156,5 @@ print(f"ROUGE Score Médio: {sum(rouge_scores)/len(rouge_scores):.4f}")
 #  warnings.warn(_msg)
 # Tempo de execucao SEM GPU: 1h 15min (aproximadamente)
 # Epoch 50/50
-# BLEU Score Médio: 0.1953
-# ROUGE Score Médio: 0.4369
+# BLEU Score Médio: 0.2597
+# ROUGE Score Médio: 0.5157

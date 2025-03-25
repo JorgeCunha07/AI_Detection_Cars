@@ -4,9 +4,22 @@ import re
 import unicodedata
 import pickle
 import numpy as np
+import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+
+# Verifica se há GPU disponível e configura o crescimento de memória
+gpus = tf.config.list_physical_devices('GPU')
+if gpus:
+    try:
+        for gpu in gpus:
+            tf.config.experimental.set_memory_growth(gpu, True)
+        print("GPU(s) detectada(s) e configurada(s).")
+    except RuntimeError as e:
+        print("Erro ao configurar GPU: ", e)
+else:
+    print("Nenhuma GPU detectada, usando CPU.")
 
 # Função para limpar a pasta "./models/"
 def clear_models_folder(folder_path='./models/'):
