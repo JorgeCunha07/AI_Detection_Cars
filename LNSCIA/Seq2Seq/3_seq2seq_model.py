@@ -6,6 +6,12 @@ from tensorflow.keras.layers import Input, LSTM, Dense, Embedding
 from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
 from nltk.translate.bleu_score import sentence_bleu
 from rouge import Rouge
+import time
+from datetime import datetime
+
+# Início da execução com timestamp
+start_time = time.time()
+print("Início:", datetime.now())
 
 # Carregar os tokenizadores
 with open('./models/label_tokenizer.pkl', 'rb') as f:
@@ -148,13 +154,12 @@ for i in range(min(len(desc_test), len(generated_descriptions))):
 print(f"\nBLEU Score Médio: {sum(bleu_scores)/len(bleu_scores):.4f}")
 print(f"ROUGE Score Médio: {sum(rouge_scores)/len(rouge_scores):.4f}")
 
-# Resultado esperado
-# The hypothesis contains 0 counts of 4-gram overlaps.
-# Therefore the BLEU score evaluates to 0, independently of
-# how many N-gram overlaps of lower order it contains.
-# Consider using lower n-gram order or use SmoothingFunction()
-#  warnings.warn(_msg)
-# Tempo de execucao SEM GPU: 1h 15min (aproximadamente)
-# Epoch 50/50
-# BLEU Score Médio: 0.2597
-# ROUGE Score Médio: 0.5157
+# Fim da execução com timestamp
+end_time = time.time()
+print("Fim:", datetime.now())
+print("Tempo de execução: {:.2f} segundos".format(end_time - start_time))
+
+# BLEU Score Médio: 0.2585
+# ROUGE Score Médio: 0.4921
+# Fim: 2025-03-26 13:06:35.919266
+# Tempo de execução: 3702.60 segundos | 1.0285 Horas

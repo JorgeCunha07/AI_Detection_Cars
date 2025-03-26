@@ -8,6 +8,12 @@ import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+import time
+from datetime import datetime
+
+# Início da execução com timestamp
+start_time = time.time()
+print("Início:", datetime.now())
 
 # Verifica se há GPU disponível e configura o crescimento de memória
 gpus = tf.config.list_physical_devices('GPU')
@@ -123,3 +129,14 @@ with open('./models/preprocess_params.pkl', 'wb') as handle:
     pickle.dump(preprocess_params, handle)
 
 print("Pré-processamento aprimorado concluído e dados salvos.")
+
+# Fim da execução com timestamp
+end_time = time.time()
+print("Fim:", datetime.now())
+print("Tempo de execução: {:.2f} segundos".format(end_time - start_time))
+
+#Início: 2025-03-26 11:54:31.054488
+#Nenhuma GPU detectada, usando CPU.
+#Pré-processamento aprimorado concluído e dados salvos.
+#Fim: 2025-03-26 11:54:37.828589
+#Tempo de execução: 6.77 segundos

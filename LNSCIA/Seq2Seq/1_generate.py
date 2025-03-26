@@ -1,5 +1,7 @@
 import json
 import random
+import time
+from datetime import datetime
 
 # Categorias organizadas claramente
 categories = {
@@ -54,7 +56,7 @@ def generate_synthetic_data(num_samples=1000):
         sinais_transito = choose_from_category("sinais_transito")
 
         weather = random.choice(weather_conditions)
-        time = random.choice(time_of_day)
+        time_of_sample = random.choice(time_of_day)
         location = random.choice(locations)
         traffic = random.choice(traffic_density)
         behavior = random.choice(object_behaviors)
@@ -67,7 +69,7 @@ def generate_synthetic_data(num_samples=1000):
             infraestrutura=", ".join(infraestrutura),
             sinais_transito=", ".join(sinais_transito),
             weather=weather,
-            time=time,
+            time=time_of_sample,
             location=location,
             traffic=traffic,
             behavior=behavior,
@@ -87,6 +89,10 @@ def generate_synthetic_data(num_samples=1000):
         synthetic_data.append(synthetic_example)
     return synthetic_data
 
+# Início da execução com timestamp
+start_time = time.time()
+print("Início:", datetime.now())
+
 # Gerar dados sintéticos organizados
 synthetic_data = generate_synthetic_data(100000)
 
@@ -94,4 +100,11 @@ synthetic_data = generate_synthetic_data(100000)
 with open('./data/synthetic_and_real_data.json', 'w', encoding='utf-8') as f:
     json.dump(synthetic_data, f, indent=4, ensure_ascii=False)
 
-print("Dados sintéticos organizados e realistas salvos com sucesso!")
+# Fim da execução com timestamp
+end_time = time.time()
+print("Fim:", datetime.now())
+print("Tempo de execução: {:.2f} segundos".format(end_time - start_time))
+
+#Início: 2025-03-26 11:46:27.062511
+#Fim: 2025-03-26 11:46:29.368030
+#Tempo de execução: 2.31 segundos

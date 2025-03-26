@@ -63,8 +63,8 @@ def generate_text(labels_input):
 labels_test = ["nublado", "semaforo", "peao", "passadeira"]
 generated_description = generate_text(labels_test)
 print(generated_description)
-# a cena chuvoso situada proximo de uma estacao de metro a meio da manha inclui camiao a circular lentamente peao a aguardar para atravessar e infraestruturas como passadeira e sinal de stop sob condicoes de transito leve
+# a cena vento forte situada proximo de um parque a tarde inclui autocarro a circular rapidamente peao a espera junto ao semaforo e infraestruturas como passadeira e sinais de obrigacao sob condicoes de transito moderado
 labels_test = ["autocarro", "camião", "semáforo", "obras na via"]
 generated_description = generate_text(labels_test)
 print(generated_description)
-# a cena ceu limpo situada proximo de uma estacao de metro a noite inclui autocarro a circular rapidamente com peao a aguardar para atravessar e infraestruturas como passadeira e obras na via sob condicoes de transito intenso
+# a cena vento forte situada proximo de um parque a tarde inclui autocarro camiao a circular rapidamente peao a caminhar pela via e infraestruturas como semaforo e sinais de obrigacao sob condicoes de transito leve
