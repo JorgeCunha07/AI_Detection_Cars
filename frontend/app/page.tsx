@@ -107,7 +107,7 @@ export default function ImageChatPage() {
     <div className="container mx-auto py-8 px-4">
       <Card className="w-full max-w-full mx-auto">
         <CardHeader className="flex justify-between items-center">
-          <CardTitle className="text-center">
+          <CardTitle className="text-4xl text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 font-bold">
             AI Image Analysis & Chat
           </CardTitle>
           <Select>
@@ -130,7 +130,7 @@ export default function ImageChatPage() {
             <div className="flex items-center justify-center">
               <label
                 htmlFor="image-upload"
-                className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800 dark:bg-gray-900 border-gray-300 dark:border-gray-700"
+                className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800 dark:bg-gray-900 border-gray-300 dark:border-gray-700 transition-all"
               >
                 <div className="flex flex-col items-center justify-center pt-5 pb-6">
                   <Upload className="w-10 h-10 mb-3 text-gray-400" />
@@ -160,14 +160,14 @@ export default function ImageChatPage() {
                     alt="Uploaded image"
                     width={350}
                     height={350}
-                    className="object-contain rounded-lg"
+                    className="object-contain rounded-lg shadow-md"
                   />
                   <Image
                     src={imageUrl || "/placeholder.svg"}
                     alt="Uploaded image"
                     width={350}
                     height={350}
-                    className="object-contain rounded-lg"
+                    className="object-contain rounded-lg shadow-md"
                   />
                 </div>
                 <div className="flex gap-2.5">
@@ -186,7 +186,7 @@ export default function ImageChatPage() {
                   <Button
                     onClick={simulateImageAnalysis}
                     disabled={isAnalyzing}
-                    className="flex items-center space-x-2"
+                    className="flex items-center space-x-2 bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 text-white"
                   >
                     {isAnalyzing ? (
                       <>
@@ -208,8 +208,10 @@ export default function ImageChatPage() {
           {/* Image Description Section */}
           {imageDescription && (
             <div className="space-y-2">
-              <h3 className="text-lg font-medium">Image Description:</h3>
-              <div className="p-4 rounded-lg bg-gray-100 dark:bg-gray-800">
+              <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                Image Description:
+              </h3>
+              <div className="p-4 rounded-lg bg-gray-100 dark:bg-gray-800 shadow-md">
                 <p>{imageDescription}</p>
               </div>
             </div>
@@ -219,7 +221,7 @@ export default function ImageChatPage() {
           {showChat && (
             <div className="space-y-4">
               <div className="flex justify-between">
-                <h3 className="text-lg font-medium">
+                <h3 className="text-2xl font-semibold text-transparent text-gradient bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500">
                   Chat with AI about this image:
                 </h3>
                 <Select>
@@ -235,7 +237,7 @@ export default function ImageChatPage() {
                   </SelectContent>
                 </Select>
               </div>
-              <div className="h-64 overflow-y-auto p-4 rounded-lg bg-gray-100 dark:bg-gray-800 space-y-4">
+              <div className="h-80 overflow-y-auto p-4 rounded-lg space-y-4">
                 {messages.map((message) => (
                   <div
                     key={message.id}
@@ -273,7 +275,7 @@ export default function ImageChatPage() {
                 <Button
                   type="submit"
                   disabled={isLoading || !input.trim()}
-                  className="self-end"
+                  className="self-end bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 text-white"
                 >
                   <Send className="w-4 h-4" />
                 </Button>
