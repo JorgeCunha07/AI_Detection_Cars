@@ -1,13 +1,22 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Textarea } from "@/components/ui/textarea"
-import { Upload, ImageIcon, Send, Loader2 } from "lucide-react"
-import Image from "next/image"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { Upload, ImageIcon, Send, Loader2 } from "lucide-react";
+import Image from "next/image";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 // Simulated chat messages
 const SIMULATED_RESPONSES = [
@@ -16,87 +25,104 @@ const SIMULATED_RESPONSES = [
   "Based on what I can see, this image has great detail. The subject is well-focused and stands out clearly.",
   "The perspective in this image is quite unique. It offers an interesting viewpoint that draws the viewer in.",
   "I can see why you'd be interested in this image. It has a compelling visual story that captures attention.",
-]
+];
 
 type Message = {
-  id: string
-  content: string
-  role: "user" | "assistant"
-}
+  id: string;
+  content: string;
+  role: "user" | "assistant";
+};
 
 export default function ImageChatPage() {
-  const [imageUrl, setImageUrl] = useState<string | null>(null)
-  const [isAnalyzing, setIsAnalyzing] = useState(false)
-  const [imageDescription, setImageDescription] = useState<string | null>(null)
-  const [showChat, setShowChat] = useState(false)
-  const [messages, setMessages] = useState<Message[]>([])
-  const [input, setInput] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [imageDescription, setImageDescription] = useState<string | null>(null);
+  const [showChat, setShowChat] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setInput(e.target.value)
-  }
+    setInput(e.target.value);
+  };
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]
-    if (!file) return
+    const file = e.target.files?.[0];
+    if (!file) return;
 
-    const objectUrl = URL.createObjectURL(file)
-    setImageUrl(objectUrl)
-    setImageDescription(null)
-    setShowChat(false)
-    setMessages([])
-  }
+    const objectUrl = URL.createObjectURL(file);
+    setImageUrl(objectUrl);
+    setImageDescription(null);
+    setShowChat(false);
+    setMessages([]);
+  };
 
   const simulateImageAnalysis = () => {
-    setIsAnalyzing(true)
+    setIsAnalyzing(true);
 
     // Simulate API delay
     setTimeout(() => {
       const simulatedDescription =
-        "This image shows a stunning landscape with mountains in the background and a lake in the foreground. The sky has beautiful cloud formations, and the colors are vibrant with blues, greens, and hints of orange from the setting sun. The composition creates a sense of depth and tranquility, making it an excellent example of nature photography."
+        "This image shows a stunning landscape with mountains in the background and a lake in the foreground. The sky has beautiful cloud formations, and the colors are vibrant with blues, greens, and hints of orange from the setting sun. The composition creates a sense of depth and tranquility, making it an excellent example of nature photography.";
 
-      setImageDescription(simulatedDescription)
-      setShowChat(true)
-      setIsAnalyzing(false)
-    }, 2000)
-  }
+      setImageDescription(simulatedDescription);
+      setShowChat(true);
+      setIsAnalyzing(false);
+    }, 2000);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    if (!input.trim()) return
+    if (!input.trim()) return;
 
     // Add user message
     const userMessage: Message = {
       id: Date.now().toString(),
       content: input,
       role: "user",
-    }
+    };
 
-    setMessages((prev) => [...prev, userMessage])
-    setInput("")
-    setIsLoading(true)
+    setMessages((prev) => [...prev, userMessage]);
+    setInput("");
+    setIsLoading(true);
 
     // Simulate AI response delay
     setTimeout(() => {
-      const randomIndex = Math.floor(Math.random() * SIMULATED_RESPONSES.length)
+      const randomIndex = Math.floor(
+        Math.random() * SIMULATED_RESPONSES.length
+      );
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
         content: SIMULATED_RESPONSES[randomIndex],
         role: "assistant",
-      }
+      };
 
-      setMessages((prev) => [...prev, aiResponse])
-      setIsLoading(false)
-    }, 1500)
-  }
+      setMessages((prev) => [...prev, aiResponse]);
+      setIsLoading(false);
+    }, 1500);
+  };
 
   return (
     <div className="container mx-auto py-8 px-4">
-      <Card className="w-full max-w-3xl mx-auto">
-        <CardHeader>
-          <CardTitle className="text-center">AI Image Analysis & Chat</CardTitle>
+      <Card className="w-full max-w-full mx-auto">
+        <CardHeader className="flex justify-between items-center">
+          <CardTitle className="text-center">
+            AI Image Analysis & Chat
+          </CardTitle>
+          <Select>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Selecione o modelo" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Modelo</SelectLabel>
+                <SelectItem value="apple">Modelo 1</SelectItem>
+                <SelectItem value="banana">Modelo 2</SelectItem>
+                <SelectItem value="banana">Modelo 1 + Modelo 2</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </CardHeader>
         <CardContent className="space-y-6">
           {/* Image Upload Section */}
@@ -109,37 +135,72 @@ export default function ImageChatPage() {
                 <div className="flex flex-col items-center justify-center pt-5 pb-6">
                   <Upload className="w-10 h-10 mb-3 text-gray-400" />
                   <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                    <span className="font-semibold">Click to upload</span> or drag and drop
+                    <span className="font-semibold">Click to upload</span> or
+                    drag and drop
                   </p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">PNG, JPG or GIF (MAX. 10MB)</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                    PNG or JPG (MAX. 10MB)
+                  </p>
                 </div>
-                <input id="image-upload" type="file" className="hidden" accept="image/*" onChange={handleImageUpload} />
+                <input
+                  id="image-upload"
+                  type="file"
+                  className="hidden"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                />
               </label>
             </div>
 
             {imageUrl && (
               <div className="flex flex-col items-center space-y-4">
-                <div className="relative w-full max-w-md h-64">
+                <div className="flex justify-evenly w-full h-auto gap-4">
                   <Image
                     src={imageUrl || "/placeholder.svg"}
                     alt="Uploaded image"
-                    fill
+                    width={350}
+                    height={350}
+                    className="object-contain rounded-lg"
+                  />
+                  <Image
+                    src={imageUrl || "/placeholder.svg"}
+                    alt="Uploaded image"
+                    width={350}
+                    height={350}
                     className="object-contain rounded-lg"
                   />
                 </div>
-                <Button onClick={simulateImageAnalysis} disabled={isAnalyzing} className="flex items-center space-x-2">
-                  {isAnalyzing ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>Analyzing...</span>
-                    </>
-                  ) : (
-                    <>
-                      <ImageIcon className="w-4 h-4" />
-                      <span>Analyze Image</span>
-                    </>
-                  )}
-                </Button>
+                <div className="flex gap-2.5">
+                  <Select>
+                    <SelectTrigger className="w-[180px]">
+                      <SelectValue placeholder="Selecione o modelo" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectLabel>Modelo</SelectLabel>
+                        <SelectItem value="apple">Nosso</SelectItem>
+                        <SelectItem value="banana">Pre-feito</SelectItem>
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                  <Button
+                    onClick={simulateImageAnalysis}
+                    disabled={isAnalyzing}
+                    className="flex items-center space-x-2"
+                  >
+                    {isAnalyzing ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Analyzing...</span>
+                      </>
+                    ) : (
+                      <>
+                        <ImageIcon className="w-4 h-4" />
+                        <span>Analyze Image</span>
+                      </>
+                    )}
+                  </Button>
+                </div>
               </div>
             )}
           </div>
@@ -157,10 +218,31 @@ export default function ImageChatPage() {
           {/* Chat Section */}
           {showChat && (
             <div className="space-y-4">
-              <h3 className="text-lg font-medium">Chat with AI about this image:</h3>
+              <div className="flex justify-between">
+                <h3 className="text-lg font-medium">
+                  Chat with AI about this image:
+                </h3>
+                <Select>
+                  <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder="Selecione o modelo" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      <SelectLabel>Modelo</SelectLabel>
+                      <SelectItem value="apple">Nosso</SelectItem>
+                      <SelectItem value="banana">Pre-feito</SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+              </div>
               <div className="h-64 overflow-y-auto p-4 rounded-lg bg-gray-100 dark:bg-gray-800 space-y-4">
                 {messages.map((message) => (
-                  <div key={message.id} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
+                  <div
+                    key={message.id}
+                    className={`flex ${
+                      message.role === "user" ? "justify-end" : "justify-start"
+                    }`}
+                  >
                     <div
                       className={`max-w-[80%] p-3 rounded-lg ${
                         message.role === "user"
@@ -188,7 +270,11 @@ export default function ImageChatPage() {
                   className="flex-1 resize-none"
                   rows={2}
                 />
-                <Button type="submit" disabled={isLoading || !input.trim()} className="self-end">
+                <Button
+                  type="submit"
+                  disabled={isLoading || !input.trim()}
+                  className="self-end"
+                >
                   <Send className="w-4 h-4" />
                 </Button>
               </form>
@@ -197,6 +283,5 @@ export default function ImageChatPage() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
-
