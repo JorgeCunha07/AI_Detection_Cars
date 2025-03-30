@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "pergunta": "Numa autoestrada, é proibido:",
+        "respostas": [
+            "Circular na via mais à direita.",
+            "Parar ou estacionar na berma sem emergência. (correta)",
+            "Inverter o sentido de marcha. (correta)",
+            "Ultrapassar veículos mais lentos.",
+            "Transitar abaixo do limite mínimo estabelecido. (correta)",
+            "Circular à velocidade máxima permitida."
+        ],
+        "explicacao": {
+            "texto": "",
+            "materiais": []
+        },
+        "imagem_url": "",
+        "imagem_salva": ""
+    },
+    {
+        "id": 2,
+        "pergunta": "É obrigatório ligar as luzes de cruzamento:",
+        "respostas": [
+            "Sempre que circule dentro das localidades.",
+            "Durante o dia em túneis. (correta)",
+            "Quando há nevoeiro denso. (correta)",
+            "Apenas durante a noite.",
+            "Quando circula numa autoestrada em condições normais de visibilidade.",
+            "Durante chuvas fortes. (correta)"
+        ],
+        "explicacao": {
+            "texto": "",
+            "materiais": []
+        },
+        "imagem_url": "",
+        "imagem_salva": ""
+    },
+    {
+        "id": 3,
+        "pergunta": "O condutor deve ceder passagem a peões que atravessam:",
+        "respostas": [
+            "Apenas quando há sinalização específica.",
+            "Numa passadeira assinalada. (correta)",
+            "Quando estão a atravessar na ausência de passadeira em local permitido. (correta)",
+            "Em qualquer local da via, mesmo que haja passadeiras próximas.",
+            "Quando o semáforo está vermelho para peões.",
+            "Quando um agente da autoridade assim ordena. (correta)"
+        ],
+        "explicacao": {
+            "texto": "",
+            "materiais": []
+        },
+        "imagem_url": "",
+        "imagem_salva": ""
+    },
+    {
+        "id": 4,
+        "pergunta": "A taxa máxima legal de álcool no sangue para um condutor em regime probatório é:",
+        "respostas": [
+            "0,2 g/l (correta)",
+            "0,5 g/l",
+            "0,8 g/l",
+            "1,0 g/l",
+            "0,0 g/l",
+            "Menor do que para condutores experientes. (correta)"
+        ],
+        "explicacao": {
+            "texto": "",
+            "materiais": []
+        },
+        "imagem_url": "",
+        "imagem_salva": ""
+    },
+    {
+        "id": 5,
+        "pergunta": "Posso utilizar o telemóvel enquanto conduzo se:",
+        "respostas": [
+            "Estiver parado no trânsito.",
+            "Usar um dispositivo de mãos-livres homologado. (correta)",
+            "O veículo estiver imobilizado fora da faixa de rodagem. (correta)",
+            "For numa estrada com pouco trânsito.",
+            "Tiver carta de condução há mais de 10 anos.",
+            "Utilizar auriculares em ambas as orelhas."
+        ],
+        "explicacao": {
+            "texto": "",
+            "materiais": []
+        },
+        "imagem_url": "",
+        "imagem_salva": ""
+    },
+    {
+        "id": 6,
+        "pergunta": "É proibido ultrapassar:",
+        "respostas": [
+            "Nas curvas com visibilidade reduzida. (correta)",
+            "Em pontes com mais de uma via no mesmo sentido.",
+            "Veículos pesados em vias rápidas.",
+            "Imediatamente antes e nas passagens para peões. (correta)",
+            "Em locais devidamente sinalizados com proibição. (correta)",
+            "Quando circulo numa estrada larga sem trânsito."
+        ],
+        "explicacao": {
+            "texto": "",
+            "materiais": []
+        },
+        "imagem_url": "",
+        "imagem_salva": ""
+    },
+    {
+        "id": 7,
+        "pergunta": "O colete retrorrefletor é obrigatório:",
+        "respostas": [
+            "Dentro das localidades à noite.",
+            "Apenas para passageiros de veículos.",
+            "Sempre que saio do veículo numa via rápida. (correta)",
+            "Durante o dia em qualquer localidade.",
+            "Ao abandonar o veículo em situações de emergência em qualquer via pública. (correta)",
+            "Ao realizar operações de assistência ou reparação na via. (correta)"
+        ],
+        "explicacao": {
+            "texto": "",
+            "materiais": []
+        },
+        "imagem_url": "",
+        "imagem_salva": ""
+    },
+    {
+        "id": 8,
+        "pergunta": "Os triângulos de pré-sinalização devem ser colocados:",
+        "respostas": [
+            "Apenas se o veículo ficar parado mais de uma hora.",
+            "A pelo menos 30 metros atrás do veículo avariado em estrada comum. (correta)",
+            "A pelo menos 100 metros atrás do veículo em autoestradas. (correta)",
+            "Apenas de noite.",
+            "Quando a via tem pouca iluminação.",
+            "De forma visível a 1 metro acima do solo. (correta)"
+        ],
+        "explicacao": {
+            "texto": "",
+            "materiais": []
+        },
+        "imagem_url": "",
+        "imagem_salva": ""
+    },
+    {
+        "id": 9,
+        "pergunta": "Um veículo prioritário em missão urgente pode:",
+        "respostas": [
+            "Exceder os limites de velocidade estabelecidos. (correta)",
+            "Ignorar as regras sobre ultrapassagens. (correta)",
+            "Não respeitar semáforos vermelhos após cautelas necessárias. (correta)",
+            "Circular pela via mais à direita.",
+            "Circular sem utilizar sinais luminosos ou sonoros.",
+            "Estacionar em cima dos passeios quando não está em missão."
+        ],
+        "explicacao": {
+            "texto": "",
+            "materiais": []
+        },
+        "imagem_url": "",
+        "imagem_salva": ""
+    },
+    {
+        "id": 10,
+        "pergunta": "Um ciclista pode circular:",
+        "respostas": [
+            "Apenas nas ciclovias.",
+            "Nas faixas de rodagem, cumprindo as normas do código. (correta)",
+            "Nos passeios destinados exclusivamente a peões.",
+            "Em paralelo com outro ciclista se não houver perigo. (correta)",
+            "Pela esquerda em vias rápidas.",
+            "Em sentido contrário ao trânsito apenas se existir sinalização que o permita. (correta)"
+        ],
+        "explicacao": {
+            "texto": "",
+            "materiais": []
+        },
+        "imagem_url": "",
+        "imagem_salva": ""
+    }
+]

@@ -101,7 +101,7 @@ def train_word2vec(corpus, vector_size=300, window=7, min_count=5, workers=8, ep
 
 def main():
     # Carrega o corpus das perguntas/respostas
-    json_filename = 'novas_perguntas_codigo_conducao.json'
+    json_filename = 'perguntas_codigo_conducao_1000_equilibradas.json'
     log("Carregando dados do JSON de perguntas...")
     questions_data = load_questions_data(json_filename)
     corpus_questions = build_corpus_from_questions(questions_data)
