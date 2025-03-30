@@ -1,0 +1,13 @@
+Os sinais de identificação de localidades destinam-se a identificar e delimitar o início e o fim das localidades, designadamente para, a partir do local em que estão colocados, começarem a vigorar as regras especialmente previstas para o trânsito dentro e fora das mesmas.
+
+N1A - Início de localidade	N1A - Início de localidade
+Indicação do ponto onde tem início a localidade identificada.
+
+N1B - Início de localidade	N1B - Início de localidade
+Indicação do ponto onde tem início a localidade identificada.
+
+N2A - Fim de localidade	N2A - Fim de localidade
+Indicação do ponto onde termina a localidade identificada.
+
+N2B - Fim de localidade	N2B - Fim de localidade
+Indicação do ponto onde termina a localidade identificad

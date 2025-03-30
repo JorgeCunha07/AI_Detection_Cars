@@ -1,0 +1,78 @@
+Definições Legais
+Aqui fica um glossário com as definições dos termos usados no código da estrada, esta lista pode ser consultada no Artigo 1.º do código da estrada.
+
+Autoestrada	Via pública destinada a trânsito rápido, com separação física de faixas de rodagem, sem cruzamentos de nível nem acesso a propriedades marginais, com acessos condicionados e sinalizada como tal.
+Berma	Superfície da via pública não especialmente destinada ao trânsito de veículos e que ladeia a faixa de rodagem.
+Caminho	Via pública especialmente destinada ao trânsito local em zonas rurais.
+Corredor de circulação	Via de trânsito reservada a veículos de certa espécie ou afetos a determinados transportes.
+Cruzamento	Zona de intersecção de vias públicas ao mesmo nível.
+Eixo da faixa de rodagem	Linha longitudinal, materializada ou não, que divide uma faixa de rodagem em duas partes, cada uma afeta a um sentido de trânsito.
+Entroncamento	Zona de junção ou bifurcação de vias públicas.
+Faixa de rodagem	Parte da via pública especialmente destinada ao trânsito de veículos.
+Ilhéu direcional	Zona restrita da via pública, interdita à circulação de veículos e delimitada por lancil ou marcação apropriada, destinada a orientar o trânsito.
+Localidade	Zona com edificações e cujos limites são assinalados com os sinais regulamentares.
+Parque de estacionamento	Local exclusivamente destinado ao estacionamento de veículos.
+Passagem de nível	Local de intersecção ao mesmo nível de uma via pública ou equiparada com linhas ou ramais ferroviários.
+Passeio	Superfície da via pública, em geral sobrelevada, especialmente destinada ao trânsito de peões e que ladeia a faixa de rodagem.
+Pista especial	Via pública ou via de trânsito especialmente destinada, de acordo com sinalização, ao trânsito de peões, de animais ou de certa espécie de veículos.
+Rotunda	Praça formada por cruzamento ou entroncamento onde o trânsito se processa em sentido giratório e sinalizada como tal.
+Utilizadores vulneráveis	Peões e velocípedes, em particular, crianças, idosos, grávidas, pessoas com mobilidade reduzida ou pessoas com deficiência.
+Via de abrandamento	Via de trânsito resultante do alargamento da faixa de rodagem e destinada a permitir que os veículos que vão sair de uma via pública diminuam a velocidade já fora da corrente de trânsito principal.
+Via de aceleração	Via de trânsito resultante do alargamento da faixa de rodagem e destinada a permitir que os veículos que entram numa via pública adquiram a velocidade conveniente para se incorporarem na corrente de trânsito principal.
+Via de sentido reversível	Via de trânsito afeta alternadamente, através de sinalização, a um ou outro dos sentidos de trânsito.
+Via de trânsito	Zona longitudinal da faixa de rodagem destinada à circulação de uma única fila de veículos.
+Via equiparada a via pública	Via de comunicação terrestre do domínio privado aberta ao trânsito público.
+Via pública	Via de comunicação terrestre afeta ao trânsito público.
+Via reservada a automóveis e motociclos	Via pública onde vigoram as normas que disciplinam o trânsito em autoestrada e sinalizada como tal.
+Zona de estacionamento	Local da via pública especialmente destinado, por construção ou sinalização, ao estacionamento de veículos.
+Zona de coexistência	Zona da via pública especialmente concebida para utilização partilhada por peões e veículos, onde vigoram regras especiais de trânsito e sinalizada como tal.
+Regras Gerais
+Visibilidade reduzida ou insuficiente	A visibilidade é reduzida ou insuficiente sempre que o condutor não possa avistar a faixa de rodagem em toda a sua largura numa extensão de, pelo menos, 50 m.
+Classificação da Rede Rodoviária
+O Plano Rodoviário Nacional define a rede rodoviária nacional do continente, que desempenha funções de interesse nacional ou internacional. A rede rodoviária nacional é constituída pela rede nacional fundamental e pela rede nacional complementar.
+
+Itinerários principais (IP)	Os itinerários principais são as vias de comunicação de maior interesse nacional, servem de base de apoio a toda a rede rodoviária nacional, e asseguram a ligação entre os centros urbanos com influência supra distrital e destes com os principais portos, aeroportos e fronteiras.
+Itinerários Complementares (IC)	Os itinerários complementares são as vias que, no contexto do plano rodoviário nacional, estabelecem as ligações de maior interesse regional, bem como as principais vias envolventes e de acesso nas áreas metropolitanas de Lisboa e Porto.
+Classificação de Veículos
+As classes e tipos de veículos estão disponíveis nos artigos 105, 106, 107, 108 e 109 do código da estrada:
+
+Automóvel	Veículo com motor de propulsão, dotado de pelo menos quatro rodas, com tara superior a 550 kg, cuja velocidade máxima é, por construção, superior a 25 km/h, e que se destina, pela sua função, a transitar na via pública, sem sujeição a carris.
+Ligeiros	Veículos com peso bruto igual ou inferior a 3500 kg e com lotação não superior a nove lugares, incluindo o do condutor.
+Pesados	Veículos com peso bruto superior a 3500 kg ou com lotação superior a nove lugares, incluindo o do condutor.
+Motociclo	Veículo dotado de duas rodas, com ou sem carro lateral, com motor de propulsão com cilindrada superior a 50 cm3, no caso de motor de combustão interna, ou que, por construção, exceda em patamar a velocidade de 45 km/h.
+Ciclomotor	
+Veículo dotado de duas ou três rodas, com uma velocidade máxima, em patamar e por construção, não superior a 45 km/h, e cujo motor:
+
+No caso de ciclomotores de duas rodas, tenha cilindrada não superior a 50 cm3, tratando-se de motor de combustão interna ou cuja potência máxima não exceda 4 kW, tratando-se de motor elétrico.
+
+No caso de ciclomotores de três rodas, tenha cilindrada não superior a 50 cm3, tratando-se de motor de ignição comandada ou cuja potência máxima não exceda 4 kW, no caso de outros motores de combustão interna ou de motores elétricos.
+
+Triciclo	Veículo dotado de três rodas dispostas simetricamente, com motor de propulsão com cilindrada superior a 50 cm3, no caso de motor de combustão interna, ou que, por construção, exceda em patamar a velocidade de 45 km/h
+Quadriciclo Ligeiro	Veículo dotado de quatro rodas com velocidade máxima, em patamar e por construção, não superior a 45 km/h, cuja massa sem carga não exceda 350 kg, excluída a massa das baterias no veículo elétrico, e com motor de cilindrada não superior a 50 cm3, no caso de motor de ignição comandada, ou cuja potência máxima não seja superior a 4 kW, no caso de outros motores de combustão interna ou de motor elétrico.
+Quadriciclo Pesado	Veículo dotado de quatro rodas com motor de potência não superior a 15 kW e cuja massa sem carga, excluída a massa das baterias no caso de veículos elétricos, não exceda 400 kg ou 550 kg, consoante se destine, respetivamente, ao transporte de passageiros ou de mercadorias.
+Trator Agrícola ou Florestal	Veículo com motor de propulsão, de dois ou mais eixos, cuja função principal reside na potência de tração, especialmente concebido para ser utilizado com reboques, alfaias ou outras máquinas destinadas a utilização agrícola ou florestal.
+Máquina Agrícola ou Florestal	Veículo com motor de propulsão, de dois ou mais eixos, destinado exclusivamente à execução de trabalhos agrícolas ou florestais, que só excecionalmente transita na via pública, sendo considerado pesado ou ligeiro consoante o seu peso bruto exceda ou não 3500 kg.
+Motocultivador	
+Veículo com motor de propulsão, de um só eixo, destinado à execução de trabalhos agrícolas ligeiros, que pode ser dirigido por um condutor a pé ou em reboque ou retrotrem atrelado ao referido veículo.
+
+O motocultivador ligado a reboque ou retrotrem é equiparado, para efeitos de circulação, a trator agrícola.
+
+Tratocarro	Veículo com motor de propulsão, de dois ou mais eixos, provido de uma caixa de carga destinada ao transporte de produtos agrícolas ou florestais e cujo peso bruto não ultrapassa 3500 kg, sendo equiparado, para efeitos de circulação, a trator agrícola.
+Veículo sobre carris	Veículo que independentemente do sistema de propulsão, se desloca sobre carris.
+Máquina industrial	Veículo com motor de propulsão, de dois ou mais eixos, destinado à execução de obras ou trabalhos industriais e que só eventualmente transita na via pública, sendo pesado ou ligeiro consoante o seu peso bruto exceda ou não 3500 kg.
+Pesos, Dimensões e Reboques
+Para completar a lista anterior o artigo 110 do código da estrada define os reboques e o Decreto-Lei n.º 133/2010 define o "Regulamento que fixa os pesos e as dimensões máximos autorizados para os veículos em circulação" que tem as seguintes definições:
+
+Veículo a motor	Qualquer veículo provido de um motor de propulsão que circule na via pública pelos seus próprios meios.
+Veículo de transporte condicionado	Qualquer veículo cujas superstruturas, fixas ou móveis, estejam especialmente equipadas para o transporte de mercadorias a uma temperatura controlada e cujas paredes laterais, incluindo o isolamento, tenham, pelo menos, 45 mm de espessura.
+Automóvel pesado de passageiros articulado	Qualquer automóvel pesado de passageiros constituído por dois segmentos rígidos permanentemente ligados por uma secção articulada que permite a comunicação entre ambos e a livre circulação dos passageiros, sendo que a junção e a disjunção das duas partes apenas podem ser realizadas numa oficina.
+Tara	O peso do veículo em ordem de marcha, sem passageiros nem carga, com o líquido de arrefecimento, lubrificantes, 90 % do total de combustível, 100 % dos outros fluidos, excepto águas residuais, ferramentas e roda de reserva, quando esta seja obrigatória e, com excepção dos ciclomotores, motociclos, triciclos e quadriciclos, o condutor (75 kg), devendo ainda ser considerado, no caso dos veículos pesados de passageiros, o peso do guia (75 kg), se estiver previsto um lugar específico para o mesmo.
+Peso bruto / Massa máxima	O conjunto da tara e da carga que o veículo pode transportar.
+Peso total	Peso total do veículo no momento, é a tara mais a carga que o veículo transporta atualmente.
+Peso bruto rebocável	A capacidade máxima de carga rebocável dos veículos a motor e tractores agrícolas.
+Lotação	O número de passageiros que o veículo pode transportar, incluindo o condutor.
+Dolly	Dispositivo equipado com um sistema mecânico de engate destinado a converter um semi-reboque num reboque.
+Reboque	Veículo destinado a transitar atrelado a um veículo a motor.
+Semirreboque	Reboque cuja parte da frente assenta sobre o veículo a motor, distribuindo o peso sobre este.
+Outros
+Veículo Prioritário	Veículo que assinala devidamente a sua marcha urgente de socorro.

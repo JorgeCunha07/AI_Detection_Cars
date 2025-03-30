@@ -1,0 +1,90 @@
+{
+    "metadata": {
+        "file_name": "Contraordenacoes.txt",
+        "description": "Resumo detalhado das contraordenações rodoviárias segundo o Código da Estrada Português.",
+        "source": "Código da Estrada / ANSR",
+        "processed_date": "2025-03-28",
+        "version": "v1.0"
+    },
+    "conteudo": {
+        "definicao_contraordenacao": "Infrações ao Código da Estrada ou legislação complementar classificadas em leves, graves e muito graves.",
+        "tipos_contraordenacoes": {
+            "leves": "Sanção apenas com coima.",
+            "graves_e_muito_graves": "Sanção com coima e sanção acessória de inibição de conduzir ou apreensão do veículo."
+        },
+        "resumo_contraordenacoes": {
+            "velocidade": {
+                "ligeiros_motociclos": {
+                    "localidades": {
+                        "grave": "20-40 km/h acima",
+                        "muito_grave": "mais de 40 km/h acima"
+                    },
+                    "fora_localidades": {
+                        "grave": "30-60 km/h acima",
+                        "muito_grave": "mais de 60 km/h acima"
+                    }
+                },
+                "outros_veiculos": {
+                    "localidades": {
+                        "grave": "10-20 km/h acima",
+                        "muito_grave": "mais de 20 km/h acima"
+                    },
+                    "fora_localidades": {
+                        "grave": "20-40 km/h acima",
+                        "muito_grave": "mais de 40 km/h acima"
+                    }
+                }
+            },
+            "alcool": {
+                "regra_geral": {
+                    "grave": "0,5-0,8 g/l",
+                    "muito_grave": "acima de 0,8 g/l"
+                },
+                "condicoes_especiais": {
+                    "grave": "0,2-0,5 g/l",
+                    "muito_grave": "acima de 0,5 g/l"
+                }
+            },
+            "uso_aparelhos_auscultadores": "contraordenação",
+            "seguro_responsabilidade_civil": "contraordenação",
+            "paragem_estacionamento_inadequado": "contraordenação grave ou muito grave dependendo do local",
+            "desrespeito_sinais_luzes": "contraordenação grave",
+            "abandono_local_acidente": "contraordenação muito grave",
+            "conducao_categoria_inadequada": "contraordenação muito grave"
+        },
+        "sancoes": {
+            "coima": "Valor monetário variável conforme a infração.",
+            "sancao_acessoria": {
+                "inibicao_conduzir": {
+                    "grave": "1 mês a 1 ano",
+                    "muito_grave": "2 meses a 2 anos"
+                },
+                "apreensao_veiculo": "Aplicável a pessoas coletivas ou sem carta de condução."
+            }
+        },
+        "sistema_pontos": {
+            "inicio": "12 pontos iniciais; mínimo 0, máximo 16.",
+            "penalizacoes": {
+                "crime_rodoviario": 6,
+                "muito_grave_alcool_psicotropicos": 5,
+                "muito_grave_excesso_velocidade_coexistencia": 5,
+                "muito_grave_outros": 4,
+                "grave_alcool": 3,
+                "grave_excesso_velocidade_coexistencia": 3,
+                "grave_ultrapassagem_passagem_peoes": 3,
+                "grave_restantes": 2
+            },
+            "maximo_pontos_dia": "6 pontos/dia, exceto álcool e psicotrópicos."
+        },
+        "consequencias_perda_pontos": {
+            "5_a_4": "Ação de formação obrigatória",
+            "3_a_1": "Prova teórica obrigatória",
+            "0": "Cassação título condução"
+        },
+        "recuperacao_pontos": {
+            "sem_infracoes": "3 anos sem infrações recuperam 3 pontos até máximo 15.",
+            "acao_formacao_voluntaria": "ganha mais 1 ponto até 16."
+        },
+        "consulta_pontos": "Consulta disponível no Portal das Contraordenações Rodoviárias (ANSR)."
+    }
+}

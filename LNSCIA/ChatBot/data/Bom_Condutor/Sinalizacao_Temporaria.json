@@ -1,0 +1,139 @@
+{
+    "metadata": {
+        "file_name": "Sinalizacao_Temporaria.txt",
+        "description": "Descrição detalhada da sinalização temporária segundo o Código da Estrada Português.",
+        "source": "Código da Estrada / ANSR",
+        "processed_date": "2025-03-28",
+        "version": "v1.0"
+    },
+    "conteudo": {
+        "descricao_geral": "Sinalização destinada a prevenir utentes sobre obras ou obstáculos ocasionais e transmitir obrigações temporárias.",
+        "sinais": [
+            {
+                "codigo": [
+                    "ST1A",
+                    "ST1B",
+                    "ST1C",
+                    "ST1D"
+                ],
+                "descricao": "Número e sentido de vias de trânsito"
+            },
+            {
+                "codigo": "ST2",
+                "descricao": "Supressão de via de trânsito"
+            },
+            {
+                "codigo": "ST3",
+                "descricao": "Supressão de berma"
+            },
+            {
+                "codigo": "ST4",
+                "descricao": "Desvio de via de trânsito"
+            },
+            {
+                "codigo": "ST5",
+                "descricao": "Desvio para a faixa de rodagem contrária"
+            },
+            {
+                "codigo": "ST6",
+                "descricao": "Estreitamento de via de trânsito"
+            },
+            {
+                "codigo": "ST7",
+                "descricao": "Pré-sinalização de desvio de itinerário",
+                "detalhe": "Utilizado sempre que houver desvio obrigatório devido ao encerramento da via."
+            },
+            {
+                "codigo": [
+                    "ST8A",
+                    "ST8B"
+                ],
+                "descricao": "Desvio de itinerário",
+                "detalhe": "Indicação de percurso alternativo para evitar via fechada."
+            },
+            {
+                "codigo": "ST9",
+                "descricao": "Fim de desvio"
+            },
+            {
+                "codigo": "ST10",
+                "descricao": "Circulação alternada",
+                "detalhe": "Trânsito alternado regulado por sinalização luminosa ou operadores com raquetas."
+            },
+            {
+                "codigo": "ST11",
+                "descricao": "Trânsito sujeito a demora"
+            },
+            {
+                "codigo": "ST12",
+                "descricao": "Telefone de emergência"
+            },
+            {
+                "codigo": "ST13",
+                "descricao": "Acidente"
+            },
+            {
+                "codigo": "ST14",
+                "descricao": "Fim de obras"
+            }
+        ],
+        "equipamentos_temporarios": [
+            {
+                "codigo": "ET1",
+                "descricao": "Raquetas de sinalização",
+                "detalhe": "Utilizadas na regulamentação manual do trânsito (verde/proibição)."
+            },
+            {
+                "codigo": "ET2",
+                "descricao": "Baias direcionais"
+            },
+            {
+                "codigo": "ET3",
+                "descricao": "Baia de posição"
+            },
+            {
+                "codigo": "ET4",
+                "descricao": "Baliza de alinhamento"
+            },
+            {
+                "codigo": "ET5",
+                "descricao": "Balizas de posição"
+            },
+            {
+                "codigo": "ET6",
+                "descricao": "Cones"
+            },
+            {
+                "codigo": "ET7",
+                "descricao": "Pórticos",
+                "detalhe": "Pré-sinalização altura livre limitada."
+            },
+            {
+                "codigo": [
+                    "ET8",
+                    "ET9"
+                ],
+                "descricao": "Conjuntos de lanternas sequenciais"
+            },
+            {
+                "codigo": "ET10",
+                "descricao": "Perfil móvel, de plástico ou betão",
+                "detalhe": "Sinalização limites dos trabalhos."
+            },
+            {
+                "codigo": "ET11",
+                "descricao": "Robot"
+            },
+            {
+                "codigo": "ET12",
+                "descricao": "Atrelado de balizamento",
+                "detalhe": "Sinalização indicando mudança brusca de direção."
+            },
+            {
+                "codigo": "ET13",
+                "descricao": "Seta luminosa",
+                "detalhe": "Sinalização indicando mudança brusca de direção."
+            }
+        ]
+    }
+}

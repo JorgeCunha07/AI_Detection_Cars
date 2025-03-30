@@ -1,0 +1,34 @@
+{
+    "metadata": {
+        "file_name": "Sinais_Direcao.txt",
+        "description": "Descrição dos sinais de direção segundo o Código da Estrada Português.",
+        "source": "Código da Estrada / ANSR",
+        "processed_date": "2025-03-28",
+        "version": "v1.0"
+    },
+    "conteudo": {
+        "descricao_geral": "Sinais que indicam destinos de saída associados ou não à identificação da estrada.",
+        "sinais": [
+            {
+                "codigo": "J1",
+                "descricao": "Direção da via de saída",
+                "significado": "Indicação da direção de uma via de saída e do destino ao qual dá acesso."
+            },
+            {
+                "codigo": "J2",
+                "descricao": "Direção da via de acesso",
+                "significado": "Indicação da direção de uma via de acesso a local ou serviço de interesse, contendo símbolo ou descrição do serviço."
+            },
+            {
+                "codigo": "J3A",
+                "descricao": "Indicação de âmbito urbano",
+                "significado": "Indicação da direção de destinos interiores ou exteriores ao aglomerado urbano."
+            },
+            {
+                "codigo": "J3BCD",
+                "descricao": "Indicação de âmbito urbano",
+                "significado": "Indicação da direção de destinos interiores ou exteriores ao aglomerado urbano."
+            }
+        ]
+    }
+}

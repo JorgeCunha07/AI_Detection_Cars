@@ -1,0 +1,30 @@
+{
+    "metadata": {
+        "file_name": "Outras_Informacoes.txt",
+        "description": "Informações adicionais sobre trânsito e segurança rodoviária segundo o Código da Estrada Português.",
+        "source": "Código da Estrada / ANSR",
+        "processed_date": "2025-03-28",
+        "version": "v1.0"
+    },
+    "conteudo": {
+        "ponte_25_abril_viaduto_norte": {
+            "veiculos_autorizados_vias_direita": [
+                "Veículos pesados",
+                "Motociclos",
+                "Ligeiros com reboque"
+            ],
+            "veiculos_mercadorias_perigosas_horario": "Das 2h às 5h em dias úteis, domingos e feriados",
+            "ensino_conducao": "Proibida"
+        },
+        "triangulo_seguranca": {
+            "distancia_minima_colocacao": "30 metros do veículo",
+            "distancia_minima_visibilidade": "100 metros",
+            "situacao_curva": "Colocar antes da curva para garantir visibilidade a 100 metros",
+            "proibicao_colocacao": "Dentro do veículo"
+        },
+        "relevo_minimo_pneus": {
+            "ligeiros": "1,6 mm",
+            "pesados_motociclos": "1 mm"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "metadata": {
+        "file_name": "Sinais_Confirmacao.txt",
+        "description": "Descrição do sinal de confirmação conforme o Código da Estrada Português.",
+        "source": "Código da Estrada / ANSR",
+        "processed_date": "2025-03-28",
+        "version": "v1.0"
+    },
+    "conteudo": {
+        "sinal_confirmacao": {
+            "codigo": "L1",
+            "descricao": "Sinal de confirmação com identificação da estrada.",
+            "funcao": "Indica destinos e respetivas distâncias servidos direta ou indiretamente pelo itinerário.",
+            "organizacao_informacao": "Destinos inscritos de cima para baixo por ordem crescente das distâncias."
+        }
+    }
+}

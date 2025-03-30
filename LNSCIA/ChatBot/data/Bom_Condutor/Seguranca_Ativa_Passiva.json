@@ -1,0 +1,32 @@
+{
+    "metadata": {
+        "file_name": "Seguranca_Ativa_Passiva.txt",
+        "description": "Informações sobre segurança ativa e passiva em veículos, conforme o Código da Estrada Português.",
+        "source": "Código da Estrada / ANSR",
+        "processed_date": "2025-03-28",
+        "version": "v1.0"
+    },
+    "conteudo": {
+        "seguranca_ativa": {
+            "descricao": "Componentes e sistemas com objetivo de evitar acidentes.",
+            "exemplos": [
+                "Pneus",
+                "Travões",
+                "Sistema ABS",
+                "Suspensão",
+                "Direção",
+                "Espelhos",
+                "Pala Anti-encadeamento"
+            ]
+        },
+        "seguranca_passiva": {
+            "descricao": "Componentes e sistemas com objetivo de minimizar danos em caso de acidente.",
+            "exemplos": [
+                "Cinto de Segurança",
+                "Airbag",
+                "Capacete",
+                "Encosto de Cabeça"
+            ]
+        }
+    }
+}
