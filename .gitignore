@@ -67,3 +67,9 @@ LNSCIA/Word2Vec/old/cc.pt.300.vec.gz
 LNSCIA/ChatBot/src/meu_modelo_ajustado/model.safetensors
 LNSCIA/ChatBot/scr3/trained_model/model.safetensors
 LNSCIA/ChatBot/scr3/results/checkpoint-100/model.safetensors
+LNSCIA/ChatBot/scr/results/checkpoint-100/model.safetensors
+LNSCIA/ChatBot/scr/results/checkpoint-145/model.safetensors
+LNSCIA/ChatBot/scr/trained_model/model.safetensors
+LNSCIA/ChatBot/scrV2/results/checkpoint-100/model.safetensors
+LNSCIA/ChatBot/scrV2/results/checkpoint-145/model.safetensors
+LNSCIA/ChatBot/scrV2/trained_model/model.safetensors

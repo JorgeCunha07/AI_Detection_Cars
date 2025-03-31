@@ -1,0 +1,190 @@
+Os sinais de informação indicam a existência de locais com interesse e dão outras indicações úteis.
+
+H1A - Estacionamento autorizado	H1A - Estacionamento autorizado
+Indicação do local em que o estacionamento é autorizado.
+
+H1B - Estacionamento autorizado	H1B - Estacionamento autorizado
+Indicação do local, em estrutura coberta, em que o estacionamento é autorizado.
+
+H2 - Hospital	H2 - Hospital
+Indicação da existência de estabelecimento hospitalar e da conveniência de adoptar as precauções correspondentes, nomeadamente a de evitar, tanto quanto possível, fazer ruído.
+
+H3 - Trânsito de sentido único	H3 - Trânsito de sentido único
+Indicação de via em que o trânsito se faz apenas num sentido ou indicação de que terminou o troço de via em que o trânsito se fazia nos dois sentidos, anunciado pelo sinal A25.
+
+H4 - Via pública sem saída	H4 - Via pública sem saída
+Indicação de que a via pública não tem saída para veículos.
+
+H5 - Correntes de neve recomendadas	H5 - Correntes de neve recomendadas
+Indicação de que é aconselhado o uso de correntes de neve em duas rodas motoras.
+
+H6 - Velocidade recomendada	H6 - Velocidade recomendada
+Indicação da velocidade máxima a que o condutor é aconselhado a transitar.
+
+H7 - Passagem para peões	H7 - Passagem para peões
+Indicação da localização de uma passagem para peões.
+
+H8A - Passagem desnivelada para peões	H8A - Passagem desnivelada para peões
+Indicação da localização de uma passagem desnivelada destinada ao trânsito de peões, em rampa.
+
+H8B - Passagem desnivelada para peões	H8B - Passagem desnivelada para peões
+Indicação da localização de uma passagem desnivelada destinada ao trânsito de peões, em escada.
+
+H9 - Hospital com urgência médica	H9 - Hospital com urgência médica
+Indicação da existência de um hospital com urgência médica permanente.
+
+H10 - Posto de socorros	H10 - Posto de socorros
+Indicação de um posto de primeiros socorros.
+
+H11 - Oficina	H11 - Oficina
+Indicação de oficina de pequenas reparações.
+
+H12 - Telefone	H12 - Telefone
+Indicação da existência de um telefone público.
+
+H13A - Posto de abastecimento de combustível	H13A - Posto de abastecimento de combustível
+Indicação da existência de um posto de abastecimento de combustível situada à distância, em metros, indicada no sinal.
+
+H13B - Posto de abastecimento de combustível com GPL	H13B - Posto de abastecimento de combustível com GPL
+Indicação de um posto de abastecimento de combustível com gás de petróleo liquefeito, situada à distância, em metros, indicada no sinal.
+
+H13C - Posto de abastecimento de combustível com serviço a veículos eléctricos	H13C - Posto de abastecimento de combustível com serviço a veículos eléctricos
+Indicação da existência de posto de abastecimento de combustível e de um ponto de carregamento para veículos eléctricos, situados à distância, em metros, indicada no sinal.
+
+H13D - Posto de abastecimento de combustível com GPL e com serviço a veículos eléctricos	H13D - Posto de abastecimento de combustível com GPL e com serviço a veículos eléctricos
+Indicação da existência de posto de abastecimento de combustível com gás de petróleo liquefeito e de um ponto de carregamento para veículos eléctricos, situados à distância, em metros, indicada no sinal.
+
+H14A - Parque de campismo	H14A - Parque de campismo
+Indicação da existência de local em que é permitida a prática de campismo, situada à distância, em metros, indicada no sinal.
+
+H14B - Parque para reboques de campismo	H14B - Parque para reboques de campismo
+Indicação da existência de local em que é permitida a prática de campismo, com reboques a esse fim destinados, na direção da via de saída indicada pela seta.
+
+H14C - Parque misto para campismo e reboques de campismo	H14C - Parque misto para campismo e reboques de campismo
+Indicação da existência de local em que é permitida a prática de campismo com ou sem reboques a esse fim destinados.
+
+H15 - Telefone de emergência	H15 - Telefone de emergência
+Indicação da existência de um telefone de emergência, situado à distância, em metros, indicada no sinal.
+
+H16A - Pousada ou estalagem	H16A - Pousada ou estalagem
+Indicação da existência de uma pousada ou estalagem.
+
+H16B - Albergue	H16B - Albergue
+Indicação da existência de um albergue.
+
+H16C - Pousada de juventude	H16C - Pousada de juventude
+Indicação da existência de uma pousada de juventude.
+
+H16D - Turismo rural	H16D - Turismo rural
+Indicação da existência de um local onde se pratica o turismo rural.
+
+H17 - Hotel	H17 - Hotel
+Indicação da existência de um estabelecimento hoteleiro (hotel, motel, pensão, etc.).
+
+H18 - Restaurante	H18 - Restaurante
+Indicação da existência de um restaurante.
+
+H19 - Café ou bar	H19 - Café ou bar
+Indicação da existência de um café, bar ou estabelecimento similar.
+
+H20A - Paragem de veículos de transporte colectivo de passageiros	H20A - Paragem de veículos de transporte colectivo de passageiros
+Indicação do local destinado a paragem de veículos de transporte colectivo de passageiros.
+
+H20B - Paragem de veículos de transporte colectivo de passageiros que transitem sobre carris	H20B - Paragem de veículos de transporte colectivo de passageiros que transitem sobre carris
+Indicação do local destinado a paragem daqueles veículos de transporte colectivo de passageiros.
+
+H20C - Paragem de veículos afectos ao transporte de crianças	H20C - Paragem de veículos afectos ao transporte de crianças
+Indicação do local reservado a paragem de veículos afectos ao transporte de crianças.
+
+H21 - Aeroporto	H21 - Aeroporto
+Indicação da existência de um aeroporto ou aeródromo.
+
+H22 - Posto de informações	H22 - Posto de informações
+Indicação da existência de um posto de informações.
+
+H23 - Estatação de radiodifusão	H23 - Estação de radiodifusão
+Indicação de estação de radiodifusão dando informações sobre a circulação rodoviária, este sinal pode conter a indicação da estação de rádio, bem como a frequência em que emite.
+
+H24 - Auto-estrada	H24 - Auto-estrada
+Indicação de entrada numa auto-estrada, vigorando na mesma, por consequência, as regras de trânsito especialmente destinadas a esse tipo de vias.
+
+H25 - Via reservada a automóveis e motociclos	H25 - Via reservada a automóveis e motociclos
+Indicação da entrada numa via destinada ao trânsito de automóveis e motociclos.
+
+H26 - Escapatória	H26 - Escapatória
+Indicação de uma zona fora da faixa de rodagem destinada à imobilização de veículos em caso de falha do sistema de travagem, podendo estar associado a este sinal um painel adicional do modelo 1, bem como um painel de informação variável com a indicação "livre" ou "ocupada".
+
+H27 - Inversão do sentido de marcha	H27 - Inversão do sentido de marcha
+Indicação do local exacto onde é possível a realização da manobra de inversão do sentido de marcha.
+
+H28 - Limites de velocidade	H28 - Limites de velocidade
+Indicação dos limites gerais de velocidade em vigor, dentro e fora das localidades, nas auto-estradas e vias reservadas a automóveis e motociclos.
+
+H29A - Identificação de país	H29A - Identificação de país
+Local a partir do qual se inicia o território do país no sinal.
+
+H29B - Identificação de país	H29B - Identificação de país
+Local a partir do qual se inicia o território do país no sinal.
+
+H30 - Praticabilidade da via	H30 - Praticabilidade da via
+Informação da transitabilidade de via de montanha ou sujeita a inundações temporárias, o painel nº 1 indica se a via está «aberta» ou «fechada», o painel nº 3 indica, no caso de a passagem estar fechada, até onde é possível transitar, devendo, neste caso o painel nº 2 ter a indicação "aberta até ...". Em via de montanha o painel nº 2 pode ainda indicar se é obrigatório ou aconselhado o uso de correntes de neve.
+
+H31A - Número e sentido das vias de trânsito	H31A - Número e sentido das vias de trânsito
+Indicação do número e sentido das vias de trânsito.
+
+H31B - Número e sentido das vias de trânsito	H31B - Número e sentido das vias de trânsito
+Indicação do número e sentido das vias de trânsito.
+
+H31C - Número e sentido das vias de trânsito	H31C - Número e sentido das vias de trânsito
+Indicação do número e sentido das vias de trânsito.
+
+H31D - Número e sentido das vias de trânsito	H31D - Número e sentido das vias de trânsito
+Indicação do número e sentido das vias de trânsito.
+
+H32 - Supressão de via de trânsito	H32 - Supressão de via de trânsito
+Indicação de supressão de uma via de trânsito.
+
+H33 - Via verde	H33 - Via verde
+Indicação de uma via de portagem reservada aos utentes portadores do equipamento identificador.
+
+H34 - Centro de inspecções	H34 - Centro de inspecções
+Indicação da localização de um centro de inspecções periódicas obrigatórias para veículos.
+
+H35 - Túnel	H35 - Túnel
+Indicação da existência de um túnel.
+
+H36 - Fim da recomendação do uso de correntes de neve	H36 - Fim da recomendação do uso de correntes de neve
+Indicação de que terminou a recomendação do uso de correntes de neve feita pelo sinal H5.
+
+H37 - Fim da velocidade recomendada	H37 - Fim da velocidade recomendada
+Indicação que terminou a recomendação da velocidade indicada no sinal H6.
+
+H38 - Fim de auto-estrada	H38 - Fim de auto-estrada
+Indicação de que terminou a auto-estrada.
+
+H39 - Fim de via reservada a automóveis e motociclos	H39 - Fim de via reservada a automóveis e motociclos
+Indicação de que terminou a via reservada a automóveis e motociclos.
+
+H40 - Fim de estacionamento autorizado	H40 - Fim de estacionamento autorizado
+Indicação de que terminou o local em que o estacionamento era autorizado.
+
+H41 - Fim de túnel	H41 - Fim de túnel
+Indicação de que terminou o túnel.
+
+H42 - Velocidade média	H42 - Velocidade média
+Indicação de via sujeita a controlo de velocidade, através do cálculo da velocidade média.
+
+H43 - Velocidade instantânea	H43 - Velocidade instantânea
+Indicação de via sujeita a fiscalização de velocidade.
+
+H44A - Lanço com cobrança electrónica de portagem	H44A - Lanço com cobrança electrónica de portagem
+Indicação de um lanço de auto-estrada sujeito a cobrança electrónica de portagem.
+
+H44B - Lanço com cobrança electrónica de portagem	H44B - Lanço com cobrança electrónica de portagem
+Indicação de um lanço de auto-estrada sujeito a cobrança electrónica de portagem, situado à distância, em metros, indicada no sinal.
+
+H44C - Lanço com cobrança electrónica de portagem	H44C - Lanço com cobrança electrónica de portagem
+Indicação de um lanço de auto-estrada sujeito a cobrança electrónica de portagem, na direção da via de saída indicada pela seta.
+
+H45 - Fim de lanço com cobrança electrónica de portagem	H45 - Fim de lanço com cobrança electrónica de portagem
+Indicação de que terminou o lanço de auto-estrada sujeito a cobrança electrónica de portagem.

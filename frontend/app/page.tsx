@@ -71,7 +71,7 @@ export default function ImageChatPage() {
     }, 2000);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!input.trim()) return;
@@ -87,20 +87,48 @@ export default function ImageChatPage() {
     setInput("");
     setIsLoading(true);
 
-    // Simulate AI response delay
-    setTimeout(() => {
-      const randomIndex = Math.floor(
-        Math.random() * SIMULATED_RESPONSES.length
-      );
+    try {
+      // Envia o histórico das últimas mensagens para manter o contexto
+      const recentMessages = messages.slice(-5); // Mantém as últimas 5 mensagens
+      const messageHistory = recentMessages.map(msg => ({
+        role: msg.role,
+        content: msg.content
+      }));
+
+      const response = await fetch('http://localhost:5000/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          message: input,
+          history: messageHistory
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Erro ao processar mensagem');
+      }
+
+      const data = await response.json();
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
-        content: SIMULATED_RESPONSES[randomIndex],
+        content: data.response,
         role: "assistant",
       };
 
       setMessages((prev) => [...prev, aiResponse]);
+    } catch (error) {
+      console.error('Erro:', error);
+      const errorResponse: Message = {
+        id: (Date.now() + 1).toString(),
+        content: "Desculpe, ocorreu um erro ao processar sua mensagem. Tente novamente.",
+        role: "assistant",
+      };
+      setMessages((prev) => [...prev, errorResponse]);
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
 
   return (

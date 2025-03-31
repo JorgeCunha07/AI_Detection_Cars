@@ -1,0 +1,75 @@
+Características
+De seguida apresentamos tabelas com as informações gerais relativas a automóveis e motociclos.
+
+Alertamos para o facto desta informação não ser completa e exaustiva visto que existem várias informações específicas relativamente por exemplo a reboques e veículos agrícolas que não farão parte desta tabela e que para serem consultadas aconselhamos a leitura dos documentos referidos no final desta página.
+
+Luz	Número	Obrigatória	Cor	Observações
+Frente
+Presença (mínimos)	Ligeiros e Pesados	2	Sim	
+Branca
+
+Devem ser visíveis a pelo menos 150 metros;
+Motociclos	1 ou 2
+Cruzamento (médios)	Ligeiros e Pesados	2	Sim	Branca ou Amarela	O feixe de luz deve ser projetado no solo e iluminar 30 metros sem encandeamento;
+Motociclos	1 ou 2	Branca
+Estrada (máximos)	Ligeiros e Pesados	2	Sim	Branca ou Amarela	Deve emitir um feixe luminoso que atinja pelo menos 100 metros;
+Motociclos	1 ou 2	Branca
+Indicadores de mudança de direção (piscas)	Ligeiros e Pesados	2	Sim	Branca ou Laranja	Se forem colocadas na lateral a cor deve ser laranja;
+Motociclos	Âmbar
+Nevoeiro	Ligeiros e Pesados	2	Não	Branca ou Amarela	Não pode exceder os 30 metros nem causar encandeamento;
+Motociclos	1 ou 2
+Retaguarda
+Presença	Ligeiros e Pesados	2	Sim	Vermelha	
+Motociclos	1 ou 2
+Travagem	Ligeiros e Pesados	2	Sim	Vermelha ou Alaranjada	
+Motociclos	1 ou 2	Vermelha
+Chapa de matrícula	Ligeiros e Pesados	1 ou +	Sim	Branca	Deve permitir a fácil leitura da matrícula a pelo menos 20 metros;
+Motociclos
+Indicadores de mudança de direção (piscas)	Ligeiros e Pesados	2	Sim	Vermelha ou Laranja	Se forem colocadas na lateral a cor deve ser laranja;
+Motociclos	Âmbar
+Marcha atrás	Ligeiros e Pesados	1 ou 2	Não	Branca	Devem ter alcance até 10 metros sem causar encandeamento;
+Motociclos
+Nevoeiro	Ligeiros e Pesados	1 ou 2	Sim	Vermelha	Se for apenas uma deve ser colocada no lado esquerdo;
+Motociclos	Não
+Utilização das Luzes
+Luzes de Cruzamento (médios)
+As luzes de cruzamento (médios) têm de ser obrigatoriamente utilizadas:
+
+Em túneis sinalizados
+Em vias de sentido reversível
+Do anoitecer (crepúsculo) ao amanhecer (aurora)
+Em condições atmosféricas ou ambientais que o obriguem
+Os condutores dos motociclos, triciclos, quadriciclos e ciclomotores devem transitar com as luzes de cruzamento mesmo durante o dia, a mesma regra se aplica aos condutores de veículos de mercadorias perigosas e transporte coletivo de crianças.
+
+Luzes de Estrada (máximos)
+As luzes de estrada podem ser utilizadas quando não se encontram veículos a menos de 100 metros e caso a sua utilização não provoque encandeamento.
+
+Luzes de Presença (mínimos)
+Devem ser utilizadas as luzes de presença enquanto aguardam a abertura de passagem de nível e ainda durante a paragem ou o estacionamento, em locais cuja iluminação não permita o fácil reconhecimento do veículo à distância de 100 metros.
+
+Luzes de Nevoeiro
+As luzes de nevoeiro são utilizadas sempre que as condições meteorológicas ou ambientais o imponham, nos veículos que com elas devam estar equipados. É proibido o uso das luzes de nevoeiro sempre que as condições meteorológicas ou ambientais o não justifiquem.
+
+Avaria de Luzes
+Sempre que seja obrigatória a utilização de dispositivos de iluminação e sinalização luminosa, é proibido o trânsito de veículos com avaria das luzes médias e dos dispositivos de sinalização luminosa.
+
+Podem transitar com luzes avariadas os veículos que tenham pelo menos:
+
+Dois médios ou um médio do lado esquerdo e dois mínimos para a frente, um indicador de presença no lado esquerdo e uma das luzes de travagem, quando obrigatória à retaguarda.
+Luzes avisadoras de perigo, caso em que apenas podem transitar pelo tempo estritamente necessário até um local de paragem ou estacionamento.
+Se as luzes se avariarem na auto-estrada ou em via reservada a automóveis e motociclos, o veículo tem de ser imediatamente imobilizado fora da faixa de rodagem, salvo se disposer de dois médios, ou um médio do lado esquerdo e dois mínimos para a frente, um indicador de presença no lado esquerdo e uma das luzes de travagem, quando obrigatória, à retaguarda, caso em que a circulação é permitida até à área de serviço ou saída mais próxima.
+
+Luzes
+Termo	Definição
+Luz de estrada (máximos)	A luz que serve para iluminar a estrada a uma grande distância para a frente do veículo
+Luz de cruzamento (médios)	A luz que serve para iluminar a estrada para a frente do veículo, sem encandear nem incomodar indevidamente os condutores que venham em sentido contrário ou os outros utentes da estrada
+Luz indicadora de mudança de direcção	A luz que serve para indicar aos outros utentes da estrada que o condutor tem a intenção de mudar de direcção para a direita ou para a esquerda
+Luz de travagem	A luz que serve para indicar aos outros utentes da estrada, que se encontram atrás do veículo, que o seu condutor está a accionar o travão de serviço
+Luz de presença da frente (mínimo)	A luz que serve para indicar a presença e a largura do veículo visto da frente
+Luz de presença da retaguarda	A luz que serve para indicar a presença e a largura do veículo visto da retaguarda
+Luz de nevoeiro da frente	A luz que serve para melhorar a iluminação da estrada no caso de nevoeiro, queda de neve, tempestade ou nuvem de pó
+Luz de nevoeiro da retaguarda	A luz que serve para tornar mais visível o veículo visto da retaguarda, em caso de nevoeiro intenso
+Luz de marcha-atrás	A luz que serve para iluminar a estrada para a retaguarda do veículo e para avisar os outros utentes da estrada que o veículo faz ou vai fazer marcha-atrás
+Sinal de perigo	O funcionamento simultâneo de todas as luzes indicadoras de mudança de direcção, destinado a assinalar um perigo especial que o veículo apresente momentaneamente para os outros utentes da estrada
+Dispositivo de iluminação da chapa de matrícula da retaguarda	O dispositivo que serve para assegurar a iluminação do espaço destinado à chapa de matrícula da retaguarda, podendo ser composto de vários elementos ópticos
+Reflector	Um dispositivo que serve para indicar a presença de um veículo por reflecção da luz proveniente de uma fonte luminosa não ligada a esse veículo, estando o observador colocado perto da referida fonte luminosa; para efeitos do disposto no presente capítulo, as chapas de matrícula retro-reflectoras não são consideradas como reflectores

@@ -1,0 +1,26 @@
+{
+    "metadata": {
+        "file_name": "Sinais_Sonoros.txt",
+        "description": "Regras de utilização dos sinais sonoros conforme o Código da Estrada Português.",
+        "source": "Código da Estrada / ANSR",
+        "processed_date": "2025-03-28",
+        "version": "v1.0"
+    },
+    "conteudo": {
+        "regras_gerais": {
+            "utilizacao": "Breve, preferencialmente substituídos por sinais luminosos (comutação médios e máximos sem encandeamento)."
+        },
+        "dentro_localidades": {
+            "dia": "Permitidos apenas em caso de perigo iminente.",
+            "noite": "Proibidos, substituição obrigatória por sinais luminosos."
+        },
+        "fora_localidades": {
+            "dia_e_noite": "Permitidos; recomendada substituição por sinais luminosos sempre que possível.",
+            "casos_especificos": [
+                "Perigo iminente",
+                "Assinalar presença em locais com visibilidade insuficiente (curvas e lombas)",
+                "Alertar intenção de ultrapassagem ao condutor da frente"
+            ]
+        }
+    }
+}

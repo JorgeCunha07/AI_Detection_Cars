@@ -1,0 +1,30 @@
+{
+    "metadata": {
+        "file_name": "Sinais_Localidades.txt",
+        "description": "Descrição dos sinais que indicam início e fim de localidades segundo o Código da Estrada Português.",
+        "source": "Código da Estrada / ANSR",
+        "processed_date": "2025-03-28",
+        "version": "v1.0"
+    },
+    "conteudo": {
+        "descricao_geral": "Sinais destinados a identificar e delimitar início e fim das localidades, ativando regras específicas para o trânsito dentro e fora das mesmas.",
+        "sinais": [
+            {
+                "codigo": [
+                    "N1A",
+                    "N1B"
+                ],
+                "descricao": "Início de localidade",
+                "significado": "Indicação do ponto onde começa a localidade identificada."
+            },
+            {
+                "codigo": [
+                    "N2A",
+                    "N2B"
+                ],
+                "descricao": "Fim de localidade",
+                "significado": "Indicação do ponto onde termina a localidade identificada."
+            }
+        ]
+    }
+}

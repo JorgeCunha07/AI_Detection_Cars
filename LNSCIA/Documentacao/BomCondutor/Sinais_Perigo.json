@@ -1,0 +1,172 @@
+{
+    "metadata": {
+        "file_name": "Sinais_Perigo.txt",
+        "description": "Descrição detalhada dos sinais de perigo segundo o Código da Estrada Português.",
+        "source": "Código da Estrada / ANSR",
+        "processed_date": "2025-03-28",
+        "version": "v1.0"
+    },
+    "conteudo": {
+        "descricao_geral": "Sinais que indicam a existência ou possibilidade de condições perigosas que exigem prudência.",
+        "distancia_colocacao": {
+            "minima": "150m",
+            "maxima": "300m",
+            "excecao": "Painel adicional indicador da distância se condições locais exigirem."
+        },
+        "sinais": [
+            {
+                "codigo": [
+                    "A1A",
+                    "A1B",
+                    "A1C",
+                    "A1D"
+                ],
+                "descricao": "Curvas perigosas (direita, esquerda, sucessão)"
+            },
+            {
+                "codigo": [
+                    "A2A",
+                    "A2B",
+                    "A2C"
+                ],
+                "descricao": "Lombas ou depressões na via"
+            },
+            {
+                "codigo": [
+                    "A3A",
+                    "A3B"
+                ],
+                "descricao": "Declives acentuados (descida ou subida)"
+            },
+            {
+                "codigo": [
+                    "A4A",
+                    "A4B",
+                    "A4C"
+                ],
+                "descricao": "Passagem estreita"
+            },
+            {
+                "codigo": "A5",
+                "descricao": "Pavimento escorregadio"
+            },
+            {
+                "codigo": "A6",
+                "descricao": "Projeção de gravilha"
+            },
+            {
+                "codigo": [
+                    "A7A",
+                    "A7B"
+                ],
+                "descricao": "Bermas baixas (direita, esquerda)"
+            },
+            {
+                "codigo": "A8",
+                "descricao": "Saída em cais ou precipício"
+            },
+            {
+                "codigo": "A9",
+                "descricao": "Queda de pedras"
+            },
+            {
+                "codigo": "A10",
+                "descricao": "Ponte móvel"
+            },
+            {
+                "codigo": "A11",
+                "descricao": "Neve ou gelo"
+            },
+            {
+                "codigo": "A12",
+                "descricao": "Vento lateral"
+            },
+            {
+                "codigo": "A13",
+                "descricao": "Visibilidade insuficiente"
+            },
+            {
+                "codigo": [
+                    "A14",
+                    "A15"
+                ],
+                "descricao": "Presença frequente de crianças ou idosos"
+            },
+            {
+                "codigo": [
+                    "A16A",
+                    "A16B"
+                ],
+                "descricao": "Passagem ou travessia de peões"
+            },
+            {
+                "codigo": "A17",
+                "descricao": "Saída de ciclistas"
+            },
+            {
+                "codigo": "A18",
+                "descricao": "Cavaleiros"
+            },
+            {
+                "codigo": [
+                    "A19A",
+                    "A19B"
+                ],
+                "descricao": "Animais domésticos ou selvagens"
+            },
+            {
+                "codigo": "A20",
+                "descricao": "Túnel"
+            },
+            {
+                "codigo": "A21",
+                "descricao": "Pista de aviação"
+            },
+            {
+                "codigo": "A22",
+                "descricao": "Sinalização luminosa"
+            },
+            {
+                "codigo": "A23",
+                "descricao": "Trabalhos na via"
+            },
+            {
+                "codigo": "A24",
+                "descricao": "Cruzamento ou entroncamento"
+            },
+            {
+                "codigo": "A25",
+                "descricao": "Trânsito nos dois sentidos"
+            },
+            {
+                "codigo": [
+                    "A26",
+                    "A27"
+                ],
+                "descricao": "Passagem de nível com ou sem guarda"
+            },
+            {
+                "codigo": "A28",
+                "descricao": "Interseção com veículos sobre carris"
+            },
+            {
+                "codigo": "A29",
+                "descricao": "Outros perigos"
+            },
+            {
+                "codigo": [
+                    "A30",
+                    "A31"
+                ],
+                "descricao": "Congestionamento ou obstrução da via"
+            },
+            {
+                "codigo": [
+                    "A32A",
+                    "A32B"
+                ],
+                "descricao": "Local de passagem de nível sem guarda"
+            }
+        ]
+    }
+}

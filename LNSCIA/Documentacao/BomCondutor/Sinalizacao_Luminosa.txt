@@ -1,0 +1,43 @@
+A sinalização luminosa destinada a regular o trânsito de veículos é constituída por um sistema de três luzes circulares, não intermitentes, com as cores vermelha, amarela e verde.
+
+Luz Vermelha Luz Vermelha Seta	Luz Vermelha
+Significa passagem proibida e obriga todos os condutores a parar antes de atingir a zona regulada pelo sinal.
+
+Este sinal pode também apresentar-se com uma seta negra sobre um fundo circular vermelho.
+
+Luz Amarela Luz Amarela Seta	Luz Amarela
+Indica a transição da luz verde para a vermelha. Proíbe a entrada na zona regulada pelo sinal, salvo se os condutores se encontrarem já muito perto daquela zona quando a luz se acender e não puderem parar em condições de segurança.
+
+Este sinal pode também apresentar-se com uma seta negra sobre um fundo circular amarelo.
+
+Luz Verde Luz Verde Seta	Luz Verde
+Significa passagem autorizada e permite a entrada na zona regulada pelo sinal, salvo se for previsível que, tendo em conta a intensidade do trânsito, os condutores fiquem nela imobilizados, perturbando a circulação transversal.
+
+Este sinal pode também apresentar-se com uma seta verde sobre um fundo circular negro.
+
+Luzes verdes suplementares	Luzes Verdes Suplementares
+O sistema principal de luzes pode ser completado com uma ou mais luzes verdes suplementares apresentando a forma de setas verdes sobre fundo circular negro. Neste caso, independentemente da indicação dada pelas luzes do sistema principal, os condutores podem prosseguir a marcha, devendo fazê-lo no sentido ou sentidos indicados pela seta suplementar de luz verde.
+
+As luzes suplementares devem situar-se junto da luz verde do sistema principal de luzes e ao mesmo nível que esta.
+
+Luzes Intermitentes	Luzes Intermitentes
+O sinal constituído por uma luz circular amarela intermitente, seta negra sobre fundo amarelo ou duas luzes amarelas acendendo alternadamente autoriza os condutores a passar, desde que o façam com especial prudência.
+
+Caso o sinal seja constituído por uma luz circular vermelha intermitente ou duas orientadas no mesmo sentido e acendendo alternadamente significa para os condutores obrigação de parar.
+
+O sinal constituído por uma luz circular amarela intermitente com uma silhueta de peão a negro adverte os condutores para a existência de uma passagem de peões cujo sinal se encontra verde em simultâneo com o sinal de passagem autorizada aos condutores.
+
+Luzes de sentido reversível	Luzes de Sentido Reversível
+A afetação de vias de sentido reversível, materializadas pela marca M5, deve ser regulada por um sistema de duas luzes colocado por cima de cada uma das vias, onde a luz vermelha significa proibição de circular na via de trânsito a que respeita, e a luz verde significa autorização para cicular na via de trânsito a que respeita.
+
+Transporte coletivo de passageiros BUS	Transporte Coletivo de Passageiros - BUS
+O sistema principal de luzes pode ser completado por um sinal constituído pela inscrição "BUS" a verde sobre fundo circular negro, este sinal autoriza os veículos de transporte coletivo a iniciar ou prosseguir a marcha, só podendo ser utilizado associado a corredores de circulação.
+
+Barra horizontal branca	Barra Horizontal Branca
+Regula o trânsito de veículos de transporte coletivo de passageiros, significa passagem proibida.
+
+Barra vertical branca	Barra Vertical Branca
+Regula o trânsito de veículos de transporte coletivo de passageiros, significa passagem autorizada.
+
+Sinais para peões	Sinais para Peões
+A sinalização luminosa destinada a regular o trânsito de peões é constituída por um sistema de duas luzes, com as cores vermelha que indica proibição para os peões de iniciarem o atravessamento da faixa de rodagem e cor verde que indica autorização para os peões passarem, quando o sinal de cor verde estiver intermitente, indica que está iminente o aparecimento da luz vermelha.

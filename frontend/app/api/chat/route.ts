@@ -1,16 +1,29 @@
-import { openai } from "@ai-sdk/openai"
-import { streamText } from "ai"
-
-export const maxDuration = 30 // Allow streaming responses up to 30 seconds
+import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
-  const { messages } = await request.json()
+  try {
+    const { message } = await request.json();
+    
+    const response = await fetch('http://localhost:5000/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ message }),
+    });
 
-  const result = streamText({
-    model: openai("gpt-4o"),
-    messages,
-  })
+    if (!response.ok) {
+      throw new Error('Erro ao processar mensagem');
+    }
 
-  return result.toDataStreamResponse()
+    const data = await response.json();
+    return NextResponse.json(data);
+  } catch (error) {
+    console.error('Erro:', error);
+    return NextResponse.json(
+      { error: 'Erro ao processar mensagem' },
+      { status: 500 }
+    );
+  }
 }
 

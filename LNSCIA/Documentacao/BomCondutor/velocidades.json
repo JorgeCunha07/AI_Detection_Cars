@@ -1,0 +1,130 @@
+{
+    "metadata": {
+        "file_name": "velocidades.txt",
+        "description": "Informações detalhadas sobre os limites de velocidade para diversos tipos de veículos em Portugal segundo o Código da Estrada.",
+        "source": "Código da Estrada / ANSR",
+        "processed_date": "2025-03-28",
+        "version": "v1.0"
+    },
+    "conteudo": {
+        "tabela_expo_98": {
+            "descricao": "Tabela simplificada de velocidades (Expo 98), para facilitar a memorização dos limites de velocidade.",
+            "veiculos": [
+                {
+                    "tipo": "Ligeiro Passageiros",
+                    "DL": 50,
+                    "FL": 90,
+                    "VR": 100,
+                    "AE": 120
+                },
+                {
+                    "tipo": "Ligeiro Mercadorias",
+                    "DL": 50,
+                    "FL": 80,
+                    "VR": 90,
+                    "AE": 110
+                },
+                {
+                    "tipo": "Pesado Passageiros",
+                    "DL": 50,
+                    "FL": 80,
+                    "VR": 90,
+                    "AE": 100
+                },
+                {
+                    "tipo": "Pesado Mercadorias",
+                    "DL": 50,
+                    "FL": 80,
+                    "VR": 80,
+                    "AE": 90
+                }
+            ],
+            "veiculos_com_reboque": [
+                {
+                    "tipo": "Ligeiro Passageiros",
+                    "DL": 50,
+                    "FL": 70,
+                    "VR": 80,
+                    "AE": 100
+                },
+                {
+                    "tipo": "Ligeiro Mercadorias",
+                    "DL": 50,
+                    "FL": 70,
+                    "VR": 80,
+                    "AE": 90
+                },
+                {
+                    "tipo": "Pesado Passageiros",
+                    "DL": 50,
+                    "FL": 70,
+                    "VR": 90,
+                    "AE": 90
+                },
+                {
+                    "tipo": "Pesado Mercadorias",
+                    "DL": 40,
+                    "FL": 70,
+                    "VR": 70,
+                    "AE": 80
+                }
+            ],
+            "outros": [
+                {
+                    "tipo": "Motociclos até 50cc",
+                    "DL": 40,
+                    "FL": 60
+                },
+                {
+                    "tipo": "Ciclomotores e Quadriciclos",
+                    "DL": 40,
+                    "FL": 45
+                },
+                {
+                    "tipo": "Tratores Agrícolas",
+                    "DL": 30,
+                    "FL": 40
+                },
+                {
+                    "tipo": "Máquinas Industriais sem matrícula",
+                    "DL": 30,
+                    "FL": 30
+                },
+                {
+                    "tipo": "Máquinas Agrícolas, Tratocarros, Motocultivadores",
+                    "DL": 20,
+                    "FL": 20
+                },
+                {
+                    "tipo": "Comboios Turísticos",
+                    "DL": 25
+                }
+            ]
+        },
+        "zonas_coexistencia": {
+            "descricao": "Velocidade máxima de 20 km/h para todos os veículos."
+        },
+        "velocidade_moderada": {
+            "descricao": "Velocidade adequada para permitir ao condutor parar o veículo em segurança, sem colidir com obstáculos.",
+            "situacoes": [
+                "Passagens para peões e velocípedes",
+                "Escolas, hospitais, creches",
+                "Localidades e vias marginadas por edificações",
+                "Zonas de coexistência",
+                "Utilizadores vulneráveis",
+                "Aglomerações de pessoas ou animais",
+                "Descidas acentuadas",
+                "Curvas, cruzamentos, entroncamentos, rotundas, lombas com visibilidade reduzida",
+                "Pontes, túneis, passagens de nível",
+                "Vias em mau estado, molhadas ou com má aderência",
+                "Locais assinalados com sinais de perigo",
+                "Trânsito intenso"
+            ]
+        },
+        "velocidade_minima": {
+            "descricao": "Velocidade mínima obrigatória de 50 km/h nas autoestradas.",
+            "requisitos_autoestradas": "Apenas veículos que atinjam em patamar velocidades superiores a 60 km/h podem circular em autoestradas.",
+            "nota": "Nos restantes tipos de vias, a velocidade mínima é definida pela obrigação de não embaraçar o trânsito."
+        }
+    }
+}

@@ -1,0 +1,70 @@
+Os sinais complementares destinam-se a completar indicações dadas por outros sinais.
+
+O1A - Demarcação hectométrica da via	O1A - Demarcação hectométrica da via
+Devem conter a indicação do hectómetro completada com a indicação do quilómetro e, se aplicável, do sentido do avisador S.O.S. mais próximos para demarcação em itinerário principal.
+
+O1B - Demarcação hectométrica da via	O1B - Demarcação hectométrica da via
+Devem conter a indicação do hectómetro completada com a indicação do quilómetro e, se aplicável, do sentido do avisador S.O.S. mais próximos para demarcação em itinerário complementar.
+
+O1C - Demarcação hectométrica da via	O1C - Demarcação hectométrica da via
+Devem conter a indicação do hectómetro completada com a indicação do quilómetro e, se aplicável, do sentido do avisador S.O.S. mais próximos para demarcação nas restantes estradas.
+
+O1D - Demarcação hectométrica da via	O1D - Demarcação hectométrica da via
+Devem conter a indicação do hectómetro completada com a indicação do quilómetro e, se aplicável, do sentido do avisador S.O.S. mais próximos para demarcação em estradas municipais.
+
+O2A - Demarcação quilométrica da via	O2A - Demarcação quilométrica da via
+Devem conter a identificação da via e indicam a distância quilométrica ao seu ponto de origem para demarcação em auto-estradas.
+
+O2B - Demarcação quilométrica da via	O2B - Demarcação quilométrica da via
+Devem conter a identificação da via e indicam a distância quilométrica ao seu ponto de origem para demarcações em itinerário principal.
+
+O2C - Demarcação quilométrica da via	O2C - Demarcação quilométrica da via
+Devem conter a identificação da via e indicam a distância quilométrica ao seu ponto de origem para demarcações em itinerário complementar.
+
+O2D - Demarcação quilométrica da via	O2D - Demarcação quilométrica da via
+Devem conter a identificação da via e indicam a distância quilométrica ao seu ponto de origem para demarcações nas restantes estradas.
+
+O2E - Demarcação quilométrica da via	O2E - Demarcação quilométrica da via
+Devem conter a identificação da via e indicam a distância quilométrica ao seu ponto de origem para demarcações nas estradas municipais.
+
+O3A - Demarcação miriamétrica da via	O3A - Demarcação miriamétrica da via
+Devem conter a identificação da via e indicam a distância, por cada 10km ao seu ponto de origem. Para demarcação em auto-estradas.
+
+O3B - Demarcação miriamétrica da via	O3B - Demarcação miriamétrica da via
+Devem conter a identificação da via e indicam a distância, por cada 10km ao seu ponto de origem para demarcação em itinerário principal.
+
+O3C - Demarcação miriamétrica da via	O3C - Demarcação miriamétrica da via
+Devem conter a identificação da via e indicam a distância, por cada 10km ao seu ponto de origem para demarcação em itinerário complementar.
+
+O3D - Demarcação miriamétrica da via	O3D - Demarcação miriamétrica da via
+Devem conter a identificação da via e indicam a distância, por cada 10km ao seu ponto de origem para demarcação nas restantes estradas.
+
+O3E - Demarcação miriamétrica da via	O3E - Demarcação miriamétrica da via
+Devem conter a identificação da via e indicam a distância, por cada 10km ao seu ponto de origem para demarcação nas estradas municipais.
+
+O4A - Sinal de aproximação de saída	O4A - Sinal de aproximação de saída
+Indicação da aproximação de uma saída em intersecção desnivelada, dada pelas barras inclinadas, que representam as distâncias à saída de 250m em auto-estradas.
+
+O4B - Sinal de aproximação de saída	O4B - Sinal de aproximação de saída
+Indicação da aproximação de uma saída em intersecção desnivelada, dada pelas barras inclinadas, que representam as distâncias à saída de 150m nos restantes casos, devendo a indicação numérica constar na parte superior do sinal.
+
+O4C - Sinal de aproximação de saída	O4C - Sinal de aproximação de saída
+Indicação da aproximação de uma saída em intersecção desnivelada, dada pelas barras inclinadas, que representam as distâncias à saída de 150m nos restantes casos, devendo a indicação numérica constar na parte superior do sinal.
+
+O5A - Baia direccional para balizamento de pontos de divergência	O5A - Baia direccional para balizamento de pontos de divergência
+Indica o ponto de divergência de uma saída em intersecção desnivelada.
+
+O5B - Baia direccional para balizamento de pontos de divergência	O5B - Baia direccional para balizamento de pontos de divergência
+Indica o ponto de divergência de uma saída em intersecção desnivelada.
+
+O6A - Baia direccional	O6A - Baia direccional
+Indica o desenvolvimento de um troço em curva, podendo utilizar-se individualmente ou em sucessão múltipla.
+
+O6B - Baia direccional	O6B - Baia direccional
+Indica o desenvolvimento de um troço em curva, podendo utilizar-se individualmente ou em sucessão múltipla.
+
+O7A - Baliza de posição	O7A - Baliza de posição
+Indica a posição e limites de obstáculos existentes na via.
+
+O7B - Baliza de posição	O7B - Baliza de posição
+Indica a posição e limites de obstáculos existentes na via.

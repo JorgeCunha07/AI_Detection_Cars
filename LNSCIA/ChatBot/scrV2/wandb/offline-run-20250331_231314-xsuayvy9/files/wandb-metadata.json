@@ -1,0 +1,41 @@
+{
+  "os":  "Windows-11-10.0.26100-SP0",
+  "python":  "CPython 3.12.9",
+  "startedAt":  "2025-03-31T22:13:15.229630Z",
+  "program":  "C:\\Users\\CarlosMoutinho(11408\\Documents\\GitHub\\AI_Detection_Cars\\LNSCIA\\ChatBot\\scr\\treino.py",
+  "codePath":  "LNSCIA\\ChatBot\\scr\\treino.py",
+  "git":  {
+    "remote":  "https://github.com/JorgeCunha07/AI_Detection_Cars.git",
+    "commit":  "0899be15c4c414c1bb933437c6b449c09db5fffc"
+  },
+  "root":  "C:\\Users\\CarlosMoutinho(11408\\Documents\\GitHub\\AI_Detection_Cars\\LNSCIA\\ChatBot\\scr",
+  "host":  "DESKTOP-29TT670",
+  "executable":  "C:\\Users\\Public\\Anaconda\\python.exe",
+  "codePathLocal":  "treino.py",
+  "cpu_count":  12,
+  "cpu_count_logical":  16,
+  "gpu":  "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "511118929920",
+      "used":  "318329630720"
+    }
+  },
+  "memory":  {
+    "total":  "8241782784"
+  },
+  "cpu":  {
+    "count":  12,
+    "countLogical":  16
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 3050 Laptop GPU",
+      "memoryTotal":  "4294967296",
+      "cudaCores":  2048,
+      "architecture":  "Ampere"
+    }
+  ],
+  "cudaVersion":  "12.8"
+}
