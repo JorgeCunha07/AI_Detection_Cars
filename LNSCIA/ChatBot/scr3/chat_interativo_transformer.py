@@ -320,19 +320,17 @@ class ChatBotCodigoEstrada:
         
         modo_quiz = False
         pergunta_atual = None
-        # Variável para controlar se uma dica foi dada para a pergunta atual
         dica_dada = False
         
         while True:
             if modo_quiz and not pergunta_atual:
                 # Seleciona uma nova pergunta em modo quiz
                 pergunta_atual = self.fazer_pergunta()
-                # Reseta o estado da dica ao mudar de pergunta
-                dica_dada = False
-                
+                dica_dada = False  # Reset o estado da dica para a nova pergunta
                 if pergunta_atual:
                     print(f"\n{Fore.GREEN}[QUIZ] {pergunta_atual['pergunta']}{Style.RESET_ALL}")
-                    print(f"{Fore.YELLOW}(Digite 'encerrar quiz' para voltar ao modo normal ou 'dica' para ver a resposta){Style.RESET_ALL}")
+                    print(f"{Fore.YELLOW}(Digite 'dica' para ver a resposta correta e continuar respondendo){Style.RESET_ALL}")
+                    print(f"{Fore.YELLOW}(Digite 'encerrar quiz' para voltar ao modo normal){Style.RESET_ALL}")
                 else:
                     print(f"{Fore.RED}Erro: Não foi possível carregar perguntas para o quiz.{Style.RESET_ALL}")
                     modo_quiz = False
