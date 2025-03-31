@@ -5,19 +5,16 @@ import random
 categories = {
     "veiculos": ["carro", "autocarro", "camião"],
     "pessoas": ["peão", "ciclista"],
-    "infraestrutura": ["passadeira", "semáforo", "passagem de nível"],
-    "sinais_transito": ["limite de velocidade", "sinal de stop", "sinais de obrigação", "sinal de proibido", "obras na via"]
+    "infraestrutura": ["passadeira", "semáforo"],
+    "sinais_transito": ["sinal de stop", "sinal de limite de velocidade", "sinal de passadeira"]
 }
 
-weather_conditions = ["céu limpo", "nublado", "chuvoso", "tempestuoso", "com nevoeiro", "vento forte"]
-time_of_day = ["de manhã cedo", "a meio da manhã", "à tarde", "ao entardecer", "à noite", "de madrugada"]
+weather_conditions = ["céu limpo", "nublado", "chuvoso", "tempestuoso", "com nevoeiro", "vento forte", "com neve"]
+time_of_day = ["amanhecer", "anoitecer", "dia", "noite"]
 traffic_density = ["trânsito leve", "trânsito moderado", "trânsito intenso", "engarrafamento"]
 
 locations = [
-    "numa rua movimentada", "no centro de uma grande avenida",
-    "num bairro residencial tranquilo", "próximo de um parque",
-    "perto de um centro comercial movimentado", "nos arredores da cidade",
-    "junto a uma escola", "próximo de uma estação de metro"
+"residencial", "parque de estacionamento", "túnel", "cidade", "autoestrada"
 ]
 
 object_behaviors = [
