@@ -5,8 +5,8 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader, random_split
-from nltk.translate.bleu_score import sentence_bleu
-from rouge import Rouge
+#from nltk.translate.bleu_score import sentence_bleu
+#from rouge import Rouge
 import random
 import time  # Importa o módulo de tempo
 
@@ -46,9 +46,9 @@ class Seq2SeqDataset(Dataset):
         )
 
 # Parâmetros
-batch_size = 256
-num_epochs = 50
-teacher_forcing_ratio = 0.5
+batch_size = 128
+num_epochs = 100
+teacher_forcing_ratio = 0.7
 latent_dim = 512
 
 # Criar o dataset completo e dividir em treino e validação (80% / 20%)
