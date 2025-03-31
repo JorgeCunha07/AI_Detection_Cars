@@ -1,0 +1,92 @@
+{
+    "metadata": {
+        "file_name": "Sinais_Prescricao_Especifica.txt",
+        "description": "Descrição detalhada dos sinais de prescrição específica segundo o Código da Estrada Português.",
+        "source": "Código da Estrada / ANSR",
+        "processed_date": "2025-03-28",
+        "version": "v1.0"
+    },
+    "conteudo": {
+        "descricao_geral": "Sinais que impõem ou proíbem comportamentos específicos, incluindo seleção de vias, afetação de vias e zonas específicas dentro das localidades.",
+        "detalhe_uso": [
+            "Destinos sempre associados ao número da estrada.",
+            "Número entre parêntesis quando acesso não direto.",
+            "Sinais de zona colocados em todos acessos, com saídas sinalizadas exceto zonas trânsito proibido.",
+            "Sinais de zona apenas utilizados dentro de localidades."
+        ],
+        "sinais": [
+            {
+                "codigo": "E1",
+                "descricao": "Destinos sobre o itinerário",
+                "posicao": "Sobre a via"
+            },
+            {
+                "codigo": "E2",
+                "descricao": "Destinos de saída",
+                "posicao": "Sobre a berma no início da via de saída"
+            },
+            {
+                "codigo": "E3",
+                "descricao": "Sinal de seleção lateral",
+                "uso": "Apenas com duas filas de trânsito no mesmo sentido"
+            },
+            {
+                "codigo": [
+                    "F1A",
+                    "F1B",
+                    "F1C"
+                ],
+                "descricao": "Aplicação de prescrição a via de trânsito"
+            },
+            {
+                "codigo": "F2",
+                "descricao": "Via reservada a transporte público, veículos prioritários e polícia"
+            },
+            {
+                "codigo": "G1",
+                "descricao": "Zona de estacionamento autorizado"
+            },
+            {
+                "codigo": [
+                    "G2A",
+                    "G2B"
+                ],
+                "descricao": "Zona de estacionamento proibido"
+            },
+            {
+                "codigo": "G3",
+                "descricao": "Zona de paragem e estacionamento proibidos"
+            },
+            {
+                "codigo": "G4",
+                "descricao": "Zona de velocidade limitada"
+            },
+            {
+                "codigo": [
+                    "G5A",
+                    "G5B"
+                ],
+                "descricao": "Zona de trânsito proibido"
+            },
+            {
+                "codigo": "G6",
+                "descricao": "Fim de zona de estacionamento autorizado"
+            },
+            {
+                "codigo": [
+                    "G7A",
+                    "G7B"
+                ],
+                "descricao": "Fim de zona de paragem e estacionamento proibidos"
+            },
+            {
+                "codigo": "G8",
+                "descricao": "Fim de zona de velocidade limitada"
+            },
+            {
+                "codigo": "G9",
+                "descricao": "Fim de todas as proibições impostas na zona"
+            }
+        ]
+    }
+}

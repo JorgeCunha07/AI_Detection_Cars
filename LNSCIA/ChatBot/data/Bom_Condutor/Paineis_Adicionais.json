@@ -1,0 +1,139 @@
+{
+    "metadata": {
+        "file_name": "Paineis_Adicionais.txt",
+        "description": "Descrição dos painéis adicionais dos sinais de indicação conforme o Código da Estrada Português.",
+        "source": "Código da Estrada / ANSR",
+        "processed_date": "2025-03-28",
+        "version": "v1.0"
+    },
+    "conteudo": {
+        "descricao_geral": "Painéis adicionais completam ou restringem indicações dadas por sinais verticais, limitando a categorias, períodos ou extensão da via.",
+        "paineis": [
+            {
+                "modelo": "1a",
+                "descricao": "Indicadores de distância ao local ou zona de perigo."
+            },
+            {
+                "modelo": "2",
+                "descricao": "Indicadores da extensão de um troço."
+            },
+            {
+                "modelo": [
+                    "3a",
+                    "3b",
+                    "3c",
+                    "3d"
+                ],
+                "descricao": "Indicadores do início ou fim do local regulamentado, posição variável (paralela/perpendicular)."
+            },
+            {
+                "modelo": [
+                    "4a",
+                    "4b",
+                    "5"
+                ],
+                "descricao": "Indicadores da extensão regulamentada ou repetição da extensão (estacionamento ou paragem)."
+            },
+            {
+                "modelo": [
+                    "6a",
+                    "6b"
+                ],
+                "descricao": "Indicadores de continuação do local regulamentado quanto a estacionamento ou paragem."
+            },
+            {
+                "modelo": [
+                    "7a",
+                    "7b",
+                    "7c",
+                    "7d"
+                ],
+                "descricao": "Indicadores de periodicidade (dias do mês, semana, horas do dia)."
+            },
+            {
+                "modelo": "8",
+                "descricao": "Indicador da duração antes da entrada em vigor da prescrição."
+            },
+            {
+                "modelo": "9",
+                "descricao": "Indicador de peso total do veículo para aplicação da prescrição."
+            },
+            {
+                "modelo": [
+                    "10a",
+                    "10b",
+                    "10c"
+                ],
+                "descricao": "Indicadores de aplicação restrita ou exceção para determinados veículos ou operações."
+            },
+            {
+                "modelo": [
+                    "11a",
+                    "11b",
+                    "11c",
+                    "11d",
+                    "11e",
+                    "11f",
+                    "11g",
+                    "11h",
+                    "11i",
+                    "11j",
+                    "11l"
+                ],
+                "descricao": "Indicadores específicos para categorias de veículos (ligeiros, pesados, deficientes, motociclos, ciclomotores, etc.)."
+            },
+            {
+                "modelo": [
+                    "12a",
+                    "12b",
+                    "12c",
+                    "12d",
+                    "12e",
+                    "12f"
+                ],
+                "descricao": "Indicadores da posição autorizada para estacionamento (usado com sinal H1)."
+            },
+            {
+                "modelo": [
+                    "13a",
+                    "13b"
+                ],
+                "descricao": "Diagrama indicando mudança na direção da via com prioridade."
+            },
+            {
+                "modelo": "14",
+                "descricao": "Informação diversa sobre circunstâncias específicas da via."
+            },
+            {
+                "modelo": [
+                    "15a",
+                    "15b"
+                ],
+                "descricao": "Indicadores das condições meteorológicas associadas ao perigo (chuva, neve, gelo)."
+            },
+            {
+                "modelo": "16",
+                "descricao": "Indicador de veículos limpa-neves associados ao perigo."
+            },
+            {
+                "modelo": "17",
+                "descricao": "Indicador de via de saída para regulamentação ou perigo específico."
+            },
+            {
+                "modelo": "18",
+                "descricao": "Indicador de direção para realizar manobra especificada."
+            },
+            {
+                "modelo": [
+                    "19a",
+                    "19b"
+                ],
+                "descricao": "Indicadores início ou fim de zona regulamentada (sinais G1 a G5)."
+            },
+            {
+                "modelo": "20",
+                "descricao": "Indicador de estacionamento pago."
+            }
+        ]
+    }
+}

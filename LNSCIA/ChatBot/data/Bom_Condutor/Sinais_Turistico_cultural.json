@@ -1,0 +1,54 @@
+{
+    "metadata": {
+        "file_name": "Sinais_Turistico_cultural.txt",
+        "description": "Descrição detalhada da sinalização turístico-cultural segundo o Código da Estrada Português.",
+        "source": "Código da Estrada / ANSR",
+        "processed_date": "2025-03-28",
+        "version": "v1.0"
+    },
+    "conteudo": {
+        "descricao_geral": "Sinalização destinada a indicar locais, imóveis ou conjuntos com especial relevância cultural, histórico-patrimonial ou paisagística.",
+        "sinais": [
+            {
+                "codigo": "T1",
+                "descricao": "Região",
+                "significado": "Entrada numa região, indicando valores patrimoniais e paisagísticos com até três pictogramas e designação da região."
+            },
+            {
+                "codigo": "T2",
+                "descricao": "Património",
+                "significado": "Local, imóvel ou conjunto de imóveis relevantes culturalmente."
+            },
+            {
+                "codigo": "T3",
+                "descricao": "Património natural",
+                "significado": "Indica acidentes geográficos, rios, lagos, serras, parques naturais ou nacionais relevantes."
+            },
+            {
+                "codigo": "T4A",
+                "descricao": "Circuito",
+                "significado": "Ponto de entrada num circuito."
+            },
+            {
+                "codigo": "T5A",
+                "descricao": "Rota",
+                "significado": "Início da rota."
+            },
+            {
+                "codigo": "T4B",
+                "descricao": "Direção de circuito",
+                "significado": "Direção do circuito."
+            },
+            {
+                "codigo": "T5B",
+                "descricao": "Direção de rota",
+                "significado": "Direção da rota com símbolo, inscrições e seta indicadora."
+            },
+            {
+                "codigo": "T6",
+                "descricao": "Localidade",
+                "significado": "Indica motivos turísticos, geográficos-ecológicos e culturais da localidade ou concelho sede com até cinco símbolos."
+            }
+        ]
+    }
+}

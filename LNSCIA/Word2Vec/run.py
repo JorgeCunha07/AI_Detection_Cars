@@ -87,23 +87,8 @@ def token_synonym_match(user_tokens, correct_tokens, model, threshold=0.8):
     return matches / len(correct_tokens) if correct_tokens else 0
 
 def main():
-    json_filename = 'novas_perguntas_codigo_conducao.json'
+    json_filename = 'perguntas_codigo_conducao_1000_equilibradas.json'
     model_filename = "modelo_word2vec_melhorado.model"
-    
-    # Modo de teste: respostas simuladas para testes automáticos
-    test_mode = True
-    simulated_answers = [
-        "para na berma da estrada.",
-        "quando chuve muito.",
-        "uma passadeira.",
-        "0,2 g/l",
-        "usar kit de mãos livres.",
-        "quando nao existe visibilidade.",
-        "saiu do carro.",
-        "a 30 metros do carro.",
-        "ignorar as regras.",
-        "em paralelo com outro."
-    ]
     
     log("Carregando dados do JSON...")
     data = load_data(json_filename)
@@ -120,8 +105,9 @@ def main():
     weight_text = 0.3
     weight_synonym = 0.3
     
-    log("Iniciando o diálogo com as perguntas:")
-    for idx, item in enumerate(data):
+    log("Iniciando o diálogo com as 10 primeiras perguntas:")
+    # Itera apenas sobre as 10 primeiras perguntas
+    for idx, item in enumerate(data[:10]):
         question = item.get('pergunta', '')
         log(f"Pergunta {idx+1}: {question}")
         
@@ -133,15 +119,8 @@ def main():
             
         log(f"Resposta(s) esperada(s): {correct_answers}")
         
-        if test_mode:
-            try:
-                user_answer = simulated_answers[idx]
-                log(f"Resposta simulada: {user_answer}")
-            except IndexError:
-                user_answer = ""
-                log("Nenhuma resposta simulada definida para esta pergunta.")
-        else:
-            user_answer = input("Sua resposta: ")
+        user_answer = input("Sua resposta: ")
+        log(f"Resposta digitada: {user_answer}")
         
         user_answer_norm = unidecode(user_answer.lower().strip())
         

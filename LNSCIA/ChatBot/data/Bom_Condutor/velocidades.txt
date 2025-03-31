@@ -1,0 +1,69 @@
+Tabela Expo 98
+Esta é a tabela de velocidades "expo 98", conhecida desta forma porque as velocidades a negrito (sem reboque nas vias reservadas e com reboque nas autoestradas) perfazem 100, 90, 90, 80, o ano da expo 98, esta tabela tem como objetivo ajudar os candidatos a decorar as velocidades.
+
+Veículo	DL	FL	VR	AE	Outros
+Ligeiro Passageiros	50	90	100	120	Motociclos + de 50cc
+Ligeiro Mercadorias	50	80	90	110	 
+Pesado Passageiros	50	80	90	100	Triciclo
+Pesado Mercadorias	50	80	80	90	P.M. + semi-reboque
+Com Reboque
+Ligeiro Passageiros	50	70	80	100	Motociclos + de 50cc c/ carro lateral
+Ligeiro Mercadorias	50	70	80	90	 
+Pesado Passageiros	50	70	90	90	 
+Pesado Mercadorias	40	70	70	80	Máq. Ind. c/ Mat.
+Outros
+Motociclos até 50cc	40	60	-	-	 
+Ciclomotores e Quadriciclos	40	45	-	-	 
+Tratores Agrícolas	30	40	-	-	 
+Máquinas Industriais sem matrícula	30	30	-	-	 
+Máquinas Agrícolas, Tratocarros, Motocultivadores	20	20	-	-	 
+Comboios Turísticos	25	-	-	-	 
+Em Janeiro de 2014 foi introduzido o conceito de zonas de coexistência e a velocidade máxima para todos os veículos nestes locais é de 20 km/h.
+
+O seguinte vídeo explica como decorar esta tabela de velocidades:
+
+Tabela Completa
+O artigo 27.º do código da estrada contém a tabela completa dos limites de velocidade:
+
+Veículo	Dentro das localidades	Autoestradas	Vias reservadas a automóveis e motociclos	Restantes vias públicas
+Zonas de coexistência	Outras Zonas
+Ciclomotores e quadriciclos	20	40	-	-	45
+Motociclos	De cilindrada superior a 50 cm3 e sem carro lateral	20	50	120	100	90
+Com carro lateral ou com reboque	20	50	100	80	70
+De cilindrada não superior a 50 cm3	20	40	-	-	60
+Triciclos	20	50	100	90	80
+Automóveis ligeiros de passageiros e mistos	Sem reboque	20	50	120	100	90
+Com reboque	20	50	100	80	70
+Automóveis ligeiros de mercadorias	Sem reboque	20	50	110	90	80
+Com reboque	20	50	90	80	70
+Automóveis pesados de passageiros	Sem reboque	20	50	100	90	80
+Com reboque	20	50	90	90	70
+Automóveis pesados de mercadorias	Sem reboque ou com semirreboque	20	50	90	80	80
+Com reboque	20	40	80	70	70
+Tratores agrícolas ou florestais	20	30	-	-	40
+Máquinas agrícolas, motocultivadores e tratocarros	20	20	-	-	20
+Máquinas industriais	Sem matrícula	20	30	-	-	30
+Com matrícula	20	40	80	70	70
+Velocidade Moderada
+É considerada uma velocidade moderada aquela que permita ao condutor imobilizar o veículo de forma controlada, sem colidir com qualquer obstáculo em todas as circunstâncias considerando as capacidades do condutor, o veículo, a visibilidade, a aderência, o tráfego, as condições atmosféricas, a via ou outros fatores.
+
+O condutor é obrigado a moderar especialmente a velocidade nos seguintes locais:
+
+À aproximação de passagens assinaladas para a travessia de peões e ou velocípedes;
+À aproximação de escolas, hospitais, creches e estabelecimentos similares, quando devidamente sinalizados;
+Nas localidades ou vias marginadas por edificações;
+Nas zonas de coexistência;
+À aproximação de utilizadores vulneráveis;
+À aproximação de aglomerações de pessoas ou animais;
+Nas descidas de inclinação acentuada;
+Nas curvas, cruzamentos, entroncamentos, rotundas, lombas e outros locais de visibilidade reduzida;
+Nas pontes, túneis e passagens de nível;
+Nos troços de via em mau estado de conservação, molhados, enlameados ou que ofereçam precárias condições de aderência;
+Nos locais assinalados com sinais de perigo;
+Sempre que exista grande intensidade de trânsito;
+Quando na alínea h) é indicado "visibilidade reduzida" refere-se a todos os locais anteriores, ou seja, nas curvas de visibilidade reduzida, nos cruzamentos de visibilidade reduzida, nas lombas de visibilidade reduzida, etc... Desta forma os condutores não estão obrigados a moderar a velocidade por exemplo em curvas ou lombas que apresentem boa visibilidade.
+
+Velocidade Mínima
+Apenas nas autoestradas existe uma velocidade mínima de circulação definida, todos os veículos estão obrigados a circular no mínimo a 50 km/h. Nos restantes tipos de via os condutores devem circular a uma velocidade que não provoque embaraço injustificado à circulação dos restantes veículos.
+
+Apesar da velocidade mínima nas autoestradas ser de 50 km/h apenas podem circular nestas vias os veículos que consigam atingir em patamar velocidade superior a 60 km/h. Referimos esta situação pois existem algumas questões nos testes sobre este tema que geram muitas dúvidas, podem ver exemplos desta situação na questão 4811 e na questão 3278.

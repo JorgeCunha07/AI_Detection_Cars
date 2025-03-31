@@ -1,0 +1,19 @@
+# Dependências para o ChatBot do Código da Estrada
+# Com suporte a sistema de similaridade baseado em Transformers
+
+# Pytorch
+torch>=1.10.0
+
+# Transformers
+transformers>=4.15.0
+sentence-transformers>=2.2.0
+
+# Utilitários
+colorama>=0.4.4
+numpy>=1.20.0
+tqdm>=4.62.0
+regex>=2021.8.3
+
+# Opcional: Melhoria para GPU CUDA 
+# Descomente se tiver uma GPU compatível
+# cudatoolkit>=11.3 

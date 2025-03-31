@@ -1,0 +1,78 @@
+{
+    "metadata": {
+        "file_name": "Via_Publica.txt",
+        "description": "Descrição detalhada dos elementos e tipos de via pública segundo o Código da Estrada Português.",
+        "source": "Código da Estrada / ANSR / IMT",
+        "processed_date": "2025-03-28",
+        "version": "v1.0"
+    },
+    "conteudo": {
+        "definicao": "Via de comunicação terrestre afeta ao trânsito público com restrições impostas pelo Código da Estrada.",
+        "elementos_via_publica": {
+            "faixa_rodagem": "Parte destinada ao trânsito de veículos.",
+            "via_transito": "Zona da faixa para circulação de uma única fila de veículos.",
+            "eixo_faixa_rodagem": "Linha que divide a faixa em sentidos contrários.",
+            "berma": "Área lateral não destinada ao trânsito.",
+            "marcas_rodoviarias": {
+                "guias": "Delimitam a faixa de rodagem.",
+                "linha_continua": "Proibição de transpor, circulação à direita.",
+                "linha_descontinua": "Permite transposição para manobras."
+            }
+        },
+        "tipos_vias": [
+            "Zonas de coexistência",
+            "Via dentro de localidade",
+            "Via fora de localidade",
+            "Vias reservadas a automóveis e motociclos",
+            "Autoestradas"
+        ],
+        "itinerarios": [
+            {
+                "tipo": "Itinerários principais (IP)",
+                "descricao": "Maior interesse nacional."
+            },
+            {
+                "tipo": "Itinerários complementares (IC)",
+                "descricao": "Maior interesse regional."
+            },
+            {
+                "tipo": "Estradas Nacionais (EN)"
+            },
+            {
+                "tipo": "Estradas Regionais (ER)"
+            }
+        ],
+        "diferenciacao_vias": {
+            "dentro_localidade": [
+                "Edifícios",
+                "Passeios",
+                "Peões",
+                "Sinal N1A"
+            ],
+            "fora_localidade": [
+                "Natureza",
+                "Poucos edifícios",
+                "Sinal N2A"
+            ],
+            "autoestradas_vram": [
+                "Separação física faixas",
+                "Sem cruzamentos de nível",
+                "Sinalização específica H24/H25"
+            ],
+            "diferenciacao_autoestrada_vram": [
+                "Cor azul nos sinais para autoestrada",
+                "Cor verde ou branca para VRAM e outras vias"
+            ]
+        },
+        "intersecoes": {
+            "cruzamento": "Interseção de vias em nível (+ ou x).",
+            "entroncamento": "Junção ou bifurcação de vias (T ou Y).",
+            "rotunda": "Trânsito giratório com sinalização específica.",
+            "praca": "Trânsito giratório sem sinal específico de rotunda."
+        },
+        "deformacoes_via": {
+            "lombas": "Quebram visibilidade, não identificadas com sinal A2A.",
+            "lombas_redutoras": "Usadas para redução obrigatória de velocidade, frequentemente identificadas com sinal A2A."
+        }
+    }
+}

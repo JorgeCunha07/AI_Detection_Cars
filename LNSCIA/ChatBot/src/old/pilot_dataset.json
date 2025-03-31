@@ -1,0 +1,9 @@
+{
+  "questions": [
+    {
+      "question": "Qual é a velocidade máxima em zonas urbanas?",
+      "context": "De acordo com o Código da Estrada, a velocidade máxima em zonas urbanas é de 50 km/h.",
+      "answer_text": "50 km/h"
+    }
+  ]
+}

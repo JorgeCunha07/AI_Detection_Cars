@@ -1,0 +1,52 @@
+A sinalização temporária destina-se a prevenir os utentes da existência de obras ou obstáculos ocasionais na via pública e a transmitir as obrigações, restrições ou proibições especiais que temporariamente lhes são impostas.
+
+ST1A - Número e sentido de vias de trânsito	ST1A - Número e sentido de vias de trânsito
+ST1B - Número e sentido de vias de trânsito	ST1B - Número e sentido de vias de trânsito
+ST1C - Número e sentido de vias de trânsito	ST1C - Número e sentido de vias de trânsito
+ST1D - Número e sentido de vias de trânsito	ST1D - Número e sentido de vias de trânsito
+ST2 - Supressão de via de trânsito	ST2 - Supressão de via de trânsito
+ST3 - Supressão de berma	ST3 - Supressão de berma
+ST4 - Desvio de via de trânsito	ST4 - Desvio de via de trânsito
+ST5 - Desvio para a faixa de rodagem contrária	ST5 - Desvio para a faixa de rodagem contrária
+ST6 - Estreitamento de via de trânsito	ST6 - Estreitamento de via de trânsito
+ST7 - Pré-sinalização de desvio de itinerário	ST7 - Pré-sinalização de desvio de itinerário
+Deve ser sempre estabelecido um desvio de itinerário quando um troço de via pública for vedado ao trânsito, quer abranja um ou dois sentidos, quer todos os veículos ou certa categoria ou tipo de veículos.
+
+ST8A - Desvio de itinerário	ST8A - Desvio de itinerário
+Consiste num percurso formado por um ou vários troços de outras vias públicas que, no conjunto, evitam o troço vedado ao trânsito, devendo ser convenientemente sinalizado.
+
+ST8B - Desvio de itinerário	ST8B - Desvio de itinerário
+Consiste num percurso formado por um ou vários troços de outras vias públicas que, no conjunto, evitam o troço vedado ao trânsito, devendo ser convenientemente sinalizado.
+
+ST9 - Fim de desvio	ST9 - Fim de desvio
+ST10 - Circulação alternada	ST10 - Circulação alternada
+Quando a circulação nos dois sentidos só se possa fazer alternadamente, os utentes devem ser informados atráves deste sinal. A circulação alternada deve ser regulada por sinalização luminosa ou por operadores utilizando raquetas de sinalização.
+
+ST11 - Trânsito sujeito a demora	ST11 - Trânsito sujeito a demora
+ST12 - Telefone de emergência	ST12 - Telefone de emergência
+ST13 - Acidente	ST13 - Acidente
+ST14 - Fim de obras	ST14 - Fim de obras
+Logo que seja possível o regresso às condições normais de circulação, deve utilizar-se a sinalização final.
+
+ET1 - Raquetas de sinalização	ET1 - Raquetas de sinalização
+A utilizar na regulamentação manual do sentido de circulação, as quais devem ter uma das faces de cor verde e a outra representando o sinal proibição C1 (sentido proibido).
+
+ET2 - Baias direccionais	ET2 - Baias direccionais
+ET3 - Baia de posição	ET3 - Baia de posição
+ET4 - Baliza de alinhamento	ET4 - Baliza de alinhamento
+ET5 - Balizas de posição	ET5 - Balizas de posição
+ET6 - Cones	ET6 - Cones
+ET7 - Pórticos	ET7 - Pórticos
+A utilizar na pré-sinalização e que indicam a altura livre limitada.
+
+ET8 - Conjuntos de lanternas sequenciais	ET8 - Conjuntos de lanternas sequenciais
+ET9 - Conjuntos de lanternas sequenciais	ET9 - Conjuntos de lanternas sequenciais
+ET10 - Perfil móvel, de plástico ou betão	ET10 - Perfil móvel, de plástico ou betão
+A utilizar na sinalização de posição dos limites dos trabalhos.
+
+ET11 - Robot	ET11 - Robot
+ET12 - Atrelado de balizamento	ET12 - Atrelado de balizamento
+A utilizar na sinalização de posição, indicando mudança brusca de direção.
+
+ET13 - Seta luminosa	ET13 - Seta luminosa
+A utilizar na sinalização de posição, indicando mudança brusca de direção.
