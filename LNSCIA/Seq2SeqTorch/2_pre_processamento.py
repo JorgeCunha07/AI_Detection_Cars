@@ -43,7 +43,7 @@ def clean_text(text):
     return text
 
 # Carregar o dataset (arquivo JSON com dados sintéticos e reais)
-with open('./data/descricoes_contexto_rodoviario.json', 'r', encoding='utf-8') as f:
+with open('./data/frases_rodoviarias.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
 labels_text = []      # Para armazenar os rótulos (labels) em forma de string

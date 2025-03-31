@@ -94,13 +94,13 @@ print("Gerado:", generated_description)
 
 # Gerado: a cena de proximo de um parque a a meio da manha sob um ceu nublado ciclista peao podem ser vistas a aguardar para atravessar enquanto carro passam a circular lentamente com passagem de nivel e sinal de stop em destaque numa situacao de transito moderado
 
-labels_test = ["autocarro", "camião", "semáforo", "obras na via"]
+labels_test = ["autocarro", "camião", "semáforo", "sinal de stop"]
 generated_description = generate_text(labels_test)
 print("Gerado:", generated_description)
 
 # Gerado: a cena de proximo de uma estacao de metro a tarde inclui camiao a circular rapidamente ciclista a caminhar pela via e infraestruturas como semaforo e sinal de proibido sob condicoes de transito intenso
 
-labels_test = ["carro", "peão", "passadeira", "sinal de stop"]
+labels_test = ["carro", "peão", "passadeira", "sinal de limite de velocidade"]
 generated_description = generate_text(labels_test)
 print("Gerado:", generated_description)
 
@@ -112,13 +112,13 @@ print("Gerado:", generated_description)
 
 # Gerado: a cena de proximo de uma estacao de metro a tarde inclui camiao a circular rapidamente ciclista a caminhar pela via e infraestruturas como semaforo e sinal de proibido sob condicoes de transito intenso
 
-labels_test = ["camião", "peão", "passagem de nível", "limite de velocidade"]
+labels_test = ["camião", "peão", "sinal de limite de velocidade"]
 generated_description = generate_text(labels_test)
 print("Gerado:", generated_description)
 
 # Gerado: a cena de proximo de um parque a a tarde sob um ceu nublado ciclista podem ser vistas a espera junto ao semaforo enquanto carro passam a circular lentamente com passagem de nivel e sinal de stop em destaque numa situacao de transito moderado
 
-labels_test = ["carro", "ciclista", "passadeira", "sinal de proibido"]
+labels_test = ["carro", "ciclista", "passadeira", "sinal de passadeira"]
 generated_description = generate_text(labels_test)
 print("Gerado:", generated_description)
 
