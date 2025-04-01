@@ -1,0 +1,17 @@
+{
+  "area/alternative": 0,
+  "area/drivable": 1,
+  "bike": 2,
+  "lane/crosswalk": 3,
+  "lane/double other": 4,
+  "lane/double white": 5,
+  "lane/double yellow": 6,
+  "lane/road curb": 7,
+  "lane/single other": 8,
+  "lane/single white": 9,
+  "lane/single yellow": 10,
+  "motor": 11,
+  "rider": 12,
+  "traffic light": 13,
+  "train": 14
+}
