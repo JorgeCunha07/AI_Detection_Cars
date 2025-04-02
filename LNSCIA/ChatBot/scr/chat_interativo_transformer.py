@@ -1,122 +1,153 @@
 import torch
-from transformers import GPT2Tokenizer, GPT2LMHeadModel
-import json
+from transformers import AutoTokenizer, AutoModelForCausalLM
 import sys
 import os
 import random
+import re
+import json  # Import necessário para carregar os JSON
 from colorama import Fore, Style, init
+from similar_semantic import similar_semantic
 
-# Inicializa o colorama para cores no terminal
-init()
 
-# Verificar disponibilidade de GPU
-if not torch.cuda.is_available():
-    print("ERRO: GPU não encontrada! Este script requer uma GPU para inferência.")
-    print("Por favor, certifique-se de que:")
-    print("1. Tem uma GPU NVIDIA instalada")
-    print("2. Tem os drivers CUDA instalados")
-    print("3. Tem o PyTorch com suporte CUDA instalado")
-    sys.exit(1)
+# Inicializa o colorama
+init(autoreset=True)
 
-# Configurar device para GPU
-device = torch.device("cuda")
-print(f"Usando GPU: {torch.cuda.get_device_name(0)}")
+# Escolha do dispositivo de inferência
+print("Escolha o dispositivo de inferência:")
+print("1 - GPU (se disponível)")
+print("2 - CPU")
+opcao = input("Digite 1 ou 2: ").strip()
 
-# Carrega o tokenizer e o modelo
-model_name = "gpt2"
-try:
-    tokenizer = GPT2Tokenizer.from_pretrained(model_name)
-    model = GPT2LMHeadModel.from_pretrained(model_name)
-    model.to(device)
-    print(f"Modelo {model_name} carregado com sucesso")
-except Exception as e:
-    print(f"ERRO ao carregar o modelo: {e}")
-    sys.exit(1)
-
-def generate_response(prompt, historico_conversa=None, max_length=200, temperature=0.7, top_p=0.9):
-    # Prepara o prompt com o histórico da conversa
-    if historico_conversa:
-        prompt_completo = "\n".join(historico_conversa) + "\nUtilizador: " + prompt
+if opcao == "1":
+    if torch.cuda.is_available():
+        device = torch.device("cuda")
+        print(f"{Fore.GREEN}Usando GPU: {torch.cuda.get_device_name(0)}{Style.RESET_ALL}")
+        model_dtype = torch.float16
+        device_map = "auto"
     else:
-        prompt_completo = prompt
-    
-    # Adiciona instruções específicas para português de Portugal
-    prompt_completo = """Instruções: Responda sempre em português de Portugal, usando termos e expressões comuns em Portugal. 
+        print(f"{Fore.RED}GPU não encontrada. Utilizando CPU.{Style.RESET_ALL}")
+        device = torch.device("cpu")
+        model_dtype = torch.float32
+        device_map = None
+elif opcao == "2":
+    device = torch.device("cpu")
+    print(f"{Fore.GREEN}Usando CPU para inferência.{Style.RESET_ALL}")
+    model_dtype = torch.float32
+    device_map = None
+else:
+    print("Opção inválida. Utilizando CPU por padrão.")
+    device = torch.device("cpu")
+    model_dtype = torch.float32
+    device_map = None
+
+model_path = "./trained_model"
+try:
+    tokenizer = AutoTokenizer.from_pretrained(model_path)
+    model = AutoModelForCausalLM.from_pretrained(
+        model_path,
+        torch_dtype=model_dtype,
+        device_map=device_map
+    )
+    # Se estiver a usar CPU, garante que o modelo está na CPU
+    if device.type == "cpu":
+        model.to(device)
+    print(f"{Fore.GREEN}Modelo treinado carregado com sucesso de {model_path}{Style.RESET_ALL}")
+except Exception as e:
+    print(f"{Fore.RED}Erro ao carregar o modelo treinado: {e}{Style.RESET_ALL}")
+    print("Tentando carregar o modelo base como fallback...")
+    try:
+        tokenizer = AutoTokenizer.from_pretrained("pierreguillou/gpt2-small-portuguese")
+        model = AutoModelForCausalLM.from_pretrained(
+            "pierreguillou/gpt2-small-portuguese",
+            torch_dtype=model_dtype,
+            device_map=device_map
+        )
+        if device.type == "cpu":
+            model.to(device)
+        print(f"{Fore.GREEN}Modelo base carregado com sucesso como fallback{Style.RESET_ALL}")
+    except Exception as e:
+        print(f"{Fore.RED}Erro ao carregar o modelo base: {e}{Style.RESET_ALL}")
+        sys.exit(1)
+
+# Verifica e configura o pad_token para garantir que ele não seja igual ao eos_token
+if tokenizer.pad_token is None or tokenizer.pad_token_id == tokenizer.eos_token_id:
+    tokenizer.add_special_tokens({'pad_token': '<PAD>'})
+    model.resize_token_embeddings(len(tokenizer))
+    model.config.pad_token_id = tokenizer.pad_token_id
+print(f"{Fore.YELLOW}Pad token configurado como: {tokenizer.pad_token_id}{Style.RESET_ALL}")
+
+def generate_response(user_input, historico_conversa=None, max_new_tokens=200, temperature=0.7, top_p=0.9):
+    # Constrói o prompt completo a partir do histórico
+    if historico_conversa:
+        prompt_historico = "\n".join(historico_conversa)
+    else:
+        prompt_historico = f"Usuário: {user_input}"
+
+    # Acrescenta o marcador para o assistente responder
+    prompt_completo = prompt_historico + "\nAssistente:"
+
+    # Adiciona as instruções no início
+    prompt_completo = """Instruções: Responda sempre em português de Portugal, usando termos e expressões comuns em Portugal.
 Mantenha um tom profissional mas amigável. Use termos específicos de Portugal como 'peço desculpa', 'obrigado', etc.
 
 """ + prompt_completo
-    
-    # Tokeniza o prompt
-    inputs = tokenizer.encode(prompt_completo, return_tensors="pt")
+
+    print(f"{Fore.CYAN}[DEBUG] Prompt completo:\n{prompt_completo}{Style.RESET_ALL}") # Manter o debug para verificar
+    inputs = tokenizer(prompt_completo, return_tensors="pt", add_special_tokens=True, return_attention_mask=True)
+    # Substitui eventuais tokens 0 na entrada pelo pad_token_id
+    inputs["input_ids"] = inputs["input_ids"].masked_fill(inputs["input_ids"] == 0, tokenizer.pad_token_id)
     inputs = inputs.to(device)
-    
-    # Gera a resposta
+    print(f"[DEBUG] Input IDs: {inputs['input_ids']}")
+    print(f"[DEBUG] Attention mask: {inputs['attention_mask']}")
+
+    # Geração ajustada com parâmetros que ajudam a estabilizar os logits
     outputs = model.generate(
-        inputs,
-        max_length=max_length,
+        inputs["input_ids"],
+        attention_mask=inputs["attention_mask"],
+        max_new_tokens=max_new_tokens,
         temperature=temperature,
         top_p=top_p,
-        do_sample=True,
-        pad_token_id=tokenizer.eos_token_id,
-        num_beams=5,
-        early_stopping=True,
-        no_repeat_ngram_size=2,
-        length_penalty=1.0,
-        repetition_penalty=1.2,
-        min_length=10,
-        max_new_tokens=100
+        do_sample=True,         # Utilize sampling para respostas mais naturais
+        use_cache=False,
+        pad_token_id=tokenizer.pad_token_id,
+        no_repeat_ngram_size=2,       # Evita repetições exageradas
+        repetition_penalty=1.0         # Penalidade neutra para repetições
     )
-    
-    # Decodifica a resposta
+
     response = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    
-    # Remove o prompt da resposta
     response = response[len(prompt_completo):].strip()
-    
-    # Limpa a resposta de possíveis artefatos
-    response = response.replace("Pergunta:", "").replace("Resposta:", "").strip()
-    
-    # Se a resposta estiver vazia ou for muito curta, gera uma resposta padrão
+
     if not response or len(response.split()) < 3:
         response = "Olá! Sou o seu assistente especializado em condução e Código da Estrada. Como posso ajudar?"
-    
-    # Remove caracteres especiais e emojis indesejados
-    import re
-    response = re.sub(r'[^\w\s.,!?áéíóúâêîôûãõàèìòùäëïöüçÁÉÍÓÚÂÊÎÔÛÃÕÀÈÌÒÙÄËÏÖÜÇ]', '', response)
-    
-    # Verifica se a resposta está em português de Portugal
-    palavras_portuguesas = {
-        'olá', 'oi', 'bom', 'dia', 'tarde', 'noite', 'como', 'está', 'tudo', 'bem',
-        'obrigado', 'obrigada', 'por favor', 'desculpe', 'sim', 'não', 'pode', 'ajudar',
-        'quero', 'saber', 'sobre', 'código', 'estrada', 'condução', 'carro', 'moto',
-        'velocidade', 'multa', 'sinal', 'trânsito', 'condutor', 'peão', 'via', 'rua',
-        'estrada', 'autoestrada', 'rotunda', 'cruzamento', 'semáforo', 'stop', 'ceda',
-        'proibido', 'obrigatório', 'permitido', 'multa', 'coima', 'infração', 'contraordenação'
-    }
-    
-    # Palavras específicas de Portugal
-    palavras_portugal = {
-        'peço desculpa', 'desculpe', 'obrigado', 'obrigada', 'bom dia', 'boa tarde',
-        'boa noite', 'como está', 'tudo bem', 'pode ser', 'claro', 'naturalmente',
-        'sem dúvida', 'com certeza', 'exatamente', 'precisamente', 'portanto',
-        'consequentemente', 'assim sendo', 'deste modo', 'desta forma'
-    }
-    
-    palavras_resposta = set(response.lower().split())
-    
-    # Se não houver palavras em português na resposta, gera uma resposta padrão
-    if not any(palavra in palavras_portuguesas for palavra in palavras_resposta):
-        response = "Olá! Sou o seu assistente especializado em condução e Código da Estrada. Como posso ajudar?"
-    
-    # Tenta garantir que a resposta use termos de Portugal
-    if not any(palavra in palavras_portugal for palavra in palavras_resposta):
-        # Adiciona uma frase introdutória em português de Portugal
-        response = "Peço desculpa, mas vou reformular a minha resposta. " + response
-    
+
+    # Limpeza de caracteres indesejados
+    response = re.sub(r'[^\w\s.,!?áéíóúâêîôûãõàèìòùäëïöüçÁÉÍÓÚÂÊÎÔÛÃÕÀÈÌÒÜÇ]', '', response)
+
+    # Remover a validação de termos em português
+    # palavras_portuguesas = {
+    #     'olá', 'oi', 'bom', 'dia', 'tarde', 'noite', 'como', 'está', 'tudo', 'bem',
+    #     'obrigado', 'obrigada', 'por favor', 'desculpe', 'sim', 'não', 'pode', 'ajudar',
+    #     'quero', 'saber', 'sobre', 'código', 'estrada', 'condução', 'carro', 'moto',
+    #     'velocidade', 'multa', 'sinal', 'trânsito', 'condutor', 'peão', 'via', 'rua',
+    #     'autoestrada', 'rotunda', 'cruzamento', 'semáforo', 'stop', 'ceda',
+    #     'proibido', 'obrigatório', 'permitido', 'coima', 'infração', 'contraordenação'
+    # }
+    # palavras_portuguesas_extra = {
+    #     'peço desculpa', 'desculpe', 'obrigado', 'obrigada', 'bom dia', 'boa tarde',
+    #     'boa noite', 'como está', 'tudo bem', 'pode ser', 'claro', 'naturalmente',
+    #     'sem dúvida', 'com certeza', 'exatamente', 'precisamente', 'portanto',
+    #     'consequentemente', 'assim sendo'
+    # }
+    # palavras_resposta = set(response.lower().split())
+    # if not any(p in palavras_portuguesas for p in palavras_resposta):
+    #     response = "Olá! Sou o seu assistente especializado em condução e Código da Estrada. Como posso ajudar?"
+    # if not any(p in palavras_portuguesas_extra for p in palavras_resposta):
+    #     response = "Peço desculpa, mas vou reformular a minha resposta. " + response
+
     return response
 
+
 def load_quiz_data():
-    """Carrega as perguntas do quiz do arquivo JSON"""
     try:
         with open("../../Documentacao/Questoes/questoes.json", encoding="utf-8") as f:
             return json.load(f)
@@ -125,7 +156,6 @@ def load_quiz_data():
         return []
 
 def load_codigo_data():
-    """Carrega o código da estrada do arquivo JSON"""
     try:
         with open("../../Documentacao/BomCondutor/Codigo_Estrada.json", encoding="utf-8") as f:
             return json.load(f)
@@ -134,135 +164,44 @@ def load_codigo_data():
         return {"articles": []}
 
 def similar_text(texto1, texto2, threshold=0.6):
-    """Compara dois textos e retorna True se forem similares"""
-    # Pré-processamento
     texto1 = texto1.lower().strip()
     texto2 = texto2.lower().strip()
-    
-    # Normaliza formatos de velocidade
-    def normalizar_velocidade(texto):
-        # Padroniza diferentes formatos de velocidade
-        texto = texto.replace('kms', 'km').replace('quilómetros', 'km').replace('quilometros', 'km')
-        texto = texto.replace('por hora', '/h').replace('p/h', '/h').replace('por h', '/h')
-        texto = texto.replace(' ', '')  # Remove espaços
-        return texto
-    
-    # Normaliza formatos de distância
-    def normalizar_distancia(texto):
-        # Padroniza diferentes formatos de distância
-        texto = texto.replace('metro', 'm').replace('metros', 'm')
-        texto = texto.replace('meio', '0.5').replace('e meio', '0.5')
-        texto = texto.replace('um', '1').replace('uma', '1')
-        texto = texto.replace('dois', '2').replace('duas', '2')
-        texto = texto.replace('três', '3').replace('tres', '3')
-        texto = texto.replace('quatro', '4')
-        texto = texto.replace('cinco', '5')
-        texto = texto.replace('seis', '6')
-        texto = texto.replace('sete', '7')
-        texto = texto.replace('oito', '8')
-        texto = texto.replace('nove', '9')
-        texto = texto.replace('dez', '10')
-        texto = texto.replace(' ', '')  # Remove espaços
-        return texto
-    
-    # Normaliza formatos de direção
-    def normalizar_direcao(texto):
-        # Padroniza diferentes formatos de direção
-        texto = texto.replace('esquerda', 'esq').replace('direita', 'dir')
-        texto = texto.replace('à', 'a').replace('á', 'a')
-        texto = texto.replace('à frente', 'afrente').replace('a frente', 'afrente')
-        texto = texto.replace(' ', '')  # Remove espaços
-        return texto
-    
-    # Aplica todas as normalizações
-    texto1 = normalizar_velocidade(texto1)
-    texto2 = normalizar_velocidade(texto2)
-    texto1 = normalizar_distancia(texto1)
-    texto2 = normalizar_distancia(texto2)
-    texto1 = normalizar_direcao(texto1)
-    texto2 = normalizar_direcao(texto2)
-    
-    # Se os textos são exatamente iguais após normalização
-    if texto1 == texto2:
-        return True
-    
-    # Remove pontuação e caracteres especiais
-    import re
     texto1 = re.sub(r'[^\w\s]', '', texto1)
     texto2 = re.sub(r'[^\w\s]', '', texto2)
-    
-    # Lista de palavras comuns a ignorar
-    stop_words = {
-        'o', 'a', 'os', 'as', 'um', 'uma', 'de', 'da', 'do', 'das', 'dos',
-        'em', 'na', 'no', 'à', 'ao', 'e', 'é', 'que', 'quando', 'em', 'caso',
-        'de', 'perigo', 'iminente', 'apenas', 'sinais', 'sonoros', 'localidades'
-    }
-    
-    # Divide em palavras e remove stop words
+    stop_words = {'o', 'a', 'os', 'as', 'um', 'uma', 'de', 'da', 'do', 'das', 'dos', 'em', 'na', 'no', 'à', 'ao', 'e', 'é'}
     palavras1 = [p for p in texto1.split() if p not in stop_words]
     palavras2 = [p for p in texto2.split() if p not in stop_words]
-    
     if not palavras1 or not palavras2:
         return False
-    
-    # Usando multisets (Counter) para considerar frequência de palavras
     from collections import Counter
     contador1 = Counter(palavras1)
     contador2 = Counter(palavras2)
-    
-    # Calcula a interseção considerando a frequência
     intersection = sum((contador1 & contador2).values())
-    
-    # Calcula a similaridade de Jaccard ponderada
     similarity = intersection / (sum(contador1.values()) + sum(contador2.values()) - intersection)
-    
-    # Se a similaridade é alta o suficiente
-    if similarity >= threshold:
-        return True
-    
-    # Verifica se há números nos textos
-    numeros1 = re.findall(r'\d+\.?\d*', texto1)
-    numeros2 = re.findall(r'\d+\.?\d*', texto2)
-    
-    # Se ambos os textos contêm os mesmos números
-    if numeros1 and numeros2:
-        # Converte para float para comparar números decimais
-        try:
-            nums1 = [float(n) for n in numeros1]
-            nums2 = [float(n) for n in numeros2]
-            if set(nums1) == set(nums2):
-                # Se os números são iguais, considera similar mesmo com threshold mais baixo
-                return similarity >= (threshold * 0.8)
-        except ValueError:
-            pass
-    
-    return False
+    return similarity >= threshold
 
 def main():
-    # Carrega dados para quiz e consulta de artigos
     questions = load_quiz_data()
     codigo = load_codigo_data()
     
-    print(f"{Fore.CYAN}="*70)
+    print(f"{Fore.CYAN}{'='*70}")
     print(" Bem-vindo ao ChatBot do Código da Estrada Português!")
     print(f" Digite '{Fore.YELLOW}quiz{Style.RESET_ALL}{Fore.CYAN}' para iniciar modo de perguntas e respostas")
     print(f" Digite '{Fore.YELLOW}artigo X{Style.RESET_ALL}{Fore.CYAN}' para consultar um artigo específico")
     print(f" Digite '{Fore.YELLOW}ajuda{Style.RESET_ALL}{Fore.CYAN}' para ver opções disponíveis")
     print(f" Digite '{Fore.YELLOW}sair{Style.RESET_ALL}{Fore.CYAN}' para terminar o chat")
     print(f" Digite '{Fore.YELLOW}conversa{Style.RESET_ALL}{Fore.CYAN}' para iniciar uma conversa normal")
-    print("="*70)
+    print(f"{'='*70}{Style.RESET_ALL}")
     
     modo_quiz = False
     modo_conversa = False
     pergunta_atual = None
     historico_conversa = []
     
-    # Adiciona uma mensagem inicial ao histórico
-    historico_conversa.append("Assistente: Olá! Sou o assistente do Código da Estrada. Como posso ajudar você hoje?")
+    # historico_conversa.append("Assistente: Olá! Sou o assistente do Código da Estrada. Como posso ajudar você hoje?")
     
     while True:
         if modo_quiz and not pergunta_atual:
-            # Seleciona uma nova pergunta em modo quiz
             pergunta_atual = random.choice(questions) if questions else None
             if pergunta_atual:
                 print(f"\n{Fore.GREEN}[QUIZ] {pergunta_atual['pergunta']}{Style.RESET_ALL}")
@@ -284,18 +223,15 @@ def main():
         if user_input.lower() == "sair":
             print(f"{Fore.YELLOW}Até logo! Conduza com segurança.{Style.RESET_ALL}")
             break
-            
         elif user_input.lower() == "ajuda":
             print(f"{Fore.CYAN}Comandos disponíveis:{Style.RESET_ALL}")
-            print(f"- {Fore.YELLOW}quiz{Style.RESET_ALL}: Entra no modo de testes com perguntas aleatórias")
-            print(f"- {Fore.YELLOW}artigo X{Style.RESET_ALL}: Consulta o Artigo X° do Código da Estrada")
-            print(f"- {Fore.YELLOW}conversa{Style.RESET_ALL}: Inicia uma conversa normal")
+            print(f"- {Fore.YELLOW}quiz{Style.RESET_ALL}: Entra no modo de perguntas e respostas")
+            print(f"- {Fore.YELLOW}artigo X{Style.RESET_ALL}: Consulta o artigo X do Código da Estrada")
+            print(f"- {Fore.YELLOW}conversa{Style.RESET_ALL}: Inicia uma conversa livre")
             print(f"- {Fore.YELLOW}encerrar quiz{Style.RESET_ALL}: Sai do modo quiz")
             print(f"- {Fore.YELLOW}dica{Style.RESET_ALL}: Mostra a resposta correta durante o quiz")
-            print(f"- {Fore.YELLOW}ajuda{Style.RESET_ALL}: Mostra esta mensagem")
-            print(f"- {Fore.YELLOW}sair{Style.RESET_ALL}: Encerra a conversa")
+            print(f"- {Fore.YELLOW}sair{Style.RESET_ALL}: Encerra o chat")
             continue
-            
         elif user_input.lower() == "quiz":
             modo_quiz = True
             modo_conversa = False
@@ -303,7 +239,6 @@ def main():
             historico_conversa = []
             print(f"{Fore.GREEN}Entrando no modo QUIZ. Vou testar seus conhecimentos!{Style.RESET_ALL}")
             continue
-            
         elif user_input.lower() == "conversa":
             modo_quiz = False
             modo_conversa = True
@@ -312,7 +247,6 @@ def main():
             historico_conversa.append("Assistente: Olá! Podemos conversar sobre qualquer assunto relacionado à condução. Como posso ajudar você hoje?")
             print(f"{Fore.GREEN}Entrando no modo CONVERSA. Podemos conversar sobre qualquer assunto!{Style.RESET_ALL}")
             continue
-            
         elif user_input.lower() == "encerrar quiz":
             if modo_quiz:
                 modo_quiz = False
@@ -321,9 +255,7 @@ def main():
             else:
                 print(f"{Fore.YELLOW}Você não está no modo QUIZ atualmente.{Style.RESET_ALL}")
             continue
-            
         elif user_input.lower().startswith("artigo"):
-            # Buscar informações sobre artigo específico
             try:
                 artigo_num = user_input.split("artigo")[1].strip().lower()
                 for artigo in codigo.get("articles", []):
@@ -334,11 +266,10 @@ def main():
                         break
                 else:
                     print(f"{Fore.RED}Artigo não encontrado. Tente especificar melhor (ex: 'artigo 1º'){Style.RESET_ALL}")
-            except:
-                print(f"{Fore.RED}Formato inválido. Use 'artigo X°' ou 'artigo X'.{Style.RESET_ALL}")
+            except Exception:
+                print(f"{Fore.RED}Formato inválido. Use 'artigo X' (ex: 'artigo 1º'){Style.RESET_ALL}")
             continue
         
-        # Processamento normal ou verificação de resposta no modo quiz
         if modo_quiz and pergunta_atual:
             if user_input.lower() == "dica":
                 print(f"{Fore.YELLOW}Dica: A resposta correta é:{Style.RESET_ALL}")
@@ -347,31 +278,24 @@ def main():
                     print(f"{Fore.YELLOW}Referência: {pergunta_atual['referencia']}{Style.RESET_ALL}")
                 continue
             
-            # Verificar resposta no modo quiz
             resposta_usuario = user_input.lower().strip()
             correto = False
-            
-            # Verifica com as respostas corretas
             for resposta_correta in pergunta_atual.get("respostas_corretas", []):
-                if similar_text(resposta_usuario, resposta_correta.lower()):
+                if similar_semantic(resposta_usuario, resposta_correta.lower()):
                     correto = True
                     break
-            
             if correto:
-                print(f"{Fore.GREEN}✓ Correto! {Style.RESET_ALL}")
+                print(f"{Fore.GREEN}✓ Correto!{Style.RESET_ALL}")
                 print(f"{Fore.CYAN}Resposta: {pergunta_atual['respostas_corretas'][0]}{Style.RESET_ALL}")
             else:
-                print(f"{Fore.RED}✗ Incorreto. {Style.RESET_ALL}")
+                print(f"{Fore.RED}✗ Incorreto.{Style.RESET_ALL}")
                 print(f"{Fore.CYAN}Resposta correta: {pergunta_atual['respostas_corretas'][0]}{Style.RESET_ALL}")
-            
             if "referencia" in pergunta_atual:
                 print(f"{Fore.YELLOW}Referência: {pergunta_atual['referencia']}{Style.RESET_ALL}")
-            
-            # Perguntar se deseja continuar com o quiz
             print(f"\n{Fore.YELLOW}Continuar com o quiz? (s/n){Style.RESET_ALL}")
             try:
                 continuar = input().strip().lower()
-                if continuar == "s" or continuar == "sim":
+                if continuar in ["s", "sim"]:
                     pergunta_atual = None
                 else:
                     modo_quiz = False
@@ -380,28 +304,19 @@ def main():
                 print(f"\n{Fore.YELLOW}Chat encerrado. Até logo!{Style.RESET_ALL}")
                 break
         else:
-            # Modo de conversa normal
             try:
-                # Adiciona a mensagem do usuário ao histórico
                 historico_conversa.append(f"Usuário: {user_input}")
-                
-                # Cria o prompt com o histórico da conversa
-                prompt = "\n".join(historico_conversa[-3:]) + "\nAssistente:"
-                
-                # Gera a resposta
-                response = generate_response(prompt, historico_conversa)
-                
-                # Adiciona a resposta ao histórico
+                # Chama generate_response apenas com a ÚLTIMA entrada do utilizador
+                # e o histórico completo. A função generate_response tratará da formatação.
+                # Nota: A função generate_response precisa ser ligeiramente ajustada também.
+                response = generate_response(user_input, historico_conversa) # Passa user_input diretamente
                 historico_conversa.append(f"Assistente: {response}")
-                
-                # Mantém apenas as últimas 6 mensagens (3 pares de pergunta/resposta)
                 if len(historico_conversa) > 6:
-                    historico_conversa = historico_conversa[-6:]
-                
+                    historico_conversa = historico_conversa[-6:] # Mantém o limite do histórico
                 print(f"{Fore.MAGENTA}ChatBot:{Style.RESET_ALL} {response}")
             except Exception as e:
                 print(f"{Fore.RED}Erro ao gerar resposta: {str(e)}{Style.RESET_ALL}")
 
 if __name__ == "__main__":
     main()
-    torch.cuda.empty_cache() 
+    torch.cuda.empty_cache()

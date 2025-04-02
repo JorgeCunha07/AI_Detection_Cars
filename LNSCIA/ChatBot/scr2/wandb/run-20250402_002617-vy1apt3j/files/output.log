@@ -1,0 +1,110 @@
+  0%|                                                                                                                                                                               | 0/2770278 [00:00<?, ?it/s]`loss_type=None` was set in the config but it is unrecognised.Using the default loss: `ForCausalLMLoss`.
+  0%|                                                                                                                                                              | 2000/2770278 [8:22:09<261:34:21,  2.94it/s]Traceback (most recent call last):
+{'loss': 3.4027, 'grad_norm': 2.7924015522003174, 'learning_rate': 4.999819512698726e-05, 'epoch': 0.0}
+{'loss': 3.4169, 'grad_norm': 2.696662187576294, 'learning_rate': 4.9996390253974515e-05, 'epoch': 0.0}
+{'loss': 3.4105, 'grad_norm': 3.590510845184326, 'learning_rate': 4.9994585380961765e-05, 'epoch': 0.0}
+{'loss': 3.3515, 'grad_norm': 3.2266318798065186, 'learning_rate': 4.999278050794902e-05, 'epoch': 0.0}
+{'loss': 3.3405, 'grad_norm': 4.22891092300415, 'learning_rate': 4.999097563493628e-05, 'epoch': 0.0}
+  File "C:\Users\CarlosMoutinho(11408\Documents\GitHub\AI_Detection_Cars\LNSCIA\ChatBot\scr2\treino2.py", line 68, in <module>                                         | 32205/102603 [51:38<2:28:03,  7.92it/s]
+{'eval_loss': 3.19822359085083, 'eval_runtime': 9964.1378, 'eval_samples_per_second': 20.594, 'eval_steps_per_second': 10.297, 'epoch': 0.0}
+{'loss': 3.4011, 'grad_norm': 2.9300968647003174, 'learning_rate': 4.9989170761923534e-05, 'epoch': 0.0}
+{'loss': 3.2438, 'grad_norm': 3.4196791648864746, 'learning_rate': 4.998736588891079e-05, 'epoch': 0.0}
+{'loss': 3.2566, 'grad_norm': 3.115236282348633, 'learning_rate': 4.998556101589805e-05, 'epoch': 0.0}
+{'loss': 3.3388, 'grad_norm': 3.2383029460906982, 'learning_rate': 4.9983756142885304e-05, 'epoch': 0.0}
+{'loss': 3.3291, 'grad_norm': 2.781299114227295, 'learning_rate': 4.9981951269872554e-05, 'epoch': 0.0}
+{'eval_loss': 3.1736953258514404, 'eval_runtime': 9771.7896, 'eval_samples_per_second': 21.0, 'eval_steps_per_second': 10.5, 'epoch': 0.0}
+{'loss': 3.3784, 'grad_norm': 2.7924246788024902, 'learning_rate': 4.998014639685981e-05, 'epoch': 0.0}
+{'loss': 3.302, 'grad_norm': 2.742295026779175, 'learning_rate': 4.9978341523847066e-05, 'epoch': 0.0}
+{'loss': 3.4279, 'grad_norm': 2.716435194015503, 'learning_rate': 4.997653665083432e-05, 'epoch': 0.0}
+{'loss': 3.2962, 'grad_norm': 3.5427019596099854, 'learning_rate': 4.997473177782158e-05, 'epoch': 0.0}
+{'loss': 3.156, 'grad_norm': 3.3140921592712402, 'learning_rate': 4.997292690480883e-05, 'epoch': 0.0}
+{'eval_loss': 3.15853214263916, 'eval_runtime': 9758.2067, 'eval_samples_per_second': 21.029, 'eval_steps_per_second': 10.515, 'epoch': 0.0}
+{'loss': 3.3177, 'grad_norm': 3.567641258239746, 'learning_rate': 4.997112203179609e-05, 'epoch': 0.0}
+{'loss': 3.3467, 'grad_norm': 3.34496808052063, 'learning_rate': 4.996931715878335e-05, 'epoch': 0.0}
+{'loss': 3.2195, 'grad_norm': 3.2747719287872314, 'learning_rate': 4.99675122857706e-05, 'epoch': 0.0}
+{'loss': 3.258, 'grad_norm': 2.4351398944854736, 'learning_rate': 4.9965707412757855e-05, 'epoch': 0.0}
+{'loss': 3.2523, 'grad_norm': 1.9635576009750366, 'learning_rate': 4.996390253974511e-05, 'epoch': 0.0}
+    main()
+    ~~~~^^
+  File "C:\Users\CarlosMoutinho(11408\Documents\GitHub\AI_Detection_Cars\LNSCIA\ChatBot\scr2\treino2.py", line 65, in main
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\transformers\trainer.py", line 2245, in train
+    return inner_training_loop(
+        args=args,
+    ...<2 lines>...
+        ignore_keys_for_eval=ignore_keys_for_eval,
+    )
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\transformers\trainer.py", line 2620, in _inner_training_loop
+    self._maybe_log_save_evaluate(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        tr_loss, grad_norm, model, trial, epoch, ignore_keys_for_eval, start_time
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\transformers\trainer.py", line 3093, in _maybe_log_save_evaluate
+    metrics = self._evaluate(trial, ignore_keys_for_eval)
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\transformers\trainer.py", line 3047, in _evaluate
+    metrics = self.evaluate(ignore_keys=ignore_keys_for_eval)
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\transformers\trainer.py", line 4136, in evaluate
+    output = eval_loop(
+        eval_dataloader,
+    ...<5 lines>...
+        metric_key_prefix=metric_key_prefix,
+    )
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\transformers\trainer.py", line 4330, in evaluation_loop
+    losses, logits, labels = self.prediction_step(model, inputs, prediction_loss_only, ignore_keys=ignore_keys)
+                             ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\transformers\trainer.py", line 4546, in prediction_step
+    loss, outputs = self.compute_loss(model, inputs, return_outputs=True)
+                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\transformers\trainer.py", line 3783, in compute_loss
+    outputs = model(**inputs)
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\torch\nn\modules\module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\torch\nn\modules\module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\accelerate\utils\operations.py", line 819, in forward
+    return model_forward(*args, **kwargs)
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\accelerate\utils\operations.py", line 807, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\torch\amp\autocast_mode.py", line 44, in decorate_autocast
+    return func(*args, **kwargs)
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\transformers\models\gpt2\modeling_gpt2.py", line 1062, in forward
+    transformer_outputs = self.transformer(
+        input_ids,
+    ...<11 lines>...
+        return_dict=return_dict,
+    )
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\torch\nn\modules\module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\torch\nn\modules\module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\transformers\models\gpt2\modeling_gpt2.py", line 922, in forward
+    outputs = block(
+        hidden_states,
+    ...<6 lines>...
+        output_attentions=output_attentions,
+    )
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\torch\nn\modules\module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\torch\nn\modules\module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\transformers\models\gpt2\modeling_gpt2.py", line 441, in forward
+    feed_forward_hidden_states = self.mlp(hidden_states)
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\torch\nn\modules\module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\torch\nn\modules\module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\transformers\models\gpt2\modeling_gpt2.py", line 371, in forward
+    hidden_states = self.dropout(hidden_states)
+                    ^^^^^^^^^^^^
+  File "C:\Users\Public\Anaconda\envs\torch\Lib\site-packages\torch\nn\modules\module.py", line 1915, in __getattr__
+    def __getattr__(self, name: str) -> Union[Tensor, "Module"]:
+
+KeyboardInterrupt

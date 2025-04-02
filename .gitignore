@@ -73,3 +73,13 @@ LNSCIA/ChatBot/scr/trained_model/model.safetensors
 LNSCIA/ChatBot/scrV2/results/checkpoint-100/model.safetensors
 LNSCIA/ChatBot/scrV2/results/checkpoint-145/model.safetensors
 LNSCIA/ChatBot/scrV2/trained_model/model.safetensors
+LNSCIA/ChatBot/output/checkpoint-200/model.safetensors
+LNSCIA/ChatBot/output/checkpoint-100/model.safetensors
+LNSCIA/ChatBot/output/checkpoint-300/model.safetensors
+LNSCIA/ChatBot/scr/results/checkpoint-590/model.safetensors
+LNSCIA/ChatBot/scr/results/checkpoint-500/model.safetensors
+LNSCIA/ChatBot/scr2/gpt2-finetuned-wikipedia-pt/checkpoint-1500/model.safetensors
+LNSCIA/ChatBot/scr2/gpt2-finetuned-wikipedia-pt/checkpoint-1000/model.safetensors
+LNSCIA/ChatBot/scr3/results/checkpoint-445/model.safetensors
+LNSCIA/ChatBot/scr3/results/checkpoint-125/model.safetensors
+LNSCIA/ChatBot/scr_final/chat/gpt2-chat-finetuned/model.safetensors

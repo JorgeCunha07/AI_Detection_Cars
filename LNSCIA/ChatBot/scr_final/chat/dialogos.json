@@ -1,0 +1,798 @@
+[
+  {
+     "input":"Olá! Bom dia. Gostaria de saber quais são os limites de velocidade nas autoestradas em Portugal.",
+     "output":"Bom dia! Nas autoestradas em Portugal, o limite de velocidade é de 120 km/h. No entanto, em algumas situações, como condições meteorológicas adversas ou obras na estrada, esse limite pode ser reduzido. É sempre bom estar atento à sinalização!"
+  },
+  {
+     "input":"Boa tarde! Tenho dúvidas sobre as prioridades nas rotundas. Quem tem preferência?",
+     "output":"Boa tarde! Nas rotundas em Portugal, os veículos que circulam dentro da rotunda têm prioridade sobre os que pretendem entrar. Portanto, ao aproximar-se de uma rotunda, deve ceder passagem aos veículos que já estão a circular nela."
+  },
+  {
+     "input":"Olá! Pode explicar-me o que significa uma sinalização vertical com um círculo vermelho e uma linha diagonal?",
+     "output":"Olá! Claro! A sinalização vertical com um círculo vermelho e uma linha diagonal indica proibição de entrada. É um sinal de 'Proibido Circular' e significa que não pode entrar ou circular naquela via ou área."
+  },
+  {
+     "input":"Boa noite! Quais são as normas de segurança para transportar crianças no carro?",
+     "output":"Boa noite! As crianças com menos de 12 anos e altura inferior a 135 cm devem ser transportadas em sistemas de retenção adequados à sua altura e peso, como cadeirinhas ou almofadas elevatórias. Estes sistemas devem ser instalados nos bancos traseiros do veículo."
+  },
+  {
+     "input":"Olá! É permitido usar o telemóvel enquanto se conduz?",
+     "output":"Olá! O uso do telemóvel ao volante é proibido, exceto se estiver a utilizar um sistema de mãos-livres. Mesmo assim, é importante manter a atenção na condução para garantir a segurança de todos."
+  },
+  {
+     "input":"Olá! Bom dia. Gostaria de saber quais são os limites de velocidade nas autoestradas em Portugal.",
+     "output":"Bom dia! Nas autoestradas em Portugal, o limite de velocidade é de 120 km/h. No entanto, em algumas situações, como condições meteorológicas adversas ou obras na estrada, esse limite pode ser reduzido. É sempre bom estar atento à sinalização!"
+  },
+  {
+     "input":"Boa tarde! Tenho dúvidas sobre as prioridades nas rotundas. Quem tem preferência?",
+     "output":"Boa tarde! Nas rotundas em Portugal, os veículos que circulam dentro da rotunda têm prioridade sobre os que pretendem entrar. Portanto, ao aproximar-se de uma rotunda, deve ceder passagem aos veículos que já estão a circular nela."
+  },
+  {
+     "input":"Olá! Pode explicar-me o que significa uma sinalização vertical com um círculo vermelho e uma linha diagonal?",
+     "output":"Olá! Claro! A sinalização vertical com um círculo vermelho e uma linha diagonal indica proibição de entrada. É um sinal de 'Proibido Circular' e significa que não pode entrar ou circular naquela via ou área."
+  },
+  {
+     "input":"Boa noite! Quais são as normas de segurança para transportar crianças no carro?",
+     "output":"Boa noite! As crianças com menos de 12 anos e altura inferior a 135 cm devem ser transportadas em sistemas de retenção adequados à sua altura e peso, como cadeirinhas ou almofadas elevatórias. Estes sistemas devem ser instalados nos bancos traseiros do veículo."
+  },
+  {
+     "input":"Olá! É permitido usar o telemóvel enquanto se conduz?",
+     "output":"Olá! O uso do telemóvel ao volante é proibido, exceto se estiver a utilizar um sistema de mãos-livres. Mesmo assim, é importante manter a atenção na condução para garantir a segurança de todos."
+  },
+  {
+     "input":"Olá! Bom dia. Gostaria de saber quais são os limites de velocidade nas autoestradas em Portugal.",
+     "output":"Bom dia! Nas autoestradas em Portugal, o limite de velocidade é de 120 km/h. No entanto, em algumas situações, como condições meteorológicas adversas ou obras na estrada, esse limite pode ser reduzido. É sempre bom estar atento à sinalização!"
+  },
+  {
+     "input":"Boa tarde! Tenho dúvidas sobre as prioridades nas rotundas. Quem tem preferência?",
+     "output":"Boa tarde! Nas rotundas em Portugal, os veículos que circulam dentro da rotunda têm prioridade sobre os que pretendem entrar. Portanto, ao aproximar-se de uma rotunda, deve ceder passagem aos veículos que já estão a circular nela."
+  },
+  {
+     "input":"Olá! Pode explicar-me o que significa uma sinalização vertical com um círculo vermelho e uma linha diagonal?",
+     "output":"Olá! Claro! A sinalização vertical com um círculo vermelho e uma linha diagonal indica proibição de entrada. É um sinal de 'Proibido Circular' e significa que não pode entrar ou circular naquela via ou área."
+  },
+  {
+     "input":"Boa noite! Quais são as normas de segurança para transportar crianças no carro?",
+     "output":"Boa noite! As crianças com menos de 12 anos e altura inferior a 135 cm devem ser transportadas em sistemas de retenção adequados à sua altura e peso, como cadeirinhas ou almofadas elevatórias. Estes sistemas devem ser instalados nos bancos traseiros do veículo."
+  },
+  {
+     "input":"Olá! É permitido usar o telemóvel enquanto se conduz?",
+     "output":"Olá! O uso do telemóvel ao volante é proibido, exceto se estiver a utilizar um sistema de mãos-livres. Mesmo assim, é importante manter a atenção na condução para garantir a segurança de todos."
+  },
+  {
+     "input":"Olá! Bom dia. Gostaria de saber quais são os limites de velocidade nas autoestradas em Portugal.",
+     "output":"Bom dia! Nas autoestradas em Portugal, o limite de velocidade é de 120 km/h. No entanto, em algumas situações, como condições meteorológicas adversas ou obras na estrada, esse limite pode ser reduzido. É sempre bom estar atento à sinalização!"
+  },
+  {
+     "input":"Boa tarde! Tenho dúvidas sobre as prioridades nas rotundas. Quem tem preferência?",
+     "output":"Boa tarde! Nas rotundas em Portugal, os veículos que circulam dentro da rotunda têm prioridade sobre os que pretendem entrar. Portanto, ao aproximar-se de uma rotunda, deve ceder passagem aos veículos que já estão a circular nela."
+  },
+  {
+     "input":"Olá! Pode explicar-me o que significa uma sinalização vertical com um círculo vermelho e uma linha diagonal?",
+     "output":"Olá! Claro! A sinalização vertical com um círculo vermelho e uma linha diagonal indica proibição de entrada. É um sinal de 'Proibido Circular' e significa que não pode entrar ou circular naquela via ou área."
+  },
+  {
+     "input":"Boa noite! Quais são as normas de segurança para transportar crianças no carro?",
+     "output":"Boa noite! As crianças com menos de 12 anos e altura inferior a 135 cm devem ser transportadas em sistemas de retenção adequados à sua altura e peso, como cadeirinhas ou almofadas elevatórias. Estes sistemas devem ser instalados nos bancos traseiros do veículo."
+  },
+  {
+     "input":"Olá! É permitido usar o telemóvel enquanto se conduz?",
+     "output":"Olá! O uso do telemóvel ao volante é proibido, exceto se estiver a utilizar um sistema de mãos-livres. Mesmo assim, é importante manter a atenção na condução para garantir a segurança de todos."
+  },
+  {
+     "input":"Olá! Quais são os limites de velocidade em vias urbanas?",
+     "output":"Olá! Em vias urbanas, o limite de velocidade é geralmente de 50 km/h, mas pode variar conforme a sinalização local. É importante estar atento aos sinais de trânsito."
+  },
+  {
+     "input":"Boa tarde! O que devo fazer se encontrar um semáforo a piscar em amarelo?",
+     "output":"Boa tarde! Se encontrar um semáforo a piscar em amarelo, deve reduzir a velocidade e estar preparado para parar, pois pode haver uma situação de perigo ou obras na via."
+  },
+  {
+     "input":"Olá! Como devo proceder ao ultrapassar um ciclista?",
+     "output":"Olá! Ao ultrapassar um ciclista, deve manter uma distância lateral de segurança de pelo menos 1,5 metros e reduzir a velocidade se necessário. A segurança do ciclista é prioridade."
+  },
+  {
+     "input":"Boa noite! O que significa a sinalização horizontal com linhas brancas descontínuas?",
+     "output":"Boa noite! A sinalização horizontal com linhas brancas descontínuas indica que é permitido ultrapassar, desde que seja seguro fazê-lo."
+  },
+  {
+     "input":"Olá! Posso estacionar em qualquer lugar se for uma emergência?",
+     "output":"Olá! Em situações de emergência, pode estacionar onde for necessário, mas deve tentar não bloquear outros veículos ou causar perigo. Sempre que possível, utilize áreas de estacionamento permitidas."
+  },
+  {
+     "input":"Olá! Como devo proceder se encontrar um animal na estrada?",
+     "output":"Olá! Se encontrar um animal na estrada, reduza a velocidade e, se possível, pare o veículo para evitar atropelá-lo. Sinalize com os faróis para alertar outros condutores."
+  },
+  {
+     "input":"Boa tarde! Quais são as regras para o uso de faróis?",
+     "output":"Boa tarde! Deve utilizar os faróis em condições de pouca visibilidade, como à noite ou em nevoeiro. Em autoestradas, utilize sempre os faróis de cruzamento."
+  },
+  {
+     "input":"Olá! O que devo fazer se o meu carro avariar na estrada?",
+     "output":"Olá! Se o seu carro avariar, tente estacionar em local seguro, ligue os quatro piscas e coloque o triângulo de sinalização a pelo menos 30 metros do veículo."
+  },
+  {
+     "input":"Boa noite! Posso usar o meu carro para transportar mercadorias?",
+     "output":"Boa noite! Depende do tipo de mercadoria e da legislação vigente. Algumas mercadorias podem exigir licenças especiais ou veículos adequados para o transporte."
+  },
+  {
+     "input":"Olá! Quais são as regras para o uso de cinto de segurança?",
+     "output":"Olá! O uso do cinto de segurança é obrigatório para todos os ocupantes do veículo, tanto nos bancos da frente como nos traseiros."
+  },
+  {
+     "input":"Olá! O que devo fazer se presenciar um acidente?",
+     "output":"Olá! Se presenciar um acidente, pare o veículo em local seguro, ligue para os serviços de emergência e preste assistência se possível, sem colocar a sua segurança em risco."
+  },
+  {
+     "input":"Olá! Bom dia. Gostaria de saber quais são os limites de velocidade nas autoestradas em Portugal.",
+     "output":"Bom dia! Nas autoestradas em Portugal, o limite de velocidade é de 120 km/h. No entanto, em algumas situações, como condições meteorológicas adversas ou obras na estrada, esse limite pode ser reduzido. É sempre bom estar atento à sinalização!"
+  },
+  {
+     "input":"Boa tarde! Tenho dúvidas sobre as prioridades nas rotundas. Quem tem preferência?",
+     "output":"Boa tarde! Nas rotundas em Portugal, os veículos que circulam dentro da rotunda têm prioridade sobre os que pretendem entrar. Portanto, ao aproximar-se de uma rotunda, deve ceder passagem aos veículos que já estão a circular nela."
+  },
+  {
+     "input":"Olá! Pode explicar-me o que significa uma sinalização vertical com um círculo vermelho e uma linha diagonal?",
+     "output":"Olá! Claro! A sinalização vertical com um círculo vermelho e uma linha diagonal indica proibição de entrada. É um sinal de 'Proibido Circular' e significa que não pode entrar ou circular naquela via ou área."
+  },
+  {
+     "input":"Boa noite! Quais são as normas de segurança para transportar crianças no carro?",
+     "output":"Boa noite! As crianças com menos de 12 anos e altura inferior a 135 cm devem ser transportadas em sistemas de retenção adequados à sua altura e peso, como cadeirinhas ou almofadas elevatórias. Estes sistemas devem ser instalados nos bancos traseiros do veículo."
+  },
+  {
+     "input":"Olá! É permitido usar o telemóvel enquanto se conduz?",
+     "output":"Olá! O uso do telemóvel ao volante é proibido, exceto se estiver a utilizar um sistema de mãos-livres. Mesmo assim, é importante manter a atenção na condução para garantir a segurança de todos."
+  },
+  {
+     "input":"Olá! Quais são os limites de velocidade em vias urbanas?",
+     "output":"Olá! Em vias urbanas, o limite de velocidade é geralmente de 50 km/h, mas pode variar conforme a sinalização local. É importante estar atento aos sinais de trânsito."
+  },
+  {
+     "input":"Boa tarde! O que devo fazer se encontrar um semáforo a piscar em amarelo?",
+     "output":"Boa tarde! Se encontrar um semáforo a piscar em amarelo, deve reduzir a velocidade e estar preparado para parar, pois pode haver uma situação de perigo ou obras na via."
+  },
+  {
+     "input":"Olá! Como devo proceder ao ultrapassar um ciclista?",
+     "output":"Olá! Ao ultrapassar um ciclista, deve manter uma distância lateral de segurança de pelo menos 1,5 metros e reduzir a velocidade se necessário. A segurança do ciclista é prioridade."
+  },
+  {
+     "input":"Boa noite! O que significa a sinalização horizontal com linhas brancas descontínuas?",
+     "output":"Boa noite! A sinalização horizontal com linhas brancas descontínuas indica que é permitido ultrapassar, desde que seja seguro fazê-lo."
+  },
+  {
+     "input":"Olá! Posso estacionar em qualquer lugar se for uma emergência?",
+     "output":"Olá! Em situações de emergência, pode estacionar onde for necessário, mas deve tentar não bloquear outros veículos ou causar perigo. Sempre que possível, utilize áreas de estacionamento permitidas."
+  },
+  {
+     "input":"Olá! Como devo proceder se encontrar um animal na estrada?",
+     "output":"Olá! Se encontrar um animal na estrada, reduza a velocidade e, se possível, pare o veículo para evitar atropelá-lo. Sinalize com os faróis para alertar outros condutores."
+  },
+  {
+     "input":"Boa tarde! Quais são as regras para o uso de faróis?",
+     "output":"Boa tarde! Deve utilizar os faróis em condições de pouca visibilidade, como à noite ou em nevoeiro. Em autoestradas, utilize sempre os faróis de cruzamento."
+  },
+  {
+     "input":"Olá! O que devo fazer se o meu carro avariar na estrada?",
+     "output":"Olá! Se o seu carro avariar, tente estacionar em local seguro, ligue os quatro piscas e coloque o triângulo de sinalização a pelo menos 30 metros do veículo."
+  },
+  {
+     "input":"Boa noite! Posso usar o meu carro para transportar mercadorias?",
+     "output":"Boa noite! Depende do tipo de mercadoria e da legislação vigente. Algumas mercadorias podem exigir licenças especiais ou veículos adequados para o transporte."
+  },
+  {
+     "input":"Olá! Quais são as regras para o uso de cinto de segurança?",
+     "output":"Olá! O uso do cinto de segurança é obrigatório para todos os ocupantes do veículo, tanto nos bancos da frente como nos traseiros."
+  },
+  {
+     "input":"Olá! O que devo fazer se presenciar um acidente?",
+     "output":"Olá! Se presenciar um acidente, pare o veículo em local seguro, ligue para os serviços de emergência e preste assistência se possível, sem colocar a sua segurança em risco."
+  },
+  {
+     "input":"Olá! Como posso saber se o meu carro está em boas condições para viajar?",
+     "output":"Olá! Deve fazer revisões periódicas no seu veículo e verificar regularmente os níveis de óleo, água, a pressão dos pneus e o estado dos travões."
+  },
+  {
+     "input":"Boa tarde! O que é uma via verde?",
+     "output":"Boa tarde! Uma via verde é uma faixa exclusiva para veículos com ocupação múltipla ou veículos elétricos, visando reduzir o trânsito e incentivar o uso de transporte sustentável."
+  },
+  {
+     "input":"Olá! O que devo fazer se perder a minha carta de condução?",
+     "output":"Olá! Se perder a sua carta de condução, deve comunicar às autoridades e solicitar uma segunda via o mais rápido possível."
+  },
+  {
+     "input":"Boa noite! Posso beber álcool antes de conduzir?",
+     "output":"Boa noite! A legislação portuguesa permite uma taxa de álcool no sangue de até 0,5 g/l para condutores em geral. No entanto, é sempre mais seguro não consumir álcool antes de conduzir."
+  },
+  {
+     "input":"Olá! O que é um radar de controlo de velocidade?",
+     "output":"Olá! Um radar de controlo de velocidade é um dispositivo utilizado para medir a velocidade dos veículos e garantir o cumprimento dos limites de velocidade."
+  },
+  {
+     "input":"Boa tarde! Como funciona o sistema de pontos na carta de condução?",
+     "output":"Boa tarde! O sistema de pontos na carta de condução atribui pontos aos condutores, que são subtraídos em caso de infrações. A perda total dos pontos resulta na suspensão da carta."
+  },
+  {
+     "input":"Olá! O que devo fazer se for multado?",
+     "output":"Olá! Se for multado, deve pagar a multa dentro do prazo estipulado ou contestá-la, se discordar da infração."
+  },
+  {
+     "input":"Boa noite! Posso usar o meu carro no estrangeiro?",
+     "output":"Boa noite! Sim, pode usar o seu carro no estrangeiro, mas deve verificar as regras de trânsito locais e ter toda a documentação necessária."
+  },
+  {
+     "input":"Olá! Como posso obter informações sobre o trânsito em tempo real?",
+     "output":"Olá! Pode utilizar aplicativos de navegação ou consultar sites de trânsito para obter informações em tempo real sobre o estado das vias."
+  },
+  {
+     "input":"Boa tarde! O que é uma zona de emissões reduzidas?",
+     "output":"Boa tarde! Uma zona de emissões reduzidas é uma área onde a circulação de veículos mais poluentes é restrita para melhorar a qualidade do ar."
+  },
+  {
+     "input":"Olá! Estou atrasado para o trabalho. Posso ultrapassar em faixa contínua?",
+     "output":"Olá! Não, ultrapassar em faixa contínua é proibido e pode resultar em multa. É importante respeitar a sinalização e planejar o tempo de viagem com antecedência."
+  },
+  {
+     "input":"Boa tarde! O que devo fazer se um pedestre atravessar fora da faixa?",
+     "output":"Boa tarde! Deve reduzir a velocidade e estar preparado para parar, garantindo a segurança do pedestre. A prioridade é sempre dos mais vulneráveis na via."
+  },
+  {
+     "input":"Olá! Como devo proceder se encontrar um veículo de emergência com sirenes ligadas?",
+     "output":"Olá! Deve dar passagem ao veículo de emergência, deslocando-se para a direita ou parando, se necessário, para permitir a passagem rápida e segura."
+  },
+  {
+     "input":"Boa noite! Posso estacionar em local reservado para deficientes se for rápido?",
+     "output":"Boa noite! Não, estacionar em locais reservados para deficientes é proibido, mesmo que seja por pouco tempo. Esses espaços devem estar sempre disponíveis para quem realmente precisa."
+  },
+  {
+     "input":"Olá! O que devo fazer se o meu carro começar a fazer um barulho estranho enquanto conduzo?",
+     "output":"Olá! Deve reduzir a velocidade e procurar um local seguro para parar. Verifique o veículo e, se necessário, ligue para assistência em viagem."
+  },
+  {
+     "input":"Boa tarde! Como devo agir se um motociclista estiver a fazer manobras perigosas?",
+     "output":"Boa tarde! Mantenha uma distância segura e evite reagir de forma agressiva. Se possível, anote a matrícula e informe as autoridades."
+  },
+  {
+     "input":"Olá! Posso usar o telemóvel para navegação enquanto conduzo?",
+     "output":"Olá! Pode usar o telemóvel para navegação desde que esteja em modo mãos-livres e não distraia a sua atenção da condução."
+  },
+  {
+     "input":"Boa noite! O que devo fazer se encontrar uma fila de trânsito devido a obras?",
+     "output":"Boa noite! Reduza a velocidade e siga as instruções dos sinais e dos operários. Mantenha uma distância segura do veículo à frente."
+  },
+  {
+     "input":"Olá! Como devo proceder se o meu carro ficar sem combustível na estrada?",
+     "output":"Olá! Tente estacionar em local seguro, ligue os quatro piscas e coloque o triângulo de sinalização. Peça ajuda ou ligue para assistência em viagem."
+  },
+  {
+     "input":"Boa tarde! Posso parar no acostamento para fazer uma chamada rápida?",
+     "output":"Boa tarde! O acostamento deve ser usado apenas em situações de emergência. Se precisar fazer uma chamada, procure uma área de descanso ou saída segura."
+  },
+  {
+     "input":"Olá! Estou atrasado para o trabalho. Posso ultrapassar em faixa contínua?",
+     "output":"Olá! Não, ultrapassar em faixa contínua é proibido e pode resultar em multa. É importante respeitar a sinalização e planejar o tempo de viagem com antecedência."
+  },
+  {
+     "input":"Boa tarde! O que devo fazer se um pedestre atravessar fora da faixa?",
+     "output":"Boa tarde! Deve reduzir a velocidade e estar preparado para parar, garantindo a segurança do pedestre. A prioridade é sempre dos mais vulneráveis na via."
+  },
+  {
+     "input":"Olá! Como devo proceder se encontrar um veículo de emergência com sirenes ligadas?",
+     "output":"Olá! Deve dar passagem ao veículo de emergência, deslocando-se para a direita ou parando, se necessário, para permitir a passagem rápida e segura."
+  },
+  {
+     "input":"Boa noite! Posso estacionar em local reservado para deficientes se for rápido?",
+     "output":"Boa noite! Não, estacionar em locais reservados para deficientes é proibido, mesmo que seja por pouco tempo. Esses espaços devem estar sempre disponíveis para quem realmente precisa."
+  },
+  {
+     "input":"Olá! O que devo fazer se o meu carro começar a fazer um barulho estranho enquanto conduzo?",
+     "output":"Olá! Deve reduzir a velocidade e procurar um local seguro para parar. Verifique o veículo e, se necessário, ligue para assistência em viagem."
+  },
+  {
+     "input":"Boa tarde! Como devo agir se um motociclista estiver a fazer manobras perigosas?",
+     "output":"Boa tarde! Mantenha uma distância segura e evite reagir de forma agressiva. Se possível, anote a matrícula e informe as autoridades."
+  },
+  {
+     "input":"Olá! Posso usar o telemóvel para navegação enquanto conduzo?",
+     "output":"Olá! Pode usar o telemóvel para navegação desde que esteja em modo mãos-livres e não distraia a sua atenção da condução."
+  },
+  {
+     "input":"Boa noite! O que devo fazer se encontrar uma fila de trânsito devido a obras?",
+     "output":"Boa noite! Reduza a velocidade e siga as instruções dos sinais e dos operários. Mantenha uma distância segura do veículo à frente."
+  },
+  {
+     "input":"Olá! Como devo proceder se o meu carro ficar sem combustível na estrada?",
+     "output":"Olá! Tente estacionar em local seguro, ligue os quatro piscas e coloque o triângulo de sinalização. Peça ajuda ou ligue para assistência em viagem."
+  },
+  {
+     "input":"Boa tarde! Posso parar no acostamento para fazer uma chamada rápida?",
+     "output":"Boa tarde! O acostamento deve ser usado apenas em situações de emergência. Se precisar fazer uma chamada, procure uma área de descanso ou saída segura."
+  },
+  {
+     "input":"Boa tarde! Qual é o limite de velocidade permitido nas estradas nacionais em Portugal?",
+     "output":"Boa tarde! Nas estradas nacionais, o limite de velocidade para veículos ligeiros de passageiros é, em regra, de 90 km/h, salvo indicação em contrário através de sinalização."
+  },
+  {
+     "input":"E se a estrada tiver duas faixas em cada sentido?",
+     "output":"Nesse caso, se for considerada uma via reservada a automóveis e motociclos, o limite pode ser de 100 km/h. O melhor é sempre estar atento à sinalização específica da via."
+  },
+  {
+     "input":"Olá! Tenho uma dúvida sobre rotundas. Quem tem prioridade ao entrar?",
+     "output":"Olá! Em Portugal, quem já circula na rotunda tem prioridade. Ou seja, quem pretende entrar deve ceder passagem aos veículos que nela já se encontram."
+  },
+  {
+     "input":"E se não houver sinalização específica?",
+     "output":"Mesmo sem sinalização, aplica-se a mesma regra: a prioridade é de quem já está dentro da rotunda. É uma norma geral do Código da Estrada."
+  },
+  {
+     "input":"Bom dia. Posso usar o telemóvel enquanto conduzo, se for em alta-voz?",
+     "output":"Bom dia! Sim, pode utilizar o telemóvel com sistema mãos-livres, como o modo alta-voz ou bluetooth integrado. O que é proibido é segurar ou manipular o telemóvel durante a condução."
+  },
+  {
+     "input":"E usar fones de ouvido, é permitido?",
+     "output":"Não. O uso de auriculares ou auscultadores em ambos os ouvidos é proibido, pois compromete a atenção do condutor. Apenas é permitido se usar um só auricular, deixando um ouvido livre."
+  },
+  {
+     "input":"Boa noite. É obrigatório usar cinto de segurança nos bancos traseiros?",
+     "output":"Boa noite! Sim, é obrigatório o uso do cinto de segurança em todos os lugares do veículo, incluindo os bancos traseiros, sempre que o veículo estiver equipado com cintos."
+  },
+  {
+     "input":"E há exceções para essa regra?",
+     "output":"Existem exceções pontuais, como para condutores de veículos de emergência em serviço ou para passageiros com atestado médico de isenção, mas são casos muito específicos."
+  },
+  {
+     "input":"Olá. Se houver sinais temporários por causa de obras, devo seguir esses ou os sinais normais da estrada?",
+     "output":"Olá! Deve sempre obedecer aos sinais temporários relacionados com obras. Eles sobrepõem-se à sinalização permanente durante o período em que estiverem ativos."
+  },
+  {
+     "input":"Mesmo que o sinal antigo diga o contrário?",
+     "output":"Sim, mesmo assim. Os sinais temporários têm prioridade porque refletem as condições atuais da via."
+  },
+  {
+     "input":"Boa tarde. É permitido circular sempre na faixa do meio numa autoestrada?",
+     "output":"Boa tarde! Não. O Código da Estrada estipula que se deve circular o mais à direita possível, exceto quando se vai ultrapassar ou quando há muito trânsito que o justifique."
+  },
+  {
+     "input":"Então posso ser multado por isso?",
+     "output":"Sim, manter-se injustificadamente na faixa do meio ou da esquerda pode dar origem a contraordenação e coima."
+  },
+  {
+     "input":"Olá! Em caso de nevoeiro cerrado, devo ligar os máximos?",
+     "output":"Olá! Não. Em situações de nevoeiro, deve utilizar os médios e, se necessário, os faróis de nevoeiro. Os máximos podem refletir no nevoeiro e reduzir ainda mais a visibilidade."
+  },
+  {
+     "input":"E posso usar os quatro piscas?",
+     "output":"Sim, se estiver a circular muito devagar ou parado por motivos de segurança, pode e deve usar os quatro piscas para alertar os outros condutores."
+  },
+  {
+     "input":"Bom dia. Há um limite de velocidade específico junto a escolas?",
+     "output":"Bom dia! Sim, junto a escolas o limite pode ser reduzido para 30 km/h durante os horários escolares, sinalizado por painéis. É importante redobrar a atenção nesses locais."
+  },
+  {
+     "input":"Mesmo se não vir crianças por perto?",
+     "output":"Sim. A sinalização deve ser respeitada independentemente da presença de crianças, pois o objetivo é garantir a segurança em qualquer momento."
+  },
+  {
+     "input":"Boa tarde. O que devo fazer se ouvir uma ambulância a aproximar-se?",
+     "output":"Boa tarde! Deve facilitar a passagem do veículo de emergência, encostando-se à direita ou parando, se necessário. Não deve obstruir ou seguir o veículo depois da passagem."
+  },
+  {
+     "input":"E numa rotunda, como devo agir?",
+     "output":"Deve continuar a circular com segurança e facilitar a passagem assim que possível, sem parar bruscamente ou bloquear a rotunda."
+  },
+  {
+     "input":"Boa noite. Qual é a taxa máxima de álcool permitida para condutores em Portugal?",
+     "output":"Boa noite! A taxa máxima de álcool no sangue permitida é de 0,5 g/l para condutores em geral. Para condutores profissionais ou com carta há menos de 3 anos, o limite é de 0,2 g/l."
+  },
+  {
+     "input":"E se ultrapassar esse valor, o que acontece?",
+     "output":"Depende da taxa. Pode ser considerada contraordenação grave ou muito grave, com coima, inibição de conduzir e até processo criminal, se exceder 1,2 g/l."
+  },
+  {
+     "input":"Olá! Gostaria de saber se posso estacionar em frente a uma garagem privada.",
+     "output":"Olá! Não, estacionar em frente a uma garagem, mesmo que seja a sua, é proibido se obstruir a entrada ou saída. Pode resultar numa multa e até no reboque do veículo."
+  },
+  {
+     "input":"E se eu deixar o pisca ligado?",
+     "output":"Mesmo com o pisca ligado, continua a ser uma infração. O pisca não justifica estacionamento indevido."
+  },
+  {
+     "input":"Boa tarde. É obrigatório ter triângulo de sinalização no carro?",
+     "output":"Boa tarde! Sim, é obrigatório ter um triângulo de sinalização no veículo e utilizá-lo em caso de avaria ou acidente para sinalizar o perigo."
+  },
+  {
+     "input":"E colete refletor também?",
+     "output":"Exatamente. O colete refletor é obrigatório e deve ser usado sempre que sair do veículo em situações de emergência fora das localidades."
+  },
+  {
+     "input":"Olá. Qual é a idade mínima para conduzir um ciclomotor?",
+     "output":"Olá! A idade mínima para conduzir um ciclomotor até 50 cm³ é de 16 anos, desde que tenha licença de condução da categoria AM."
+  },
+  {
+     "input":"Essa licença é como uma carta normal?",
+     "output":"Não exatamente. É uma licença específica que requer formação e exame teórico-prático, mas não é equivalente à carta B."
+  },
+  {
+     "input":"Bom dia. O que significa um sinal azul com uma bicicleta desenhada?",
+     "output":"Bom dia! Esse sinal indica uma via reservada exclusivamente a velocípedes, como bicicletas. Outros veículos não podem circular ali."
+  },
+  {
+     "input":"Motas elétricas também não podem?",
+     "output":"Correto. Apenas bicicletas e outros velocípedes não motorizados são permitidos nesse tipo de via."
+  },
+  {
+     "input":"Boa noite. É permitido ultrapassar pela direita em alguma situação?",
+     "output":"Boa noite! Em geral, a ultrapassagem deve ser feita pela esquerda. No entanto, pode ultrapassar pela direita se o veículo da frente estiver a sinalizar que vai virar à esquerda."
+  },
+  {
+     "input":"E se estiver numa via com várias faixas?",
+     "output":"Em vias com várias faixas no mesmo sentido, pode ultrapassar pela direita se o trânsito estiver em fila e cada veículo circular na sua faixa."
+  },
+  {
+     "input":"Olá. Crianças até que idade precisam de cadeira auto?",
+     "output":"Olá! As crianças com menos de 12 anos e menos de 135 cm de altura devem usar sistemas de retenção adequados ao seu tamanho e peso."
+  },
+  {
+     "input":"E podem ir no banco da frente?",
+     "output":"Apenas se o banco traseiro estiver indisponível ou se o sistema de retenção for adequado e o airbag estiver desativado, no caso de cadeiras viradas para trás."
+  },
+  {
+     "input":"Bom dia. Posso circular com auscultadores enquanto ando de bicicleta?",
+     "output":"Bom dia! Não. O uso de auscultadores que impeçam a perceção sonora do ambiente é proibido para condutores de qualquer veículo, incluindo bicicletas."
+  },
+  {
+     "input":"Mesmo com só um fone?",
+     "output":"Com apenas um auricular, pode ser permitido, desde que o outro ouvido permaneça livre para ouvir o ambiente."
+  },
+  {
+     "input":"Boa tarde. O que devo fazer ao ver um sinal de STOP?",
+     "output":"Boa tarde! Deve parar completamente o veículo antes da linha ou cruzamento e apenas avançar após garantir que é seguro."
+  },
+  {
+     "input":"Mesmo sem outros veículos por perto?",
+     "output":"Sim, a paragem é obrigatória independentemente da presença de outros veículos."
+  },
+  {
+     "input":"Olá. A mota pode circular entre carros no trânsito parado?",
+     "output":"Olá! Em Portugal, circular entre filas de carros — a chamada 'fila indiana' — não é expressamente permitida pelo Código da Estrada. Pode ser considerado ultrapassagem irregular."
+  },
+  {
+     "input":"E se for com cuidado e devagar?",
+     "output":"Mesmo assim, é arriscado. Em caso de acidente, o condutor da mota pode ser responsabilizado por não manter distância de segurança."
+  },
+  {
+     "input":"Bom dia. O que significa uma linha contínua na estrada?",
+     "output":"Bom dia! Uma linha contínua significa que é proibido transpor ou pisar essa linha. Serve para separar sentidos de trânsito ou indicar zonas de perigo."
+  },
+  {
+     "input":"E se for para ultrapassar um ciclista?",
+     "output":"Aí existe uma exceção: pode transpor a linha contínua para ultrapassar ciclistas, desde que não haja perigo e se respeite uma distância lateral mínima de 1,5 metros."
+  },
+  {
+     "input":"Boa noite. É permitido buzinar em qualquer circunstância?",
+     "output":"Boa noite! Não. A utilização do sinal sonoro só é permitida para evitar acidentes ou fora das localidades como aviso de ultrapassagem."
+  },
+  {
+     "input":"E se for para chamar alguém na rua?",
+     "output":"Isso é proibido. Usar a buzina com esse fim é considerado uso indevido e pode dar origem a coima."
+  },
+  {
+     "input":"Olá. Qual a distância mínima de segurança entre dois veículos?",
+     "output":"Olá! Não há uma distância fixa, mas deve ser suficiente para evitar colisão em caso de travagem súbita. Em regra, deve manter-se pelo menos 2 segundos de distância."
+  },
+  {
+     "input":"Como faço para calcular isso?",
+     "output":"Escolha um ponto fixo na estrada e conte até dois segundos desde que o carro da frente o ultrapassa. Se passar antes de terminar a contagem, está muito perto."
+  },
+  {
+     "input":"Bom dia. A carta de condução portuguesa é válida em outros países?",
+     "output":"Bom dia! Sim, nos países da União Europeia e em alguns países com acordos internacionais, a carta portuguesa é válida. Fora disso, pode precisar de uma carta internacional."
+  },
+  {
+     "input":"Preciso trocar a carta se for viver para fora?",
+     "output":"Depende do país. Muitos exigem a troca após um período de residência. É importante verificar a legislação local."
+  },
+  {
+     "input":"Boa tarde. O que acontece se passar um sinal vermelho?",
+     "output":"Boa tarde! Passar um sinal vermelho é uma infração muito grave e pode resultar numa coima entre 120 e 600 euros e inibição de conduzir até dois anos."
+  },
+  {
+     "input":"E perco pontos na carta?",
+     "output":"Sim, pode perder entre 2 e 4 pontos, dependendo da gravidade e circunstâncias da infração."
+  },
+  {
+     "input":"Olá. É permitido conduzir descalço?",
+     "output":"Olá! O Código da Estrada não proíbe expressamente conduzir descalço, mas é obrigatório manter controlo total do veículo. Se os agentes considerarem perigoso, pode ser sancionado."
+  },
+  {
+     "input":"E com chinelos?",
+     "output":"Conduzir com chinelos de dedo não é proibido por lei, mas é desaconselhado, pois pode comprometer o controlo dos pedais. Em caso de acidente, pode ser considerado negligência."
+  },
+  {
+     "input":"Bom dia. É obrigatório manter os faróis ligados durante o dia?",
+     "output":"Bom dia! Em Portugal, os veículos não são obrigados a circular com os médios ligados durante o dia, exceto em túneis ou quando há sinalização que o indique."
+  },
+  {
+     "input":"E em autoestradas?",
+     "output":"Não é obrigatório, mas é recomendado em condições de visibilidade reduzida, como nevoeiro ou chuva intensa."
+  },
+  {
+     "input":"Boa tarde. Posso estacionar numa paragem de autocarro?",
+     "output":"Boa tarde! Não. Estacionar ou parar em paragens de transporte público é proibido e pode ser punido com multa e reboque."
+  },
+  {
+     "input":"Mesmo que seja só um minuto?",
+     "output":"Sim. Mesmo por pouco tempo, está a obstruir um local destinado ao transporte coletivo."
+  },
+  {
+     "input":"Olá. Quantos pontos tenho na carta de condução?",
+     "output":"Olá! Ao obter a carta de condução, começa com 12 pontos. Pode chegar a 15 se não cometer infrações. Se cometer infrações graves ou muito graves, perde pontos."
+  },
+  {
+     "input":"E posso consultar online?",
+     "output":"Sim. Pode consultar os pontos da sua carta no site do IMT, através da área pessoal com autenticação via Chave Móvel Digital."
+  },
+  {
+     "input":"Bom dia. Se eu me envolver num acidente sem feridos, tenho de chamar a polícia?",
+     "output":"Bom dia! Se não há feridos e os condutores estão de acordo, basta preencher a declaração amigável. Só é necessário chamar a polícia se houver desacordo ou feridos."
+  },
+  {
+     "input":"E se o outro condutor não tiver seguro?",
+     "output":"Nesse caso, deve sempre chamar a polícia para registar a ocorrência."
+  },
+  {
+     "input":"Boa noite. Como devo proceder numa passadeira sem semáforo?",
+     "output":"Boa noite! Deve abrandar e parar para ceder passagem a peões que já estejam ou se preparem para atravessar. A prioridade é sempre dos peões."
+  },
+  {
+     "input":"E se não estiver ninguém visível?",
+     "output":"Mesmo assim, convém abrandar e estar atento, especialmente em zonas escolares ou residenciais."
+  },
+  {
+     "input":"Boa tarde! É permitido virar à esquerda num cruzamento sem sinalização?",
+     "output":"Boa tarde! Sim, é permitido, mas deve ceder passagem aos veículos que se aproximam pela direita, conforme a regra geral de cedência de passagem."
+  },
+  {
+     "input":"E se houver um sinal de cedência de passagem?",
+     "output":"Nesse caso, deve obedecer ao sinal e ceder passagem a todos os veículos que circulam na via transversal."
+  },
+  {
+     "input":"Olá! Posso conduzir um trator agrícola com a carta de condução categoria B?",
+     "output":"Olá! Sim, a carta de condução da categoria B permite conduzir tratores agrícolas, desde que não circulem a mais de 40 km/h e não ultrapassem 3500 kg de peso bruto."
+  },
+  {
+     "input":"E se o trator tiver um reboque?",
+     "output":"Se o conjunto ultrapassar os 3500 kg de peso bruto, será necessário possuir a categoria E associada à sua carta de condução."
+  },
+  {
+     "input":"Bom dia. É obrigatório ter seguro para uma mota de 50cc?",
+     "output":"Bom dia! Sim, é obrigatório possuir seguro de responsabilidade civil para qualquer veículo a motor, incluindo motas de 50cc."
+  },
+  {
+     "input":"E se for uma bicicleta elétrica?",
+     "output":"Se a bicicleta elétrica tiver assistência até 25 km/h e potência máxima de 250W, não é obrigatório seguro. Caso contrário, é considerado um ciclomotor e necessita de seguro."
+  },
+  {
+     "input":"Boa noite. Qual é a velocidade máxima permitida numa zona residencial?",
+     "output":"Boa noite! Em zonas residenciais, o limite de velocidade é geralmente de 20 km/h, salvo indicação em contrário através de sinalização."
+  },
+  {
+     "input":"E numa zona de coexistência?",
+     "output":"Numa zona de coexistência, o limite também é de 20 km/h, e os peões têm prioridade sobre os veículos."
+  },
+  {
+     "input":"Olá! Posso estacionar numa curva?",
+     "output":"Olá! Não, é proibido estacionar em curvas de visibilidade reduzida, pois pode comprometer a segurança rodoviária."
+  },
+  {
+     "input":"E num topo de colina?",
+     "output":"Também é proibido estacionar em lombas ou topos de colinas com visibilidade reduzida, pelo mesmo motivo."
+  },
+  {
+     "input":"Bom dia. É permitido transportar crianças no banco da frente?",
+     "output":"Bom dia! Crianças com menos de 12 anos e menos de 135 cm de altura devem ser transportadas no banco traseiro com sistema de retenção adequado."
+  },
+  {
+     "input":"E se o carro não tiver bancos traseiros?",
+     "output":"Nesse caso, é permitido transportar a criança no banco da frente, desde que utilize um sistema de retenção adequado e o airbag esteja desativado se o sistema for virado para trás."
+  },
+  {
+     "input":"Boa tarde. Como devo proceder ao aproximar-me de um cruzamento com semáforo amarelo intermitente?",
+     "output":"Boa tarde! Deve abrandar e proceder com precaução, cedendo passagem se necessário, pois o semáforo amarelo intermitente indica perigo."
+  },
+  {
+     "input":"E se houver um sinal de STOP junto ao semáforo?",
+     "output":"Nesse caso, deve parar obrigatoriamente e só avançar após certificar-se de que pode fazê-lo em segurança."
+  },
+  {
+     "input":"Olá! É obrigatório usar capacete ao conduzir uma bicicleta?",
+     "output":"Olá! Em Portugal, o uso de capacete não é obrigatório para ciclistas, mas é altamente recomendado por razões de segurança."
+  },
+  {
+     "input":"E para crianças, a regra é a mesma?",
+     "output":"Sim, a regra é a mesma. No entanto, é especialmente aconselhável que as crianças usem capacete para maior proteção."
+  },
+  {
+     "input":"Bom dia. Posso atravessar uma linha contínua para entrar num estacionamento?",
+     "output":"Bom dia! Sim, é permitido atravessar uma linha contínua para aceder a propriedades ou estacionamentos, desde que o faça em segurança."
+  },
+  {
+     "input":"E para sair do estacionamento?",
+     "output":"Também é permitido atravessar a linha contínua ao sair, sempre com a devida precaução."
+  },
+  {
+     "input":"Boa noite. Qual a distância mínima que devo manter ao ultrapassar um ciclista?",
+     "output":"Boa noite! Deve manter uma distância lateral mínima de 1,5 metros ao ultrapassar um ciclista."
+  },
+  {
+     "input":"E se não houver espaço suficiente para essa distância?",
+     "output":"Nesse caso, deve aguardar até que haja espaço suficiente para ultrapassar em segurança."
+  },
+  {
+     "input":"Olá! É permitido conduzir com o braço de fora da janela?",
+     "output":"Olá! Não, conduzir com o braço de fora compromete o controlo do veículo e pode ser considerado uma infração."
+  },
+  {
+     "input":"E se estiver muito calor?",
+     "output":"Mesmo em dias quentes, deve manter os braços dentro do veículo para garantir a segurança na condução."
+  },
+  {
+     "input":"Bom dia. O que devo fazer se um semáforo estiver avariado?",
+     "output":"Bom dia! Deve seguir as regras de cedência de passagem aplicáveis, como se o cruzamento não tivesse semáforos, procedendo com cautela."
+  },
+  {
+     "input":"E se houver um agente de trânsito a controlar o cruzamento?",
+     "output":"Deve obedecer às indicações do agente, que prevalecem sobre a sinalização existente."
+  },
+  {
+     "input":"Boa tarde. É permitido fazer marcha atrás numa autoestrada?",
+     "output":"Boa tarde! Não, é expressamente proibido efetuar marcha atrás numa autoestrada, pois representa um grave perigo para a segurança rodoviária."
+  },
+  {
+     "input":"E se me enganar na saída?",
+     "output":"Deve continuar até à próxima saída e aí inverter o sentido de marcha de forma segura."
+  },
+  {
+     "input":"Boa tarde! É permitido usar luzes de nevoeiro à noite sem nevoeiro?",
+     "output":"Boa tarde! Não, as luzes de nevoeiro devem ser usadas apenas em condições de visibilidade reduzida, como nevoeiro, chuva intensa ou neve."
+  },
+  {
+     "input":"E se for numa estrada mal iluminada?",
+     "output":"Mesmo assim, deve usar os médios ou máximos conforme a situação. As luzes de nevoeiro não substituem os faróis principais."
+  },
+  {
+     "input":"Olá! Como devo sinalizar uma manobra de mudança de direção?",
+     "output":"Olá! Deve usar o pisca com antecedência suficiente, garantindo que os outros condutores percebem a sua intenção antes de iniciar a manobra."
+  },
+  {
+     "input":"E se o sistema de piscas estiver avariado?",
+     "output":"Nesse caso, pode usar sinais manuais, mas é recomendável resolver a avaria o quanto antes, pois compromete a segurança."
+  },
+  {
+     "input":"Bom dia. Posso parar junto a um cruzamento?",
+     "output":"Bom dia! Não. É proibido parar ou estacionar a menos de 5 metros antes e depois de cruzamentos, entroncamentos ou rotundas."
+  },
+  {
+     "input":"Mesmo que não haja trânsito?",
+     "output":"Sim. A regra aplica-se sempre, independentemente do fluxo de trânsito no momento."
+  },
+  {
+     "input":"Boa noite. Como devo proceder ao aproximar-me de uma passadeira com peões à espera?",
+     "output":"Boa noite! Deve abrandar e ceder passagem aos peões que manifestem intenção de atravessar. A prioridade é sempre do peão."
+  },
+  {
+     "input":"E se estiver a chover?",
+     "output":"Ainda com mais razão deve abrandar com antecedência. A travagem demora mais tempo em piso molhado."
+  },
+  {
+     "input":"Olá. É permitido estacionar em frente a um contentor do lixo?",
+     "output":"Olá! Não, é proibido estacionar de forma a dificultar o acesso ou recolha de lixo, mesmo que não haja sinalização específica."
+  },
+  {
+     "input":"E se for só por alguns minutos?",
+     "output":"Mesmo que seja temporário, continua a ser infração, especialmente se obstruir o serviço público."
+  },
+  {
+     "input":"Bom dia. Há limite de alcoolemia para condutores profissionais?",
+     "output":"Bom dia! Sim. Para condutores profissionais, o limite legal é de 0,2 g/l, inferior ao dos condutores comuns (0,5 g/l)."
+  },
+  {
+     "input":"E se ultrapassarem esse valor?",
+     "output":"Estão sujeitos a coima, perda de pontos, e eventual inibição de conduzir, dependendo da taxa detetada."
+  },
+  {
+     "input":"Boa tarde. Posso parar na berma de uma autoestrada para atender o telemóvel?",
+     "output":"Boa tarde! Não. Parar na berma de uma autoestrada só é permitido em caso de emergência. Atender o telemóvel não é considerado emergência."
+  },
+  {
+     "input":"Mesmo com os quatro piscas ligados?",
+     "output":"Sim. O uso dos quatro piscas não justifica uma paragem indevida. Pode ser sancionado."
+  },
+  {
+     "input":"Olá. O que fazer se me envolver num acidente com um animal selvagem?",
+     "output":"Olá! Deve sinalizar o local, ligar às autoridades e não tentar aproximar-se do animal. É importante preencher a participação para o seguro."
+  },
+  {
+     "input":"E se for um animal doméstico?",
+     "output":"Também deve comunicar às autoridades. Se o dono estiver identificado, poderá ser responsabilizado pelos danos causados."
+  },
+  {
+     "input":"Bom dia. É permitido transportar carga no tejadilho do carro?",
+     "output":"Bom dia! Sim, desde que esteja bem acondicionada, não exceda o peso indicado pelo fabricante e não ultrapasse os limites do veículo."
+  },
+  {
+     "input":"E se cair parte da carga?",
+     "output":"É da responsabilidade do condutor garantir que a carga não represente perigo. Se cair, pode ser responsabilizado por danos e infrações."
+  },
+  {
+     "input":"Boa noite. O que significa um sinal de fundo amarelo com um X vermelho?",
+     "output":"Boa noite! Esse sinal indica que está proibido parar ou estacionar naquela zona. É comum em zonas de carga e descarga ou acesso a serviços."
+  },
+  {
+     "input":"A proibição aplica-se 24 horas por dia?",
+     "output":"Sim, salvo se o sinal tiver uma placa adicional com horários específicos."
+  },
+  {
+     "input":"Olá. O que significa uma luz azul intermitente num veículo?",
+     "output":"Olá! Significa que se trata de um veículo prioritário em missão urgente, como ambulância, polícia ou bombeiros. Deve ceder passagem imediatamente."
+  },
+  {
+     "input":"E se for num cruzamento congestionado?",
+     "output":"Mesmo assim, deve facilitar a passagem com segurança, sem causar perigo adicional."
+  },
+  {
+     "input":"Bom dia. O que é a regra da direita?",
+     "output":"Bom dia! Em cruzamentos sem sinalização, deve ceder passagem aos veículos que se aproximam pela sua direita. É uma regra base de prioridade."
+  },
+  {
+     "input":"Aplica-se nas rotundas?",
+     "output":"Não. Nas rotundas, a prioridade é de quem já nela circula, salvo sinalização em contrário."
+  },
+  {
+     "input":"Boa tarde. É obrigatório acender as luzes em túneis?",
+     "output":"Boa tarde! Sim, mesmo durante o dia, é obrigatório circular com os médios ligados dentro de túneis."
+  },
+  {
+     "input":"E se não o fizer?",
+     "output":"Pode ser sancionado com coima, pois está a infringir uma norma de segurança essencial."
+  },
+  {
+     "input":"Olá. Posso ultrapassar pela direita em rotundas?",
+     "output":"Olá! Sim, é possível ultrapassar pela direita dentro de rotundas se o trânsito o justificar e for feito com segurança."
+  },
+  {
+     "input":"Isso também se aplica a vias com várias faixas?",
+     "output":"Sim. Numa via com várias faixas no mesmo sentido, pode ultrapassar pela direita se o veículo à esquerda estiver mais lento."
+  },
+  {
+     "input":"Bom dia. Em que situações posso usar os máximos à noite?",
+     "output":"Bom dia! Pode usar os máximos à noite em vias mal iluminadas, desde que não encandeie condutores em sentido contrário ou à frente."
+  },
+  {
+     "input":"Quando devo desligá-los?",
+     "output":"Deve desligá-los ao cruzar-se com outros veículos ou ao aproximar-se de zonas urbanas bem iluminadas."
+  },
+  {
+     "input":"Boa noite. O que devo fazer ao ver um sinal de prioridade inversa?",
+     "output":"Boa noite! Se vir o sinal de triângulo invertido vermelho com uma seta preta para baixo, deve ceder passagem aos veículos em sentido contrário."
+  },
+  {
+     "input":"E se eu já estiver na via estreita?",
+     "output":"Se já estiver dentro da passagem estreita, deve continuar com precaução. Quem ainda não entrou deve ceder."
+  },
+  {
+     "input":"Olá. É necessário renovar a carta de condução?",
+     "output":"Olá! Sim, a carta de condução tem prazos de validade que variam com a idade do condutor. Por norma, renova-se aos 30, 40, 50, 60, 65 e 70 anos, e depois de 2 em 2 anos."
+  },
+  {
+     "input":"E posso conduzir com a carta caducada?",
+     "output":"Não. Conduzir com a carta caducada é ilegal e pode resultar em coima e inibição de conduzir."
+  },
+  {
+     "input":"Bom dia. Posso usar telemóvel se estiver parado no semáforo?",
+     "output":"Bom dia! Não. O uso de telemóvel ao volante é proibido mesmo com o veículo parado temporariamente, como num semáforo."
+  },
+  {
+     "input":"E se estiver com o motor desligado?",
+     "output":"Se o veículo estiver estacionado e fora da via, pode usar. Mas em trânsito, mesmo parado, aplica-se a proibição."
+  }
+]

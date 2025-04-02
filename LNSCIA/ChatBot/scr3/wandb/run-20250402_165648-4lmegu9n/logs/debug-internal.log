@@ -1,0 +1,16 @@
+{"time":"2025-04-02T16:56:48.5198954+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"C:\\Users\\CarlosMoutinho(11408\\Documents\\GitHub\\AI_Detection_Cars\\LNSCIA\\ChatBot\\scr3\\wandb\\run-20250402_165648-4lmegu9n\\logs\\debug-core.log"}
+{"time":"2025-04-02T16:56:48.6348922+01:00","level":"INFO","msg":"created new stream","id":"4lmegu9n"}
+{"time":"2025-04-02T16:56:48.6348922+01:00","level":"INFO","msg":"stream: started","id":"4lmegu9n"}
+{"time":"2025-04-02T16:56:48.6348922+01:00","level":"INFO","msg":"sender: started","stream_id":"4lmegu9n"}
+{"time":"2025-04-02T16:56:48.6348922+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"4lmegu9n"}
+{"time":"2025-04-02T16:56:48.6348922+01:00","level":"INFO","msg":"handler: started","stream_id":"4lmegu9n"}
+{"time":"2025-04-02T16:56:49.0119479+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-02T16:58:03.2756016+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-02T16:58:03.2842913+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-02T16:58:03.9405979+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-02T16:58:04.3321441+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading console lines 7-26","runtime_seconds":0.1214062}],"total_operations":1}}
+{"time":"2025-04-02T16:58:04.51775+01:00","level":"INFO","msg":"stream: closing","id":"4lmegu9n"}
+{"time":"2025-04-02T16:58:04.51775+01:00","level":"INFO","msg":"handler: closed","stream_id":"4lmegu9n"}
+{"time":"2025-04-02T16:58:04.5182963+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"4lmegu9n"}
+{"time":"2025-04-02T16:58:04.5182963+01:00","level":"INFO","msg":"sender: closed","stream_id":"4lmegu9n"}
+{"time":"2025-04-02T16:58:04.5182963+01:00","level":"INFO","msg":"stream: closed","id":"4lmegu9n"}

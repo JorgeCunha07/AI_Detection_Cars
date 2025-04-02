@@ -81,6 +81,26 @@ def chat():
                 response = "Formato inválido. Use 'artigo X°' ou 'artigo X'."
             return jsonify({'response': response})
             
+        # Verifica se está no modo quiz e se a mensagem é 's' para continuar
+        elif modo_quiz and message.lower() == "s":
+            # Gera uma nova pergunta aleatória que ainda não foi usada
+            perguntas_disponiveis = [q for q in quiz_data if q not in perguntas_usadas]
+            if not perguntas_disponiveis:
+                # Se todas as perguntas foram usadas, limpa o histórico e começa de novo
+                perguntas_usadas.clear()
+                perguntas_disponiveis = quiz_data
+            
+            pergunta_atual = random.choice(perguntas_disponiveis)
+            perguntas_usadas.add(pergunta_atual)
+            
+            if pergunta_atual:
+                response = f"[QUIZ] {pergunta_atual['pergunta']}\n(Digite 'dica' para ver a resposta correta e continuar respondendo)\n(Digite 'encerrar quiz' para voltar ao modo normal)"
+            else:
+                response = "Erro: Não foi possível carregar uma nova pergunta."
+                modo_quiz = False
+            return jsonify({'response': response})
+            
+        # Verifica se está no modo quiz e se há uma pergunta atual
         elif modo_quiz and pergunta_atual:
             if message.lower() == "dica":
                 response = f"Dica: A resposta correta é:\n{pergunta_atual['respostas_corretas'][0]}"
@@ -106,24 +126,6 @@ def chat():
                 response += f"\nReferência: {pergunta_atual['referencia']}"
             
             response += "\n\nContinuar com o quiz? (s/n)"
-            return jsonify({'response': response})
-            
-        elif modo_quiz and message.lower() == "s":
-            # Gera uma nova pergunta aleatória que ainda não foi usada
-            perguntas_disponiveis = [q for q in quiz_data if q not in perguntas_usadas]
-            if not perguntas_disponiveis:
-                # Se todas as perguntas foram usadas, limpa o histórico e começa de novo
-                perguntas_usadas.clear()
-                perguntas_disponiveis = quiz_data
-            
-            pergunta_atual = random.choice(perguntas_disponiveis)
-            perguntas_usadas.add(pergunta_atual)
-            
-            if pergunta_atual:
-                response = f"[QUIZ] {pergunta_atual['pergunta']}\n(Digite 'dica' para ver a resposta correta e continuar respondendo)\n(Digite 'encerrar quiz' para voltar ao modo normal)"
-            else:
-                response = "Erro: Não foi possível carregar uma nova pergunta."
-                modo_quiz = False
             return jsonify({'response': response})
         
         # Modo de conversa normal
