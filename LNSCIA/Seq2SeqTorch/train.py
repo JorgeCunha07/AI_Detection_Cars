@@ -7,8 +7,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader, random_split
-from nltk.translate.bleu_score import sentence_bleu
-from rouge import Rouge
+
 from tqdm import tqdm
 import time
 

@@ -1,9 +1,8 @@
-# infer.py — Geração de frases a partir de labels usando modelo seq2seq treinado
 
 import torch
 import pickle
 import numpy as np
-from model import Encoder, Decoder, Seq2Seq
+from train import Encoder, Decoder, Seq2Seq
 from tokenizer_utils import SimpleTokenizer
 
 # Dispositivo
@@ -58,6 +57,6 @@ def generate_description(labels):
 
 # Exemplo de uso
 if __name__ == "__main__":
-    example = ["céu limpo", "trânsito leve", "carro", "peão", "passadeira"]
+    example = ["céu limpo", "sinal de stop", "carro", "peão", "passadeira"]
     print("Labels:", example)
-    print("Descrição gerada:", generate_description(example))
+    print("Descrição gerada:", generate_description(example))                                                                                                                                
