@@ -117,7 +117,7 @@ class Seq2Seq(nn.Module):
         for t in range(1, trg_len):
             output, hidden, cell = self.decoder(input, hidden, cell, encoder_outputs)
             outputs[:, t] = output
-            top1 = output.argmax(4)
+            top1 = output.argmax(1)
             input = trg[:, t] if torch.rand(1).item() < teacher_forcing_ratio else top1
 
         return outputs
