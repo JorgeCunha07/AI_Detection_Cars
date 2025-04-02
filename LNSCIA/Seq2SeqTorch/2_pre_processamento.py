@@ -11,6 +11,17 @@ from tokenizer_utils import SimpleTokenizer, pad_sequences
 
 import torch
 
+''' Labels permitidas:
+veiculos: ["carro", "autocarro", "camião"],
+pessoas: ["peão", "ciclista"],
+infraestrutura: ["passadeira", "semáforo"],
+sinais_transito: ["sinal de stop", "sinal de limite de velocidade", "sinal de passadeira"]
+weather_conditions = ["céu limpo", "nublado", "chuva", "nevoeiro", "vento", "neve"]
+time_of_day = ["amanhecer", "anoitecer", "dia", "noite"]
+locations = ["residencial", "parque de estacionamento", "túnel", "cidade", "autoestrada"]
+'''
+
+
 # Função para limpar a pasta "./models/"
 def clear_models_folder(folder_path='./models/'):
     if os.path.exists(folder_path):
@@ -27,8 +38,10 @@ def clear_models_folder(folder_path='./models/'):
     else:
         os.makedirs(folder_path)
 
+
 # Limpar a pasta "./models/" antes de iniciar
 clear_models_folder('./models/')
+
 
 # Função para limpar e normalizar o texto
 def clean_text(text):
@@ -42,12 +55,13 @@ def clean_text(text):
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
+
 # Carregar o dataset (arquivo JSON com dados sintéticos e reais)
 with open('./data/frases_rodoviarias.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
-labels_text = []      # Para armazenar os rótulos (labels) em forma de string
-descriptions = []     # Para armazenar as descrições
+labels_text = []  # Para armazenar os rótulos (labels) em forma de string
+descriptions = []  # Para armazenar as descrições
 
 for d in data:
     # Processar a descrição: usa "description" ou, se não existir, "trecho"
@@ -59,15 +73,15 @@ for d in data:
     # Re-adicionar os tokens especiais de início e fim
     desc_clean = "startseq " + desc_clean + " endseq"
     descriptions.append(desc_clean)
-    
+
     # Processar os rótulos: usa "labels" ou "temas"
     labs = d.get("labels", d.get("temas", []))
     # Converte em string única e limpa
-    labs_text_str = clean_text(" ".join(labs))
+    labs_text_str = clean_text(", ".join(labs))
     labels_text.append(labs_text_str)
 
 # Criar os tokenizadores usando o SimpleTokenizer
-label_tokenizer = SimpleTokenizer(oov_token="<UNK>")
+label_tokenizer = SimpleTokenizer(oov_token="<UNK>", filters='')
 label_tokenizer.fit_on_texts(labels_text)
 
 # Para o tokenizer de descrições, não aplicamos filtros (similar ao original)
@@ -79,8 +93,8 @@ label_seq = label_tokenizer.texts_to_sequences(labels_text)
 desc_seq = description_tokenizer.texts_to_sequences(descriptions)
 
 # Definir comprimentos máximos (limitando para evitar sequências muito longas)
-max_label_length = min(max(len(seq) for seq in label_seq), 20)
-max_desc_length = min(max(len(seq) for seq in desc_seq), 50)
+max_label_length = min(max(len(seq) for seq in label_seq), 30)
+max_desc_length = min(max(len(seq) for seq in desc_seq), 270)
 
 # Aplicar padding para padronizar o tamanho das sequências
 label_padded = pad_sequences(label_seq, maxlen=max_label_length, padding='post')

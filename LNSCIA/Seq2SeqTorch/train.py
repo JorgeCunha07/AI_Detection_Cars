@@ -14,12 +14,12 @@ import time
 # ============================
 # Parâmetros configuráveis
 # ============================
-BATCH_SIZE = 128
+BATCH_SIZE = 256
 NUM_EPOCHS = 80
 EMB_DIM = 300
 ENC_HIDDEN_DIM = 256
 DEC_HIDDEN_DIM = 512
-LEARNING_RATE = 0.001
+LEARNING_RATE = 0.0005
 DROPOUT = 0.3
 TEACHER_FORCING_RATIO = 0.5
 CLIP = 1
@@ -117,7 +117,7 @@ class Seq2Seq(nn.Module):
         for t in range(1, trg_len):
             output, hidden, cell = self.decoder(input, hidden, cell, encoder_outputs)
             outputs[:, t] = output
-            top1 = output.argmax(1)
+            top1 = output.argmax(4)
             input = trg[:, t] if torch.rand(1).item() < teacher_forcing_ratio else top1
 
         return outputs
