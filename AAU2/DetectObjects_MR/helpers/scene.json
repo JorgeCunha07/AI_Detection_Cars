@@ -1,0 +1,9 @@
+{
+  "city street": 0,
+  "gas stations": 1,
+  "highway": 2,
+  "parking lot": 3,
+  "residential": 4,
+  "tunnel": 5,
+  "undefined": 6
+}
