@@ -1,0 +1,11 @@
+names:
+- Trafic Light Signal
+- Stop Signal
+- Speedlimit Signal
+- Crosswalk Signal
+- Crosswalk
+- Pedestrian
+- Bus
+- Car
+- Truck
+nc: 9
