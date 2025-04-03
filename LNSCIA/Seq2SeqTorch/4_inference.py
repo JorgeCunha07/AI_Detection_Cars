@@ -1,9 +1,8 @@
-# infer.py — Geração de frases a partir de labels usando modelo seq2seq treinado
 
 import torch
 import pickle
 import numpy as np
-from model import Encoder, Decoder, Seq2Seq
+from train import Encoder, Decoder, Seq2Seq
 from tokenizer_utils import SimpleTokenizer
 
 # Dispositivo
@@ -45,9 +44,9 @@ def generate_description(labels):
         input_token = torch.LongTensor([[description_tokenizer.word_index['startseq']]]).to(device)
 
         output_sentence = []
-        for _ in range(50):
+        for _ in range(270):
             output, hidden, cell = model.decoder(input_token.squeeze(1), hidden, cell, encoder_outputs)
-            top1 = output.argmax(1).item()
+            top1 = output.argmax(-1).item()
             if top1 == description_tokenizer.word_index.get('endseq'):
                 break
             word = description_tokenizer.index_word.get(top1, '')
@@ -58,6 +57,6 @@ def generate_description(labels):
 
 # Exemplo de uso
 if __name__ == "__main__":
-    example = ["céu limpo", "trânsito leve", "carro", "peão", "passadeira"]
+    example = ["ceu_limpo", "noite", "parque_de_estacionamento", "sinal_de_stop", "carro", "peao", "passadeira"]
     print("Labels:", example)
     print("Descrição gerada:", generate_description(example))

@@ -1,0 +1,2383 @@
+[
+  {
+    "input": "Olá! Bom dia. Gostaria de saber quais são os limites de velocidade nas autoestradas em Portugal.",
+    "output": "Bom dia! Nas autoestradas em Portugal, o limite de velocidade é de 120 km/h. No entanto, em algumas situações, como condições meteorológicas adversas ou obras na estrada, esse limite pode ser reduzido. É sempre bom estar atento à sinalização!"
+  },
+  {
+    "input": "Boa tarde! Tenho dúvidas sobre as prioridades nas rotundas. Quem tem preferência?",
+    "output": "Boa tarde! Nas rotundas em Portugal, os veículos que circulam dentro da rotunda têm prioridade sobre os que pretendem entrar. Portanto, ao aproximar-se de uma rotunda, deve ceder passagem aos veículos que já estão a circular nela."
+  },
+  {
+    "input": "Olá! Pode explicar-me o que significa uma sinalização vertical com um círculo vermelho e uma linha diagonal?",
+    "output": "Olá! Claro! A sinalização vertical com um círculo vermelho e uma linha diagonal indica proibição de entrada. É um sinal de 'Proibido Circular' e significa que não pode entrar ou circular naquela via ou área."
+  },
+  {
+    "input": "Boa noite! Quais são as normas de segurança para transportar crianças no carro?",
+    "output": "Boa noite! As crianças com menos de 12 anos e altura inferior a 135 cm devem ser transportadas em sistemas de retenção adequados à sua altura e peso, como cadeirinhas ou almofadas elevatórias. Estes sistemas devem ser instalados nos bancos traseiros do veículo."
+  },
+  {
+    "input": "Olá! É permitido usar o telemóvel enquanto se conduz?",
+    "output": "Olá! O uso do telemóvel ao volante é proibido, exceto se estiver a utilizar um sistema de mãos-livres. Mesmo assim, é importante manter a atenção na condução para garantir a segurança de todos."
+  },
+  {
+    "input": "Olá! Quais são os limites de velocidade em vias urbanas?",
+    "output": "Olá! Em vias urbanas, o limite de velocidade é geralmente de 50 km/h, mas pode variar conforme a sinalização local. É importante estar atento aos sinais de trânsito."
+  },
+  {
+    "input": "Boa tarde! O que devo fazer se encontrar um semáforo a piscar em amarelo?",
+    "output": "Boa tarde! Se encontrar um semáforo a piscar em amarelo, deve reduzir a velocidade e estar preparado para parar, pois pode haver uma situação de perigo ou obras na via."
+  },
+  {
+    "input": "Olá! Como devo proceder ao ultrapassar um ciclista?",
+    "output": "Olá! Ao ultrapassar um ciclista, deve manter uma distância lateral de segurança de pelo menos 1,5 metros e reduzir a velocidade se necessário. A segurança do ciclista é prioridade."
+  },
+  {
+    "input": "Boa noite! O que significa a sinalização horizontal com linhas brancas descontínuas?",
+    "output": "Boa noite! A sinalização horizontal com linhas brancas descontínuas indica que é permitido ultrapassar, desde que seja seguro fazê-lo."
+  },
+  {
+    "input": "Olá! Posso estacionar em qualquer lugar se for uma emergência?",
+    "output": "Olá! Em situações de emergência, pode estacionar onde for necessário, mas deve tentar não bloquear outros veículos ou causar perigo. Sempre que possível, utilize áreas de estacionamento permitidas."
+  },
+  {
+    "input": "Olá! Como devo proceder se encontrar um animal na estrada?",
+    "output": "Olá! Se encontrar um animal na estrada, reduza a velocidade e, se possível, pare o veículo para evitar atropelá-lo. Sinalize com os faróis para alertar outros condutores."
+  },
+  {
+    "input": "Boa tarde! Quais são as regras para o uso de faróis?",
+    "output": "Boa tarde! Deve utilizar os faróis em condições de pouca visibilidade, como à noite ou em nevoeiro. Em autoestradas, utilize sempre os faróis de cruzamento."
+  },
+  {
+    "input": "Olá! O que devo fazer se o meu carro avariar na estrada?",
+    "output": "Olá! Se o seu carro avariar, tente estacionar em local seguro, ligue os quatro piscas e coloque o triângulo de sinalização a pelo menos 30 metros do veículo."
+  },
+  {
+    "input": "Boa noite! Posso usar o meu carro para transportar mercadorias?",
+    "output": "Boa noite! Depende do tipo de mercadoria e da legislação vigente. Algumas mercadorias podem exigir licenças especiais ou veículos adequados para o transporte."
+  },
+  {
+    "input": "Olá! Quais são as regras para o uso de cinto de segurança?",
+    "output": "Olá! O uso do cinto de segurança é obrigatório para todos os ocupantes do veículo, tanto nos bancos da frente como nos traseiros."
+  },
+  {
+    "input": "Olá! O que devo fazer se presenciar um acidente?",
+    "output": "Olá! Se presenciar um acidente, pare o veículo em local seguro, ligue para os serviços de emergência e preste assistência se possível, sem colocar a sua segurança em risco."
+  },
+  {
+    "input": "Olá! Como posso saber se o meu carro está em boas condições para viajar?",
+    "output": "Olá! Deve fazer revisões periódicas no seu veículo e verificar regularmente os níveis de óleo, água, a pressão dos pneus e o estado dos travões."
+  },
+  {
+    "input": "Boa tarde! O que é uma via verde?",
+    "output": "Boa tarde! Uma via verde é uma faixa exclusiva para veículos com ocupação múltipla ou veículos elétricos, visando reduzir o trânsito e incentivar o uso de transporte sustentável."
+  },
+  {
+    "input": "Olá! O que devo fazer se perder a minha carta de condução?",
+    "output": "Olá! Se perder a sua carta de condução, deve comunicar às autoridades e solicitar uma segunda via o mais rápido possível."
+  },
+  {
+    "input": "Boa noite! Posso beber álcool antes de conduzir?",
+    "output": "Boa noite! A legislação portuguesa permite uma taxa de álcool no sangue de até 0,5 g/l para condutores em geral. No entanto, é sempre mais seguro não consumir álcool antes de conduzir."
+  },
+  {
+    "input": "Olá! O que é um radar de controlo de velocidade?",
+    "output": "Olá! Um radar de controlo de velocidade é um dispositivo utilizado para medir a velocidade dos veículos e garantir o cumprimento dos limites de velocidade."
+  },
+  {
+    "input": "Boa tarde! Como funciona o sistema de pontos na carta de condução?",
+    "output": "Boa tarde! O sistema de pontos na carta de condução atribui pontos aos condutores, que são subtraídos em caso de infrações. A perda total dos pontos resulta na suspensão da carta."
+  },
+  {
+    "input": "Olá! O que devo fazer se for multado?",
+    "output": "Olá! Se for multado, deve pagar a multa dentro do prazo estipulado ou contestá-la, se discordar da infração."
+  },
+  {
+    "input": "Boa noite! Posso usar o meu carro no estrangeiro?",
+    "output": "Boa noite! Sim, pode usar o seu carro no estrangeiro, mas deve verificar as regras de trânsito locais e ter toda a documentação necessária."
+  },
+  {
+    "input": "Olá! Como posso obter informações sobre o trânsito em tempo real?",
+    "output": "Olá! Pode utilizar aplicativos de navegação ou consultar sites de trânsito para obter informações em tempo real sobre o estado das vias."
+  },
+  {
+    "input": "Boa tarde! O que é uma zona de emissões reduzidas?",
+    "output": "Boa tarde! Uma zona de emissões reduzidas é uma área onde a circulação de veículos mais poluentes é restrita para melhorar a qualidade do ar."
+  },
+  {
+    "input": "Olá! Estou atrasado para o trabalho. Posso ultrapassar em faixa contínua?",
+    "output": "Olá! Não, ultrapassar em faixa contínua é proibido e pode resultar em multa. É importante respeitar a sinalização e planejar o tempo de viagem com antecedência."
+  },
+  {
+    "input": "Boa tarde! O que devo fazer se um pedestre atravessar fora da faixa?",
+    "output": "Boa tarde! Deve reduzir a velocidade e estar preparado para parar, garantindo a segurança do pedestre. A prioridade é sempre dos mais vulneráveis na via."
+  },
+  {
+    "input": "Olá! Como devo proceder se encontrar um veículo de emergência com sirenes ligadas?",
+    "output": "Olá! Deve dar passagem ao veículo de emergência, deslocando-se para a direita ou parando, se necessário, para permitir a passagem rápida e segura."
+  },
+  {
+    "input": "Boa noite! Posso estacionar em local reservado para deficientes se for rápido?",
+    "output": "Boa noite! Não, estacionar em locais reservados para deficientes é proibido, mesmo que seja por pouco tempo. Esses espaços devem estar sempre disponíveis para quem realmente precisa."
+  },
+  {
+    "input": "Olá! O que devo fazer se o meu carro começar a fazer um barulho estranho enquanto conduzo?",
+    "output": "Olá! Deve reduzir a velocidade e procurar um local seguro para parar. Verifique o veículo e, se necessário, ligue para assistência em viagem."
+  },
+  {
+    "input": "Boa tarde! Como devo agir se um motociclista estiver a fazer manobras perigosas?",
+    "output": "Boa tarde! Mantenha uma distância segura e evite reagir de forma agressiva. Se possível, anote a matrícula e informe as autoridades."
+  },
+  {
+    "input": "Olá! Posso usar o telemóvel para navegação enquanto conduzo?",
+    "output": "Olá! Pode usar o telemóvel para navegação desde que esteja em modo mãos-livres e não distraia a sua atenção da condução."
+  },
+  {
+    "input": "Boa noite! O que devo fazer se encontrar uma fila de trânsito devido a obras?",
+    "output": "Boa noite! Reduza a velocidade e siga as instruções dos sinais e dos operários. Mantenha uma distância segura do veículo à frente."
+  },
+  {
+    "input": "Olá! Como devo proceder se o meu carro ficar sem combustível na estrada?",
+    "output": "Olá! Tente estacionar em local seguro, ligue os quatro piscas e coloque o triângulo de sinalização. Peça ajuda ou ligue para assistência em viagem."
+  },
+  {
+    "input": "Boa tarde! Posso parar no acostamento para fazer uma chamada rápida?",
+    "output": "Boa tarde! O acostamento deve ser usado apenas em situações de emergência. Se precisar fazer uma chamada, procure uma área de descanso ou saída segura."
+  },
+  {
+    "input": "Boa tarde! Qual é o limite de velocidade permitido nas estradas nacionais em Portugal?",
+    "output": "Boa tarde! Nas estradas nacionais, o limite de velocidade para veículos ligeiros de passageiros é, em regra, de 90 km/h, salvo indicação em contrário através de sinalização."
+  },
+  {
+    "input": "E se a estrada tiver duas faixas em cada sentido?",
+    "output": "Nesse caso, se for considerada uma via reservada a automóveis e motociclos, o limite pode ser de 100 km/h. O melhor é sempre estar atento à sinalização específica da via."
+  },
+  {
+    "input": "Olá! Tenho uma dúvida sobre rotundas. Quem tem prioridade ao entrar?",
+    "output": "Olá! Em Portugal, quem já circula na rotunda tem prioridade. Ou seja, quem pretende entrar deve ceder passagem aos veículos que nela já se encontram."
+  },
+  {
+    "input": "E se não houver sinalização específica?",
+    "output": "Mesmo sem sinalização, aplica-se a mesma regra: a prioridade é de quem já está dentro da rotunda. É uma norma geral do Código da Estrada."
+  },
+  {
+    "input": "Bom dia. Posso usar o telemóvel enquanto conduzo, se for em alta-voz?",
+    "output": "Bom dia! Sim, pode utilizar o telemóvel com sistema mãos-livres, como o modo alta-voz ou bluetooth integrado. O que é proibido é segurar ou manipular o telemóvel durante a condução."
+  },
+  {
+    "input": "E usar fones de ouvido, é permitido?",
+    "output": "Não. O uso de auriculares ou auscultadores em ambos os ouvidos é proibido, pois compromete a atenção do condutor. Apenas é permitido se usar um só auricular, deixando um ouvido livre."
+  },
+  {
+    "input": "Boa noite. É obrigatório usar cinto de segurança nos bancos traseiros?",
+    "output": "Boa noite! Sim, é obrigatório o uso do cinto de segurança em todos os lugares do veículo, incluindo os bancos traseiros, sempre que o veículo estiver equipado com cintos."
+  },
+  {
+    "input": "E há exceções para essa regra?",
+    "output": "Existem exceções pontuais, como para condutores de veículos de emergência em serviço ou para passageiros com atestado médico de isenção, mas são casos muito específicos."
+  },
+  {
+    "input": "Olá. Se houver sinais temporários por causa de obras, devo seguir esses ou os sinais normais da estrada?",
+    "output": "Olá! Deve sempre obedecer aos sinais temporários relacionados com obras. Eles sobrepõem-se à sinalização permanente durante o período em que estiverem ativos."
+  },
+  {
+    "input": "Mesmo que o sinal antigo diga o contrário?",
+    "output": "Sim, mesmo assim. Os sinais temporários têm prioridade porque refletem as condições atuais da via."
+  },
+  {
+    "input": "Boa tarde. É permitido circular sempre na faixa do meio numa autoestrada?",
+    "output": "Boa tarde! Não. O Código da Estrada estipula que se deve circular o mais à direita possível, exceto quando se vai ultrapassar ou quando há muito trânsito que o justifique."
+  },
+  {
+    "input": "Então posso ser multado por isso?",
+    "output": "Sim, manter-se injustificadamente na faixa do meio ou da esquerda pode dar origem a contraordenação e coima."
+  },
+  {
+    "input": "Olá! Em caso de nevoeiro cerrado, devo ligar os máximos?",
+    "output": "Olá! Não. Em situações de nevoeiro, deve utilizar os médios e, se necessário, os faróis de nevoeiro. Os máximos podem refletir no nevoeiro e reduzir ainda mais a visibilidade."
+  },
+  {
+    "input": "E posso usar os quatro piscas?",
+    "output": "Sim, se estiver a circular muito devagar ou parado por motivos de segurança, pode e deve usar os quatro piscas para alertar os outros condutores."
+  },
+  {
+    "input": "Bom dia. Há um limite de velocidade específico junto a escolas?",
+    "output": "Bom dia! Sim, junto a escolas o limite pode ser reduzido para 30 km/h durante os horários escolares, sinalizado por painéis. É importante redobrar a atenção nesses locais."
+  },
+  {
+    "input": "Mesmo se não vir crianças por perto?",
+    "output": "Sim. A sinalização deve ser respeitada independentemente da presença de crianças, pois o objetivo é garantir a segurança em qualquer momento."
+  },
+  {
+    "input": "Boa tarde. O que devo fazer se ouvir uma ambulância a aproximar-se?",
+    "output": "Boa tarde! Deve facilitar a passagem do veículo de emergência, encostando-se à direita ou parando, se necessário. Não deve obstruir ou seguir o veículo depois da passagem."
+  },
+  {
+    "input": "E numa rotunda, como devo agir?",
+    "output": "Deve continuar a circular com segurança e facilitar a passagem assim que possível, sem parar bruscamente ou bloquear a rotunda."
+  },
+  {
+    "input": "Boa noite. Qual é a taxa máxima de álcool permitida para condutores em Portugal?",
+    "output": "Boa noite! A taxa máxima de álcool no sangue permitida é de 0,5 g/l para condutores em geral. Para condutores profissionais ou com carta há menos de 3 anos, o limite é de 0,2 g/l."
+  },
+  {
+    "input": "E se ultrapassar esse valor, o que acontece?",
+    "output": "Depende da taxa. Pode ser considerada contraordenação grave ou muito grave, com coima, inibição de conduzir e até processo criminal, se exceder 1,2 g/l."
+  },
+  {
+    "input": "Olá! Gostaria de saber se posso estacionar em frente a uma garagem privada.",
+    "output": "Olá! Não, estacionar em frente a uma garagem, mesmo que seja a sua, é proibido se obstruir a entrada ou saída. Pode resultar numa multa e até no reboque do veículo."
+  },
+  {
+    "input": "E se eu deixar o pisca ligado?",
+    "output": "Mesmo com o pisca ligado, continua a ser uma infração. O pisca não justifica estacionamento indevido."
+  },
+  {
+    "input": "Boa tarde. É obrigatório ter triângulo de sinalização no carro?",
+    "output": "Boa tarde! Sim, é obrigatório ter um triângulo de sinalização no veículo e utilizá-lo em caso de avaria ou acidente para sinalizar o perigo."
+  },
+  {
+    "input": "E colete refletor também?",
+    "output": "Exatamente. O colete refletor é obrigatório e deve ser usado sempre que sair do veículo em situações de emergência fora das localidades."
+  },
+  {
+    "input": "Olá. Qual é a idade mínima para conduzir um ciclomotor?",
+    "output": "Olá! A idade mínima para conduzir um ciclomotor até 50 cm³ é de 16 anos, desde que tenha licença de condução da categoria AM."
+  },
+  {
+    "input": "Essa licença é como uma carta normal?",
+    "output": "Não exatamente. É uma licença específica que requer formação e exame teórico-prático, mas não é equivalente à carta B."
+  },
+  {
+    "input": "Bom dia. O que significa um sinal azul com uma bicicleta desenhada?",
+    "output": "Bom dia! Esse sinal indica uma via reservada exclusivamente a velocípedes, como bicicletas. Outros veículos não podem circular ali."
+  },
+  {
+    "input": "Motas elétricas também não podem?",
+    "output": "Correto. Apenas bicicletas e outros velocípedes não motorizados são permitidos nesse tipo de via."
+  },
+  {
+    "input": "Boa noite. É permitido ultrapassar pela direita em alguma situação?",
+    "output": "Boa noite! Em geral, a ultrapassagem deve ser feita pela esquerda. No entanto, pode ultrapassar pela direita se o veículo da frente estiver a sinalizar que vai virar à esquerda."
+  },
+  {
+    "input": "E se estiver numa via com várias faixas?",
+    "output": "Em vias com várias faixas no mesmo sentido, pode ultrapassar pela direita se o trânsito estiver em fila e cada veículo circular na sua faixa."
+  },
+  {
+    "input": "Olá. Crianças até que idade precisam de cadeira auto?",
+    "output": "Olá! As crianças com menos de 12 anos e menos de 135 cm de altura devem usar sistemas de retenção adequados ao seu tamanho e peso."
+  },
+  {
+    "input": "E podem ir no banco da frente?",
+    "output": "Apenas se o banco traseiro estiver indisponível ou se o sistema de retenção for adequado e o airbag estiver desativado, no caso de cadeiras viradas para trás."
+  },
+  {
+    "input": "Bom dia. Posso circular com auscultadores enquanto ando de bicicleta?",
+    "output": "Bom dia! Não. O uso de auscultadores que impeçam a perceção sonora do ambiente é proibido para condutores de qualquer veículo, incluindo bicicletas."
+  },
+  {
+    "input": "Mesmo com só um fone?",
+    "output": "Com apenas um auricular, pode ser permitido, desde que o outro ouvido permaneça livre para ouvir o ambiente."
+  },
+  {
+    "input": "Boa tarde. O que devo fazer ao ver um sinal de STOP?",
+    "output": "Boa tarde! Deve parar completamente o veículo antes da linha ou cruzamento e apenas avançar após garantir que é seguro."
+  },
+  {
+    "input": "Mesmo sem outros veículos por perto?",
+    "output": "Sim, a paragem é obrigatória independentemente da presença de outros veículos."
+  },
+  {
+    "input": "Olá. A mota pode circular entre carros no trânsito parado?",
+    "output": "Olá! Em Portugal, circular entre filas de carros — a chamada 'fila indiana' — não é expressamente permitida pelo Código da Estrada. Pode ser considerado ultrapassagem irregular."
+  },
+  {
+    "input": "E se for com cuidado e devagar?",
+    "output": "Mesmo assim, é arriscado. Em caso de acidente, o condutor da mota pode ser responsabilizado por não manter distância de segurança."
+  },
+  {
+    "input": "Bom dia. O que significa uma linha contínua na estrada?",
+    "output": "Bom dia! Uma linha contínua significa que é proibido transpor ou pisar essa linha. Serve para separar sentidos de trânsito ou indicar zonas de perigo."
+  },
+  {
+    "input": "E se for para ultrapassar um ciclista?",
+    "output": "Aí existe uma exceção: pode transpor a linha contínua para ultrapassar ciclistas, desde que não haja perigo e se respeite uma distância lateral mínima de 1,5 metros."
+  },
+  {
+    "input": "Boa noite. É permitido buzinar em qualquer circunstância?",
+    "output": "Boa noite! Não. A utilização do sinal sonoro só é permitida para evitar acidentes ou fora das localidades como aviso de ultrapassagem."
+  },
+  {
+    "input": "E se for para chamar alguém na rua?",
+    "output": "Isso é proibido. Usar a buzina com esse fim é considerado uso indevido e pode dar origem a coima."
+  },
+  {
+    "input": "Olá. Qual a distância mínima de segurança entre dois veículos?",
+    "output": "Olá! Não há uma distância fixa, mas deve ser suficiente para evitar colisão em caso de travagem súbita. Em regra, deve manter-se pelo menos 2 segundos de distância."
+  },
+  {
+    "input": "Como faço para calcular isso?",
+    "output": "Escolha um ponto fixo na estrada e conte até dois segundos desde que o carro da frente o ultrapassa. Se passar antes de terminar a contagem, está muito perto."
+  },
+  {
+    "input": "Bom dia. A carta de condução portuguesa é válida em outros países?",
+    "output": "Bom dia! Sim, nos países da União Europeia e em alguns países com acordos internacionais, a carta portuguesa é válida. Fora disso, pode precisar de uma carta internacional."
+  },
+  {
+    "input": "Preciso trocar a carta se for viver para fora?",
+    "output": "Depende do país. Muitos exigem a troca após um período de residência. É importante verificar a legislação local."
+  },
+  {
+    "input": "Boa tarde. O que acontece se passar um sinal vermelho?",
+    "output": "Boa tarde! Passar um sinal vermelho é uma infração muito grave e pode resultar numa coima entre 120 e 600 euros e inibição de conduzir até dois anos."
+  },
+  {
+    "input": "E perco pontos na carta?",
+    "output": "Sim, pode perder entre 2 e 4 pontos, dependendo da gravidade e circunstâncias da infração."
+  },
+  {
+    "input": "Olá. É permitido conduzir descalço?",
+    "output": "Olá! O Código da Estrada não proíbe expressamente conduzir descalço, mas é obrigatório manter controlo total do veículo. Se os agentes considerarem perigoso, pode ser sancionado."
+  },
+  {
+    "input": "E com chinelos?",
+    "output": "Conduzir com chinelos de dedo não é proibido por lei, mas é desaconselhado, pois pode comprometer o controlo dos pedais. Em caso de acidente, pode ser considerado negligência."
+  },
+  {
+    "input": "Bom dia. É obrigatório manter os faróis ligados durante o dia?",
+    "output": "Bom dia! Em Portugal, os veículos não são obrigados a circular com os médios ligados durante o dia, exceto em túneis ou quando há sinalização que o indique."
+  },
+  {
+    "input": "E em autoestradas?",
+    "output": "Não é obrigatório, mas é recomendado em condições de visibilidade reduzida, como nevoeiro ou chuva intensa."
+  },
+  {
+    "input": "Boa tarde. Posso estacionar numa paragem de autocarro?",
+    "output": "Boa tarde! Não. Estacionar ou parar em paragens de transporte público é proibido e pode ser punido com multa e reboque."
+  },
+  {
+    "input": "Mesmo que seja só um minuto?",
+    "output": "Sim. Mesmo por pouco tempo, está a obstruir um local destinado ao transporte coletivo."
+  },
+  {
+    "input": "Olá. Quantos pontos tenho na carta de condução?",
+    "output": "Olá! Ao obter a carta de condução, começa com 12 pontos. Pode chegar a 15 se não cometer infrações. Se cometer infrações graves ou muito graves, perde pontos."
+  },
+  {
+    "input": "E posso consultar online?",
+    "output": "Sim. Pode consultar os pontos da sua carta no site do IMT, através da área pessoal com autenticação via Chave Móvel Digital."
+  },
+  {
+    "input": "Bom dia. Se eu me envolver num acidente sem feridos, tenho de chamar a polícia?",
+    "output": "Bom dia! Se não há feridos e os condutores estão de acordo, basta preencher a declaração amigável. Só é necessário chamar a polícia se houver desacordo ou feridos."
+  },
+  {
+    "input": "E se o outro condutor não tiver seguro?",
+    "output": "Nesse caso, deve sempre chamar a polícia para registar a ocorrência."
+  },
+  {
+    "input": "Boa noite. Como devo proceder numa passadeira sem semáforo?",
+    "output": "Boa noite! Deve abrandar e parar para ceder passagem a peões que já estejam ou se preparem para atravessar. A prioridade é sempre dos peões."
+  },
+  {
+    "input": "E se não estiver ninguém visível?",
+    "output": "Mesmo assim, convém abrandar e estar atento, especialmente em zonas escolares ou residenciais."
+  },
+  {
+    "input": "Boa tarde! É permitido virar à esquerda num cruzamento sem sinalização?",
+    "output": "Boa tarde! Sim, é permitido, mas deve ceder passagem aos veículos que se aproximam pela direita, conforme a regra geral de cedência de passagem."
+  },
+  {
+    "input": "E se houver um sinal de cedência de passagem?",
+    "output": "Nesse caso, deve obedecer ao sinal e ceder passagem a todos os veículos que circulam na via transversal."
+  },
+  {
+    "input": "Olá! Posso conduzir um trator agrícola com a carta de condução categoria B?",
+    "output": "Olá! Sim, a carta de condução da categoria B permite conduzir tratores agrícolas, desde que não circulem a mais de 40 km/h e não ultrapassem 3500 kg de peso bruto."
+  },
+  {
+    "input": "E se o trator tiver um reboque?",
+    "output": "Se o conjunto ultrapassar os 3500 kg de peso bruto, será necessário possuir a categoria E associada à sua carta de condução."
+  },
+  {
+    "input": "Bom dia. É obrigatório ter seguro para uma mota de 50cc?",
+    "output": "Bom dia! Sim, é obrigatório possuir seguro de responsabilidade civil para qualquer veículo a motor, incluindo motas de 50cc."
+  },
+  {
+    "input": "E se for uma bicicleta elétrica?",
+    "output": "Se a bicicleta elétrica tiver assistência até 25 km/h e potência máxima de 250W, não é obrigatório seguro. Caso contrário, é considerado um ciclomotor e necessita de seguro."
+  },
+  {
+    "input": "Boa noite. Qual é a velocidade máxima permitida numa zona residencial?",
+    "output": "Boa noite! Em zonas residenciais, o limite de velocidade é geralmente de 20 km/h, salvo indicação em contrário através de sinalização."
+  },
+  {
+    "input": "E numa zona de coexistência?",
+    "output": "Numa zona de coexistência, o limite também é de 20 km/h, e os peões têm prioridade sobre os veículos."
+  },
+  {
+    "input": "Olá! Posso estacionar numa curva?",
+    "output": "Olá! Não, é proibido estacionar em curvas de visibilidade reduzida, pois pode comprometer a segurança rodoviária."
+  },
+  {
+    "input": "E num topo de colina?",
+    "output": "Também é proibido estacionar em lombas ou topos de colinas com visibilidade reduzida, pelo mesmo motivo."
+  },
+  {
+    "input": "Bom dia. É permitido transportar crianças no banco da frente?",
+    "output": "Bom dia! Crianças com menos de 12 anos e menos de 135 cm de altura devem ser transportadas no banco traseiro com sistema de retenção adequado."
+  },
+  {
+    "input": "E se o carro não tiver bancos traseiros?",
+    "output": "Nesse caso, é permitido transportar a criança no banco da frente, desde que utilize um sistema de retenção adequado e o airbag esteja desativado se o sistema for virado para trás."
+  },
+  {
+    "input": "Boa tarde. Como devo proceder ao aproximar-me de um cruzamento com semáforo amarelo intermitente?",
+    "output": "Boa tarde! Deve abrandar e proceder com precaução, cedendo passagem se necessário, pois o semáforo amarelo intermitente indica perigo."
+  },
+  {
+    "input": "E se houver um sinal de STOP junto ao semáforo?",
+    "output": "Nesse caso, deve parar obrigatoriamente e só avançar após certificar-se de que pode fazê-lo em segurança."
+  },
+  {
+    "input": "Olá! É obrigatório usar capacete ao conduzir uma bicicleta?",
+    "output": "Olá! Em Portugal, o uso de capacete não é obrigatório para ciclistas, mas é altamente recomendado por razões de segurança."
+  },
+  {
+    "input": "E para crianças, a regra é a mesma?",
+    "output": "Sim, a regra é a mesma. No entanto, é especialmente aconselhável que as crianças usem capacete para maior proteção."
+  },
+  {
+    "input": "Bom dia. Posso atravessar uma linha contínua para entrar num estacionamento?",
+    "output": "Bom dia! Sim, é permitido atravessar uma linha contínua para aceder a propriedades ou estacionamentos, desde que o faça em segurança."
+  },
+  {
+    "input": "E para sair do estacionamento?",
+    "output": "Também é permitido atravessar a linha contínua ao sair, sempre com a devida precaução."
+  },
+  {
+    "input": "Boa noite. Qual a distância mínima que devo manter ao ultrapassar um ciclista?",
+    "output": "Boa noite! Deve manter uma distância lateral mínima de 1,5 metros ao ultrapassar um ciclista."
+  },
+  {
+    "input": "E se não houver espaço suficiente para essa distância?",
+    "output": "Nesse caso, deve aguardar até que haja espaço suficiente para ultrapassar em segurança."
+  },
+  {
+    "input": "Olá! É permitido conduzir com o braço de fora da janela?",
+    "output": "Olá! Não, conduzir com o braço de fora compromete o controlo do veículo e pode ser considerado uma infração."
+  },
+  {
+    "input": "E se estiver muito calor?",
+    "output": "Mesmo em dias quentes, deve manter os braços dentro do veículo para garantir a segurança na condução."
+  },
+  {
+    "input": "Bom dia. O que devo fazer se um semáforo estiver avariado?",
+    "output": "Bom dia! Deve seguir as regras de cedência de passagem aplicáveis, como se o cruzamento não tivesse semáforos, procedendo com cautela."
+  },
+  {
+    "input": "E se houver um agente de trânsito a controlar o cruzamento?",
+    "output": "Deve obedecer às indicações do agente, que prevalecem sobre a sinalização existente."
+  },
+  {
+    "input": "Boa tarde. É permitido fazer marcha atrás numa autoestrada?",
+    "output": "Boa tarde! Não, é expressamente proibido efetuar marcha atrás numa autoestrada, pois representa um grave perigo para a segurança rodoviária."
+  },
+  {
+    "input": "E se me enganar na saída?",
+    "output": "Deve continuar até à próxima saída e aí inverter o sentido de marcha de forma segura."
+  },
+  {
+    "input": "Boa tarde! É permitido usar luzes de nevoeiro à noite sem nevoeiro?",
+    "output": "Boa tarde! Não, as luzes de nevoeiro devem ser usadas apenas em condições de visibilidade reduzida, como nevoeiro, chuva intensa ou neve."
+  },
+  {
+    "input": "E se for numa estrada mal iluminada?",
+    "output": "Mesmo assim, deve usar os médios ou máximos conforme a situação. As luzes de nevoeiro não substituem os faróis principais."
+  },
+  {
+    "input": "Olá! Como devo sinalizar uma manobra de mudança de direção?",
+    "output": "Olá! Deve usar o pisca com antecedência suficiente, garantindo que os outros condutores percebem a sua intenção antes de iniciar a manobra."
+  },
+  {
+    "input": "E se o sistema de piscas estiver avariado?",
+    "output": "Nesse caso, pode usar sinais manuais, mas é recomendável resolver a avaria o quanto antes, pois compromete a segurança."
+  },
+  {
+    "input": "Bom dia. Posso parar junto a um cruzamento?",
+    "output": "Bom dia! Não. É proibido parar ou estacionar a menos de 5 metros antes e depois de cruzamentos, entroncamentos ou rotundas."
+  },
+  {
+    "input": "Mesmo que não haja trânsito?",
+    "output": "Sim. A regra aplica-se sempre, independentemente do fluxo de trânsito no momento."
+  },
+  {
+    "input": "Boa noite. Como devo proceder ao aproximar-me de uma passadeira com peões à espera?",
+    "output": "Boa noite! Deve abrandar e ceder passagem aos peões que manifestem intenção de atravessar. A prioridade é sempre do peão."
+  },
+  {
+    "input": "E se estiver a chover?",
+    "output": "Ainda com mais razão deve abrandar com antecedência. A travagem demora mais tempo em piso molhado."
+  },
+  {
+    "input": "Olá. É permitido estacionar em frente a um contentor do lixo?",
+    "output": "Olá! Não, é proibido estacionar de forma a dificultar o acesso ou recolha de lixo, mesmo que não haja sinalização específica."
+  },
+  {
+    "input": "E se for só por alguns minutos?",
+    "output": "Mesmo que seja temporário, continua a ser infração, especialmente se obstruir o serviço público."
+  },
+  {
+    "input": "Bom dia. Há limite de alcoolemia para condutores profissionais?",
+    "output": "Bom dia! Sim. Para condutores profissionais, o limite legal é de 0,2 g/l, inferior ao dos condutores comuns (0,5 g/l)."
+  },
+  {
+    "input": "E se ultrapassarem esse valor?",
+    "output": "Estão sujeitos a coima, perda de pontos, e eventual inibição de conduzir, dependendo da taxa detetada."
+  },
+  {
+    "input": "Boa tarde. Posso parar na berma de uma autoestrada para atender o telemóvel?",
+    "output": "Boa tarde! Não. Parar na berma de uma autoestrada só é permitido em caso de emergência. Atender o telemóvel não é considerado emergência."
+  },
+  {
+    "input": "Mesmo com os quatro piscas ligados?",
+    "output": "Sim. O uso dos quatro piscas não justifica uma paragem indevida. Pode ser sancionado."
+  },
+  {
+    "input": "Olá. O que fazer se me envolver num acidente com um animal selvagem?",
+    "output": "Olá! Deve sinalizar o local, ligar às autoridades e não tentar aproximar-se do animal. É importante preencher a participação para o seguro."
+  },
+  {
+    "input": "E se for um animal doméstico?",
+    "output": "Também deve comunicar às autoridades. Se o dono estiver identificado, poderá ser responsabilizado pelos danos causados."
+  },
+  {
+    "input": "Bom dia. É permitido transportar carga no tejadilho do carro?",
+    "output": "Bom dia! Sim, desde que esteja bem acondicionada, não exceda o peso indicado pelo fabricante e não ultrapasse os limites do veículo."
+  },
+  {
+    "input": "E se cair parte da carga?",
+    "output": "É da responsabilidade do condutor garantir que a carga não represente perigo. Se cair, pode ser responsabilizado por danos e infrações."
+  },
+  {
+    "input": "Boa noite. O que significa um sinal de fundo amarelo com um X vermelho?",
+    "output": "Boa noite! Esse sinal indica que está proibido parar ou estacionar naquela zona. É comum em zonas de carga e descarga ou acesso a serviços."
+  },
+  {
+    "input": "A proibição aplica-se 24 horas por dia?",
+    "output": "Sim, salvo se o sinal tiver uma placa adicional com horários específicos."
+  },
+  {
+    "input": "Olá. O que significa uma luz azul intermitente num veículo?",
+    "output": "Olá! Significa que se trata de um veículo prioritário em missão urgente, como ambulância, polícia ou bombeiros. Deve ceder passagem imediatamente."
+  },
+  {
+    "input": "E se for num cruzamento congestionado?",
+    "output": "Mesmo assim, deve facilitar a passagem com segurança, sem causar perigo adicional."
+  },
+  {
+    "input": "Bom dia. O que é a regra da direita?",
+    "output": "Bom dia! Em cruzamentos sem sinalização, deve ceder passagem aos veículos que se aproximam pela sua direita. É uma regra base de prioridade."
+  },
+  {
+    "input": "Aplica-se nas rotundas?",
+    "output": "Não. Nas rotundas, a prioridade é de quem já nela circula, salvo sinalização em contrário."
+  },
+  {
+    "input": "Boa tarde. É obrigatório acender as luzes em túneis?",
+    "output": "Boa tarde! Sim, mesmo durante o dia, é obrigatório circular com os médios ligados dentro de túneis."
+  },
+  {
+    "input": "E se não o fizer?",
+    "output": "Pode ser sancionado com coima, pois está a infringir uma norma de segurança essencial."
+  },
+  {
+    "input": "Olá. Posso ultrapassar pela direita em rotundas?",
+    "output": "Olá! Sim, é possível ultrapassar pela direita dentro de rotundas se o trânsito o justificar e for feito com segurança."
+  },
+  {
+    "input": "Isso também se aplica a vias com várias faixas?",
+    "output": "Sim. Numa via com várias faixas no mesmo sentido, pode ultrapassar pela direita se o veículo à esquerda estiver mais lento."
+  },
+  {
+    "input": "Bom dia. Em que situações posso usar os máximos à noite?",
+    "output": "Bom dia! Pode usar os máximos à noite em vias mal iluminadas, desde que não encandeie condutores em sentido contrário ou à frente."
+  },
+  {
+    "input": "Quando devo desligá-los?",
+    "output": "Deve desligá-los ao cruzar-se com outros veículos ou ao aproximar-se de zonas urbanas bem iluminadas."
+  },
+  {
+    "input": "Boa noite. O que devo fazer ao ver um sinal de prioridade inversa?",
+    "output": "Boa noite! Se vir o sinal de triângulo invertido vermelho com uma seta preta para baixo, deve ceder passagem aos veículos em sentido contrário."
+  },
+  {
+    "input": "E se eu já estiver na via estreita?",
+    "output": "Se já estiver dentro da passagem estreita, deve continuar com precaução. Quem ainda não entrou deve ceder."
+  },
+  {
+    "input": "Olá. É necessário renovar a carta de condução?",
+    "output": "Olá! Sim, a carta de condução tem prazos de validade que variam com a idade do condutor. Por norma, renova-se aos 30, 40, 50, 60, 65 e 70 anos, e depois de 2 em 2 anos."
+  },
+  {
+    "input": "E posso conduzir com a carta caducada?",
+    "output": "Não. Conduzir com a carta caducada é ilegal e pode resultar em coima e inibição de conduzir."
+  },
+  {
+    "input": "Bom dia. Posso usar telemóvel se estiver parado no semáforo?",
+    "output": "Bom dia! Não. O uso de telemóvel ao volante é proibido mesmo com o veículo parado temporariamente, como num semáforo."
+  },
+  {
+    "input": "E se estiver com o motor desligado?",
+    "output": "Se o veículo estiver estacionado e fora da via, pode usar. Mas em trânsito, mesmo parado, aplica-se a proibição."
+  },
+  {
+    "input": "Olá! Posso ser multado por circular com pneus carecas?",
+    "output": "Sim, circular com pneus em mau estado, como carecas ou com piso inferior a 1,6 mm, é uma contraordenação grave. Pode resultar em multa, perda de pontos e até apreensão do veículo, pois compromete a segurança."
+  },
+  {
+    "input": "Boa tarde. E se os pneus só estiverem gastos de um lado?",
+    "output": "Mesmo assim, se não cumprirem os requisitos legais de profundidade mínima, são considerados irregulares. Além disso, desgaste irregular pode indicar problemas na suspensão ou alinhamento."
+  },
+  {
+    "input": "Olá, se tiver álcool no sangue, posso conduzir bicicleta?",
+    "output": "Em Portugal, os condutores de velocípedes também estão sujeitos às regras de álcool no sangue. Embora a fiscalização seja mais rara, se causar acidente ou estiver visivelmente afetado, pode ser sancionado."
+  },
+  {
+    "input": "E posso perder pontos da carta por isso?",
+    "output": "Sim, se for considerado condutor de velocípede com carta e a infração for grave, pode perder pontos e enfrentar as mesmas consequências legais que um condutor de veículo motorizado."
+  },
+  {
+    "input": "Boa noite! Posso usar óculos de sol a conduzir à noite?",
+    "output": "Não é recomendado. Embora não exista uma proibição específica, usar óculos escuros à noite pode reduzir perigosamente a visibilidade, sendo considerado comportamento negligente em caso de acidente."
+  },
+  {
+    "input": "E se forem lentes de descanso escuras?",
+    "output": "Mesmo assim, se dificultarem a visão, especialmente em locais mal iluminados, pode ser considerado um fator agravante em caso de infração ou acidente."
+  },
+  {
+    "input": "Bom dia. Posso deixar o carro ligado enquanto vou ao multibanco?",
+    "output": "Não deve. Deixar o motor ligado sem necessidade é proibido, além de representar desperdício de combustível e risco de furto. Pode ser multado se o veículo estiver em local público e sem vigilância."
+  },
+  {
+    "input": "Mas e se for só por 1 minuto?",
+    "output": "A lei não especifica um tempo mínimo. O importante é garantir que o veículo está imobilizado com segurança e não representa risco ou infração ambiental."
+  },
+  {
+    "input": "Boa tarde! É obrigatório usar luzes de marcha-atrás?",
+    "output": "Sim. As luzes de marcha-atrás servem para sinalizar aos outros utentes que o veículo está a recuar. Circular com elas avariadas é contraordenação leve e pode resultar em coima."
+  },
+  {
+    "input": "E se for um carro antigo que não tem essas luzes?",
+    "output": "Se for um veículo anterior à obrigatoriedade da instalação dessas luzes, pode circular legalmente. No entanto, é sempre recomendado adaptá-lo por razões de segurança."
+  },
+  {
+    "input": "Olá! É verdade que posso ser multado por conduzir com música muito alta?",
+    "output": "Sim, é verdade. Sons que impeçam a audição de sinais sonoros do exterior, como sirenes ou buzinas, podem ser considerados infração por comprometerem a atenção e segurança na condução."
+  },
+  {
+    "input": "Boa tarde! Posso conduzir com o cão ao colo?",
+    "output": "Não. Animais devem ser transportados em segurança, com dispositivos próprios (como grade ou cinto de segurança para animais). Conduzir com um animal ao colo pode levar a coima e perda de pontos por condução perigosa."
+  },
+  {
+    "input": "Olá. E posso levar o cão na bagageira aberta, tipo carrinha?",
+    "output": "Pode, desde que o animal esteja devidamente contido e não constitua perigo nem perturbação à condução. A segurança de todos é fundamental, incluindo a do animal."
+  },
+  {
+    "input": "Boa noite. A buzina do meu carro está avariada. Posso conduzir assim?",
+    "output": "Não. Circular com componentes essenciais do veículo em mau estado, como a buzina, é contraordenação. A buzina é um sinal de emergência e deve estar funcional."
+  },
+  {
+    "input": "Bom dia! É permitido usar os quatro piscas enquanto estaciono em segunda fila?",
+    "output": "Não. Os quatro piscas não tornam legal uma manobra proibida. Estacionar em segunda fila é ilegal, exceto em veículos de emergência ou por brevíssimo tempo e sem causar obstrução — e mesmo assim pode ser multado."
+  },
+  {
+    "input": "Boa tarde. O que acontece se ultrapassar um autocarro parado numa paragem?",
+    "output": "Deve fazê-lo com precaução e a velocidade moderada. Se houver peões a atravessar, deve parar. Ignorar esta obrigação pode resultar em multa e é considerado comportamento de risco."
+  },
+  {
+    "input": "Olá! Posso circular numa ciclovia com uma trotinete elétrica?",
+    "output": "Sim, as trotinetes elétricas estão autorizadas a circular nas ciclovias, desde que respeitem a velocidade máxima permitida e as regras de convivência com peões e ciclistas."
+  },
+  {
+    "input": "Boa noite. É obrigatório desligar os máximos dentro das localidades?",
+    "output": "Sim, nas localidades deve circular com médios, exceto se as condições de visibilidade forem muito reduzidas. Usar os máximos pode encandear outros condutores e é contraordenação leve."
+  },
+  {
+    "input": "Olá! Se estiver num cruzamento e ficar preso no meio por causa do trânsito, levo multa?",
+    "output": "Sim. Entrar num cruzamento sem garantir que pode sair do outro lado é proibido. Mesmo que o semáforo esteja verde, pode ser multado por obstrução da via."
+  },
+  {
+    "input": "Bom dia. É verdade que os tratores não podem circular à noite?",
+    "output": "Não é verdade. Tratores podem circular à noite, desde que estejam devidamente iluminados e sinalizados. No entanto, é obrigatório que tenham luzes dianteiras e traseiras em bom funcionamento, bem como refletores."
+  },
+  {
+    "input": "Eh pá, posso ir com o cãozito à frente se ele for quieto?",
+    "output": "Mesmo que o cão seja calmo, não é permitido levá-lo ao colo ou solto no banco da frente. Deve estar seguro num sistema de retenção próprio ou na bagageira com rede protetora. A segurança vem sempre primeiro!"
+  },
+  {
+    "input": "Olá! E se eu beber só um copinho de vinho, posso conduzir?",
+    "output": "Depende da sua taxa de alcoolemia. Um copo pode já ultrapassar os 0,5 g/l, o limite legal para condutores comuns. Para recém-encartados ou profissionais, o limite é 0,2 g/l. O mais seguro é não beber nada antes de conduzir."
+  },
+  {
+    "input": "Bom dia. Posso usar o pisca da esquerda só para mostrar que vou ultrapassar?",
+    "output": "Sim, é exatamente para isso que serve. Mas deve desligá-lo logo que terminar a ultrapassagem, para evitar confundir outros condutores."
+  },
+  {
+    "input": "Boa noite. Se for numa estrada sem trânsito, posso andar mais depressa do que o limite?",
+    "output": "Não. O limite de velocidade aplica-se sempre, independentemente do trânsito. Ultrapassá-lo é contraordenação e pode pôr em risco a sua vida e a dos outros."
+  },
+  {
+    "input": "Olá! Levei uma multa por não parar no STOP, mas não vinha ninguém. Está certo?",
+    "output": "Sim, está. O sinal de STOP obriga à paragem completa, mesmo que não haja trânsito. Ignorá-lo é uma infração grave."
+  },
+  {
+    "input": "Boa tarde! Posso circular numa rotunda só por fora até à terceira saída?",
+    "output": "Não é o mais correto. Deve usar a faixa interior para saídas posteriores e mudar para a exterior antes da saída. Circular sempre por fora pode ser perigoso e motivo de coima."
+  },
+  {
+    "input": "Epá, posso buzinar para avisar que estou a chegar a casa?",
+    "output": "Não. A buzina só deve ser usada para evitar acidentes ou, fora das localidades, como aviso de ultrapassagem. Usá-la para cumprimentos ou avisos pessoais é proibido."
+  },
+  {
+    "input": "Bom dia! Posso deixar o carro com o motor ligado enquanto vou buscar pão?",
+    "output": "Não. Deixar o carro ligado e sem vigilância pode resultar em coima e representa risco de furto. Desligue sempre o motor, mesmo que a paragem seja breve."
+  },
+  {
+    "input": "Olá! Posso andar com o carro sem luz de travão se uma ainda funciona?",
+    "output": "Não. As luzes de travagem devem estar todas funcionais. Circular com luzes fundidas pode resultar em contraordenação e prejudica a segurança rodoviária."
+  },
+  {
+    "input": "Boa noite! E se eu estiver numa rotunda e alguém me entrar à frente?",
+    "output": "Quem já circula dentro da rotunda tem sempre prioridade. Se alguém entra sem ceder passagem, comete uma infração."
+  },
+  {
+    "input": "Posso parar em cima do passeio só para deixar uma encomenda?",
+    "output": "Não. Parar ou estacionar em cima do passeio é proibido, mesmo por breves instantes, salvo se houver sinalização que o permita. Pode ser multado."
+  },
+  {
+    "input": "Se tiver o vidro partido, posso continuar a conduzir?",
+    "output": "Depende da gravidade. Se o vidro afetar a visibilidade ou representar perigo, é proibido circular. Deve ser reparado o quanto antes."
+  },
+  {
+    "input": "E se for o espelho retrovisor que está partido?",
+    "output": "O Código da Estrada exige pelo menos um espelho retrovisor exterior funcional. Se for o único espelho e estiver partido, não pode circular."
+  },
+  {
+    "input": "Bom dia! Posso usar óculos de sol à noite para estilo?",
+    "output": "Usar óculos escuros à noite é perigoso e pode ser considerado negligência. Pode não haver multa direta, mas em caso de acidente, terá responsabilidades agravadas."
+  },
+  {
+    "input": "Olá! Posso fazer marcha atrás numa rua inteira se me enganar?",
+    "output": "Não. A marcha atrás deve ser usada apenas para pequenas manobras e nunca em longas distâncias. É perigoso e pode ser multado por condução incorreta."
+  },
+  {
+    "input": "Se tiver só uma matrícula (da frente), é problema?",
+    "output": "Sim. Os veículos devem ter matrícula visível à frente e atrás. Circular sem uma delas é infração e motivo de coima."
+  },
+  {
+    "input": "Boa tarde. Tenho de sinalizar antes de entrar numa rotunda?",
+    "output": "Não é obrigatório sinalizar a entrada, mas deve sempre sinalizar a saída com o pisca da direita. Isso ajuda os outros condutores a antecipar a sua manobra."
+  },
+  {
+    "input": "Posso circular com uma bicicleta elétrica sem capacete?",
+    "output": "Depende. Se a bicicleta tiver assistência até 25 km/h, não é obrigatório. Mas se for mais potente, pode ser considerada ciclomotor, exigindo capacete e carta."
+  },
+  {
+    "input": "Se vir um sinal tapado por folhas, tenho de cumprir?",
+    "output": "Legalmente, só se aplica a sinalização visível. No entanto, deve seguir as regras gerais do Código da Estrada e reportar a situação às autoridades locais."
+  },
+  {
+    "input": "Se o limpa pára-brisas estiver avariado e estiver a chover, posso circular?",
+    "output": "Não. Circular sem visibilidade adequada é contraordenação. Deve reparar o sistema antes de conduzir em condições de chuva ou nevoeiro."
+  },
+  {
+    "input": "Boa tarde! Posso conduzir um carro com matrícula estrangeira em Portugal?",
+    "output": "Boa tarde! Sim, pode conduzir um carro com matrícula estrangeira por um período limitado, geralmente até 183 dias por ano. Depois disso, deve legalizá-lo em Portugal."
+  },
+  {
+    "input": "Olá! É obrigatório sinalizar antes de mudar de faixa na autoestrada?",
+    "output": "Olá! Sim, deve sempre usar o pisca antes de mudar de faixa, mesmo que não haja trânsito. É uma obrigação legal e ajuda a evitar acidentes."
+  },
+  {
+    "input": "Boa noite! Posso andar com o carro sem seguro se só for até à oficina?",
+    "output": "Boa noite! Não. Circular sem seguro é sempre ilegal, mesmo que seja uma distância curta. Pode resultar em multa pesada e apreensão do veículo."
+  },
+  {
+    "input": "Epá, se vir um carro parado numa curva sem sinalização, o que faço?",
+    "output": "Deve abrandar imediatamente e sinalizar o perigo com os quatro piscas. Se for seguro, contorne o veículo com cuidado e comunique a situação às autoridades."
+  },
+  {
+    "input": "Olá! Os condutores de trotinetes têm de obedecer aos sinais de trânsito?",
+    "output": "Sim. Quem conduz uma trotinete elétrica deve respeitar as regras e sinais de trânsito como qualquer outro condutor. A segurança é para todos!"
+  },
+  {
+    "input": "Boa tarde. Posso fazer ultrapassagens em passagens de nível?",
+    "output": "Boa tarde! Não. É proibido ultrapassar nas passagens de nível ou imediatamente antes delas, por motivos de segurança rodoviária."
+  },
+  {
+    "input": "Bom dia! Tenho de pagar portagens mesmo com Via Verde desligada?",
+    "output": "Bom dia! Sim. Se passar numa via com portagem eletrónica e não tiver dispositivo ativo, deve pagar mais tarde online ou nos locais autorizados. Caso contrário, pode ter coima."
+  },
+  {
+    "input": "Olá! É permitido circular com um reboque sem matrícula?",
+    "output": "Olá! Não. Todos os reboques com mais de 300 kg de peso bruto devem ter matrícula própria. Circular sem ela é contraordenação."
+  },
+  {
+    "input": "Boa noite. Posso atravessar uma linha contínua para fugir de buracos na estrada?",
+    "output": "Boa noite! Só em casos excecionais e se for mesmo necessário para evitar um perigo imediato. Mesmo assim, deve garantir que é seguro e que não há veículos em sentido contrário."
+  },
+  {
+    "input": "Olá! Tenho prioridade se estiver a sair de um parque de estacionamento?",
+    "output": "Olá! Não. Quem sai de um parque de estacionamento deve sempre ceder passagem aos veículos que circulam na via pública."
+  },
+  {
+    "input": "Olá! Posso virar à esquerda num cruzamento com linha contínua?",
+    "output": "Olá! Sim, desde que esteja sinalizado como permitido. A linha contínua impede ultrapassagem, mas não impede manobras legais como virar."
+  },
+  {
+    "input": "Boa tarde. Posso estacionar de frente para o sentido contrário numa rua?",
+    "output": "Boa tarde! Não. O estacionamento deve ser feito no sentido da marcha do trânsito. Caso contrário, pode ser multado."
+  },
+  {
+    "input": "Eh pá, posso circular numa rotunda com os mínimos ligados?",
+    "output": "Não. Deve usar os médios, mesmo durante o dia, se as condições de visibilidade assim o exigirem. Os mínimos não são suficientes para circular."
+  },
+  {
+    "input": "Bom dia. É preciso usar capacete numa trotinete elétrica?",
+    "output": "Bom dia! Ainda não é obrigatório por lei, mas é fortemente recomendado, especialmente em zonas com muito trânsito."
+  },
+  {
+    "input": "Olá! O que acontece se não pagar uma multa de estacionamento?",
+    "output": "Olá! Se não pagar no prazo, pode ter custos adicionais, penhora de bens ou retenção do reembolso do IRS. O melhor é regularizar logo."
+  },
+  {
+    "input": "Boa noite! É preciso parar quando se entra numa autoestrada?",
+    "output": "Boa noite! Não. Deve usar a via de aceleração para entrar com segurança no trânsito, sem parar. Parar pode causar acidentes."
+  },
+  {
+    "input": "Olá! Posso circular numa zona pedonal se for só para entregar uma encomenda?",
+    "output": "Olá! Não, salvo se tiver autorização específica ou se a sinalização local o permitir. Caso contrário, é infração."
+  },
+  {
+    "input": "Boa tarde. Posso ter película escura nos vidros da frente do carro?",
+    "output": "Boa tarde! Pode, mas apenas se estiver homologada e não comprometer a visibilidade. Deve ter certificado e selo visível no vidro."
+  },
+  {
+    "input": "Bom dia! Os sinais pintados no chão valem mais do que os verticais?",
+    "output": "Bom dia! Não. A hierarquia é: agentes de trânsito, sinais luminosos, sinais verticais e, por fim, a sinalização horizontal."
+  },
+  {
+    "input": "Olá! É obrigatório usar luzes de mudança de direção numa rotunda?",
+    "output": "Olá! Sim. Deve sinalizar sempre que vai sair da rotunda, usando o pisca da direita com antecedência."
+  },
+  {
+    "input": "Boa tarde. Posso deixar o carro a trabalhar enquanto limpo o gelo do vidro?",
+    "output": "Boa tarde! Não é aconselhado. Em local público, deixar o motor ligado sem necessidade pode dar origem a coima."
+  },
+  {
+    "input": "Olá! E se parar numa passadeira, posso abrir a porta do carro?",
+    "output": "Não. É proibido parar em cima de passadeiras, e abrir a porta aí representa risco para os peões."
+  },
+  {
+    "input": "Boa noite! Quantos metros posso parar antes de uma paragem de autocarro?",
+    "output": "Boa noite! Não pode parar a menos de 10 metros antes ou depois de uma paragem de autocarro, salvo se houver sinalização que diga o contrário."
+  },
+  {
+    "input": "Olá! É preciso ter sempre o documento do seguro no carro?",
+    "output": "Sim. Deve ter o comprovativo de seguro válido dentro do veículo, bem como o dístico visível no para-brisas."
+  },
+  {
+    "input": "Bom dia. Posso ultrapassar se estou a ser ultrapassado ao mesmo tempo?",
+    "output": "Bom dia! Não. Durante uma ultrapassagem a si, deve manter a sua posição e não iniciar outra manobra."
+  },
+  {
+    "input": "Boa tarde! Posso andar com o carro com o escape partido?",
+    "output": "Boa tarde! Não. Um escape danificado compromete a segurança e o ambiente. Deve ser reparado, senão pode ter coima e reprovação na inspeção."
+  },
+  {
+    "input": "Olá! Posso buzinar para apressar outro carro parado no semáforo?",
+    "output": "Olá! Não. A buzina só deve ser usada para evitar acidentes ou fora das localidades como aviso de ultrapassagem."
+  },
+  {
+    "input": "Boa noite. O que devo fazer se um peão atravessar fora da passadeira?",
+    "output": "Boa noite! Deve reduzir a velocidade e, se necessário, parar para garantir a segurança do peão. A vida humana tem sempre prioridade."
+  },
+  {
+    "input": "Olá! Os sinais com fundo azul obrigam ou aconselham?",
+    "output": "Olá! Os sinais de fundo azul indicam prescrições obrigatórias, como sentidos obrigatórios ou vias reservadas."
+  },
+  {
+    "input": "Bom dia. Se eu emprestar o carro e cometerem uma infração, quem paga?",
+    "output": "Bom dia! O proprietário é inicialmente responsável, mas pode identificar o condutor real no prazo legal para que a coima lhe seja atribuída."
+  },
+  {
+    "input": "Posso virar à direita num semáforo vermelho se não vier ninguém?",
+    "output": "Não. Em Portugal, virar à direita com o semáforo vermelho é proibido, salvo sinalização específica que o permita."
+  },
+  {
+    "input": "O que acontece se não fizer a inspeção periódica ao carro?",
+    "output": "É considerada contraordenação grave. Pode ser multado, e se for apanhado a circular assim, o carro pode ser apreendido."
+  },
+  {
+    "input": "É permitido circular com os pneus diferentes à frente e atrás?",
+    "output": "Sim, desde que sejam compatíveis e estejam em bom estado. No entanto, os dois pneus do mesmo eixo devem ser iguais."
+  },
+  {
+    "input": "O que significa um traço amarelo pintado no passeio?",
+    "output": "Significa proibição de parar ou estacionar ao longo daquela zona. A infração pode resultar em multa e reboque."
+  },
+  {
+    "input": "Preciso de seguro se o carro estiver parado sem circular?",
+    "output": "Sim. Mesmo parado, o veículo deve ter seguro válido, pois pode causar danos estando estacionado."
+  },
+  {
+    "input": "Se o sinal de velocidade indicar 60, posso ir a 65 sem problema?",
+    "output": "Não. Ultrapassar o limite, mesmo que ligeiramente, é infração e pode ser sancionada se houver controlo de velocidade."
+  },
+  {
+    "input": "Tenho de ceder passagem numa passadeira onde não há ninguém?",
+    "output": "Não precisa parar, mas deve abrandar e estar atento caso algum peão se aproxime ou demonstre intenção de atravessar."
+  },
+  {
+    "input": "Dá multa circular sem espelho retrovisor do lado direito?",
+    "output": "Não, desde que o veículo tenha o espelho esquerdo e o interior funcional. Mas é recomendável tê-los todos para maior segurança."
+  },
+  {
+    "input": "O que acontece se deixar o carro estacionado em contramão?",
+    "output": "É infração. O estacionamento deve ser feito no sentido da marcha, e estacionar em contramão pode resultar em coima."
+  },
+  {
+    "input": "Posso parar numa rotunda se me enganar na saída?",
+    "output": "Não. Parar numa rotunda é perigoso e proibido. Deve dar nova volta até poder sair com segurança."
+  },
+  {
+    "input": "Há limite de velocidade nos parques de estacionamento?",
+    "output": "Sim. Geralmente o limite é de 20 km/h, mas pode variar conforme a sinalização do local."
+  },
+  {
+    "input": "Quem tem prioridade num cruzamento em T sem sinalização?",
+    "output": "Aplica-se a regra da prioridade à direita. Quem vem pela direita tem prioridade, mesmo em cruzamentos em T."
+  },
+  {
+    "input": "Se chover muito, posso usar os máximos?",
+    "output": "Não é recomendado. A luz dos máximos pode refletir na água e reduzir ainda mais a visibilidade. Use os médios e faróis de nevoeiro."
+  },
+  {
+    "input": "Sou obrigado a andar com extintor no carro?",
+    "output": "Não. Em veículos ligeiros de passageiros o extintor não é obrigatório, apenas recomendável por precaução."
+  },
+  {
+    "input": "O que faço se encontrar um veículo a circular em contramão?",
+    "output": "Reduza a velocidade, encoste-se à direita e sinalize com luzes ou buzina. Se necessário, pare e chame as autoridades."
+  },
+  {
+    "input": "Posso transportar bicicletas no tejadilho do carro?",
+    "output": "Sim, desde que estejam bem fixas e não ultrapassem os limites de altura e largura permitidos por lei."
+  },
+  {
+    "input": "Preciso de luzes especiais se transportar uma carga que sai para fora do carro?",
+    "output": "Sim. Cargas salientes devem estar sinalizadas com painéis refletores e, à noite, com luz vermelha visível na extremidade."
+  },
+  {
+    "input": "É obrigatório parar ao ver uma passagem de nível mesmo sem comboio?",
+    "output": "Se houver sinal de STOP ou as barreiras estiverem fechadas ou em movimento, sim. Caso contrário, pode avançar com precaução."
+  },
+  {
+    "input": "Qual é o prazo para pagar uma multa de trânsito?",
+    "output": "O prazo normal é de 15 dias úteis a contar da notificação. Dentro desse prazo pode pagar com desconto ou apresentar defesa."
+  },
+  {
+    "input": "Posso ouvir música com phones enquanto conduzo?",
+    "output": "Não é permitido usar auscultadores nos dois ouvidos. Apenas um auricular é permitido, desde que não afete a perceção do trânsito."
+  },
+  {
+    "input": "Posso conduzir com um gato no colo?",
+    "output": "Não. O animal deve estar seguro e não pode distrair o condutor. É recomendável usar transportadora ou cinto de segurança para animais."
+  },
+  {
+    "input": "Posso conduzir com um copo de café na mão?",
+    "output": "Não é ilegal, mas pode ser considerado distração. O ideal é usar um suporte para evitar riscos durante a condução."
+  },
+  {
+    "input": "Posso usar o telemóvel para ver o GPS enquanto conduzo?",
+    "output": "Sim, desde que esteja fixo e não exija interação constante. O ideal é usar um suporte para evitar distrações."
+  },
+  {
+    "input": "Posso levar o meu gato na mala do carro?",
+    "output": "Não. O animal deve estar seguro e não pode causar distração. O ideal é usar transportadora ou cinto de segurança para animais."
+  },
+  {
+    "input": "Posso conduzir com um pé descalço?",
+    "output": "Não é ilegal, mas pode ser considerado distração. O ideal é usar calçado que permita bom controlo dos pedais."
+  },
+  {
+    "input": "Posso conduzir com um copo de água na mão?",
+    "output": "Não é ilegal, mas pode ser considerado distração. O ideal é usar um suporte para evitar riscos durante a condução."
+  },
+  {
+    "input": "Posso levar o meu papagaio no ombro enquanto conduzo?",
+    "output": "Não. Animais devem estar seguros dentro do veículo. Levar um papagaio solto ao volante pode distrair e é considerado condução perigosa."
+  },
+  {
+    "input": "Dá multa conduzir com o carro todo sujo?",
+    "output": "Se a sujidade afetar a matrícula, vidros ou luzes, sim. É obrigatório manter essas partes visíveis e limpas."
+  },
+  {
+    "input": "É ilegal conduzir de pijama?",
+    "output": "Não há uma lei específica contra pijamas, mas deve garantir que a roupa não compromete a condução. Chinelo de dedo, por exemplo, pode dar multa."
+  },
+  {
+    "input": "Posso colar olhos de boneca no capô do carro?",
+    "output": "Desde que não obstruam a visão nem representem perigo, pode. Mas alterações na carroçaria devem cumprir normas de segurança."
+  },
+  {
+    "input": "É permitido conduzir de máscara de carnaval?",
+    "output": "Não. Qualquer adereço que afete a visão ou a perceção sonora é proibido. Conduzir mascarado pode dar origem a coima."
+  },
+  {
+    "input": "Posso pôr uma buzina de comboio no meu carro?",
+    "output": "Não. Só são permitidos sistemas sonoros homologados. Buzinas muito potentes ou modificadas são ilegais."
+  },
+  {
+    "input": "Posso ouvir música aos berros com as janelas abertas?",
+    "output": "Se o volume perturbar o sossego público ou impedir ouvir sons do trânsito, pode ser multado por ruído excessivo."
+  },
+  {
+    "input": "Dá multa conduzir com o braço apoiado na janela?",
+    "output": "Se não comprometer o controlo do veículo, não é ilegal. Mas se for considerado negligente, pode ser sancionado."
+  },
+  {
+    "input": "É proibido dançar ao volante num semáforo?",
+    "output": "Desde que esteja parado e não se distraia, não há problema. Mas se o movimento afetar a atenção, pode ser considerado perigoso."
+  },
+  {
+    "input": "Posso levar um manequim no banco do passageiro para usar via verde?",
+    "output": "Não. As vias reservadas exigem ocupação real. Usar bonecos é fraude e pode ter consequências legais."
+  },
+  {
+    "input": "Posso escrever uma mensagem num papel e mostrar pela janela?",
+    "output": "Desde que não incite ao desrespeito das regras ou distraia outros condutores, não há lei contra isso. Mas cuidado com o conteúdo!"
+  },
+  {
+    "input": "Dá multa conduzir de luvas de boxe?",
+    "output": "Sim! Precisa ter controlo total do veículo. Luvas que limitam movimentos são consideradas fator de risco."
+  },
+  {
+    "input": "Posso conduzir com música de marcha fúnebre no volume máximo?",
+    "output": "A música não é proibida, mas se o volume for excessivo e perturbar terceiros, pode resultar em coima."
+  },
+  {
+    "input": "Se o carro tiver cara de emoji pintada à frente, há problema?",
+    "output": "Desde que não cubra faróis ou matrícula, e não cause reflexo ou distração, não há problema legal."
+  },
+  {
+    "input": "Posso buzinar para pedir pizza à varanda?",
+    "output": "Não. A buzina só deve ser usada para evitar acidentes ou fora das localidades para ultrapassagem. Usá-la para piadas dá multa."
+  },
+  {
+    "input": "É ilegal conduzir com um cartaz a dizer 'Vai com calma' no vidro de trás?",
+    "output": "Não, desde que o cartaz não bloqueie a visibilidade. Mensagens positivas são bem-vindas!"
+  },
+  {
+    "input": "Posso andar com um mini-frigorífico a funcionar no carro?",
+    "output": "Sim, desde que bem fixo e ligado com segurança. Só não pode ser uma distração ou obstrução."
+  },
+  {
+    "input": "Se um pato atravessar a estrada, tenho de parar?",
+    "output": "Sim! Deve parar e deixá-lo passar com segurança. Animais têm prioridade em nome da segurança rodoviária e do bem-estar animal."
+  },
+  {
+    "input": "Posso usar um megafone no carro para cantar?",
+    "output": "Não. Dispositivos que ampliem som para fora do carro são proibidos. Pode dar multa e confiscação do equipamento."
+  },
+  {
+    "input": "Dá multa conduzir com um fato de super-herói?",
+    "output": "Não, desde que não atrapalhe a condução nem cubra o rosto. Mas prepare-se para chamar a atenção!"
+  },
+  {
+    "input": "Posso passar um semáforo amarelo se estiver com pressa?",
+    "output": "Não. O sinal amarelo significa que deve parar, salvo se estiver tão perto que não consiga fazê-lo em segurança."
+  },
+  {
+    "input": "É preciso sinalizar antes de entrar num parque de estacionamento?",
+    "output": "Sim, deve sempre usar o pisca para indicar a mudança de direção, mesmo que vá entrar num parque."
+  },
+  {
+    "input": "Os condutores de bicicletas podem andar aos pares?",
+    "output": "Sim, desde que em fila dupla e sem causar perigo ou obstrução. Fora das localidades, devem circular em fila única se o trânsito o justificar."
+  },
+  {
+    "input": "Posso estacionar junto a uma passadeira se não houver sinal?",
+    "output": "Não. É proibido parar ou estacionar até 5 metros antes de uma passadeira, mesmo sem sinal."
+  },
+  {
+    "input": "É obrigatório usar capacete numa mota de 125cc?",
+    "output": "Sim, o uso de capacete é sempre obrigatório para condutor e passageiro em motas, independentemente da cilindrada."
+  },
+  {
+    "input": "Os carros a GPL podem entrar em todos os parques de estacionamento?",
+    "output": "Só se tiverem válvula de segurança. Alguns parques têm restrições para veículos a GPL sem essa certificação."
+  },
+  {
+    "input": "Posso usar auscultadores para atender chamadas enquanto conduzo?",
+    "output": "Pode usar apenas um auricular. Usar dois é proibido porque reduz a perceção dos sons da estrada."
+  },
+  {
+    "input": "Há idade mínima para ir no banco da frente do carro?",
+    "output": "Sim. Crianças com menos de 12 anos e menos de 135 cm devem ir no banco de trás com sistema de retenção."
+  },
+  {
+    "input": "É preciso parar numa passadeira onde está um peão à espera de atravessar?",
+    "output": "Sim. Se o peão mostrar intenção de atravessar, deve ceder passagem."
+  },
+  {
+    "input": "Posso buzinar para avisar que vou ultrapassar numa estrada nacional?",
+    "output": "Sim, fora das localidades é permitido usar a buzina como sinal de ultrapassagem."
+  },
+  {
+    "input": "É permitido usar chinelos a conduzir?",
+    "output": "Não é proibido, mas é desaconselhado. Se causarem acidente ou perda de controlo, pode ser penalizado."
+  },
+  {
+    "input": "Tenho de usar capacete numa bicicleta elétrica?",
+    "output": "Se for até 25 km/h e 250W, não é obrigatório. Mas é sempre recomendado por segurança."
+  },
+  {
+    "input": "Posso usar luzes de nevoeiro quando está a chover muito?",
+    "output": "Sim. Em caso de chuva intensa ou má visibilidade, pode usar luzes de nevoeiro à frente."
+  },
+  {
+    "input": "É obrigatório ter um colete refletor por passageiro?",
+    "output": "Não. Basta um colete no carro, mas ter mais é recomendado caso vários ocupantes saiam do veículo."
+  },
+  {
+    "input": "Sou obrigado a respeitar um limite de velocidade pintado no chão?",
+    "output": "Sim. A sinalização horizontal tem validade legal e deve ser respeitada."
+  },
+  {
+    "input": "Se vir um carro parado com os quatro piscas, posso ultrapassar?",
+    "output": "Sim, mas com muita cautela. Pode estar avariado ou parado por emergência. Aproxime-se devagar."
+  },
+  {
+    "input": "É permitido circular com uma criança ao colo no banco da frente?",
+    "output": "Não. É ilegal e perigoso. A criança deve estar num sistema de retenção adequado, sempre."
+  },
+  {
+    "input": "As trotinetes podem circular nas estradas?",
+    "output": "Sim, mas apenas onde a velocidade máxima permitida seja até 50 km/h. Devem respeitar todas as regras de trânsito."
+  },
+  {
+    "input": "Preciso de carta para conduzir uma bicicleta elétrica?",
+    "output": "Só se ultrapassar 25 km/h ou tiver mais de 250W. Nesse caso, é considerada ciclomotor e exige carta."
+  },
+  {
+    "input": "Posso estacionar em frente à minha garagem?",
+    "output": "Não. Mesmo sendo sua, não pode obstruir o acesso à garagem. Pode ser multado."
+  },
+  {
+    "input": "O que fazer se o semáforo estiver avariado?",
+    "output": "Se o semáforo estiver avariado, deve tratar o cruzamento como um de prioridade à direita, cedendo passagem aos veículos que vêm da direita."
+  },
+  {
+    "input": "Posso usar faróis altos em estrada nacional à noite?",
+    "output": "Sim, mas deve desligá-los quando se aproximar de outros veículos para não ofuscar os condutores."
+  },
+  {
+    "input": "O que fazer se o carro começar a derrapar?",
+    "output": "Se o carro começar a derrapar, deve manter a calma, não travar bruscamente e tentar controlar a direção do veículo."
+  },
+  {
+    "input": "Posso ultrapassar um autocarro parado?",
+    "output": "Não, se o autocarro estiver a deixar ou a apanhar passageiros. Deve parar e esperar até que o autocarro tenha saído."
+  },
+  {
+    "input": "O que fazer se o carro aquecer muito?",
+    "output": "Se o carro aquecer muito, deve parar em segurança, desligar o motor e esperar que arrefeça antes de abrir o capô."
+  },
+  {
+    "input": "Posso usar os máximos durante o dia?",
+    "output": "Sim, mas só se as condições de visibilidade forem muito reduzidas. O ideal é usar os médios."
+  },
+  {
+    "input": "O que fazer se um veículo de emergência passar com sirene?",
+    "output": "Deve ceder passagem imediatamente, encostando à direita e parando se necessário."
+  },
+  {
+    "input": "Posso fazer uma manobra de marcha-atrás numa autoestrada?",
+    "output": "Não, é proibido. Deve sair da autoestrada e voltar a entrar na próxima saída."
+  },
+  {
+    "input": "O que fazer se o carro ficar sem combustível na estrada?",
+    "output": "Se o carro ficar sem combustível, deve encostar à direita, ligar os quatro piscas e sinalizar a situação."
+  },
+  {
+    "input": "Posso usar o telemóvel para tirar fotos enquanto conduzo?",
+    "output": "Não, é considerado distração e pode resultar em coima. Use sempre um suporte para evitar riscos."
+  },
+  {
+    "input": "O que fazer se o carro começar a tremer ao travar?",
+    "output": "Se o carro começar a tremer ao travar, deve verificar os travões e pneus assim que possível. Pode ser sinal de desgaste ou problema mecânico."
+  },
+  {
+    "input": "Posso usar luzes de nevoeiro em estrada nacional à noite?",
+    "output": "Sim, mas só se as condições de visibilidade forem muito reduzidas. O ideal é usar os médios."
+  },
+  {
+    "input": "Quais são os limites de velocidade em vias urbanas?",
+    "output": "Em vias urbanas, o limite de velocidade é geralmente de 50 km/h, a menos que haja sinalização indicando o contrário."
+  },
+  {
+    "input": "Posso estacionar numa curva se for rapidinho?",
+    "output": "Não, estacionar em curvas é proibido, pois pode comprometer a visibilidade e a segurança de outros condutores."
+  },
+  {
+    "input": "qnts metros precisa pa mudar d faixa?",
+    "output": "Antes de mudar de faixa, deve sinalizar a intenção com antecedência e garantir que há espaço seguro — cerca de 30 metros é uma boa prática."
+  },
+  {
+    "input": "O que significa um sinal amarelo piscando?",
+    "output": "Um sinal amarelo piscando indica que deve reduzir a velocidade e proceder com cautela, pois pode haver uma situação de perigo adiante."
+  },
+  {
+    "input": "É permitido estacionar à frente de uma garagem?",
+    "output": "Não, estacionar à frente de uma garagem é proibido, mesmo que não haja sinalização. Impede o acesso e pode resultar em coima ou reboque."
+  },
+  {
+    "input": "Quais são as regras para ultrapassar em estradas nacionais?",
+    "output": "Em estradas nacionais, ultrapassagens devem ser feitas pela esquerda, com segurança e sem exceder os limites de velocidade."
+  },
+  {
+    "input": "Posso fazer inversão de marcha em autoestrada?",
+    "output": "Não, inversão de marcha em autoestradas é proibida, exceto em situações de emergência ou quando indicado por sinalização."
+  },
+  {
+    "input": "O que devo fazer se encontrar um semáforo a piscar em amarelo?",
+    "output": "Se encontrar um semáforo a piscar em amarelo, deve reduzir a velocidade e estar preparado para parar, pois pode haver uma situação de perigo."
+  },
+  {
+    "input": "Quais são as penalidades por excesso de velocidade?",
+    "output": "As penalidades por excesso de velocidade variam conforme a gravidade, podendo incluir coimas e perda de pontos na carta de condução."
+  },
+  {
+    "input": "Posso estacionar em cima do passeio?",
+    "output": "Não, estacionar em cima do passeio é proibido, pois obstrui a passagem de peões e pode resultar em coima."
+  },
+  {
+    "input": "O que significa um sinal de STOP?",
+    "output": "Um sinal de STOP indica que deve parar completamente e ceder passagem a outros veículos antes de prosseguir."
+  },
+  {
+    "input": "Quais são as regras para transportar animais no carro?",
+    "output": "Animais devem ser transportados em caixas adequadas ou com cintos de segurança específicos, garantindo que não interfiram na condução."
+  },
+  {
+    "input": "Posso usar o telemóvel ao volante com fones de ouvido?",
+    "output": "Não, o uso do telemóvel ao volante é proibido, mesmo com fones de ouvido. Deve usar um sistema de mãos-livres."
+  },
+  {
+    "input": "O que devo fazer se vir um sinal de 'Ceda a Passagem'?",
+    "output": "Deve reduzir a velocidade e estar preparado para parar e ceder passagem a outros veículos que tenham prioridade."
+  },
+  {
+    "input": "Quais são os limites de velocidade fora de localidades?",
+    "output": "Fora de localidades, o limite de velocidade é geralmente de 90 km/h, a menos que haja sinalização indicando o contrário."
+  },
+  {
+    "input": "Posso estacionar em lugar reservado a deficientes?",
+    "output": "Não, estacionar em lugares reservados a deficientes é proibido e pode resultar em coima, mesmo que seja por pouco tempo."
+  },
+  {
+    "input": "O que significa um sinal de 'Proibido Estacionar'?",
+    "output": "Um sinal de 'Proibido Estacionar' indica que não pode parar o veículo naquela área, exceto para embarque ou desembarque rápido."
+  },
+  {
+    "input": "Quais são as regras para usar faróis em túneis?",
+    "output": "Em túneis, deve usar os faróis para garantir visibilidade e segurança, mesmo durante o dia."
+  },
+  {
+    "input": "Posso fazer ultrapassagens em faixas contínuas?",
+    "output": "Não, ultrapassagens em faixas contínuas são proibidas, pois indicam que é perigoso ou não permitido."
+  },
+  {
+    "input": "O que devo fazer se encontrar um sinal de 'Desvio'?",
+    "output": "Deve seguir a sinalização indicada pelo desvio, que redireciona o trânsito devido a obras ou outras situações."
+  },
+  {
+    "input": "Quais são as regras para usar o cinto de segurança?",
+    "output": "O uso do cinto de segurança é obrigatório para todos os ocupantes do veículo, tanto nos bancos da frente como nos de trás."
+  },
+  {
+    "input": "Posso estacionar em segunda fila?",
+    "output": "Não, estacionar em segunda fila é proibido, pois obstrui a circulação e pode resultar em coima."
+  },
+  {
+    "input": "O que significa um sinal de 'Fim de Proibição'?",
+    "output": "Um sinal de 'Fim de Proibição' indica que a restrição anterior (como proibição de ultrapassagem) terminou e pode prosseguir normalmente."
+  },
+  {
+    "input": "Quais são as regras para transportar cargas volumosas?",
+    "output": "Cargas volumosas devem ser bem fixadas e não podem exceder os limites de dimensão do veículo, garantindo a segurança na estrada."
+  },
+  {
+    "input": "Posso usar o pisca alerta em autoestrada?",
+    "output": "O pisca alerta deve ser usado em situações de emergência ou para sinalizar perigo, como paragem forçada em autoestrada."
+  },
+  {
+    "input": "O que devo fazer se vir um sinal de 'Paragem Obrigatória'?",
+    "output": "Deve parar completamente e ceder passagem a outros veículos antes de prosseguir."
+  },
+  {
+    "input": "Quais são as penalidades por não usar o cinto de segurança?",
+    "output": "Não usar o cinto de segurança pode resultar em coima e perda de pontos na carta de condução."
+  },
+  {
+    "input": "Posso estacionar em local reservado a táxis?",
+    "output": "Não, estacionar em locais reservados a táxis é proibido e pode resultar em coima."
+  },
+  {
+    "input": "O que significa um sinal de 'Proibido Ultrapassar'?",
+    "output": "Um sinal de 'Proibido Ultrapassar' indica que não pode ultrapassar outros veículos naquela área, devido a condições perigosas."
+  },
+  {
+    "input": "Quais são as regras para usar faróis altos?",
+    "output": "Os faróis altos devem ser usados em estradas escuras e sem iluminação, mas devem ser desligados ao encontrar outros veículos."
+  },
+  {
+    "input": "Posso estacionar em cima de um passeio se não houver sinal?",
+    "output": "Não, estacionar em cima de um passeio é proibido, mesmo sem sinalização. Pode resultar em coima."
+  },
+  {
+    "input": "O que significa um sinal de 'Circulação Proibida'?",
+    "output": "Um sinal de 'Circulação Proibida' indica que não pode entrar ou circular naquela via ou área."
+  },
+  {
+    "input": "Quais são as regras para usar luzes de nevoeiro?",
+    "output": "Luzes de nevoeiro devem ser usadas apenas em condições de nevoeiro ou visibilidade reduzida, nunca em condições normais."
+  },
+  {
+      "input": "Posso usar o telemóvel ao volante se estiver parado no trânsito?",
+      "output": "Não, o uso do telemóvel ao volante é proibido, mesmo quando parado no trânsito. Deve usar um sistema de mãos-livres."
+  },
+  {
+      "input": "O que devo fazer se vir um sinal de 'Proibido Ultrapassar'?",
+      "output": "Deve respeitar a proibição e não ultrapassar outros veículos enquanto o sinal estiver presente."
+  },
+  {
+      "input": "Quais são as regras para transportar bicicletas no carro?",
+      "output": "Bicicletas devem ser bem fixadas ao veículo, sem obstruir a visibilidade ou os sinais luminosos."
+  },
+  {
+      "input": "Posso estacionar em local reservado a motos?",
+      "output": "Não, estacionar em locais reservados a motos é proibido e pode resultar em coima."
+  },
+  {
+      "input": "O que significa um sinal de 'Velocidade Mínima'?",
+      "output": "Indica a velocidade mínima que deve manter naquela via, geralmente para evitar congestionamentos."
+  },
+  {
+      "input": "Quais são as penalidades por conduzir sob efeito de álcool?",
+      "output": "Conduzir sob efeito de álcool pode resultar em coimas pesadas, perda da carta de condução e até penas de prisão."
+  },
+  {
+      "input": "Posso estacionar em local reservado a autocarros?",
+      "output": "Não, estacionar em locais reservados a autocarros é proibido e pode resultar em coima."
+  },
+  {
+      "input": "O que devo fazer se vir um sinal de 'Passagem de Nível sem Barreiras'?",
+      "output": "Deve reduzir a velocidade, verificar se não vem nenhum comboio e atravessar com cautela."
+  },
+  {
+      "input": "Quais são as regras para usar correntes de neve?",
+      "output": "Correntes de neve devem ser usadas apenas em condições de neve ou gelo, e devem ser colocadas nas rodas motrizes."
+  },
+  {
+      "input": "Posso estacionar em local reservado a viaturas elétricas?",
+      "output": "Não, estacionar em locais reservados a viaturas elétricas é proibido, a menos que esteja a carregar uma viatura elétrica."
+  },
+  {
+      "input": "O que significa um sinal de 'Fim de Limite de Velocidade'?",
+      "output": "Indica que o limite de velocidade anterior terminou e pode acelerar, respeitando as condições da via."
+  },
+  {
+      "input": "Quais são as regras para usar triângulo de sinalização?",
+      "output": "Deve ser usado em caso de imobilização do veículo na via, colocado a pelo menos 30 metros do veículo."
+  },
+  {
+      "input": "Posso estacionar em local reservado a carrinhas de mercadorias?",
+      "output": "Não, estacionar em locais reservados a carrinhas de mercadorias é proibido e pode resultar em coima."
+  },
+  {
+      "input": "O que devo fazer se vir um sinal de 'Sentido Proibido'?",
+      "output": "Deve inverter a marcha ou procurar uma rota alternativa, pois não pode circular naquela direção."
+  },
+  {
+      "input": "Quais são as regras para usar luzes de presença?",
+      "output": "Devem ser usadas em condições de pouca visibilidade diurna ou em túneis, para aumentar a visibilidade do veículo."
+  },
+  {
+      "input": "Posso estacionar em local reservado a viaturas de emergência?",
+      "output": "Não, estacionar em locais reservados a viaturas de emergência é proibido e pode resultar em coima."
+  },
+  {
+      "input": "O que significa um sinal de 'Paragem de Autocarro'?",
+      "output": "Indica um local onde os autocarros param para embarque e desembarque de passageiros."
+  },
+  {
+      "input": "Quais são as regras para usar máximos em autoestrada?",
+      "output": "Devem ser usados apenas na faixa da esquerda e ceder passagem a veículos mais rápidos."
+  },
+  {
+      "input": "Posso estacionar em local reservado a viaturas de transporte de crianças?",
+      "output": "Não, estacionar em locais reservados a viaturas de transporte de crianças é proibido e pode resultar em coima."
+  },
+  {
+      "input": "O que devo fazer se vir um sinal de 'Passagem de Peões'?",
+      "output": "Deve reduzir a velocidade e estar preparado para parar e ceder passagem aos peões."
+  },
+  {
+      "input": "Quais são as regras para usar luzes de cruzamento?",
+      "output": "Devem ser usadas em condições de pouca visibilidade ou à noite, para iluminar a via sem ofuscar outros condutores."
+  },
+  {
+      "input": "Posso estacionar em local reservado a viaturas de transporte de mercadorias perigosas?",
+      "output": "Não, estacionar em locais reservados a viaturas de transporte de mercadorias perigosas é proibido e pode resultar em coima."
+  },
+  {
+      "input": "O que significa um sinal de 'Proibido Circular aos Domingos'?",
+      "output": "Indica que não pode circular naquela via ou área aos domingos, exceto se houver exceções indicadas."
+  },
+  {
+      "input": "Quais são as regras para usar luzes de marcha-atrás?",
+      "output": "Devem ser usadas apenas quando estiver a fazer marcha-atrás, para avisar outros condutores."
+  },
+  {
+      "input": "Posso estacionar em local reservado a viaturas de transporte de passageiros?",
+      "output": "Não, estacionar em locais reservados a viaturas de transporte de passageiros é proibido e pode resultar em coima."
+  },
+  {
+      "input": "O que devo fazer se vir um sinal de 'Passagem de Ciclistas'?",
+      "output": "Deve reduzir a velocidade e estar preparado para ceder passagem aos ciclistas."
+  },
+  {
+      "input": "Quais são as regras para usar luzes de condução diurna?",
+      "output": "Devem ser usadas durante o dia para aumentar a visibilidade do veículo, mesmo em condições de boa visibilidade."
+  },
+  {
+    "input": "Qual a multa por estacionar em cima de um passeio?",
+    "output": "Estacionar em cima do passeio é contraordenação grave. A coima pode variar entre 60€ a 300€, além do risco de reboque do veículo."
+  },
+  {
+    "input": "Posso ultrapassar pela direita se o carro da frente tiver pisca para virar à esquerda?",
+    "output": "Sim, é permitido ultrapassar pela direita se o veículo à sua frente estiver sinalizando manobra de viragem à esquerda e houver espaço seguro."
+  },
+  {
+    "input": "qnd é obrigatório usar farois d nevoeiro traseiros?",
+    "output": "As luzes de nevoeiro traseiras só devem ser usadas em condições de visibilidade inferior a 50 metros (nevoeiro denso, chuva torrencial). Em situações normais, seu uso é proibido."
+  },
+  {
+    "input": "Se eu furar um sinal vermelho e não houver câmaras, como provam?",
+    "output": "Agentes de autoridade podem autuar mesmo sem câmaras. Além disso, testemunhas ou registos de outros condutores também servem como prova."
+  },
+  {
+    "input": "É verdade que posso perder pontos por não dar prioridade a ciclistas?",
+    "output": "Sim. Não ceder prioridade a ciclistas em cruzamentos ou ao ultrapassar é contraordenação grave, podendo resultar na perda de 2 pontos na carta."
+  },
+  {
+    "input": "Posso deixar o carro em segunda fila se for só 2 minutinhos?",
+    "output": "Não. Estacionar em segunda fila é proibido independentemente do tempo, exceto para veículos de emergência em serviço."
+  },
+  {
+    "input": "Como funciona o sistema de tolerância nos radares de velocidade?",
+    "output": "A margem de erro técnica dos radares é de 3 km/h para velocidades até 100 km/h e 3% acima disso. Porém, a lei não estabelece tolerância adicional para infrações."
+  },
+  {
+    "input": "Se o meu carro tiver 3 lugares, posso levar 4 pessoas no banco de trás?",
+    "output": "Não. O número máximo de ocupantes por banco é determinado pelo número de cintos de segurança disponíveis. Exceder esse limite é infração."
+  },
+  {
+    "input": "Dá pra contestar uma multa se o radar não estiver visível?",
+    "output": "Não. A sinalização prévia dos controlos de velocidade não é obrigatória em Portugal, salvo em zonas com limite variável."
+  },
+  {
+    "input": "Posso usar luzes intermitentes decorativas no carro?",
+    "output": "Não. Luzes coloridas ou piscantes não homologadas são proibidas, exceto para veículos de emergência. Podem resultar em coima de 120€ a 600€."
+  },
+  {
+    "input": "Qual a altura máxima permitida para carga no tejadilho?",
+    "output": "A carga não pode ultrapassar 4 metros de altura total do solo. Para veículos ligeiros, o limite absoluto é de 4,5 metros, incluindo o veículo."
+  },
+  {
+    "input": "Se tiver acidente sem seguro, o q acontece?",
+    "output": "Circular sem seguro é crime. Além de coimas entre 500€ a 2500€, pode haver apreensão do veículo e responsabilidade civil por danos."
+  },
+  {
+    "input": "Posso andar na faixa BUS se estiver atrasado p/ trabalho?",
+    "output": "Não. A utilização não autorizada de faixas BUS/Via Verde implica coima de 60€ a 300€, exceto para motociclos onde permitido."
+  },
+  {
+    "input": "Qts pontos perco se conduzir sem carta válida?",
+    "output": "Conduzir sem carta válida é contraordenação muito grave: perde 4 pontos (se tiver carta) e pode ter inibição de conduzir até 2 anos."
+  },
+  {
+    "input": "Posso recusar o teste do balão se a polícia me parar?",
+    "output": "A recusa do teste de alcoolemia é equiparada a taxa superior a 1,2 g/l. Resulta em processo crime, apreensão da carta e proibição de conduzir."
+  },
+  {
+    "input": "Vale a regra d 2 segundos p/ distância d segurança em cidade?",
+    "output": "Em cidade, a distância deve adaptar-se à velocidade. A regra dos 2 segundos é mais eficaz em vias rápidas, mas manter espaço suficiente é sempre obrigatório."
+  },
+  {
+    "input": "Posso estacionar num lugar d idosos sem o selo?",
+    "output": "Não. Lugares reservados a idosos exigem dístico válido. Estacionar sem ele pode resultar em coima de 60€ a 300€."
+  },
+  {
+    "input": "Se o sinal tiver coberto por vegetação, tenho q respeitar?",
+    "output": "Se o sinal estiver ilegível por falta de manutenção, pode contestar a multa. Porém, deve seguir as regras gerais do Código da Estrada."
+  },
+  {
+    "input": "Posso transportar uma TV de 60 polegadas no banco da frente?",
+    "output": "Sim, desde que não obstrua a visão do condutor e esteja bem fixada. Cargas soltas são consideradas risco para a segurança."
+  },
+  {
+    "input": "Qual o prazo p/ pagar multa c/ desconto?",
+    "output": "Tem 15 dias úteis após notificação para pagar com 20% de desconto. Após isso, o valor integral é devido."
+  },
+  {
+    "input": "Posso mudar d pneu na berma d autoestrada sem colete?",
+    "output": "Não. Em vias rápidas, é obrigatório usar colete refletor ao sair do veículo, mesmo para trocas de pneu. A infração pode chegar a 300€."
+  },
+  {
+    "input": "Se o GPS mandar virar numa zona proibida, qual prevalece?",
+    "output": "A sinalização física sempre prevalece sobre indicações de GPS. Ignorar placas de trânsito por seguir navegação não é justificativa legal."
+  },
+  {
+    "input": "Posso usar luzes d nevoeiro como d.r.l. p/ economizar?",
+    "output": "Não. As luzes de nevoeiro não substituem os médios ou luzes diurnas. Seu uso indevido pode ofuscar outros condutores e gerar multa."
+  },
+  {
+    "input": "Crianças podem ir no banco da frente c/ airbag ativado?",
+    "output": "Só se o sistema de retenção for virado para a frente e a criança tiver mais de 12 anos. Cadeirinhas viradas para trás exigem desativação do airbag."
+  },
+  {
+    "input": "Posso ser multado p/ estacionar na minha própria garagem?",
+    "output": "Não, desde que não bloqueie a via pública. Porém, garagens partilhadas ou com regulamento específico podem ter restrições."
+  },
+  {
+    "input": "Qual a diferença entre 'parar' e 'estacionar' na lei?",
+    "output": "Parar é uma imobilização breve (até 5 minutos) para embarque/desembarque. Estacionar é deixar o veículo desocupado por mais tempo, sujeito a regras específicas."
+  },
+  {
+    "input": "Se eu buzinar p/ avisar d um acidente, é infração?",
+    "output": "Não. A buzina pode ser usada para prevenir acidentes. Nesse contexto, é considerado uso legítimo."
+  },
+  {
+    "input": "Posso levar animais soltos na carrinha aberta?",
+    "output": "Não. Animais devem estar sempre contidos para evitar distrações ou quedas. Transporte em áreas abertas exige grades ou redes de proteção."
+  },
+  {
+    "input": "Posso usar pneus d inverno o ano todo em Portugal?",
+    "output": "Sim, mas não é recomendado. Pneus de inverno desgastam-se mais rápido em temperaturas altas e podem comprometer a segurança."
+  },
+  {
+    "input": "Se o passageiro não usar cinto, quem leva a multa?",
+    "output": "O condutor é responsável por garantir que todos os ocupantes usem cinto. A coima (120€ a 600€) e perda de pontos (3) são aplicadas ao motorista."
+    },
+  {
+    "input": "A que velocidade máxima posso conduzir numa autoestrada em Portugal?",
+    "output": "O limite máximo de velocidade numa autoestrada em Portugal para veículos ligeiros é de 120 km/h."
+  },
+  {
+    "input": "Qual o limite de velocidade numa estrada nacional fora de uma localidade?",
+    "output": "Numa estrada nacional fora de uma localidade, o limite de velocidade para veículos ligeiros é de 90 km/h."
+  },
+  {
+    "input": "Posso estacionar o carro em cima do passeio para descarregar compras?",
+    "output": "Não, em geral, é proibido estacionar em cima dos passeios, mesmo que seja por pouco tempo para descarregar. Deve procurar um local de estacionamento adequado."
+  },
+  {
+    "input": "Há alguma regra sobre a distância mínima para estacionar de uma passagem de nível?",
+    "output": "Sim, é proibido estacionar a menos de 50 metros para cada lado de uma passagem de nível."
+  },
+  {
+    "input": "Quando posso ultrapassar pela direita?",
+    "output": "A ultrapassagem pela direita só é permitida em situações específicas, como quando o veículo da frente sinaliza claramente a intenção de virar à esquerda e deixa espaço suficiente à direita."
+  },
+  {
+    "input": "É obrigatório usar pisca para voltar para a faixa da direita depois de uma ultrapassagem?",
+    "output": "Sim, é obrigatório sinalizar com o indicador de direção direito antes de regressar à faixa de rodagem inicial."
+  },
+  {
+    "input": "O que significa um sinal de trânsito com um triângulo vermelho?",
+    "output": "Um sinal de trânsito com um triângulo vermelho é um sinal de perigo, alertando para uma situação potencialmente perigosa na via."
+  },
+  {
+    "input": "Qual a cor do semáforo que indica que devo parar?",
+    "output": "A cor vermelha do semáforo indica que é obrigatório parar antes da linha de paragem ou da passadeira."
+  },
+  {
+    "input": "Posso atender o telemóvel enquanto espero num semáforo vermelho?",
+    "output": "Sim, pode atender o telemóvel se o veículo estiver imobilizado devido a um semáforo vermelho, mas não pode manuseá-lo. O ideal é usar um dispositivo mãos-livres."
+  },
+  {
+    "input": "Qual a taxa máxima de álcool no sangue permitida para condutores em geral?",
+    "output": "A taxa máxima de álcool no sangue permitida para condutores em geral em Portugal é de 0,5 gramas por litro."
+  },
+  {
+    "input": "E para condutores recém-encartados, qual é o limite?",
+    "output": "Para condutores em regime probatório (com carta há menos de 3 anos), o limite de álcool no sangue é mais baixo, de 0,2 gramas por litro."
+  },
+  {
+    "input": "Se eu não tiver os documentos do carro comigo, posso ser multado?",
+    "output": "Sim, não apresentar os documentos do veículo quando solicitado pelas autoridades é uma infração e pode resultar em multa."
+  },
+  {
+    "input": "É permitido transportar crianças no banco da frente do carro?",
+    "output": "Em geral, crianças com menos de 12 anos e altura inferior a 135 cm devem ser transportadas nos bancos traseiros, utilizando sistemas de retenção adequados."
+  },
+  {
+    "input": "O que devo fazer se encontrar um sinal de stop?",
+    "output": "Ao encontrar um sinal de stop, deve parar completamente o veículo antes da linha de paragem ou da passadeira e só avançar quando tiver condições de o fazer em segurança e sem perturbar o trânsito."
+  },
+  {
+    "input": "Existe alguma distância de segurança recomendada entre veículos?",
+    "output": "Sim, a distância de segurança recomendada é aquela que permite parar o veículo em caso de travagem súbita do veículo da frente, sem risco de colisão. Uma regra prática é a 'regra dos três segundos'."
+  },
+  {
+    "input": "Posso usar as luzes de nevoeiro traseiras quando não há nevoeiro?",
+    "output": "Não, as luzes de nevoeiro traseiras só devem ser utilizadas em caso de nevoeiro intenso ou chuva forte, pois podem encandear os condutores que circulam atrás."
+  },
+  {
+    "input": "O que significa um sinal de proibição com um carro e uma mota?",
+    "output": "Um sinal de proibição com um carro e uma mota indica que é proibida a circulação de automóveis e motociclos naquele local."
+  },
+  {
+    "input": "Se eu vir um sinal de obrigação redondo com uma seta a apontar para a direita, o que devo fazer?",
+    "output": "Um sinal de obrigação redondo com uma seta a apontar para a direita indica que é obrigatório seguir na direção indicada pela seta."
+  },
+  {
+    "input": "Posso estacionar numa zona reservada a deficientes se tiver um familiar com mobilidade reduzida mas não tiver o cartão?",
+    "output": "Não, só pode estacionar em lugares reservados a pessoas com deficiência se o veículo exibir o respetivo cartão de estacionamento."
+  },
+  {
+    "input": "Qual a consequência de conduzir sob o efeito de álcool?",
+    "output": "Conduzir sob o efeito de álcool é uma infração grave ou muito grave, dependendo da taxa de álcool no sangue, e pode resultar em coima, inibição de conduzir e até prisão em casos mais graves."
+  },
+  {
+    "input": "É permitido circular numa rotunda pela faixa mais à direita se eu for sair na primeira saída?",
+    "output": "Sim, em rotundas com várias faixas, pode utilizar a faixa mais à direita se a sua intenção for sair na primeira saída, desde que não prejudique a circulação dos outros veículos."
+  },
+  {
+    "input": "O que devo fazer se o meu carro avariar na autoestrada?",
+    "output": "Se o seu carro avariar na autoestrada, deve tentar imobilizá-lo na berma, ligar as luzes de emergência e colocar o triângulo de pré-sinalização a uma distância adequada. Se possível, utilize um colete refletor e contacte a assistência."
+  },
+  {
+    "input": "Existe alguma regra sobre o uso de luzes durante o dia?",
+    "output": "Sim, é obrigatório o uso de luzes de cruzamento (médios) durante o dia em túneis e em condições de visibilidade reduzida devido a nevoeiro, chuva intensa ou outras causas."
+  },
+  {
+    "input": "Se eu encontrar um sinal de 'ceda passagem', o que devo fazer?",
+    "output": "Ao encontrar um sinal de 'ceda passagem', deve reduzir a velocidade e, se necessário, parar para permitir a passagem de veículos que circulam na via em que vai entrar ou atravessar."
+  },
+  {
+    "input": "Posso transportar mais passageiros no carro do que o número indicado no livrete?",
+    "output": "Não, é estritamente proibido transportar mais passageiros do que o número de lugares indicados no livrete do veículo."
+  },
+  {
+    "input": "Qual a idade mínima para tirar a carta de condução em Portugal para veículos ligeiros?",
+    "output": "A idade mínima para obter a carta de condução da categoria B (veículos ligeiros) em Portugal é de 18 anos."
+  },
+  {
+    "input": "Se eu mudar de morada, tenho que alterar a morada na minha carta de condução?",
+    "output": "Sim, é obrigatório comunicar a alteração de morada à entidade competente (IMT) para que a sua carta de condução seja atualizada."
+  },
+  {
+    "input": "Posso estacionar numa paragem de autocarro?",
+    "output": "Não, é proibido estacionar em paragens de autocarro ou outros transportes públicos, devidamente sinalizadas."
+  },
+  {
+    "input": "Qual a diferença entre uma estrada nacional e uma autoestrada?",
+    "output": "Uma autoestrada é uma via reservada ao trânsito de veículos automóveis, com separação física de faixas, sem cruzamentos de nível e com acessos condicionados. Uma estrada nacional pode ter cruzamentos de nível e outros tipos de acessos."
+  },
+  {
+    "input": "Se eu vir um animal a atravessar a estrada, o que devo fazer?",
+    "output": "Ao avistar um animal na estrada, deve reduzir a velocidade, acionar as luzes de perigo se necessário e, se seguro, parar para permitir que o animal atravesse em segurança."
+  },
+  {
+    "input": "q é um sinal de pre-sinalizacao de perigo?",
+    "output": "Um sinal de pré-sinalização de perigo é um dispositivo triangular refletor que deve ser colocado na estrada para alertar outros condutores sobre a presença de um veículo parado ou acidentado."
+  },
+  {
+    "input": "se eu tiver um acidente sem culpa, preciso preencher a declaracao amigavel?",
+    "output": "Sim, em caso de acidente, mesmo que não tenha culpa, é importante preencher a Declaração Amigável de Acidente Automóvel (DAAA) com o outro condutor envolvido, pois facilita o processo de resolução do sinistro junto das seguradoras."
+  },
+  {
+    "input": "qual a validade da carta de conducao?",
+    "output": "A validade da carta de condução em Portugal varia consoante a idade do condutor e a categoria da carta. Para condutores até aos 50 anos, a validade é geralmente de 10 anos."
+  },
+  {
+    "input": "Há problema em circular com o capot mal fechado?",
+    "output": "Sim, é perigoso. O capot pode abrir-se durante a condução, obstruindo a visibilidade e causando acidentes. Deve parar e garantir que está bem fechado."
+  },
+  {
+    "input": "qual a velocidade permitida pa motas nas nacionais?",
+    "output": "Para motociclos, o limite em estradas nacionais é geralmente de 90 km/h, a menos que a sinalização indique outra coisa."
+  },
+  {
+    "input": "Posso parar numa curva se for só 2 minutos?",
+    "output": "Mesmo por pouco tempo, é proibido parar em curvas de visibilidade reduzida. É uma questão de segurança."
+  },
+  {
+    "input": "É obrigatório usar cinto nos bancos de trás dum táxi?",
+    "output": "Sim. Todos os ocupantes devem usar cinto de segurança, mesmo no banco de trás de um táxi."
+  },
+  {
+    "input": "Epa e se eu quiser andar na faixa do meio sempre? mal?",
+    "output": "Sim, é contra as regras. Deve circular o mais à direita possível, exceto para ultrapassar ou se o trânsito o justificar."
+  },
+  {
+    "input": "Posso ultrapassar um carro que vai muito devagar mesmo com linha contínua?",
+    "output": "Não. A linha contínua indica proibição de ultrapassar, independentemente da velocidade do outro veículo."
+  },
+  {
+    "input": "O que significa quando o carro da frente liga os quatro piscas na autoestrada?",
+    "output": "Normalmente, é sinal de perigo ou travagem súbita. Deve reduzir a velocidade e estar atento."
+  },
+  {
+    "input": "as biclas podem andar nas passadeiras?",
+    "output": "Podem, mas os ciclistas devem desmontar e empurrar a bicicleta para atravessar como peões."
+  },
+  {
+    "input": "Posso conduzir com óculos escuros se estiver a chover?",
+    "output": "Não é proibido, mas pode reduzir a visibilidade. É melhor evitá-los em dias com pouca luz."
+  },
+  {
+    "input": "sou obrigado a travar se vir um animal na estrada?",
+    "output": "Sim, deve travar e evitar o atropelamento sempre que possível, garantindo também a sua segurança."
+  },
+  {
+    "input": "O pisca é obrigatório mesmo que não esteja ninguém a ver?",
+    "output": "Sim. O uso do pisca é obrigatório sempre que mudar de direção, independentemente da presença de outros veículos."
+  },
+  {
+    "input": "e se tiver a dar música aos altos berros, dá multa?",
+    "output": "Se a música impedir ouvir buzinas, sirenes ou causar perturbação, pode sim resultar em coima por ruído excessivo."
+  },
+  {
+    "input": "Posso virar à esquerda num cruzamento com linha contínua?",
+    "output": "Sim, a linha contínua proíbe ultrapassar, mas não impede mudanças de direção, desde que o local o permita."
+  },
+  {
+    "input": "É permitido andar de mota com auriculares nos dois ouvidos?",
+    "output": "Não. Só é permitido usar um auricular. Ter os dois ouvidos tapados compromete a perceção sonora do trânsito."
+  },
+  {
+    "input": "É crime fugir depois de bater noutro carro?",
+    "output": "Sim. Fugir do local de um acidente, mesmo sem feridos, pode configurar crime de omissão de auxílio ou fuga à responsabilidade."
+  },
+  {
+    "input": "qnts metros precisa para por o triângulo se avariar?",
+    "output": "Deve colocá-lo a pelo menos 30 metros do veículo, em local visível, e usar o colete refletor."
+  },
+  {
+    "input": "Posso conduzir com luvas de lã?",
+    "output": "Pode, desde que mantenha bom controlo do volante. Se forem escorregadias ou limitarem os movimentos, é desaconselhado."
+  },
+  {
+    "input": "é permitido estacionar a seguir a uma passadeira?",
+    "output": "Não. É proibido estacionar a menos de 5 metros antes e depois de uma passadeira."
+  },
+  {
+    "input": "Posso usar o carro para dar aulas de condução ao meu filho?",
+    "output": "Só se for instrutor credenciado e o carro tiver dupla comando. Caso contrário, é ilegal e perigoso."
+  },
+  {
+    "input": "dá multa andar sem cinto mesmo sendo condutor experiente?",
+    "output": "Sim. O uso do cinto é obrigatório para todos, independentemente da experiência de condução."
+  },
+  {
+    "input": "Posso deixar o carro ligado com o ar a funcionar enquanto vou buscar algo?",
+    "output": "Não deve. Deixar o veículo ligado sem necessidade pode dar origem a coima e representa risco de furto."
+  },
+  {
+    "input": "O que faço se um ciclista ocupar o meio da faixa?",
+    "output": "Deve respeitar a distância de 1,5 metros ao ultrapassar e aguardar uma oportunidade segura. Os ciclistas têm direito a usar a faixa."
+  },
+  {
+    "input": "É preciso piscar antes de entrar numa rotunda?",
+    "output": "Não é obrigatório sinalizar a entrada, mas deve sempre sinalizar a saída com o pisca da direita."
+  },
+  {
+    "input": "E se entrar na autoestrada ao contrário por engano?",
+    "output": "Pare de imediato numa zona segura e ligue os quatro piscas. Não tente inverter. Chame as autoridades para ajuda."
+  },
+  {
+    "input": "É permitido buzar só para cumprimentar alguém?",
+    "output": "Não. A buzina deve ser usada apenas para evitar acidentes ou fora das localidades para ultrapassagens."
+  },
+  {
+    "input": "Qual é a distância segura entre veículos?",
+    "output": "Em regra, deve manter pelo menos 2 segundos de distância do veículo da frente. Em piso molhado, aumente esse tempo."
+  },
+  {
+    "input": "Posso parar junto de um cruzamento?",
+    "output": "Não. É proibido parar ou estacionar a menos de 5 metros antes e depois de cruzamentos ou entroncamentos."
+  },
+  {
+    "input": "O que significa um sinal com fundo azul e uma seta branca?",
+    "output": "Indica um sentido obrigatório. Deve seguir na direção indicada pela seta."
+  },
+  {
+    "input": "se os piscas estiverem avariados como sinalizo?",
+    "output": "Pode usar sinais manuais com o braço para indicar a mudança de direção, mas deve reparar a avaria rapidamente."
+  },
+  {
+    "input": "Epa posso andar com o cão na bagageira aberta?",
+    "output": "Só se o animal estiver seguro, com rede ou caixa apropriada. Nunca deve estar solto ou exposto ao perigo."
+  },
+  {
+    "input": "Se o carro escorregar numa curva, posso acelerar para endireitar?",
+    "output": "Não. Em caso de derrapagem, deve levantar o pé do acelerador e corrigir suavemente a direção. Acelerar pode agravar a situação."
+  },
+  {
+    "input": "posso estacionar metade no passeio e metade na estrada?",
+    "output": "Não. Estacionar parcialmente no passeio é proibido, salvo se houver sinalização que o permita. Pode ser multado."
+  },
+  {
+    "input": "E se tiver a ouvir música com phones nos dois ouvidos?",
+    "output": "Isso é proibido. Deve manter pelo menos um ouvido livre para ouvir o ambiente e sinais sonoros da estrada."
+  },
+  {
+    "input": "Posso travar só com o travão de mão se for devagar?",
+    "output": "Não é seguro. O travão de mão é apenas auxiliar e não substitui os travões normais. Pode perder o controlo do carro."
+  },
+  {
+    "input": "Eh pá, posso deixar o carro na passadeira se for só 30 segundos?",
+    "output": "Não. Parar ou estacionar sobre passadeiras é proibido em qualquer circunstância. Pode ser perigoso para os peões."
+  },
+  {
+    "input": "É obrigatório fazer inspeção ao carro todos os anos?",
+    "output": "Depende da idade do carro. Veículos com mais de 4 anos devem fazer inspeção anual. Antes disso, é de dois em dois anos."
+  },
+  {
+    "input": "Dá multa usar chinelos de dedo a conduzir?",
+    "output": "Não há proibição específica, mas se afetar o controlo do veículo, pode ser considerado negligência e dar origem a coima."
+  },
+  {
+    "input": "posso andar com o capot preso com corda?",
+    "output": "Não. O veículo deve estar em boas condições de funcionamento. Improvisações podem ser perigosas e ilegais."
+  },
+  {
+    "input": "se estiver parado num sinal posso mexer no telemóvel?",
+    "output": "Não. Mesmo parado num sinal vermelho, o uso do telemóvel é proibido, salvo com sistema mãos-livres."
+  },
+  {
+    "input": "e se for só pa mudar de música?",
+    "output": "Também não é permitido. Qualquer interação manual com o telemóvel durante a condução é infração."
+  },
+  {
+    "input": "É permitido buzinar para abrir o portão de casa?",
+    "output": "Não. A buzina só deve ser usada por motivos de segurança. Usá-la para fins pessoais pode dar multa."
+  },
+  {
+    "input": "Posso conduzir com óculos de sol à noite?",
+    "output": "Não é proibido por lei, mas é desaconselhado. Reduz bastante a visibilidade e pode ser perigoso."
+  },
+  {
+    "input": "e andar sem camisa, pode?",
+    "output": "Pode, desde que mantenha controlo total do veículo. Mas se for considerado distrativo, pode ser penalizado."
+  },
+  {
+    "input": "posso parar em frente a uma escola para deixar o miúdo?",
+    "output": "Sim, desde que não bloqueie o trânsito, respeite os sinais e não estacione em zona proibida ou passadeira."
+  },
+  {
+    "input": "se o carro morrer num cruzamento levo multa?",
+    "output": "Não. Se for um incidente momentâneo e não causar perigo, não é motivo de multa. Mas deve resolver rapidamente."
+  },
+  {
+    "input": "É preciso seguro para andar de trotinete elétrica?",
+    "output": "Atualmente não é obrigatório, mas é recomendado. Em caso de acidente, pode ser responsabilizado pelos danos."
+  },
+  {
+    "input": "e capacete na trotinete, é preciso?",
+    "output": "Não é obrigatório por lei, mas usar capacete é sempre uma boa prática de segurança."
+  },
+  {
+    "input": "Posso ultrapassar um carro a fazer marcha atrás?",
+    "output": "Sim, desde que o faça com segurança, sinalizando corretamente e com boa visibilidade da manobra."
+  },
+  {
+    "input": "Epa posso circular com um papagaio ao ombro?",
+    "output": "Não. Animais devem estar seguros e não podem interferir na condução. Levar um papagaio solto pode ser considerado infração."
+  },
+  {
+    "input": "Posso parar em frente a um café para ir buscar o meu galão?",
+    "output": "Só se não estiver a bloquear a via, não for zona proibida e não exceder o tempo permitido. Caso contrário, é infração."
+  },
+  {
+    "input": "É permitido conduzir de fones com cancelamento de ruído?",
+    "output": "Não. Tapar ambos os ouvidos com fones é proibido, mesmo que seja música ou cancelamento de ruído."
+  },
+  {
+    "input": "posso dormir no carro numa área de serviço?",
+    "output": "Sim, desde que o carro esteja devidamente estacionado e não cause transtorno. Algumas áreas permitem pernoitar."
+  },
+  {
+    "input": "E se tiver a carregar um carro elétrico, posso sair dali?",
+    "output": "Sim, mas deve deixar o contacto visível ou não bloquear a estação se o carregamento já terminou. Há regras locais sobre isso."
+  },
+  {
+    "input": "Posso parar em segunda fila com os quatro piscas ligados?",
+    "output": "Não. Parar ou estacionar em segunda fila é proibido, mesmo com os piscas ligados. Só se for veículo prioritário ou emergência."
+  },
+  {
+    "input": "Dá multa se os limpa pára-brisas não funcionarem?",
+    "output": "Sim. É contraordenação circular com equipamento essencial avariado, especialmente em dias de chuva."
+  },
+  {
+    "input": "se tiver pressa posso passar no amarelo?",
+    "output": "Não. O amarelo indica que deve parar, salvo se já não for possível fazê-lo em segurança. Não é desculpa para acelerar."
+  },
+  {
+    "input": "é proibido conduzir com um pé só?",
+    "output": "Não é proibido por lei, mas é desaconselhado. O importante é manter controlo total do veículo em qualquer momento."
+  },
+  {
+    "input": "Posso levar o cão solto na carrinha?",
+    "output": "Não. O cão deve estar preso com cinto específico, rede divisória ou transportadora. A segurança do animal e dos ocupantes é essencial."
+  },
+  {
+    "input": "Posso parar numa rotunda para esperar alguém?",
+    "output": "Não. Parar numa rotunda é perigoso e ilegal. Deve continuar a circular até poder sair e parar em local adequado."
+  },
+  {
+    "input": "E se o semáforo estiver a piscar amarelo e eu tiver prioridade?",
+    "output": "Mesmo com prioridade, deve avançar com precaução. O piscar amarelo indica perigo ou falha no semáforo."
+  },
+  {
+    "input": "É permitido conduzir um carro automático só com a perna direita?",
+    "output": "Sim. Em carros automáticos, é até recomendado usar apenas o pé direito para evitar enganos entre travão e acelerador."
+  },
+  {
+    "input": "Posso parar para falar com alguém à janela?",
+    "output": "Só se não estiver a bloquear a via nem infringir regras de paragem. Caso contrário, pode ser multado."
+  },
+  {
+    "input": "E se deixar o carro destrancado na rua, levo multa?",
+    "output": "Não é obrigatório trancar o carro, mas deixá-lo sem vigilância pode facilitar furtos. Em certas zonas, pode ser advertido."
+  },
+  {
+    "input": "se um semáforo estiver coberto com saco preto, posso ignorar?",
+    "output": "Sim. Um semáforo tapado não está em funcionamento. Deve seguir as regras gerais de prioridade e sinalização no local."
+  },
+  {
+    "input": "É proibido andar com uma bicicleta na autoestrada?",
+    "output": "Sim. Bicicletas não podem circular em autoestradas ou vias reservadas a veículos motorizados."
+  },
+  {
+    "input": "Posso empurrar o carro a pé se ficar sem gasolina?",
+    "output": "Sim, mas só se for seguro e legal fazê-lo. Deve usar colete refletor e sinalizar o perigo com os quatro piscas e triângulo."
+  },
+  {
+    "input": "Se a estrada tiver buracos, posso andar na faixa contrária?",
+    "output": "Só se for mesmo necessário e seguro. Deve garantir que não há veículos em sentido contrário e regressar à faixa assim que possível."
+  },
+  {
+    "input": "Posso andar de mota com um boneco insuflável no lugar do passageiro?",
+    "output": "Não. É proibido transportar objetos que causem distração ou não estejam devidamente fixos. Pode ser multado por comportamento imprudente."
+  },
+  {
+    "input": "posso circular numa rotunda com os máximos ligados?",
+    "output": "Nas localidades, incluindo rotundas, deve usar médios. Os máximos só em zonas não iluminadas e sem encandear outros condutores."
+  },
+  {
+    "input": "e se for só para ver melhor a sinalização?",
+    "output": "Mesmo assim, se encandear outros utentes, está a infringir. Use os médios ou faróis de nevoeiro, se necessário."
+  },
+  {
+    "input": "Posso fazer marcha-atrás numa rua inteira se não vier ninguém?",
+    "output": "Não. A marcha-atrás só deve ser usada para pequenas manobras e nunca como forma de circular longas distâncias."
+  },
+  {
+    "input": "e se for uma rua sem saída?",
+    "output": "Nesse caso, pode recuar até encontrar local seguro para inverter a marcha, mas com atenção redobrada."
+  },
+  {
+    "input": "É obrigatório pôr o triângulo se só parar para ver o GPS?",
+    "output": "Se estiver parado numa zona de risco, sim. Caso contrário, deve estacionar num local seguro antes de manusear o GPS."
+  },
+  {
+    "input": "Posso passar o sinal vermelho se for de madrugada e não estiver ninguém?",
+    "output": "Não. O sinal vermelho deve ser respeitado sempre. Ignorá-lo é infração grave, mesmo com estrada vazia."
+  },
+  {
+    "input": "Se houver um agente a dar sinal contrário ao semáforo, a quem obedeço?",
+    "output": "Deve obedecer ao agente de trânsito. Ele tem prioridade sobre sinais luminosos e verticais."
+  },
+  {
+    "input": "Posso ultrapassar numa descida se a visibilidade for boa?",
+    "output": "Sim, desde que não haja linha contínua nem sinal a proibir e seja seguro fazê-lo."
+  },
+  {
+    "input": "Se um peão atravessar a correr fora da passadeira, é culpa minha se o atropelar?",
+    "output": "Depende da situação. Os condutores devem manter sempre atenção redobrada e adaptar a velocidade, mas o peão também tem deveres."
+  },
+  {
+    "input": "Posso andar de carro com os faróis fundidos durante o dia?",
+    "output": "Se for dia e não estiver a circular em túnel ou condições de pouca visibilidade, não é infração. Mas deve substituir o mais rápido possível."
+  },
+  {
+    "input": "Se eu for 5 km/h acima do limite, levo multa?",
+    "output": "Sim. Ultrapassar o limite, mesmo por poucos quilómetros, pode resultar em contraordenação, dependendo do controlo de velocidade."
+  },
+  {
+    "input": "Posso acelerar numa descida se não houver radar?",
+    "output": "Não. A velocidade máxima aplica-se sempre, independentemente da presença de radares."
+  },
+  {
+    "input": "É obrigatório circular devagar numa rua estreita?",
+    "output": "Sim, deve adaptar a velocidade às condições da via, especialmente em ruas estreitas ou com visibilidade reduzida."
+  },
+  {
+    "input": "Dá multa travar de repente sem motivo?",
+    "output": "Se causar perigo aos outros, sim. Travagens bruscas sem justificação podem ser consideradas condução perigosa."
+  },
+  {
+    "input": "Tenho prioridade se estiver a ultrapassar numa subida?",
+    "output": "Não. Durante uma ultrapassagem, deve garantir que tem visibilidade e espaço suficientes. Nunca tem prioridade por estar a ultrapassar."
+  },
+  {
+    "input": "Posso ignorar o STOP se vir que não vem ninguém?",
+    "output": "Não. O STOP obriga sempre a paragem completa, mesmo que não haja trânsito visível."
+  },
+  {
+    "input": "e o ceda passagem, também é para parar?",
+    "output": "Não necessariamente. Só deve parar se houver veículos com prioridade. Caso contrário, pode avançar com cautela."
+  },
+  {
+    "input": "Posso buzinar se alguém não arranca com o sinal verde?",
+    "output": "A buzina só deve ser usada para evitar acidentes. Impaciência não é razão válida e pode dar coima."
+  },
+  {
+    "input": "É permitido avançar num cruzamento bloqueado?",
+    "output": "Não. Mesmo com sinal verde, não deve entrar num cruzamento se não puder sair dele sem bloquear o trânsito."
+  },
+  {
+    "input": "O que faço se o semáforo estiver apagado?",
+    "output": "Deve aplicar as regras gerais de prioridade e avançar com cautela, como se o cruzamento não tivesse sinalização."
+  },
+  {
+    "input": "posso estacionar em cima da linha amarela?",
+    "output": "Não. A linha amarela indica proibição de parar ou estacionar, consoante a sinalização."
+  },
+  {
+    "input": "Posso parar em frente ao multibanco se for rápido?",
+    "output": "Se não bloquear a via e não houver sinal de proibição, pode parar momentaneamente. Mas atenção: estacionar é diferente de parar."
+  },
+  {
+    "input": "dá multa parar em frente à entrada do prédio?",
+    "output": "Sim, é considerado bloqueio de acesso e pode dar origem a multa ou reboque."
+  },
+  {
+    "input": "Epa posso estacionar em sentido contrário?",
+    "output": "Não. O estacionamento deve ser feito no sentido da marcha. Estacionar em contramão é infração."
+  },
+  {
+    "input": "e posso deixar o carro numa rotunda à noite se for emergência?",
+    "output": "Só se for mesmo uma emergência e estiver sinalizado com os quatro piscas e triângulo. Mas deve sair da rotunda o mais rápido possível."
+  },
+  {
+    "input": "Posso perder a carta por usar o telemóvel?",
+    "output": "Sim. Se for reincidente ou causar acidente, pode perder pontos e até ficar inibido de conduzir."
+  },
+  {
+    "input": "Quantos pontos perco se passar um vermelho?",
+    "output": "Entre 2 a 4 pontos, dependendo da gravidade. É uma infração muito grave."
+  },
+  {
+    "input": "Se for apanhado sem cinto, quantos pontos perco?",
+    "output": "Perde 2 pontos. É uma contraordenação grave."
+  },
+  {
+    "input": "É possível recuperar pontos perdidos?",
+    "output": "Sim. Se passar 3 anos sem infrações, recupera pontos até ao máximo de 15."
+  },
+  {
+    "input": "Fugir de um acidente dá prisão?",
+    "output": "Sim, pode ser considerado crime de omissão de auxílio e resultar em processo criminal."
+  },
+  {
+    "input": "É verdade que posso beber uma cerveja e conduzir?",
+    "output": "Depende da quantidade. Mesmo uma cerveja pode fazer ultrapassar o limite legal de 0,5 g/l."
+  },
+  {
+    "input": "Sou novo condutor, posso beber um copo de vinho?",
+    "output": "Não deve. Para condutores com carta há menos de 3 anos, o limite é 0,2 g/l. Um copo pode ultrapassar esse valor."
+  },
+  {
+    "input": "e se for só uma caipirinha ao jantar?",
+    "output": "Mesmo uma bebida pode afetar a condução. Se houver controlo, pode dar multa ou inibição de conduzir."
+  },
+  {
+    "input": "Posso soprar no teste se tiver pastilha elástica?",
+    "output": "Sim, mas os agentes podem pedir para a remover, pois pode interferir com o teste."
+  },
+  {
+    "input": "e se recusar fazer o teste do balão?",
+    "output": "Recusar o teste é considerado infração muito grave e pode resultar em coima e inibição de conduzir."
+  },
+  {
+    "input": "as trotinetes têm de andar nas ciclovias?",
+    "output": "Devem circular nas ciclovias sempre que existam e sejam compatíveis. Caso contrário, na berma ou na estrada, respeitando as regras."
+  },
+  {
+    "input": "Posso andar de bicicleta no passeio?",
+    "output": "Só se for criança até aos 10 anos ou se for permitido por sinalização. Caso contrário, deve circular na estrada."
+  },
+  {
+    "input": "e se for de noite, a bicicleta precisa de luzes?",
+    "output": "Sim. É obrigatório ter luz branca à frente e vermelha atrás, além de refletores."
+  },
+  {
+    "input": "Os peões podem atravessar fora da passadeira?",
+    "output": "Só se não houver passadeira próxima. Mas devem garantir que é seguro e não forçar a travagem dos veículos."
+  },
+  {
+    "input": "Caminhar na berma com auscultadores dá multa?",
+    "output": "Não há multa, mas é desaconselhado. Pode pôr a sua vida em risco se não ouvir os veículos a aproximar-se."
+  },
+  {
+    "input": "Posso conduzir com um braço partido?",
+    "output": "Só se estiver autorizado clinicamente e conseguir controlar o veículo em segurança. Caso contrário, pode ser penalizado."
+  },
+  {
+    "input": "e se estiver a conduzir com o braço de fora?",
+    "output": "Conduzir com o braço de fora pode ser considerado imprudente e dar origem a coima se afetar o controlo do veículo."
+  },
+  {
+    "input": "Posso dançar ao volante num semáforo?",
+    "output": "Desde que esteja parado e não se distraia da condução, não há problema. Mas se afetar a atenção, pode ser punido."
+  },
+  {
+    "input": "Posso pôr um manequim no banco para usar a via verde?",
+    "output": "Não. É fraude e pode ser sancionado com coima pesada e responsabilidade criminal."
+  },
+  {
+    "input": "É permitido conduzir com máscara de Halloween?",
+    "output": "Não. Qualquer adereço que reduza a visão ou audição é proibido ao volante."
+  },
+  {
+    "input": "É ilegal circular com pneus de marcas diferentes?",
+    "output": "Os pneus do mesmo eixo devem ser idênticos em tipo e dimensões. Marcas diferentes não são problema, desde que estejam dentro da norma."
+  },
+  {
+    "input": "Posso andar com um farol fundido?",
+    "output": "Não. Circular com iluminação deficiente é contraordenação e pode ser multado."
+  },
+  {
+    "input": "e se for só o de nevoeiro traseiro?",
+    "output": "Nesse caso, a infração é menos grave, mas o farol deve ser reparado. É essencial em situações de visibilidade reduzida."
+  },
+  {
+    "input": "posso usar película escura nos vidros da frente?",
+    "output": "Sim, desde que sejam homologadas e tenham certificado visível. Caso contrário, é infração."
+  },
+  {
+    "input": "Posso conduzir com vidro rachado?",
+    "output": "Se afetar a visibilidade ou representar perigo, não pode circular. Pode ser multado ou reprovado na inspeção."
+  },
+  {
+    "input": "posso dar uma buzinadela só pa dizer olá ao vizinho?",
+    "output": "Não. A buzina só deve ser usada para evitar acidentes ou como aviso fora das localidades. Para cumprimentos, usa a mão!"
+  },
+  {
+    "input": "e se eu andar com o carro cheio de pó, dá multa?",
+    "output": "Se a sujidade impedir a leitura da matrícula ou a visibilidade, sim. O carro deve estar em condições de circular com segurança."
+  },
+  {
+    "input": "Posso conduzir de pantufas?",
+    "output": "Não há uma proibição direta, mas se afetar o controlo do carro, pode ser considerado negligência."
+  },
+  {
+    "input": "Epá e se eu for só ali ao lado sem cinto?",
+    "output": "O uso do cinto é obrigatório em todas as viagens, mesmo que sejam de 2 minutos."
+  },
+  {
+    "input": "Dá para conduzir com o banco todo deitado pa trás?",
+    "output": "Não. A posição de condução deve permitir controlo total do veículo. Conduzir deitado é perigoso e pode dar coima."
+  },
+  {
+    "input": "e posso ir com a cabeça de fora do teto de abrir?",
+    "output": "Não. Circular com parte do corpo fora do veículo é perigoso e proibido."
+  },
+  {
+    "input": "Dá multa se tiver um peluche gigante no tablier?",
+    "output": "Se obstruir a visão, sim. Objetos no tablier não devem interferir com a condução."
+  },
+  {
+    "input": "Posso por luzes LED azuis no carro?",
+    "output": "Não. As luzes do carro devem estar de acordo com a homologação. Azul é reservado a veículos de emergência."
+  },
+  {
+    "input": "Epa e se eu colar olhos de boneca nos faróis?",
+    "output": "Desde que não tapem a luz nem distraiam outros condutores, talvez não dê multa. Mas é arriscado..."
+  },
+  {
+    "input": "posso ir com o gato ao colo a conduzir?",
+    "output": "Não. Animais devem estar seguros e não podem distrair o condutor. Levar ao colo é perigoso e ilegal."
+  },
+  {
+    "input": "e se ele for calmo?",
+    "output": "Mesmo sendo calmo, não é seguro. Um susto pode causar um acidente."
+  },
+  {
+    "input": "Posso pintar o carro de rosa choque com pintinhas?",
+    "output": "Sim, desde que não altere matrículas, luzes ou espelhos. A cor pode ser extravagante, mas legal."
+  },
+  {
+    "input": "dá multa conduzir de óculos escuros à noite?",
+    "output": "Não é proibido, mas é altamente desaconselhado. Se for causa de acidente, pode ser agravante."
+  },
+  {
+    "input": "posso dançar sentado ao volante se tiver parado no trânsito?",
+    "output": "Se mantiver atenção à estrada e ao que se passa à volta, não há problema. Mas cuidado com o exagero."
+  },
+  {
+    "input": "se tiver um manequim no banco da frente, conta como passageiro?",
+    "output": "Não. É fraude usar bonecos para enganar a polícia ou aproveitar vias reservadas. Pode dar multa pesada."
+  },
+  {
+    "input": "posso andar com uma coluna bluetooth a tocar alto no carro?",
+    "output": "Se interferir com a perceção de sinais sonoros ou incomodar terceiros, pode ser considerado ruído excessivo."
+  },
+  {
+    "input": "posso conduzir com luvas de boxe?",
+    "output": "Não. Tem de ter controlo total do volante. Luvas que impedem movimentos são ilegais ao volante."
+  },
+  {
+    "input": "posso pôr uma bandeira do meu clube no vidro traseiro?",
+    "output": "Sim, desde que não obstrua a visibilidade. Cuidado com a dimensão e onde a fixa."
+  },
+  {
+    "input": "Dá multa se cantar muito alto no carro?",
+    "output": "Não há multa por cantar, mas se se distrair ou não ouvir o trânsito por causa disso, pode ser perigoso."
+  },
+  {
+    "input": "posso levar uma árvore de Natal no tejadilho?",
+    "output": "Sim, se estiver bem presa e não ultrapassar os limites legais de altura e largura do veículo."
+  },
+  {
+    "input": "e se pingar neve para trás?",
+    "output": "Se cair algo e causar perigo a outros, pode ser responsabilizado."
+  },
+  {
+    "input": "posso pintar a matrícula com glitter?",
+    "output": "Não. A matrícula tem regras específicas de formato, cor e visibilidade. Alterar é ilegal."
+  },
+  {
+    "input": "e colar autocolantes à volta da matrícula?",
+    "output": "Se não taparem números nem dificultarem a leitura, pode ser permitido. Mas evite alterações."
+  },
+  {
+    "input": "Posso usar um farol diferente só para dar estilo?",
+    "output": "Todos os faróis devem ser homologados. Estilo não justifica alterações ilegais."
+  },
+  {
+    "input": "É permitido conduzir com a porta entreaberta?",
+    "output": "Não. Todas as portas devem estar bem fechadas. Caso contrário, representa risco de acidente."
+  },
+  {
+    "input": "e se for pa levar uma coisa grande?",
+    "output": "Use um veículo adequado ou transporte autorizado. Improvisações podem ser ilegais."
+  },
+  {
+    "input": "Posso pendurar um pinheirinho no espelho retrovisor?",
+    "output": "Sim, se não obstruir a visão. Mas evite objetos grandes ou distrativos."
+  },
+  {
+    "input": "posso andar com um mini-frigorífico ligado no carro?",
+    "output": "Sim, desde que esteja bem fixo e não interfira com a condução ou a visibilidade."
+  },
+  {
+    "input": "dá multa conduzir com fones de aviador?",
+    "output": "Sim, se taparem ambos os ouvidos. Só é permitido usar um auricular."
+  },
+  {
+    "input": "e um capacete de astronauta?",
+    "output": "Não. Qualquer coisa que limite a visão ou audição ao volante é proibida."
+  },
+  {
+    "input": "Posso conduzir com um cartaz a dizer 'sou lento mas seguro' no vidro?",
+    "output": "Sim, desde que não obstrua a visão. Humor é permitido, segurança primeiro."
+  },
+  {
+    "input": "e com o vidro traseiro cheio de peluches?",
+    "output": "Se afetar a visibilidade, pode ser multado. Os objetos devem estar bem acondicionados."
+  },
+  {
+    "input": "posso andar de mota com capa de super-herói?",
+    "output": "Não. Qualquer vestuário que possa soltar-se e causar perigo é proibido."
+  },
+  {
+    "input": "Posso conduzir com o braço engessado?",
+    "output": "Se estiver autorizado por médico e conseguir controlar o veículo, sim. Caso contrário, não pode conduzir."
+  },
+  {
+    "input": "É permitido buzinar num casamento?",
+    "output": "Não. Usar buzina para fins não relacionados com segurança é ilegal, mesmo em casamentos."
+  },
+  {
+    "input": "posso pintar as jantes de arco-íris?",
+    "output": "Sim, desde que não interfira com a segurança ou homologação do veículo."
+  },
+  {
+    "input": "Dá multa andar com tecto de abrir aberto na chuva?",
+    "output": "Não. Mas se molhar os outros ou causar distração, pode ser advertido."
+  },
+  {
+    "input": "posso pendurar uma melancia no espelho do carro?",
+    "output": "Não. Objetos grandes ou pesados soltos são perigosos e ilegais."
+  },
+  {
+    "input": "Posso usar uma buzina que faz som de vaca?",
+    "output": "Só buzinas homologadas são permitidas. Sons personalizados podem ser ilegais."
+  },
+  {
+    "input": "e com música de marcha fúnebre no máximo?",
+    "output": "O estilo não é problema. O volume sim. Se incomodar outros ou impedir ouvir o trânsito, pode dar coima."
+  },
+  {
+    "input": "posso conduzir com uma mão e comer gelado com a outra?",
+    "output": "Se isso afetar a atenção ou o controlo do veículo, é considerado comportamento negligente."
+  },
+  {
+    "input": "dá multa tirar selfies a conduzir?",
+    "output": "Sim. Tirar fotografias ao volante é infração e pode resultar em coima ou perda de pontos."
+  },
+  {
+    "input": "Posso ter luzes de natal no carro?",
+    "output": "Só no interior e se não ofuscarem nem distrair. No exterior, não é permitido."
+  },
+  {
+    "input": "e uma árvore de natal no tejadilho com pisca-piscas?",
+    "output": "É perigoso e ilegal. Luzes externas não homologadas não são permitidas."
+  },
+  {
+    "input": "posso ir com o volante cheio de peluche?",
+    "output": "A capa de volante não deve escorregar nem dificultar o controlo. Se for só decorativa e segura, pode."
+  },
+  {
+    "input": "É ilegal ir a cantar karaoke no carro?",
+    "output": "Cantar não é ilegal. Mas se se distrair ou causar perigo, pode ser responsabilizado."
+  },
+  {
+    "input": "posso conduzir com um fato de dinossauro?",
+    "output": "Se limitar a visão ou movimento, é proibido. Caso contrário, só o estilo é questionável."
+  },
+  {
+    "input": "Dá multa conduzir com os pés no tablier (como passageiro)?",
+    "output": "Não dá multa ao passageiro, mas é perigoso. Em caso de acidente, o airbag pode causar ferimentos graves."
+  }
+]
+
