@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from typing import List
 from fastapi.middleware.cors import CORSMiddleware
-from models import detect_labels_DataSet1
+from models import detect_labels_DataSet1, detect_labels_DataSet3
 from models import detect_labels_DataSet2
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
@@ -43,6 +43,8 @@ async def find_labels_from_image_base64(
         result, status = detect_labels_DataSet1(data.model, data.image_base64)
     elif dataset_id == 2:
         result, status = detect_labels_DataSet2(data.model, data.image_base64)
+    elif dataset_id == 3:
+        result, status = detect_labels_DataSet3(data.model, data.image_base64)
     else:
         return JSONResponse(
             content={"error": f"Dataset ID '{dataset_id}' não suportado."},
@@ -52,7 +54,7 @@ async def find_labels_from_image_base64(
     return JSONResponse(content=result, status_code=status)
 
 # Conjunto de datasets válidos
-ALLOWED_DATASET_IDS = {1, 2}
+ALLOWED_DATASET_IDS = {1, 2,3}
 
 @app.get("/image/models/{dataset_id}")
 def get_image_models(

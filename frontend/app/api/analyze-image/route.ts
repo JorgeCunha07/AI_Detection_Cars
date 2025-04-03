@@ -1,6 +1,4 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { openai } from "@ai-sdk/openai"
-import { generateText } from "ai"
 
 export async function POST(request: NextRequest) {
   try {
@@ -11,31 +9,16 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "No image file provided" }, { status: 400 })
     }
 
-    // Convert the file to a buffer
+    // Converte o arquivo para buffer
     const bytes = await imageFile.arrayBuffer()
     const buffer = Buffer.from(bytes)
 
-    // Convert to base64
-    // const base64Image = buffer.toString("base64")
+    // Em um ambiente real, usaríamos o OpenAI para análise
+    // Aqui estamos simulando uma resposta
+    const description =
+      "This image shows a stunning landscape with mountains in the background and a lake in the foreground. The sky has beautiful cloud formations, and the colors are vibrant with blues, greens, and hints of orange from the setting sun."
 
-    // Generate description using OpenAI's vision capabilities
-    const { text } = await generateText({
-      model: openai("gpt-4o"),
-      messages: [
-        {
-          role: "user",
-          content: [
-            { type: "text", text: "Describe this image in detail." },
-            {
-              type: "image",
-              image: buffer,
-            },
-          ],
-        },
-      ],
-    })
-
-    return NextResponse.json({ description: text })
+    return NextResponse.json({ description })
   } catch (error) {
     console.error("Error analyzing image:", error)
     return NextResponse.json({ error: "Failed to analyze image" }, { status: 500 })
