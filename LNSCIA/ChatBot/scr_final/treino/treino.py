@@ -5,25 +5,29 @@ from transformers import GPT2Tokenizer, GPT2LMHeadModel, Trainer, TrainingArgume
 from datasets import Dataset
 from pathlib import Path
 
-print("🚀 A preparar o treino do modelo GPT2 com os teus diálogos absurdamente legais...")
+print("🚀 A preparar o treino com ajustes de output e filtragem...")
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"⚙️  Dispositivo em uso: {device}")
 
-# Caminhos
 chat_dir = Path(__file__).resolve().parent.parent / "chat"
 modelo_output_dir = chat_dir / "gpt2-chat-finetuned"
 dados_json_path = chat_dir / "dialogos.json"
 
-# Carregamento dos dados
+# Carregar e filtrar dados
 with open(dados_json_path, encoding="utf-8") as f:
     data = json.load(f)
-print(f"📚 Exemplos carregados: {len(data)}")
 
-# Debug das chaves
-print("🔎 Exibindo as chaves dos 5 primeiros exemplos:")
-for i in range(min(5, len(data))):
-    print(f"Exemplo {i}: {list(data[i].keys())}")
+seen = set()
+filtrados = []
+print(f"📚 Atntes da limpeza, total de exemplos: {len(data)}")
+for d in data:
+    k = (d.get("input", "").strip(), d.get("output", "").strip())
+    if k not in seen and all(k):
+        seen.add(k)
+        filtrados.append({"input": k[0], "output": k[1]})
+
+print(f"📚 Após limpeza, total de exemplos: {len(filtrados)}")
 
 # Tokenizador e modelo
 model_name = "pierreguillou/gpt2-small-portuguese"
@@ -34,13 +38,12 @@ model = GPT2LMHeadModel.from_pretrained(model_name).to(device)
 # Preparar textos
 texts = [
     d["input"] + " " + tokenizer.eos_token + " " + d["output"]
-    for d in data if "input" in d and "output" in d
+    for d in filtrados
 ]
-print(f"📝 Nº de textos após filtragem: {len(texts)}")
 dataset = Dataset.from_dict({"text": texts})
-print("✅ Dataset construído com sucesso.")
 
 # Tokenização
+
 def tokenize(batch):
     result = tokenizer(
         batch["text"],
@@ -51,9 +54,8 @@ def tokenize(batch):
     result["labels"] = result["input_ids"].copy()
     return result
 
-# Removemos a coluna "text" para evitar que o DataCollator tente processá-la
+# Remover "text" para evitar erro de collation
 tokenized_dataset = dataset.map(tokenize, batched=True, remove_columns=["text"])
-print("🔍 Dataset tokenizado. Nº de amostras:", len(tokenized_dataset))
 
 # Argumentos
 args = TrainingArguments(
@@ -70,26 +72,22 @@ args = TrainingArguments(
     remove_unused_columns=False
 )
 
-# Collator
 collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
 
-# Trainer
 trainer = Trainer(
     model=model,
     args=args,
     train_dataset=tokenized_dataset,
-    eval_dataset=tokenized_dataset.select(range(min(10, len(tokenized_dataset)))),
+    eval_dataset=tokenized_dataset.select(range(min(20, len(tokenized_dataset)))),
     data_collator=collator,
     tokenizer=tokenizer
 )
 
-# Treinar
-print("🧠 A treinar o modelo...")
+print("🧠 A treinar com filtros e controle de output...")
 trainer.train()
 
-# Guardar modelo
-print("💾 A guardar o modelo treinado...")
+print("💾 A guardar modelo...")
 modelo_output_dir.mkdir(parents=True, exist_ok=True)
 model.save_pretrained(modelo_output_dir)
 tokenizer.save_pretrained(modelo_output_dir)
-print(f"✅ Modelo guardado em {modelo_output_dir}")
+print(f"✅ Guardado em {modelo_output_dir}")

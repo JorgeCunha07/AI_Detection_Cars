@@ -14,7 +14,7 @@ time_of_day = ["amanhecer", "anoitecer", "dia", "noite"]
 traffic_density = ["trânsito leve", "trânsito moderado", "trânsito intenso", "engarrafamento"]
 
 locations = [
-"residencial", "parque de estacionamento", "túnel", "cidade", "autoestrada"
+    "residencial", "parque de estacionamento", "túnel", "cidade", "autoestrada"
 ]
 
 object_behaviors = [

@@ -14,21 +14,25 @@ model.to(device)
 
 def gerar_resposta_chat(user_input: str) -> str:
     prompt = f"Usuário: {user_input}\nAssistente:"
+    #prompt = f"Usuário: {user_input}\nContexto: Código da Estrada Português\nAssistente:"
     inputs = tokenizer(prompt, return_tensors="pt").to(device)
 
     with torch.no_grad():
         outputs = model.generate(
             **inputs,
-            max_new_tokens=80,
-            temperature=0.7,
-            top_p=0.9,
+            max_new_tokens=60,
+            temperature=0.6,
+            top_p=50,
             do_sample=True,
+            repetition_penalty=1.2,
             pad_token_id=tokenizer.eos_token_id,
-            eos_token_id=tokenizer.eos_token_id
+            eos_token_id=tokenizer.eos_token_id,
+            no_repeat_ngram_size=3  
         )
 
     generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
     resposta = generated_text.split("Assistente:")[-1].strip()
+    #return resposta
     return resposta
 
 # Modo standalone de teste — só corre se for executado diretamente
