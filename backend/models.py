@@ -10,6 +10,7 @@ from PIL import Image
 from collections import Counter
 from torchvision import transforms
 from ultralytics import YOLO
+import base64
 
 
 def load_class_names_from_yaml(yaml_path="dataset.yaml"):
@@ -25,8 +26,8 @@ def encode_image_base64(image_array):
     return base64.b64encode(buffer).decode("utf-8")
 
 
-def detect_labels(model_name: str, file):
-    model_path = os.path.join("modelsAvailable", f"{model_name}.pt")
+def detect_labels_DataSet1(model_name: str, base64_image: str):
+    model_path = os.path.join("modelsAvailable/1", f"{model_name}.pt")
     yaml_path = "dataset.yaml"
 
     if not os.path.exists(model_path):
@@ -34,9 +35,15 @@ def detect_labels(model_name: str, file):
 
     class_map = load_class_names_from_yaml(yaml_path)
 
-    # Salvar imagem temporária
+    # Decode do base64 para bytes
+    try:
+        image_bytes = base64.b64decode(base64_image)
+    except Exception as e:
+        return {"error": f"Imagem base64 inválida: {str(e)}"}, 400
+
+    # Salvar temporariamente
     temp = tempfile.NamedTemporaryFile(delete=False, suffix=".jpg")
-    temp.write(file)
+    temp.write(image_bytes)
     temp.close()
 
     label_counts = {}
@@ -79,6 +86,7 @@ def detect_labels(model_name: str, file):
                 x1, y1, x2, y2 = map(int, box)
                 cv2.rectangle(image_bgr, (x1, y1), (x2, y2), (255, 0, 0), 2)
                 cv2.putText(image_bgr, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
+
     else:
         os.remove(temp.name)
         return {"error": "Tipo de modelo não reconhecido no nome."}, 400
@@ -91,3 +99,7 @@ def detect_labels(model_name: str, file):
         "counts": label_counts,
         "image_base64": image_base64
     }, 200
+
+
+def detect_labels_DataSet2(model_name: str, base64_image: str):
+        return {"error": "Tipo de modelo não reconhecido no nome."}, 400
