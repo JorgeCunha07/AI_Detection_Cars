@@ -55,17 +55,25 @@ def clean_text(text):
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
+def label_joiner(labels_list):
+    transformed_labels = []
+    # Transforma "parque de estacionamento" em "parque_de_estacionamento"
+    for lab in labels_list:
+        lab = lab.replace(" ", "_")
+        transformed_labels.append(lab)
+    return transformed_labels
+
 
 # Carregar o dataset (arquivo JSON com dados sintéticos e reais)
-with open('./data/frases_rodoviarias.json', 'r', encoding='utf-8') as f:
+with open('./data/exemplo_dataset.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
 labels_text = []  # Para armazenar os rótulos (labels) em forma de string
 descriptions = []  # Para armazenar as descrições
 
 for d in data:
-    # Processar a descrição: usa "description" ou, se não existir, "trecho"
-    desc = d.get("description", d.get("trecho", ""))
+    # Processar a descrição: usa "description"
+    desc = d.get("description", "")
     # Remover os tokens especiais temporariamente para limpeza
     desc = desc.replace("startseq", "").replace("endseq", "").strip()
     # Limpar e normalizar o texto
@@ -74,10 +82,11 @@ for d in data:
     desc_clean = "startseq " + desc_clean + " endseq"
     descriptions.append(desc_clean)
 
-    # Processar os rótulos: usa "labels" ou "temas"
-    labs = d.get("labels", d.get("temas", []))
+    labs = d.get("labels", [])
     # Converte em string única e limpa
-    labs_text_str = clean_text(", ".join(labs))
+    labs_cleaned = [clean_text(l) for l in labs]
+    labs_str = label_joiner(labs_cleaned)
+    labs_text_str = " ".join(labs_str)
     labels_text.append(labs_text_str)
 
 # Criar os tokenizadores usando o SimpleTokenizer
