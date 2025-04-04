@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 import { Car } from "lucide-react"
+import Image from "next/image";
 
 export default function ContatoPage() {
   return (
@@ -19,7 +20,7 @@ export default function ContatoPage() {
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-blue-600">Entre em Contato</h1>
               <p className="text-xl text-gray-700">
-                Estamos aqui para responder suas dúvidas e ajudar sua escola de condução a implementar nossa tecnologia.
+                 Estamos aqui para responder às suas dúvidas e ajudar a sua escola de condução a implementar a nossa tecnologia.
               </p>
             </div>
           </div>
@@ -91,8 +92,7 @@ export default function ContatoPage() {
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold mb-2">Email</h3>
-                      <p className="text-gray-700">contato@innov8.com.br</p>
-                      <p className="text-gray-700">suporte@innov8.com.br</p>
+                      <p className="text-gray-700">innov8@email.com</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -101,8 +101,7 @@ export default function ContatoPage() {
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold mb-2">Telefone</h3>
-                      <p className="text-gray-700">(11) 3456-7890</p>
-                      <p className="text-gray-700">(11) 98765-4321</p>
+                      <p className="text-gray-700">(+351) XXX XXX XXX</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -112,20 +111,24 @@ export default function ContatoPage() {
                     <div>
                       <h3 className="text-xl font-semibold mb-2">Endereço</h3>
                       <p className="text-gray-700">
-                        Av. Paulista, 1000 - Bela Vista
+                        R. Dr. António Bernardino de Almeida 431
                         <br />
-                        São Paulo - SP, 01310-100
+                        Porto
                         <br />
-                        Brasil
+                        Portugal
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className="mt-8 h-64 bg-gray-200 rounded-lg">
-                  {/* Aqui poderia ser inserido um mapa */}
-                  <div className="w-full h-full flex items-center justify-center text-gray-500">
-                    Mapa da localização
-                  </div>
+                <div className="mt-8 h-64 bg-gray-200 lg">
+                  <div className="relative w-full h-[250px] md:h-[300px] rounded-lg overflow-hidden shadow-xl">
+                   <Image
+                  src="/isepMapa.png"
+                  alt="Mapa"
+                  fill
+                  className="object-cover"
+                  />
+                    </div>
                 </div>
               </div>
             </div>

@@ -49,7 +49,7 @@ export default function HomePage() {
             <div className="md:w-1/2">
               <div className="relative w-full h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-2xl">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/homepage.png"
                   alt="Aluno aprendendo com IA"
                   fill
                   className="object-cover"

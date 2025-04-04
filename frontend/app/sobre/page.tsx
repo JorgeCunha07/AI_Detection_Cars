@@ -37,24 +37,14 @@ export default function SobrePage() {
                   análise inteligente e feedback personalizado.
                 </p>
                 <p className="text-lg text-gray-700 mb-6">
-                  Fundada em 2020 por um grupo de especialistas em IA e instrutores de condução, a Innov8 nasceu da
-                  percepção de que muitos alunos enfrentam dificuldades para compreender situações complexas de trânsito
-                  e tomar decisões rápidas durante o exame.
+                  A Innov8 foi fundada em 2024 por um grupo de estudantes de engenharia de inteligência artificial (IA).
+                  A empresa nasceu da perceção de que muitos alunos têm dificuldade em compreender situações complexas
+                  de trânsito e em tomar decisões rápidas durante os exames.
                 </p>
                 <p className="text-lg text-gray-700">
                   Hoje, nossa tecnologia é utilizada por mais de 200 escolas de condução em todo o país, ajudando
                   milhares de alunos a se tornarem condutores mais seguros e confiantes.
                 </p>
-              </div>
-              <div className="md:w-1/2">
-                <div className="relative w-full h-[400px] rounded-lg overflow-hidden shadow-xl">
-                  <Image
-                    src="/placeholder.svg?height=400&width=600"
-                    alt="Equipe Innov8"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
               </div>
             </div>
           </div>
@@ -88,8 +78,9 @@ export default function SobrePage() {
               <div className="bg-white p-8 rounded-xl shadow-md">
                 <h3 className="text-2xl font-bold mb-4 text-purple-600">Geração de Texto</h3>
                 <p className="text-gray-700 mb-6">
-                  Nossos modelos de linguagem avançados são capazes de gerar explicações claras e didáticas sobre cada
-                  situação de trânsito, adaptando o conteúdo ao nível de conhecimento do aluno.
+                  Os nossos modelos de linguagem avançados permitem-nos
+                  fornecer explicações claras e didáticas sobre cada situação de trânsito,
+                  adaptando o conteúdo ao nível de conhecimento do aluno.
                 </p>
                 <ul className="space-y-3">
                   {[
@@ -112,24 +103,29 @@ export default function SobrePage() {
         {/* Team Section */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center text-blue-600">Nossa Equipe</h2>
+            <h2 className="text-3xl font-bold mb-12 text-center text-blue-600">Nossa Equipa</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  name: "Ana Silva",
-                  role: "CEO & Fundadora",
-                  bio: "Ex-instrutora de condução com 15 anos de experiência e especialista em IA aplicada à educação.",
+                  name: "Jorge Cunha",
+                  role: "Full Stack Software Developer",
                 },
                 {
-                  name: "Carlos Mendes",
-                  role: "CTO",
-                  bio: "Doutor em Inteligência Artificial com foco em visão computacional e processamento de imagens.",
+                  name: "Miguel Ramos",
+                  role: "Software Developer",
                 },
                 {
-                  name: "Mariana Costa",
-                  role: "Diretora Pedagógica",
-                  bio: "Especialista em metodologias de ensino para condução e desenvolvimento de currículos educacionais.",
+                  name: "Carlos Moutinho",
+                  role: "RPA Developer",
                 },
+                {
+                  name: "Andre Sousa",
+                  role: "Software Developer",
+                },
+                {
+                  name: "Sabrina Pacheco",
+                  role: "Software Developer",
+                }
               ].map((member, index) => (
                 <div key={index} className="bg-white p-6 rounded-xl shadow-md text-center">
                   <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
@@ -143,7 +139,6 @@ export default function SobrePage() {
                   </div>
                   <h3 className="text-xl font-bold mb-1">{member.name}</h3>
                   <p className="text-blue-600 mb-3">{member.role}</p>
-                  <p className="text-gray-700">{member.bio}</p>
                 </div>
               ))}
             </div>
