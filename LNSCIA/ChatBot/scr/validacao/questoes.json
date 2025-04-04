@@ -1,317 +1,1337 @@
 [
-    {
-      "pergunta": "Qual a definição legal de 'autoestrada' segundo o Código da Estrada de Portugal?",
-      "respostas_corretas": [
-        "Uma via pública destinada a trânsito rápido, com separação física de faixas de rodagem e sem cruzamentos de nível.",
-        "Uma via rápida, sem acessos diretos a propriedades marginais e com acessos condicionados.",
-        "Uma via especialmente sinalizada, sem cruzamentos, com separação física das faixas de rodagem.",
-        "Uma via pública com separação física de faixas, destinada ao trânsito rápido e sinalizada adequadamente.",
-        "Uma estrada pública destinada a tráfego rápido, sem acessos diretos e com sinalização própria."
-      ],
-      "respostas_incorretas": [
-        "Uma estrada sem limite de velocidade.",
-        "Qualquer estrada com mais de duas faixas.",
-        "Uma via urbana rápida sem sinalização específica.",
-        "Uma estrada pública com acessos frequentes às propriedades marginais.",
-        "Uma estrada onde são permitidos cruzamentos de nível.",
-        "Uma via pública destinada a trânsito rápido, com separação física de faixas de rodagem e sem cruzamentos de nível. (com pequena imprecisão)"
-      ],
-      "referencia": "Código da Estrada - Artigo 1.º (Definições legais)",
-      "categoria": "definições",
-      "nivel_dificuldade": "médio"
-    },
-    {
-      "pergunta": "Quais são as velocidade mínima instantânea devem manter os veículos nas autoestradas portuguesas?",
-      "respostas_corretas": [
-        "50 km/h",
-        "Pelo menos 50 quilómetros por hora",
-        "Não inferior a 50 km/h",
-        "Igual ou superior a 50 km/h",
-        "Velocidade mínima de 50 quilómetros por hora"
-      ],
-      "respostas_incorretas": [
-        "60 km/h",
-        "40 km/h",
-        "Não existe limite mínimo",
-        "30 km/h",
-        "25 km/h",
-        "49 km/h"
-      ],
-      "referencia": "Código da Estrada - Artigo 27.º (Velocidade)",
-      "categoria": "velocidade",
-      "nivel_dificuldade": "básico"
-    },
-    {
-      "pergunta": "Qual é a regra geral para a posição de marcha nas faixas de rodagem segundo o Código da Estrada?",
-      "respostas_corretas": [
-        "Os veículos devem circular pela direita da faixa de rodagem.",
-        "Deve-se manter à direita na faixa de rodagem.",
-        "A posição normal de circulação é o lado direito da faixa.",
-        "O trânsito deve ocorrer pela via mais à direita disponível.",
-        "A condução deve fazer-se sempre pelo lado direito da estrada."
-      ],
-      "respostas_incorretas": [
-        "Circular pelo lado esquerdo é permitido sempre.",
-        "A faixa esquerda deve ser usada para trânsito normal.",
-        "Deve-se usar o lado esquerdo da faixa exceto ao ultrapassar.",
-        "Os veículos podem circular indiferentemente pela faixa esquerda ou direita.",
-        "Não há regra específica para a posição de marcha.",
-        "Os veículos devem circular pela direita da faixa de rodagem. (com pequena imprecisão)"
-      ],
-      "referencia": "Código da Estrada - Artigo 13.º (Posição de marcha)",
-      "categoria": "posicionamento",
-      "nivel_dificuldade": "médio"
-    },
-    {
-      "pergunta": "Como é definida 'paragem' pelo Código da Estrada de Portugal?",
-      "respostas_corretas": [
-        "A imobilização do veículo pelo tempo estritamente necessário para carga, descarga ou saída e entrada de passageiros.",
-        "Imobilização breve e momentânea do veículo para embarque ou desembarque.",
-        "Paragem breve para operações rápidas de carga ou descarga, ou entrada e saída de pessoas.",
-        "Paragem temporária e curta para permitir entrada ou saída de passageiros.",
-        "Paragem curta e momentânea para embarque ou operações rápidas de carga e descarga."
-      ],
-      "respostas_incorretas": [
-        "Imobilização por tempo prolongado do veículo.",
-        "Paragem obrigatória num sinal vermelho.",
-        "Paragem do veículo para descanso do condutor.",
-        "Imobilização do veículo durante o estacionamento.",
-        "Paragem para reparações no veículo.",
-        "A imobilização do veículo pelo tempo estritamente necessário para carga, descarga ou saída e entrada de passageiros. (com pequena imprecisão)"
-      ],
-      "referencia": "Código da Estrada - Artigo 48.º (Paragem)",
-      "categoria": "definições",
-      "nivel_dificuldade": "médio"
-    },
-    {
-      "pergunta": "Qual é a distância lateral mínima que um condutor deve manter ao ultrapassar um velocípede?",
-      "respostas_corretas": [
-        "1,5 metros",
-        "Um metro e meio",
-        "No mínimo 1,5 m",
-        "Não menos de um metro e meio",
-        "Distância lateral mínima de 1,5 metros"
-      ],
-      "respostas_incorretas": [
-        "1 metro",
-        "2 metros",
-        "0,5 metros",
-        "Não há uma distância específica estipulada",
-        "3 metros",
-        "1,4 metros"
-      ],
-      "referencia": "Código da Estrada - Artigo 18.º (Ultrapassagem)",
-      "categoria": "ultrapassagem",
-      "nivel_dificuldade": "básico"
-    },
-    {
-      "pergunta": "Quais as circunstâncias em que é permitido o uso de sinais sonoros dentro das localidades?",
-      "respostas_corretas": [
-        "Apenas em caso de perigo iminente",
-        "Só em situações de emergência",
-        "Somente para evitar perigo imediato",
-        "Quando houver perigo iminente",
-        "Exclusivamente para alertar em situações de emergência"
-      ],
-      "respostas_incorretas": [
-        "Para cumprimentar outros condutores",
-        "Sempre que desejar ultrapassar",
-        "Para chamar a atenção de peões",
-        "Quando houver trânsito lento",
-        "Para expressar frustração",
-        "Apenas em caso de perigo iminente (com pequena imprecisão)"
-      ],
-      "referencia": "Código da Estrada - Artigo 22.º (Utilização de sinais sonoros)",
-      "categoria": "sinalização",
-      "nivel_dificuldade": "básico"
-    },
-    {
-      "pergunta": "Qual é a coima prevista por não obedecer às ordens legítimas das autoridades de trânsito?",
-      "respostas_corretas": [
-        "De 120 a 600 euros",
-        "Entre 120 e 600 euros",
-        "Coima entre 120€ e 600€",
-        "120 a 600 euros de multa",
-        "Multa variável de 120 a 600 euros"
-      ],
-      "respostas_incorretas": [
-        "De 60 a 300 euros",
-        "De 500 a 2500 euros",
-        "Não há multa prevista",
-        "Multa fixa de 100 euros",
-        "Apenas um aviso",
-        "De 100 a 600 euros"
-      ],
-      "referencia": "Código da Estrada - Artigo 4.º (Obrigações dos condutores)",
-      "categoria": "infrações",
-      "nivel_dificuldade": "básico"
-    },
-    {
-      "pergunta": "Como é considerada a visibilidade insuficiente segundo o Código da Estrada?",
-      "respostas_corretas": [
-        "Quando o condutor não vê a faixa toda a largura em pelo menos 50 metros",
-        "Visibilidade inferior a 50 metros da faixa de rodagem",
-        "Menos de 50 metros de visibilidade total da faixa",
-        "Se não avistar claramente a faixa por um mínimo de 50 metros",
-        "Visibilidade da faixa de rodagem inferior a 50 metros"
-      ],
-      "respostas_incorretas": [
-        "Visibilidade inferior a 100 metros",
-        "Qualquer situação de chuva forte",
-        "Quando há nevoeiro leve",
-        "Se o sol estiver muito forte",
-        "Se o condutor não conseguir ler placas a 200 metros",
-        "Quando o condutor não vê a faixa toda a largura em pelo menos 49 metros"
-      ],
-      "referencia": "Código da Estrada - Artigo 19.º (Visibilidade insuficiente)",
-      "categoria": "definições",
-      "nivel_dificuldade": "médio"
-    },
-    {
-      "pergunta": "Onde é proibida a inversão do sentido de marcha?",
-      "respostas_corretas": [
-        "Nas lombas, curvas e cruzamentos de visibilidade reduzida",
-        "Nas pontes, túneis e passagens de nível",
-        "Onde a visibilidade seja insuficiente",
-        "Em locais de trânsito intenso",
-        "Em vias estreitas ou inadequadas para a manobra"
-      ],
-      "respostas_incorretas": [
-        "Apenas em autoestradas",
-        "Somente em vias urbanas",
-        "Apenas em zonas escolares",
-        "Em qualquer lugar fora das localidades",
-        "Somente durante a noite",
-        "Nas lombas, curvas e cruzamentos de visibilidade reduzida (com pequena imprecisão)"
-      ],
-      "referencia": "Código da Estrada - Artigo 45.º (Inversão do sentido de marcha)",
-      "categoria": "posicionamento",
-      "nivel_dificuldade": "médio"
-    },
-    {
-      "pergunta": "Quais são as ações são obrigatórias para um condutor ao mudar de direção para a esquerda?",
-      "respostas_corretas": [
-        "Aproximar-se previamente do lado esquerdo ou eixo da via",
-        "Dar a esquerda ao centro da intersecção em vias de duplo sentido",
-        "Posicionar-se com antecedência no lado esquerdo",
-        "Tomar a faixa mais próxima ao eixo central da via",
-        "Efetuar a manobra garantindo segurança e espaço suficiente"
-      ],
-      "respostas_incorretas": [
-        "Posicionar-se sempre no lado direito",
-        "Realizar a manobra em alta velocidade",
-        "Ignorar o eixo central da faixa",
-        "Não sinalizar a manobra",
-        "Realizar a mudança sem reduzir a velocidade",
-        "Aproximar-se previamente do lado esquerdo ou eixo da via (com pequena imprecisão)"
-      ],
-      "referencia": "Código da Estrada - Artigo 44.º (Mudança de direção)",
-      "categoria": "posicionamento",
-      "nivel_dificuldade": "médio"
-    },
-    {
-      "pergunta": "Qual é a coima prevista por utilizar indevidamente avisadores luminosos especiais?",
-      "respostas_corretas": [
-        "De 500 a 2500 euros",
-        "Entre 500€ e 2500€",
-        "Multa de 500 a 2500 euros",
-        "Sanção entre 500 e 2500 euros",
-        "Penalidade de 500€ a 2500€"
-      ],
-      "respostas_incorretas": [
-        "100 a 200 euros",
-        "Sem multa, apenas advertência",
-        "Multa fixa de 300 euros",
-        "200 a 400 euros",
-        "Nenhuma sanção prevista",
-        "De 490 a 2490 euros"
-      ],
-      "referencia": "Código da Estrada - Artigo 23.º (Avisadores luminosos)",
-      "categoria": "infrações",
-      "nivel_dificuldade": "básico"
-    },
-    {
-      "pergunta": "A que velocidade máxima podem circular ciclomotores dentro das localidades?",
-      "respostas_corretas": [
-        "40 km/h",
-        "Velocidade máxima de 40 km/h",
-        "Até 40 km/h",
-        "No máximo 40 quilómetros por hora",
-        "Permitido até 40 km/h"
-      ],
-      "respostas_incorretas": [
-        "50 km/h",
-        "60 km/h",
-        "30 km/h",
-        "Sem limite específico",
-        "45 km/h",
-        "39 km/h"
-      ],
-      "referencia": "Código da Estrada - Artigo 27.º (Velocidade)",
-      "categoria": "velocidade",
-      "nivel_dificuldade": "básico"
-    },
-    {
-      "pergunta": "Qual é a coima prevista por conduzir em marcha cuja lentidão cause embaraço injustificado aos outros utentes?",
-      "respostas_corretas": [
-        "60 a 300 euros",
-        "Multa entre 60€ e 300€",
-        "Coima de 60 a 300 euros",
-        "Entre 60 e 300 euros de multa",
-        "Sanção variável de 60€ a 300€"
-      ],
-      "respostas_incorretas": [
-        "De 500 a 2500 euros",
-        "Sem coima, apenas advertência",
-        "Multa fixa de 100 euros",
-        "De 300 a 600 euros",
-        "De 1000 a 2000 euros",
-        "60 a 300 euros (com pequena imprecisão)"
-      ],
-      "referencia": "Código da Estrada - Artigo 26.º (Marcha lenta)",
-      "categoria": "infrações",
-      "nivel_dificuldade": "básico"
-    },
-    {
-      "pergunta": "Em que circunstâncias é permitido ultrapassar pela direita?",
-      "respostas_corretas": [
-        "Quando o veículo à frente assinala mudança à esquerda",
-        "Quando o veículo da frente pretende parar à esquerda numa via de sentido único",
-        "Quando se ultrapassa veículos sobre carris que não estejam a ocupar a faixa direita",
-        "Se existir placa de refúgio para peões junto a veículos sobre carris",
-        "Quando o veículo à frente deixa livre a parte mais à direita da via"
-      ],
-      "respostas_incorretas": [
-        "Sempre que houver duas faixas",
-        "Apenas em autoestradas",
-        "Quando o trânsito está lento",
-        "Em qualquer cruzamento",
-        "Nunca é permitido",
-        "Quando o veículo à frente assinala mudança à esquerda (com pequena imprecisão)"
-      ],
-      "referencia": "Código da Estrada - Artigo 37.º (Ultrapassagem pela direita)",
-      "categoria": "ultrapassagem",
-      "nivel_dificuldade": "médio"
-    },
-    {
-      "pergunta": "Qual a velocidade máxima permitida dentro das localidades para automóveis ligeiros sem reboque?",
-      "respostas_corretas": [
-        "50 km/h",
-        "Máximo de 50 km/h",
-        "Até 50 quilómetros por hora",
-        "Velocidade limite de 50 km/h",
-        "Permitido até 50 km/h"
-      ],
-      "respostas_incorretas": [
-        "40 km/h",
-        "60 km/h",
-        "70 km/h",
-        "Sem limite específico",
-        "80 km/h",
-        "49 km/h"
-      ],
-      "referencia": "Código da Estrada - Artigo 27.º (Velocidade)",
-      "categoria": "velocidade",
-      "nivel_dificuldade": "básico"
-    }
-  ]
+  {
+    "pergunta": "Qual a definição legal de 'autoestrada' segundo o Código da Estrada de Portugal?",
+    "respostas_corretas": [
+      "Uma via pública destinada a trânsito rápido, com separação física de faixas de rodagem e sem cruzamentos de nível.",
+      "Uma via rápida, sem acessos diretos a propriedades marginais e com acessos condicionados.",
+      "Uma via especialmente sinalizada, sem cruzamentos, com separação física das faixas de rodagem.",
+      "Uma via pública com separação física de faixas, destinada ao trânsito rápido e sinalizada adequadamente.",
+      "Uma estrada pública destinada a tráfego rápido, sem acessos diretos e com sinalização própria."
+    ],
+    "respostas_incorretas": [
+      "Uma estrada sem limite de velocidade.",
+      "Qualquer estrada com mais de duas faixas.",
+      "Uma via urbana rápida sem sinalização específica.",
+      "Uma estrada pública com acessos frequentes às propriedades marginais.",
+      "Uma estrada onde são permitidos cruzamentos de nível.",
+      "Uma via pública destinada a trânsito rápido, com separação física de faixas de rodagem e sem cruzamentos de nível. (com pequena imprecisão)"
+    ],
+    "referencia": "Código da Estrada - Artigo 1.º (Definições legais)",
+    "categoria": "definições",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Quais são as velocidade mínima instantânea devem manter os veículos nas autoestradas portuguesas?",
+    "respostas_corretas": [
+      "50 km/h",
+      "Pelo menos 50 quilómetros por hora",
+      "Não inferior a 50 km/h",
+      "Igual ou superior a 50 km/h",
+      "Velocidade mínima de 50 quilómetros por hora"
+    ],
+    "respostas_incorretas": [
+      "60 km/h",
+      "40 km/h",
+      "Não existe limite mínimo",
+      "30 km/h",
+      "25 km/h",
+      "49 km/h"
+    ],
+    "referencia": "Código da Estrada - Artigo 27.º (Velocidade)",
+    "categoria": "velocidade",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Qual é a regra geral para a posição de marcha nas faixas de rodagem segundo o Código da Estrada?",
+    "respostas_corretas": [
+      "Os veículos devem circular pela direita da faixa de rodagem.",
+      "Deve-se manter à direita na faixa de rodagem.",
+      "A posição normal de circulação é o lado direito da faixa.",
+      "O trânsito deve ocorrer pela via mais à direita disponível.",
+      "A condução deve fazer-se sempre pelo lado direito da estrada."
+    ],
+    "respostas_incorretas": [
+      "Circular pelo lado esquerdo é permitido sempre.",
+      "A faixa esquerda deve ser usada para trânsito normal.",
+      "Deve-se usar o lado esquerdo da faixa exceto ao ultrapassar.",
+      "Os veículos podem circular indiferentemente pela faixa esquerda ou direita.",
+      "Não há regra específica para a posição de marcha.",
+      "Os veículos devem circular pela direita da faixa de rodagem. (com pequena imprecisão)"
+    ],
+    "referencia": "Código da Estrada - Artigo 13.º (Posição de marcha)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Como é definida 'paragem' pelo Código da Estrada de Portugal?",
+    "respostas_corretas": [
+      "A imobilização do veículo pelo tempo estritamente necessário para carga, descarga ou saída e entrada de passageiros.",
+      "Imobilização breve e momentânea do veículo para embarque ou desembarque.",
+      "Paragem breve para operações rápidas de carga ou descarga, ou entrada e saída de pessoas.",
+      "Paragem temporária e curta para permitir entrada ou saída de passageiros.",
+      "Paragem curta e momentânea para embarque ou operações rápidas de carga e descarga."
+    ],
+    "respostas_incorretas": [
+      "Imobilização por tempo prolongado do veículo.",
+      "Paragem obrigatória num sinal vermelho.",
+      "Paragem do veículo para descanso do condutor.",
+      "Imobilização do veículo durante o estacionamento.",
+      "Paragem para reparações no veículo.",
+      "A imobilização do veículo pelo tempo estritamente necessário para carga, descarga ou saída e entrada de passageiros. (com pequena imprecisão)"
+    ],
+    "referencia": "Código da Estrada - Artigo 48.º (Paragem)",
+    "categoria": "definições",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual é a distância lateral mínima que um condutor deve manter ao ultrapassar um velocípede?",
+    "respostas_corretas": [
+      "1,5 metros",
+      "Um metro e meio",
+      "No mínimo 1,5 m",
+      "Não menos de um metro e meio",
+      "Distância lateral mínima de 1,5 metros"
+    ],
+    "respostas_incorretas": [
+      "1 metro",
+      "2 metros",
+      "0,5 metros",
+      "Não há uma distância específica estipulada",
+      "3 metros",
+      "1,4 metros"
+    ],
+    "referencia": "Código da Estrada - Artigo 18.º (Ultrapassagem)",
+    "categoria": "ultrapassagem",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Quais as circunstâncias em que é permitido o uso de sinais sonoros dentro das localidades?",
+    "respostas_corretas": [
+      "Apenas em caso de perigo iminente",
+      "Só em situações de emergência",
+      "Somente para evitar perigo imediato",
+      "Quando houver perigo iminente",
+      "Exclusivamente para alertar em situações de emergência"
+    ],
+    "respostas_incorretas": [
+      "Para cumprimentar outros condutores",
+      "Sempre que desejar ultrapassar",
+      "Para chamar a atenção de peões",
+      "Quando houver trânsito lento",
+      "Para expressar frustração",
+      "Apenas em caso de perigo iminente (com pequena imprecisão)"
+    ],
+    "referencia": "Código da Estrada - Artigo 22.º (Utilização de sinais sonoros)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Qual é a coima prevista por não obedecer às ordens legítimas das autoridades de trânsito?",
+    "respostas_corretas": [
+      "De 120 a 600 euros",
+      "Entre 120 e 600 euros",
+      "Coima entre 120€ e 600€",
+      "120 a 600 euros de multa",
+      "Multa variável de 120 a 600 euros"
+    ],
+    "respostas_incorretas": [
+      "De 60 a 300 euros",
+      "De 500 a 2500 euros",
+      "Não há multa prevista",
+      "Multa fixa de 100 euros",
+      "Apenas um aviso",
+      "De 100 a 600 euros"
+    ],
+    "referencia": "Código da Estrada - Artigo 4.º (Obrigações dos condutores)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Como é considerada a visibilidade insuficiente segundo o Código da Estrada?",
+    "respostas_corretas": [
+      "Quando o condutor não vê a faixa toda a largura em pelo menos 50 metros",
+      "Visibilidade inferior a 50 metros da faixa de rodagem",
+      "Menos de 50 metros de visibilidade total da faixa",
+      "Se não avistar claramente a faixa por um mínimo de 50 metros",
+      "Visibilidade da faixa de rodagem inferior a 50 metros"
+    ],
+    "respostas_incorretas": [
+      "Visibilidade inferior a 100 metros",
+      "Qualquer situação de chuva forte",
+      "Quando há nevoeiro leve",
+      "Se o sol estiver muito forte",
+      "Se o condutor não conseguir ler placas a 200 metros",
+      "Quando o condutor não vê a faixa toda a largura em pelo menos 49 metros"
+    ],
+    "referencia": "Código da Estrada - Artigo 19.º (Visibilidade insuficiente)",
+    "categoria": "definições",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Onde é proibida a inversão do sentido de marcha?",
+    "respostas_corretas": [
+      "Nas lombas, curvas e cruzamentos de visibilidade reduzida",
+      "Nas pontes, túneis e passagens de nível",
+      "Onde a visibilidade seja insuficiente",
+      "Em locais de trânsito intenso",
+      "Em vias estreitas ou inadequadas para a manobra"
+    ],
+    "respostas_incorretas": [
+      "Apenas em autoestradas",
+      "Somente em vias urbanas",
+      "Apenas em zonas escolares",
+      "Em qualquer lugar fora das localidades",
+      "Somente durante a noite",
+      "Nas lombas, curvas e cruzamentos de visibilidade reduzida (com pequena imprecisão)"
+    ],
+    "referencia": "Código da Estrada - Artigo 45.º (Inversão do sentido de marcha)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Quais são as ações são obrigatórias para um condutor ao mudar de direção para a esquerda?",
+    "respostas_corretas": [
+      "Aproximar-se previamente do lado esquerdo ou eixo da via",
+      "Dar a esquerda ao centro da intersecção em vias de duplo sentido",
+      "Posicionar-se com antecedência no lado esquerdo",
+      "Tomar a faixa mais próxima ao eixo central da via",
+      "Efetuar a manobra garantindo segurança e espaço suficiente"
+    ],
+    "respostas_incorretas": [
+      "Posicionar-se sempre no lado direito",
+      "Realizar a manobra em alta velocidade",
+      "Ignorar o eixo central da faixa",
+      "Não sinalizar a manobra",
+      "Realizar a mudança sem reduzir a velocidade",
+      "Aproximar-se previamente do lado esquerdo ou eixo da via (com pequena imprecisão)"
+    ],
+    "referencia": "Código da Estrada - Artigo 44.º (Mudança de direção)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual é a coima prevista por utilizar indevidamente avisadores luminosos especiais?",
+    "respostas_corretas": [
+      "De 500 a 2500 euros",
+      "Entre 500€ e 2500€",
+      "Multa de 500 a 2500 euros",
+      "Sanção entre 500 e 2500 euros",
+      "Penalidade de 500€ a 2500€"
+    ],
+    "respostas_incorretas": [
+      "100 a 200 euros",
+      "Sem multa, apenas advertência",
+      "Multa fixa de 300 euros",
+      "200 a 400 euros",
+      "Nenhuma sanção prevista",
+      "De 490 a 2490 euros"
+    ],
+    "referencia": "Código da Estrada - Artigo 23.º (Avisadores luminosos)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "A que velocidade máxima podem circular ciclomotores dentro das localidades?",
+    "respostas_corretas": [
+      "40 km/h",
+      "Velocidade máxima de 40 km/h",
+      "Até 40 km/h",
+      "No máximo 40 quilómetros por hora",
+      "Permitido até 40 km/h"
+    ],
+    "respostas_incorretas": [
+      "50 km/h",
+      "60 km/h",
+      "30 km/h",
+      "Sem limite específico",
+      "45 km/h",
+      "39 km/h"
+    ],
+    "referencia": "Código da Estrada - Artigo 27.º (Velocidade)",
+    "categoria": "velocidade",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Qual é a coima prevista por conduzir em marcha cuja lentidão cause embaraço injustificado aos outros utentes?",
+    "respostas_corretas": [
+      "60 a 300 euros",
+      "Multa entre 60€ e 300€",
+      "Coima de 60 a 300 euros",
+      "Entre 60 e 300 euros de multa",
+      "Sanção variável de 60€ a 300€"
+    ],
+    "respostas_incorretas": [
+      "De 500 a 2500 euros",
+      "Sem coima, apenas advertência",
+      "Multa fixa de 100 euros",
+      "De 300 a 600 euros",
+      "De 1000 a 2000 euros",
+      "60 a 300 euros (com pequena imprecisão)"
+    ],
+    "referencia": "Código da Estrada - Artigo 26.º (Marcha lenta)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Em que circunstâncias é permitido ultrapassar pela direita?",
+    "respostas_corretas": [
+      "Quando o veículo à frente assinala mudança à esquerda",
+      "Quando o veículo da frente pretende parar à esquerda numa via de sentido único",
+      "Quando se ultrapassa veículos sobre carris que não estejam a ocupar a faixa direita",
+      "Se existir placa de refúgio para peões junto a veículos sobre carris",
+      "Quando o veículo à frente deixa livre a parte mais à direita da via"
+    ],
+    "respostas_incorretas": [
+      "Sempre que houver duas faixas",
+      "Apenas em autoestradas",
+      "Quando o trânsito está lento",
+      "Em qualquer cruzamento",
+      "Nunca é permitido",
+      "Quando o veículo à frente assinala mudança à esquerda (com pequena imprecisão)"
+    ],
+    "referencia": "Código da Estrada - Artigo 37.º (Ultrapassagem pela direita)",
+    "categoria": "ultrapassagem",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual a velocidade máxima permitida dentro das localidades para automóveis ligeiros sem reboque?",
+    "respostas_corretas": [
+      "50 km/h",
+      "Máximo de 50 km/h",
+      "Até 50 quilómetros por hora",
+      "Velocidade limite de 50 km/h",
+      "Permitido até 50 km/h"
+    ],
+    "respostas_incorretas": [
+      "40 km/h",
+      "60 km/h",
+      "70 km/h",
+      "Sem limite específico",
+      "80 km/h",
+      "49 km/h"
+    ],
+    "referencia": "Código da Estrada - Artigo 27.º (Velocidade)",
+    "categoria": "velocidade",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Em que circunstâncias é obrigatória a utilização de luzes de cruzamento durante o dia?",
+    "respostas_corretas": [
+      "Quando se circula em túneis",
+      "Durante a travessia de túneis",
+      "Em túneis mesmo com boa iluminação",
+      "Sempre que circular dentro de túneis",
+      "Em qualquer túnel, independentemente da luz natural"
+    ],
+    "respostas_incorretas": [
+      "Apenas à noite",
+      "Só em autoestradas",
+      "Se houver chuva intensa",
+      "Quando não há iluminação pública",
+      "Durante o pôr do sol"
+    ],
+    "referencia": "Código da Estrada - Artigo 61.º (Utilização das luzes)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Que veículos são obrigados a parar nos cruzamentos com sinais de STOP?",
+    "respostas_corretas": [
+      "Todos os veículos, sem exceção",
+      "Qualquer veículo, independentemente da prioridade",
+      "Todos os condutores devem parar completamente",
+      "Todos os veículos devem imobilizar-se no sinal STOP",
+      "Paragem obrigatória para todos os veículos no STOP"
+    ],
+    "respostas_incorretas": [
+      "Apenas veículos ligeiros",
+      "Só veículos pesados",
+      "Apenas quando há tráfego cruzado",
+      "Só se o condutor julgar necessário",
+      "Se não houver visibilidade"
+    ],
+    "referencia": "Código da Estrada - Artigo 65.º (Sinais de obrigação)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Quando é proibido o uso de luzes de estrada (máximos)?",
+    "respostas_corretas": [
+      "Ao cruzar-se com outros veículos",
+      "Sempre que possa encandear outros utentes",
+      "Quando se circula em locais iluminados",
+      "Em presença de trânsito em sentido contrário",
+      "Quando se segue outro veículo a curta distância"
+    ],
+    "respostas_incorretas": [
+      "Durante o dia",
+      "Sempre que se circular em cidade",
+      "Com chuva intensa",
+      "Em vias rápidas",
+      "Em curvas apertadas"
+    ],
+    "referencia": "Código da Estrada - Artigo 62.º (Utilização das luzes)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Em que condições é permitida a utilização de auscultadores durante a condução?",
+    "respostas_corretas": [
+      "Quando apenas um ouvido está coberto",
+      "Se forem utilizados apenas num ouvido",
+      "Permitido com uso de um único auricular",
+      "Apenas se o condutor tiver um ouvido livre",
+      "Desde que se ouça o ambiente com um ouvido"
+    ],
+    "respostas_incorretas": [
+      "Permitido com ambos os ouvidos tapados",
+      "Sempre permitido se for música clássica",
+      "Autorizado apenas com auriculares sem fios",
+      "Sem restrições legais",
+      "Apenas em autoestradas"
+    ],
+    "referencia": "Código da Estrada - Artigo 84.º (Condução segura)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual a obrigação do condutor ao aproximar-se de uma passadeira para peões?",
+    "respostas_corretas": [
+      "Reduzir a velocidade e ceder passagem",
+      "Parar se os peões estiverem a atravessar",
+      "Permitir a travessia segura dos peões",
+      "Abster-se de acelerar e ceder prioridade",
+      "Manter atenção e parar se necessário"
+    ],
+    "respostas_incorretas": [
+      "Apenas manter a velocidade constante",
+      "Ignorar se o peão ainda não pisou a faixa",
+      "Apenas parar se solicitado pelo peão",
+      "Passar rapidamente para evitar espera",
+      "Reduzir ligeiramente e buzinar"
+    ],
+    "referencia": "Código da Estrada - Artigo 103.º (Cedência de passagem a peões)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Que tipo de infração comete quem ultrapassa em passagens para peões?",
+    "respostas_corretas": [
+      "Contraordenação muito grave",
+      "Infração muito grave",
+      "É considerada infração gravíssima",
+      "Constitui contraordenação de grau elevado",
+      "Considera-se uma infração severa"
+    ],
+    "respostas_incorretas": [
+      "Infração leve",
+      "Contraordenação leve",
+      "Apenas um aviso",
+      "Multa simbólica",
+      "Advertência verbal"
+    ],
+    "referencia": "Código da Estrada - Artigo 146.º (Classificação das contraordenações)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual a ordem de prevalência entre sinais luminosos e sinais verticais?",
+    "respostas_corretas": [
+      "Os sinais luminosos prevalecem sobre os sinais verticais",
+      "A sinalização luminosa tem prioridade",
+      "Luzes de semáforos sobrepõem-se à sinalização vertical",
+      "Sinais luminosos anulam os sinais verticais",
+      "Deve-se obedecer aos semáforos antes dos sinais verticais"
+    ],
+    "respostas_incorretas": [
+      "Os sinais verticais prevalecem sempre",
+      "A sinalização horizontal é a mais importante",
+      "Deve-se seguir os sinais verticais mesmo com semáforo verde",
+      "A ordem não está definida",
+      "Depende do tipo de cruzamento"
+    ],
+    "referencia": "Código da Estrada - Artigo 7.º (Prevalência dos sinais de trânsito)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Quem tem prioridade num cruzamento sem sinalização?",
+    "respostas_corretas": [
+      "O veículo que se apresenta pela direita",
+      "Quem vem pela direita tem prioridade",
+      "A prioridade é dada ao veículo à direita",
+      "Direito de passagem é do condutor à direita",
+      "O condutor à direita deve ser autorizado a passar primeiro"
+    ],
+    "respostas_incorretas": [
+      "O veículo maior",
+      "O veículo mais rápido",
+      "Quem buzinar primeiro",
+      "O que chegar primeiro ao cruzamento",
+      "Quem tiver a via mais larga"
+    ],
+    "referencia": "Código da Estrada - Artigo 30.º (Regras de cedência de passagem)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Qual a idade mínima para conduzir um ciclomotor em Portugal?",
+    "respostas_corretas": [
+      "16 anos",
+      "A partir dos 16 anos",
+      "Idade mínima de 16 anos",
+      "Permitido a partir dos 16",
+      "Com 16 anos completos"
+    ],
+    "respostas_incorretas": [
+      "14 anos",
+      "18 anos",
+      "20 anos",
+      "17 anos",
+      "15 anos"
+    ],
+    "referencia": "Código da Estrada - Artigo 123.º (Idade mínima para conduzir)",
+    "categoria": "definições",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Qual a penalização por não utilizar cinto de segurança?",
+    "respostas_corretas": [
+      "Coima entre 120 e 600 euros",
+      "Multa de 120 a 600 euros",
+      "Infração punida com coima de 120€ a 600€",
+      "Sanção monetária de 120 a 600 euros",
+      "Valor entre 120€ e 600€"
+    ],
+    "respostas_incorretas": [
+      "Coima de 60 euros",
+      "Apenas advertência",
+      "Multa até 100 euros",
+      "Sem penalização",
+      "Coima fixa de 150 euros"
+    ],
+    "referencia": "Código da Estrada - Artigo 82.º (Cintos de segurança e sistemas de retenção)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Em que situações é obrigatória a utilização de cadeirinhas homologadas para transporte de crianças?",
+    "respostas_corretas": [
+      "Sempre que a criança tenha menos de 12 anos e menos de 135 cm de altura",
+      "Quando a criança tem menos de 12 anos e não atinge 135 cm",
+      "Se a criança for menor de 12 anos e medir abaixo de 135 centímetros",
+      "Menores de 12 anos com menos de 135 cm devem usar sistema de retenção",
+      "Crianças com estatura inferior a 135 cm e idade inferior a 12 anos"
+    ],
+    "respostas_incorretas": [
+      "Apenas até aos 10 anos",
+      "Só se a criança tiver menos de 1 metro",
+      "Em qualquer transporte público",
+      "Independentemente da idade ou altura",
+      "Apenas em autoestradas"
+    ],
+    "referencia": "Código da Estrada - Artigo 55.º (Transporte de crianças)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual a distância mínima obrigatória ao estacionar junto a passadeiras?",
+    "respostas_corretas": [
+      "5 metros antes da passadeira",
+      "Não é permitido estacionar a menos de 5 metros de uma passadeira",
+      "Estacionamento proibido a menos de 5 m de passadeiras",
+      "Deve manter-se uma distância de 5 metros antes da passadeira",
+      "É obrigatório deixar pelo menos 5 metros até à passadeira"
+    ],
+    "respostas_incorretas": [
+      "2 metros",
+      "10 metros",
+      "1 metro",
+      "Não há limite mínimo",
+      "Apenas em passadeiras sem semáforo"
+    ],
+    "referencia": "Código da Estrada - Artigo 49.º (Proibição de paragem e estacionamento)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual é o limite máximo de álcool no sangue para condutores profissionais?",
+    "respostas_corretas": [
+      "0,2 g/l",
+      "O máximo permitido é de 0,2 gramas por litro",
+      "Limite de 0,2 g/l de álcool no sangue",
+      "Não pode exceder 0,2 g/l",
+      "Até 0,2 gramas de álcool por litro de sangue"
+    ],
+    "respostas_incorretas": [
+      "0,5 g/l",
+      "1,0 g/l",
+      "0,8 g/l",
+      "Sem limite legal",
+      "Até 0,3 g/l"
+    ],
+    "referencia": "Código da Estrada - Artigo 81.º (Capacidade física e mental para conduzir)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Que regra deve ser seguida ao circular numa rotunda?",
+    "respostas_corretas": [
+      "Dar prioridade aos veículos que já circulam na rotunda",
+      "Ceder passagem a quem já se encontra na rotunda",
+      "Quem entra na rotunda deve ceder prioridade",
+      "O trânsito dentro da rotunda tem prioridade",
+      "Condutor que entra deve deixar passar quem já lá está"
+    ],
+    "respostas_incorretas": [
+      "Quem entra na rotunda tem sempre prioridade",
+      "Não existe regra específica",
+      "A prioridade é alternada entre vias",
+      "A prioridade é de quem vem da direita",
+      "Todos devem parar antes de entrar"
+    ],
+    "referencia": "Código da Estrada - Artigo 14.º-A (Rotundas)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "O que deve fazer um condutor ao aproximar-se de um sinal de cedência de passagem?",
+    "respostas_corretas": [
+      "Reduzir a velocidade e preparar-se para parar se necessário",
+      "Dar prioridade aos veículos que se aproximam pela via preferencial",
+      "Observar e ceder passagem aos veículos na estrada principal",
+      "Manter atenção e parar se houver veículos na via com prioridade",
+      "Abster-se de entrar na via se houver trânsito na principal"
+    ],
+    "respostas_incorretas": [
+      "Acelerar para não atrasar o trânsito",
+      "Ignorar se não vir veículos",
+      "Passar sem parar, sempre",
+      "Ceder passagem só a peões",
+      "Só parar se a visibilidade for nula"
+    ],
+    "referencia": "Código da Estrada - Artigo 65.º (Sinais de obrigação)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Quais os veículos que não podem circular nas autoestradas?",
+    "respostas_corretas": [
+      "Veículos que não atinjam 60 km/h em plano",
+      "Veículos sem capacidade para circular a pelo menos 60 km/h",
+      "Todos os veículos cuja velocidade máxima seja inferior a 60 km/h",
+      "Veículos lentos, como tratores e ciclomotores",
+      "Qualquer veículo com velocidade inferior a 60 km/h em condições normais"
+    ],
+    "respostas_incorretas": [
+      "Motociclos",
+      "Automóveis ligeiros",
+      "Táxis",
+      "Ambulâncias",
+      "Autocarros"
+    ],
+    "referencia": "Código da Estrada - Artigo 62.º (Autoestradas)",
+    "categoria": "velocidade",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Quando deve ser utilizado o sinal de luzes em ultrapassagens?",
+    "respostas_corretas": [
+      "Para advertir o condutor da frente durante o dia",
+      "Durante o dia, ao aproximar-se de outro veículo para ultrapassar",
+      "Para alertar o veículo a ultrapassar da sua intenção",
+      "Se necessário, como aviso antes da manobra",
+      "Ao pretender ultrapassar, quando a visibilidade o exige"
+    ],
+    "respostas_incorretas": [
+      "Apenas à noite",
+      "Sempre que se pretende parar",
+      "Para cumprimentar outros condutores",
+      "Ao entrar numa rotunda",
+      "Durante o estacionamento"
+    ],
+    "referencia": "Código da Estrada - Artigo 35.º (Ultrapassagem)",
+    "categoria": "ultrapassagem",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Quando é proibido o uso de telemóvel durante a condução?",
+    "respostas_corretas": [
+      "Quando o condutor o utiliza manualmente",
+      "Sempre que implique manuseamento",
+      "Se não for utilizado com sistema de mãos livres",
+      "Ao conduzir, é proibido usar o telemóvel com as mãos",
+      "Durante a condução, sem recurso a dispositivo adequado"
+    ],
+    "respostas_incorretas": [
+      "Apenas se for uma chamada longa",
+      "Quando o veículo está parado num semáforo",
+      "Se for uma chamada urgente",
+      "Em autoestradas apenas",
+      "Ao estacionar o carro"
+    ],
+    "referencia": "Código da Estrada - Artigo 84.º (Condução segura)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Qual o significado de uma linha longitudinal contínua no eixo da via?",
+    "respostas_corretas": [
+      "Proibição de transposição ou pisagem",
+      "Não é permitido ultrapassar ou mudar de faixa",
+      "Indica que não se pode cruzar a linha",
+      "A linha contínua deve ser respeitada e não atravessada",
+      "Sinaliza limite de faixas que não deve ser transposto"
+    ],
+    "respostas_incorretas": [
+      "Permitida a mudança de faixa em qualquer momento",
+      "Apenas uma sugestão de separação",
+      "Serve apenas para orientação noturna",
+      "Só se aplica a veículos pesados",
+      "Pode ser ultrapassada com cautela"
+    ],
+    "referencia": "Código da Estrada - Artigo 41.º (Marcas longitudinais)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Quando é obrigatório o uso de colete retrorrefletor?",
+    "respostas_corretas": [
+      "Ao sair do veículo imobilizado na via pública fora das localidades",
+      "Sempre que abandonar o veículo em caso de emergência",
+      "Durante paragens forçadas em autoestradas ou vias rápidas",
+      "Ao circular a pé fora das localidades após sair do carro avariado",
+      "Sempre que o condutor tiver de sair à estrada em situação de perigo"
+    ],
+    "respostas_incorretas": [
+      "Apenas durante o inverno",
+      "Só quando o carro tem avaria elétrica",
+      "Nunca é obrigatório em Portugal",
+      "Apenas se for de noite",
+      "Quando há nevoeiro"
+    ],
+    "referencia": "Código da Estrada - Artigo 88.º (Equipamento de segurança)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Quando é permitido parar ou estacionar em cima do passeio?",
+    "respostas_corretas": [
+      "Apenas quando expressamente autorizado por sinalização",
+      "Se houver sinal que permita o estacionamento no passeio",
+      "Somente se existir sinal a indicar essa permissão",
+      "Quando autorizado através de sinalização específica",
+      "Se o local estiver devidamente sinalizado para o efeito"
+    ],
+    "respostas_incorretas": [
+      "Sempre que houver espaço suficiente",
+      "Durante a noite",
+      "Se for por poucos minutos",
+      "Apenas para cargas e descargas",
+      "Nunca há exceções permitidas"
+    ],
+    "referencia": "Código da Estrada - Artigo 49.º (Proibição de paragem e estacionamento)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual o procedimento correto em caso de acidente com apenas danos materiais?",
+    "respostas_corretas": [
+      "Deve preencher a declaração amigável e libertar a via",
+      "Preencher declaração amigável e retirar os veículos da estrada",
+      "Registar os danos, assinar documento e libertar a via",
+      "Evitar obstrução da via e comunicar à seguradora",
+      "Recolher dados do outro condutor e sair da via"
+    ],
+    "respostas_incorretas": [
+      "Chamar sempre a polícia",
+      "Deixar os veículos no local até chegar a polícia",
+      "Abandonar o local do acidente",
+      "Apenas fotografar e continuar viagem",
+      "Não há obrigações específicas"
+    ],
+    "referencia": "Código da Estrada - Artigo 89.º (Acidentes de viação)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Quem tem prioridade de passagem numa estrada estreita com sentidos opostos?",
+    "respostas_corretas": [
+      "O veículo que já se encontra na via estreita",
+      "Quem entrou primeiro na zona estreita tem prioridade",
+      "O condutor que já circula no troço estreito",
+      "O veículo que iniciou a travessia da zona estreita",
+      "Quem já se encontra na zona com passagem difícil"
+    ],
+    "respostas_incorretas": [
+      "O veículo maior",
+      "O mais rápido",
+      "Quem buzinar primeiro",
+      "Depende do tipo de veículo",
+      "Quem vier da direita"
+    ],
+    "referencia": "Código da Estrada - Artigo 32.º (Passagem em locais estreitos)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual é a velocidade máxima permitida para veículos ligeiros com reboque fora das localidades?",
+    "respostas_corretas": [
+      "80 km/h",
+      "Máximo de 80 km/h",
+      "Até 80 quilómetros por hora",
+      "Limite de 80 km/h com reboque",
+      "Permitido até 80 km/h"
+    ],
+    "respostas_incorretas": [
+      "90 km/h",
+      "100 km/h",
+      "50 km/h",
+      "Sem limite definido",
+      "60 km/h"
+    ],
+    "referencia": "Código da Estrada - Artigo 27.º (Velocidade)",
+    "categoria": "velocidade",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Quando é obrigatório o uso de luzes de presença?",
+    "respostas_corretas": [
+      "Durante a noite quando o veículo está parado na via pública",
+      "Em condições de visibilidade reduzida com veículo imobilizado",
+      "Quando se estaciona à noite em local mal iluminado",
+      "Sempre que o veículo estiver parado à noite em estrada",
+      "Ao estacionar em local com pouca iluminação"
+    ],
+    "respostas_incorretas": [
+      "Durante a marcha em autoestrada",
+      "Sempre que se liga o motor",
+      "Apenas de dia",
+      "Em parques de estacionamento",
+      "Nunca é obrigatória"
+    ],
+    "referencia": "Código da Estrada - Artigo 61.º (Utilização das luzes)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "O que deve fazer um condutor perante um sinal de perigo?",
+    "respostas_corretas": [
+      "Reduzir a velocidade e estar preparado para agir",
+      "Adotar uma condução mais prudente",
+      "Aumentar a atenção à estrada",
+      "Adaptar a condução às condições do perigo indicado",
+      "Conduzir com precaução acrescida"
+    ],
+    "respostas_incorretas": [
+      "Ignorar se não vir nada de anormal",
+      "Acelerar para passar rapidamente",
+      "Usar buzina de forma preventiva",
+      "Mudar de faixa imediatamente",
+      "Não é necessário fazer nada"
+    ],
+    "referencia": "Código da Estrada - Artigo 48.º (Sinais de perigo)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Quais as condições para o condutor inverter o sentido de marcha?",
+    "respostas_corretas": [
+      "Desde que a manobra não cause perigo ou embaraço",
+      "Se houver boa visibilidade e espaço suficiente",
+      "Apenas se não interferir com o trânsito",
+      "Quando for possível fazê-lo em segurança",
+      "Somente se a via o permitir e for seguro"
+    ],
+    "respostas_incorretas": [
+      "Sempre que desejar mudar de direção",
+      "Mesmo em curvas ou cruzamentos",
+      "Pode fazê-lo de marcha atrás",
+      "É permitido em qualquer local",
+      "Basta sinalizar com antecedência"
+    ],
+    "referencia": "Código da Estrada - Artigo 45.º (Inversão do sentido de marcha)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Em que situações é obrigatório o uso de triângulo de sinalização?",
+    "respostas_corretas": [
+      "Sempre que um veículo fique imobilizado na via",
+      "Em caso de avaria ou acidente com o veículo parado na estrada",
+      "Quando o veículo está imobilizado em local de perigo",
+      "Se houver necessidade de sinalizar obstáculo na estrada",
+      "Quando o veículo apresenta risco para os demais utentes"
+    ],
+    "respostas_incorretas": [
+      "Apenas se for de noite",
+      "Nunca é obrigatório",
+      "Se houver visibilidade total",
+      "Apenas em autoestradas",
+      "Só se for um carro pesado"
+    ],
+    "referencia": "Código da Estrada - Artigo 88.º (Equipamento de segurança)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "O que deve fazer o condutor ao aproximar-se de um cruzamento com visibilidade reduzida?",
+    "respostas_corretas": [
+      "Reduzir a velocidade e estar preparado para parar",
+      "Avançar com precaução e atenção redobrada",
+      "Observar atentamente antes de entrar no cruzamento",
+      "Adotar condução defensiva e verificar ambos os lados",
+      "Parar se necessário para garantir segurança"
+    ],
+    "respostas_incorretas": [
+      "Avançar com velocidade constante",
+      "Confiar na prioridade",
+      "Acelerar para sair rapidamente",
+      "Usar luzes de máximos para alertar",
+      "Buzinar para avisar os outros"
+    ],
+    "referencia": "Código da Estrada - Artigo 31.º (Cruzamentos e entroncamentos)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Qual é o tempo mínimo de reação considerado na distância de travagem?",
+    "respostas_corretas": [
+      "1 segundo",
+      "Tempo de reação padrão de 1 segundo",
+      "É considerado 1 segundo de tempo de resposta",
+      "Tempo médio de reação é 1 segundo",
+      "Considera-se 1 segundo antes de iniciar a travagem"
+    ],
+    "respostas_incorretas": [
+      "2 segundos",
+      "0,5 segundos",
+      "5 segundos",
+      "Não existe valor padrão",
+      "Depende do tipo de veículo"
+    ],
+    "referencia": "Código da Estrada - Artigo 27.º (Velocidade)",
+    "categoria": "velocidade",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "O que deve fazer o condutor perante um agente de trânsito com o braço levantado verticalmente?",
+    "respostas_corretas": [
+      "Parar imediatamente, qualquer que seja o sentido de trânsito",
+      "Imobilizar o veículo, independentemente da direção",
+      "Todos os veículos devem parar perante esse sinal",
+      "O sinal significa ordem de paragem imediata",
+      "O braço levantado impõe paragem a todo o trânsito visível"
+    ],
+    "respostas_incorretas": [
+      "Apenas virar à direita",
+      "Avançar com precaução",
+      "Parar só se estiver a virar",
+      "Buzinar como confirmação",
+      "Ignorar se for fim de turno"
+    ],
+    "referencia": "Código da Estrada - Artigo 63.º (Sinais dos agentes de trânsito)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual o limite de velocidade para veículos pesados de passageiros fora das localidades?",
+    "respostas_corretas": [
+      "90 km/h",
+      "Máximo de 90 km/h",
+      "Permitido até 90 km/h fora das localidades",
+      "Limite de 90 km/h para pesados de passageiros",
+      "Até 90 km/h em estradas fora das localidades"
+    ],
+    "respostas_incorretas": [
+      "100 km/h",
+      "110 km/h",
+      "80 km/h",
+      "70 km/h",
+      "60 km/h"
+    ],
+    "referencia": "Código da Estrada - Artigo 27.º (Velocidade)",
+    "categoria": "velocidade",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Quando é proibida a ultrapassagem nas passagens de nível?",
+    "respostas_corretas": [
+      "Sempre, exceto se for regulada por sinalização luminosa",
+      "É proibido ultrapassar em passagens de nível não controladas",
+      "Ultrapassagens são proibidas salvo com semáforo",
+      "Nunca se deve ultrapassar em passagens sem sinalização",
+      "A ultrapassagem só é permitida com semáforo ou guarda"
+    ],
+    "respostas_incorretas": [
+      "Quando há nevoeiro",
+      "Se não houver comboio visível",
+      "Apenas durante o dia",
+      "Em autoestradas próximas",
+      "Se houver cancela aberta"
+    ],
+    "referencia": "Código da Estrada - Artigo 36.º (Proibição de ultrapassagem)",
+    "categoria": "ultrapassagem",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "O que indica uma linha longitudinal descontínua no eixo da via?",
+    "respostas_corretas": [
+      "Permite a transposição para ultrapassagem",
+      "Indica que é possível mudar de faixa com segurança",
+      "Sinaliza a possibilidade de ultrapassar se não houver perigo",
+      "Permite a mudança de direção quando for seguro",
+      "Autorização de ultrapassagem se as condições forem favoráveis"
+    ],
+    "respostas_incorretas": [
+      "Proibição total de mudança de faixa",
+      "Prioridade ao lado direito da via",
+      "Zona de paragem obrigatória",
+      "Limite de velocidade automática",
+      "Só pode ser atravessada à noite"
+    ],
+    "referencia": "Código da Estrada - Artigo 41.º (Marcas longitudinais)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Qual a prioridade numa via estreita com declive acentuado?",
+    "respostas_corretas": [
+      "O veículo que sobe tem prioridade",
+      "Deve ceder passagem o veículo que desce",
+      "Veículos a subir têm prioridade em subidas apertadas",
+      "A subida tem prioridade em troços com declive",
+      "A prioridade é de quem sobe em locais estreitos e inclinados"
+    ],
+    "respostas_incorretas": [
+      "Quem desce tem prioridade",
+      "Depende do tipo de veículo",
+      "O mais pesado decide",
+      "Quem vem da esquerda avança primeiro",
+      "O que estiver mais rápido passa"
+    ],
+    "referencia": "Código da Estrada - Artigo 33.º (Declives acentuados)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual é a sanção para quem circula com veículo sujeito a inspeção obrigatória fora do prazo?",
+    "respostas_corretas": [
+      "Coima de 250 a 1250 euros",
+      "Multa entre 250€ e 1250€",
+      "Infração punível com coima de 250 a 1250 euros",
+      "Valor entre 250 e 1250 euros por incumprimento",
+      "Circular sem inspeção pode levar a coima até 1250 euros"
+    ],
+    "respostas_incorretas": [
+      "Apenas advertência",
+      "Coima fixa de 100 euros",
+      "Sem penalização legal",
+      "Multa até 5000 euros",
+      "Advertência verbal da polícia"
+    ],
+    "referencia": "Código da Estrada - Artigo 114.º (Inspeção obrigatória de veículos)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Em que condições é permitido circular em marcha-atrás?",
+    "respostas_corretas": [
+      "Apenas para manobras curtas e indispensáveis",
+      "Somente se não causar perigo ou embaraço",
+      "Quando for estritamente necessário e seguro",
+      "Permitido para estacionar ou corrigir trajetória",
+      "Marcha-atrás apenas em distâncias curtas e seguras"
+    ],
+    "respostas_incorretas": [
+      "Sempre que o condutor desejar",
+      "Durante toda a extensão da via",
+      "Para fugir ao trânsito",
+      "Se o veículo for ligeiro",
+      "Apenas em autoestradas"
+    ],
+    "referencia": "Código da Estrada - Artigo 46.º (Marcha-atrás)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual o tempo de imobilização mínimo numa paragem obrigatória num sinal STOP?",
+    "respostas_corretas": [
+      "Até o condutor poder avaliar o tráfego com segurança",
+      "Pelo tempo necessário para garantir que é seguro prosseguir",
+      "Suficiente para verificar que não há veículos em aproximação",
+      "Até que esteja garantido que pode entrar sem risco",
+      "O tempo necessário para respeitar a prioridade dos outros"
+    ],
+    "respostas_incorretas": [
+      "Apenas 1 segundo",
+      "3 segundos fixos",
+      "Depende do humor do agente",
+      "Sempre até 5 segundos",
+      "Não é necessário parar"
+    ],
+    "referencia": "Código da Estrada - Artigo 65.º (Sinais de obrigação)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Quando deve o condutor usar luzes de nevoeiro traseiras?",
+    "respostas_corretas": [
+      "Quando a visibilidade está significativamente reduzida",
+      "Em caso de nevoeiro cerrado ou forte chuva",
+      "Sempre que a visibilidade for inferior a 100 metros",
+      "Em condições de nevoeiro denso ou queda intensa de neve",
+      "Se a visão da estrada estiver gravemente comprometida"
+    ],
+    "respostas_incorretas": [
+      "Sempre durante o inverno",
+      "Em autoestradas",
+      "Ao estacionar à noite",
+      "Quando o sol está baixo",
+      "Para avisar ultrapassagens"
+    ],
+    "referencia": "Código da Estrada - Artigo 62.º (Utilização das luzes)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Quando se considera que um veículo está estacionado?",
+    "respostas_corretas": [
+      "Quando está imobilizado por tempo superior ao necessário para paragem",
+      "Se estiver parado sem causa imediata de carga, descarga ou embarque",
+      "Sempre que permanecer imóvel além da paragem breve",
+      "Quando não há atividade imediata com o veículo imobilizado",
+      "Se estiver parado sem motivo funcional ou momentâneo"
+    ],
+    "respostas_incorretas": [
+      "Sempre que o condutor sair do carro",
+      "Apenas se o carro for trancado",
+      "Quando parado por menos de um minuto",
+      "Se o motor estiver desligado",
+      "Durante manobras de marcha-atrás"
+    ],
+    "referencia": "Código da Estrada - Artigo 49.º (Proibição de paragem e estacionamento)",
+    "categoria": "definições",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual a distância mínima de segurança a manter entre veículos?",
+    "respostas_corretas": [
+      "Pelo menos 2 segundos de distância",
+      "Distância de 2 segundos em relação ao veículo da frente",
+      "Manter distância de segurança de 2 segundos",
+      "Pelo menos 2 segundos para evitar colisões",
+      "Distância mínima de 2 segundos entre veículos"
+    ],
+    "respostas_incorretas": [
+      "1 segundo",
+      "3 segundos",
+      "5 segundos",
+      "Não há distância definida",
+      "Apenas 0,5 segundos"
+    ],
+    "referencia": "Código da Estrada - Artigo 27.º (Velocidade)",
+    "categoria": "velocidade",
+    "nivel_dificuldade": "básico"
+  },    
+  {
+    "pergunta": "O que deve fazer um condutor ao circular atrás de um veículo prioritário com sinais ativos?",
+    "respostas_corretas": [
+      "Facilitar a passagem deslocando-se para o lado e abrandando",
+      "Ceder passagem imediatamente e encostar-se se necessário",
+      "Desobstruir a faixa de rodagem e parar se for seguro",
+      "Reduzir a velocidade e facilitar a ultrapassagem",
+      "Dar prioridade total e manter distância de segurança"
+    ],
+    "respostas_incorretas": [
+      "Aumentar a velocidade para não atrasar o veículo",
+      "Manter a trajetória e ignorar os sinais",
+      "Apenas encostar se for mandado pela polícia",
+      "Parar no meio da via",
+      "Sinalizar com luzes de emergência"
+    ],
+    "referencia": "Código da Estrada - Artigo 65.º (Veículos em missão urgente de socorro)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Em que situações é obrigatório usar luzes de cruzamento durante o dia?",
+    "respostas_corretas": [
+      "Ao circular em autoestradas e vias equiparadas",
+      "Em condições de baixa visibilidade",
+      "Durante a travessia de túneis",
+      "Sempre que se circule em túneis",
+      "Quando o veículo esteja em marcha em condições atmosféricas adversas"
+    ],
+    "respostas_incorretas": [
+      "Apenas de noite",
+      "Só em estradas nacionais",
+      "Quando o condutor achar necessário",
+      "Durante ultrapassagens",
+      "Quando o veículo estiver parado"
+    ],
+    "referencia": "Código da Estrada - Artigo 61.º (Utilização das luzes)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Quais os condutores obrigados a circular com zero álcool no sangue?",
+    "respostas_corretas": [
+      "Condutores em regime probatório",
+      "Condutores de veículos pesados de passageiros",
+      "Condutores de transporte escolar",
+      "Condutores de táxis e TVDE em serviço",
+      "Condutores de emergência ou ambulância"
+    ],
+    "respostas_incorretas": [
+      "Todos os condutores de automóveis ligeiros",
+      "Apenas condutores com carta há mais de 5 anos",
+      "Condutores de ciclomotores em localidades",
+      "Motociclistas acima de 50 anos",
+      "Condutores de tratores agrícolas"
+    ],
+    "referencia": "Código da Estrada - Artigo 81.º (Capacidade física e mental para conduzir)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "O que deve fazer o condutor antes de iniciar uma ultrapassagem?",
+    "respostas_corretas": [
+      "Verificar se tem espaço e visibilidade suficientes",
+      "Certificar-se de que não há perigo em iniciar a manobra",
+      "Sinalizar a intenção com antecedência",
+      "Assegurar-se de que o veículo da frente não iniciou manobra idêntica",
+      "Confirmar a possibilidade de regressar à faixa sem risco"
+    ],
+    "respostas_incorretas": [
+      "Aumentar a velocidade e ultrapassar sem hesitação",
+      "Mudar de faixa diretamente",
+      "Usar sinais sonoros apenas",
+      "Aproximar-se o máximo possível do veículo da frente",
+      "Ignorar os veículos atrás"
+    ],
+    "referencia": "Código da Estrada - Artigo 35.º (Ultrapassagem)",
+    "categoria": "ultrapassagem",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Quando é permitido estacionar em segunda fila?",
+    "respostas_corretas": [
+      "Nunca é permitido estacionar em segunda fila",
+      "Estacionar em segunda fila é sempre proibido",
+      "Não se pode estacionar ao lado de veículo parado ou estacionado",
+      "É proibido obstruir a circulação parando em fila dupla",
+      "Em nenhuma circunstância é permitido estacionar em segunda fila"
+    ],
+    "respostas_incorretas": [
+      "Durante a noite",
+      "Se for por poucos minutos",
+      "Quando não há sinalização de proibição",
+      "Se o condutor permanecer no veículo",
+      "Junto a escolas durante o horário de entrada"
+    ],
+    "referencia": "Código da Estrada - Artigo 49.º (Proibição de paragem e estacionamento)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Quais as regras para condução de velocípedes em estrada?",
+    "respostas_corretas": [
+      "Devem circular o mais à direita possível",
+      "Só podem circular em fila indiana, salvo em condições específicas",
+      "Devem respeitar as regras aplicáveis a veículos",
+      "Têm direito a circular nas faixas de rodagem, com precaução",
+      "Podem usar ciclovias sempre que existam"
+    ],
+    "respostas_incorretas": [
+      "Devem andar no passeio sempre",
+      "Podem circular em sentido contrário ao trânsito",
+      "Estão dispensados de regras de sinalização",
+      "Não podem usar faixas de rodagem",
+      "São livres de circular em qualquer parte da via"
+    ],
+    "referencia": "Código da Estrada - Artigo 90.º-A (Regras aplicáveis aos velocípedes)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Quando deve ser usado o sinal de mudança de direção?",
+    "respostas_corretas": [
+      "Sempre antes de alterar a trajetória",
+      "Ao mudar de faixa ou direção",
+      "Ao sair de uma rotunda",
+      "Antes de ultrapassar outro veículo",
+      "Sempre que haja mudança no rumo normal do veículo"
+    ],
+    "respostas_incorretas": [
+      "Apenas quando houver peões por perto",
+      "Se o trânsito estiver parado",
+      "Nunca em estradas com pouca circulação",
+      "Só nas autoestradas",
+      "Se o condutor achar conveniente"
+    ],
+    "referencia": "Código da Estrada - Artigo 43.º (Sinalização de manobras)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Quando é permitida a paragem em passagens para peões?",
+    "respostas_corretas": [
+      "Nunca é permitida a paragem sobre passadeiras",
+      "A paragem em passadeiras é sempre proibida",
+      "Não se pode parar total ou parcialmente sobre uma passagem para peões",
+      "Parar em cima da passadeira constitui infração",
+      "A paragem nas passadeiras obstrui a travessia dos peões"
+    ],
+    "respostas_incorretas": [
+      "Se não houver peões a atravessar",
+      "Durante a noite",
+      "Para apanhar passageiros",
+      "Se for por menos de um minuto",
+      "Quando não há sinalização vertical"
+    ],
+    "referencia": "Código da Estrada - Artigo 49.º (Proibição de paragem e estacionamento)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Qual é a distância mínima entre veículos em andamento?",
+    "respostas_corretas": [
+      "Aquela que permita parar em segurança",
+      "Distância suficiente para evitar colisão em caso de travagem",
+      "Afastamento que permita manobra de segurança",
+      "Espaço necessário para reagir a uma travagem súbita",
+      "Distância proporcional à velocidade e condições da via"
+    ],
+    "respostas_incorretas": [
+      "Sempre 5 metros",
+      "A distância de um carro",
+      "A mesma que nas autoestradas",
+      "Depende do tipo de travões",
+      "Só aplicável a veículos pesados"
+    ],
+    "referencia": "Código da Estrada - Artigo 20.º (Distância entre veículos)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Em que condições é permitido buzinar dentro das localidades?",
+    "respostas_corretas": [
+      "Apenas em caso de perigo iminente",
+      "Se for necessário para evitar acidente",
+      "Para advertência urgente de perigo",
+      "Quando não houver outra forma de alerta eficaz",
+      "Somente em situações de emergência"
+    ],
+    "respostas_incorretas": [
+      "Para chamar um amigo",
+      "Sempre ao ultrapassar",
+      "Quando há muito trânsito",
+      "Ao entrar numa curva",
+      "Durante o estacionamento"
+    ],
+    "referencia": "Código da Estrada - Artigo 22.º (Utilização de sinais sonoros)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "básico"
+  }
+]
