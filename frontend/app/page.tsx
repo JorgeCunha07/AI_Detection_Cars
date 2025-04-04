@@ -21,11 +21,6 @@ export default function HomePage() {
               <Link href="/contato" className="hover:underline">
                 Contato
               </Link>
-              <Link href="/ferramenta">
-                <Button variant="outline" className="bg-white/10 text-white border-white/20 hover:bg-white/20">
-                  Login
-                </Button>
-              </Link>
             </div>
           </nav>
 
@@ -45,7 +40,7 @@ export default function HomePage() {
                   </Button>
                 </Link>
                 <Link href="/sobre">
-                  <Button variant="outline" className="border-white text-white hover:bg-white/10">
+                  <Button variant="outline" className="border-white text-white hover:bg-white/50">
                     Saiba Mais
                   </Button>
                 </Link>
