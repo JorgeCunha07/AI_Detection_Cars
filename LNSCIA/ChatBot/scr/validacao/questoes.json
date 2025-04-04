@@ -1115,6 +1115,26 @@
     "nivel_dificuldade": "médio"
   },
   {
+    "pergunta": "Qual a distância mínima de segurança a manter entre veículos?",
+    "respostas_corretas": [
+      "Pelo menos 2 segundos de distância",
+      "Distância de 2 segundos em relação ao veículo da frente",
+      "Manter distância de segurança de 2 segundos",
+      "Pelo menos 2 segundos para evitar colisões",
+      "Distância mínima de 2 segundos entre veículos"
+    ],
+    "respostas_incorretas": [
+      "1 segundo",
+      "3 segundos",
+      "5 segundos",
+      "Não há distância definida",
+      "Apenas 0,5 segundos"
+    ],
+    "referencia": "Código da Estrada - Artigo 27.º (Velocidade)",
+    "categoria": "velocidade",
+    "nivel_dificuldade": "básico"
+  },    
+  {
     "pergunta": "O que deve fazer um condutor ao circular atrás de um veículo prioritário com sinais ativos?",
     "respostas_corretas": [
       "Facilitar a passagem deslocando-se para o lado e abrandando",
