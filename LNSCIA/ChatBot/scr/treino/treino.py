@@ -12,7 +12,7 @@ print(f"⚙️  Dispositivo em uso: {device}")
 
 chat_dir = Path(__file__).resolve().parent.parent / "chat"
 modelo_output_dir = chat_dir / "gpt2-chat-finetuned"
-dados_json_path = chat_dir / "dialogos.json"
+dados_json_path = chat_dir / "dialogos_limpo.json"
 
 # Carregar e filtrar dados
 with open(dados_json_path, encoding="utf-8") as f:
@@ -61,13 +61,15 @@ tokenized_dataset = dataset.map(tokenize, batched=True, remove_columns=["text"])
 args = TrainingArguments(
     output_dir="output",
     overwrite_output_dir=True,
-    evaluation_strategy="epoch",
-    per_device_train_batch_size=2,
-    per_device_eval_batch_size=2,
-    num_train_epochs=3,
+    eval_strategy="epoch",                      # Avaliação ao final de cada época
+    per_device_train_batch_size=4,              # Batch size aumentado para estabilidade
+    per_device_eval_batch_size=4,
+    gradient_accumulation_steps=2,              # Acumula gradientes para simular um batch maior
+    num_train_epochs=3,                         # Número de épocas (ajustável conforme monitoramento)
+    warmup_steps=100,                           # Período de aquecimento para suavizar o início do treino
     logging_steps=10,
     save_strategy="epoch",
-    learning_rate=5e-5,
+    learning_rate=3e-5,                         # Learning rate ajustado para uma convergência mais suave
     report_to="none",
     remove_unused_columns=False
 )

@@ -2,56 +2,65 @@ import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 from pathlib import Path
 
-# Caminho para o modelo fine-tuned
-modelo_dir = Path(__file__).resolve().parent.parent / "chat" / "gpt2-chat-finetuned"
+# Diretório do modelo fine-tuned
+model_dir = Path(__file__).resolve().parent.parent / "chat" / "gpt2-chat-finetuned"
 
-# Carregar modelo e tokenizer
-tokenizer = GPT2Tokenizer.from_pretrained(modelo_dir)
-model = GPT2LMHeadModel.from_pretrained(modelo_dir)
+# Carregar modelo e tokenizador
+tokenizer = GPT2Tokenizer.from_pretrained(model_dir)
+model = GPT2LMHeadModel.from_pretrained(model_dir)
 model.eval()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
 
 def gerar_resposta_chat(user_input: str) -> str:
+    # Prompt no formato "Usuário: [pergunta]\nAssistente:"
     prompt = f"Usuário: {user_input}\nAssistente:"
-    #prompt = f"Usuário: {user_input}\nContexto: Código da Estrada Português\nAssistente:"
-    inputs = tokenizer(prompt, return_tensors="pt").to(device)
+    
+    inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=512)
+    inputs = {k: v.to(device) for k, v in inputs.items()}
 
     with torch.no_grad():
         outputs = model.generate(
             **inputs,
             max_new_tokens=60,
-            temperature=0.6,
-            top_p=50,
-            do_sample=True,
-            repetition_penalty=1.2,
+            do_sample=True,             # Geração determinística
+            num_beams=5,                # Utiliza beam search para melhorar a qualidade
+            top_p=0.92,
+            top_k=50,
+            num_return_sequences=1,
+            repetition_penalty=1.5,
             pad_token_id=tokenizer.eos_token_id,
             eos_token_id=tokenizer.eos_token_id,
-            no_repeat_ngram_size=3  
+            no_repeat_ngram_size=3,
         )
 
     generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    resposta = generated_text.split("Assistente:")[-1].strip()
-    #return resposta
+    resposta = post_process_resposta(generated_text, prompt)
     return resposta
 
-# Modo standalone de teste — só corre se for executado diretamente
+def post_process_resposta(generated_text: str, prompt: str) -> str:
+    # Extrai a resposta removendo o prompt do texto gerado
+    resposta = generated_text.replace(prompt, "").strip()
+
+    if not resposta:
+        resposta = "Desculpe, não consegui gerar uma resposta adequada. Pode reformular a pergunta?"
+    if resposta.endswith("..."):
+        resposta = "Desculpe, a resposta foi cortada. Pode repetir a pergunta de forma diferente?"
+    if len(resposta.split()) < 5:
+        resposta = "Desculpe, não consegui entender bem. Pode reformular a pergunta?"
+    if resposta and not resposta.endswith(('.', '?', '!')):
+        resposta += "."
+    return resposta
+
 if __name__ == "__main__":
-    print("🧪 Modo de inferência ativado. Escreve uma pergunta para testar o modelo.")
-    print("❌ Escreve 'sair' para encerrar o programa.")
+    print("🧪 Modo de inferência ativado. Escreva uma pergunta para testar o modelo.")
+    print("❌ Digite 'sair' para encerrar.")
 
     while True:
         user_input = input("❓ Pergunta: ").strip()
         if user_input.lower() in ["sair", "exit", "q", "quit"]:
-            print("👋 A encerrar inferência. Até à próxima, pequeno cientista dos dados.")
+            print("👋 Encerrando inferência. Até à próxima!")
             break
 
         resposta = gerar_resposta_chat(user_input)
         print(f"🤖 Resposta: {resposta}")
-
-        # Guardar apenas se não for comando de saída
-        try:
-            with open("historico_respostas.txt", "a", encoding="utf-8") as f:
-                f.write(f"\nUsuário: {user_input}\nAssistente: {resposta}\n")
-        except Exception as e:
-            print(f"⚠️ Erro ao guardar histórico: {e}")
