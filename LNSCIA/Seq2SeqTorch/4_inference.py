@@ -1,9 +1,7 @@
 
 import torch
 import pickle
-import numpy as np
 from train import Encoder, Decoder, Seq2Seq
-from tokenizer_utils import SimpleTokenizer
 
 # Dispositivo
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

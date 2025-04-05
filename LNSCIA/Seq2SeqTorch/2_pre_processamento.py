@@ -12,13 +12,16 @@ from tokenizer_utils import SimpleTokenizer, pad_sequences
 import torch
 
 ''' Labels permitidas:
-veiculos: ["carro", "autocarro", "camião"],
-pessoas: ["peão", "ciclista"],
+veiculo: ["carro", "carros", "autocarro"],
+veiculos: ["autocarros", "camião", "camiões"],
+pessoa: ["peão", "ciclista"],
+pessoas: ["peões", "ciclistas"],
 infraestrutura: ["passadeira", "semáforo"],
+infraestruturas: ["passadeiras", semáforos],
 sinais_transito: ["sinal de stop", "sinal de limite de velocidade", "sinal de passadeira"]
 weather_conditions = ["céu limpo", "nublado", "chuva", "nevoeiro", "vento", "neve"]
 time_of_day = ["amanhecer", "anoitecer", "dia", "noite"]
-locations = ["residencial", "parque de estacionamento", "túnel", "cidade", "autoestrada"]
+locations = ["zona residencial", "parque de estacionamento", "túnel", "cidade", "autoestrada"]
 '''
 
 
