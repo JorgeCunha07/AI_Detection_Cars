@@ -68,7 +68,7 @@ def label_joiner(labels_list):
 
 
 # Carregar o dataset (arquivo JSON com dados sintéticos e reais)
-with open('./data/exemplo_dataset.json', 'r', encoding='utf-8') as f:
+with open('./data/frases_rodoviarias.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
 labels_text = []  # Para armazenar os rótulos (labels) em forma de string
