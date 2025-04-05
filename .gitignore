@@ -316,3 +316,4 @@ LNSCIA/ChatBot/output/checkpoint-144/model.safetensors
 LNSCIA/ChatBot/output/checkpoint-144/merges.txt
 LNSCIA/ChatBot/output/checkpoint-144/generation_config.json
 LNSCIA/ChatBot/output/checkpoint-144/config.json
+/AAU2/DetectObjects_MR/mobilenet_outputs/
