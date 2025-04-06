@@ -1,15 +1,7 @@
-import os
 import json
-import re
-import unicodedata
 import pickle
 import numpy as np
-from sklearn.model_selection import train_test_split
-
-# Importar do nosso ficheiro tokenizer_utils
 from tokenizer_utils import SimpleTokenizer, pad_sequences
-
-import torch
 
 ''' Labels permitidas:
 veiculo: ["carro", "carros", "autocarro"],
@@ -24,120 +16,59 @@ time_of_day = ["amanhecer", "anoitecer", "dia", "noite"]
 locations = ["zona residencial", "parque de estacionamento", "túnel", "cidade", "autoestrada"]
 '''
 
+# Parâmetros
+MIN_FREQ = 2
+MAX_LABEL_LENGTH = 8
+MAX_DESC_LENGTH = 30
+MODEL_DIR = './models/'
+DATA_DIR = './data/'
 
-# Função para limpar a pasta "./models/"
-def clear_models_folder(folder_path='./models/'):
-    if os.path.exists(folder_path):
-        for filename in os.listdir(folder_path):
-            file_path = os.path.join(folder_path, filename)
-            try:
-                if os.path.isfile(file_path) or os.path.islink(file_path):
-                    os.remove(file_path)
-                elif os.path.isdir(file_path):
-                    import shutil
-                    shutil.rmtree(file_path)
-            except Exception as e:
-                print(f'Não foi possível remover {file_path}. Motivo: {e}')
-    else:
-        os.makedirs(folder_path)
-
-
-# Limpar a pasta "./models/" antes de iniciar
-clear_models_folder('./models/')
-
-
-# Função para limpar e normalizar o texto
-def clean_text(text):
-    # Remove acentos (normalização Unicode)
-    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('utf-8', 'ignore')
-    # Converte para minúsculas
-    text = text.lower()
-    # Remove caracteres que não sejam letras, números ou espaços
-    text = re.sub(r'[^a-z0-9\s]', '', text)
-    # Substitui múltiplos espaços por um único espaço e remove espaços nas extremidades
-    text = re.sub(r'\s+', ' ', text).strip()
-    return text
-
-def label_joiner(labels_list):
-    transformed_labels = []
-    # Transforma "parque de estacionamento" em "parque_de_estacionamento"
-    for lab in labels_list:
-        lab = lab.replace(" ", "_")
-        transformed_labels.append(lab)
-    return transformed_labels
-
-
-# Carregar o dataset (arquivo JSON com dados sintéticos e reais)
-with open('./data/frases_rodoviarias.json', 'r', encoding='utf-8') as f:
+# Carregar dataset
+with open(f'{DATA_DIR}/frases_com_labels.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
-labels_text = []  # Para armazenar os rótulos (labels) em forma de string
-descriptions = []  # Para armazenar as descrições
+# Separar labels e descrições
+labels = [" ".join(entry['labels']) for entry in data]
+descriptions = [entry['description'] for entry in data]
 
-for d in data:
-    # Processar a descrição: usa "description"
-    desc = d.get("description", "")
-    # Remover os tokens especiais temporariamente para limpeza
-    desc = desc.replace("startseq", "").replace("endseq", "").strip()
-    # Limpar e normalizar o texto
-    desc_clean = clean_text(desc)
-    # Re-adicionar os tokens especiais de início e fim
-    desc_clean = "startseq " + desc_clean + " endseq"
-    descriptions.append(desc_clean)
+# Tokenizar
+label_tokenizer = SimpleTokenizer(oov_token='<OOV>')
+label_tokenizer.fit_on_texts(labels, MIN_FREQ)
+label_sequences = label_tokenizer.texts_to_sequences(labels)
 
-    labs = d.get("labels", [])
-    # Converte em string única e limpa
-    labs_cleaned = [clean_text(l) for l in labs]
-    labs_str = label_joiner(labs_cleaned)
-    labs_text_str = " ".join(labs_str)
-    labels_text.append(labs_text_str)
+# Tokenizador com filtragem por frequência
+description_tokenizer = SimpleTokenizer(oov_token='<OOV>')
+description_tokenizer.fit_on_texts(descriptions, MIN_FREQ)
+# Filtrar palavras com frequência < MIN_FREQ
+filtered_word_index = {w: i for w, i in description_tokenizer.word_index.items() if
+                       description_tokenizer.word_counts[w] >= MIN_FREQ}
+filtered_index_word = {i: w for w, i in filtered_word_index.items()}
+description_tokenizer.word_index = filtered_word_index
+description_tokenizer.index_word = filtered_index_word
 
-# Criar os tokenizadores usando o SimpleTokenizer
-label_tokenizer = SimpleTokenizer(oov_token="<UNK>", filters='')
-label_tokenizer.fit_on_texts(labels_text)
+desc_sequences = description_tokenizer.texts_to_sequences(descriptions)
 
-# Para o tokenizer de descrições, não aplicamos filtros (similar ao original)
-description_tokenizer = SimpleTokenizer(oov_token="<UNK>", filters='')
-description_tokenizer.fit_on_texts(descriptions)
+# Padding
+label_padded = pad_sequences(label_sequences, maxlen=MAX_LABEL_LENGTH, padding='post')
+desc_padded = pad_sequences(desc_sequences, maxlen=MAX_DESC_LENGTH, padding='post')
 
-# Converter os textos em sequências numéricas
-label_seq = label_tokenizer.texts_to_sequences(labels_text)
-desc_seq = description_tokenizer.texts_to_sequences(descriptions)
+# Verificar formato
+desc_padded = np.array(desc_padded)
+print("Shape do desc_padded:", desc_padded.shape)
 
-# Definir comprimentos máximos (limitando para evitar sequências muito longas)
-max_label_length = min(max(len(seq) for seq in label_seq), 30)
-max_desc_length = min(max(len(seq) for seq in desc_seq), 270)
+# Guardar
+np.save(f'{MODEL_DIR}/label_train.npy', label_padded)
+np.save(f'{MODEL_DIR}/desc_train.npy', desc_padded)
 
-# Aplicar padding para padronizar o tamanho das sequências
-label_padded = pad_sequences(label_seq, maxlen=max_label_length, padding='post')
-desc_padded = pad_sequences(desc_seq, maxlen=max_desc_length, padding='post')
+with open(f'{MODEL_DIR}/label_tokenizer.pkl', 'wb') as f:
+    pickle.dump(label_tokenizer, f)
 
-# Dividir os dados em conjuntos de treino e teste (80% treino e 20% teste)
-label_train, label_test, desc_train, desc_test = train_test_split(
-    label_padded, desc_padded, test_size=0.2, random_state=42
-)
+with open(f'{MODEL_DIR}/description_tokenizer.pkl', 'wb') as f:
+    pickle.dump(description_tokenizer, f)
 
-# Salvar os dados pré-processados (em formato .npy)
-np.save('./models/label_train.npy', label_train)
-np.save('./models/label_test.npy', label_test)
-np.save('./models/desc_train.npy', desc_train)
-np.save('./models/desc_test.npy', desc_test)
-
-# Salvar os tokenizadores em arquivos .pkl para uso futuro
-with open('./models/label_tokenizer.pkl', 'wb') as handle:
-    pickle.dump(label_tokenizer, handle)
-with open('./models/description_tokenizer.pkl', 'wb') as handle:
-    pickle.dump(description_tokenizer, handle)
-
-# Salvar os parâmetros de pré-processamento (comprimentos máximos)
-preprocess_params = {
-    'max_label_length': max_label_length,
-    'max_desc_length': max_desc_length
-}
-with open('./models/preprocess_params.pkl', 'wb') as handle:
-    pickle.dump(preprocess_params, handle)
-
-print("Pré-processamento concluído e dados salvos.")
-
-# Testar se o PyTorch detecta GPUs
-print("PyTorch - GPUs detectadas:", torch.cuda.device_count())
+with open(f'{MODEL_DIR}/preprocess_params.pkl', 'wb') as f:
+    pickle.dump({
+        'max_label_length': MAX_LABEL_LENGTH,
+        'max_desc_length': MAX_DESC_LENGTH,
+        'min_freq': MIN_FREQ
+    }, f)

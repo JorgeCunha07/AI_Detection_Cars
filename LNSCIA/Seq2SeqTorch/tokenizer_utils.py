@@ -1,83 +1,65 @@
-# tokenizer_utils.py
-import re
-import unicodedata
-import numpy as np
+from collections import defaultdict
 
 class SimpleTokenizer:
-    def __init__(self, oov_token=None, filters=None):
-        """
-        Implementação simples de um tokenizer para substituir o Keras Tokenizer.
-        """
+    def __init__(self, oov_token=None):
         self.oov_token = oov_token
-        # Caso não seja fornecido, definimos um conjunto básico de caracteres a filtrar
-        self.filters = filters if filters is not None else '!"#$%&()*+,-./:;<=>?@[\\]^_`{|}~\t\n'
-        self.word_counts = {}
+        self.word_counts = defaultdict(int)
         self.word_index = {}
         self.index_word = {}
-        # Se definido o token OOV, reservamos o índice 1 para ele
-        if self.oov_token is not None:
-            self.word_index[self.oov_token] = 1
-            self.index_word[1] = self.oov_token
-            self.word_counts[self.oov_token] = 1
 
-    def fit_on_texts(self, texts):
+    def fit_on_texts(self, texts, min_freq=1):
         for text in texts:
-            tokens = text.split()
-            for token in tokens:
-                # Retira os filtros (caracteres especiais) das extremidades
-                token = token.strip(self.filters)
-                if token == '':
-                    continue
-                if token in self.word_counts:
-                    self.word_counts[token] += 1
-                else:
-                    self.word_counts[token] = 1
-        # Ordenar as palavras por frequência (decrescente)
-        sorted_words = sorted(self.word_counts.items(), key=lambda x: x[1], reverse=True)
-        # Se existe OOV, começamos em 2, senão em 1
-        index = 1 if self.oov_token is None else 2
+            for word in text.strip().split():
+                word = word.strip().lower()
+                self.word_counts[word] += 1
+
+        sorted_words = sorted(self.word_counts.items(), key=lambda x: -x[1])
+
+        index = 1  # index 0 reservado para padding
+        if self.oov_token:
+            self.word_index[self.oov_token] = index
+            self.index_word[index] = self.oov_token
+            index += 1
+
         for word, count in sorted_words:
             if word == self.oov_token:
                 continue
-            if word not in self.word_index:
-                self.word_index[word] = index
-                self.index_word[index] = word
-                index += 1
+            if count < min_freq:
+                continue
+            self.word_index[word] = index
+            self.index_word[index] = word
+            index += 1
 
     def texts_to_sequences(self, texts):
         sequences = []
         for text in texts:
-            tokens = text.split()
-            seq = []
-            for token in tokens:
-                # Se a palavra existe, usamos o índice
-                if token in self.word_index:
-                    seq.append(self.word_index[token])
-                # Caso contrário, se temos OOV, usamos esse índice
-                elif self.oov_token is not None:
-                    seq.append(self.word_index[self.oov_token])
-                else:
-                    seq.append(0)
-            sequences.append(seq)
+            tokens = []
+            for word in text.strip().split():
+                word = word.strip().lower()
+                idx = self.word_index.get(word, self.word_index.get(self.oov_token, 0))
+                tokens.append(idx)
+            sequences.append(tokens)
         return sequences
 
+    def sequences_to_texts(self, sequences):
+        texts = []
+        for seq in sequences:
+            words = [self.index_word.get(idx, self.oov_token) for idx in seq if idx != 0]
+            texts.append(" ".join(words))
+        return texts
 
 def pad_sequences(sequences, maxlen, padding='post'):
-    """
-    Função simples para aplicar padding a uma lista de sequências.
-    :param sequences: lista de listas com índices
-    :param maxlen: comprimento máximo de cada sequência
-    :param padding: 'post' ou 'pre'
-    :return: np.array com as sequências padronizadas
-    """
     padded = []
     for seq in sequences:
-        if len(seq) < maxlen:
+        if len(seq) > maxlen:
             if padding == 'post':
-                seq = seq + [0] * (maxlen - len(seq))
+                padded.append(seq[:maxlen])
             else:
-                seq = [0] * (maxlen - len(seq)) + seq
+                padded.append(seq[-maxlen:])
         else:
-            seq = seq[:maxlen]
-        padded.append(seq)
-    return np.array(padded)
+            pad_len = maxlen - len(seq)
+            if padding == 'post':
+                padded.append(seq + [0]*pad_len)
+            else:
+                padded.append([0]*pad_len + seq)
+    return padded

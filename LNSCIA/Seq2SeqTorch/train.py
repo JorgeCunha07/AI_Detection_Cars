@@ -1,5 +1,3 @@
-# train.py — treino completo de modelo Seq2Seq com Attention, métricas e checkpoints
-
 import os
 import pickle
 import numpy as np
@@ -7,9 +5,8 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader, random_split
-
+from tokenizer_utils import pad_sequences
 from tqdm import tqdm
-import time
 
 # ============================
 # Parâmetros configuráveis
@@ -17,17 +14,16 @@ import time
 BATCH_SIZE = 256
 NUM_EPOCHS = 50
 EMB_DIM = 300
-ENC_HIDDEN_DIM = 256
-DEC_HIDDEN_DIM = 512
-LEARNING_RATE = 0.0005
+HIDDEN_DIM = 512
+LEARNING_RATE = 0.001
 DROPOUT = 0.3
-TEACHER_FORCING_RATIO = 0.5
 CLIP = 1
 MODEL_DIR = './models/'
 
 # Configuração do dispositivo
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Dispositivo:", device)
+
 
 # ============================
 # Dataset personalizado
@@ -48,6 +44,7 @@ class Seq2SeqDataset(Dataset):
             torch.LongTensor(self.decoder_target[idx])
         )
 
+
 # ============================
 # Modelo com Attention (Luong)
 # ============================
@@ -61,14 +58,16 @@ class Encoder(nn.Module):
     def forward(self, src):
         embedded = self.dropout(self.embedding(src))
         outputs, (hidden, cell) = self.lstm(embedded)
-        hidden = torch.cat((hidden[0:1], hidden[1:2]), dim=2)
-        cell = torch.cat((cell[0:1], cell[1:2]), dim=2)
+        # Reduzir de bidirecional (2 x 512) para unidirecional (512)
+        hidden = hidden[0:1] + hidden[1:2]
+        cell = cell[0:1] + cell[1:2]
         return outputs, hidden, cell
+
 
 class Attention(nn.Module):
     def __init__(self, enc_hidden_dim, dec_hidden_dim):
         super().__init__()
-        self.attn = nn.Linear(enc_hidden_dim*2 + dec_hidden_dim, dec_hidden_dim)
+        self.attn = nn.Linear(enc_hidden_dim * 2 + dec_hidden_dim, dec_hidden_dim)
         self.v = nn.Linear(dec_hidden_dim, 1, bias=False)
 
     def forward(self, hidden, encoder_outputs):
@@ -78,13 +77,14 @@ class Attention(nn.Module):
         attention = self.v(energy).squeeze(2)
         return torch.softmax(attention, dim=1)
 
+
 class Decoder(nn.Module):
     def __init__(self, output_dim, emb_dim, enc_hidden_dim, dec_hidden_dim, dropout=0.3):
         super().__init__()
         self.output_dim = output_dim
         self.embedding = nn.Embedding(output_dim, emb_dim, padding_idx=0)
-        self.lstm = nn.LSTM(enc_hidden_dim*2 + emb_dim, dec_hidden_dim, batch_first=True)
-        self.fc_out = nn.Linear(enc_hidden_dim*2 + dec_hidden_dim + emb_dim, output_dim)
+        self.lstm = nn.LSTM(enc_hidden_dim * 2 + emb_dim, dec_hidden_dim, batch_first=True)
+        self.fc_out = nn.Linear(enc_hidden_dim * 2 + dec_hidden_dim + emb_dim, output_dim)
         self.attention = Attention(enc_hidden_dim, dec_hidden_dim)
         self.dropout = nn.Dropout(dropout)
 
@@ -98,6 +98,7 @@ class Decoder(nn.Module):
         output, (hidden, cell) = self.lstm(lstm_input, (hidden, cell))
         prediction = self.fc_out(torch.cat((output, weighted, embedded), dim=2)).squeeze(1)
         return prediction, hidden, cell
+
 
 class Seq2Seq(nn.Module):
     def __init__(self, encoder, decoder):
@@ -122,17 +123,19 @@ class Seq2Seq(nn.Module):
 
         return outputs
 
+
 # ============================
 # Ciclo de treino + avaliação
 # ============================
-def train(model, iterator, optimizer, criterion, clip=1):
+def train(model, iterator, optimizer, criterion, epoch, clip=1):
     model.train()
     epoch_loss = 0
+    tf_ratio = max(0.3, 0.7 - (epoch / 100))  # teacher_forcing decrescente
 
     for src, trg_in, trg_out in tqdm(iterator):
         src, trg_in, trg_out = src.to(device), trg_in.to(device), trg_out.to(device)
         optimizer.zero_grad()
-        output = model(src, trg_in, TEACHER_FORCING_RATIO)
+        output = model(src, trg_in, tf_ratio)
         output_dim = output.shape[-1]
         output = output[:, 1:].reshape(-1, output_dim)
         trg_out = trg_out[:, 1:].reshape(-1)
@@ -143,6 +146,7 @@ def train(model, iterator, optimizer, criterion, clip=1):
         epoch_loss += loss.item()
 
     return epoch_loss / len(iterator)
+
 
 def evaluate(model, iterator, criterion):
     model.eval()
@@ -160,6 +164,34 @@ def evaluate(model, iterator, criterion):
 
     return epoch_loss / len(iterator)
 
+
+def gerar_exemplo(model, label_tokenizer, description_tokenizer, max_label_length, max_desc_length):
+    model.eval()
+    labels_exemplo = ["carro", "passadeira", "céu limpo", "dia"]
+    label_text = " ".join(labels_exemplo).lower()
+    seq = label_tokenizer.texts_to_sequences([label_text])
+    padded = pad_sequences(seq, maxlen=max_label_length, padding='post')
+    src = torch.LongTensor(padded).to(device)
+
+    encoder_outputs, hidden, cell = model.encoder(src)
+
+    start_token = description_tokenizer.word_index['startseq']
+    end_token = description_tokenizer.word_index['endseq']
+    input_token = torch.LongTensor([start_token]).to(device)
+
+    generated = []
+    for _ in range(max_desc_length):
+        output, hidden, cell = model.decoder(input_token, hidden, cell, encoder_outputs)
+        top1 = output.argmax(1).item()
+        if top1 == end_token or top1 == 0:
+            break
+        word = description_tokenizer.index_word.get(top1, '')
+        generated.append(word)
+        input_token = torch.LongTensor([top1]).to(device)
+
+    return " ".join(generated)
+
+
 # ============================
 # Execução principal
 # ============================
@@ -168,6 +200,11 @@ if __name__ == '__main__':
         label_tokenizer = pickle.load(f)
     with open(os.path.join(MODEL_DIR, 'description_tokenizer.pkl'), 'rb') as f:
         description_tokenizer = pickle.load(f)
+    with open(os.path.join(MODEL_DIR, 'preprocess_params.pkl'), 'rb') as f:
+        preprocess_params = pickle.load(f)
+
+    max_label_length = preprocess_params['max_label_length']
+    max_desc_length = preprocess_params['max_desc_length']
 
     label_train = np.load(os.path.join(MODEL_DIR, 'label_train.npy'))
     desc_train = np.load(os.path.join(MODEL_DIR, 'desc_train.npy'))
@@ -184,10 +221,10 @@ if __name__ == '__main__':
     val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE)
 
     label_vocab_size = len(label_tokenizer.word_index) + 1
-    desc_vocab_size = len(description_tokenizer.word_index) + 1
+    desc_vocab_size = max(np.max(desc_train), max(description_tokenizer.word_index.values())) + 1
 
-    enc = Encoder(label_vocab_size, emb_dim=EMB_DIM, hidden_dim=ENC_HIDDEN_DIM, dropout=DROPOUT).to(device)
-    dec = Decoder(desc_vocab_size, emb_dim=EMB_DIM, enc_hidden_dim=ENC_HIDDEN_DIM, dec_hidden_dim=DEC_HIDDEN_DIM, dropout=DROPOUT).to(device)
+    enc = Encoder(label_vocab_size, EMB_DIM, HIDDEN_DIM, dropout=DROPOUT).to(device)
+    dec = Decoder(desc_vocab_size, EMB_DIM, HIDDEN_DIM, HIDDEN_DIM, dropout=DROPOUT).to(device)
     model = Seq2Seq(enc, dec).to(device)
 
     optimizer = optim.AdamW(model.parameters(), lr=LEARNING_RATE)
@@ -197,11 +234,14 @@ if __name__ == '__main__':
     best_val_loss = float('inf')
     for epoch in range(1, NUM_EPOCHS + 1):
         print(f"\nEpoch {epoch}/{NUM_EPOCHS}")
-        train_loss = train(model, train_loader, optimizer, criterion, clip=CLIP)
+        train_loss = train(model, train_loader, optimizer, criterion, epoch, clip=CLIP)
         val_loss = evaluate(model, val_loader, criterion)
         scheduler.step()
 
         print(f"Train Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f}")
+
+        exemplo = gerar_exemplo(model, label_tokenizer, description_tokenizer, max_label_length, max_desc_length)
+        print(f"Exemplo gerado: {exemplo}")
 
         if val_loss < best_val_loss:
             best_val_loss = val_loss

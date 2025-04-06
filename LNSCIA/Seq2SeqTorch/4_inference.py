@@ -1,60 +1,79 @@
-
 import torch
 import pickle
+import numpy as np
+from tokenizer_utils import pad_sequences, SimpleTokenizer
 from train import Encoder, Decoder, Seq2Seq
 
-# Dispositivo
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# ============================
+# Parâmetros e dispositivo
+# ============================
+MODEL_DIR = './models/'
+EMB_DIM = 300
+HIDDEN_DIM = 512
+DROPOUT = 0.3
 
-# Carregar tokenizadores
-with open('./models/label_tokenizer.pkl', 'rb') as f:
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print("Dispositivo:", device)
+
+# ============================
+# Carregar tokenizadores e modelo
+# ============================
+with open(f"{MODEL_DIR}/label_tokenizer.pkl", 'rb') as f:
     label_tokenizer = pickle.load(f)
-with open('./models/description_tokenizer.pkl', 'rb') as f:
+
+with open(f"{MODEL_DIR}/description_tokenizer.pkl", 'rb') as f:
     description_tokenizer = pickle.load(f)
 
-# Parâmetros do modelo
-label_vocab_size = len(label_tokenizer.word_index) + 1
-desc_vocab_size = len(description_tokenizer.word_index) + 1
+with open(f"{MODEL_DIR}/preprocess_params.pkl", 'rb') as f:
+    params = pickle.load(f)
 
-# Criar modelo e carregar pesos
-encoder = Encoder(label_vocab_size, emb_dim=300, hidden_dim=256).to(device)
-decoder = Decoder(desc_vocab_size, emb_dim=300, enc_hidden_dim=256, dec_hidden_dim=512).to(device)
-model = Seq2Seq(encoder, decoder).to(device)
-model.load_state_dict(torch.load('./models/best_model.pt', map_location=device))
+max_label_length = params['max_label_length']
+max_desc_length = params['max_desc_length']
+
+label_vocab_size = len(label_tokenizer.word_index) + 1
+desc_vocab_size = max(description_tokenizer.word_index.values()) + 1
+
+# Instanciar modelo
+enc = Encoder(label_vocab_size, EMB_DIM, HIDDEN_DIM, dropout=DROPOUT).to(device)
+dec = Decoder(desc_vocab_size, EMB_DIM, HIDDEN_DIM, HIDDEN_DIM, dropout=DROPOUT).to(device)
+model = Seq2Seq(enc, dec).to(device)
+model.load_state_dict(torch.load(f"{MODEL_DIR}/best_model.pt", map_location=device))
 model.eval()
 
-# Função principal de geração
-def generate_description(labels):
-    # Verificar palavras OOV
-    known_words = set(label_tokenizer.word_index.keys())
-    oov = [word for word in labels if word.lower() not in known_words]
-    if oov:
-        print("⚠️ Atenção: As seguintes palavras não existem no vocabulário e serão tratadas como <UNK>:", oov)
+# ============================
+# Função de geração de descrição
+# ============================
+def generate_description(labels_input):
+    labels_clean = ' '.join(labels_input).lower()
+    seq = label_tokenizer.texts_to_sequences([labels_clean])
+    padded = pad_sequences(seq, maxlen=max_label_length, padding='post')
+    src = torch.LongTensor(padded).to(device)
 
-    # Pre-processar labels
-    label_str = " ".join(labels).lower()
-    label_seq = label_tokenizer.texts_to_sequences([label_str])
-    label_seq = torch.LongTensor(label_seq).to(device)
-
-    # Inicializar
     with torch.no_grad():
-        encoder_outputs, hidden, cell = model.encoder(label_seq)
-        input_token = torch.LongTensor([[description_tokenizer.word_index['startseq']]]).to(device)
+        encoder_outputs, hidden, cell = model.encoder(src)
 
-        output_sentence = []
-        for _ in range(270):
-            output, hidden, cell = model.decoder(input_token.squeeze(1), hidden, cell, encoder_outputs)
-            top1 = output.argmax(-1).item()
-            if top1 == description_tokenizer.word_index.get('endseq'):
+        start_token = description_tokenizer.word_index['startseq']
+        end_token = description_tokenizer.word_index['endseq']
+
+        input_token = torch.LongTensor([start_token]).to(device)
+        generated = []
+
+        for _ in range(max_desc_length):
+            output, hidden, cell = model.decoder(input_token, hidden, cell, encoder_outputs)
+            top1 = output.argmax(1).item()
+            if top1 == end_token or top1 == 0:
                 break
             word = description_tokenizer.index_word.get(top1, '')
-            output_sentence.append(word)
-            input_token = torch.LongTensor([[top1]]).to(device)
+            generated.append(word)
+            input_token = torch.LongTensor([top1]).to(device)
 
-    return " ".join(output_sentence)
+    return ' '.join(generated)
 
+# ============================
 # Exemplo de uso
-if __name__ == "__main__":
-    example = ["ceu_limpo", "noite", "parque_de_estacionamento", "sinal_de_stop", "carro", "peao", "passadeira"]
+# ============================
+if __name__ == '__main__':
+    example = ["carro", "passadeira", "semáforo", "noite"]
     print("Labels:", example)
-    print("Descrição gerada:", generate_description(example))
+    description = generate_description(example)
+    print("Descrição gerada:", description)
