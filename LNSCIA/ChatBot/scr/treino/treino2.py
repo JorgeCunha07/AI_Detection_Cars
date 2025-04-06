@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import torch
 from transformers import GPT2Tokenizer, GPT2LMHeadModel, Trainer, TrainingArguments, DataCollatorForLanguageModeling, EarlyStoppingCallback
@@ -13,7 +14,7 @@ print(f"⚙️  Dispositivo em uso: {device}")
 # Diretórios e caminhos
 chat_dir = Path(__file__).resolve().parent.parent / "chat"
 modelo_output_dir = chat_dir / "gpt2-chat-finetuned"
-dados_json_path = chat_dir / "dialogos_validos2.json"
+dados_json_path = chat_dir / "dialogos_validos3.json"
 
 # Carregar e filtrar dados
 with open(dados_json_path, encoding="utf-8") as f:
@@ -21,6 +22,7 @@ with open(dados_json_path, encoding="utf-8") as f:
 
 seen = set()
 filtrados = []
+print(f"🔍 Filtrando dados do ficheiro", dados_json_path)
 print(f"📚 Antes da limpeza, total de exemplos: {len(data)}")
 for d in data:
     inp = d.get("input", "").strip()
@@ -29,6 +31,8 @@ for d in data:
     if k not in seen and inp and out:
         seen.add(k)
         filtrados.append({"input": inp, "output": out})
+    else:
+        print(f"⚠️  Exemplo duplicado ou inválido encontrado: {k}", file=sys.stderr, flush=True)
 print(f"📚 Após limpeza, total de exemplos: {len(filtrados)}")
 
 # Preparar os textos com marcadores explícitos
