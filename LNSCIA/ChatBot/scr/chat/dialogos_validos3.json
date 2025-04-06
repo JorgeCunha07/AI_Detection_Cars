@@ -1089,7 +1089,7 @@
   },
   {
     "input": "Como devo agir se um motociclista estiver a fazer manobras perigosas?",
-    "output": "Mantenha uma distância segura e evite reagir de forma agressiva. Se possível, anote a matrícula e informe as autoridades. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Mantenha uma distância segura e evite reagir de forma agressiva. Se possível, anote a matrícula e informe as autoridades. Evite reagir emocionalmente. Se não for urgente, podes fazer uma participação à PSP ou GNR."
   },
   {
     "input": "Mesmo que o sinal antigo diga o contrário?",
@@ -1122,11 +1122,11 @@
   },
   {
     "input": "Gostaria de saber mais detalhes sobre a seguinte questão: Mesmo sem outros veículos por perto?",
-    "output": "Sim, a paragem é obrigatória independentemente da presença de outros veículos. Comportamentos assim são a base de uma convivência segura no trânsito."
+    "output": "Mesmo sem ninguém por perto, continua a ser ilegal usar auriculares nos dois ouvidos enquanto conduzes. A lei não depende do tráfego, mas sim da tua capacidade de atenção e audição."
   },
   {
     "input": "E se for para chamar alguém na rua?",
-    "output": "Isso é proibido. Usar a buzina com esse fim é considerado uso indevido e pode dar origem a coima. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Isso é proibido. Mesmo que seja para chamar alguém na rua, pendurar uma melancia no espelho continua a ser desaconselhado e pode ser ilegal, pois compromete a visibilidade e a segurança rodoviária."
   },
   {
     "input": "Preciso trocar a carta se for viver para fora?",
@@ -1166,11 +1166,11 @@
   },
   {
     "input": "Qual é a velocidade máxima permitida numa zona residencial?",
-    "output": "Em zonas residenciais, o limite de velocidade é geralmente de 20 km/h, salvo indicação em contrário através de sinalização. Comportamentos assim são a base de uma convivência segura no trânsito."
+    "output": "Em zonas residenciais, o limite de velocidade é geralmente de 50 km/h para carros e motociclos, salvo indicação em contrário através de sinalização."
   },
   {
     "input": "Gostaria de saber mais detalhes sobre a seguinte questão: E numa zona de coexistência?",
-    "output": "Numa zona de coexistência, o limite também é de 20 km/h, e os peões têm prioridade sobre os veículos. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Numa zona de coexistência, o limite também é de 20 km/h, e os peões têm prioridade sobre os veículos e as manobras perigosas são proibidas como inversões de marcha, ultrapassagens e comportamentos agressivos."
   },
   {
     "input": "Mesmo que seja por muito pouco tempo, posso parar o carro numa curva com pouca visibilidade?",
@@ -1226,7 +1226,7 @@
   },
   {
     "input": "E se houver um agente de trânsito a controlar o cruzamento?",
-    "output": "Deve obedecer às indicações do agente, que prevalecem sobre a sinalização existente. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Se houver um agente de trânsito a controlar o cruzamento, deves obedecer sempre às indicações do agente, mesmo que contradigam os sinais luminosos ou verticais existentes no local."
   },
   {
     "input": "É permitido fazer marcha atrás numa autoestrada?",
@@ -1258,7 +1258,7 @@
   },
   {
     "input": "Gostaria de saber mais detalhes sobre a seguinte questão: E se ultrapassarem esse valor?",
-    "output": "Estão sujeitos a coima, perda de pontos, e eventual inibição de conduzir, dependendo da taxa detetada. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Estão sujeitos a coima, perda de pontos, e eventual inibição de conduzir, dependendo da taxa detetada. Esta conduta aumenta drasticamente o risco de acidentes."
   },
   {
     "input": "Gostaria de saber mais detalhes sobre a seguinte questão: Mesmo com os quatro piscas ligados?",
@@ -1298,7 +1298,7 @@
   },
   {
     "input": "E posso conduzir com a carta caducada?",
-    "output": "Não. Conduzir com a carta caducada é ilegal e pode resultar em coima e inibição de conduzir. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Não, não podes conduzir com a carta de condução caducada. Circular com a carta fora do prazo de validade é considerado infração muito grave pelo Código da Estrada."
   },
   {
     "input": "Posso usar telemóvel se estiver parado no semáforo?",
@@ -1346,7 +1346,7 @@
   },
   {
     "input": "Os sinais pintados no chão valem mais do que os verticais?",
-    "output": "Não. A hierarquia é: agentes de trânsito, sinais luminosos, sinais verticais e, por fim, a sinalização horizontal. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Não, os sinais pintados no chão não valem mais do que os verticais. Em caso de contradição, deves seguir a ordem de prevalência legal: agentes, temporários, semáforos, verticais e horizontais."
   },
   {
     "input": "É obrigatório usar luzes de mudança de direção numa rotunda?",
@@ -1394,7 +1394,7 @@
   },
   {
     "input": "Se o sinal de velocidade indicar 60, posso ir a 65 sem problema?",
-    "output": "Não. Ultrapassar o limite, mesmo que ligeiramente, é infração e pode ser sancionada se houver controlo de velocidade. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Não. Mesmo que pareça pouco, circular a 65 km/h num local sinalizado com limite de 60 km/h é infração. O Código da Estrada exige cumprimento rigoroso dos limites, salvo tolerância técnica mínima."
   },
   {
     "input": "Tenho de ceder passagem numa passadeira onde não há ninguém?",
@@ -1434,7 +1434,7 @@
   },
   {
     "input": "Posso usar o telemóvel para ver o GPS enquanto conduzo?",
-    "output": "Sim, desde que esteja fixo e não exija interação constante. O ideal é usar um suporte para evitar distrações. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Podes usar o telemóvel como GPS, mas apenas se estiver num suporte adequado e não precisares de o manusear enquanto conduzes. O Código da Estrada proíbe o uso manual durante a marcha."
   },
   {
     "input": "Gostaria de saber mais detalhes sobre a seguinte questão: Posso conduzir com um pé descalço?",
@@ -1478,7 +1478,7 @@
   },
   {
     "input": "É ilegal conduzir com um cartaz a dizer Vai com calma no vidro de trás?",
-    "output": "Não, desde que o cartaz não bloqueie a visibilidade. Mensagens positivas são bem-vindas! Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Não, desde que o cartaz não bloqueie a visibilidade. Mensagens positivas são bem-vindas! Portanto, certifica-te de que o cartaz não interfere com a tua visão ou a dos outros condutores.​"
   },
   {
     "input": "Posso andar com um mini-frigorífico a funcionar no carro?",
@@ -1526,7 +1526,7 @@
   },
   {
     "input": "Gostaria de saber mais detalhes sobre a seguinte questão: É permitido usar chinelos a conduzir?",
-    "output": "Não é proibido, mas é desaconselhado. Se causarem acidente ou perda de controlo, pode ser penalizado. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Não é proibido, mas é desaconselhado. Se causarem acidente ou perda de controlo, pode ser penalizado. Se as autoridades considerarem que o calçado compromete a segurança, podem aplicar uma coima."
   },
   {
     "input": "Tenho de usar capacete numa bicicleta elétrica?",
@@ -1542,7 +1542,7 @@
   },
   {
     "input": "Sou obrigado a respeitar um limite de velocidade pintado no chão?",
-    "output": "Sim. A sinalização horizontal tem validade legal e deve ser respeitada.  Ignorar estas indicações pode resultar em coimas e outras sanções previstas na legislação rodoviária.​"
+    "output": "Sim. A sinalização horizontal tem validade legal e deve ser respeitada. Ignorar estas indicações pode resultar em coimas e outras sanções previstas na legislação rodoviária.​"
   },
   {
     "input": "Se vir um carro parado com os quatro piscas, posso ultrapassar?",
@@ -1578,7 +1578,7 @@
   },
   {
     "input": "Posso fazer uma manobra de marcha-atrás numa autoestrada?",
-    "output": "Não, é proibido. Deve sair da autoestrada e voltar a entrar na próxima saída. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Não, é totalmente proibido fazer marcha-atrás numa autoestrada. Essa manobra é extremamente perigosa e considerada infração muito grave, com coima elevada e possível inibição de conduzir. Segurança acima de tudo."
   },
   {
     "input": "O que fazer se o carro ficar sem combustível na estrada?",
@@ -1618,7 +1618,7 @@
   },
   {
     "input": "O que devo fazer se vir um sinal de Ceda a Passagem?",
-    "output": "Deve reduzir a velocidade e estar preparado para parar e ceder passagem a outros veículos que tenham prioridade. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Ao ver um sinal de ceda a Passagem, deves abrandar e verificar se vêm veículos pela via prioritária. Se vier alguém, cedes a passagem. Só avanças quando for seguro."
   },
   {
     "input": "Quais são as regras para usar faróis em túneis?",
@@ -1662,7 +1662,7 @@
   },
   {
     "input": "O que significa um sinal de Circulação Proibida?",
-    "output": "Um sinal de Circulação Proibida indica que não pode entrar ou circular naquela via ou área. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Um sinal de Circulação Proibida indica que nenhum veículo pode entrar naquela via, independentemente do tipo. Serve para impedir o acesso por razões de segurança, obras ou regras locais."
   },
   {
     "input": "Quais são as regras para usar luzes de nevoeiro?",
@@ -1678,7 +1678,7 @@
   },
   {
     "input": "Posso estacionar em local reservado a motos?",
-    "output": "Não, estacionar em locais reservados a motos é proibido e pode resultar em coima. Deste modo, contribui-se ativamente para a ordem e fluidez do trânsito."
+    "output": "Não, **não é permitido estacionar em local reservado a motos** se não conduzes uma motocicleta ou veículo similar. Esses espaços são exclusivos para garantir a mobilidade e segurança dos utilizadores designados."
   },
   {
     "input": "O que significa um sinal de Velocidade Mínima?",
@@ -1706,7 +1706,7 @@
   },
   {
     "input": "Posso estacionar em local reservado a carrinhas de mercadorias?",
-    "output": "Não, estacionar em locais reservados a carrinhas de mercadorias é proibido e pode resultar em coima. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Não, não é permitido estacionar em locais reservados a carrinhas de mercadorias se o teu veículo não se destinar a esse fim. O Código da Estrada proíbe estacionar em locais reservados, mediante sinalização, ao estacionamento de determinados veículos."
   },
   {
     "input": "O que devo fazer se vir um sinal de Sentido Proibido?",
@@ -1718,7 +1718,7 @@
   },
   {
     "input": "Posso estacionar em local reservado a viaturas de emergência?",
-    "output": "Não, estacionar em locais reservados a viaturas de emergência é proibido e pode resultar em coima. Deste modo, contribui-se ativamente para a ordem e fluidez do trânsito."
+    "output": "Não, não podes estacionar em local reservado a viaturas de emergência. Esses lugares são exclusivamente destinados a veículos como ambulâncias, bombeiros e polícia, para que possam atuar rapidamente em situações críticas."
   },
   {
     "input": "O que significa um sinal de Paragem de Autocarro?",
@@ -1746,7 +1746,7 @@
   },
   {
     "input": "O que significa um sinal de Proibido Circular aos Domingos?",
-    "output": "Indica que não pode circular naquela via ou área aos domingos, exceto se houver exceções indicadas. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "O sinal de Proibido Circular aos Domingos indica que a circulação está interditada nesse dia da semana, normalmente para reduzir tráfego, poluição ou proteger zonas residenciais e turísticas."
   },
   {
     "input": "Quais são as regras para usar luzes de marcha-atrás?",
@@ -1758,7 +1758,7 @@
   },
   {
     "input": "O que devo fazer se vir um sinal de Passagem de Ciclistas?",
-    "output": "Deve reduzir a velocidade e estar preparado para ceder passagem aos ciclistas. Deste modo, contribui-se ativamente para a ordem e fluidez do trânsito."
+    "output": "Este sinal indica uma zona de atravessamento frequente de bicicletas. Deve reduzir a velocidade e estar preparado para ceder passagem aos ciclistas. Estar atento à presença de ciclistas que possam atravessar a via."
   },
   {
     "input": "Quais são as regras para usar luzes de condução diurna?",
@@ -1786,7 +1786,7 @@
   },
   {
     "input": "Se eu buzinar p/ avisar d um acidente, é infração?",
-    "output": "Não. A buzina pode ser usada para prevenir acidentes. Nesse contexto, é considerado uso legítimo. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Não. A buzina pode ser usada para prevenir acidentes. Nesse contexto, é considerado uso legítimo. Deve ser breve e justificado e acenda os quatro piscas."
   },
   {
     "input": "Posso usar pneus d inverno o ano todo em Portugal?",
@@ -1798,7 +1798,7 @@
   },
   {
     "input": "Qual o limite de velocidade numa estrada nacional fora de uma localidade?",
-    "output": "Numa estrada nacional fora de uma localidade, o limite de velocidade para veículos ligeiros é de 90 km/h. Deste modo, contribui-se ativamente para a ordem e fluidez do trânsito."
+    "output": "Numa estrada nacional fora de uma localidade, o limite de velocidade para veículos ligeiros é de 90 km/h. Conduz sempre com prudência, respeitando a sinalização e adaptando a velocidade às condições da estrada."
   },
   {
     "input": "Há alguma regra sobre a distância mínima para estacionar de uma passagem de nível?",
@@ -1830,7 +1830,7 @@
   },
   {
     "input": "É obrigatório usar cinto nos bancos de trás dum táxi?",
-    "output": "Sim. Todos os ocupantes devem usar cinto de segurança, mesmo no banco de trás de um táxi. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Sim. Todos os ocupantes devem usar cinto de segurança, mesmo no banco de trás de um táxi ou de qualquer tipo de veículo menos nos autocarros públicos."
   },
   {
     "input": "Posso ultrapassar um carro que vai muito devagar mesmo com linha contínua?",
@@ -1846,7 +1846,7 @@
   },
   {
     "input": "Posso conduzir com óculos escuros se estiver a chover?",
-    "output": "Não é proibido, mas pode reduzir a visibilidade. É melhor evitá-los em dias com pouca luz. Deste modo, contribui-se ativamente para a ordem e fluidez do trânsito."
+    "output": "Não é proibido, mas pode reduzir a visibilidade. É melhor evitá-los em dias com pouca luz. O código da estrada exige que o condutor mantenha sempre boas condições de visão."
   },
   {
     "input": "sou obrigado a travar se vir um animal na estrada?",
@@ -1882,7 +1882,7 @@
   },
   {
     "input": "Posso usar o carro para dar aulas de condução ao meu filho?",
-    "output": "Só se for instrutor credenciado e o carro tiver dupla comando. Caso contrário, é ilegal e perigoso. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Só se for instrutor credenciado e o carro tiver dupla comando. Caso contrário, é ilegal e perigoso, o seu filho deve procurar ajuda profissional."
   },
   {
     "input": "dá multa andar sem cinto mesmo sendo condutor experiente?",
@@ -1894,7 +1894,7 @@
   },
   {
     "input": "É preciso piscar antes de entrar numa rotunda?",
-    "output": "Não é obrigatório sinalizar a entrada, mas deve sempre sinalizar a saída com o pisca da direita. Deste modo, contribui-se ativamente para a ordem e fluidez do trânsito."
+    "output": "Não é obrigatório sinalizar a entrada, mas deve sempre sinalizar a saída com o pisca da direita. Esteja atento aos outros condutores e sinalize sempre que queira sair."
   },
   {
     "input": "E se entrar na autoestrada ao contrário por engano?",
@@ -1926,7 +1926,7 @@
   },
   {
     "input": "E se tiver a ouvir música com phones nos dois ouvidos?",
-    "output": "Isso é proibido. Deve manter pelo menos um ouvido livre para ouvir o ambiente e sinais sonoros da estrada. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Isso é proibido. Deve manter pelo menos um ouvido livre para ouvir o ambiente e sinais sonoros da estrada. Deve-se manter sempre alerta do ambiente que o rodeias."
   },
   {
     "input": "Eh pá, posso deixar o carro na passadeira se for só 30 segundos?",
@@ -1938,7 +1938,7 @@
   },
   {
     "input": "se estiver parado num sinal posso mexer no telemóvel?",
-    "output": "Não. Mesmo parado num sinal vermelho, o uso do telemóvel é proibido, salvo com sistema mãos-livres. Deste modo, contribui-se ativamente para a ordem e fluidez do trânsito."
+    "output": "Não. A melhor opção é usar um suporte homologado e, se necessário, recorrer a comandos por voz. Mesmo parado, a atenção à estrada deve ser mantida. Segurança em primeiro lugar."
   },
   {
     "input": "e se for só pa mudar de música?",
@@ -1978,7 +1978,7 @@
   },
   {
     "input": "Epa posso circular com um papagaio ao ombro?",
-    "output": "Não. Animais devem estar seguros e não podem interferir na condução. Levar um papagaio solto pode ser considerado infração. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Podes ter um papagaio, mas não ao ombro tipo pirata! Os animais devem estar seguros para a sua segurança senão o único voo que fazem é até à multa."
   },
   {
     "input": "É permitido conduzir de fones com cancelamento de ruído?",
@@ -1990,7 +1990,7 @@
   },
   {
     "input": "Dá multa se os limpa pára-brisas não funcionarem?",
-    "output": "Sim. É contraordenação circular com equipamento essencial avariado, especialmente em dias de chuva. Deste modo, contribui-se ativamente para a ordem e fluidez do trânsito."
+    "output": "Sim. É contraordenação circular com equipamento essencial avariado, especialmente em dias de chuva. Manter os limpa para-brisas em bom estado é fundamental para uma condução segura e para o cumprimento das normas rodoviárias em Portugal."
   },
   {
     "input": "é proibido conduzir com um pé só?",
@@ -2026,7 +2026,7 @@
   },
   {
     "input": "posso circular numa rotunda com os máximos ligados?",
-    "output": "Nas localidades, incluindo rotundas, deve usar médios. Os máximos só em zonas não iluminadas e sem encandear outros condutores. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Não. Circular numa rotunda com os máximos ligados é proibido se houver outros veículos, pois encandeia. O Código da Estrada exige o uso de médios nestas situações para segurança."
   },
   {
     "input": "e se for só para ver melhor a sinalização?",
@@ -2066,7 +2066,7 @@
   },
   {
     "input": "Dá multa travar de repente sem motivo?",
-    "output": "Se causar perigo aos outros, sim. Travagens bruscas sem justificação podem ser consideradas condução perigosa. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Sim salvo em caso de perigo iminente, o condutor não deve diminuir subitamente a velocidade sem previamente se certificar de que daí não resulta perigo para os outros utentes da via, nomeadamente para os condutores dos veículos que o sigam."
   },
   {
     "input": "Tenho prioridade se estiver a ultrapassar numa subida?",
@@ -2082,7 +2082,7 @@
   },
   {
     "input": "Posso buzinar se alguém não arranca com o sinal verde?",
-    "output": "A buzina só deve ser usada para evitar acidentes. Impaciência não é razão válida e pode dar coima. Deste modo, contribui-se ativamente para a ordem e fluidez do trânsito."
+    "output": "A buzina só deve ser usada para evitar acidentes. Impaciência não é razão válida e pode dar coima. O ideal é dar alguns segundos de tolerância. Se o veículo não se mexer, tente falar com o outro condutor."
   },
   {
     "input": "Gostaria de saber mais detalhes sobre a seguinte questão: É permitido avançar num cruzamento bloqueado?",
@@ -2114,7 +2114,7 @@
   },
   {
     "input": "Se for apanhado sem cinto, quantos pontos perco?",
-    "output": "Perde 2 pontos. É uma contraordenação grave. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Se fores apanhado sem cinto de segurança, cometes uma contraordenação grave. Esta infração resulta na perda de 2 pontos na carta de condução e numa coima entre 120€ e 600€."
   },
   {
     "input": "Gostaria de saber mais detalhes sobre a seguinte questão: É possível recuperar pontos perdidos?",
@@ -2166,7 +2166,7 @@
   },
   {
     "input": "posso usar película escura nos vidros da frente?",
-    "output": "Sim, desde que sejam homologadas e tenham certificado visível. Caso contrário, é infração. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Sim, podes usar película escura nos vidros da frente, desde que sejam homologadas e deixem passar luz suficiente: 75% no para-brisas e 70% nos vidros das portas dianteiras."
   },
   {
     "input": "Gostaria de saber mais detalhes sobre a seguinte questão: Posso conduzir com vidro rachado?",
@@ -2214,7 +2214,7 @@
   },
   {
     "input": "dá multa conduzir de óculos escuros à noite?",
-    "output": "Não é proibido, mas é altamente desaconselhado. Se for causa de acidente, pode ser agravante. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Não é proibido, mas é altamente desaconselhado. Se for causa de acidente, pode ser agravante. A redução da luminosidade natural já limita a visibilidade e óculos escuros podem agravar essa limitação."
   },
   {
     "input": "se tiver um manequim no banco da frente, conta como passageiro?",
@@ -2262,7 +2262,7 @@
   },
   {
     "input": "Posso pendurar um pinheirinho no espelho retrovisor?",
-    "output": "Sim, se não obstruir a visão. Mas evite objetos grandes ou distrativos. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Sim, se não obstruir a visão. Mas evite objetos grandes ou distrativos. Se o pinheirinho for decorativo e não interferir com a segurança, é permitido. Caso contrário, pode dar origem a coima por condução perigosa."
   },
   {
     "input": "posso andar com um mini-frigorífico ligado no carro?",
@@ -2306,7 +2306,7 @@
   },
   {
     "input": "posso pendurar uma melancia no espelho do carro?",
-    "output": "Não. Objetos grandes ou pesados soltos são perigosos e ilegais. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Não. Objetos grandes ou pesados soltos são perigosos e ilegais. Isso prejudica a visibilidade e pode distrair, sendo considerado infração pelo Código da Estrada."
   },
   {
     "input": "Posso usar uma buzina que faz som de vaca?",
@@ -2350,7 +2350,7 @@
   },
   {
     "input": "É permitido fazer marcha atrás numa rotunda?",
-    "output": "Não. A marcha atrás é proibida em rotundas, por razões de segurança e fluidez do trânsito. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Não, é proibido fazer marcha atrás numa rotunda. Essa manobra é perigosa, compromete a fluidez do trânsito e pode causar acidentes. A circulação deve ser feita no sentido regulamentar."
   },
   {
     "input": "Tenho de parar num cruzamento mesmo que tenha prioridade?",
@@ -2390,7 +2390,7 @@
   },
   {
     "input": "Posso circular numa autoestrada com pneu suplente de emergência?",
-    "output": "Não é recomendado. Os pneus suplentes de emergência são para uso temporário e não para alta velocidade. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Não é recomendado. Os pneus suplentes de emergência são para uso temporário e não para alta velocidade. Troca o pneu o mais rapidamente possível por um pneu normal em bom estado."
   },
   {
     "input": "Sou obrigado a lavar o carro para passar na inspeção?",
@@ -2414,7 +2414,7 @@
   },
   {
     "input": "É preciso parar se um autocarro escolar estiver a descarregar crianças?",
-    "output": "Sim, especialmente se houver sinalização ou crianças a atravessar a estrada. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Sim, especialmente se houver sinalização ou crianças a atravessar a estrada. Deve retomar a marcha apenas quando for seguro, garantindo que não há crianças na faixa de rodagem."
   },
   {
     "input": "Posso estacionar em frente a um posto de bombeiros?",
@@ -2430,7 +2430,7 @@
   },
   {
     "input": "O que devo fazer se um veículo bloquear a minha saída da garagem?",
-    "output": "Deve contactar as autoridades. Estacionar a obstruir garagens é infração e pode levar ao reboque do veículo. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Deve agir com calma e contactar as autoridades. Estacionar a obstruir garagens é infração e pode levar ao reboque do veículo. Não tentes empurrar, forçar passagem ou deixar bilhetes agressivos — pode ser contraproducente e até considerado dano ou coação."
   },
   {
     "input": "Posso circular numa via reservada a transportes públicos com carro normal?",
@@ -2474,7 +2474,7 @@
   },
   {
     "input": "Como devo proceder se um veículo me der luzes por trás?",
-    "output": "Deve facilitar a ultrapassagem, deslocando-se para a direita se possível. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Deve facilitar a ultrapassagem, deslocando-se para a direita se possível. Se não for seguro mudar de faixa ou dar passagem, mantém o curso e só facilita quando possível."
   },
   {
     "input": "Posso levar o cão solto na carrinha se ele estiver atrás da rede?",
@@ -2518,7 +2518,7 @@
   },
   {
     "input": "Qual a distância mínima para estacionar de uma curva apertada?",
-    "output": "Deve manter pelo menos 5 metros de distância de curvas com visibilidade reduzida. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Deve manter pelo menos 5 metros de distância de curvas com visibilidade reduzida. Segurança e visibilidade são prioridades e salvam muitas vidas."
   },
   {
     "input": "Caminhões também têm de respeitar o limite de 50 km/h em zonas urbanas?",
@@ -2562,7 +2562,7 @@
   },
   {
     "input": "Posso usar luzes LED decorativas dentro do carro?",
-    "output": "Sim, desde que não distraiam o condutor nem afetem a visibilidade exterior. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Sim, desde que não distraiam o condutor nem afetem a visibilidade exterior. As luzes interiores não estejam sujeitas a regulamentações tão rigorosas como as exteriores."
   },
   {
     "input": "Se um veículo lento não deixar ultrapassar, posso buzinar várias vezes?",
@@ -2606,7 +2606,7 @@
   },
   {
     "input": "O que faço se encontrar um semáforo desligado?",
-    "output": "Deve aplicar as regras de cedência de passagem, como se não houvesse semáforo. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Deve aplicar as regras de cedência de passagem, como se não houvesse semáforo. Ou seja aplica as regras de prioridade e conduz com atenção redobrada."
   },
   {
     "input": "Posso parar numa autoestrada se vir algo perigoso na via?",
@@ -2646,11 +2646,11 @@
   },
   {
     "input": "É permitido circular numa estrada com granizo acumulado?",
-    "output": "Sim, mas deve reduzir a velocidade, aumentar a distância de segurança e evitar travagens bruscas. Comportamentos assim são a base de uma convivência segura no trânsito."
+    "output": "Sim, podes circular com granizo acumulado, mas deves redobrar a atenção. Reduz a velocidade, evita travagens bruscas e respeita a distância de segurança. A segurança vem sempre primeiro, não arrisques."
   },
   {
     "input": "Tenho de travar sempre ao ver um sinal de prioridade?",
-    "output": "Não necessariamente. O sinal indica que tem prioridade, mas deve sempre confirmar se pode avançar em segurança. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Não necessariamente. O sinal indica que tem prioridade, mas deve sempre confirmar se pode avançar em segurança. Nunca assumes prioridade de forma absoluta."
   },
   {
     "input": "É obrigatório usar o pisca ao sair de um parque de estacionamento?",
@@ -2686,11 +2686,11 @@
   },
   {
     "input": "Um veículo agrícola precisa de inspeção obrigatória?",
-    "output": "Sim, se circular em via pública e tiver mais de 8 anos. Deve cumprir o calendário de inspeções. Comportamentos assim são a base de uma convivência segura no trânsito."
+    "output": "Sim, se circular em via pública e tiver mais de 8 anos. Deve cumprir o calendário de inspeções. Esta obrigatoriedade visa assegurar a segurança rodoviária e a conformidade dos veículos com as normas em vigor."
   },
   {
     "input": "Tenho de parar para uma patrulha da GNR mesmo que não esteja fardada?",
-    "output": "Sim, desde que esteja devidamente identificada e o veículo seja oficial ou com sinalização. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Sim, desde que esteja devidamente identificada e o veículo seja oficial ou com sinalização. Os militares da GNR podem, em determinadas situações, desempenhar funções em traje civil."
   },
   {
     "input": "É obrigatório manter distância lateral ao ultrapassar um cavalo?",
@@ -2726,11 +2726,11 @@
   },
   {
     "input": "É permitido andar com um cão preso por trela a correr ao lado do carro?",
-    "output": "Não. Tal prática é proibida por pôr em risco o animal e a segurança rodoviária. Comportamentos assim são a base de uma convivência segura no trânsito."
+    "output": "Conduzir com um cão preso por trela a correr ao lado do carro é proibido. Além de perigoso, compromete o controlo do veículo e a segurança do animal e terceiros."
   },
   {
     "input": "Posso parar na faixa BUS se tiver pisca ligado e for rápido?",
-    "output": "Não. A paragem em faixas BUS é proibida, mesmo por breves instantes. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Não. A paragem em faixas BUS é proibida, mesmo por breves instantes. Se precisares mesmo de parar, procura uma zona de paragem legal fora das faixas reservadas."
   },
   {
     "input": "Sou obrigado a pagar estacionamento com app se não tenho smartphone?",
@@ -2766,11 +2766,11 @@
   },
   {
     "input": "O IMT pode retirar pontos por infrações leves?",
-    "output": "Não. Apenas infrações graves e muito graves implicam perda de pontos na carta. Comportamentos assim são a base de uma convivência segura no trânsito."
+    "output": "Não. Apenas infrações graves e muito graves implicam perda de pontos na carta. As infrações leves são sancionadas apenas com coima e não implicam a perda de pontos."
   },
   {
     "input": "Se perder a carta por pontos, posso conduzir com outra categoria?",
-    "output": "Não. A perda de todos os pontos implica a inibição de conduzir qualquer veículo até nova revalidação. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Não. A perda de todos os pontos implica a inibição de conduzir qualquer veículo até nova revalidação. Conduzir depois de perder a carta é considerado crime de condução ilegal, com pena de prisão até 2 anos ou multa até 240 dias."
   },
   {
     "input": "Uma mota pode circular no corredor do elétrico?",
@@ -2806,11 +2806,11 @@
   },
   {
     "input": "É obrigatório fazer exame médico para renovar a carta?",
-    "output": "Sim, a partir de certas idades e categorias de condução, é necessário exame médico para renovação. Comportamentos assim são a base de uma convivência segura no trânsito."
+    "output": "Sim, a partir de certas idades e categorias de condução, é necessário exame médico para renovação. O atestado médico é enviado eletronicamente pelo profissional de saúde."
   },
   {
     "input": "Posso ser multado por levar lenços ou objetos no tablier?",
-    "output": "Sim, se obstruírem a visibilidade ou se soltar em caso de travagem, é considerado risco de segurança. Esta conduta reduz drasticamente o risco de acidentes em situações semelhantes."
+    "output": "Sim, se obstruírem a visibilidade ou se soltar em caso de travagem, é considerado risco de segurança. Ao manteres o interior do teu veículo organizado estarás a contribuir para uma condução mais segura e em conformidade com a legislação rodoviária."
   },
   {
     "input": "É permitido ouvir rádio com auscultadores num só ouvido?",
