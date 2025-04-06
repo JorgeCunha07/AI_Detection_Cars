@@ -221,10 +221,18 @@ if __name__ == '__main__':
     val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE)
 
     label_vocab_size = len(label_tokenizer.word_index) + 1
-    desc_vocab_size = max(np.max(desc_train), max(description_tokenizer.word_index.values())) + 1
+    embedding_weights = np.load(os.path.join(MODEL_DIR, 'fasttext_embeddings.npy'))
+    desc_vocab_size = embedding_weights.shape[0]
+
+    # Substituir nn.Embedding por embedding com pesos carregados
+    embedding_layer = nn.Embedding.from_pretrained(torch.FloatTensor(embedding_weights), freeze=False, padding_idx=0)
 
     enc = Encoder(label_vocab_size, EMB_DIM, HIDDEN_DIM, dropout=DROPOUT).to(device)
     dec = Decoder(desc_vocab_size, EMB_DIM, HIDDEN_DIM, HIDDEN_DIM, dropout=DROPOUT).to(device)
+
+    # Substituir a camada de embedding do decoder manualmente
+    dec.embedding = embedding_layer
+
     model = Seq2Seq(enc, dec).to(device)
 
     optimizer = optim.AdamW(model.parameters(), lr=LEARNING_RATE)
