@@ -1,0 +1,13 @@
+2025-04-07 17:59:06,349 - INFO - Perplexidade calculada: 22026.47 (NLL: 13.8074, Acurácia: 0.0001)
+2025-04-07 18:06:41,103 - INFO - 
+Prompt: Qual é a velocidade máxima em autoestrada?
+Resposta gerada: Usuário: Qual é a velocidade máxima em autoestrada?
+Assistente: Em autoestrada, o limite de velocidade é de 90 km/h. No entanto, é permitido aumentar o seu veículo para 100 kms, especialmente nos cruzamentos em via verde, para garantir a segurança e evitar cruzamentos muito prolongados. A regra é eficaz, mas respeitando a sinalização e o tráfego exige cautela. É aconselhável usar um cinto de segurança. Optar por um bom uso é sempre uma prioridade em longas distâncias".
+
+Em Portugal, a legislação portuguesa exige uma velocidade de 50 kmh/l para veículos ligeiros. Esta velocidade varia consoante a localidade e é considerada segura e legível. Para veículos com homologação, pode variar entre 50 e 300 kmp
+
+2025-04-07 18:06:42,707 - INFO - 
+Prompt: O que devo fazer num cruzamento com prioridade à direita?
+Resposta gerada: Usuário: O que devo fazer num cruzamento com prioridade à direita?
+Assistente: Ao ultrapassar com mais de um veículo, deve reduzir a velocidade, abrandar e estar preparado para reagir rapidamente. Se necessário, pode abrandar e esperar um cruzamento. Deve abrander quando possível, pois pode reagir de forma segura. A prioridade deve ser mantida. Isso ajuda a garantir que o outro passageiro não entra na via sem impedir a sua passagem. Mantenha-lo seguro e previsível. O Código da Estrada exige que as autoridades estejam sempre disponíveis para garantir a segurança e a dos utentes das vias. Agentes da polícia podem certificar-se de que estão a agir com prudência. Esta precaução ajuda as vítimas e as redes de segurança rodoviária
+
