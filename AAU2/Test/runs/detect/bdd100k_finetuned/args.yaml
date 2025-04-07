@@ -1,8 +1,8 @@
 task: detect
 mode: train
 model: yolov8n.pt
-data: bdd100k_dataset.yaml
-epochs: 100
+data: C:\Users\Jorge Cunha\Desktop\Python\AI_Detection_Cars\AAU2\Test\yolo_dataset\bdd100k_dataset.yaml
+epochs: 400
 time: null
 patience: 10
 batch: 16
@@ -10,7 +10,7 @@ imgsz: 640
 save: true
 save_period: -1
 cache: false
-device: cpu
+device: '0'
 workers: 2
 project: null
 name: bdd100k_finetuned
@@ -103,4 +103,4 @@ erasing: 0.4
 crop_fraction: 1.0
 cfg: null
 tracker: botsort.yaml
-save_dir: runs/detect/bdd100k_finetuned
+save_dir: runs\detect\bdd100k_finetuned

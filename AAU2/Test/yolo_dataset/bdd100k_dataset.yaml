@@ -10,6 +10,6 @@ names:
 - bike
 - train
 nc: 10
-test: /Users/jorgecunha/PycharmProjects/AI_Detection_Cars/AAU2/Test/yolo_dataset/images/test
-train: /Users/jorgecunha/PycharmProjects/AI_Detection_Cars/AAU2/Test/yolo_dataset/images/train
-val: /Users/jorgecunha/PycharmProjects/AI_Detection_Cars/AAU2/Test/yolo_dataset/images/validation
+test: C:\Users\Jorge Cunha\Desktop\Python\AI_Detection_Cars\AAU2\Test\yolo_dataset\images/test
+train: C:\Users\Jorge Cunha\Desktop\Python\AI_Detection_Cars\AAU2\Test\yolo_dataset\images/train
+val: C:\Users\Jorge Cunha\Desktop\Python\AI_Detection_Cars\AAU2\Test\yolo_dataset\images/validation
