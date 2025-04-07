@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import torch
+import math
 from transformers import GPT2Tokenizer, GPT2LMHeadModel, Trainer, TrainingArguments, DataCollatorForLanguageModeling, EarlyStoppingCallback
 from datasets import Dataset
 from pathlib import Path
@@ -14,7 +15,7 @@ print(f"⚙️  Dispositivo em uso: {device}")
 # Diretórios e caminhos
 chat_dir = Path(__file__).resolve().parent.parent / "chat"
 modelo_output_dir = chat_dir / "gpt2-chat-finetuned"
-dados_json_path = chat_dir / "dialogos_validos3.json"
+dados_json_path = chat_dir / "dialogos_validos4.json"
 
 # Carregar e filtrar dados
 with open(dados_json_path, encoding="utf-8") as f:
@@ -52,7 +53,7 @@ model = GPT2LMHeadModel.from_pretrained(model_name).to(device)
 
 # Função de tokenização com loss masking para os tokens do prompt
 def tokenize(batch):
-    outputs = tokenizer(batch["text"], truncation=True, padding="longest", max_length=512)
+    outputs = tokenizer(batch["text"], truncation=True, padding="longest", max_length=256)
     input_ids = outputs["input_ids"]
     labels = []
     assistant_marker = "Assistente: "
@@ -74,6 +75,26 @@ def tokenize(batch):
     outputs["labels"] = labels
     return outputs
 
+import torch
+import math
+
+def compute_metrics(eval_pred):
+    logits, labels = eval_pred
+    logits = torch.tensor(logits)
+    labels = torch.tensor(labels)
+
+    shift_logits = logits[..., :-1, :].contiguous()
+    shift_labels = labels[..., 1:].contiguous()
+
+    loss_fct = torch.nn.CrossEntropyLoss(ignore_index=-100)
+    loss = loss_fct(shift_logits.view(-1, shift_logits.size(-1)), shift_labels.view(-1))
+
+    perplexity = math.exp(loss.item()) if loss.item() < 100 else float("inf")
+    return {
+        "eval_loss": loss.item(),
+        "perplexity": perplexity
+    }
+
 # Dividir o dataset em treino e validação (80/20) e aplicar tokenização
 split_dataset = dataset.train_test_split(test_size=0.2, seed=42)
 train_dataset = split_dataset["train"].map(tokenize, batched=True, remove_columns=["text"])
@@ -84,12 +105,14 @@ args = TrainingArguments(
     output_dir="output",
     overwrite_output_dir=True,
     evaluation_strategy="epoch",             # Avaliação ao final de cada época
-    per_device_train_batch_size=4,
-    per_device_eval_batch_size=4,
+    per_device_train_batch_size=2,
+    per_device_eval_batch_size=1,
     gradient_accumulation_steps=2,
-    num_train_epochs=10,                     # Número máximo de épocas (o treino pode parar antes)
+    eval_accumulation_steps=10,
+    num_train_epochs=20,                     # Número máximo de épocas (o treino pode parar antes)
     warmup_steps=200,
-    logging_steps=50,
+    logging_strategy="steps",
+    logging_steps=50,  # Ele vai cuspir a cada 50 steps
     save_strategy="epoch",
     learning_rate=3e-5,
     fp16=True if torch.cuda.is_available() else False,
@@ -108,11 +131,16 @@ trainer = Trainer(
     eval_dataset=val_dataset,
     data_collator=collator,
     tokenizer=tokenizer,
-    callbacks=[EarlyStoppingCallback(early_stopping_patience=3)]
+    compute_metrics=compute_metrics,
+    callbacks=[EarlyStoppingCallback(early_stopping_patience=4)]
 )
+
 
 print("🧠 Iniciando treino com Early Stopping...")
 trainer.train()
+metrics = trainer.evaluate()
+print(f"\n📊 Avaliação final: {metrics}")
+
 
 print("💾 Salvando modelo...")
 modelo_output_dir.mkdir(parents=True, exist_ok=True)

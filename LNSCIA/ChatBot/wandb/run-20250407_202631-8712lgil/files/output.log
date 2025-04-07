@@ -1,0 +1,79 @@
+  0%|                                                                                                                                                                                  | 0/600 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+`loss_type=None` was set in the config but it is unrecognised.Using the default loss: `ForCausalLMLoss`.
+ 12%|█████████████████████▏                                                                                                                                                   | 75/600 [00:19<02:15,  3.86it/s]2025-04-07 20:26:52,144 - INFO - Gerando amostras para a Época 1...
+2025-04-07 20:26:57,590 - INFO - Amostras geradas salvas em: C:\Users\CarlosMoutinho(11408\Documents\GitHub\AI_Detection_Cars\LNSCIA\ChatBot\scr\chat\trainer_output\gerados\samples_epoch_1.txt
+ 25%|██████████████████████████████████████████                                                                                                                              | 150/600 [00:44<01:53,  3.98it/s]2025-04-07 20:27:16,884 - INFO - Gerando amostras para a Época 2...
+{'loss': 3.3704, 'grad_norm': 2.7393617630004883, 'learning_rate': 2.959567305869736e-05, 'epoch': 1.33}
+2025-04-07 20:27:22,234 - INFO - Amostras geradas salvas em: C:\Users\CarlosMoutinho(11408\Documents\GitHub\AI_Detection_Cars\LNSCIA\ChatBot\scr\chat\trainer_output\gerados\samples_epoch_2.txt
+ 38%|███████████████████████████████████████████████████████████████                                                                                                         | 225/600 [01:09<01:33,  3.99it/s]2025-04-07 20:27:41,898 - INFO - Gerando amostras para a Época 3...
+{'loss': 2.5059, 'grad_norm': 2.557568311691284, 'learning_rate': 2.5293624568031008e-05, 'epoch': 2.67}
+2025-04-07 20:27:47,262 - INFO - Amostras geradas salvas em: C:\Users\CarlosMoutinho(11408\Documents\GitHub\AI_Detection_Cars\LNSCIA\ChatBot\scr\chat\trainer_output\gerados\samples_epoch_3.txt
+ 50%|████████████████████████████████████████████████████████████████████████████████████                                                                                    | 300/600 [01:34<01:15,  3.97it/s]2025-04-07 20:28:06,774 - INFO - Gerando amostras para a Época 4...
+{'loss': 2.192, 'grad_norm': 3.0276997089385986, 'learning_rate': 1.760472266500396e-05, 'epoch': 4.0}
+2025-04-07 20:28:12,092 - INFO - Amostras geradas salvas em: C:\Users\CarlosMoutinho(11408\Documents\GitHub\AI_Detection_Cars\LNSCIA\ChatBot\scr\chat\trainer_output\gerados\samples_epoch_4.txt
+ 62%|█████████████████████████████████████████████████████████████████████████████████████████████████████████                                                               | 375/600 [01:59<00:58,  3.88it/s]2025-04-07 20:28:31,658 - INFO - Gerando amostras para a Época 5...
+2025-04-07 20:28:37,134 - INFO - Amostras geradas salvas em: C:\Users\CarlosMoutinho(11408\Documents\GitHub\AI_Detection_Cars\LNSCIA\ChatBot\scr\chat\trainer_output\gerados\samples_epoch_5.txt
+ 75%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                          | 450/600 [02:23<00:37,  3.98it/s]2025-04-07 20:28:56,553 - INFO - Gerando amostras para a Época 6...
+{'loss': 2.0118, 'grad_norm': 2.5029983520507812, 'learning_rate': 9.058803509412647e-06, 'epoch': 5.33}
+2025-04-07 20:29:01,920 - INFO - Amostras geradas salvas em: C:\Users\CarlosMoutinho(11408\Documents\GitHub\AI_Detection_Cars\LNSCIA\ChatBot\scr\chat\trainer_output\gerados\samples_epoch_6.txt
+ 88%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                     | 525/600 [08:01<00:20,  3.69it/s]2025-04-07 20:34:33,663 - INFO - Gerando amostras para a Época 7...
+{'loss': 1.9216, 'grad_norm': 2.958927869796753, 'learning_rate': 2.467682828805956e-06, 'epoch': 6.67}
+2025-04-07 20:34:39,479 - INFO - Amostras geradas salvas em: C:\Users\CarlosMoutinho(11408\Documents\GitHub\AI_Detection_Cars\LNSCIA\ChatBot\scr\chat\trainer_output\gerados\samples_epoch_7.txt               
+{'eval_loss': 12.997425079345703, 'eval_perplexity': 22026.465794806718, 'eval_accuracy': 0.00011832918971776962, 'eval_runtime': 308.425, 'eval_samples_per_second': 0.486, 'eval_steps_per_second': 0.486, 'epoch': 6.67}
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 600/600 [08:26<00:00,  3.99it/s]2025-04-07 20:35:01,134 - INFO - Gerando amostras para a Época 8...
+{'loss': 1.8922, 'grad_norm': 3.8163301944732666, 'learning_rate': 0.0, 'epoch': 8.0}
+2025-04-07 20:35:06,389 - INFO - Amostras geradas salvas em: C:\Users\CarlosMoutinho(11408\Documents\GitHub\AI_Detection_Cars\LNSCIA\ChatBot\scr\chat\trainer_output\gerados\samples_epoch_8.txt
+There were missing keys in the checkpoint model loaded: ['lm_head.weight'].
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 600/600 [08:34<00:00,  1.17it/s]
+{'train_runtime': 515.9792, 'train_samples_per_second': 9.272, 'train_steps_per_second': 1.163, 'train_loss': 2.3156377919514974, 'epoch': 8.0}
+2025-04-07 20:35:07,392 - INFO - Treino concluído. Salvando métricas de treino...
+***** train metrics *****
+  epoch                    =        8.0
+  total_flos               =   206913GF
+  train_loss               =     2.3156
+  train_runtime            = 0:08:35.97
+  train_samples_per_second =      9.272
+  train_steps_per_second   =      1.163
+2025-04-07 20:35:07,405 - INFO - Salvando o melhor modelo encontrado durante o treino...
+2025-04-07 20:35:08,132 - INFO - Melhor modelo e tokenizer salvos em C:\Users\CarlosMoutinho(11408\Documents\GitHub\AI_Detection_Cars\LNSCIA\ChatBot\scr\chat\gpt2-chat-finetuned
+2025-04-07 20:35:08,133 - INFO - Avaliando o melhor modelo no conjunto de validação...
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 150/150 [04:05<00:00,  1.64s/it]
+2025-04-07 20:39:14,304 - INFO - Métricas finais de avaliação: {'eval_loss': 12.997425079345703, 'eval_perplexity': 22026.465794806718, 'eval_accuracy': 0.00011832918971776962, 'eval_runtime': 245.8469, 'eval_samples_per_second': 0.61, 'eval_steps_per_second': 0.61, 'epoch': 8.0}
+***** eval_final metrics *****
+  epoch                   =        8.0
+  eval_accuracy           =     0.0001
+  eval_loss               =    12.9974
+  eval_perplexity         = 22026.4658
+  eval_runtime            = 0:04:05.84
+  eval_samples_per_second =       0.61
+  eval_steps_per_second   =       0.61
+2025-04-07 20:39:14,367 - INFO - Testando o modelo final (carregado pelo Trainer ou último checkpoint) com exemplos...
+2025-04-07 20:39:16,321 - INFO -
+--- Prompt: Qual é a velocidade máxima em autoestrada?
+--- Resposta gerada:
+Usuário: Qual é a velocidade máxima em autoestrada?
+Assistente: A velocidade mínima permitida num autoestrada é de 90 km/h. Esta regra aplica-se somente em vias urbanas, exceto em zonas residenciais e onde há sinalização rodoviária. A máxima permitida é permitida em faixas exclusivas. É importante não ultrapassar a tolerância para ultrapassagens legais em estradas. Isso ajuda a garantir a segurança rodoviária e o acesso rodoviário à zona de ocupação.
+
+A sinalização rodoviário exige que o veículo esteja a 300 metros de altura e a marcha em linha reta. O veículo deve estar sempre equipado com
+
+2025-04-07 20:39:17,739 - INFO -
+--- Prompt: O que devo fazer num cruzamento com prioridade à direita?
+--- Resposta gerada:
+Usuário: O que devo fazer num cruzamento com prioridade à direita?
+Assistente: Em cruzamentos com autoestrada, a prioridade deve ser sempre na direção à esquerda. No entanto, se houver veículos de visibilidade superior a 120 metros, pode reduzir ou reduzir a visibilidade. Deve aguardar até que haja sinalização suficiente. A prioridade é sempre em primeiro lugar, independentemente da situação. Manter-se atento ao trânsito e não se distraia de outros veículos. Se não tiver sinalização, deve parar ou proceder com precaução. O melhor é fazer marcha com segurança. Procure a todos em caso de emergência.
+
+2025-04-07 20:39:19,101 - INFO -
+--- Prompt: Como posso verificar o nível do óleo do motor?
+--- Resposta gerada:
+Usuário: Como posso verificar o nível do óleo do motor?
+Assistente: Não, a indicação precisa ser válida e válida para o veículo a motor. Esta é uma regra única e é válida apenas para veículos a óleo. Mesmo assim, é importante verificar osagem no óleo para garantir que não interfira com o funcionamento do veículo. Agentes do IMT devem garantir a conformidade total de todas as medidas, independentemente de velocidade. Deve estar informado do nível de óleo no veículo e usar as luzes para alertar outros condutores. É essencial manter o controlo do acelerador seguro e evitar travamentos
+
+2025-04-07 20:39:20,451 - INFO -
+--- Prompt: Quais são os documentos obrigatórios para circular?
+--- Resposta gerada:
+Usuário: Quais são os documentos obrigatórios para circular?
+Assistente: Os documentos legais de condução devem ser obrigatoriamente assinados pelo condutor e devidamente homologados. No entanto, é ilegal circular com um documento inferior a 4 mm (2,5 mm), pois pode comprometer a segurança rodoviária. A legislação portuguesa exige que o condutor tenha um seguro de segurança em caso de colisão ou perigo real. Se o veículo não tiver seguro, pode ser considerado infringir a lei. Caso contrário, deve usar um veículo de emergência imediato. Seguir o seguro pode garantir a sua segurança durante a
+
+2025-04-07 20:39:20,452 - INFO - ==================================================
+2025-04-07 20:39:20,452 - INFO - Script de Treinamento Concluído.
+2025-04-07 20:39:20,452 - INFO - ==================================================
