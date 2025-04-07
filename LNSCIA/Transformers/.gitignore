@@ -1,3 +1,13 @@
-logs/*
-__pycache__/*
+# Model checkpoints
+modelo-final/model.safetensors
+mt5-descriptions/
+logs/
+*.log
+
+# Dataset files
 data/*
+
+# Env
+.venv/
+__pycache__/
+.ipynb_checkpoints/
