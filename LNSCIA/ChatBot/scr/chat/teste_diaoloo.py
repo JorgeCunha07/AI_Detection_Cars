@@ -1,0 +1,28 @@
+import json
+from pathlib import Path
+from transformers import GPT2Tokenizer
+
+
+# Ajuste o caminho conforme necessário
+json_path = Path("dialogos_validos4.json")
+
+# Carregar os dados do arquivo JSON
+with open(json_path, encoding="utf-8") as f:
+    data = json.load(f)
+
+model_name = "pierreguillou/gpt2-small-portuguese"
+tokenizer = GPT2Tokenizer.from_pretrained(model_name)
+
+token_lengths = []
+
+for entry in data:
+    # Formatar o texto conforme utilizado no treino
+    text = f"Usuário: {entry['input']}\nAssistente: {entry['output']}"
+    tokens = tokenizer(text, truncation=False)["input_ids"]
+    token_lengths.append(len(tokens))
+
+max_tokens = max(token_lengths)
+average_tokens = sum(token_lengths) / len(token_lengths)
+
+print("Número máximo de tokens em uma entrada:", max_tokens)
+print("Número médio de tokens por entrada:", average_tokens)
