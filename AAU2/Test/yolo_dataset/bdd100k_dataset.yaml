@@ -1,0 +1,15 @@
+names:
+- traffic sign
+- traffic light
+- car
+- rider
+- motor
+- person
+- bus
+- truck
+- bike
+- train
+nc: 10
+test: C:\Users\Jorge Cunha\Desktop\Python\AI_Detection_Cars\AAU2\Test\yolo_dataset\images/test
+train: C:\Users\Jorge Cunha\Desktop\Python\AI_Detection_Cars\AAU2\Test\yolo_dataset\images/train
+val: C:\Users\Jorge Cunha\Desktop\Python\AI_Detection_Cars\AAU2\Test\yolo_dataset\images/validation
