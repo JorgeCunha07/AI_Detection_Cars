@@ -1,0 +1,15 @@
+names:
+- traffic sign
+- traffic light
+- car
+- rider
+- motor
+- person
+- bus
+- truck
+- bike
+- train
+nc: 10
+test: /Users/jorgecunha/PycharmProjects/AI_Detection_Cars/AAU2/Test/yolo_dataset/images/test
+train: /Users/jorgecunha/PycharmProjects/AI_Detection_Cars/AAU2/Test/yolo_dataset/images/train
+val: /Users/jorgecunha/PycharmProjects/AI_Detection_Cars/AAU2/Test/yolo_dataset/images/validation
