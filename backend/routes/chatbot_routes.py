@@ -33,7 +33,7 @@ def conversa_endpoint(req: PerguntaRequest):
 @router.get("/quiz/pergunta")
 def obter_pergunta():
     path_questoes = (
-        Path(__file__).resolve().parent.parent / "validacao" / "questoes.json"
+        Path(__file__).resolve().parent.parent / "chatbot" / "validacao" / "questoes.json"
     )
     with open(path_questoes, encoding="utf-8") as f:
         questoes = json.load(f)
@@ -54,7 +54,7 @@ def responder_quiz(dados: RespostaQuizRequest):
     else:
         # Obtem respostas corretas para dar sugestão
         path_questoes = (
-            Path(__file__).resolve().parent.parent / "validacao" / "questoes.json"
+            Path(__file__).resolve().parent.parent / "chatbot" / "validacao" / "questoes.json"
         )
         with open(path_questoes, encoding="utf-8") as f:
             questoes = json.load(f)
