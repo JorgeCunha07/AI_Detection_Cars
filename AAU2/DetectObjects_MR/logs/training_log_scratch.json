@@ -1,0 +1,10 @@
+[
+    {
+        "epoch": 1,
+        "avg_loss": 459.62478212678815,
+        "duration_sec": 210.331068277359,
+        "best_loss_so_far": Infinity,
+        "no_improve_epochs": 0,
+        "estimated_remaining_time_sec": 10306.2
+    }
+]

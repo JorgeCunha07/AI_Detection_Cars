@@ -1,0 +1,82 @@
+[
+    {
+        "epoch": 1,
+        "avg_loss": 4.188720111977564,
+        "duration_sec": 4115.072581529617,
+        "best_loss_so_far": Infinity,
+        "no_improve_epochs": 0,
+        "estimated_remaining_time_sec": 201638.6
+    },
+    {
+        "epoch": 2,
+        "avg_loss": 3.519966729155414,
+        "duration_sec": 4111.040048360825,
+        "best_loss_so_far": 4.188720111977564,
+        "no_improve_epochs": 0,
+        "estimated_remaining_time_sec": 98665.0
+    },
+    {
+        "epoch": 3,
+        "avg_loss": 3.3412559761848626,
+        "duration_sec": 4129.6218111515045,
+        "best_loss_so_far": 3.519966729155414,
+        "no_improve_epochs": 0,
+        "estimated_remaining_time_sec": 64697.4
+    },
+    {
+        "epoch": 4,
+        "avg_loss": 3.2493841740638696,
+        "duration_sec": 4126.020985126495,
+        "best_loss_so_far": 3.3412559761848626,
+        "no_improve_epochs": 0,
+        "estimated_remaining_time_sec": 47449.2
+    },
+    {
+        "epoch": 5,
+        "avg_loss": 3.1770226242335418,
+        "duration_sec": 4125.732028007507,
+        "best_loss_so_far": 3.2493841740638696,
+        "no_improve_epochs": 0,
+        "estimated_remaining_time_sec": 37131.6
+    },
+    {
+        "epoch": 6,
+        "avg_loss": 3.0961557912499935,
+        "duration_sec": 4125.680533885956,
+        "best_loss_so_far": 3.1770226242335418,
+        "no_improve_epochs": 0,
+        "estimated_remaining_time_sec": 30255.0
+    },
+    {
+        "epoch": 7,
+        "avg_loss": 3.0421635775261273,
+        "duration_sec": 4420.849540710449,
+        "best_loss_so_far": 3.0961557912499935,
+        "no_improve_epochs": 0,
+        "estimated_remaining_time_sec": 27156.6
+    },
+    {
+        "epoch": 8,
+        "avg_loss": 2.998718716510355,
+        "duration_sec": 4345.378486871719,
+        "best_loss_so_far": 3.0421635775261273,
+        "no_improve_epochs": 0,
+        "estimated_remaining_time_sec": 22813.2
+    },
+    {
+        "epoch": 9,
+        "avg_loss": 2.954273768755943,
+        "duration_sec": 4264.888451576233,
+        "best_loss_so_far": 2.998718716510355,
+        "no_improve_epochs": 0,
+        "estimated_remaining_time_sec": 19428.9
+    },
+    {
+        "epoch": 10,
+        "avg_loss": 2.9307217663281584,
+        "duration_sec": 4171.259073257446,
+        "best_loss_so_far": 2.954273768755943,
+        "no_improve_epochs": 0,
+        "estimated_remaining_time_sec": 16685.0
+    }
+]
