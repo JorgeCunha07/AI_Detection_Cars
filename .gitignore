@@ -318,3 +318,4 @@ LNSCIA/ChatBot/output/checkpoint-144/generation_config.json
 LNSCIA/ChatBot/output/checkpoint-144/config.json
 /AAU2/DetectObjects_MR/mobilenet_outputs/
 LNSCIA/ChatBot/scr/chat/trainer_output/checkpoint-interrupted/model.safetensors
+backend/chatbot/chat/gpt2-chat-finetuned/model.safetensors
