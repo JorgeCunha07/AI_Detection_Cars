@@ -22,7 +22,7 @@ export function UploadImagem() {
   const [imageBase64, setImageBase64] = useState<string | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [isLoadingModels, setIsLoadingModels] = useState(false);
-  const [selectedModel, setSelectedModel] = useState<string | undefined>();
+  const [selectedModel] = useState<string>("best_yolo.pt");
   const [availableModels, setAvailableModels] = useState<string[]>([]);
 
   const [mostrarOpcoesAvancadas, setMostrarOpcoesAvancadas] = useState(false);
@@ -190,28 +190,6 @@ export function UploadImagem() {
               </div>
 
               <div className="flex flex-col gap-4 w-full">
-                {!mostrarOpcoesAvancadas && (
-                    <div className="flex items-center gap-2">
-                      <Select
-                          value={selectedModel}
-                          onValueChange={setSelectedModel}
-                          disabled={isLoadingModels || availableModels.length === 0}
-                      >
-                        <SelectTrigger className="w-[250px]">
-                          <SelectValue placeholder={isLoadingModels ? "Carregando modelos..." : "Selecione o modelo"} />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectGroup>
-                            <SelectLabel>Modelo</SelectLabel>
-                            {availableModels.map(model => (
-                                <SelectItem key={model} value={model}>{model}</SelectItem>
-                            ))}
-                          </SelectGroup>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                )}
-
                 <div className="flex items-center gap-2">
                   <input
                       type="checkbox"
