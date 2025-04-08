@@ -1,5 +1,6 @@
 from transformers import MT5ForConditionalGeneration
 from pre_processing import load_and_preprocess, tokenizer
+from utils import normalize_text
 import torch
 import evaluate
 
@@ -48,9 +49,9 @@ for example in eval_dataset:
     # Métrica personalizada: cobertura de labels
     input_text = tokenizer.decode(example["input_ids"], skip_special_tokens=True)
     labels_in_input = input_text.replace("Gere uma frase descritiva sobre:", "").split(",")
-    labels_in_input = [label.strip().lower() for label in labels_in_input]
-    pred_lower = pred.lower()
-    covered = all(label in pred_lower for label in labels_in_input)
+    normalized_labels = [normalize_text(label.strip()) for label in labels_in_input]
+    normalized_pred = normalize_text(pred)
+    covered = all(label in normalized_pred for label in normalized_labels)
     label_coverage.append(covered)
 
 # Calcular métricas
@@ -69,7 +70,5 @@ for i in range(10):
     print("------")
 
 print(f"\n📊 BLEU score médio: {bleu_score['bleu']:.4f}")
-
 print(f"📊 ROUGE-L F1 score: {rouge_score['rougeL']:.4f}")
-
 print(f"📊 Cobertura de labels no texto gerado: {coverage_score:.2%}")
