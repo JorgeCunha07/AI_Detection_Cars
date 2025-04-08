@@ -4,8 +4,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import { UploadImagem } from "@/components/upload-imagem"
+import { ChatAssistente } from "@/components/chat-assistente"
+import Tabs from "@/components/Tabs"
 
 export default function FerramentaPage() {
+  const tabs = [
+    { id: "conversa", label: "Conversa" },
+    { id: "quiz", label: "Quiz" },
+    { id: "pesquisa", label: "Pesquisa" },
+  ]
+
   return (
     <div className="container mx-auto py-8 px-4">
       <div className="mb-6">
@@ -40,6 +48,15 @@ export default function FerramentaPage() {
               antes do exame prático.
             </p>
           </div>
+
+          <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 mb-4">
+            Tire suas dúvidas sobre esta situação:
+          </h3>
+          <Tabs tabs={tabs}>
+            <ChatAssistente />
+            <ChatAssistente />
+            <ChatAssistente />
+          </Tabs>
         </CardContent>
       </Card>
     </div>
