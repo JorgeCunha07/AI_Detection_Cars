@@ -1,378 +1,294 @@
-# models.py
+import base64
+import cv2
 import json
-import sys
-import tempfile
+import numpy as np
 import os
 import re
+import sys
+import tempfile
 import torch
 import torch.nn as nn
 import yaml
-import base64
-import tempfile
-import cv2
 from PIL import Image, ImageDraw, ImageFont
-from io import BytesIO
 from collections import Counter
+from io import BytesIO
 from torchvision import models, transforms
 from ultralytics import YOLO
-import base64
-import numpy as np
 
 from multitaskmodel import MultiTaskModel
-
-# Insere a classe MultiTaskModel no namespace __main__
 sys.modules['__main__'].MultiTaskModel = MultiTaskModel
 
+###########################
+# Funções Utilitárias (Reaproveitáveis)
+###########################
+class BaseDetector:
+    @staticmethod
+    def decode_image(base64_image: str) -> (Image.Image, str):
+        """Decodifica a imagem base64 e retorna o objeto PIL e o caminho temporário."""
+        try:
+            image_bytes = base64.b64decode(base64_image)
+        except Exception as e:
+            raise ValueError(f"Imagem base64 inválida: {str(e)}")
+        temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".jpg")
+        temp_file.write(image_bytes)
+        temp_file.close()
+        pil_image = Image.open(temp_file.name).convert("RGB")
+        return pil_image, temp_file.name
 
-def load_class_names_from_yaml(yaml_path="dataset.yaml"):
-    if not os.path.exists(yaml_path):
-        return {}
-    with open(yaml_path, "r") as f:
-        data = yaml.safe_load(f)
-    return {i: name for i, name in enumerate(data.get("names", []))}
+    @staticmethod
+    def cleanup_temp(file_path: str):
+        if os.path.exists(file_path):
+            os.remove(file_path)
 
-def encode_image_base64_1(image_array):
-    _, buffer = cv2.imencode('.jpg', image_array)
-    return base64.b64encode(buffer).decode("utf-8")
+    @staticmethod
+    def encode_image_pil_to_base64(pil_image: Image.Image) -> str:
+        buffered = BytesIO()
+        pil_image.save(buffered, format="JPEG")
+        return base64.b64encode(buffered.getvalue()).decode("utf-8")
 
-def encode_image_base64_2(pil_image):
-    buffered = BytesIO()
-    pil_image.save(buffered, format="JPEG")
-    return base64.b64encode(buffered.getvalue()).decode("utf-8")
+    @staticmethod
+    def draw_detections(pil_image: Image.Image, detections: list, color: str, font: ImageFont.ImageFont):
+        draw = ImageDraw.Draw(pil_image)
+        for det in detections:
+            x1, y1, x2, y2 = det["box"]
+            text = f"{det['category']}:{det['score']:.2f}"
+            draw.rectangle([x1, y1, x2, y2], outline=color, width=2)
+            draw.text((x1, y1 - 10), text, fill=color, font=font)
 
-def detect_labels_DataSet1(model_name: str, base64_image: str):
-    model_path = os.path.join("modelsAvailable/1", f"{model_name}.pt")
-    yaml_path = "dataset.yaml"
+def invert_mapping(mapping: dict) -> dict:
+    """Cria um dicionário inverso do mapeamento fornecido.
+       Se o valor puder ser convertido para int, utiliza o int como chave."""
+    inv = {}
+    for k, v in mapping.items():
+        try:
+            inv[int(v)] = k
+        except:
+            inv[v] = k
+    return inv
 
-    if not os.path.exists(model_path):
-        return {"error": f"Modelo '{model_name}' não encontrado."}, 404
+###########################
+# Detector para DataSet1 (usando YOLO e YAML)
+###########################
+class DetectorDataSet1(BaseDetector):
+    @staticmethod
+    def load_class_map(yaml_path="dataset.yaml"):
+        if not os.path.exists(yaml_path):
+            return {}
+        with open(yaml_path, "r") as f:
+            data = yaml.safe_load(f)
+        return {i: name for i, name in enumerate(data.get("names", []))}
 
-    class_map = load_class_names_from_yaml(yaml_path)
-
-    # Decode do base64 para bytes
-    try:
-        image_bytes = base64.b64decode(base64_image)
-    except Exception as e:
-        return {"error": f"Imagem base64 inválida: {str(e)}"}, 400
-
-    # Salvar temporariamente
-    temp = tempfile.NamedTemporaryFile(delete=False, suffix=".jpg")
-    temp.write(image_bytes)
-    temp.close()
-
-    label_counts = {}
-    image_bgr = cv2.imread(temp.name)
-
-    if re.search(r"yolo", model_name, re.IGNORECASE):
+    @staticmethod
+    def get_detections(model_name: str, base64_image: str):
+        """
+        Executa o modelo YOLO do DataSet1.
+        Retorna:
+          - status: 200 ou dicionário de erro
+          - detection_list: lista de detecções com {"category", "score", "box"}
+          - label_counts: dicionário com contagem de cada rótulo
+        """
+        model_path = os.path.join("modelsAvailable", "1", f"{model_name}.pt")
+        if not os.path.exists(model_path):
+            return {"error": f"Modelo '{model_name}' não encontrado em DataSet1."}, 404, [], {}
+        class_map = DetectorDataSet1.load_class_map("dataset.yaml")
+        try:
+            _, temp_path = BaseDetector.decode_image(base64_image)
+        except ValueError as e:
+            return {"error": str(e)}, 400, [], {}
+        detection_list = []
         yolo_model = YOLO(model_path)
-        results = yolo_model(temp.name)[0]
-
+        results = yolo_model(temp_path)[0]
         class_ids = [int(cls) for cls in results.boxes.cls]
-        label_names = [class_map.get(class_id, f"class_{class_id}") for class_id in class_ids]
-        label_counts = dict(Counter(label_names))
-
-        for box, cls in zip(results.boxes.xyxy, class_ids):
+        for box, cls, conf in zip(results.boxes.xyxy, class_ids, results.boxes.conf):
+            score = float(conf)
+            if score < 0.5:
+                continue
             x1, y1, x2, y2 = map(int, box.tolist())
             label = class_map.get(cls, f"class_{cls}")
-            cv2.rectangle(image_bgr, (x1, y1), (x2, y2), (0, 255, 0), 2)
-            cv2.putText(image_bgr, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+            detection_list.append({
+                "category": label,
+                "score": score,
+                "box": [x1, y1, x2, y2]
+            })
+        detection_labels = [det["category"] for det in detection_list]
+        label_counts = dict(Counter(detection_labels))
+        BaseDetector.cleanup_temp(temp_path)
+        return 200, detection_list, label_counts
 
-    elif re.search(r"rcnn|mobilenet|vgg", model_name, re.IGNORECASE):
-        image = Image.open(temp.name).convert("RGB")
+###########################
+# Detector para DataSet2 (usando modelo multi-tarefa e JSON)
+###########################
+class DetectorDataSet2(BaseDetector):
+    @staticmethod
+    def load_mappings():
+        with open("helpers/categories.json", "r") as f:
+            cat_map = json.load(f)
+        with open("helpers/weather.json", "r") as f:
+            weather_map = json.load(f)
+        with open("helpers/scene.json", "r") as f:
+            scene_map = json.load(f)
+        with open("helpers/timeofday.json", "r") as f:
+            time_map = json.load(f)
+        return cat_map, weather_map, scene_map, time_map
+
+    @staticmethod
+    def get_detections(model_name: str, base64_image: str):
+        """
+        Executa o modelo multi-tarefa do DataSet2.
+        Retorna:
+          - status: 200 ou dicionário de erro
+          - detection_list: lista de detecções com {"category", "score", "box"}
+          - label_counts: contagem de cada rótulo de detecção
+          - global_attributes: dicionário com {"weather", "scene", "timeofday"}
+        """
+        model_path = os.path.join("modelsAvailable", "2", f"{model_name}.pth")
+        if not os.path.exists(model_path):
+            return {"error": f"Modelo '{model_name}' não encontrado em DataSet2."}, 404, [], {}, {}
+
+        # Carrega os mapeamentos e gera os mapeamentos inversos
+        cat_map, weather_map, scene_map, time_map = DetectorDataSet2.load_mappings()
+        inv_cat = invert_mapping(cat_map)
+        inv_weather = invert_mapping(weather_map)
+        inv_scene = invert_mapping(scene_map)
+        inv_time = invert_mapping(time_map)
+
         transform = transforms.Compose([transforms.ToTensor()])
-        image_tensor = transform(image)
-
-        rcnn_model = torch.load(model_path, map_location="cpu")
-        rcnn_model.eval()
-
+        multi_task_model = torch.load(model_path, map_location="cpu")
+        multi_task_model.eval()
+        try:
+            pil_image, temp_path = BaseDetector.decode_image(base64_image)
+        except ValueError as e:
+            return {"error": str(e)}, 400, [], {}, {}
+        input_image = transform(pil_image).unsqueeze(0)
+        detection_list = []
         with torch.no_grad():
-            outputs = rcnn_model([image_tensor])[0]
-
-        min_score = 0.5
-        for i in range(len(outputs["boxes"])):
-            score = outputs["scores"][i].item()
-            if score >= min_score:
-                box = outputs["boxes"][i].tolist()
-                class_id = int(outputs["labels"][i].item())
-                label = class_map.get(class_id, f"class_{class_id}")
-                label_counts[label] = label_counts.get(label, 0) + 1
-
-                x1, y1, x2, y2 = map(int, box)
-                cv2.rectangle(image_bgr, (x1, y1), (x2, y2), (255, 0, 0), 2)
-                cv2.putText(image_bgr, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
-
-    else:
-        os.remove(temp.name)
-        return {"error": "Tipo de modelo não reconhecido no nome."}, 400
-
-    image_base64 = encode_image_base64_1(image_bgr)
-    os.remove(temp.name)
-
-    return {
-        "labels": list(label_counts.keys()),
-        "counts": label_counts,
-        "image_base64": image_base64
-    }, 200
-
-
-def detect_labels_DataSet2(model_name: str, base64_image: str):
-    # Monta o caminho para o modelo multi-tarefa (no exemplo, espera-se um arquivo .pth)
-    model_path = os.path.join("modelsAvailable/2", f"{model_name}.pth")
-    if not os.path.exists(model_path):
-        return {"error": f"Modelo '{model_name}' não encontrado."}, 404
-
-    # Carrega os mapeamentos para categorias e atributos globais
-    with open("helpers/categories.json", "r") as f:
-        category_to_label = json.load(f)
-    with open("helpers/weather.json", "r") as f:
-        weather_to_label = json.load(f)
-    with open("helpers/scene.json", "r") as f:
-        scene_to_label = json.load(f)
-    with open("helpers/timeofday.json", "r") as f:
-        timeofday_to_label = json.load(f)
-
-    # Define a transformação da imagem
-    transform = transforms.Compose([transforms.ToTensor()])
-
-    # Carrega o modelo multi-tarefa
-    multi_task_model = torch.load(model_path, map_location="cpu")
-    multi_task_model.eval()
-
-    # Decodifica a imagem base64 e salva em um arquivo temporário
-    try:
-        image_bytes = base64.b64decode(base64_image)
-    except Exception as e:
-        return {"error": f"Imagem base64 inválida: {str(e)}"}, 400
-
-    temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".jpg")
-    temp_file.write(image_bytes)
-    temp_file.close()
-
-    # Função interna para realizar a inferência e anotar a imagem
-    def infer_image(image_path):
-        # Inverte os mapeamentos para poder converter rótulos numéricos para nomes
-        inv_category = {v: k for k, v in category_to_label.items()}
-        inv_weather = {v: k for k, v in weather_to_label.items()}
-        inv_scene = {v: k for k, v in scene_to_label.items()}
-        inv_timeofday = {v: k for k, v in timeofday_to_label.items()}
-
-        # Abre a imagem original e converte para RGB
-        orig_image = Image.open(image_path).convert("RGB")
-        input_image = transform(orig_image).to(torch.device("cpu")).unsqueeze(0)
-
-        with torch.no_grad():
-            # Inferência da parte de detecção
             detections = multi_task_model.detection_model([input_image.squeeze(0)])
-            # Inferência dos atributos globais
             feats = multi_task_model.backbone(input_image)
-            pooled = multi_task_model.attr_pool(feats)
-            pooled = pooled.view(pooled.size(0), -1)
+            pooled = multi_task_model.attr_pool(feats).view(input_image.size(0), -1)
             weather_logits = multi_task_model.fc_weather(pooled)
             scene_logits = multi_task_model.fc_scene(pooled)
-            timeofday_logits = multi_task_model.fc_timeofday(pooled)
+            time_logits = multi_task_model.fc_timeofday(pooled)
             weather_pred = int(torch.argmax(weather_logits, dim=1).item())
             scene_pred = int(torch.argmax(scene_logits, dim=1).item())
-            timeofday_pred = int(torch.argmax(timeofday_logits, dim=1).item())
+            timeofday_pred = int(torch.argmax(time_logits, dim=1).item())
             global_attributes = {
                 "weather": inv_weather.get(weather_pred, str(weather_pred)),
                 "scene": inv_scene.get(scene_pred, str(scene_pred)),
-                "timeofday": inv_timeofday.get(timeofday_pred, str(timeofday_pred))
+                "timeofday": inv_time.get(timeofday_pred, str(timeofday_pred))
             }
-
-            detection = detections[0]
-            boxes = detection["boxes"].cpu().numpy().tolist()
-            labels_detection = detection["labels"].cpu().numpy().tolist()
-            scores = detection["scores"].cpu().numpy().tolist()
-
-            detection_list = []
-            # Filtra as detecções abaixo do limiar de confiança e monta a lista
-            for bbox, label, score in zip(boxes, labels_detection, scores):
-                if score < 0.5:
+            det = detections[0]
+            boxes = det["boxes"].cpu().numpy().tolist()
+            labels_det = det["labels"].cpu().numpy().tolist()
+            scores = det["scores"].cpu().numpy().tolist()
+            for bbox, lbl, sc in zip(boxes, labels_det, scores):
+                if sc < 0.5:
                     continue
+                # Usa o mapeamento inverso para obter o rótulo
+                cat_label = inv_cat.get(lbl, f"class_{lbl}")
                 detection_list.append({
-                    "category": inv_category.get(label, str(label)),
-                    "score": score,
+                    "category": cat_label,
+                    "score": sc,
                     "box": bbox
                 })
+        detection_labels = [d["category"] for d in detection_list]
+        label_counts = dict(Counter(detection_labels))
+        for attr in [global_attributes["weather"], global_attributes["scene"], global_attributes["timeofday"]]:
+            label_counts[attr] = label_counts.get(attr, 0) + 1
+        BaseDetector.cleanup_temp(temp_path)
+        return 200, detection_list, label_counts, global_attributes
 
-        # Anota a imagem com as caixas delimitadoras e rótulos
-        draw = ImageDraw.Draw(orig_image)
-        try:
-            font = ImageFont.truetype("arial.ttf", 15)
-        except Exception:
-            font = ImageFont.load_default()
-
-        for det in detection_list:
-            bbox = det["box"]
-            text = f"{det['category']}: {det['score']:.2f}"
-            draw.rectangle(bbox, outline="red", width=2)
-            draw.text((bbox[0], bbox[1] - 10), text, fill="red", font=font)
-
-        # Exibe os atributos globais na imagem
-        attr_text = (f"Weather: {global_attributes['weather']}, "
-                     f"Scene: {global_attributes['scene']}, "
-                     f"Time: {global_attributes['timeofday']}")
-        draw.text((10, 10), attr_text, fill="blue", font=font)
-
-        # Constrói os outputs de rótulos e contagens a partir das detecções
-        labels_found = [det["category"] for det in detection_list]
-        label_counts = dict(Counter(labels_found))
-        unique_labels = list(label_counts.keys())
-
-        return orig_image, unique_labels, label_counts
-
-    # Executa a inferência na imagem temporária
-    annotated_image, labels, counts = infer_image(temp_file.name)
-    os.remove(temp_file.name)
-
-    image_base64_annotated = encode_image_base64_2(annotated_image)
-
-    return {
-        "labels": labels,
-        "counts": counts,
-        "image_base64": image_base64_annotated
-    }, 200
-
-
-
-# Constantes de labels
-SCENE_LABELS = ['city street', 'residential', 'highway', 'gas stations', 'parking', 'tunnel',
-                'bridge', 'railroad', 'roundabout', 'construction', 'parking lot']
-WEATHER_LABELS = ['clear', 'rainy', 'foggy', 'snowy', 'overcast', 'undefined', 'partly cloudy']
-TIME_LABELS = ['daytime', 'night', 'dawn/dusk', 'undefined']
-
-# Modelo de atributos
-class AttributeClassifier(nn.Module):
-    def __init__(self):
-        super().__init__()
-        backbone = models.resnet18(weights=None)
-        num_features = backbone.fc.in_features
-        backbone.fc = nn.Identity()
-        self.backbone = backbone
-        self.scene_head = nn.Linear(num_features, len(SCENE_LABELS))
-        self.weather_head = nn.Linear(num_features, len(WEATHER_LABELS))
-        self.time_head = nn.Linear(num_features, len(TIME_LABELS))
-
-    def forward(self, x):
-        feat = self.backbone(x)
-        return self.scene_head(feat), self.weather_head(feat), self.time_head(feat)
-
-def detect_labels_DataSet3(model_name: str, base64_image: str):
-    model_path = os.path.join("modelsAvailable/3", f"best_yolo.pt")
-    attr_model_path = os.path.join("modelsAvailable/3", f"attribute_classifier.pt")
-    yaml_path = "dataset.yaml"
-
-    if not os.path.exists(model_path) or not os.path.exists(attr_model_path):
-        return {"error": "Modelo não encontrado."}, 404
-
-    class_map = load_class_names_from_yaml(yaml_path)
-
-    # Decode base64
+###########################
+# Funções para o Frontend (mantidas)
+###########################
+def detect_labels_DataSet1(model_name: str, base64_image: str):
+    """Função para o frontend – usa DetectorDataSet1 e desenha as detecções na imagem."""
+    status, detection_list, label_counts = DetectorDataSet1.get_detections(model_name, base64_image)
+    if status != 200:
+        return {"error": "Erro no DataSet1"}, status
     try:
-        image_bytes = base64.b64decode(base64_image)
-    except Exception as e:
-        return {"error": f"Imagem base64 inválida: {str(e)}"}, 400
-
-    # Salvar temporariamente
-    temp = tempfile.NamedTemporaryFile(delete=False, suffix=".jpg")
-    temp.write(image_bytes)
-    temp.close()
-
-    label_counts = {}
-    image_bgr = cv2.imread(temp.name)
-
-    # ---------- Classificação de atributos ----------
-    attr_model = AttributeClassifier()
-    attr_model.load_state_dict(torch.load(attr_model_path, map_location="cpu"))
-    attr_model.eval()
-
-    transform_attr = transforms.Compose([
-        transforms.Resize((224, 224)),
-        transforms.ToTensor(),
-        transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                             std=[0.229, 0.224, 0.225])
-    ])
-
-    image_pil = Image.open(temp.name).convert("RGB")
-    image_tensor = transform_attr(image_pil).unsqueeze(0)
-
-    with torch.no_grad():
-        scene_logits, weather_logits, time_logits = attr_model(image_tensor)
-        scene_label = SCENE_LABELS[scene_logits.argmax().item()]
-        weather_label = WEATHER_LABELS[weather_logits.argmax().item()]
-        time_label = TIME_LABELS[time_logits.argmax().item()]
-
-    # ---------- Detecção de objetos ----------
-    if re.search(r"yolo", "yolo", re.IGNORECASE):
-        yolo_model = YOLO(model_path)
-        results = yolo_model(temp.name)[0]
-
-        class_ids = [int(cls) for cls in results.boxes.cls]
-        label_names = [class_map.get(class_id, f"class_{class_id}") for class_id in class_ids]
-        label_counts = dict(Counter(label_names))
-
-        for box, cls in zip(results.boxes.xyxy, class_ids):
-            x1, y1, x2, y2 = map(int, box.tolist())
-            label = class_map.get(cls, f"class_{cls}")
-            cv2.rectangle(image_bgr, (x1, y1), (x2, y2), (0, 255, 0), 2)
-            cv2.putText(image_bgr, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-
-    elif re.search(r"rcnn|mobilenet|vgg", model_name, re.IGNORECASE):
-        image_tensor_rcnn = transforms.ToTensor()(image_pil)
-        rcnn_model = torch.load(model_path, map_location="cpu")
-        rcnn_model.eval()
-
-        with torch.no_grad():
-            outputs = rcnn_model([image_tensor_rcnn])[0]
-
-        min_score = 0.5
-        for i in range(len(outputs["boxes"])):
-            score = outputs["scores"][i].item()
-            if score >= min_score:
-                box = outputs["boxes"][i].tolist()
-                class_id = int(outputs["labels"][i].item())
-                label = class_map.get(class_id, f"class_{class_id}")
-                label_counts[label] = label_counts.get(label, 0) + 1
-
-                x1, y1, x2, y2 = map(int, box)
-                cv2.rectangle(image_bgr, (x1, y1), (x2, y2), (255, 0, 0), 2)
-                cv2.putText(image_bgr, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
-
-    else:
-        os.remove(temp.name)
-        return {"error": "Tipo de modelo não reconhecido no nome."}, 400
-
-    # Adiciona os atributos globais dentro das "labels"
-    label_counts[scene_label] = 1
-    label_counts[weather_label] = 1
-    label_counts[time_label] = 1
-
-    # Desenha os atributos na imagem (canto superior esquerdo)
-    attr_text = f"Scene: {scene_label} | Weather: {weather_label} | Time: {time_label}"
-    font = cv2.FONT_HERSHEY_SIMPLEX
-    font_scale = 0.6
-    font_thickness = 1
-    text_size, _ = cv2.getTextSize(attr_text, font, font_scale, font_thickness)
-    text_w, text_h = text_size
-    margin_top = 20 + text_h
-
-    # Verifica se há espaço para o texto
-    if image_bgr.shape[0] < margin_top + 5:
-        # Aumenta a altura da imagem para adicionar o texto no topo
-        new_height = margin_top + image_bgr.shape[0]
-        new_image = np.zeros((new_height, image_bgr.shape[1], 3), dtype=np.uint8)
-        new_image[margin_top:, :, :] = image_bgr
-        image_bgr = new_image
-
-    # Desenha fundo preto e texto branco
-    cv2.rectangle(image_bgr, (5, 5), (10 + text_w, 10 + text_h + 5), (0, 0, 0), -1)
-    cv2.putText(image_bgr, attr_text, (10, 10 + text_h), font, font_scale, (255, 255, 255), font_thickness)
-
-    image_base64 = encode_image_base64_1(image_bgr)
-    os.remove(temp.name)
-
+        pil_image, temp_path = BaseDetector.decode_image(base64_image)
+    except ValueError as e:
+        return {"error": str(e)}, 400
+    try:
+        font = ImageFont.truetype("arial.ttf", 15)
+    except Exception:
+        font = ImageFont.load_default()
+    BaseDetector.draw_detections(pil_image, detection_list, "green", font)
+    image_base64 = BaseDetector.encode_image_pil_to_base64(pil_image)
     return {
         "labels": list(label_counts.keys()),
         "counts": label_counts,
         "image_base64": image_base64
+    }, 200
+
+def detect_labels_DataSet2(model_name: str, base64_image: str):
+    """Função para o frontend – usa DetectorDataSet2 e desenha as detecções e atributos globais na imagem."""
+    status, detection_list, label_counts, global_attributes = DetectorDataSet2.get_detections(model_name, base64_image)
+    if status != 200:
+        return {"error": "Erro no DataSet2"}, status
+    try:
+        pil_image, temp_path = BaseDetector.decode_image(base64_image)
+    except ValueError as e:
+        return {"error": str(e)}, 400
+    try:
+        font = ImageFont.truetype("arial.ttf", 15)
+    except Exception:
+        font = ImageFont.load_default()
+    BaseDetector.draw_detections(pil_image, detection_list, "red", font)
+    draw = ImageDraw.Draw(pil_image)
+    attr_text = f"Weather: {global_attributes['weather']}, Scene: {global_attributes['scene']}, Time: {global_attributes['timeofday']}"
+    draw.text((10, 10), attr_text, fill="blue", font=font)
+    image_base64 = BaseDetector.encode_image_pil_to_base64(pil_image)
+    combined_labels = list(set([d["category"] for d in detection_list] + list(global_attributes.values())))
+    return {
+        "labels": combined_labels,
+        "counts": label_counts,
+        "image_base64": image_base64
+    }, 200
+
+###########################
+# Função Combinada para DataSet3
+###########################
+def detect_labels_DataSet3(base64_image: str):
+    """
+    Combina os resultados dos modelos de DataSet1 e DataSet2 em uma única imagem:
+      - Usa DetectorDataSet1 e DetectorDataSet2 para obter as detecções e atributos
+      - Desenha os bounding boxes (verde para DataSet1 e azul para DataSet2)
+      - Escreve os atributos globais no canto superior
+      - Retorna a união dos rótulos e as contagens combinadas
+    """
+    try:
+        decoded_data = base64.b64decode(base64_image)
+    except Exception as e:
+        return {"error": f"Imagem base64 inválida: {str(e)}"}, 400
+    pil_image = Image.open(BytesIO(decoded_data)).convert("RGB")
+    try:
+        font = ImageFont.truetype("arial.ttf", 15)
+    except Exception:
+        font = ImageFont.load_default()
+    status1, det_list1, counts1 = DetectorDataSet1.get_detections("best_yolo", base64_image)
+    if status1 != 200:
+        return {"error": "Erro no DataSet1"}, status1
+    status2, det_list2, counts2, attrs2 = DetectorDataSet2.get_detections("vgg", base64_image)
+    if status2 != 200:
+        return {"error": "Erro no DataSet2"}, status2
+    BaseDetector.draw_detections(pil_image, det_list1, "green", font)
+    BaseDetector.draw_detections(pil_image, det_list2, "blue", font)
+    draw = ImageDraw.Draw(pil_image)
+    attr_text = f"Weather: {attrs2['weather']}, Scene: {attrs2['scene']}, Time: {attrs2['timeofday']}"
+    draw.text((10, 10), attr_text, fill="red", font=font)
+    combined_counts = {}
+    for k, v in counts1.items():
+        combined_counts[k] = v
+    for k, v in counts2.items():
+        combined_counts[k] = combined_counts.get(k, 0) + v
+    labels_ds1 = list({d["category"] for d in det_list1})
+    labels_ds2 = list({d["category"] for d in det_list2})
+    attrs_labels = list(attrs2.values())
+    combined_labels = list(set(labels_ds1 + labels_ds2 + attrs_labels))
+    final_image_base64 = BaseDetector.encode_image_pil_to_base64(pil_image)
+    return {
+        "labels": combined_labels,
+        "counts": combined_counts,
+        "image_base64": final_image_base64
     }, 200
