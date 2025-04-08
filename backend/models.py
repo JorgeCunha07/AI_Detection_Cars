@@ -16,9 +16,7 @@ from torchvision import models, transforms
 from ultralytics import YOLO
 
 from multitaskmodel import MultiTaskModel
-
 sys.modules['__main__'].MultiTaskModel = MultiTaskModel
-
 
 ###########################
 # Funções Utilitárias (Reaproveitáveis)
@@ -49,30 +47,23 @@ class BaseDetector:
         return base64.b64encode(buffered.getvalue()).decode("utf-8")
 
     @staticmethod
-    def draw_detections_with_bg(pil_image: Image.Image, detections: list, color: tuple, font: ImageFont.ImageFont):
+    def get_text_size(font: ImageFont.FreeTypeFont, text: str):
         """
-        Desenha os bounding boxes e os textos das detecções com fundo sólido para o texto.
-        :param pil_image: imagem PIL onde serão desenhados os resultados.
-        :param detections: lista de detecções, cada uma um dicionário com {"category", "score", "box"}
-        :param color: cor para o contorno e o fundo (RGB), por exemplo, (0,255,0)
-        :param font: fonte PIL utilizada para o texto.
+        Tenta usar font.getsize(), e se não estiver disponível usa font.getbbox().
+        Retorna uma tupla (width, height).
         """
-        draw = ImageDraw.Draw(pil_image)
-        for det in detections:
-            x1, y1, x2, y2 = det["box"]
-            text = f"{det['category']}:{det['score']:.2f}"
-            # Desenha a bounding box
-            draw.rectangle([x1, y1, x2, y2], outline=color, width=3)
-            # Desenha o texto com fundo
-            BaseDetector.draw_text_with_background(draw, (x1, y1 - 24), text, font, text_color=(255, 255, 255),
-                                                   bg_color=(0, 0, 0))
+        try:
+            return font.getsize(text)
+        except AttributeError:
+            bbox = font.getbbox(text)
+            return (bbox[2] - bbox[0], bbox[3] - bbox[1])
 
     @staticmethod
-    def draw_text_with_background(draw: ImageDraw.Draw, xy: tuple, text: str, font: ImageFont.ImageFont,
+    def draw_text_with_background(draw: ImageDraw.Draw, xy: tuple, text: str, font: ImageFont.FreeTypeFont,
                                   text_color=(255, 255, 255), bg_color=(0, 0, 0)):
         """
         Desenha um texto com fundo sólido para aumentar a legibilidade.
-        :param draw: objeto ImageDraw
+        :param draw: objeto ImageDraw.
         :param xy: posição (x, y) para desenhar o texto.
         :param text: o texto a ser desenhado.
         :param font: fonte PIL utilizada para o texto.
@@ -80,11 +71,30 @@ class BaseDetector:
         :param bg_color: cor de fundo (RGB).
         """
         x, y = xy
-        text_w, text_h = draw.textsize(text, font=font)
-        # Desenha o retângulo de fundo com uma pequena margem (2 pixels)
+        text_w, text_h = BaseDetector.get_text_size(font, text)
+        # Adiciona uma margem de 4 pixels
         draw.rectangle([x, y, x + text_w + 4, y + text_h + 4], fill=bg_color)
         draw.text((x + 2, y + 2), text, font=font, fill=text_color)
 
+    @staticmethod
+    def draw_detections_with_bg(pil_image: Image.Image, detections: list, color: tuple, font: ImageFont.FreeTypeFont):
+        """
+        Desenha os bounding boxes e os textos das detecções com fundo para o texto.
+        :param pil_image: imagem PIL onde os resultados serão desenhados.
+        :param detections: lista de detecções, cada uma um dicionário com {"category", "score", "box"}.
+        :param color: cor para o contorno e fundo (RGB), ex.: (0, 255, 0).
+        :param font: fonte PIL utilizada para o texto.
+        """
+        draw = ImageDraw.Draw(pil_image)
+        for det in detections:
+            x1, y1, x2, y2 = det["box"]
+            text = f"{det['category']}:{det['score']:.2f}"
+            # Desenha a bounding box com uma largura maior para destacar
+            draw.rectangle([x1, y1, x2, y2], outline=color, width=3)
+            # Calcula a posição do texto: tenta acima do box, mas se não couber, desenha dentro
+            text_x = x1
+            text_y = y1 - 24 if (y1 - 24) > 0 else y1
+            BaseDetector.draw_text_with_background(draw, (text_x, text_y), text, font, text_color=(255, 255, 255), bg_color=(0, 0, 0))
 
 def invert_mapping(mapping: dict) -> dict:
     """Cria um dicionário inverso a partir do mapping fornecido.
@@ -96,7 +106,6 @@ def invert_mapping(mapping: dict) -> dict:
         except:
             inv[v] = k
     return inv
-
 
 ###########################
 # Detector para DataSet1 (usando YOLO e YAML)
@@ -115,9 +124,9 @@ class DetectorDataSet1(BaseDetector):
         """
         Executa o modelo YOLO do DataSet1.
         Retorna:
-          - status: 200 ou dicionário de erro
-          - detection_list: lista de detecções com {"category", "score", "box"}
-          - label_counts: dicionário com a contagem de cada rótulo
+          - status: 200 ou dicionário de erro.
+          - detection_list: lista de detecções com {"category", "score", "box"}.
+          - label_counts: dicionário com a contagem de cada rótulo.
         """
         model_path = os.path.join("modelsAvailable", "1", f"{model_name}.pt")
         if not os.path.exists(model_path):
@@ -147,7 +156,6 @@ class DetectorDataSet1(BaseDetector):
         BaseDetector.cleanup_temp(temp_path)
         return 200, detection_list, label_counts
 
-
 ###########################
 # Detector para DataSet2 (usando modelo multi-tarefa e JSON)
 ###########################
@@ -169,17 +177,16 @@ class DetectorDataSet2(BaseDetector):
         """
         Executa o modelo multi-tarefa do DataSet2.
         Retorna:
-          - status: 200 ou dicionário de erro
-          - detection_list: lista de detecções com {"category", "score", "box"}
-          - label_counts: dicionário das contagens de cada rótulo de detecção
-          - global_attributes: dicionário com {"weather", "scene", "timeofday"}
+          - status: 200 ou dicionário de erro.
+          - detection_list: lista de detecções com {"category", "score", "box"}.
+          - label_counts: dicionário com as contagens dos rótulos de detecção.
+          - global_attributes: dicionário com {"weather", "scene", "timeofday"}.
         """
         model_path = os.path.join("modelsAvailable", "2", f"{model_name}.pth")
         if not os.path.exists(model_path):
             return {"error": f"Modelo '{model_name}' não encontrado em DataSet2."}, 404, [], {}, {}
-        # Carrega mapeamentos dos JSON
         cat_map, weather_map, scene_map, time_map = DetectorDataSet2.load_mappings()
-        # Cria mapeamentos inversos para converter valores numéricos em rótulos
+        # Cria os mapeamentos inversos para converter os valores numéricos retornados pelo modelo em rótulos
         inv_cat = invert_mapping(cat_map)
         inv_weather = invert_mapping(weather_map)
         inv_scene = invert_mapping(scene_map)
@@ -224,12 +231,10 @@ class DetectorDataSet2(BaseDetector):
                 })
         detection_labels = [d["category"] for d in detection_list]
         label_counts = dict(Counter(detection_labels))
-        # Acrescenta os atributos globais nas contagens
         for attr in [global_attributes["weather"], global_attributes["scene"], global_attributes["timeofday"]]:
             label_counts[attr] = label_counts.get(attr, 0) + 1
         BaseDetector.cleanup_temp(temp_path)
         return 200, detection_list, label_counts, global_attributes
-
 
 ###########################
 # Funções para o Frontend (mantidas)
@@ -254,7 +259,6 @@ def detect_labels_DataSet1(model_name: str, base64_image: str):
         "counts": label_counts,
         "image_base64": image_base64
     }, 200
-
 
 def detect_labels_DataSet2(model_name: str, base64_image: str):
     """Função para o frontend – usa DetectorDataSet2 e desenha as detecções e os atributos globais na imagem."""
@@ -281,17 +285,16 @@ def detect_labels_DataSet2(model_name: str, base64_image: str):
         "image_base64": image_base64
     }, 200
 
-
 ###########################
 # Função Combinada para DataSet3
 ###########################
 def detect_labels_DataSet3(base64_image: str):
     """
     Combina os resultados dos modelos de DataSet1 e DataSet2 em uma única imagem:
-      - Usa DetectorDataSet1 e DetectorDataSet2 para obter as detecções e atributos
-      - Desenha os bounding boxes (verde para DataSet1 e azul para DataSet2)
-      - Escreve os atributos globais no canto superior
-      - Retorna a união dos rótulos e as contagens combinadas
+      - Usa DetectorDataSet1 e DetectorDataSet2 para obter as detecções e atributos.
+      - Desenha os bounding boxes (verde para DataSet1 e azul para DataSet2) e os textos com fundo.
+      - Escreve os atributos globais no canto superior.
+      - Retorna a união dos rótulos e as contagens combinadas.
     """
     try:
         decoded_data = base64.b64decode(base64_image)
