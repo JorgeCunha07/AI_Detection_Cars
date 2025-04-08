@@ -16,7 +16,9 @@ from torchvision import models, transforms
 from ultralytics import YOLO
 
 from multitaskmodel import MultiTaskModel
+
 sys.modules['__main__'].MultiTaskModel = MultiTaskModel
+
 
 ###########################
 # Funções Utilitárias (Reaproveitáveis)
@@ -47,17 +49,46 @@ class BaseDetector:
         return base64.b64encode(buffered.getvalue()).decode("utf-8")
 
     @staticmethod
-    def draw_detections(pil_image: Image.Image, detections: list, color: str, font: ImageFont.ImageFont):
+    def draw_detections_with_bg(pil_image: Image.Image, detections: list, color: tuple, font: ImageFont.ImageFont):
+        """
+        Desenha os bounding boxes e os textos das detecções com fundo sólido para o texto.
+        :param pil_image: imagem PIL onde serão desenhados os resultados.
+        :param detections: lista de detecções, cada uma um dicionário com {"category", "score", "box"}
+        :param color: cor para o contorno e o fundo (RGB), por exemplo, (0,255,0)
+        :param font: fonte PIL utilizada para o texto.
+        """
         draw = ImageDraw.Draw(pil_image)
         for det in detections:
             x1, y1, x2, y2 = det["box"]
             text = f"{det['category']}:{det['score']:.2f}"
-            draw.rectangle([x1, y1, x2, y2], outline=color, width=2)
-            draw.text((x1, y1 - 10), text, fill=color, font=font)
+            # Desenha a bounding box
+            draw.rectangle([x1, y1, x2, y2], outline=color, width=3)
+            # Desenha o texto com fundo
+            BaseDetector.draw_text_with_background(draw, (x1, y1 - 24), text, font, text_color=(255, 255, 255),
+                                                   bg_color=(0, 0, 0))
+
+    @staticmethod
+    def draw_text_with_background(draw: ImageDraw.Draw, xy: tuple, text: str, font: ImageFont.ImageFont,
+                                  text_color=(255, 255, 255), bg_color=(0, 0, 0)):
+        """
+        Desenha um texto com fundo sólido para aumentar a legibilidade.
+        :param draw: objeto ImageDraw
+        :param xy: posição (x, y) para desenhar o texto.
+        :param text: o texto a ser desenhado.
+        :param font: fonte PIL utilizada para o texto.
+        :param text_color: cor do texto (RGB).
+        :param bg_color: cor de fundo (RGB).
+        """
+        x, y = xy
+        text_w, text_h = draw.textsize(text, font=font)
+        # Desenha o retângulo de fundo com uma pequena margem (2 pixels)
+        draw.rectangle([x, y, x + text_w + 4, y + text_h + 4], fill=bg_color)
+        draw.text((x + 2, y + 2), text, font=font, fill=text_color)
+
 
 def invert_mapping(mapping: dict) -> dict:
-    """Cria um dicionário inverso do mapeamento fornecido.
-       Se o valor puder ser convertido para int, utiliza o int como chave."""
+    """Cria um dicionário inverso a partir do mapping fornecido.
+       Se o valor puder ser convertido para int, usa o int como chave."""
     inv = {}
     for k, v in mapping.items():
         try:
@@ -65,6 +96,7 @@ def invert_mapping(mapping: dict) -> dict:
         except:
             inv[v] = k
     return inv
+
 
 ###########################
 # Detector para DataSet1 (usando YOLO e YAML)
@@ -85,7 +117,7 @@ class DetectorDataSet1(BaseDetector):
         Retorna:
           - status: 200 ou dicionário de erro
           - detection_list: lista de detecções com {"category", "score", "box"}
-          - label_counts: dicionário com contagem de cada rótulo
+          - label_counts: dicionário com a contagem de cada rótulo
         """
         model_path = os.path.join("modelsAvailable", "1", f"{model_name}.pt")
         if not os.path.exists(model_path):
@@ -115,6 +147,7 @@ class DetectorDataSet1(BaseDetector):
         BaseDetector.cleanup_temp(temp_path)
         return 200, detection_list, label_counts
 
+
 ###########################
 # Detector para DataSet2 (usando modelo multi-tarefa e JSON)
 ###########################
@@ -138,15 +171,15 @@ class DetectorDataSet2(BaseDetector):
         Retorna:
           - status: 200 ou dicionário de erro
           - detection_list: lista de detecções com {"category", "score", "box"}
-          - label_counts: contagem de cada rótulo de detecção
+          - label_counts: dicionário das contagens de cada rótulo de detecção
           - global_attributes: dicionário com {"weather", "scene", "timeofday"}
         """
         model_path = os.path.join("modelsAvailable", "2", f"{model_name}.pth")
         if not os.path.exists(model_path):
             return {"error": f"Modelo '{model_name}' não encontrado em DataSet2."}, 404, [], {}, {}
-
-        # Carrega os mapeamentos e gera os mapeamentos inversos
+        # Carrega mapeamentos dos JSON
         cat_map, weather_map, scene_map, time_map = DetectorDataSet2.load_mappings()
+        # Cria mapeamentos inversos para converter valores numéricos em rótulos
         inv_cat = invert_mapping(cat_map)
         inv_weather = invert_mapping(weather_map)
         inv_scene = invert_mapping(scene_map)
@@ -183,7 +216,6 @@ class DetectorDataSet2(BaseDetector):
             for bbox, lbl, sc in zip(boxes, labels_det, scores):
                 if sc < 0.5:
                     continue
-                # Usa o mapeamento inverso para obter o rótulo
                 cat_label = inv_cat.get(lbl, f"class_{lbl}")
                 detection_list.append({
                     "category": cat_label,
@@ -192,10 +224,12 @@ class DetectorDataSet2(BaseDetector):
                 })
         detection_labels = [d["category"] for d in detection_list]
         label_counts = dict(Counter(detection_labels))
+        # Acrescenta os atributos globais nas contagens
         for attr in [global_attributes["weather"], global_attributes["scene"], global_attributes["timeofday"]]:
             label_counts[attr] = label_counts.get(attr, 0) + 1
         BaseDetector.cleanup_temp(temp_path)
         return 200, detection_list, label_counts, global_attributes
+
 
 ###########################
 # Funções para o Frontend (mantidas)
@@ -210,10 +244,10 @@ def detect_labels_DataSet1(model_name: str, base64_image: str):
     except ValueError as e:
         return {"error": str(e)}, 400
     try:
-        font = ImageFont.truetype("arial.ttf", 15)
+        font = ImageFont.truetype("arial.ttf", 20)
     except Exception:
         font = ImageFont.load_default()
-    BaseDetector.draw_detections(pil_image, detection_list, "green", font)
+    BaseDetector.draw_detections_with_bg(pil_image, detection_list, (0, 255, 0), font)
     image_base64 = BaseDetector.encode_image_pil_to_base64(pil_image)
     return {
         "labels": list(label_counts.keys()),
@@ -221,8 +255,9 @@ def detect_labels_DataSet1(model_name: str, base64_image: str):
         "image_base64": image_base64
     }, 200
 
+
 def detect_labels_DataSet2(model_name: str, base64_image: str):
-    """Função para o frontend – usa DetectorDataSet2 e desenha as detecções e atributos globais na imagem."""
+    """Função para o frontend – usa DetectorDataSet2 e desenha as detecções e os atributos globais na imagem."""
     status, detection_list, label_counts, global_attributes = DetectorDataSet2.get_detections(model_name, base64_image)
     if status != 200:
         return {"error": "Erro no DataSet2"}, status
@@ -231,13 +266,13 @@ def detect_labels_DataSet2(model_name: str, base64_image: str):
     except ValueError as e:
         return {"error": str(e)}, 400
     try:
-        font = ImageFont.truetype("arial.ttf", 15)
+        font = ImageFont.truetype("arial.ttf", 20)
     except Exception:
         font = ImageFont.load_default()
-    BaseDetector.draw_detections(pil_image, detection_list, "red", font)
+    BaseDetector.draw_detections_with_bg(pil_image, detection_list, (0, 0, 255), font)
     draw = ImageDraw.Draw(pil_image)
     attr_text = f"Weather: {global_attributes['weather']}, Scene: {global_attributes['scene']}, Time: {global_attributes['timeofday']}"
-    draw.text((10, 10), attr_text, fill="blue", font=font)
+    BaseDetector.draw_text_with_background(draw, (10, 10), attr_text, font)
     image_base64 = BaseDetector.encode_image_pil_to_base64(pil_image)
     combined_labels = list(set([d["category"] for d in detection_list] + list(global_attributes.values())))
     return {
@@ -245,6 +280,7 @@ def detect_labels_DataSet2(model_name: str, base64_image: str):
         "counts": label_counts,
         "image_base64": image_base64
     }, 200
+
 
 ###########################
 # Função Combinada para DataSet3
@@ -263,7 +299,7 @@ def detect_labels_DataSet3(base64_image: str):
         return {"error": f"Imagem base64 inválida: {str(e)}"}, 400
     pil_image = Image.open(BytesIO(decoded_data)).convert("RGB")
     try:
-        font = ImageFont.truetype("arial.ttf", 15)
+        font = ImageFont.truetype("arial.ttf", 20)
     except Exception:
         font = ImageFont.load_default()
     status1, det_list1, counts1 = DetectorDataSet1.get_detections("best_yolo", base64_image)
@@ -272,11 +308,11 @@ def detect_labels_DataSet3(base64_image: str):
     status2, det_list2, counts2, attrs2 = DetectorDataSet2.get_detections("vgg", base64_image)
     if status2 != 200:
         return {"error": "Erro no DataSet2"}, status2
-    BaseDetector.draw_detections(pil_image, det_list1, "green", font)
-    BaseDetector.draw_detections(pil_image, det_list2, "blue", font)
+    BaseDetector.draw_detections_with_bg(pil_image, det_list1, (0, 255, 0), font)
+    BaseDetector.draw_detections_with_bg(pil_image, det_list2, (0, 0, 255), font)
     draw = ImageDraw.Draw(pil_image)
     attr_text = f"Weather: {attrs2['weather']}, Scene: {attrs2['scene']}, Time: {attrs2['timeofday']}"
-    draw.text((10, 10), attr_text, fill="red", font=font)
+    BaseDetector.draw_text_with_background(draw, (10, 10), attr_text, font)
     combined_counts = {}
     for k, v in counts1.items():
         combined_counts[k] = v
