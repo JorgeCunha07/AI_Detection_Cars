@@ -8,11 +8,11 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <header className="bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 text-white">
-        <div className="container mx-auto px-4 py-16 md:py-24">
-          <nav className="flex justify-between items-center mb-16">
+        <div className="container mx-auto px-4 pb-16 md:pb-24">
+          <nav className="flex justify-between items-center py-4 px-8">
             <div className="flex items-center gap-2">
-              <Car className="h-8 w-8" />
-              <span className="text-2xl font-bold">Innov8</span>
+              <Car className="h-6 w-6" />
+              <span className="text-xl font-bold">Innov8</span>
             </div>
             <div className="flex gap-4">
               <Link href="/sobre" className="hover:underline">
@@ -24,7 +24,7 @@ export default function HomePage() {
             </div>
           </nav>
 
-          <div className="flex flex-col md:flex-row items-center gap-12">
+          <div className="flex flex-col md:flex-row items-center gap-12 pt-24">
             <div className="md:w-1/2 space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                 Revolucionando o Ensino de Condução com Inteligência Artificial
