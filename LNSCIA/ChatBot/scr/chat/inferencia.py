@@ -9,11 +9,46 @@ model_dir = Path(__file__).resolve().parent.parent / "chat" / "gpt2-chat-finetun
 # Carregar modelo e tokenizador
 tokenizer = GPT2Tokenizer.from_pretrained(model_dir)
 model = GPT2LMHeadModel.from_pretrained(model_dir)
-model.eval()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
+model.eval()
+
+# Palavras-chave relevantes para o tema
+palavras_chave = [
+    "carro", "conduzir", "condutor", "carta", "travar", "buzina", "direção", "aceleração", "travagem", "marcha-atrás",
+    "sinal", "semáforo", "stop", "prioridade", "ceda passagem", "sinalização", "linha contínua", "triângulo", "pisca", "luzes", "máximos", "médios", "nevoeiro",
+    "infrações", "multa", "coima", "pontos", "penalização", "alcoolemia", "teste do balão", "excesso de velocidade", "polícia", "fiscalização",
+    "estacionar", "parar", "berma", "passeio", "segunda fila", "garagem", "estacionamento", "zona reservada", "local proibido",
+    "cinto", "cadeira auto", "cadeirinha", "criança", "transporte", "animal", "cão", "gato", "segurança", "colete refletor", "triângulo de sinalização",
+    "autoestrada", "estrada nacional", "rotunda", "faixa", "via", "passadeira", "cruzamento", "ciclovia", "acostamento", "zona escolar",
+    "bicicleta", "ciclomotor", "mota", "trotinete", "trator", "reboque", "mercadorias",
+    "pneu", "inspeção", "óleo", "motor", "avaria", "revisão", "vidro partido", "buzina avariada", "travões"
+]
+
+def pergunta_valida(pergunta: str) -> bool:
+    pergunta_lower = pergunta.lower()
+    return any(palavra in pergunta_lower for palavra in palavras_chave)
+
+def post_process_resposta(generated_text: str, prompt: str) -> str:
+    resposta = generated_text.replace(prompt, "").strip()
+
+    # Remove frases redundantes e palavras a mais
+    resposta = resposta.split(".")[0]  # Só fica com a primeira frase curta
+    resposta = resposta.strip()
+
+    if not resposta:
+        resposta = "Desculpe, não consegui gerar uma resposta."
+    elif len(resposta.split()) < 4:
+        resposta = "Precisa de reformular a pergunta."
+    else:
+        resposta += "."
+
+    return resposta
 
 def gerar_resposta_chat(user_input: str) -> str:
+    if not pergunta_valida(user_input):
+        return "Sou um assistente especializado apenas em temas do Código da Estrada. Reformule a sua pergunta."
+
     # Prompt no formato "Usuário: [pergunta]\nAssistente:"
     prompt = f"Usuário: {user_input}\nAssistente: " 
     
@@ -39,22 +74,6 @@ def gerar_resposta_chat(user_input: str) -> str:
 
     generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
     resposta = post_process_resposta(generated_text, prompt)
-    return resposta
-
-def post_process_resposta(generated_text: str, prompt: str) -> str:
-    resposta = generated_text.replace(prompt, "").strip()
-
-    # Remove frases redundantes e palavras a mais
-    resposta = resposta.split(".")[0]  # Só fica com a primeira frase curta
-    resposta = resposta.strip()
-
-    if not resposta:
-        resposta = "Desculpe, não consegui gerar uma resposta."
-    elif len(resposta.split()) < 4:
-        resposta = "Precisa de reformular a pergunta."
-    else:
-        resposta += "."
-
     return resposta
 
 

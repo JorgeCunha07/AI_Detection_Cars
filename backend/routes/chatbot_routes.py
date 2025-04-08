@@ -1,52 +1,83 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from typing import Optional
+from typing import List, Optional
 import random
 from pathlib import Path
 import json
 
-#from chatbot.validacao.validador_respostas import validar_resposta
-#from chatbot.pesquisa.similar_semantic import pesquisar_artigo
-#from chatbot.chat.inferencia import gerar_resposta_chat
+from chatbot.validacao.validador_respostas import validar_resposta
+from chatbot.pesquisa.similar_semantic import pesquisar_artigo
+from chatbot.chat.inferencia import gerar_resposta_chat
 
 router = APIRouter()
 
-# Models
-class Mensagem(BaseModel):
+
+# Models para entrada de dados
+class PerguntaRequest(BaseModel):
     pergunta: str
 
-class RespostaQuiz(BaseModel):
+
+class RespostaQuizRequest(BaseModel):
     pergunta: str
     resposta: str
 
-# Endpoints
 
-@router.get("/conversa")
-def conversa_endpoint():
-    #resposta = gerar_resposta_chat(msg.pergunta)
-    #return {"resposta": resposta}
-    return "bom dia"
+# Endpoint: Modo conversa (chat)
+@router.post("/conversa")
+def conversa_endpoint(req: PerguntaRequest):
+    resposta = gerar_resposta_chat(req.pergunta)
+    return {"resposta": resposta}
 
-'''
+
+# Endpoint: Obter pergunta de quiz
 @router.get("/quiz/pergunta")
 def obter_pergunta():
-    path_questoes = Path(__file__).resolve().parent.parent / "validacao" / "questoes.json"
+    path_questoes = (
+        Path(__file__).resolve().parent.parent / "chatbot" / "validacao" / "questoes.json"
+    )
     with open(path_questoes, encoding="utf-8") as f:
         questoes = json.load(f)
+
     pergunta_data = random.choice(questoes)
     return {
         "pergunta": pergunta_data["pergunta"],
-        "respostas_corretas": pergunta_data.get("respostas_corretas", [])
+        "respostas_corretas": pergunta_data.get("respostas_corretas", []),
     }
 
 
+# Endpoint: Validar resposta ao quiz
 @router.post("/quiz/responder")
-def responder_quiz(dados: RespostaQuiz):
+def responder_quiz(dados: RespostaQuizRequest):
     resultado = validar_resposta(dados.pergunta, dados.resposta)
-    return resultado
-'''
+    if resultado.get("correto"):
+        return {"correto": True, "metodo": resultado.get("metodo", "desconhecido")}
+    else:
+        # Obtem respostas corretas para dar sugestão
+        path_questoes = (
+            Path(__file__).resolve().parent.parent / "chatbot" / "validacao" / "questoes.json"
+        )
+        with open(path_questoes, encoding="utf-8") as f:
+            questoes = json.load(f)
 
+        corretas = next(
+            (
+                q.get("respostas_corretas")
+                for q in questoes
+                if q["pergunta"] == dados.pergunta
+            ),
+            [],
+        )
+        sugestao = random.choice(corretas) if corretas else "Sem sugestão disponível"
+
+        return {"correto": False, "sugestao": sugestao}
+
+
+# Endpoint: Modo pesquisa (semântica)
 @router.post("/pesquisa")
-def pesquisar_info(msg: Mensagem):
-    resultado = pesquisar_artigo(msg.pergunta)
-    return resultado
+def pesquisar_info(req: PerguntaRequest):
+    resultado = pesquisar_artigo(req.pergunta)
+    return {
+        "artigo_encontrado": resultado["artigo_encontrado"],
+        "conteudo": resultado["conteudo"],
+        "score_similaridade": resultado["score_similaridade"],
+    }
