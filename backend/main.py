@@ -9,6 +9,7 @@ from pydantic import BaseModel
 from fastapi import Path, HTTPException
 import os
 from fastapi import Body
+from routes.chatbot_routes import router as chatbot_router
 
 app = FastAPI()
 app.add_middleware(
@@ -19,26 +20,32 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(chatbot_router, prefix="/api/chatbot", tags=["ChatBot"])
+
+
 class LabelInput(BaseModel):
     labels: List[str]
 
+
 class SelectedModel(BaseModel):
     model: str
+
 
 class Base64ImageInput(BaseModel):
     model: str
     image_base64: str
 
+
 @app.get("/")
 async def root():
     return {"message": "API para gerar descrições a partir de labels."}
 
+
 @app.post("/image/findLabels/{dataset_id}")
 async def find_labels_from_image_base64(
-    dataset_id: int = Path(..., description="ID do dataset (1 ou 2)"),
-    data: Base64ImageInput = Body(...)
+        dataset_id: int = Path(..., description="ID do dataset (1 ou 2)"),
+        data: Base64ImageInput = Body(...)
 ):
-
     if dataset_id == 1:
         result, status = detect_labels_DataSet1(data.model, data.image_base64)
     elif dataset_id == 2:
@@ -53,12 +60,14 @@ async def find_labels_from_image_base64(
 
     return JSONResponse(content=result, status_code=status)
 
+
 # Conjunto de datasets válidos
-ALLOWED_DATASET_IDS = {1, 2,3}
+ALLOWED_DATASET_IDS = {1, 2, 3}
+
 
 @app.get("/image/models/{dataset_id}")
 def get_image_models(
-    dataset_id: int = Path(..., description="ID do dataset (apenas 1 ou 2)")
+        dataset_id: int = Path(..., description="ID do dataset (apenas 1 ou 2)")
 ):
     if dataset_id not in ALLOWED_DATASET_IDS:
         raise HTTPException(
