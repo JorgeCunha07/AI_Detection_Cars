@@ -1,17 +1,17 @@
 # models.py
 import os
 import re
-import torch
-import yaml
+import cv2
 import base64
 import tempfile
-import cv2
+import torch
+import torch.nn as nn
 from PIL import Image
 from collections import Counter
-from torchvision import transforms
+from torchvision import models, transforms
 from ultralytics import YOLO
-import base64
-
+import numpy as np
+import yaml
 
 def load_class_names_from_yaml(yaml_path="dataset.yaml"):
     if not os.path.exists(yaml_path):
@@ -101,6 +101,7 @@ def detect_labels_DataSet1(model_name: str, base64_image: str):
     }, 200
 
 
+
 def detect_labels_DataSet2(model_name: str, base64_image: str):
     model_path = os.path.join("modelsAvailable/2", f"{model_name}.pt")
     yaml_path = "dataset.yaml"
@@ -175,20 +176,7 @@ def detect_labels_DataSet2(model_name: str, base64_image: str):
         "image_base64": image_base64
     }, 200
 
-import os
-import re
-import cv2
-import json
-import base64
-import tempfile
-import torch
-import torch.nn as nn
-import numpy as np
-from PIL import Image
-from collections import Counter
-from torchvision import models, transforms
-from ultralytics import YOLO
-import yaml
+
 
 # Constantes de labels
 SCENE_LABELS = ['city street', 'residential', 'highway', 'gas stations', 'parking', 'tunnel',
@@ -212,21 +200,9 @@ class AttributeClassifier(nn.Module):
         feat = self.backbone(x)
         return self.scene_head(feat), self.weather_head(feat), self.time_head(feat)
 
-# Utilitário para carregar nomes de classes
-def load_class_names_from_yaml(yaml_path):
-    with open(yaml_path, "r") as f:
-        data = yaml.safe_load(f)
-    return {i: name for i, name in enumerate(data["names"])}
-
-# Utilitário para codificar imagem em base64
-def encode_image_base64(image):
-    _, buffer = cv2.imencode(".jpg", image)
-    return base64.b64encode(buffer).decode("utf-8")
-
-
 def detect_labels_DataSet3(model_name: str, base64_image: str):
-    model_path = os.path.join("modelsAvailable/3", "best_yolo.pt")
-    attr_model_path = os.path.join("modelsAvailable/3", "attribute_classifier.pt")
+    model_path = os.path.join("modelsAvailable/3", f"best_yolo.pt")
+    attr_model_path = os.path.join("modelsAvailable/3", f"attribute_classifier.pt")
     yaml_path = "dataset.yaml"
 
     if not os.path.exists(model_path) or not os.path.exists(attr_model_path):
@@ -343,5 +319,4 @@ def detect_labels_DataSet3(model_name: str, base64_image: str):
         "counts": label_counts,
         "image_base64": image_base64
     }, 200
-
 
