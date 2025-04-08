@@ -51,7 +51,7 @@ async def find_labels_from_image_base64(
     elif dataset_id == 2:
         result, status = detect_labels_DataSet2(data.model, data.image_base64)
     elif dataset_id == 3:
-        result, status = detect_labels_DataSet3(data.model, data.image_base64)
+        result, status = detect_labels_DataSet3(data.image_base64)
     else:
         return JSONResponse(
             content={"error": f"Dataset ID '{dataset_id}' não suportado."},
