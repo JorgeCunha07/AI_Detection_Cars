@@ -15,16 +15,16 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler("treinamento.log"),
+        logging.FileHandler("treinamento.log", encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
 logger = logging.getLogger(__name__)
 
-logger.info("🚀 Preparando o treino com melhorias e Early Stopping...")
+logger.info("Preparando o treino com melhorias e Early Stopping...")
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-logger.info(f"⚙️  Dispositivo em uso: {device}")
+logger.info(f"Dispositivo em uso: {device}")
 
 # Diretórios e caminhos
 chat_dir = Path(__file__).resolve().parent.parent / "chat"
@@ -37,8 +37,8 @@ with open(dados_json_path, encoding="utf-8") as f:
 
 seen = set()
 filtrados = []
-logger.info(f"🔍 Filtrando dados do ficheiro {dados_json_path}")
-logger.info(f"📚 Antes da limpeza, total de exemplos: {len(data)}")
+logger.info(f"Filtrando dados do ficheiro {dados_json_path}")
+logger.info(f"Antes da limpeza, total de exemplos: {len(data)}")
 for d in data:
     inp = d.get("input", "").strip()
     out = d.get("output", "").strip()
@@ -47,8 +47,8 @@ for d in data:
         seen.add(k)
         filtrados.append({"input": inp, "output": out})
     else:
-        logger.warning(f"⚠️  Exemplo duplicado ou inválido encontrado: {k}")
-logger.info(f"📚 Após limpeza, total de exemplos: {len(filtrados)}")
+        logger.warning(f"Exemplo duplicado ou inválido encontrado: {k}")
+logger.info(f"Após limpeza, total de exemplos: {len(filtrados)}")
 
 # Preparar os textos com marcadores explícitos
 texts = [
@@ -62,9 +62,9 @@ tokenizer = GPT2Tokenizer.from_pretrained(model_name)
 lengths = [len(tokenizer.encode(text)) for text in texts]
 avg_length = sum(lengths) / len(lengths)
 max_length = max(lengths)
-logger.info(f"📏 Comprimento médio: {avg_length:.2f}, Máximo: {max_length}")
+logger.info(f"Comprimento médio: {avg_length:.2f}, Máximo: {max_length}")
 max_seq_length = min(512, max(256, int(avg_length * 1.5)))
-logger.info(f"📏 Comprimento máximo definido para tokenização: {max_seq_length}")
+logger.info(f"Comprimento máximo definido para tokenização: {max_seq_length}")
 
 # Criar dataset a partir dos textos
 dataset = Dataset.from_dict({"text": texts})
@@ -88,7 +88,7 @@ def tokenize(batch):
             prompt_length = len(prompt_tokens)
         else:
             prompt_length = len(input_ids[i])
-            logger.warning(f"⚠️  Aviso: marcador '{assistant_marker.strip()}' não encontrado no exemplo: {decoded[:50]}...")
+            logger.warning(f"Aviso: marcador '{assistant_marker.strip()}' não encontrado no exemplo: {decoded[:50]}...")
         example_labels = input_ids[i].copy()
         for j in range(prompt_length):
             example_labels[j] = -100
@@ -163,8 +163,11 @@ class SampleGenerationCallback(TrainerCallback):
         outputs = []
         for prompt in self.prompts:
             input_ids = self.tokenizer.encode(f"Usuário: {prompt}\nAssistente:", return_tensors="pt").to(model.device)
+            # Criar a attention_mask com valor 1 para cada token
+            attention_mask = torch.ones_like(input_ids)
             output = model.generate(
-                input_ids, 
+                input_ids,
+                attention_mask=attention_mask,
                 max_length=100,
                 num_return_sequences=1,
                 temperature=0.7,
@@ -178,7 +181,7 @@ class SampleGenerationCallback(TrainerCallback):
         with open(f"{self.output_dir}/samples_epoch_{int(epoch)}.txt", "w", encoding="utf-8") as f:
             f.write("\n".join(outputs))
         
-        logger.info(f"✅ Amostras geradas salvas para época {int(epoch)}")
+        logger.info(f"Amostras geradas salvas para época {int(epoch)}")
 
 # Exemplos de prompts para testar
 test_prompts = [
@@ -196,11 +199,11 @@ args = TrainingArguments(
     evaluation_strategy="steps",            # Avaliação em passos específicos
     eval_steps=500,                         # Avaliar a cada 500 passos
     per_device_train_batch_size=4,          # Tamanho do batch de treino
-    per_device_eval_batch_size=8,           # Tamanho do batch de validação
+    per_device_eval_batch_size=4,           # Tamanho do batch de validação
     gradient_accumulation_steps=2,          # Acumulação de gradientes para simular batch maior
-    num_train_epochs=10,                    # Número máximo de épocas (o treino pode parar antes)
+    num_train_epochs=20,                    # Número máximo de épocas (o treino pode parar antes)
     warmup_ratio=0.1,                       # Aquecimento de 10% dos passos totais
-    logging_steps=50,                       # Passos para logar informações
+    logging_steps=100,                      # Passos para logar informações
     save_strategy="steps",                  # Salvar em passos específicos
     save_steps=500,                         # Salvar a cada 500 passos
     save_total_limit=3,                     # Manter apenas os 3 melhores checkpoints
@@ -208,11 +211,11 @@ args = TrainingArguments(
     lr_scheduler_type="cosine",             # Scheduler cosine com decay
     weight_decay=0.01,                      # Regularização L2
     fp16=True if torch.cuda.is_available() else False,  # Precisão mista (se disponível)
-    report_to="none",                        # Não reportar para serviços externos
+    report_to="none",                       # Não reportar para serviços externos
     remove_unused_columns=False,
-    load_best_model_at_end=True,             # Carrega o melhor modelo ao final
+    load_best_model_at_end=True,            # Carrega o melhor modelo ao final
     metric_for_best_model="perplexity",
-    greater_is_better=False                  # Menor perplexidade é melhor
+    greater_is_better=False                 # Menor perplexidade é melhor
 )
 
 collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
@@ -239,25 +242,27 @@ trainer = Trainer(
     ]
 )
 
-logger.info("🧠 Iniciando treino com Early Stopping...")
+logger.info("Iniciando treino com Early Stopping...")
 trainer.train()
 
-logger.info("💾 Salvando modelo...")
+logger.info("Salvando modelo...")
 modelo_output_dir.mkdir(parents=True, exist_ok=True)
 model.save_pretrained(modelo_output_dir)
 tokenizer.save_pretrained(modelo_output_dir)
-logger.info(f"✅ Modelo salvo em {modelo_output_dir}")
+logger.info(f"Modelo salvo em {modelo_output_dir}")
 
 # Testar o modelo final com alguns exemplos
-logger.info("🔍 Testando modelo final...")
+logger.info("Testando modelo final...")
 model.eval()
 for prompt in test_prompts:
     input_text = f"Usuário: {prompt}\nAssistente:"
     input_ids = tokenizer.encode(input_text, return_tensors="pt").to(device)
-    
+    # Criar a attention_mask para o input
+    attention_mask = torch.ones_like(input_ids)
     # Gerar resposta
     output = model.generate(
         input_ids, 
+        attention_mask=attention_mask,
         max_length=150,
         num_return_sequences=1,
         temperature=0.7,
@@ -268,4 +273,4 @@ for prompt in test_prompts:
     generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
     logger.info(f"\nPrompt: {prompt}\nResposta gerada: {generated_text}\n")
 
-logger.info("✅ Treinamento concluído com sucesso!")
+logger.info("Treinamento concluído com sucesso!")

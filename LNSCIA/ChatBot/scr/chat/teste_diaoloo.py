@@ -4,7 +4,7 @@ from transformers import GPT2Tokenizer
 
 
 # Ajuste o caminho conforme necessário
-json_path = Path("dialogos_validos3.json")
+json_path = Path("dialogos_validos4.json")
 
 # Carregar os dados do arquivo JSON
 with open(json_path, encoding="utf-8") as f:
