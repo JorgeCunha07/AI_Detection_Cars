@@ -85,11 +85,16 @@ def evaluate_model(
             "label_coverage": round(label_coverage, 2)
         })
 
-    # Guardar CSV
+    # Ordenar os resultados do melhor para o pior com base na cobertura e BLEU
+    sorted_results = sorted(results, key=lambda x: (x["label_coverage"], x["bleu"]), reverse=True)
+
+    # Guardar CSV ordenado
     with open(result_csv_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=results[0].keys())
+        writer = csv.DictWriter(f, fieldnames=sorted_results[0].keys())
         writer.writeheader()
-        writer.writerows(results)
+        writer.writerows(sorted_results)
+
+    print("📄 Resultados ordenados guardados em results/eval_results_sorted.csv")
 
     # Imprimir médias
     avg_bleu = sum(r["bleu"] for r in results) / len(results)

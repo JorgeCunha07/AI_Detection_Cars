@@ -44,10 +44,11 @@ def generate_sentence(
     encoder_outputs, hidden, cell = model.encoder(src_tensor)
     input_token = torch.tensor([output_vocab.word2idx[SOS]], dtype=torch.long).to(device)
 
+    max_len = 20 + len(labels) * 5
+
     if mode == "beam":
         sequences = [[[], 0.0, hidden, cell, input_token]]
-
-        for _ in range(30):
+        for _ in range(max_len):
             all_candidates = []
             for seq, score, h, c, inp in sequences:
                 output, h_new, c_new, _ = model.decoder(inp, h, c, encoder_outputs)
@@ -69,9 +70,11 @@ def generate_sentence(
 
         return " ".join(sequences[0][0])
 
-    # Greedy or Top-k sampling
+    # greedy or topk
     output_sentence = []
-    for _ in range(30):
+    eos_count = 0
+
+    for _ in range(max_len):
         output, hidden, cell, _ = model.decoder(input_token, hidden, cell, encoder_outputs)
 
         if mode == "topk":
@@ -84,9 +87,14 @@ def generate_sentence(
             word_id = output.argmax(1).item()
 
         word = output_vocab.idx2word.get(word_id, UNK)
-        if word in [SOS, EOS]:
-            break
-        output_sentence.append(word)
+
+        if word == EOS:
+            eos_count += 1
+            if eos_count >= 1:
+                break
+        elif word != SOS:
+            output_sentence.append(word)
+
         input_token = torch.tensor([word_id], dtype=torch.long).to(device)
 
     return " ".join(output_sentence)
@@ -103,8 +111,9 @@ sentence = generate_sentence(
     model=model,
     input_vocab=input_vocab,
     output_vocab=output_vocab,
-    mode="beam",  # ou "greedy", "topk"
-    beam_width=4
+    mode="topk",  # beam, "greedy" ou "topk"
+    beam_width=4,
+    temperature=1.5
 )
 
 print("Frase gerada:", sentence)
