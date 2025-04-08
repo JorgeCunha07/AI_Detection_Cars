@@ -1,0 +1,9 @@
+{
+  "clear": 0,
+  "foggy": 1,
+  "overcast": 2,
+  "partly cloudy": 3,
+  "rainy": 4,
+  "snowy": 5,
+  "undefined": 6
+}
