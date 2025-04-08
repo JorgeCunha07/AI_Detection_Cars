@@ -11,7 +11,7 @@ import { ChatAssistente } from "@/components/chat-assistente";
 export default function AnalisePage() {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [imageBase64, setImageBase64] = useState<string | null>(null);
-  const [selectedModel, setSelectedModel] = useState<string>("");
+  const [selectedModel, setSelectedModel] = useState<string>("teste");
   const [isInitialized, setIsInitialized] = useState(false);
 
   const [mostrarOpcoesAvancadas, setMostrarOpcoesAvancadas] = useState(false);
@@ -48,7 +48,7 @@ export default function AnalisePage() {
       }
     } else {
       const storedModel = localStorage.getItem('selectedModel');
-      if (storedModel) setSelectedModel(storedModel);
+      if (true) setSelectedModel("teste");
     }
 
     setIsInitialized(true);
@@ -115,7 +115,7 @@ export default function AnalisePage() {
                 mostrarOpcoesAvancadas={mostrarOpcoesAvancadas}
                 usarDataset1={usarDataset1}
                 usarDataset2={usarDataset2}
-                selectedModel={selectedModel}
+                selectedModel="teste"
                 selectedModelDataset1={selectedModelDataset1}
                 selectedModelDataset2={selectedModelDataset2}
             />

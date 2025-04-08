@@ -1,0 +1,9 @@
+{
+    "images": 499,
+    "accuracy_weather": 0.5812,
+    "accuracy_scene": 0.4028,
+    "accuracy_time": 0.8798,
+    "average_detections_per_image": 1.56,
+    "accuracy_categories": 0.1014,
+    "evaluation_time_seconds": 7541.08
+}

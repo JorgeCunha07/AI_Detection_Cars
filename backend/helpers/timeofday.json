@@ -1,0 +1,6 @@
+{
+  "dawn/dusk": 0,
+  "daytime": 1,
+  "night": 2,
+  "undefined": 3
+}

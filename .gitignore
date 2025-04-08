@@ -38,7 +38,7 @@ LNSCIA/ChatBot/output/checkpoint-894/training_args.bin
 LNSCIA/ChatBot/output/checkpoint-894/vocab.json
 LNSCIA/Word2Vec/old/cc.pt.300.vec.gz
 LNSCIA/Word2Vec/old/cc.pt.300.vec
-LNSCIA/ChatBot/scr/chat/gpt2-chat-finetuned/model.safetensors
+!LNSCIA/ChatBot/scr/chat/gpt2-chat-finetuned/model.safetensors
 LNSCIA/ChatBot/src/meu_modelo_ajustado/model.safetensors
 LNSCIA/ChatBot/scr3/trained_model/model.safetensors
 LNSCIA/ChatBot/scr3/results/checkpoint-100/model.safetensors
@@ -318,3 +318,4 @@ LNSCIA/ChatBot/output/checkpoint-144/generation_config.json
 LNSCIA/ChatBot/output/checkpoint-144/config.json
 /AAU2/DetectObjects_MR/mobilenet_outputs/
 LNSCIA/ChatBot/scr/chat/trainer_output/checkpoint-interrupted/model.safetensors
+!backend/chatbot/chat/gpt2-chat-finetuned/model.safetensors

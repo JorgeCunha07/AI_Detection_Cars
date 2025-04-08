@@ -2,3 +2,4 @@
 *.pt filter=lfs diff=lfs merge=lfs -text
 *.pht filter=lfs diff=lfs merge=lfs -text
 *.pth filter=lfs diff=lfs merge=lfs -text
+backend/chatbot/chat/gpt2-chat-finetuned/model.safetensors filter=lfs diff=lfs merge=lfs -text
