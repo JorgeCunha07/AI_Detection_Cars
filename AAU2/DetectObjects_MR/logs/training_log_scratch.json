@@ -1,10 +1,42 @@
 [
     {
         "epoch": 1,
-        "avg_loss": 459.62478212678815,
-        "duration_sec": 210.331068277359,
+        "avg_loss": 496.3128013436653,
+        "duration_sec": 1000.4631707668304,
         "best_loss_so_far": Infinity,
         "no_improve_epochs": 0,
-        "estimated_remaining_time_sec": 10306.2
+        "estimated_remaining_time_sec": 49022.7
+    },
+    {
+        "epoch": 2,
+        "avg_loss": 360.3936839343206,
+        "duration_sec": 1018.4737977981567,
+        "best_loss_so_far": 496.3128013436653,
+        "no_improve_epochs": 0,
+        "estimated_remaining_time_sec": 24443.4
+    },
+    {
+        "epoch": 3,
+        "avg_loss": 270.90428865336935,
+        "duration_sec": 1051.4662470817566,
+        "best_loss_so_far": 360.3936839343206,
+        "no_improve_epochs": 0,
+        "estimated_remaining_time_sec": 16473.0
+    },
+    {
+        "epoch": 4,
+        "avg_loss": 263.6661260944523,
+        "duration_sec": 935.7407484054565,
+        "best_loss_so_far": 270.90428865336935,
+        "no_improve_epochs": 0,
+        "estimated_remaining_time_sec": 10761.0
+    },
+    {
+        "epoch": 5,
+        "avg_loss": 260.08696192911225,
+        "duration_sec": 1071.7157242298126,
+        "best_loss_so_far": 263.6661260944523,
+        "no_improve_epochs": 0,
+        "estimated_remaining_time_sec": 9645.4
     }
 ]

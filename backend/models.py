@@ -122,7 +122,9 @@ class DetectorDataSet1(BaseDetector):
     @staticmethod
     def get_detections(model_name: str, base64_image: str):
         """
-        Executa o modelo YOLO do DataSet1.
+        Executa o modelo do DataSet1.
+        Se o nome do modelo contiver "yolo", utiliza o modelo YOLO;
+        se contiver "rcnn", "mobilenet" ou "vgg", utiliza a arquitetura RCNN/MobileNet.
         Retorna:
           - status: 200 ou dicionário de erro.
           - detection_list: lista de detecções com {"category", "score", "box"}.
@@ -136,23 +138,54 @@ class DetectorDataSet1(BaseDetector):
             _, temp_path = BaseDetector.decode_image(base64_image)
         except ValueError as e:
             return {"error": str(e)}, 400, [], {}
+
+        detection_list = {}
+        label_counts = {}
         detection_list = []
-        yolo_model = YOLO(model_path)
-        results = yolo_model(temp_path)[0]
-        class_ids = [int(cls) for cls in results.boxes.cls]
-        for box, cls, conf in zip(results.boxes.xyxy, class_ids, results.boxes.conf):
-            score = float(conf)
-            if score < 0.5:
-                continue
-            x1, y1, x2, y2 = map(int, box.tolist())
-            label = class_map.get(cls, f"class_{cls}")
-            detection_list.append({
-                "category": label,
-                "score": score,
-                "box": [x1, y1, x2, y2]
-            })
-        detection_labels = [det["category"] for det in detection_list]
-        label_counts = dict(Counter(detection_labels))
+        # Se o modelo é YOLO
+        if re.search(r"yolo", model_name, re.IGNORECASE):
+            yolo_model = YOLO(model_path)
+            results = yolo_model(temp_path)[0]
+            class_ids = [int(cls) for cls in results.boxes.cls]
+            for box, cls, conf in zip(results.boxes.xyxy, class_ids, results.boxes.conf):
+                score = float(conf)
+                if score < 0.5:
+                    continue
+                x1, y1, x2, y2 = map(int, box.tolist())
+                label = class_map.get(cls, f"class_{cls}")
+                detection_list.append({
+                    "category": label,
+                    "score": score,
+                    "box": [x1, y1, x2, y2]
+                })
+                label_counts[label] = label_counts.get(label, 0) + 1
+        # Caso o modelo seja Faster RCNN / MobileNet / VGG
+        elif re.search(r"rcnn|mobilenet|vgg", model_name, re.IGNORECASE):
+            # Usa o PIL para carregar a imagem
+            image = Image.open(temp_path).convert("RGB")
+            transform = transforms.Compose([transforms.ToTensor()])
+            image_tensor = transform(image)
+            rcnn_model = torch.load(model_path, map_location="cpu")
+            rcnn_model.eval()
+            with torch.no_grad():
+                outputs = rcnn_model([image_tensor])[0]
+            min_score = 0.5
+            for i in range(len(outputs["boxes"])):
+                score = outputs["scores"][i].item()
+                if score >= min_score:
+                    box = outputs["boxes"][i].tolist()
+                    class_id = int(outputs["labels"][i].item())
+                    label = class_map.get(class_id, f"class_{class_id}")
+                    detection_list.append({
+                        "category": label,
+                        "score": score,
+                        "box": list(map(int, box))
+                    })
+                    label_counts[label] = label_counts.get(label, 0) + 1
+        else:
+            BaseDetector.cleanup_temp(temp_path)
+            return {"error": "Tipo de modelo não reconhecido no nome."}, 400, [], {}
+
         BaseDetector.cleanup_temp(temp_path)
         return 200, detection_list, label_counts
 
