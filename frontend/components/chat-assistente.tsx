@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
-import { Send, Loader2, ImageIcon } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Send, Loader2, ImageIcon } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -14,93 +14,96 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-
-// Tipos para as mensagens
-type Message = {
-  id: string
-  content: string
-  role: "user" | "assistant"
-}
+} from "@/components/ui/select";
+import Message from "@/app/types/Message";
 
 interface ChatAssistenteProps {
-  initialMessages?: Message[]
-  type?: 'conversa' | 'quiz' | 'pesquisa'
+  initialMessages?: Message[];
+  type?: "conversa" | "quiz" | "pesquisa";
 }
 
-export function ChatAssistente({ initialMessages = [], type = 'conversa' }: ChatAssistenteProps) {
-  const [messages, setMessages] = useState<Message[]>(initialMessages)
-  const [input, setInput] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
-  const [selectedChatModel, setSelectedChatModel] = useState<string | undefined>()
+export function ChatAssistente({
+  initialMessages = [],
+  type = "conversa",
+}: ChatAssistenteProps) {
+  const [messages, setMessages] = useState<Message[]>(initialMessages);
+  const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [selectedChatModel, setSelectedChatModel] = useState<
+    string | undefined
+  >();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setInput(e.target.value)
-  }
+    setInput(e.target.value);
+  };
+
+  const handleEnterSubmit = (e: any) => {
+    if (e.key === "Enter") {
+      e.preventDefault(); // prevent newline
+      e.currentTarget.form?.requestSubmit(); // trigger form submit
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    if (!input.trim()) return
+    if (!input.trim()) return;
 
     const userMessage: Message = {
       id: Date.now().toString(),
       content: input,
       role: "user",
-    }
+    };
 
-    setMessages((prev) => [...prev, userMessage])
-    setInput("")
-    setIsLoading(true)
+    setMessages((prev) => [...prev, userMessage]);
+    setInput("");
+    setIsLoading(true);
 
     try {
       const response = await fetch(`/api/chatbot/${type}`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           message: input,
-          history: messages.map(msg => ({
+          history: messages.map((msg) => ({
             role: msg.role,
-            content: msg.content
-          }))
+            content: msg.content,
+          })),
         }),
-      })
+      });
 
       if (!response.ok) {
-        throw new Error('Network response was not ok')
+        throw new Error("Network response was not ok");
       }
 
-      const data = await response.json()
+      const data = await response.json();
 
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
         content: data.response,
         role: "assistant",
-      }
+      };
 
-      setMessages((prev) => [...prev, aiResponse])
+      setMessages((prev) => [...prev, aiResponse]);
     } catch (error) {
-      console.error("Erro:", error)
+      console.error("Erro:", error);
       // Adiciona mensagem de erro ao chat
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         content: "Desculpe, ocorreu um erro ao processar sua mensagem.",
         role: "assistant",
-      }
-      setMessages((prev) => [...prev, errorMessage])
+      };
+      setMessages((prev) => [...prev, errorMessage]);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
     <div className="space-y-4">
       <div className="flex justify-between items-center">
-        <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500">
-          Tire suas dúvidas sobre esta situação:
-        </h3>
         <Select value={selectedChatModel} onValueChange={setSelectedChatModel}>
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Selecione o modelo" />
@@ -118,13 +121,23 @@ export function ChatAssistente({ initialMessages = [], type = 'conversa' }: Chat
         {messages.length === 0 && (
           <div className="text-center py-8 text-gray-500">
             <ImageIcon className="mx-auto h-12 w-12 mb-3 text-gray-400" />
-            <p>Faça perguntas sobre a situação de trânsito mostrada na imagem.</p>
-            <p className="text-sm mt-2">Exemplo: "O que devo fazer nesta situação?" ou "Quais são os riscos aqui?"</p>
+            <p>
+              Faça perguntas sobre a situação de trânsito mostrada na imagem.
+            </p>
+            <p className="text-sm mt-2">
+              Exemplo: "O que devo fazer nesta situação?" ou "Quais são os
+              riscos aqui?"
+            </p>
           </div>
         )}
 
         {messages.map((message) => (
-          <div key={message.id} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
+          <div
+            key={message.id}
+            className={`flex ${
+              message.role === "user" ? "justify-end" : "justify-start"
+            }`}
+          >
             <div
               className={`max-w-[80%] p-3 rounded-lg ${
                 message.role === "user"
@@ -146,6 +159,7 @@ export function ChatAssistente({ initialMessages = [], type = 'conversa' }: Chat
       </div>
       <form onSubmit={handleSubmit} className="flex space-x-2">
         <Textarea
+          onKeyDown={handleEnterSubmit}
           value={input}
           onChange={handleInputChange}
           placeholder="Faça uma pergunta sobre esta situação de trânsito..."
@@ -161,6 +175,5 @@ export function ChatAssistente({ initialMessages = [], type = 'conversa' }: Chat
         </Button>
       </form>
     </div>
-  )
+  );
 }
-
