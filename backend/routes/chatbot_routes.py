@@ -1,6 +1,5 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from typing import List, Optional
 import random
 from pathlib import Path
 import json
@@ -13,7 +12,6 @@ router = APIRouter()
 
 class ChatMessage(BaseModel):
     message: str
-    history: List[dict] = []
 
 # Models para entrada de dados
 class PerguntaRequest(BaseModel):

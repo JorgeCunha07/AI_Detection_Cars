@@ -1,10 +1,4 @@
-// Tipos para as mensagens
-export type MessageRole = "user" | "assistant";
-
-export type Message = {
-  role: MessageRole;
-  content: string;
-};
+import Message from "@/app/types/Message";
 
 export type ImageAnalysisResult = {
   labels: string[];
@@ -13,15 +7,15 @@ export type ImageAnalysisResult = {
 };
 
 export async function analyzeImage(
-    imageBase64: string,
-    modelName: string,
-    datasetId: number | null = 1
+  imageBase64: string,
+  modelName: string,
+  datasetId: number | null = 1
 ): Promise<ImageAnalysisResult> {
   try {
     // Remove o prefixo "data:image/jpeg;base64," se existir
-    const base64Data = imageBase64.includes('base64,')
-        ? imageBase64.split('base64,')[1]
-        : imageBase64;
+    const base64Data = imageBase64.includes("base64,")
+      ? imageBase64.split("base64,")[1]
+      : imageBase64;
 
     const response = await fetch(`/api/proxy/image/findLabels/${datasetId}`, {
       method: "POST",
@@ -30,7 +24,7 @@ export async function analyzeImage(
       },
       body: JSON.stringify({
         model: modelName,
-        image_base64: base64Data
+        image_base64: base64Data,
       }),
     });
 
@@ -46,13 +40,13 @@ export async function analyzeImage(
 }
 
 export async function analyzeImageDefault(
-    imageBase64: string,
-    modelName: string
+  imageBase64: string,
+  modelName: string
 ): Promise<ImageAnalysisResult> {
   try {
-    const base64Data = imageBase64.includes('base64,')
-        ? imageBase64.split('base64,')[1]
-        : imageBase64;
+    const base64Data = imageBase64.includes("base64,")
+      ? imageBase64.split("base64,")[1]
+      : imageBase64;
 
     const response = await fetch(`/api/proxy/image/findLabels/3`, {
       method: "POST",
@@ -61,7 +55,7 @@ export async function analyzeImageDefault(
       },
       body: JSON.stringify({
         model: modelName,
-        image_base64: base64Data
+        image_base64: base64Data,
       }),
     });
 
@@ -77,21 +71,21 @@ export async function analyzeImageDefault(
 }
 
 export async function analyzeImageMultiDataset(
-    imageBase64: string,
-    options: {
-      useDataset1: boolean;
-      useDataset2: boolean;
-      modelDataset1?: string;
-      modelDataset2?: string;
-    }
+  imageBase64: string,
+  options: {
+    useDataset1: boolean;
+    useDataset2: boolean;
+    modelDataset1?: string;
+    modelDataset2?: string;
+  }
 ): Promise<{
   dataset1?: ImageAnalysisResult;
   dataset2?: ImageAnalysisResult;
 }> {
   try {
-    const base64Data = imageBase64.includes('base64,')
-        ? imageBase64.split('base64,')[1]
-        : imageBase64;
+    const base64Data = imageBase64.includes("base64,")
+      ? imageBase64.split("base64,")[1]
+      : imageBase64;
 
     const promises = [];
 
@@ -142,24 +136,70 @@ export async function getAvailableModels(datasetId: number): Promise<string[]> {
   }
 }
 
-export async function sendChatMessage(message: string, history: Message[]): Promise<string> {
+export async function sendChatMessage(message: string): Promise<Message> {
   try {
-    const response = await fetch("/api/chat", {
+    const response = await fetch(`/api/proxy/chatbot/conversa`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ message, history }),
+      body: JSON.stringify({
+        message: message,
+      }),
     });
 
     if (!response.ok) {
-      throw new Error("Failed to send message");
+      throw new Error("Network response was not ok");
     }
 
     const data = await response.json();
-    return data.response;
+
+    return {
+      id: (Date.now() + 1).toString(),
+      content: data.response,
+      role: "assistant",
+    } as Message;
   } catch (error) {
-    console.error("Error sending message:", error);
-    throw error;
+    console.error("Erro:", error);
+
+    return {
+      id: (Date.now() + 1).toString(),
+      content: "Desculpe, ocorreu um erro ao processar sua mensagem.",
+      role: "assistant",
+    } as Message;
+  }
+}
+
+export async function sendSearchMessage(message: string): Promise<Message> {
+  try {
+    const response = await fetch(`/api/proxy/chatbot/pesquisa`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        pergunta: message,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    const data = await response.json();
+
+    return {
+      id: (Date.now() + 1).toString(),
+      content: `${data.artigo_encontrado}${data.conteudo}`,
+      role: "assistant",
+    } as Message;
+  } catch (error) {
+    console.error("Erro:", error);
+
+    return {
+      id: (Date.now() + 1).toString(),
+      content: "Desculpe, ocorreu um erro ao processar sua mensagem.",
+      role: "assistant",
+    } as Message;
   }
 }
