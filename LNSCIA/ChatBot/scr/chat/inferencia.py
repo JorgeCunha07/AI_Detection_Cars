@@ -1,10 +1,12 @@
-import torch
-from transformers import GPT2LMHeadModel, GPT2Tokenizer
-from pathlib import Path
 import re
 import nltk
-from nltk.stem import SnowballStemmer
+import torch
 import unicodedata
+
+from pathlib import Path
+from nltk.stem import SnowballStemmer
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
+
 
 nltk.download('punkt', quiet=True)
 
@@ -83,7 +85,7 @@ def post_process_resposta(generated_text: str, prompt: str) -> str:
     resposta = resposta.split(".")[0].strip()
 
     if not resposta:
-        return "Desculpe, não consegui gerar uma resposta."
+        return "Desculpe, não consegui gerar uma resposta. Podes tentar novamente."
     elif len(resposta.split()) < 4:
         return "Precisa de reformular a pergunta."
     else:
@@ -101,23 +103,23 @@ def gerar_resposta_chat(user_input: str) -> str:
     with torch.no_grad():
         outputs = model.generate(
             **inputs,
-            max_new_tokens=40,
-            do_sample=True,
-            num_beams=3,
-            temperature=0.7,
-            top_p=0.9,
-            top_k=30,
-            repetition_penalty=2.0,
-            pad_token_id=tokenizer.eos_token_id,
-            eos_token_id=tokenizer.eos_token_id,
-            no_repeat_ngram_size=3,
-            num_return_sequences=1,
+            max_new_tokens=40,          # Limite de tokens gerados
+            do_sample=True,             # Habilita amostragem
+            num_beams=3,                # Número de feixes para busca
+            temperature=0.7,            # Controle de aleatoriedade
+            top_p=0.9,                  # Amostragem de núcleo
+            top_k=30,                   # Limite de amostragem
+            repetition_penalty=2.0,     # Penalização de repetição
+            pad_token_id=tokenizer.eos_token_id,            # Token de preenchimento
+            eos_token_id=tokenizer.eos_token_id,            # Token de fim de sequência
+            no_repeat_ngram_size=3,     # Tamanho do n-grama a evitar repetição
+            num_return_sequences=1,     # Número de sequências a retornar
         )
 
     generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
     return post_process_resposta(generated_text, prompt)
 
-# CLI
+# CLI para testar o modelo sem invocar o main
 if __name__ == "__main__":
     print("🧠 Modo de inferência ativado. Escreva uma pergunta para testar o modelo.")
     print("❌ Digite 'sair' para encerrar.")
