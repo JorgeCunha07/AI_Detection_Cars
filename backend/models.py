@@ -189,7 +189,7 @@ class DetectorDataSet1(BaseDetector):
                         "box": list(map(int, box))
                     })
                     label_counts[label] = label_counts.get(label, 0) + 1
-        elif re.search(r"_ph", model_name, re.IGNORECASE):
+        elif re.search(r"SimpleCNNBackbone1|SimpleCNNBackbone2|SimpleCNNBackbone3", model_name, re.IGNORECASE):
 
                     image = Image.open(temp_path).convert("RGB")
                     transform = transforms.Compose([transforms.ToTensor()])
@@ -238,8 +238,6 @@ class DetectorDataSet1(BaseDetector):
                     except Exception as e:
                         BaseDetector.cleanup_temp(temp_path)
                         return 404, [], {}, {"Erro durante inferência."}
-
-
         else:
             BaseDetector.cleanup_temp(temp_path)
             return 404, [], {}, {"Tipo de modelo não reconhecido no nome."}

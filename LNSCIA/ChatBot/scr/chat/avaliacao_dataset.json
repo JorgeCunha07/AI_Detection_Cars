@@ -1,0 +1,27 @@
+[
+  {
+    "input": "Posso conduzir de chinelos?",
+    "gold_variants": ["Não é proibido, mas é desaconselhado. Se causarem acidente ou perda de controlo, pode ser penalizado. Se as autoridades considerarem que o calçado compromete a segurança, podem aplicar uma coima."],
+    "gerado": "​Não é proibido, mas é desaconselhado. Circular sem chinelos pode resultar em coima e inibição de conduzir. O ideal é usar capacete para proteção durante a condução. A segurança."
+  },
+  {
+    "input": "Crianças podem ir no banco da frente?",
+    "gold_variants": ["Geralmente não. Crianças com menos de 12 anos e menos de 1,50m devem usar sistemas de retenção adequados no banco de trás."],
+    "gerado": "Em Portugal, crianças com menos de 12 anos e menos de 135 cm de altura devem ser transportadas no banco traseiro."
+  },
+  {
+    "input": "Posso conduzir sem carta de condução?",
+    "gold_variants": ["Não, não podes conduzir com a carta de condução caducada. Circular com a carta fora do prazo de validade é considerado infração muito grave pelo Código da Estrada"],
+    "gerado": "Não. Conduzir sem carta é uma infração muito grave e pode resultar em coima, perda de pontos e até apreensão do veículo."
+  },
+  {
+    "input": "Posso usar o telemóvel enquanto conduzo, se for em alta-voz?",
+    "gold_variants": ["Sim, pode utilizar o telemóvel com sistema mãos-livres, como o modo alta-voz ou bluetooth integrado. O que é proibido é segurar ou manipular o telemóvel durante a condução."],
+    "gerado": "Sim, desde que não obstrua a visão ou distraia os outros condutores."
+  },
+  {
+    "input": "Posso circular com música alta no carro?",
+    "gold_variants": ["Não é proibido ouvir música, mas o volume excessivo que incomode os outros ou impeça a perceção de sinais sonoros pode ser motivo de coima por perturbação ou condução negligente."],
+    "gerado": "Sim, desde que não prejudique a perceção do trânsito e respeite os limites de velocidade."
+  }
+]
