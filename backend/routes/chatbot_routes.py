@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import List, Optional
 import random
@@ -11,6 +11,9 @@ from chatbot.chat.inferencia import gerar_resposta_chat
 
 router = APIRouter()
 
+class ChatMessage(BaseModel):
+    message: str
+    history: List[dict] = []
 
 # Models para entrada de dados
 class PerguntaRequest(BaseModel):
@@ -24,9 +27,12 @@ class RespostaQuizRequest(BaseModel):
 
 # Endpoint: Modo conversa (chat)
 @router.post("/conversa")
-def conversa_endpoint(req: PerguntaRequest):
-    resposta = gerar_resposta_chat(req.pergunta)
-    return {"resposta": resposta}
+async def handle_conversa(chat_input: ChatMessage):
+    try:
+        resposta = gerar_resposta_chat(chat_input.message)
+        return {"response": resposta}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 # Endpoint: Obter pergunta de quiz
