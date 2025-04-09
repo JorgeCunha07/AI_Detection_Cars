@@ -1133,7 +1133,7 @@
     "referencia": "Código da Estrada - Artigo 27.º (Velocidade)",
     "categoria": "velocidade",
     "nivel_dificuldade": "básico"
-  },    
+  },
   {
     "pergunta": "O que deve fazer um condutor ao circular atrás de um veículo prioritário com sinais ativos?",
     "respostas_corretas": [
@@ -1333,5 +1333,685 @@
     "referencia": "Código da Estrada - Artigo 22.º (Utilização de sinais sonoros)",
     "categoria": "sinalização",
     "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Quem tem prioridade ao sair de uma garagem para a via pública?",
+    "respostas_corretas": [
+      "Os veículos que circulam na via pública",
+      "O condutor deve ceder passagem a todo o trânsito na via",
+      "Quem sai de uma garagem deve dar prioridade a quem circula na estrada",
+      "A prioridade é sempre de quem já está na via pública",
+      "Veículos a sair devem aguardar até a via estar livre"
+    ],
+    "respostas_incorretas": [
+      "O veículo da garagem tem prioridade",
+      "A prioridade é alternada",
+      "Quem buzinar primeiro pode sair",
+      "Depende do sentido da via",
+      "O condutor pode avançar sem parar"
+    ],
+    "referencia": "Código da Estrada - Artigo 31.º (Cruzamentos e entroncamentos)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Qual a penalização por circular em sentido contrário numa via com sentido único?",
+    "respostas_corretas": [
+      "Coima de 250 a 1250 euros",
+      "Infração grave com coima de até 1250 euros",
+      "Sanção de 250€ a 1250€ por circulação em sentido contrário",
+      "Multa pesada por circular no sentido oposto numa via de sentido único",
+      "É considerada contraordenação grave, com coima entre 250€ e 1250€"
+    ],
+    "respostas_incorretas": [
+      "Multa de apenas 60 euros",
+      "Não há penalização",
+      "Advertência verbal",
+      "Coima simbólica de 30 euros",
+      "Apenas pontos na carta"
+    ],
+    "referencia": "Código da Estrada - Artigo 14.º (Sentido de trânsito)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Quando é obrigatório o uso do capacete para condutores de motociclos?",
+    "respostas_corretas": [
+      "Sempre que o veículo estiver em circulação",
+      "Durante toda a condução de motociclos",
+      "É obrigatório para condutores e passageiros em circulação",
+      "Capacete é sempre obrigatório em veículos de duas rodas com motor",
+      "A utilização do capacete é sempre exigida por lei"
+    ],
+    "respostas_incorretas": [
+      "Apenas em autoestradas",
+      "Só se o condutor for menor",
+      "Durante a noite apenas",
+      "Se a cilindrada for superior a 125cc",
+      "Apenas para passageiros"
+    ],
+    "referencia": "Código da Estrada - Artigo 82.º (Cintos de segurança e capacetes)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Qual a consequência de uma contraordenação muito grave?",
+    "respostas_corretas": [
+      "Inibição de conduzir por um a 12 meses",
+      "Coima e possível apreensão do título de condução",
+      "Pode implicar suspensão do direito de conduzir",
+      "Retirada de pontos da carta e proibição de conduzir",
+      "Suspensão de condução entre 1 a 12 meses"
+    ],
+    "respostas_incorretas": [
+      "Apenas coima simbólica",
+      "Nenhuma consequência adicional",
+      "Advertência escrita",
+      "Só pagamento de multa sem outras penalizações",
+      "Aviso verbal das autoridades"
+    ],
+    "referencia": "Código da Estrada - Artigo 147.º (Sanções acessórias)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Quando deve o condutor usar luzes de nevoeiro dianteiras?",
+    "respostas_corretas": [
+      "Em caso de nevoeiro, chuva intensa ou queda de neve",
+      "Sempre que a visibilidade esteja reduzida por condições atmosféricas",
+      "Durante nevoeiro ou situações de baixa visibilidade",
+      "Quando a visibilidade for insuficiente devido ao tempo",
+      "Em condições meteorológicas adversas"
+    ],
+    "respostas_incorretas": [
+      "Durante o dia em tempo limpo",
+      "Sempre à noite",
+      "Quando quiser ser mais visível",
+      "Ao entrar em autoestradas",
+      "Para sinalizar ultrapassagens"
+    ],
+    "referencia": "Código da Estrada - Artigo 62.º (Utilização das luzes)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "O que é considerado estacionamento abusivo?",
+    "respostas_corretas": [
+      "Quando excede 30 dias seguidos no mesmo local na via pública",
+      "Estacionamento prolongado e contínuo num local público",
+      "Estacionar na via por mais de 30 dias sem mover o veículo",
+      "Permanecer estacionado sem uso regular do veículo por mais de 30 dias",
+      "Veículo parado em local público por período superior a 30 dias"
+    ],
+    "respostas_incorretas": [
+      "Parar 2 dias no mesmo local",
+      "Estacionar em local privado",
+      "Deixar o carro à noite na rua",
+      "Estacionar ao fim de semana",
+      "Permanecer no mesmo lugar por 3 dias"
+    ],
+    "referencia": "Código da Estrada - Artigo 50.º (Estacionamento abusivo)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Quando é obrigatório o uso de luzes de emergência?",
+    "respostas_corretas": [
+      "Em caso de imobilização inesperada ou acidente",
+      "Sempre que o veículo represente um obstáculo",
+      "Durante a paragem por avaria ou perigo na via",
+      "Para sinalizar perigo em situações de emergência",
+      "Se houver necessidade de sinalizar risco súbito"
+    ],
+    "respostas_incorretas": [
+      "Durante a condução normal em autoestradas",
+      "Para celebrar uma vitória desportiva",
+      "Quando o carro está a ser lavado",
+      "Sempre que estaciona à noite",
+      "Quando liga o rádio"
+    ],
+    "referencia": "Código da Estrada - Artigo 61.º (Utilização das luzes)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "É permitido circular com auriculares em ambos os ouvidos?",
+    "respostas_corretas": [
+      "Não, é proibido cobrir ambos os ouvidos",
+      "Só é permitido com um ouvido livre",
+      "Auriculares em ambos os ouvidos são proibidos por lei",
+      "O condutor deve ter pelo menos um ouvido livre",
+      "A condução com os dois ouvidos tapados é ilegal"
+    ],
+    "respostas_incorretas": [
+      "É permitido desde que se ouça música calma",
+      "Pode usar dois auriculares em estradas rurais",
+      "Permitido com volume baixo",
+      "Apenas proibido em autoestradas",
+      "Não há regra sobre isso"
+    ],
+    "referencia": "Código da Estrada - Artigo 84.º (Condução segura)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Em que situações os condutores devem parar perante um sinal de STOP?",
+    "respostas_corretas": [
+      "Sempre, independentemente de ver ou não veículos",
+      "É obrigatório parar totalmente no sinal",
+      "Paragem completa é exigida mesmo que a via esteja livre",
+      "Deve parar e observar antes de continuar",
+      "O STOP obriga à imobilização completa do veículo"
+    ],
+    "respostas_incorretas": [
+      "Só parar se houver tráfego",
+      "Apenas reduzir a velocidade",
+      "Ignorar se não houver sinal sonoro",
+      "Parar se o agente de trânsito mandar",
+      "Apenas de noite"
+    ],
+    "referencia": "Código da Estrada - Artigo 65.º (Sinais de obrigação)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Que infração comete um condutor que ultrapassa sem visibilidade suficiente?",
+    "respostas_corretas": [
+      "Contraordenação muito grave",
+      "Infração grave com perigo direto",
+      "Ato sancionado como infração muito grave",
+      "Manobra proibida com sanção agravada",
+      "Infração punida com inibição de conduzir"
+    ],
+    "respostas_incorretas": [
+      "Apenas uma infração leve",
+      "É legal se não causar acidente",
+      "Contraordenação leve",
+      "Só multa simbólica",
+      "Aviso verbal da polícia"
+    ],
+    "referencia": "Código da Estrada - Artigo 36.º (Proibição de ultrapassagem)",
+    "categoria": "ultrapassagem",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Que documentos deve o condutor apresentar às autoridades quando solicitado?",
+    "respostas_corretas": [
+      "Carta de condução, documento do veículo e comprovativo de seguro",
+      "Título de condução, certificado de matrícula e seguro obrigatório",
+      "Carta de condução válida, documento único automóvel e apólice de seguro",
+      "Documentos pessoais e do veículo, incluindo seguro",
+      "Documentação legal do veículo e habilitação do condutor"
+    ],
+    "respostas_incorretas": [
+      "Apenas a carta de condução",
+      "Só o seguro",
+      "Nenhum documento é obrigatório",
+      "Documento de identidade e comprovativo de morada",
+      "Recibo da última revisão"
+    ],
+    "referencia": "Código da Estrada - Artigo 85.º (Documentos de que os condutores devem ser portadores)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "O que deve fazer o condutor se o semáforo estiver intermitente a amarelo?",
+    "respostas_corretas": [
+      "Avançar com precaução redobrada",
+      "Respeitar as regras de cedência de passagem",
+      "Circular com atenção e preparar-se para parar",
+      "Manter-se atento ao trânsito e aos peões",
+      "Agir com prudência e verificar todas as aproximações"
+    ],
+    "respostas_incorretas": [
+      "Avançar em alta velocidade",
+      "Ignorar o semáforo",
+      "Parar obrigatoriamente",
+      "Buzinar antes de avançar",
+      "Atravessar sem olhar"
+    ],
+    "referencia": "Código da Estrada - Artigo 68.º (Sinalização luminosa)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Quais os tipos de veículos considerados prioritários?",
+    "respostas_corretas": [
+      "Ambulâncias em missão urgente",
+      "Veículos da polícia em serviço urgente",
+      "Bombeiros em emergência",
+      "Veículos de socorro ou emergência com sinais ativos",
+      "Forças de segurança em situação urgente"
+    ],
+    "respostas_incorretas": [
+      "Táxis",
+      "Veículos elétricos",
+      "Autocarros escolares",
+      "Carros oficiais",
+      "Motociclos com dois passageiros"
+    ],
+    "referencia": "Código da Estrada - Artigo 31.º-A (Veículos prioritários)",
+    "categoria": "definições",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual a idade mínima para conduzir um veículo automóvel ligeiro?",
+    "respostas_corretas": [
+      "18 anos",
+      "A partir dos 18 anos com carta válida",
+      "Com 18 anos completos e habilitação legal",
+      "Idade mínima legal de 18 anos",
+      "Permitido desde os 18 anos com título de condução"
+    ],
+    "respostas_incorretas": [
+      "16 anos",
+      "17 anos",
+      "20 anos",
+      "Apenas com 21 anos",
+      "Sem limite legal"
+    ],
+    "referencia": "Código da Estrada - Artigo 123.º (Idade mínima para conduzir)",
+    "categoria": "definições",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Quando é permitida a ultrapassagem pela esquerda?",
+    "respostas_corretas": [
+      "Sempre que não haja sinalização em contrário e for seguro",
+      "Quando o veículo da frente circula mais lentamente",
+      "Se houver boa visibilidade e ausência de perigo",
+      "Quando for legal, seguro e devidamente sinalizado",
+      "Em vias com mais de uma faixa no mesmo sentido"
+    ],
+    "respostas_incorretas": [
+      "Apenas em rotundas",
+      "Nunca é permitida",
+      "Só em estradas nacionais",
+      "Quando há nevoeiro",
+      "Com sinais sonoros obrigatórios"
+    ],
+    "referencia": "Código da Estrada - Artigo 35.º (Ultrapassagem)",
+    "categoria": "ultrapassagem",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Qual a distância mínima ao estacionar junto a cruzamentos?",
+    "respostas_corretas": [
+      "5 metros",
+      "Estacionamento proibido a menos de 5 metros do cruzamento",
+      "Manter 5 metros de distância do cruzamento",
+      "É obrigatório manter pelo menos 5 metros",
+      "Não estacionar a menos de 5 metros de cruzamentos"
+    ],
+    "respostas_incorretas": [
+      "3 metros",
+      "10 metros",
+      "Sem limite definido",
+      "Só com sinalização específica",
+      "Apenas em localidades"
+    ],
+    "referencia": "Código da Estrada - Artigo 49.º (Proibição de paragem e estacionamento)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual o tempo de validade de um exame de condução aprovado?",
+    "respostas_corretas": [
+      "12 meses",
+      "Um ano",
+      "Validade de um ano após aprovação",
+      "Exame válido durante 12 meses",
+      "Deve requerer emissão da carta até 12 meses após"
+    ],
+    "respostas_incorretas": [
+      "6 meses",
+      "24 meses",
+      "Indefinidamente válido",
+      "3 anos",
+      "Só até o fim do mês seguinte"
+    ],
+    "referencia": "Código da Estrada - Regulamentação do IMT",
+    "categoria": "definições",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Quem deve usar cinto de segurança num automóvel?",
+    "respostas_corretas": [
+      "Todos os ocupantes, incluindo os do banco de trás",
+      "Condutor e passageiros, independentemente da posição",
+      "Obrigatório para todos os passageiros",
+      "Cinto é obrigatório para todos dentro do veículo",
+      "Mesmo os passageiros traseiros devem usar cinto"
+    ],
+    "respostas_incorretas": [
+      "Apenas o condutor",
+      "Só nos bancos da frente",
+      "Não é obrigatório atrás",
+      "Apenas em autoestradas",
+      "Se o carro tiver airbags, não é necessário"
+    ],
+    "referencia": "Código da Estrada - Artigo 82.º (Cintos de segurança e sistemas de retenção)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Qual a coima por circular com faróis desligados à noite?",
+    "respostas_corretas": [
+      "60 a 300 euros",
+      "Infração leve com coima entre 60€ e 300€",
+      "Multa de 60€ a 300€ por falta de luzes obrigatórias",
+      "Sanção de 60 a 300 euros",
+      "Desrespeito da iluminação resulta em coima até 300€"
+    ],
+    "respostas_incorretas": [
+      "Apenas aviso",
+      "Coima de 1000€",
+      "Não há penalização",
+      "É permitido em zonas urbanas",
+      "Apenas com chuva"
+    ],
+    "referencia": "Código da Estrada - Artigo 61.º (Utilização das luzes)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Quando é proibido parar em túneis?",
+    "respostas_corretas": [
+      "Sempre, exceto em caso de emergência",
+      "É proibido parar ou estacionar dentro de túneis",
+      "Paragem em túneis só em caso de avaria",
+      "Nunca se deve imobilizar o veículo em túneis",
+      "Imobilização só em caso de força maior"
+    ],
+    "respostas_incorretas": [
+      "Pode-se parar se houver espaço",
+      "Parar apenas de noite",
+      "Permitido com pisca ligado",
+      "Se o túnel estiver iluminado",
+      "Durante o tráfego intenso"
+    ],
+    "referencia": "Código da Estrada - Artigo 49.º (Proibição de paragem e estacionamento)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual a velocidade máxima permitida para tratores agrícolas em vias públicas?",
+    "respostas_corretas": [
+      "40 km/h",
+      "Até 40 quilómetros por hora",
+      "Velocidade máxima de 40 km/h",
+      "Permitido circular até 40 km/h",
+      "Limite legal de 40 km/h"
+    ],
+    "respostas_incorretas": [
+      "50 km/h",
+      "60 km/h",
+      "80 km/h",
+      "Sem limite definido",
+      "Apenas 30 km/h"
+    ],
+    "referencia": "Código da Estrada - Artigo 27.º (Velocidade)",
+    "categoria": "velocidade",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Quando é proibida a paragem ou estacionamento em passagens de nível?",
+    "respostas_corretas": [
+      "Sempre",
+      "É proibido parar ou estacionar sobre passagens de nível",
+      "Nunca se pode imobilizar o veículo numa passagem de nível",
+      "A paragem nas passagens de nível é sempre infração",
+      "Passagens de nível devem estar sempre desimpedidas"
+    ],
+    "respostas_incorretas": [
+      "Apenas com comboio a aproximar-se",
+      "Permitido com luzes de emergência",
+      "Se for por menos de 1 minuto",
+      "Durante a noite",
+      "Com visibilidade total"
+    ],
+    "referencia": "Código da Estrada - Artigo 49.º (Proibição de paragem e estacionamento)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Quando deve ser utilizado o sinal de mudança de direção?",
+    "respostas_corretas": [
+      "Antes de mudar de faixa ou direção",
+      "Ao pretender entrar ou sair de uma via",
+      "Sempre que se altere a trajetória do veículo",
+      "Antes de virar à esquerda ou à direita",
+      "Ao iniciar manobras como ultrapassagem ou inversão"
+    ],
+    "respostas_incorretas": [
+      "Apenas em rotundas",
+      "Só em autoestradas",
+      "Durante o estacionamento",
+      "Quando o trânsito está parado",
+      "Apenas se houver peões por perto"
+    ],
+    "referencia": "Código da Estrada - Artigo 43.º (Sinalização de manobras)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Em que situações é permitido utilizar os médios durante o dia?",
+    "respostas_corretas": [
+      "Durante a travessia de túneis",
+      "Com visibilidade reduzida",
+      "Sempre que o veículo esteja em marcha em condições adversas",
+      "Ao circular em vias equiparadas a autoestradas",
+      "Durante chuva intensa, nevoeiro ou neve"
+    ],
+    "respostas_incorretas": [
+      "Sempre durante o dia",
+      "Ao estacionar",
+      "Quando se ouve música alta",
+      "Apenas à noite",
+      "Em parques de estacionamento"
+    ],
+    "referencia": "Código da Estrada - Artigo 61.º (Utilização das luzes)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Que infração comete quem circula com matrícula ilegível?",
+    "respostas_corretas": [
+      "Contraordenação grave",
+      "Infração grave punível com coima",
+      "Infração que pode levar à apreensão do veículo",
+      "Matrícula ilegível constitui infração grave",
+      "Desrespeitar a legibilidade da matrícula é grave"
+    ],
+    "respostas_incorretas": [
+      "Não é infração",
+      "Contraordenação leve",
+      "Apenas advertência",
+      "Só punido em autoestradas",
+      "Depende do modelo do veículo"
+    ],
+    "referencia": "Código da Estrada - Artigo 119.º (Matrículas)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Em que condições é proibida a utilização de faróis de máximos?",
+    "respostas_corretas": [
+      "Quando possa encandear outros condutores",
+      "Ao circular atrás de outro veículo a curta distância",
+      "Ao cruzar-se com outro veículo",
+      "Em zonas urbanas com iluminação pública suficiente",
+      "Sempre que o seu uso represente perigo"
+    ],
+    "respostas_incorretas": [
+      "Durante o dia",
+      "Apenas com nevoeiro",
+      "Sempre que se circula em estrada nacional",
+      "Em estradas sem marcas rodoviárias",
+      "Durante a travessia de túneis"
+    ],
+    "referencia": "Código da Estrada - Artigo 62.º (Utilização das luzes)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual a sanção para quem se recusa a realizar teste de alcoolemia?",
+    "respostas_corretas": [
+      "Contraordenação muito grave",
+      "Sanção com coima elevada e inibição de conduzir",
+      "Suspensão do título de condução",
+      "Ato considerado infração muito grave",
+      "Recusar teste implica sanção severa"
+    ],
+    "respostas_incorretas": [
+      "Advertência apenas",
+      "Infração leve",
+      "Multa simbólica",
+      "Apenas retirada de pontos",
+      "Não há penalização definida"
+    ],
+    "referencia": "Código da Estrada - Artigo 81.º (Capacidade física e mental para conduzir)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Qual a obrigação do condutor perante um veículo de emergência com sinais ativos?",
+    "respostas_corretas": [
+      "Ceder passagem imediatamente",
+      "Encostar à direita e facilitar a passagem",
+      "Desobstruir a via o mais rápido possível",
+      "Parar se necessário para deixar passar",
+      "Agir com precaução e permitir a prioridade"
+    ],
+    "respostas_incorretas": [
+      "Aumentar a velocidade",
+      "Ignorar os sinais",
+      "Esperar que o veículo passe pela esquerda",
+      "Apenas encostar em estradas principais",
+      "Ultrapassar o veículo de emergência"
+    ],
+    "referencia": "Código da Estrada - Artigo 65.º (Veículos em missão urgente de socorro)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "O que deve fazer um condutor perante a aproximação de um peão numa passadeira?",
+    "respostas_corretas": [
+      "Reduzir a velocidade e ceder passagem",
+      "Parar se o peão estiver a atravessar ou a iniciar a travessia",
+      "Permitir a travessia em segurança",
+      "Não acelerar e manter atenção total",
+      "Garantir prioridade aos peões"
+    ],
+    "respostas_incorretas": [
+      "Buzinar para alertar o peão",
+      "Passar antes que o peão entre",
+      "Apenas reduzir ligeiramente",
+      "Continuar se o peão ainda não pisou a passadeira",
+      "Aguardar que outros veículos parem"
+    ],
+    "referencia": "Código da Estrada - Artigo 103.º (Cedência de passagem a peões)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "básico"
+  },
+  {
+    "pergunta": "Qual a coima prevista por ultrapassar com linha contínua?",
+    "respostas_corretas": [
+      "250 a 1250 euros",
+      "Infração muito grave com coima elevada",
+      "Coima de 250€ a 1250€",
+      "Multa severa por transgressão de marca rodoviária",
+      "Sanção de 250 até 1250 euros"
+    ],
+    "respostas_incorretas": [
+      "60 euros",
+      "Coima simbólica",
+      "Sem penalização legal",
+      "Só advertência verbal",
+      "Apenas perda de pontos"
+    ],
+    "referencia": "Código da Estrada - Artigo 41.º (Marcas longitudinais)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Quando é obrigatório o uso do triângulo de sinalização?",
+    "respostas_corretas": [
+      "Em caso de avaria ou acidente",
+      "Quando o veículo está imobilizado na via pública",
+      "Sempre que represente obstáculo ou perigo",
+      "Ao parar em local de risco por motivo de emergência",
+      "Em situações que obriguem o condutor a abandonar o veículo na via"
+    ],
+    "respostas_incorretas": [
+      "Apenas de noite",
+      "Nunca é obrigatório",
+      "Se houver boa visibilidade",
+      "Só em vias rápidas",
+      "Apenas com veículos pesados"
+    ],
+    "referencia": "Código da Estrada - Artigo 88.º (Equipamento de segurança)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "É permitido conduzir com carta caducada?",
+    "respostas_corretas": [
+      "Não, constitui infração grave",
+      "Conduzir com carta caducada é ilegal",
+      "É proibido circular com título de condução vencido",
+      "Infração grave punível com coima",
+      "Constitui contraordenação e pode implicar inibição de conduzir"
+    ],
+    "respostas_incorretas": [
+      "Sim, até 3 meses após o prazo",
+      "Permitido em estradas rurais",
+      "Apenas penalização simbólica",
+      "Desde que o condutor seja experiente",
+      "Se tiver marcação para renovação"
+    ],
+    "referencia": "Código da Estrada - Artigo 130.º (Revalidação do título de condução)",
+    "categoria": "infrações",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Quando é permitida a circulação de velocípedes em passeios?",
+    "respostas_corretas": [
+      "Apenas quando autorizado por sinalização",
+      "Em caso de crianças até 10 anos de idade",
+      "Se for expressamente indicado por sinal",
+      "Com acompanhamento de adultos a pé",
+      "Quando não houver ciclovia e for seguro"
+    ],
+    "respostas_incorretas": [
+      "Sempre que for mais prático",
+      "Durante a noite",
+      "Se o ciclista circular devagar",
+      "Apenas aos domingos",
+      "Nunca há exceções"
+    ],
+    "referencia": "Código da Estrada - Artigo 90.º-A (Regras aplicáveis aos velocípedes)",
+    "categoria": "posicionamento",
+    "nivel_dificuldade": "médio"
+  },
+  {
+    "pergunta": "Em que situações é permitido utilizar luzes de perigo (quatro piscas)?",
+    "respostas_corretas": [
+      "Quando o veículo está imobilizado por avaria ou acidente",
+      "Para assinalar perigo ou obstáculo na via",
+      "Em caso de emergência com paragem inesperada",
+      "Sempre que o veículo represente risco para os demais utentes",
+      "Ao parar em local onde possa surpreender os outros condutores"
+    ],
+    "respostas_incorretas": [
+      "Durante a condução normal em cidade",
+      "Para indicar mudança de direção",
+      "Ao estacionar em zona com parquímetro",
+      "Sempre que houver trânsito lento",
+      "Quando se pretende ultrapassar outro veículo"
+    ],
+    "referencia": "Código da Estrada - Artigo 61.º (Utilização das luzes)",
+    "categoria": "sinalização",
+    "nivel_dificuldade": "médio"
   }
 ]
