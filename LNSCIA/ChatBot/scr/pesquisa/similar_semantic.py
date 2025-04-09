@@ -1,5 +1,5 @@
-# scr_final/verificacao/similar_semantic.py
 import json
+
 from pathlib import Path
 from sentence_transformers import SentenceTransformer, util
 
