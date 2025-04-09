@@ -25,9 +25,10 @@ type Message = {
 
 interface ChatAssistenteProps {
   initialMessages?: Message[]
+  type?: 'conversa' | 'quiz' | 'pesquisa'
 }
 
-export function ChatAssistente({ initialMessages = [] }: ChatAssistenteProps) {
+export function ChatAssistente({ initialMessages = [], type = 'conversa' }: ChatAssistenteProps) {
   const [messages, setMessages] = useState<Message[]>(initialMessages)
   const [input, setInput] = useState("")
   const [isLoading, setIsLoading] = useState(false)
@@ -42,7 +43,6 @@ export function ChatAssistente({ initialMessages = [] }: ChatAssistenteProps) {
 
     if (!input.trim()) return
 
-    // Adiciona mensagem do usuário
     const userMessage: Message = {
       id: Date.now().toString(),
       content: input,
@@ -54,43 +54,43 @@ export function ChatAssistente({ initialMessages = [] }: ChatAssistenteProps) {
     setIsLoading(true)
 
     try {
-      // Envia o histórico das últimas mensagens para manter o contexto
-      const recentMessages = messages.slice(-5) // Mantém as últimas 5 mensagens
-      const messageHistory = recentMessages.map((msg) => ({
-        role: msg.role,
-        content: msg.content,
-      }))
+      const response = await fetch(`/api/chatbot/${type}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: input,
+          history: messages.map(msg => ({
+            role: msg.role,
+            content: msg.content
+          }))
+        }),
+      })
 
-      // Em um ambiente real, enviaríamos para o backend
-      // Aqui estamos simulando uma resposta
-      setTimeout(() => {
-        // Respostas simuladas específicas para contexto de condução
-        const simulatedResponses = [
-          "Nesta situação de trânsito, é importante observar o semáforo e respeitar a sinalização. O condutor deve parar completamente quando o sinal estiver vermelho e só avançar quando estiver verde, após verificar se o cruzamento está livre.",
-          "A faixa de pedestres deve ser sempre respeitada. Mesmo com o sinal verde para os veículos, se houver pedestres atravessando, o condutor deve aguardar que completem a travessia antes de prosseguir.",
-          "Ao se aproximar de um cruzamento, é fundamental reduzir a velocidade e estar atento à sinalização e aos outros veículos. Lembre-se que a preferência nem sempre é de quem está na via principal.",
-          "Nesta situação, o condutor demonstra boa prática ao manter distância segura do veículo à frente. A regra dos 2 segundos é uma boa referência para manter uma distância segura em condições normais.",
-          "É importante estar sempre atento aos retrovisores para ter consciência do que acontece ao redor do veículo. Antes de mudar de faixa, sinalize com antecedência e verifique os pontos cegos.",
-        ]
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
+      }
 
-        const randomIndex = Math.floor(Math.random() * simulatedResponses.length)
-        const aiResponse: Message = {
-          id: (Date.now() + 1).toString(),
-          content: simulatedResponses[randomIndex],
-          role: "assistant",
-        }
+      const data = await response.json()
 
-        setMessages((prev) => [...prev, aiResponse])
-        setIsLoading(false)
-      }, 1500)
-    } catch (error) {
-      console.error("Erro:", error)
-      const errorResponse: Message = {
+      const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
-        content: "Desculpe, ocorreu um erro ao processar sua mensagem. Tente novamente.",
+        content: data.response,
         role: "assistant",
       }
-      setMessages((prev) => [...prev, errorResponse])
+
+      setMessages((prev) => [...prev, aiResponse])
+    } catch (error) {
+      console.error("Erro:", error)
+      // Adiciona mensagem de erro ao chat
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        content: "Desculpe, ocorreu um erro ao processar sua mensagem.",
+        role: "assistant",
+      }
+      setMessages((prev) => [...prev, errorMessage])
+    } finally {
       setIsLoading(false)
     }
   }
