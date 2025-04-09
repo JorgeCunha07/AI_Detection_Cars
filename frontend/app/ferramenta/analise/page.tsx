@@ -6,7 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Loader2 } from 'lucide-react';
 import Link from "next/link";
 import { AnaliseResultado } from "@/components/analise-resultado";
-import { ChatAssistente } from "@/components/chat-assistente";
+import { ChatAssistente } from "@/components/chat-assistente"
+import Tabs from "@/components/Tabs"
 
 export default function AnalisePage() {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
@@ -19,6 +20,12 @@ export default function AnalisePage() {
   const [usarDataset2, setUsarDataset2] = useState(false);
   const [selectedModelDataset1, setSelectedModelDataset1] = useState<string>("");
   const [selectedModelDataset2, setSelectedModelDataset2] = useState<string>("");
+
+  const tabs = [
+    { id: "conversa", label: "Conversa" },
+    { id: "quiz", label: "Quiz" },
+    { id: "pesquisa", label: "Pesquisa" },
+  ]
 
   useEffect(() => {
     // Recuperar dados do localStorage
@@ -121,9 +128,14 @@ export default function AnalisePage() {
             />
 
             {/* Componente de Chat */}
-            <div className="mt-8">
-              <ChatAssistente />
-            </div>
+            <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 mb-4">
+                Tire suas dúvidas sobre esta situação:
+              </h3>
+              <Tabs tabs={tabs}>
+                <ChatAssistente />
+                <ChatAssistente />
+                <ChatAssistente />
+              </Tabs>
           </CardContent>
         </Card>
       </div>
