@@ -27,6 +27,7 @@ export function ChatAssistente({
   const [messages, setMessages] = useState<Message[]>(initialMessages);
   const [quizTip, setQuizTip] = useState<Message | undefined>();
   const [quizStarted, setQuizStarted] = useState<boolean>(false);
+  const [lastQuestion, setLastQuestion] = useState<string>("");
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [selectedChatModel, setSelectedChatModel] = useState<
@@ -69,6 +70,7 @@ export function ChatAssistente({
 
     setMessages((prev) => [...prev, apiResponse[0], apiResponse[1]]);
     setQuizTip(apiResponse[2]);
+    setLastQuestion(apiResponse[0].content);
   };
 
   const handleRequestByType = async (input: string) => {
@@ -95,7 +97,7 @@ export function ChatAssistente({
           // responder quiz
           setIsLoading(true);
           const apiResponseToQuizQuestion = await answerQuizQuestion(
-            messages[messages.length - 2].content,
+            lastQuestion,
             input
           ).finally(() => {
             setIsLoading(false);

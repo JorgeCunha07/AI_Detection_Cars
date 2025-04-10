@@ -261,7 +261,13 @@ export async function answerQuizQuestion(
 
     return {
       id: (Date.now() + 1).toString(),
-      content: `${data.correto === true ? "✅ Correto" : "❌ Incorreto"}`,
+      content: `${data.correto === true ? "✅ Correto\n" : "❌ Incorreto\n"}${
+        data.metodo ? "\nmétodo: " + data.metodo : ""
+      }${
+        data.respostas_aceites
+          ? "\nRespostas corretas:\n-" + data.respostas_aceites.join("\n-")
+          : ""
+      }`,
       role: "assistant",
     } as Message;
   } catch (error) {
