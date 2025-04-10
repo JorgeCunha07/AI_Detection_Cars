@@ -1,9 +1,6 @@
-# scr_final/main.py
-
 import sys
 import random
 
-# IMPORTS dos módulos
 from scr.validacao.validador_respostas import validar_resposta
 from scr.pesquisa.similar_semantic import pesquisar_artigo
 from scr.chat.inferencia import gerar_resposta_chat
@@ -87,7 +84,6 @@ def main():
     while True:
         mostrar_menu()
         comando = input("\nDigite uma opção: ").strip().lower()
-        
 
         if comando == "conversa":
             modo_conversa()
