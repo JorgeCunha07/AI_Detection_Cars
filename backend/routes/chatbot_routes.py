@@ -52,28 +52,7 @@ def obter_pergunta():
 # Endpoint: Validar resposta ao quiz
 @router.post("/quiz/responder")
 def responder_quiz(dados: RespostaQuizRequest):
-    resultado = validar_resposta(dados.pergunta, dados.resposta)
-    if resultado.get("correto"):
-        return {"correto": True, "metodo": resultado.get("metodo", "desconhecido")}
-    else:
-        # Obtem respostas corretas para dar sugestão
-        path_questoes = (
-            Path(__file__).resolve().parent.parent / "chatbot" / "validacao" / "questoes.json"
-        )
-        with open(path_questoes, encoding="utf-8") as f:
-            questoes = json.load(f)
-
-        corretas = next(
-            (
-                q.get("respostas_corretas")
-                for q in questoes
-                if q["pergunta"] == dados.pergunta
-            ),
-            [],
-        )
-        sugestao = random.choice(corretas) if corretas else "Sem sugestão disponível"
-
-        return {"correto": False, "sugestao": sugestao}
+    return validar_resposta(dados.pergunta, dados.resposta)
 
 
 # Endpoint: Modo pesquisa (semântica)
