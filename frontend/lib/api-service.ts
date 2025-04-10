@@ -190,7 +190,7 @@ export async function sendSearchMessage(message: string): Promise<Message> {
 
     return {
       id: (Date.now() + 1).toString(),
-      content: `${data.artigo_encontrado}${data.conteudo}`,
+      content: `${data.artigo_encontrado}\n\n${data.conteudo}`,
       role: "assistant",
     } as Message;
   } catch (error) {
@@ -199,6 +199,77 @@ export async function sendSearchMessage(message: string): Promise<Message> {
     return {
       id: (Date.now() + 1).toString(),
       content: "Desculpe, ocorreu um erro ao processar sua mensagem.",
+      role: "assistant",
+    } as Message;
+  }
+}
+
+export async function getNextQuizQuestion(): Promise<Message[]> {
+  try {
+    const response = await fetch(`/api/proxy/chatbot/quiz/pergunta`);
+
+    if (!response.ok) {
+      throw new Error(`Erro ao obter pergunta: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    return [
+      {
+        id: (Date.now() + 1).toString(),
+        content: data.pergunta,
+        role: "assistant",
+      },
+      {
+        id: (Date.now() + 2).toString(),
+        content: "Escreva 'dica' para ver as respostas corretas.",
+        role: "assistant",
+      },
+      {
+        id: (Date.now() + 3).toString(),
+        content: `-${data.respostas_corretas.join("\n-")}`,
+        role: "assistant",
+      },
+    ];
+  } catch (error) {
+    console.error("Erro ao obter a próxima questão:", error);
+    throw error;
+  }
+}
+
+export async function answerQuizQuestion(
+  question: string,
+  answer: string
+): Promise<Message> {
+  try {
+    const response = await fetch(`/api/proxy/chatbot/quiz/responder`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        pergunta: question,
+        resposta: answer,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    const data = await response.json();
+
+    return {
+      id: (Date.now() + 1).toString(),
+      content: `${data.correto === true ? "✅ Correto" : "❌ Incorreto"}`,
+      role: "assistant",
+    } as Message;
+  } catch (error) {
+    console.error("Erro:", error);
+
+    return {
+      id: (Date.now() + 1).toString(),
+      content: "Desculpe, ocorreu um erro ao processar a sua mensagem.",
       role: "assistant",
     } as Message;
   }
