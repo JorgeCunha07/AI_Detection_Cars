@@ -8,7 +8,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Send } from "lucide-react";
 import Message from "@/app/types/Message";
 import MessageContainer from "./message-container";
-import { sendChatMessage, sendSearchMessage } from "@/lib/api-service";
+import {
+  answerQuizQuestion,
+  getNextQuizQuestion,
+  sendChatMessage,
+  sendSearchMessage,
+} from "@/lib/api-service";
 
 interface ChatAssistenteProps {
   initialMessages?: Message[];
@@ -20,6 +25,9 @@ export function ChatAssistente({
   type = "conversa",
 }: ChatAssistenteProps) {
   const [messages, setMessages] = useState<Message[]>(initialMessages);
+  const [quizTip, setQuizTip] = useState<Message | undefined>();
+  const [quizStarted, setQuizStarted] = useState<boolean>(false);
+  const [lastQuestion, setLastQuestion] = useState<string>("");
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [selectedChatModel, setSelectedChatModel] = useState<
@@ -50,33 +58,65 @@ export function ChatAssistente({
 
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
-    setIsLoading(true);
-    handleRequestByType();
+    handleRequestByType(input);
   };
 
-  const handleRequestByType = async () => {
+  const handleNextQuizQuestion = async () => {
+    setIsLoading(true);
+
+    const apiResponse = await getNextQuizQuestion().finally(() => {
+      setIsLoading(false);
+    });
+
+    setMessages((prev) => [...prev, apiResponse[0], apiResponse[1]]);
+    setQuizTip(apiResponse[2]);
+    setLastQuestion(apiResponse[0].content);
+  };
+
+  const handleRequestByType = async (input: string) => {
     switch (type) {
       case "conversa":
-        const aiResponse = await sendChatMessage(input).finally(
+        setIsLoading(true);
+        const aiResponseConversa = await sendChatMessage(input).finally(() => {
+          setIsLoading(false);
+        });
+        setMessages((prev) => [...prev, aiResponseConversa]);
+
+        break;
+      case "quiz":
+        if (input.trim() === "dica" && quizTip !== undefined) {
+          // pedir dica quiz
+          setIsLoading(true);
+          setMessages((prev) => [...prev, quizTip]);
+          setIsLoading(false);
+        } else if (!quizStarted && input.trim() === "começar") {
+          // começar quiz
+          setQuizStarted(true);
+          handleNextQuizQuestion();
+        } else if (quizStarted) {
+          // responder quiz
+          setIsLoading(true);
+          const apiResponseToQuizQuestion = await answerQuizQuestion(
+            lastQuestion,
+            input
+          ).finally(() => {
+            setIsLoading(false);
+          });
+          setMessages((prev) => [...prev, apiResponseToQuizQuestion]);
+
+          handleNextQuizQuestion();
+        }
+        break;
+      case "pesquisa":
+        setIsLoading(true);
+        const apiResponsePesquisa = await sendSearchMessage(input).finally(
           () => {
             setIsLoading(false);
           }
         );
-        setMessages((prev) => [...prev, aiResponse]);
+        setMessages((prev) => [...prev, apiResponsePesquisa]);
 
         break;
-      case "quiz":
-
-
-      case "pesquisa":
-      const apiResponse = await sendSearchMessage(input).finally(
-        () => {
-          setIsLoading(false);
-        }
-      );
-      setMessages((prev) => [...prev, apiResponse]);
-      
-      break;
       default:
         console.error("Invalid chat type");
     }

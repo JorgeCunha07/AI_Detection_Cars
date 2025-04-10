@@ -32,7 +32,7 @@ export default function AnalisePage() {
 
   const initialMessages: Message[] = [
     { id: "1", content: "Bem-vindo ao chat!", role: "assistant" },
-    { id: "2", content: "Bem-vindo ao quiz!", role: "assistant" },
+    { id: "2", content: "Bem-vindo ao quiz!\nPara começar, escreva 'começar'", role: "assistant" },
     { id: "3", content: "Bem-vindo à pesquisa!", role: "assistant" },
   ];
 

@@ -18,7 +18,7 @@ from torchvision.models.detection import FasterRCNN
 from torchvision.models.detection.rpn import AnchorGenerator
 from torchvision.ops import MultiScaleRoIAlign
 from model_registry import build_simple_cnn_backbone
-from multitaskmodel import MultiTaskModel
+from multi_task_model import MultiTaskModel
 
 sys.modules['__main__'].MultiTaskModel = MultiTaskModel
 
@@ -407,7 +407,7 @@ def detect_labels_DataSet3(base64_image: str):
     status1, det_list1, counts1 = DetectorDataSet1.get_detections("best_yolo", base64_image)
     if status1 != 200:
         return {"error": "Erro no DataSet1"}, status1
-    status2, det_list2, counts2, attrs2 = DetectorDataSet2.get_detections("vgg", base64_image)
+    status2, det_list2, counts2, attrs2 = DetectorDataSet2.get_detections("vgg16", base64_image)
     if status2 != 200:
         return {"error": "Erro no DataSet2"}, status2
     BaseDetector.draw_detections_with_bg(pil_image, det_list1, (0, 255, 0), font)
