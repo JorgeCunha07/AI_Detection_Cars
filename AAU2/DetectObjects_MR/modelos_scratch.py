@@ -50,7 +50,7 @@ class MultiScaleCNN(nn.Module):
             labels = torch.cat([t["labels"] for t in targets], dim=0)
             gt_boxes = torch.cat([t["boxes"] for t in targets], dim=0)
             loss_cls = F.cross_entropy(repeat_for_targets(logits, targets), labels)
-            loss_box = F.l1_loss(repeat_for_targets(boxes, targets), gt_boxes)
+            loss_box = F.smooth_l1_loss(repeat_for_targets(boxes, targets), gt_boxes)
             if global_attrs:
                 w_true = torch.stack([a["weather"] for a in global_attrs]).to(x.device)
                 s_true = torch.stack([a["scene"] for a in global_attrs]).to(x.device)
@@ -104,7 +104,7 @@ class TinyYOLOStyle(nn.Module):
             labels = torch.cat([t["labels"] for t in targets], dim=0)
             gt_boxes = torch.cat([t["boxes"] for t in targets], dim=0)
             loss_cls = F.cross_entropy(repeat_for_targets(logits, targets), labels)
-            loss_box = F.l1_loss(repeat_for_targets(boxes, targets), gt_boxes)
+            loss_box = F.smooth_l1_loss(repeat_for_targets(boxes, targets), gt_boxes)
             if global_attrs:
                 w_true = torch.stack([a["weather"] for a in global_attrs]).to(feats.device)
                 s_true = torch.stack([a["scene"] for a in global_attrs]).to(feats.device)
@@ -157,7 +157,7 @@ class SharedTrunkMultiTask(nn.Module):
             labels = torch.cat([t["labels"] for t in targets], dim=0)
             gt_boxes = torch.cat([t["boxes"] for t in targets], dim=0)
             loss_cls = F.cross_entropy(repeat_for_targets(class_logits, targets), labels)
-            loss_box = F.l1_loss(repeat_for_targets(boxes, targets), gt_boxes)
+            loss_box = F.smooth_l1_loss(repeat_for_targets(boxes, targets), gt_boxes)
             if attrs:
                 w_true = torch.stack([a["weather"] for a in attrs]).to(pooled.device)
                 s_true = torch.stack([a["scene"] for a in attrs]).to(pooled.device)
@@ -214,7 +214,7 @@ class CNNWithAttention(nn.Module):
             labels = torch.cat([t["labels"] for t in targets], dim=0)
             gt_boxes = torch.cat([t["boxes"] for t in targets], dim=0)
             loss_cls = F.cross_entropy(repeat_for_targets(logits, targets), labels)
-            loss_box = F.l1_loss(repeat_for_targets(boxes, targets), gt_boxes)
+            loss_box = F.smooth_l1_loss(repeat_for_targets(boxes, targets), gt_boxes)
             if global_attrs:
                 w_true = torch.stack([a["weather"] for a in global_attrs]).to(pooled.device)
                 s_true = torch.stack([a["scene"] for a in global_attrs]).to(pooled.device)
@@ -274,7 +274,7 @@ class PyramidCNN(nn.Module):
             labels = torch.cat([t["labels"] for t in targets], dim=0)
             gt_boxes = torch.cat([t["boxes"] for t in targets], dim=0)
             loss_cls = F.cross_entropy(repeat_for_targets(logits, targets), labels)
-            loss_box = F.l1_loss(repeat_for_targets(boxes, targets), gt_boxes)
+            loss_box = F.smooth_l1_loss(repeat_for_targets(boxes, targets), gt_boxes)
             if global_attrs:
                 w_true = torch.stack([a["weather"] for a in global_attrs]).to(feats.device)
                 s_true = torch.stack([a["scene"] for a in global_attrs]).to(feats.device)
