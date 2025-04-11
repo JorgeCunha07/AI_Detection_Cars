@@ -20,7 +20,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(chatbot_router, prefix="/api/chatbot", tags=["ChatBot"])
+app.include_router(chatbot_router, prefix="/chatbot", tags=["ChatBot"])
 
 
 class LabelInput(BaseModel):

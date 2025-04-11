@@ -14,8 +14,12 @@ from collections import Counter
 from io import BytesIO
 from torchvision import models, transforms
 from ultralytics import YOLO
+from torchvision.models.detection import FasterRCNN
+from torchvision.models.detection.rpn import AnchorGenerator
+from torchvision.ops import MultiScaleRoIAlign
+from model_registry import build_simple_cnn_backbone
+from multi_task_model import MultiTaskModel
 
-from multitaskmodel import MultiTaskModel
 sys.modules['__main__'].MultiTaskModel = MultiTaskModel
 
 ###########################
@@ -122,37 +126,122 @@ class DetectorDataSet1(BaseDetector):
     @staticmethod
     def get_detections(model_name: str, base64_image: str):
         """
-        Executa o modelo YOLO do DataSet1.
+        Executa o modelo do DataSet1.
+        Se o nome do modelo contiver "yolo", utiliza o modelo YOLO;
+        se contiver "rcnn", "mobilenet" ou "vgg", utiliza a arquitetura RCNN/MobileNet.
         Retorna:
           - status: 200 ou dicionário de erro.
           - detection_list: lista de detecções com {"category", "score", "box"}.
           - label_counts: dicionário com a contagem de cada rótulo.
         """
         model_path = os.path.join("modelsAvailable", "1", f"{model_name}.pt")
+
         if not os.path.exists(model_path):
-            return {"error": f"Modelo '{model_name}' não encontrado em DataSet1."}, 404, [], {}
+            model_path = os.path.join("modelsAvailable", "1", f"{model_name}.pth")
+            if not os.path.exists(model_path):
+                return 400, [], {}, {"error": f"Modelo '{model_name}' não encontrado em DataSet1."}
         class_map = DetectorDataSet1.load_class_map("dataset.yaml")
         try:
             _, temp_path = BaseDetector.decode_image(base64_image)
         except ValueError as e:
-            return {"error": str(e)}, 400, [], {}
+            return 400, [], {}, {"error": "_, temp_path = BaseDetector.decode_image(base64_image)"}
+
+        detection_list = {}
+        label_counts = {}
         detection_list = []
-        yolo_model = YOLO(model_path)
-        results = yolo_model(temp_path)[0]
-        class_ids = [int(cls) for cls in results.boxes.cls]
-        for box, cls, conf in zip(results.boxes.xyxy, class_ids, results.boxes.conf):
-            score = float(conf)
-            if score < 0.5:
-                continue
-            x1, y1, x2, y2 = map(int, box.tolist())
-            label = class_map.get(cls, f"class_{cls}")
-            detection_list.append({
-                "category": label,
-                "score": score,
-                "box": [x1, y1, x2, y2]
-            })
-        detection_labels = [det["category"] for det in detection_list]
-        label_counts = dict(Counter(detection_labels))
+        # Se o modelo é YOLO
+        if re.search(r"yolo", model_name, re.IGNORECASE):
+            yolo_model = YOLO(model_path)
+            results = yolo_model(temp_path)[0]
+            class_ids = [int(cls) for cls in results.boxes.cls]
+            for box, cls, conf in zip(results.boxes.xyxy, class_ids, results.boxes.conf):
+                score = float(conf)
+                if score < 0.5:
+                    continue
+                x1, y1, x2, y2 = map(int, box.tolist())
+                label = class_map.get(cls, f"class_{cls}")
+                detection_list.append({
+                    "category": label,
+                    "score": score,
+                    "box": [x1, y1, x2, y2]
+                })
+                label_counts[label] = label_counts.get(label, 0) + 1
+        # Caso o modelo seja Faster RCNN / MobileNet / VGG
+        elif re.search(r"rcnn|mobilenet|vgg", model_name, re.IGNORECASE):
+            # Usa o PIL para carregar a imagem
+            image = Image.open(temp_path).convert("RGB")
+            transform = transforms.Compose([transforms.ToTensor()])
+            image_tensor = transform(image)
+            rcnn_model = torch.load(model_path, map_location="cpu")
+            rcnn_model.eval()
+            with torch.no_grad():
+                outputs = rcnn_model([image_tensor])[0]
+            min_score = 0.5
+            for i in range(len(outputs["boxes"])):
+                score = outputs["scores"][i].item()
+                if score >= min_score:
+                    box = outputs["boxes"][i].tolist()
+                    class_id = int(outputs["labels"][i].item())
+                    label = class_map.get(class_id, f"class_{class_id}")
+                    detection_list.append({
+                        "category": label,
+                        "score": score,
+                        "box": list(map(int, box))
+                    })
+                    label_counts[label] = label_counts.get(label, 0) + 1
+        elif re.search(r"SimpleCNNBackbone1|SimpleCNNBackbone2|SimpleCNNBackbone3", model_name, re.IGNORECASE):
+
+                    image = Image.open(temp_path).convert("RGB")
+                    transform = transforms.Compose([transforms.ToTensor()])
+                    image_tensor = transform(image).unsqueeze(0)
+                    try:
+                        # === Constrói dinamicamente o backbone ===
+                        backbone = build_simple_cnn_backbone(model_name)
+                        anchor_generator = AnchorGenerator(
+                            sizes=((32, 64, 128, 256, 512),),
+                            aspect_ratios=((0.5, 1.0, 2.0),)
+                        )
+                        roi_pooler = MultiScaleRoIAlign(featmap_names=["0"], output_size=7, sampling_ratio=2)
+
+                        model = FasterRCNN(
+                            backbone,
+                            num_classes=len(class_map) + 1,
+                            rpn_anchor_generator=anchor_generator,
+                            box_roi_pool=roi_pooler
+                        )
+
+                        state_dict = torch.load(model_path, map_location="cpu")
+                        model.load_state_dict(state_dict)
+                        model.eval()
+
+                    except Exception as e:
+                        BaseDetector.cleanup_temp(temp_path)
+                        return 404, [], {}, {"error": "Erro ao montar modelo '_ph"}
+
+                    try:
+                        with torch.no_grad():
+                            outputs = model(image_tensor)[0]
+
+                        min_score = 0.5
+                        for i in range(len(outputs["boxes"])):
+                            score = outputs["scores"][i].item()
+                            if score >= min_score:
+                                box = outputs["boxes"][i].tolist()
+                                class_id = int(outputs["labels"][i].item())
+                                label = class_map.get(class_id, f"class_{class_id}")
+                                detection_list.append({
+                                    "category": label,
+                                    "score": score,
+                                    "box": list(map(int, box))
+                                })
+                                label_counts[label] = label_counts.get(label, 0) + 1
+                    except Exception as e:
+                        BaseDetector.cleanup_temp(temp_path)
+                        return 404, [], {}, {"Erro durante inferência."}
+        else:
+            BaseDetector.cleanup_temp(temp_path)
+            return 404, [], {}, {"Tipo de modelo não reconhecido no nome."}
+
         BaseDetector.cleanup_temp(temp_path)
         return 200, detection_list, label_counts
 
@@ -241,17 +330,25 @@ class DetectorDataSet2(BaseDetector):
 ###########################
 def detect_labels_DataSet1(model_name: str, base64_image: str):
     """Função para o frontend – usa DetectorDataSet1 e desenha as detecções na imagem."""
-    status, detection_list, label_counts = DetectorDataSet1.get_detections(model_name, base64_image)
-    if status != 200:
-        return {"error": "Erro no DataSet1"}, status
+    result = DetectorDataSet1.get_detections(model_name, base64_image)
+
+    # Verifica se é erro (formato: status_code, [], {}, {"error": "msg"})
+    if isinstance(result[-1], dict) and "error" in result[-1]:
+        return result[-1], result[0]  # retorna {"error": ...}, status_code
+
+    # Caso de sucesso: faz unpack normalmente
+    status, detection_list, label_counts = result
+
     try:
         pil_image, temp_path = BaseDetector.decode_image(base64_image)
     except ValueError as e:
         return {"error": str(e)}, 400
+
     try:
         font = ImageFont.truetype("arial.ttf", 20)
     except Exception:
         font = ImageFont.load_default()
+
     BaseDetector.draw_detections_with_bg(pil_image, detection_list, (0, 255, 0), font)
     image_base64 = BaseDetector.encode_image_pil_to_base64(pil_image)
     return {
@@ -259,6 +356,8 @@ def detect_labels_DataSet1(model_name: str, base64_image: str):
         "counts": label_counts,
         "image_base64": image_base64
     }, 200
+
+
 
 def detect_labels_DataSet2(model_name: str, base64_image: str):
     """Função para o frontend – usa DetectorDataSet2 e desenha as detecções e os atributos globais na imagem."""
@@ -308,7 +407,7 @@ def detect_labels_DataSet3(base64_image: str):
     status1, det_list1, counts1 = DetectorDataSet1.get_detections("best_yolo", base64_image)
     if status1 != 200:
         return {"error": "Erro no DataSet1"}, status1
-    status2, det_list2, counts2, attrs2 = DetectorDataSet2.get_detections("vgg", base64_image)
+    status2, det_list2, counts2, attrs2 = DetectorDataSet2.get_detections("vgg16", base64_image)
     if status2 != 200:
         return {"error": "Erro no DataSet2"}, status2
     BaseDetector.draw_detections_with_bg(pil_image, det_list1, (0, 255, 0), font)

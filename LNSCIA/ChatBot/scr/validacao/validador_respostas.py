@@ -1,10 +1,10 @@
 import json
-import os
+import torch
+
 from pathlib import Path
 from difflib import SequenceMatcher
 from sentence_transformers import SentenceTransformer, util
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
-import torch
 
 # Caminho para questoes.json
 base_dir = Path(__file__).resolve().parent
