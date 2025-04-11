@@ -29,11 +29,11 @@ export default function FerramentaPage() {
           <div className="mt-8 p-6 bg-blue-50 rounded-lg">
             <h3 className="text-xl font-semibold text-blue-700 mb-4">Como utilizar esta ferramenta:</h3>
             <ol className="list-decimal pl-5 space-y-2 text-gray-700">
-              <li>Faça upload de uma imagem de uma situação de trânsito</li>
+              <li>Faça o upload de uma imagem de uma situação de trânsito</li>
               <li>Selecione o modelo de análise desejado</li>
               <li>Clique em "Analisar Situação" para processar a imagem</li>
               <li>Receba uma análise detalhada da situação</li>
-              <li>Converse com nosso assistente virtual para esclarecer dúvidas</li>
+              <li>Converse com o nosso assistente virtual para esclarecer dúvidas</li>
             </ol>
             <p className="mt-4 text-blue-600">
               Esta ferramenta é ideal para estudantes que desejam praticar a identificação de situações de trânsito
@@ -45,4 +45,3 @@ export default function FerramentaPage() {
     </div>
   )
 }
-

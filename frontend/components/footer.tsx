@@ -14,14 +14,8 @@ export function Footer() {
             <Link href="/sobre" className="hover:text-blue-400">
               Sobre
             </Link>
-            <Link href="/contato" className="hover:text-blue-400">
-              Contato
-            </Link>
-            <Link href="/privacidade" className="hover:text-blue-400">
-              Privacidade
-            </Link>
-            <Link href="/termos" className="hover:text-blue-400">
-              Termos
+            <Link href="/contacto" className="hover:text-blue-400">
+              Contacto
             </Link>
           </div>
         </div>
