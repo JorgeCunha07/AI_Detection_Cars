@@ -4,8 +4,8 @@ import numpy as np
 from tokenizer_utils import SimpleTokenizer, pad_sequences
 
 ''' Labels permitidas:
-veiculo: ["carro", "carros", "autocarro"],
-veiculos: ["autocarros", "camião", "camiões"],
+veiculo: ["carro", "autocarro", "camião", "moto"],
+veiculos: ["carros", "autocarros", "camiões", "motos"],
 pessoa: ["peão", "ciclista"],
 pessoas: ["peões", "ciclistas"],
 infraestrutura: ["passadeira", "semáforo"],
@@ -14,6 +14,23 @@ sinais_transito: ["sinal de stop", "sinal de limite de velocidade", "sinal de pa
 weather_conditions = ["céu limpo", "nublado", "chuva", "nevoeiro", "vento", "neve"]
 time_of_day = ["amanhecer", "anoitecer", "dia", "noite"]
 locations = ["zona residencial", "parque de estacionamento", "túnel", "cidade", "autoestrada"]
+
+Extra:
+area/alternative
+area/drivable
+bike
+lane/crosswalk
+lane/double other
+lane/double white
+lane/double yellow
+lane/road curb
+lane/single other
+lane/single white
+lane/single yellow
+motor
+rider
+traffic light
+train
 '''
 
 # Parâmetros
