@@ -2,6 +2,8 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Car, Brain, Award, School } from "lucide-react"
 import Image from "next/image"
+import { Footer } from "@/components/footer"
+import type React from "react";
 
 export default function HomePage() {
   return (
@@ -11,15 +13,22 @@ export default function HomePage() {
         <div className="container mx-auto px-4 pb-16 md:pb-24">
           <nav className="flex justify-between items-center py-4 px-8">
             <div className="flex items-center gap-2">
-              <Car className="h-6 w-6" />
-              <span className="text-xl font-bold">Innov8</span>
+              <Link href="/">
+                  <Image
+                      src="/innov8.png"
+                      alt="Aluno a aprender com IA"
+                      width={100}
+                      height={50}
+                      className="object-cover"
+                  />
+              </Link>
             </div>
             <div className="flex gap-4">
               <Link href="/sobre" className="hover:underline">
                 Sobre
               </Link>
-              <Link href="/contato" className="hover:underline">
-                Contato
+              <Link href="/contacto" className="hover:underline">
+                Contacto
               </Link>
             </div>
           </nav>
@@ -27,10 +36,10 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row items-center gap-12 pt-24">
             <div className="md:w-1/2 space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                Revolucionando o Ensino de Condução com Inteligência Artificial
+                Revolucionar o Ensino de Condução com Inteligência Artificial
               </h1>
               <p className="text-xl opacity-90">
-                Ajudamos alunos a se prepararem melhor para os exames de condução através de análise de imagens e
+                Ajudamos os alunos a prepararem-se melhor para os exames de condução através da análise de imagens e
                 feedback inteligente.
               </p>
               <div className="flex gap-4 pt-4">
@@ -50,7 +59,7 @@ export default function HomePage() {
               <div className="relative w-full h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-2xl">
                 <Image
                   src="/homepage.png"
-                  alt="Aluno aprendendo com IA"
+                  alt="Aluno a aprender com IA"
                   fill
                   className="object-cover"
                 />
@@ -64,9 +73,9 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Como a Innov8 Transforma o Aprendizado</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Como a Innov8 Transforma a Aprendizagem</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Nossa tecnologia de ponta utiliza inteligência artificial para identificar e corrigir erros comuns,
+              A nossa tecnologia de ponta utiliza inteligência artificial para identificar e corrigir erros comuns,
               preparando melhor os alunos para os exames de condução.
             </p>
           </div>
@@ -78,8 +87,8 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-bold mb-3">Análise Inteligente de Imagens</h3>
               <p className="text-gray-600">
-                Nossa IA analisa imagens de situações de trânsito, identificando potenciais perigos e decisões corretas
-                que o condutor deve tomar.
+                A nossa IA analisa imagens de situações de trânsito, identificando potenciais perigos e decisões
+                corretas que o condutor deve tomar.
               </p>
             </div>
 
@@ -133,45 +142,19 @@ export default function HomePage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Pronto para revolucionar o ensino de condução?</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Junte-se às escolas de condução que já estão utilizando nossa tecnologia para preparar melhor seus alunos.
+            Junte-se às escolas de condução que já estão a utilizar a nossa tecnologia para preparar melhor os seus
+            alunos.
           </p>
           <Link href="/ferramenta">
             <Button className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-6">
-              Experimentar Nossa Ferramenta
+              Experimentar a Nossa Ferramenta
             </Button>
           </Link>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center gap-2 mb-6 md:mb-0">
-              <Car className="h-6 w-6" />
-              <span className="text-xl font-bold">Innov8</span>
-            </div>
-            <div className="flex gap-8">
-              <Link href="/sobre" className="hover:text-blue-400">
-                Sobre
-              </Link>
-              <Link href="/contato" className="hover:text-blue-400">
-                Contato
-              </Link>
-              <Link href="/privacidade" className="hover:text-blue-400">
-                Privacidade
-              </Link>
-              <Link href="/termos" className="hover:text-blue-400">
-                Termos
-              </Link>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>© {new Date().getFullYear()} Innov8. Todos os direitos reservados.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
-

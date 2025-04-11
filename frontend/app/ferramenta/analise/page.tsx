@@ -95,7 +95,7 @@ export default function AnalisePage() {
             Nenhuma imagem analisada
           </h2>
           <p className="text-gray-600">
-            Você precisa analisar uma imagem primeiro.
+            Precisa de analisar uma imagem primeiro.
           </p>
           <Link href="/ferramenta">
             <Button className="bg-blue-600 hover:bg-blue-700">
@@ -166,7 +166,7 @@ export default function AnalisePage() {
 
           {/* Componente de Chat */}
           <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 mb-4">
-            Tire suas dúvidas sobre esta situação:
+            Tire as suas dúvidas sobre esta situação:
           </h3>
           <Tabs tabs={tabs}>
             <ChatAssistente
