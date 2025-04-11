@@ -1,3 +1,4 @@
+import generateDescriptionRequest from "@/app/types/GenerateDescriptionRequest";
 import Message from "@/app/types/Message";
 
 export type ImageAnalysisResult = {
@@ -278,5 +279,31 @@ export async function answerQuizQuestion(
       content: "Desculpe, ocorreu um erro ao processar a sua mensagem.",
       role: "assistant",
     } as Message;
+  }
+}
+
+export async function generateDescriptionSeq2seq(
+  request: generateDescriptionRequest
+) {
+  try {
+    const response = await fetch(`/api/proxy/description/generate/seq2seq`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ request }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    const data = await response.json();
+
+    return data.sentence;
+  } catch (error) {
+    console.error("Erro:", error);
+
+    return "Erro ao gerar frase";
   }
 }
