@@ -1,17 +1,21 @@
 import torch
+import sys
 import torch.nn.functional as F
-from model.encoder import Encoder
-from model.decoder import Decoder
-from model.seq2seq import Seq2Seq
-from vocab import Vocab, SOS, EOS, UNK
+from generator.seq2seq.model.encoder import Encoder
+from generator.seq2seq.model.decoder import Decoder
+from generator.seq2seq.model.seq2seq import Seq2Seq
+from generator.seq2seq import vocab
 from typing import List, Literal
 
+sys.modules['vocab'] = vocab
+
+from generator.seq2seq.vocab import Vocab, SOS, EOS, UNK
 
 def load_model(
-    model_path: str,
-    input_vocab_path: str,
-    output_vocab_path: str,
-    device: str = "cuda" if torch.cuda.is_available() else "cpu",
+        model_path: str,
+        input_vocab_path: str,
+        output_vocab_path: str,
+        device: str = "cuda" if torch.cuda.is_available() else "cpu",
 ):
     input_vocab = Vocab.load(input_vocab_path)
     output_vocab = Vocab.load(output_vocab_path)
@@ -26,15 +30,15 @@ def load_model(
 
 
 def generate_sentence(
-    labels: List[str],
-    model: Seq2Seq,
-    input_vocab: Vocab,
-    output_vocab: Vocab,
-    mode: Literal["greedy", "topk", "beam"] = "greedy",
-    topk: int = 5,
-    beam_width: int = 3,
-    temperature: float = 1.0,
-    device: str = "cuda" if torch.cuda.is_available() else "cpu",
+        labels: List[str],
+        model: Seq2Seq,
+        input_vocab: Vocab,
+        output_vocab: Vocab,
+        mode: Literal["greedy", "topk", "beam"] = "greedy",
+        topk: int = 5,
+        beam_width: int = 3,
+        temperature: float = 1.0,
+        device: str = "cuda" if torch.cuda.is_available() else "cpu",
 ) -> str:
     model.eval()
     input_text = " ".join(labels)
@@ -73,8 +77,8 @@ def generate_sentence(
                         )
 
             sequences = sorted(all_candidates, key=lambda tup: tup[1], reverse=True)[
-                :beam_width
-            ]
+                        :beam_width
+                        ]
 
         return " ".join(sequences[0][0])
 
@@ -108,16 +112,3 @@ def generate_sentence(
         input_token = torch.tensor([word_id], dtype=torch.long).to(device)
 
     return " ".join(output_sentence)
-
-
-# sentence = generate_sentence(
-#     labels=["carro", "peão", "sinal_de_transito", "autocarros", "ciclista"],
-#     model=model,
-#     input_vocab=input_vocab,
-#     output_vocab=output_vocab,
-#     mode="topk",  # beam, "greedy" ou "topk"
-#     beam_width=4,
-#     temperature=1.5
-# )
-
-# print("Frase gerada:", sentence)

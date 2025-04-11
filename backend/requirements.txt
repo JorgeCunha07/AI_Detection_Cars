@@ -1,5 +1,12 @@
-fastapi[standard]
-ultralytics
-pillow
-opencv-python
+fastapi[standard]~=0.115.6
+ultralytics~=8.3.104
+pillow~=11.1.0
+opencv-python~=4.11.0.86
 sentence_transformers
+
+pydantic~=2.10.5
+torch~=2.6.0
+transformers~=4.51.1
+numpy~=2.1.1
+PyYAML~=6.0.2
+torchvision~=0.21.0

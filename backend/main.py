@@ -10,6 +10,7 @@ from fastapi import Path, HTTPException
 import os
 from fastapi import Body
 from routes.chatbot_routes import router as chatbot_router
+from routes.description_routes import router as description_router
 
 app = FastAPI()
 app.add_middleware(
@@ -21,7 +22,7 @@ app.add_middleware(
 )
 
 app.include_router(chatbot_router, prefix="/chatbot", tags=["ChatBot"])
-
+app.include_router(description_router, prefix="/description", tags=["Description"])
 
 class LabelInput(BaseModel):
     labels: List[str]
@@ -89,13 +90,3 @@ def get_image_models(
         if os.path.isfile(os.path.join(models_path, f))
     ]
     return models
-
-
-@app.get("/description/models")
-def get_description_models():
-    return ["Custom", "Pre-built"]
-
-
-@app.post("/description/generate")
-def generate_description(model: SelectedModel, data: LabelInput):
-    return "Not implemented yet"
