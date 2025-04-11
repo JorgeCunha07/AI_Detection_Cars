@@ -1,0 +1,501 @@
+labels,target,prediction,bleu,label_coverage
+camião amanhecer autoestrada,"Durante o amanhecer chuvoso, um camião circula na autoestrada adjacente a um sinal de limite.","Durante o amanhecer chuvoso, um camião circula na autoestrada perto de um sinal de limite.",0.7242,1.0
+camião amanhecer autoestrada,"Durante o amanhecer chuvoso, um camião circula na autoestrada junto a um sinal de limite, na imagem.","Durante o amanhecer chuvoso, um camião circula na autoestrada perto de um sinal de limite.",0.5667,1.0
+camião amanhecer autoestrada,Um camião circula na autoestrada durante o amanhecer chuvoso perto de um sinal de limite.,"Durante o amanhecer chuvoso, um camião circula na autoestrada perto de um sinal de limite.",0.5304,1.0
+carro autocarro,Um carro e um autocarro partilham a mesma faixa.,Um carro e um autocarro na mesma,0.4835,1.0
+carro ciclista noite cidade,Um carro e um ciclista circulam na cidade; é noite e chove.,Um carro e um ciclista estão na cidade durante a noite,0.3485,1.0
+carro passadeira,Um carro está localizado perto de uma passadeira.,Um carro está perto de uma passadeira,0.2815,1.0
+semáforo,Um semáforo está <unk>,Um semáforo está visível no túnel.,0.2338,1.0
+autocarro,Um autocarro numa estrada rápida.,Um autocarro está na,0.131,1.0
+autocarro chuva,Um autocarro a circular com chuva.,Um autocarro com chuva na foto.,0.1075,1.0
+ciclista,Um ciclista está em movimento na <unk> ou na estrada.,Um ciclista está na,0.1035,1.0
+autocarro,Um autocarro com o céu encoberto.,Um autocarro está na,0.102,1.0
+peão,Um peão num local de estacionamento.,Um peão está presente.,0.102,1.0
+passadeira semáforo,Um semáforo e uma passadeira estão localizados conjuntamente.,Um semáforo está próximo a uma passadeira,0.1005,1.0
+semáforo cidade,Um semáforo encontra-se na cidade.,Um semáforo está na cidade da cidade.,0.0974,1.0
+semáforo,Um semáforo numa zona de casas.,Um semáforo está visível no túnel.,0.0972,1.0
+túnel,Parte de um túnel é visível.,Um túnel é visível no túnel.,0.0972,1.0
+túnel,Um túnel faz parte da imagem.,Um túnel é visível no túnel.,0.0972,1.0
+semáforo,Um semáforo numa zona de casas.,Um semáforo está visível no túnel.,0.0972,1.0
+carros,Um sinal de limite perto de <unk> carros.,Carros perto de carros,0.0619,1.0
+camião,Um camião com bom tempo numa zona de casas.,Um camião está visível na imagem.,0.0589,1.0
+nevoeiro,Nevoeiro na imagem.,Na sob nevoeiro na fotografia.,0.0456,1.0
+vento,Vento <unk> na rua.,Um com vento na imagem.,0.0456,1.0
+carros,Carros perto do sinal de velocidade ao nascer do sol.,Carros perto de carros,0.0415,1.0
+túnel,Dentro de um túnel.,Um túnel é visível no túnel.,0.0376,1.0
+carros autocarros,Carros e autocarros partilham a faixa de rodagem na área urbana.,"Na autoestrada, carros e autocarros",0.0365,1.0
+passadeira semáforo,Uma passadeira e um semáforo coexistem no local.,Um semáforo está próximo a uma passadeira,0.0334,1.0
+neve,Neve cobre o solo e outras superfícies na imagem.,Na com neve na foto.,0.0205,1.0
+amanhecer,A luz na imagem sugere ser amanhecer.,"Ao amanhecer com céu limpo, um pedestre está na rua, nesta imagem.",0.02,1.0
+carros autocarros cidade,Autocarros e carros partilham a faixa de rodagem na cidade.,Na cidade e autocarros carros,0.02,1.0
+amanhecer,A claridade na fotografia é característica do amanhecer.,"Ao amanhecer com céu limpo, um pedestre está na rua, nesta imagem.",0.02,1.0
+dia,O tempo é de dia.,"Durante o dia com céu limpo, um pedestre está na",0,1.0
+camião,Camião visível.,Um camião está visível na imagem.,0,1.0
+nevoeiro,Nevoeiro <unk> cobre a paisagem.,Na sob nevoeiro na fotografia.,0,1.0
+neve,Neve cobre as superfícies no local.,Na com neve na foto.,0,1.0
+ciclista,Ciclista utiliza <unk>,Um ciclista está na,0,1.0
+neve,Neve pode ser vista <unk> o solo.,Na com neve na foto.,0,1.0
+nevoeiro,Nevoeiro cobre a área <unk>,Na sob nevoeiro na fotografia.,0,1.0
+vento,<unk> o vento.,Um com vento na imagem.,0,1.0
+noite,Um sinal de velocidade à vista durante a noite.,"Na noite com chuva, um automóvel está na via.",0,1.0
+nevoeiro anoitecer,Nevoeiro é visível ao anoitecer.,Ao anoitecer com nevoeiro na fotografia.,0,1.0
+carro autocarro passadeira semáforo noite cidade,Um carro e um autocarro estão perto da passadeira e do semáforo na cidade; é noite e chove.,Um carro e um autocarro estão perto da passadeira na cidade durante a noite e chove.,0.5425,0.83
+passadeira semáforo vento dia cidade,"Durante o dia com vento, um semáforo e uma passadeira estão na cidade.","Durante o dia com vento, um semáforo e uma passadeira estão na cidade durante o dia.",0.7222,0.8
+carro camião céu_limpo dia autoestrada,Um carro e um camião circulam na autoestrada durante o dia com céu limpo.,"Durante o dia com céu limpo, um carro e um camião estão na autoestrada",0.3907,0.8
+peão passadeira semáforo dia cidade,"Um peão está na passadeira da cidade, perto de um semáforo, durante o dia.",Um peão está na passadeira perto de um semáforo durante o dia na imagem.,0.3907,0.8
+autocarro céu_limpo amanhecer túnel,Um autocarro circula no túnel ao amanhecer com céu limpo.,Um autocarro circula no túnel ao amanhecer com céu limpo.,1.0,0.75
+chuva vento noite parque_de_estacionamento,"Durante a noite com vento e chuva, num parque de estacionamento, está vazio e a chuva é visível.","Durante a noite com vento e chuva, num parque de estacionamento, está vazio e a chuva é visível.",1.0,0.75
+peão passadeira chuva túnel,Peão numa passadeira com chuva num túnel na foto.,Peão numa passadeira com chuva num túnel na foto.,1.0,0.75
+carros neve dia cidade,"Durante o dia com neve, numa cidade, flocos de neve estão a cair e carros estão na rua.","Durante o dia com neve, numa cidade, flocos de neve estão a cair e carros estão na rua.",1.0,0.75
+peões semáforo nevoeiro cidade,Peões perto de semáforo sob nevoeiro numa cidade na fotografia.,Peões perto de semáforo sob nevoeiro numa cidade na fotografia.,1.0,0.75
+carros neve anoitecer parque_de_estacionamento,"Ao anoitecer com neve, num parque de estacionamento, está coberto de neve e poucos carros estão presentes.","Ao anoitecer com neve, num parque de estacionamento, está coberto de neve e poucos carros estão presentes.",1.0,0.75
+carro ciclista céu_limpo dia,"É dia com céu limpo, um carro e um ciclista estão na mesma via urbana nesta fotografia.","Um dia com céu limpo, um carro e um ciclista estão na mesma via urbana nesta imagem.",0.8702,0.75
+autocarro nevoeiro amanhecer autoestrada,Um autocarro está na autoestrada ao amanhecer com nevoeiro.,"Um autocarro está na autoestrada ao amanhecer com nevoeiro,",0.8633,0.75
+carros neve dia cidade,"Durante o dia com neve, numa cidade, flocos de neve estão a cair e carros estão na rua, nesta fotografia.","Durante o dia com neve, numa cidade, flocos de neve estão a cair e carros estão na rua.",0.8403,0.75
+carros neve anoitecer parque_de_estacionamento,"Ao anoitecer com neve, num parque de estacionamento, está coberto de neve e poucos carros estão presentes, na foto.","Ao anoitecer com neve, num parque de estacionamento, está coberto de neve e poucos carros estão presentes.",0.8313,0.75
+carro céu_limpo noite túnel,"Durante a noite com céu limpo no exterior, num túnel, um carro está no interior iluminado do túnel.","Durante a noite com céu limpo no exterior, num túnel, um carro está dentro do túnel iluminado, nesta fotografia.",0.6676,0.75
+ciclistas passadeira anoitecer autoestrada,Ciclistas numa passadeira ao anoitecer numa autoestrada na imagem.,Ciclistas numa passadeira ao anoitecer na autoestrada na imagem.,0.5969,0.75
+ciclista nublado dia cidade,"Num dia nublado, um automóvel, um ciclista e um pedestre coexistem na cidade.","Durante o dia nublado, um automóvel, um ciclista e um pedestre estão na cidade retratada.",0.5659,0.75
+ciclistas passadeira vento autoestrada,Ciclistas a andar na passadeira com vento numa autoestrada.,Ciclistas numa passadeira com vento numa autoestrada na imagem.,0.3303,0.75
+carro passadeira noite túnel,Um carro está perto da passadeira no túnel iluminado à noite.,"À noite, um carro está próximo à passadeira no túnel iluminado.",0.1528,0.75
+camião neve dia parque_de_estacionamento,Um camião está no parque de estacionamento durante o dia coberto de neve.,"Num parque de estacionamento, durante o dia com neve, um camião está parado com neve acumulada, nesta imagem.",0.1025,0.75
+camião neve dia parque_de_estacionamento,Um camião está no parque de estacionamento durante o dia coberto de neve.,"Num parque de estacionamento, durante o dia com neve, um camião está parado com neve acumulada, nesta imagem.",0.1025,0.75
+camião neve dia parque_de_estacionamento,"Durante o dia, um camião coberto de neve está imobilizado no parque de estacionamento.","Num parque de estacionamento, durante o dia com neve, um camião está parado com neve acumulada, nesta imagem.",0.0531,0.75
+camião nevoeiro amanhecer autoestrada,Um camião está na autoestrada ao amanhecer enquanto há nevoeiro.,"Na autoestrada, ao amanhecer com nevoeiro, um camião circula na autoestrada perto de um sinal de limite.",0.0515,0.75
+chuva vento noite autoestrada,"Na autoestrada verifica-se noite, chuva e vento.","Durante a noite com vento e chuva, numa autoestrada, a chuva é visível.",0.0223,0.75
+neve noite parque_de_estacionamento,"Durante a noite com neve, num parque de estacionamento, flocos de neve são visíveis.","Durante a noite com neve, num parque de estacionamento, flocos de neve são visíveis.",1.0,0.67
+neve noite parque_de_estacionamento,"Durante a noite com neve, num parque de estacionamento, flocos de neve são visíveis.","Durante a noite com neve, num parque de estacionamento, flocos de neve são visíveis.",1.0,0.67
+passadeira anoitecer túnel,Passadeira ao anoitecer num túnel na fotografia.,Passadeira ao anoitecer num túnel na fotografia.,1.0,0.67
+neve anoitecer zona_residencial,"Ao anoitecer com neve, numa zona residencial, as luzes estão acesas e há neve no chão.","Ao anoitecer com neve, numa zona residencial, as luzes estão acesas e há neve no chão.",1.0,0.67
+neve anoitecer cidade,"Ao anoitecer com neve, numa cidade, flocos de neve estão a cair e luzes estão acesas.","Ao anoitecer com neve, numa cidade, flocos de neve estão a cair e luzes estão acesas.",1.0,0.67
+peões ciclistas passadeiras céu_limpo dia cidade,"Durante o dia com céu limpo, numa cidade, há tráfego, peões nas passadeiras e ciclistas na via.","Durante o dia com céu limpo, numa cidade, há tráfego, peões nas passadeiras e ciclistas na via.",1.0,0.67
+autocarro chuva túnel,Autocarro com chuva num túnel na foto.,Autocarro com chuva num túnel na foto.,1.0,0.67
+carros semáforo nublado,Carros perto de semáforo com céu nublado na imagem.,Carros perto de semáforo com céu nublado na imagem.,1.0,0.67
+neve noite parque_de_estacionamento,"Durante a noite com neve, num parque de estacionamento, flocos de neve são visíveis.","Durante a noite com neve, num parque de estacionamento, flocos de neve são visíveis.",1.0,0.67
+vento dia túnel,"Durante o dia com vento no exterior, num túnel, a entrada ou saída é visível, nesta fotografia.","Durante o dia com vento no exterior, num túnel, a entrada ou saída é visível, nesta imagem.",0.9351,0.67
+vento dia túnel,"Durante o dia com vento no exterior, num túnel, a entrada ou saída é visível, nesta fotografia.","Durante o dia com vento no exterior, num túnel, a entrada ou saída é visível, nesta imagem.",0.9351,0.67
+neve noite túnel,"Durante a noite com neve no exterior, num túnel, a saída tem neve visível, nesta imagem.","Durante a noite com neve no exterior, num túnel, a saída tem neve nesta imagem.",0.8415,0.67
+neve dia túnel,"Durante o dia com neve no exterior, num túnel, a entrada tem neve e o interior está iluminado, nesta imagem.","Durante o dia com neve no exterior, num túnel, a entrada tem neve e o interior está iluminado.",0.8403,0.67
+neve anoitecer cidade,"Ao anoitecer com neve, numa cidade, flocos de neve estão a cair e luzes estão acesas, nesta fotografia.","Ao anoitecer com neve, numa cidade, flocos de neve estão a cair e luzes estão acesas.",0.8213,0.67
+neve dia zona_residencial,"Durante o dia com neve, numa zona residencial, pedestres estão presentes e há neve acumulada.","Durante o dia com neve, numa zona residencial, pedestres estão presentes e há neve acumulada, nesta imagem.",0.8053,0.67
+vento dia túnel,"Durante o dia com vento no exterior, num túnel, a entrada ou saída é visível.","Durante o dia com vento no exterior, num túnel, a entrada ou saída é visível, nesta imagem.",0.8053,0.67
+vento dia túnel,"Durante o dia com vento no exterior, num túnel, a entrada ou saída é visível.","Durante o dia com vento no exterior, num túnel, a entrada ou saída é visível, nesta imagem.",0.8053,0.67
+neve noite parque_de_estacionamento,"Durante a noite com neve, num parque de estacionamento, flocos de neve são visíveis, nesta fotografia.","Durante a noite com neve, num parque de estacionamento, flocos de neve são visíveis.",0.7969,0.67
+sinal_de_stop dia túnel,Sinal de stop durante o dia num túnel na foto.,Um sinal de stop durante o dia num túnel na foto.,0.7861,0.67
+nevoeiro amanhecer túnel,"Ao amanhecer com nevoeiro, num túnel, a entrada do túnel tem visibilidade reduzida, nesta imagem.","Ao amanhecer com nevoeiro, num túnel, a entrada do túnel tem visibilidade reduzida.",0.7821,0.67
+neve amanhecer parque_de_estacionamento,"Ao amanhecer com neve, num parque de estacionamento, há neve no chão, nesta imagem.","Ao amanhecer com neve, num parque de estacionamento, há neve no chão.",0.7649,0.67
+vento amanhecer túnel,"Ao amanhecer com vento, num túnel, a entrada do túnel é visível.","Ao amanhecer com vento, num túnel, a entrada do túnel é visível, nesta imagem.",0.7577,0.67
+carro peão ciclista nublado dia cidade,"Um carro, um ciclista e um peão estão na cidade durante o dia nublado.","Num dia nublado, um carro, um ciclista e um peão estão na cidade durante o dia",0.7222,0.67
+neve anoitecer cidade,"Numa cidade, ao anoitecer com neve, flocos de neve estão a cair e luzes estão acesas.","Ao anoitecer com neve, numa cidade, flocos de neve estão a cair e luzes estão acesas.",0.6865,0.67
+carro peão ciclista nublado dia cidade,"Durante o dia nublado, um carro, um ciclista e um peão estão na cidade.","Num dia nublado, um carro, um ciclista e um peão estão na cidade durante o dia",0.683,0.67
+carro passadeira semáforo,Um carro está perto de um semáforo e de uma passadeira na malha urbana.,Um carro está perto de um semáforo e de uma passadeira.,0.68,0.67
+camião noite parque_de_estacionamento,Um camião está no parque de estacionamento; é noite e neva.,Um camião está no parque de estacionamento; é noite e o céu está limpo.,0.6768,0.67
+chuva amanhecer cidade,"Numa cidade, ao amanhecer com chuva, as ruas estão vazias e a chuva é visível.","Ao amanhecer com chuva, numa cidade, as ruas estão vazias e a chuva é visível.",0.6606,0.67
+neve anoitecer autoestrada,"Numa autoestrada, ao anoitecer com neve, a paisagem tem neve e a estrada está visível.","Ao anoitecer com neve, numa autoestrada, a paisagem tem neve e a estrada está visível.",0.6606,0.67
+carro dia túnel,"É dia e o céu está limpo, um carro aproxima se da sinalização de stop no túnel.",É dia e o céu está limpo; um carro aproxima-se da sinalização de stop no túnel.,0.6025,0.67
+camiões noite túnel,"Durante a noite, camiões estão no túnel com sinalização visível.","Durante a noite, camiões estão no túnel onde sinalização luminosa é visível.",0.5491,0.67
+neve noite túnel,"Durante a noite com neve no exterior, num túnel, há neve acumulada na entrada, nesta fotografia.","Durante a noite com neve no exterior, num túnel, a saída tem neve nesta imagem.",0.5422,0.67
+nevoeiro amanhecer túnel,"Ao amanhecer com nevoeiro, num túnel, a saída do túnel está obscurecida.","Ao amanhecer com nevoeiro, num túnel, a entrada do túnel tem visibilidade reduzida.",0.5206,0.67
+nevoeiro amanhecer túnel,"Ao amanhecer com nevoeiro, num túnel, a saída do túnel está obscurecida.","Ao amanhecer com nevoeiro, num túnel, a entrada do túnel tem visibilidade reduzida.",0.5206,0.67
+carro peão passadeira nublado amanhecer cidade,É amanhecer e há céu nublado; um carro e um peão estão perto da passadeira na cidade.,Um carro e um peão estão perto da passadeira na cidade; é amanhecer e o céu está nublado.,0.4985,0.67
+nevoeiro amanhecer túnel,"Ao amanhecer com nevoeiro, num túnel, a saída do túnel está obscurecida, nesta fotografia.","Ao amanhecer com nevoeiro, num túnel, a entrada do túnel tem visibilidade reduzida.",0.482,0.67
+neve dia túnel,"Durante o dia com neve no exterior, num túnel, há neve visível na entrada ou saída, nesta imagem.","Durante o dia com neve no exterior, num túnel, a entrada tem neve e o interior está iluminado.",0.4736,0.67
+neve dia túnel,"Durante o dia com neve no exterior, num túnel, há neve visível na entrada ou saída, nesta imagem.","Durante o dia com neve no exterior, num túnel, a entrada tem neve e o interior está iluminado.",0.4736,0.67
+neve amanhecer parque_de_estacionamento,"Ao amanhecer com neve, num parque de estacionamento, flocos de neve estão a cair, nesta fotografia.","Ao amanhecer com neve, num parque de estacionamento, há neve no chão.",0.4525,0.67
+autocarro nublado dia,Um autocarro com céu nublado durante o dia.,Autocarro com céu nublado durante o dia na imagem.,0.4463,0.67
+autocarros chuva noite,Autocarros com chuva à noite.,Autocarros com chuva à noite na foto.,0.4111,0.67
+neve amanhecer parque_de_estacionamento,"Num parque de estacionamento, ao amanhecer com neve, há neve no chão.","Ao amanhecer com neve, num parque de estacionamento, há neve no chão.",0.3918,0.67
+semáforos dia cidade,"Durante o dia, semáforos <unk> na cidade.","Durante o dia, semáforos estão ativos na cidade durante o dia.",0.2481,0.67
+passadeira amanhecer zona_residencial,"Num amanhecer chuvoso, uma passadeira está demarcada na zona residencial.","Durante o amanhecer chuvoso, uma passadeira é visível na zona residencial da fotografia.",0.23,0.67
+peão passadeira sinal_de_passadeira,Peão e sinal de passadeira na fotografia.,Um peão a um sinal de passadeira,0.1931,0.67
+camião vento zona_residencial,Camião com vento em zona residencial na fotografia.,Um camião com vento numa zona residencial na imagem.,0.1817,0.67
+autocarro chuva túnel,Um autocarro a circular com chuva num túnel.,Autocarro com chuva num túnel na foto.,0.1674,0.67
+camião noite parque_de_estacionamento,"É noite e neva, um camião está visível no parque de estacionamento.",Um camião está no parque de estacionamento; é noite e o céu está limpo.,0.1324,0.67
+carros céu_limpo anoitecer,Carros com céu limpo ao anoitecer na fotografia.,"Ao anoitecer com céu limpo, carros estão na via.",0.0752,0.67
+nevoeiro anoitecer autoestrada,"Ao anoitecer, o nevoeiro <unk> na autoestrada.","Ao anoitecer, nevoeiro é visível sobre a autoestrada na imagem.",0.0677,0.67
+carro dia cidade,"Carro circula na cidade, é dia e chove.",É dia e um carro e pedestres estão na cidade.,0.063,0.67
+neve noite parque_de_estacionamento,"Parque de estacionamento, noite, neve a cair: Flocos <unk> pelas luzes.","Durante a noite com neve, num parque de estacionamento, flocos de neve são visíveis.",0.0491,0.67
+carro peão passadeira nublado amanhecer cidade,"Um carro, um peão e uma passadeira estão na cidade ao amanhecer nublado.",Um carro e um peão estão perto da passadeira na cidade; é amanhecer e o céu está nublado.,0.0476,0.67
+neve noite autoestrada,É noite com neve na autoestrada.,"Durante a noite com neve, numa autoestrada, a estrada está visível e há neve nas bermas.",0.0403,0.67
+neve amanhecer zona_residencial,Amanhecer com neve na zona residencial.,"Ao amanhecer com neve, numa zona residencial, a neve está molhada.",0.0284,0.67
+ciclista dia autoestrada,Um ciclista circula na berma da autoestrada num dia ventoso.,"Na autoestrada, durante o dia ventoso, um ciclista está na via.",0.0284,0.67
+carros dia parque_de_estacionamento,Parque de estacionamento com carros durante o dia.,"Durante o dia com num parque de estacionamento, carros estão estacionados e carros estão estacionados.",0.0235,0.67
+carro dia túnel,Um carro circula no túnel durante o dia.,É dia e o céu está limpo; um carro aproxima-se da sinalização de stop no túnel.,0.0207,0.67
+carro autocarro peão vento noite parque_de_estacionamento,"Parque de estacionamento, noite, vento: Autocarro estacionado, peão entra num carro.",Um carro e um autocarro e um peão no parque de estacionamento durante a noite com vento.,0.0178,0.67
+vento amanhecer túnel,"Túnel, amanhecer, vento: <unk> do vento na entrada.","Ao amanhecer com vento, num túnel, a entrada do túnel é visível, nesta imagem.",0.0176,0.67
+carro camião chuva noite autoestrada,"Durante a noite com chuva, numa autoestrada, um carro está na via e um camião é visível.","Durante a noite com chuva, numa autoestrada, um carro está na via e um camião é visível.",1.0,0.6
+carro ciclista vento dia zona_residencial,"Numa zona residencial, durante o dia com vento, um ciclista está na via e um carro estacionado.","Numa zona residencial, durante o dia com vento, um ciclista está na via e um carro estacionado.",1.0,0.6
+carros camiões nevoeiro amanhecer autoestrada,"Ao amanhecer com nevoeiro, numa autoestrada, carros e camiões estão na via.","Ao amanhecer com nevoeiro, numa autoestrada, carros e camiões estão na via.",1.0,0.6
+ciclista passadeira nevoeiro noite zona_residencial,"À noite com nevoeiro, na zona residencial, um ciclista encontra-se perto de uma passadeira sinalizada.","À noite com nevoeiro, na zona residencial, um ciclista encontra-se perto de uma passadeira sinalizada.",1.0,0.6
+carro autocarro camião dia cidade,"É dia e chove; um carro, um autocarro e um camião são visíveis na cidade.","É dia e chove; um carro, um autocarro e um camião são visíveis na cidade.",1.0,0.6
+carro peão céu_limpo dia zona_residencial,"Durante o dia com céu limpo, numa zona residencial, um peão está na rua perto de um carro estacionado.","Durante o dia com céu limpo, numa zona residencial, um peão está na calçada perto de um carro estacionado.",0.8492,0.6
+carro passadeira nublado amanhecer cidade,É amanhecer e o céu está nublado; um carro e um pedestre estão perto da passadeira na cidade.,"É amanhecer e o céu está nublado, um carro e um pedestre estão perto da passadeira na cidade.",0.8394,0.6
+camiões nublado nevoeiro amanhecer autoestrada,"Ao amanhecer com nevoeiro e céu nublado, camiões trafegam na autoestrada.","Ao amanhecer com nevoeiro e céu nublado, camiões trafegam pela autoestrada.",0.8071,0.6
+carros chuva vento anoitecer cidade,"Ao anoitecer com vento e chuva, numa cidade, pedestres estão na rua e carros circulam.","Ao anoitecer com vento e chuva, numa cidade, pedestres estão na rua e carros circulam, nesta imagem.",0.8053,0.6
+carros camiões chuva dia autoestrada,"Durante o dia com chuva, numa autoestrada, carros e camiões estão na via molhada, nesta imagem.","Durante o dia com chuva, numa autoestrada, carros e camiões estão na via molhada.",0.7969,0.6
+autocarro semáforo chuva noite zona_residencial,"À noite com chuva, um autocarro está parado no semáforo da zona residencial na fotografia.","À noite com chuva, um autocarro está parado no semáforo da zona residencial.",0.7821,0.6
+carro autocarro camião dia cidade,"É dia e chove; um carro, um autocarro e um camião estão na cidade.","É dia e chove; um carro, um autocarro e um camião são visíveis na cidade.",0.7487,0.6
+carro peão céu_limpo dia zona_residencial,"Numa zona residencial, durante o dia com céu limpo, um peão está na calçada perto de um carro estacionado.","Durante o dia com céu limpo, numa zona residencial, um peão está na calçada perto de um carro estacionado.",0.7094,0.6
+autocarro nublado vento amanhecer autoestrada,"Ao amanhecer com céu nublado e vento, um autocarro percorre a autoestrada visível nesta fotografia.","Ao amanhecer com céu nublado e vento, um autocarro percorre a autoestrada.",0.7037,0.6
+camiões nublado nevoeiro amanhecer autoestrada,"Ao amanhecer com nevoeiro e céu nublado, camiões circulam na autoestrada.","Ao amanhecer com nevoeiro e céu nublado, camiões trafegam pela autoestrada.",0.6989,0.6
+carros peão chuva amanhecer zona_residencial,"Numa zona residencial, ao amanhecer com chuva, poucos carros estão na via e um peão está na calçada.","Ao amanhecer com chuva, numa zona residencial, poucos carros estão na via e um peão está na calçada.",0.6899,0.6
+carro autocarro camião dia cidade,"É dia e chove, um carro, um autocarro e um camião são visíveis na cidade retratada.","É dia e chove; um carro, um autocarro e um camião são visíveis na cidade.",0.6775,0.6
+carros peões nublado dia zona_residencial,"Numa zona residencial, durante o dia com céu nublado, peões estão na calçada perto de carros estacionados.","Durante o dia com céu nublado, numa zona residencial, peões estão na calçada perto de carros estacionados.",0.6675,0.6
+carros peões céu_limpo dia zona_residencial,"Numa zona residencial, durante o dia com céu limpo, peões estão presentes perto de carros estacionados.","Durante o dia com céu limpo, numa zona residencial, peões estão presentes perto de carros estacionados.",0.6414,0.6
+carro passadeira semáforo noite cidade,"Perto de uma passadeira, um carro está parado no semáforo da cidade durante a noite.","Perto de uma passadeira, um carro está imobilizado no semáforo da cidade durante a noite, na fotografia.",0.6302,0.6
+carro passadeira semáforo noite cidade,"Perto de uma passadeira, um carro está parado no semáforo da cidade durante a noite.","Perto de uma passadeira, um carro está imobilizado no semáforo da cidade durante a noite, na fotografia.",0.6302,0.6
+carros céu_limpo neve dia parque_de_estacionamento,"No parque de estacionamento, durante o dia com neve e céu limpo, veículos, incluindo carros, estão presentes na fotografia.","No parque de estacionamento, durante o dia com neve e céu limpo, carros estão presentes.",0.6064,0.6
+carro peão céu_limpo dia zona_residencial,"Numa zona residencial, durante o dia com céu limpo, um peão está na rua perto de um carro estacionado.","Durante o dia com céu limpo, numa zona residencial, um peão está na calçada perto de um carro estacionado.",0.536,0.6
+autocarro semáforo chuva noite zona_residencial,Um autocarro está parado no semáforo da zona residencial à noite com chuva.,"À noite com chuva, um autocarro está parado no semáforo da zona residencial.",0.5206,0.6
+peões passadeira céu_limpo amanhecer cidade,Peões atravessam numa passadeira de uma cidade ao amanhecer com céu limpo.,Peões atravessam na passadeira na cidade ao amanhecer com céu limpo.,0.4883,0.6
+peão chuva vento dia zona_residencial,"Durante o dia com chuva e vento, numa zona residencial, um peão usa guarda chuva.","Numa zona residencial, durante o dia com chuva e vento, um peão usa guarda-chuva.",0.4508,0.6
+autocarro nublado vento amanhecer autoestrada,Um autocarro circula na autoestrada ao amanhecer com céu nublado e vento.,"Ao amanhecer com céu nublado e vento, um autocarro percorre a autoestrada.",0.3318,0.6
+peões ciclistas semáforo noite cidade,Peões e ciclistas na cidade à noite perto de um semáforo.,Peões perto de semáforo e peões numa cidade durante o dia.,0.0653,0.6
+chuva vento anoitecer zona_residencial,"Ao anoitecer com vento e chuva, numa zona residencial, a rua está molhada e as luzes acesas.","Ao anoitecer com vento e chuva, numa zona residencial, a rua está molhada e as luzes acesas.",1.0,0.5
+carros semáforo nublado parque_de_estacionamento,Carros perto de semáforo com céu nublado em parque de estacionamento na imagem.,Carros perto de semáforo com céu nublado em parque de estacionamento na imagem.,1.0,0.5
+carros céu_limpo anoitecer parque_de_estacionamento,"Ao anoitecer com céu limpo, num parque de estacionamento, carros estão estacionados.","Ao anoitecer com céu limpo, num parque de estacionamento, carros estão estacionados.",1.0,0.5
+carros céu_limpo noite autoestrada,"Durante a noite com céu limpo, numa autoestrada, poucos carros estão na via.","Durante a noite com céu limpo, numa autoestrada, poucos carros estão na via.",1.0,0.5
+carros nevoeiro dia autoestrada,"Durante o dia com nevoeiro, numa autoestrada, carros circulam com luzes acesas.","Durante o dia com nevoeiro, numa autoestrada, carros circulam com luzes acesas.",1.0,0.5
+carros nevoeiro anoitecer zona_residencial,"Ao anoitecer com nevoeiro, numa zona residencial, a visibilidade está reduzida e faróis dos carros estão visíveis.","Ao anoitecer com nevoeiro, numa zona residencial, a visibilidade está reduzida e faróis dos carros estão visíveis.",1.0,0.5
+carro zona_residencial,Um carro está na zona residencial.,Um carro está na zona residencial.,1.0,0.5
+chuva nevoeiro noite autoestrada,"Durante a noite com chuva e nevoeiro, numa autoestrada, a visibilidade está reduzida e faróis estão visíveis.","Durante a noite com chuva e nevoeiro, numa autoestrada, a visibilidade está reduzida e faróis estão visíveis.",1.0,0.5
+carro nevoeiro noite autoestrada,"Durante a noite com nevoeiro, numa autoestrada, os faróis traseiros do carro da frente são visíveis.","Durante a noite com nevoeiro, numa autoestrada, os faróis traseiros do carro da frente são visíveis.",1.0,0.5
+carros neve amanhecer cidade,"Ao amanhecer com neve, numa cidade, a paisagem está branca e carros estão na rua.","Ao amanhecer com neve, numa cidade, a paisagem está branca e carros estão na rua.",1.0,0.5
+carros vento noite autoestrada,"Durante a noite com vento, numa autoestrada, carros estão na via.","Durante a noite com vento, numa autoestrada, carros estão na via.",1.0,0.5
+carros nublado anoitecer zona_residencial,"Ao anoitecer com céu nublado, numa zona residencial, luzes estão acesas e carros estacionados.","Ao anoitecer com céu nublado, numa zona residencial, luzes estão acesas e carros estacionados.",1.0,0.5
+carros céu_limpo amanhecer parque_de_estacionamento,"Ao amanhecer com céu limpo, num parque de estacionamento, carros estão estacionados, nesta imagem.","Ao amanhecer com céu limpo, num parque de estacionamento, carros estão estacionados, nesta imagem.",1.0,0.5
+autocarro sinal_de_limite_de_velocidade dia túnel,"Próximo a um sinal de limite de velocidade, um autocarro está no túnel durante o dia.","Próximo a um sinal de limite de velocidade, um autocarro está no túnel durante o dia.",1.0,0.5
+carros vento noite autoestrada,"Durante a noite com vento, numa autoestrada, carros estão na via.","Durante a noite com vento, numa autoestrada, carros estão na via.",1.0,0.5
+carros nublado dia cidade,"Durante o dia com céu nublado, numa cidade, há movimento normal de carros e pedestres, nesta fotografia.","Durante o dia com céu nublado, numa cidade, há movimento normal de carros e pedestres, nesta fotografia.",1.0,0.5
+carros nevoeiro dia autoestrada,"Durante o dia com nevoeiro, numa autoestrada, carros circulam com luzes acesas.","Durante o dia com nevoeiro, numa autoestrada, carros circulam com luzes acesas.",1.0,0.5
+carro nevoeiro noite autoestrada,"Durante a noite com nevoeiro, numa autoestrada, os faróis traseiros do carro da frente são visíveis.","Durante a noite com nevoeiro, numa autoestrada, os faróis traseiros do carro da frente são visíveis.",1.0,0.5
+carros vento amanhecer parque_de_estacionamento,"Ao amanhecer com vento, num parque de estacionamento, carros estão estacionados.","Ao amanhecer com vento, num parque de estacionamento, carros estão estacionados.",1.0,0.5
+autocarros semáforo,Autocarros num semáforo na foto.,Autocarros num semáforo na foto.,1.0,0.5
+carros chuva dia parque_de_estacionamento,"Durante o dia com chuva, num parque de estacionamento, carros estão estacionados e o chão está molhado.","Durante o dia com chuva, num parque de estacionamento, carros estão estacionados e o chão está molhado.",1.0,0.5
+camiões vento,Camiões com vento na imagem.,Camiões com vento na imagem.,1.0,0.5
+autocarro passadeira sinal_de_passadeira anoitecer,Autocarro perto de sinal de passadeira ao anoitecer na imagem.,Autocarro perto de sinal de passadeira ao anoitecer na imagem.,1.0,0.5
+carros vento anoitecer parque_de_estacionamento,"Ao anoitecer com vento, no parque de estacionamento, carros estão estacionados.","Ao anoitecer com vento, no parque de estacionamento, carros estão estacionados.",1.0,0.5
+peões vento dia cidade,"Durante o dia com vento, numa cidade, peões estão na rua e o céu é visível.","Durante o dia com vento, numa cidade, peões estão na rua e o céu é visível.",1.0,0.5
+carros neve noite parque_de_estacionamento,"Durante a noite com neve, num parque de estacionamento, carros estão cobertos de neve.","Durante a noite com neve, num parque de estacionamento, carros estão cobertos de neve.",1.0,0.5
+camiões chuva,Camiões com chuva na imagem.,Camiões com chuva na imagem.,1.0,0.5
+carros vento dia parque_de_estacionamento,"Durante o dia com vento, num parque de estacionamento, carros estão estacionados, nesta imagem.","Durante o dia com vento, num parque de estacionamento, carros estão estacionados, nesta imagem.",1.0,0.5
+carro vento anoitecer zona_residencial,"Ao anoitecer com vento, numa zona residencial, um carro está estacionado.","Ao anoitecer com vento, numa zona residencial, um carro está estacionado.",1.0,0.5
+ciclista céu_limpo dia zona_residencial,"Durante o dia com céu limpo, numa zona residencial, um ciclista está na rua.","Durante o dia com céu limpo, numa zona residencial, um ciclista está na rua.",1.0,0.5
+peão nublado amanhecer cidade,"Ao amanhecer nublado, numa cidade, um peão está na rua.","Ao amanhecer nublado, numa cidade, um peão está na rua.",1.0,0.5
+chuva nevoeiro noite autoestrada,"Durante a noite com chuva e nevoeiro, numa autoestrada, a visibilidade está reduzida e faróis estão visíveis, na imagem.","Durante a noite com chuva e nevoeiro, numa autoestrada, a visibilidade está reduzida e faróis estão visíveis.",0.8313,0.5
+chuva vento anoitecer zona_residencial,"Ao anoitecer com vento e chuva, numa zona residencial, a rua está molhada e as luzes acesas, nesta imagem.","Ao anoitecer com vento e chuva, numa zona residencial, a rua está molhada e as luzes acesas.",0.8313,0.5
+chuva nevoeiro noite autoestrada,"Durante a noite com chuva e nevoeiro, numa autoestrada, a visibilidade está reduzida e faróis estão visíveis, nesta imagem.","Durante a noite com chuva e nevoeiro, numa autoestrada, a visibilidade está reduzida e faróis estão visíveis.",0.8313,0.5
+autocarro sinal_de_limite_de_velocidade dia túnel,"Próximo a um sinal de limite de velocidade, um autocarro está no túnel durante o dia, nesta fotografia.","Próximo a um sinal de limite de velocidade, um autocarro está no túnel durante o dia.",0.8213,0.5
+semáforos chuva noite cidade,"Durante a noite com chuva, numa cidade, as ruas estão molhadas e semáforos refletem na água, nesta fotografia.","Durante a noite com chuva, numa cidade, as ruas estão molhadas e semáforos refletem na água.",0.8213,0.5
+semáforos chuva noite cidade,"Durante a noite com chuva, numa cidade, as ruas estão molhadas e semáforos refletem na água, nesta fotografia.","Durante a noite com chuva, numa cidade, as ruas estão molhadas e semáforos refletem na água.",0.8213,0.5
+carros nevoeiro dia parque_de_estacionamento,"Durante o dia com nevoeiro, num parque de estacionamento, carros são visíveis através da névoa, nesta fotografia.","Durante o dia com nevoeiro, num parque de estacionamento, carros são visíveis através da névoa.",0.8099,0.5
+ciclista céu_limpo dia zona_residencial,"Durante o dia com céu limpo, numa zona residencial, um ciclista está na rua, nesta imagem.","Durante o dia com céu limpo, numa zona residencial, um ciclista está na rua.",0.7969,0.5
+carros neve dia zona_residencial,"Durante o dia com neve, numa zona residencial, carros estão cobertos de neve, nesta fotografia.","Durante o dia com neve, numa zona residencial, carros estão cobertos de neve.",0.7821,0.5
+carros neve dia zona_residencial,"Durante o dia com neve, numa zona residencial, carros estão cobertos de neve, nesta fotografia.","Durante o dia com neve, numa zona residencial, carros estão cobertos de neve.",0.7821,0.5
+carros neve dia zona_residencial,"Durante o dia com neve, numa zona residencial, carros estão cobertos de neve, na foto.","Durante o dia com neve, numa zona residencial, carros estão cobertos de neve.",0.7821,0.5
+camião céu_limpo amanhecer autoestrada,"Ao amanhecer com céu limpo, um camião passa por sinalização de limite de velocidade na autoestrada.","Ao amanhecer com céu limpo, um camião passa por um sinal de limite de velocidade na autoestrada.",0.7625,0.5
+autocarros semáforos dia parque_de_estacionamento,"Durante o dia, autocarros estão parados nos semáforos do parque de estacionamento.","Durante o dia, autocarros estão parados nos semáforos do parque de estacionamento na imagem.",0.7577,0.5
+carros vento dia parque_de_estacionamento,"Durante o dia com vento, num parque de estacionamento, carros estão estacionados.","Durante o dia com vento, num parque de estacionamento, carros estão estacionados, nesta imagem.",0.7577,0.5
+carros céu_limpo amanhecer parque_de_estacionamento,"Ao amanhecer com céu limpo, num parque de estacionamento, carros estão estacionados.","Ao amanhecer com céu limpo, num parque de estacionamento, carros estão estacionados, nesta imagem.",0.7577,0.5
+carros céu_limpo amanhecer parque_de_estacionamento,"Ao amanhecer com céu limpo, num parque de estacionamento, carros estão estacionados.","Ao amanhecer com céu limpo, num parque de estacionamento, carros estão estacionados, nesta imagem.",0.7577,0.5
+carros vento dia parque_de_estacionamento,"Durante o dia com vento, num parque de estacionamento, carros estão estacionados.","Durante o dia com vento, num parque de estacionamento, carros estão estacionados, nesta imagem.",0.7577,0.5
+carros vento dia parque_de_estacionamento,"Durante o dia com vento, num parque de estacionamento, carros estão estacionados.","Durante o dia com vento, num parque de estacionamento, carros estão estacionados, nesta imagem.",0.7577,0.5
+autocarro neve noite autoestrada,"À noite com neve, na autoestrada, um autocarro desloca-se na faixa de rodagem.","À noite com neve, na autoestrada, um autocarro desloca-se na via.",0.7447,0.5
+autocarro nevoeiro amanhecer parque_de_estacionamento,"Um autocarro está no parque de estacionamento ao amanhecer com nevoeiro, nesta fotografia.",Um autocarro está no parque de estacionamento ao amanhecer com nevoeiro.,0.7447,0.5
+chuva vento dia zona_residencial,"Durante o dia com chuva e vento, numa zona residencial, um pedestre usa guarda chuva, nesta fotografia.","Durante o dia com chuva e vento, numa zona residencial, um pedestre usa guarda-chuva.",0.742,0.5
+carros nevoeiro noite parque_de_estacionamento,"Num parque de estacionamento, durante a noite com nevoeiro, carros jazem estacionados.","Num parque de estacionamento, durante a noite com nevoeiro, carros aparecem como silhuetas.",0.7362,0.5
+carro céu_limpo dia zona_residencial,"Durante o dia com céu limpo, numa zona residencial, um pedestre está na rua perto de um carro estacionado.","Durante o dia com céu limpo, numa zona residencial, um pedestre está na calçada perto de um carro estacionado, nesta fotografia.",0.7098,0.5
+carro céu_limpo dia zona_residencial,"Durante o dia com céu limpo, numa zona residencial, um pedestre está na rua perto de um carro estacionado.","Durante o dia com céu limpo, numa zona residencial, um pedestre está na calçada perto de um carro estacionado, nesta fotografia.",0.7098,0.5
+autocarro nublado amanhecer autoestrada,"Ao amanhecer com céu nublado, um autocarro desloca-se pela autoestrada.","Ao amanhecer com céu nublado, um autocarro viaja pela autoestrada.",0.7071,0.5
+camião céu_limpo anoitecer autoestrada,"Ao anoitecer com céu limpo, um camião está na autoestrada.","Ao anoitecer com céu limpo, um camião viaja na autoestrada.",0.7071,0.5
+noite túnel,"Durante a noite sem tráfego, num túnel, está vazio com luzes acesas e um sinal de limite, nesta imagem.","Durante a noite com tráfego, num túnel, está vazio com luzes acesas e um sinal de limite.",0.6778,0.5
+autocarro nublado amanhecer autoestrada,"Ao amanhecer com céu nublado, um autocarro viaja pela autoestrada visível nesta foto.","Ao amanhecer com céu nublado, um autocarro viaja pela autoestrada.",0.652,0.5
+carro céu_limpo noite autoestrada,"Durante a noite com céu limpo, numa autoestrada, um carro circula, como mostra a imagem.","Durante a noite com céu limpo, numa autoestrada, um carro circula.",0.6209,0.5
+carros vento noite autoestrada,"Durante a noite com vento, numa autoestrada, carros estão na via, como mostra a imagem.","Durante a noite com vento, numa autoestrada, carros estão na via.",0.6209,0.5
+carros chuva amanhecer parque_de_estacionamento,"Num parque de estacionamento, ao amanhecer com chuva, carros estão estacionados e o chão está molhado.","Ao amanhecer com chuva, num parque de estacionamento, carros estão estacionados e o chão está molhado.",0.6128,0.5
+camião céu_limpo anoitecer autoestrada,"Ao anoitecer com céu limpo, um camião desloca se pela autoestrada.","Ao anoitecer com céu limpo, um camião viaja na autoestrada.",0.5978,0.5
+carro neve amanhecer zona_residencial,"Ao amanhecer, neve cobre a zona residencial enquanto um carro circula nesta fotografia.","Ao amanhecer, neve cobre a zona residencial e um carro circula na fotografia.",0.5923,0.5
+carro neve amanhecer zona_residencial,"Ao amanhecer, neve cobre a zona residencial enquanto um carro circula nesta fotografia.","Ao amanhecer, neve cobre a zona residencial e um carro circula na fotografia.",0.5923,0.5
+peões vento dia cidade,"Durante o dia com vento, numa cidade, peões estão na rua.","Durante o dia com vento, numa cidade, peões estão na rua e o céu é visível.",0.5828,0.5
+carros chuva amanhecer parque_de_estacionamento,"Ao amanhecer com chuva, num parque de estacionamento, o chão está molhado e carros estão estacionados.","Ao amanhecer com chuva, num parque de estacionamento, carros estão estacionados e o chão está molhado.",0.5787,0.5
+autocarro nublado anoitecer parque_de_estacionamento,"No parque de estacionamento, ao anoitecer nublado, um autocarro está presente.","No parque de estacionamento, ao anoitecer com céu nublado, um autocarro está estacionado.",0.5784,0.5
+passadeira sinal_de_passadeira dia túnel,"Durante o dia, um sinal de passadeira está <unk> no túnel, para manutenção.","Durante o dia, um sinal de passadeira está no túnel durante o dia.",0.5761,0.5
+peão nublado dia zona_residencial,"Numa zona residencial, durante o dia com céu nublado, um peão está na rua.","Durante o dia com céu nublado, numa zona residencial, um peão está na rua.",0.5731,0.5
+ciclistas nevoeiro amanhecer túnel,"Com nevoeiro, ciclistas estão no túnel ao amanhecer.","Com nevoeiro, ciclistas estão no túnel ao amanhecer, segundo esta imagem.",0.5707,0.5
+camião nevoeiro noite autoestrada,"À noite com nevoeiro, na autoestrada, um camião e sinalização rodoviária estão visíveis na imagem.","À noite com nevoeiro, na autoestrada, um camião e um sinal estão visíveis.",0.5703,0.5
+camião vento dia autoestrada,"Durante o dia com vento, na autoestrada, um camião movimenta se na faixa de rodagem.","Durante o dia com vento, na autoestrada, um camião está na via.",0.5679,0.5
+ciclista passadeira dia cidade,"Na cidade, durante o dia chuvoso, um ciclista encontra-se parado na passadeira, na fotografia.","Na cidade, durante o dia chuvoso, um ciclista está parado na passadeira.",0.5675,0.5
+carros nevoeiro dia autoestrada,"Numa autoestrada, durante o dia com nevoeiro, carros circulam com luzes acesas.","Durante o dia com nevoeiro, numa autoestrada, carros circulam com luzes acesas.",0.5452,0.5
+peões passadeira semáforo chuva dia cidade,Peões atravessam na cidade durante o dia com chuva usando passadeira e semáforo.,"Peões atravessam na cidade durante o dia com chuva, um semáforo e o semáforo.",0.5437,0.5
+peões nublado dia zona_residencial,"Numa zona residencial, durante o dia com céu nublado, peões estão na rua.","Durante o dia com céu nublado, numa zona residencial, peões estão na rua.",0.5266,0.5
+ciclista passadeira dia cidade,"Na cidade, durante o dia chuvoso, um ciclista encontra se parado na passadeira, na fotografia.","Na cidade, durante o dia chuvoso, um ciclista está parado na passadeira.",0.5221,0.5
+passadeira semáforo sinal_de_passadeira cidade,"Na cidade, um sinal de passadeira e um semáforo estão instalados proximamente.","Na cidade, um sinal de passadeira e um semáforo coexistem no mesmo local, segundo esta imagem.",0.5129,0.5
+carros nublado dia cidade,"Durante o dia com céu nublado, numa cidade, carros e pedestres estão presentes, nesta fotografia.","Durante o dia com céu nublado, numa cidade, há movimento normal de carros e pedestres, nesta fotografia.",0.488,0.5
+carros céu_limpo anoitecer autoestrada,"Numa autoestrada, ao anoitecer com céu limpo, carros estão na via.","Ao anoitecer com céu limpo, numa autoestrada, carros estão na via.",0.4833,0.5
+camiões vento dia autoestrada,"Numa autoestrada, durante o dia com vento, camiões estão na via.","Durante o dia com vento, numa autoestrada, camiões estão na via.",0.4833,0.5
+peões céu_limpo amanhecer cidade,"Ao amanhecer com céu limpo, numa cidade, peões estão na rua.","Numa cidade, ao amanhecer com céu limpo, peões estão na rua.",0.4833,0.5
+ciclista neve dia zona_residencial,"Durante o dia com neve, um ciclista está na zona residencial.","Durante o dia com neve, um ciclista desloca-se na zona residencial vista na imagem.",0.4786,0.5
+carros céu_limpo dia parque_de_estacionamento,"Num parque de estacionamento, durante o dia com céu limpo, está cheio e carros estão estacionados.","Durante o dia com céu limpo, num parque de estacionamento, está cheio e carros estão estacionados, nesta imagem.",0.4718,0.5
+peão nublado amanhecer cidade,"Numa cidade, ao amanhecer nublado, um peão está na rua.","Ao amanhecer nublado, numa cidade, um peão está na rua.",0.4671,0.5
+semáforos autoestrada,"Junto ao acesso da autoestrada na imagem, há semáforos.","Na autoestrada, ao acesso da autoestrada na imagem.",0.4562,0.5
+camião chuva noite autoestrada,"Durante a noite com chuva, numa autoestrada, um camião está na via e levanta spray de água.","Durante a noite com chuva, numa autoestrada, reflexos são visíveis na estrada molhada e um camião está na via.",0.449,0.5
+camião chuva noite autoestrada,"Durante a noite com chuva, numa autoestrada, um camião está na via e levanta spray de água.","Durante a noite com chuva, numa autoestrada, reflexos são visíveis na estrada molhada e um camião está na via.",0.449,0.5
+camião chuva noite autoestrada,"Durante a noite com chuva, numa autoestrada, um camião está na via e levanta spray de água, nesta fotografia.","Durante a noite com chuva, numa autoestrada, reflexos são visíveis na estrada molhada e um camião está na via.",0.449,0.5
+autocarro vento dia parque_de_estacionamento,Um autocarro está no parque de estacionamento; é dia e há vento.,Um autocarro está no parque de estacionamento durante o dia com vento.,0.4483,0.5
+carros céu_limpo dia zona_residencial,"Durante o dia com céu limpo, numa zona residencial, pedestres estão presentes perto de carros estacionados.","Durante o dia com céu limpo, numa zona residencial, carros estão estacionados e um pedestre é visível, nesta imagem.",0.4465,0.5
+passadeira sinal_de_passadeira dia túnel,"Durante o dia, um sinal de passadeira demarca um ponto no túnel, manutenção, na imagem.","Durante o dia, um sinal de passadeira está no túnel durante o dia.",0.417,0.5
+carros nublado amanhecer parque_de_estacionamento,"Num parque de estacionamento, ao amanhecer com céu nublado, carros estão estacionados.","Ao amanhecer com céu nublado, num parque de estacionamento, carros estão estacionados.",0.3918,0.5
+peões passadeira semáforo chuva dia cidade,"Durante o dia com chuva, peões atravessam na cidade usando a passadeira e o semáforo.","Peões atravessam na cidade durante o dia com chuva, um semáforo e o semáforo.",0.3059,0.5
+autocarros nublado dia parque_de_estacionamento,"No parque de estacionamento, durante o dia nublado, autocarros estão estacionados.","Durante o dia nublado, no parque de estacionamento, autocarros estão estacionados.",0.2646,0.5
+carro peão ciclista céu_limpo dia cidade,"Um carro, um ciclista e um peão estão na cidade durante o dia com céu limpo.","Durante o dia com céu limpo, um ciclista e um ciclista partilham na via perto de um carro na cidade.",0.2469,0.5
+peões vento dia cidade,"Numa cidade, durante o dia com vento, peões estão na rua.","Durante o dia com vento, numa cidade, peões estão na rua e o céu é visível.",0.2289,0.5
+carros céu_limpo dia cidade,Carros circulam na cidade durante o dia com céu limpo.,"Durante o dia com céu limpo, numa cidade, carros estão na cidade.",0.2242,0.5
+peões neve dia zona_residencial,"Durante o dia com neve, numa zona residencial, peões estão presentes e há neve acumulada.","Na zona residencial, durante o dia com neve, peões estão na calçada.",0.2231,0.5
+autocarro nevoeiro amanhecer parque_de_estacionamento,"Autocarro parado no parque de estacionamento, amanhecer com nevoeiro.",Um autocarro está no parque de estacionamento ao amanhecer com nevoeiro.,0.1952,0.5
+camião sinal_de_limite_de_velocidade nevoeiro vento amanhecer autoestrada,"Autoestrada, amanhecer com nevoeiro e vento: Camião circula, sinal de limite de velocidade visível.","Um camião circula na autoestrada ao amanhecer com nevoeiro, perto de um sinal de limite de velocidade.",0.1703,0.5
+camiões chuva anoitecer autoestrada,"Na autoestrada, ao anoitecer com chuva, constata se a circulação de camiões.","Ao anoitecer com chuva, na autoestrada, nota-se a circulação de camiões nesta imagem.",0.1701,0.5
+peão nevoeiro,Um peão com nevoeiro.,Um peão está na,0.1682,0.5
+camiões zona_residencial,Camiões encontram-se imobilizados na zona residencial.,"Na zona residencial, camiões estão na zona residencial.",0.1651,0.5
+camiões nevoeiro,Camiões sob nevoeiro numa estrada de <unk> velocidade.,Camiões sob nevoeiro na fotografia.,0.1644,0.5
+passadeira semáforo sinal_de_passadeira cidade,"Na cidade, um semáforo está próximo a um sinal de passadeira, segundo esta fotografia.","Na cidade, um sinal de passadeira e um semáforo coexistem no mesmo local, segundo esta imagem.",0.1618,0.5
+carros autocarros noite túnel,Carros e autocarros circulam num túnel durante a noite.,Carros e autocarros e autocarros estão no túnel,0.1565,0.5
+camião vento noite autoestrada,"Na autoestrada, à noite com vento, vê-se um camião e um sinal.","Na autoestrada, durante a noite com vento, um camião está na via.",0.1556,0.5
+passadeira zona_residencial,Passadeira na zona residencial.,"Na zona residencial, uma passadeira está na zona residencial.",0.1445,0.5
+passadeira sinal_de_passadeira amanhecer cidade,Um sinal de passadeira está na cidade ao amanhecer.,"Na cidade, ao amanhecer com um sinal de passadeira na cidade.",0.1319,0.5
+camiões chuva,Camiões com chuva.,Camiões com chuva na imagem.,0.1212,0.5
+peão passadeira,Peão na passadeira.,Um peão está na passadeira.,0.1212,0.5
+camiões chuva anoitecer autoestrada,"Na autoestrada, ao anoitecer com chuva, camiões circulam.","Ao anoitecer com chuva, na autoestrada, nota-se a circulação de camiões nesta imagem.",0.1106,0.5
+peões passadeira,Peões utilizam a passadeira para atravessar.,Peões a passadeira na imagem.,0.1098,0.5
+carro ciclista dia cidade,"Um carro e um ciclista estão na via da cidade, é dia e o céu está limpo.",É dia e um ciclista e um ciclista partilham a via na cidade.,0.0979,0.5
+carro ciclista dia cidade,Um carro e um ciclista estão na via da cidade; é dia e o céu está limpo.,É dia e um ciclista e um ciclista partilham a via na cidade.,0.0979,0.5
+noite túnel,"Túnel, noite, sem <unk> Vazio, luzes acesas, sinal de limite.","Durante a noite com tráfego, num túnel, está vazio com luzes acesas e um sinal de limite.",0.0794,0.5
+passadeira túnel,Uma passadeira ao fim da tarde num túnel.,Uma passadeira de manutenção é visível no túnel.,0.0788,0.5
+passadeira túnel,Uma passadeira ao fim da tarde num túnel.,Uma passadeira de manutenção é visível no túnel.,0.0788,0.5
+carro camião,"<unk> de um carro, um camião <unk>",Um camião está na mesma de um carro.,0.0788,0.5
+autocarro ciclista,Um ciclista desloca-se ao lado de um autocarro.,Um autocarro está na mesma de um,0.0786,0.5
+neve parque_de_estacionamento,Neve cai sobre o parque de estacionamento.,"No parque de estacionamento, durante a neve acumulada.",0.0712,0.5
+passadeira túnel,Passadeira visível no túnel iluminado.,Uma passadeira de manutenção é visível no túnel.,0.0712,0.5
+neve parque_de_estacionamento,Neve acumulada é visível no parque de estacionamento.,"No parque de estacionamento, durante a neve acumulada.",0.0712,0.5
+autocarro ciclista,"Ao lado de um autocarro, um ciclista circula.",Um autocarro está na mesma de um,0.071,0.5
+passadeira cidade,Uma passadeira demarca a via na cidade.,"Na cidade, um sinal de passadeira estão na cidade.",0.07,0.5
+autocarro ciclista,Um ciclista <unk> se ao lado de um autocarro.,Um autocarro está na mesma de um,0.0681,0.5
+carros zona_residencial,"Na zona residencial capturada, carros estão a circular.","Na zona residencial, carros estão estacionados e um pedestre está na calçada.",0.0675,0.5
+carros zona_residencial,"Na zona residencial capturada, carros estão em movimento.","Na zona residencial, carros estão estacionados e um pedestre está na calçada.",0.0675,0.5
+carro nublado noite cidade,"Carro circula na cidade, é noite e o céu está nublado.","É noite e céu nublado, um carro está na cidade.",0.0648,0.5
+autocarro ciclista,Um ciclista circula ao lado de um autocarro nesta cena.,Um autocarro está na mesma de um,0.0635,0.5
+passadeira túnel,"Dentro do túnel, uma passadeira de <unk> está marcada.",Uma passadeira de manutenção é visível no túnel.,0.0629,0.5
+carros céu_limpo dia cidade,"Sob céu limpo, vários carros circulam na cidade durante o dia.","Durante o dia com céu limpo, numa cidade, carros estão na cidade.",0.06,0.5
+carros parque_de_estacionamento,A imagem <unk> múltiplos carros num parque de estacionamento.,"No parque de estacionamento, carros estão estacionados e carros estão estacionados.",0.0574,0.5
+noite cidade,"Durante a noite chuvosa, a cidade está iluminada e molhada.","Na cidade, durante a noite com tráfego, um está na cidade.",0.0574,0.5
+carros céu_limpo anoitecer parque_de_estacionamento,"Parque de estacionamento, anoitecer, céu limpo: <unk> carros a sair.","Ao anoitecer com céu limpo, num parque de estacionamento, carros estão estacionados.",0.0568,0.5
+peão neve,Um peão com neve.,Peão com neve na foto.,0.0456,0.5
+carros chuva dia parque_de_estacionamento,"Parque de estacionamento, dia, chuva: Pessoas correm <unk> carros e edifícios.","Durante o dia com chuva, num parque de estacionamento, carros estão estacionados e o chão está molhado.",0.0409,0.5
+semáforos chuva noite cidade,"Cidade, noite, chuva: Ruas molhadas, <unk> dos semáforos na água.","Durante a noite com chuva, numa cidade, as ruas estão molhadas e semáforos refletem na água.",0.0403,0.5
+semáforo autoestrada,Semáforo em autoestrada na fotografia.,Um semáforo está visível na autoestrada.,0.0376,0.5
+ciclista neve,Ciclista com neve na imagem.,Um ciclista está na zona residencial.,0.0376,0.5
+ciclistas túnel,Ciclistas são observados dentro do túnel.,Ciclistas estão no túnel durante o dia.,0.0324,0.5
+ciclistas túnel,Ciclistas circulam dentro do túnel.,Ciclistas estão no túnel durante o dia.,0.0324,0.5
+dia cidade,Chove na cidade durante o dia.,"Durante o dia numa cidade, pedestres estão na cidade.",0.0306,0.5
+peão ciclista,Um peão e um ciclista estão na calçada.,Um ciclista está na,0.0295,0.5
+carros vento dia cidade,"É dia, há vento e circulam carros na cidade.","Durante o dia com vento, numa cidade, carros estão na via.",0.0257,0.5
+noite zona_residencial,"Um pedestre está imobilizado na zona residencial à noite, enquanto chove.","Na zona residencial, é noite e neva na cena capturada.",0.0252,0.5
+ciclistas autoestrada,O registo capta ciclistas na berma de uma autoestrada.,Ciclistas na autoestrada na autoestrada.,0.0244,0.5
+camiões nublado dia autoestrada,"Autoestrada, dia, céu nublado: Viagem <unk> camiões presentes.","Durante o dia com céu nublado, numa autoestrada, camiões estão presentes na via.",0.0223,0.5
+camião chuva noite autoestrada,"Autoestrada, noite, chuva forte: Limpa-para-brisas no <unk> camião na frente.","Durante a noite com chuva, numa autoestrada, reflexos são visíveis na estrada molhada e um camião está na via.",0.0162,0.5
+ciclistas túnel,"Dentro do túnel, regista-se a presença de ciclistas.",Ciclistas estão no túnel durante o dia.,0,0.5
+anoitecer autoestrada,Anoitecer chuvoso na autoestrada.,"Ao anoitecer com céu claro, numa autoestrada, a estrada está visível.",0,0.5
+ciclista céu_limpo vento dia zona_residencial,"Durante o dia com céu limpo e vento, numa zona residencial, um ciclista está na via.","Durante o dia com céu limpo e vento, numa zona residencial, um ciclista está na via.",1.0,0.4
+carro sinal_de_stop céu_limpo anoitecer zona_residencial,"Junto a um sinal de stop, um carro circula na zona residencial ao anoitecer com céu limpo.","Junto a um sinal de stop, um carro circula na zona residencial ao anoitecer com céu limpo.",1.0,0.4
+camiões céu_limpo vento amanhecer autoestrada,Camiões circulam na autoestrada ao amanhecer com céu limpo e vento.,Camiões circulam na autoestrada ao amanhecer com céu limpo e vento.,1.0,0.4
+carros passadeiras chuva dia cidade,"Durante o dia com chuva, numa cidade, há tráfego de carros e pedestres nas passadeiras.","Durante o dia com chuva, numa cidade, há tráfego de carros e pedestres nas passadeiras.",1.0,0.4
+ciclista semáforo vento anoitecer cidade,"Ao anoitecer com vento, na cidade, um ciclista está parado junto a um semáforo.","Ao anoitecer com vento, na cidade, um ciclista está parado junto a um semáforo.",1.0,0.4
+ciclista semáforo vento anoitecer cidade,"Ao anoitecer com vento, na cidade, um ciclista está parado junto a um semáforo.","Ao anoitecer com vento, na cidade, um ciclista está parado junto a um semáforo.",1.0,0.4
+ciclista passadeira céu_limpo noite zona_residencial,"À noite com céu limpo, na zona residencial, um ciclista passa por uma passadeira.","À noite com céu limpo, na zona residencial, um ciclista passa por uma passadeira.",1.0,0.4
+carro sinal_de_stop céu_limpo anoitecer zona_residencial,"Junto a um sinal de stop, um carro circula na zona residencial ao anoitecer com céu limpo.","Junto a um sinal de stop, um carro circula na zona residencial ao anoitecer com céu limpo.",1.0,0.4
+carros céu_limpo vento dia parque_de_estacionamento,"Durante o dia com céu limpo e vento, num parque de estacionamento, carros estão estacionados.","Durante o dia com céu limpo e vento, num parque de estacionamento, carros estão estacionados.",1.0,0.4
+carros céu_limpo vento dia parque_de_estacionamento,"Durante o dia com céu limpo e vento, num parque de estacionamento, carros estão estacionados, nesta fotografia.","Durante o dia com céu limpo e vento, num parque de estacionamento, carros estão estacionados.",0.8099,0.4
+carros céu_limpo vento dia parque_de_estacionamento,"Durante o dia com céu limpo e vento, num parque de estacionamento, carros estão estacionados, na fotografia.","Durante o dia com céu limpo e vento, num parque de estacionamento, carros estão estacionados.",0.8099,0.4
+carros passadeiras chuva dia cidade,"Durante o dia com chuva, numa cidade, há tráfego de carros e pedestres nas passadeiras, nesta imagem.","Durante o dia com chuva, numa cidade, há tráfego de carros e pedestres nas passadeiras.",0.8099,0.4
+ciclista passadeira sinal_de_passadeira dia zona_residencial,"Durante o dia, um ciclista e um pedestre estão na zona residencial próximos a um sinal de passadeira na imagem.","Durante o dia, um ciclista e um pedestre estão na zona residencial perto de um sinal de passadeira na imagem.",0.8032,0.4
+ciclista passadeira céu_limpo noite zona_residencial,"À noite com céu limpo, na zona residencial, um ciclista passa por uma passadeira nesta imagem.","À noite com céu limpo, na zona residencial, um ciclista passa por uma passadeira.",0.7969,0.4
+carros camiões céu_limpo dia autoestrada,"Durante o dia com céu limpo, numa autoestrada, há tráfego de carros e camiões, nesta fotografia.","Durante o dia com céu limpo, numa autoestrada, há tráfego de carros e camiões.",0.7969,0.4
+peão passadeira chuva dia zona_residencial,"Durante o dia com chuva, numa zona residencial, um peão está na passadeira.","Durante o dia com chuva, numa zona residencial, um peão com guarda-chuva está na passadeira.",0.7242,0.4
+carros camiões céu_limpo dia autoestrada,"Numa autoestrada, durante o dia com céu limpo, há tráfego de carros e camiões.","Durante o dia com céu limpo, numa autoestrada, há tráfego de carros e camiões.",0.6298,0.4
+carro passadeira nevoeiro dia cidade,"Na cidade, durante o dia com nevoeiro, um carro está parado na passadeira.","Na cidade, durante o dia com nevoeiro, um carro encontra-se perto de uma passadeira.",0.6115,0.4
+carro sinal_de_stop céu_limpo anoitecer zona_residencial,Um carro circula na zona residencial ao anoitecer com céu limpo perto de um sinal de stop.,"Junto a um sinal de stop, um carro circula na zona residencial ao anoitecer com céu limpo.",0.5635,0.4
+peões passadeiras céu_limpo dia cidade,"Numa cidade, durante o dia com céu limpo, peões estão nas passadeiras.","Durante o dia com céu limpo, numa cidade, peões estão nas passadeiras.",0.5452,0.4
+ciclista passadeira céu_limpo noite zona_residencial,"Na zona residencial, à noite com céu limpo, um ciclista passa por uma passadeira <unk>","À noite com céu limpo, na zona residencial, um ciclista passa por uma passadeira.",0.4508,0.4
+camião sinal_de_limite_de_velocidade chuva noite autoestrada,"Na autoestrada, à noite com chuva, circula um camião perto de um sinal de limite de velocidade.","Na autoestrada, durante a noite com chuva, um camião passa por um sinal de limite de velocidade.",0.4187,0.4
+camião sinal_de_limite_de_velocidade nevoeiro amanhecer autoestrada,Um camião passa pelo sinal de limite de velocidade na autoestrada ao amanhecer com nevoeiro.,"Um camião passa por um sinal de limite de velocidade com nevoeiro, na autoestrada",0.3726,0.4
+camiões céu_limpo vento noite autoestrada,Camiões estão na autoestrada à noite com céu limpo e vento.,"Durante a noite com céu limpo e vento, numa autoestrada, camiões estão na via.",0.3058,0.4
+camião sinal_de_limite_de_velocidade nevoeiro amanhecer autoestrada,"Um camião circula na autoestrada ao amanhecer com nevoeiro, perto de um sinal de limite de velocidade.","Um camião passa por um sinal de limite de velocidade com nevoeiro, na autoestrada",0.3006,0.4
+passadeira sinal_de_passadeira nublado dia autoestrada,"Na autoestrada, área de serviço, durante um dia nublado, um sinal de passadeira é visível.","Num dia nublado, na autoestrada, um sinal de passadeira é visível na imagem.",0.2949,0.4
+carros peões nublado dia cidade,"Numa cidade, durante o dia com céu nublado, carros e peões estão presentes.","Durante o dia com céu nublado, numa cidade, há movimento normal de carros e peões.",0.2926,0.4
+ciclista semáforo vento anoitecer cidade,"Na cidade, ao anoitecer com vento, um ciclista está parado no semáforo.","Ao anoitecer com vento, na cidade, um ciclista está parado junto a um semáforo.",0.2738,0.4
+autocarro camião céu_limpo dia autoestrada,"Na autoestrada, durante o dia com céu limpo, um camião e um autocarro estão visíveis.","Autoestrada, dia, céu limpo: e camião estão presentes na autoestrada durante o dia.",0.0499,0.4
+céu_limpo anoitecer zona_residencial,"Ao anoitecer com céu limpo, numa zona residencial, as luzes das casas estão acesas.","Ao anoitecer com céu limpo, numa zona residencial, as luzes das casas estão acesas.",1.0,0.33
+céu_limpo amanhecer autoestrada,"Ao amanhecer com céu limpo, numa autoestrada, o nascer do sol é visível.","Ao amanhecer com céu limpo, numa autoestrada, o nascer do sol é visível.",1.0,0.33
+chuva dia autoestrada,"Durante o dia com chuva, numa autoestrada, o spray de água dos pneus é visível.","Durante o dia com chuva, numa autoestrada, o spray de água dos pneus é visível.",1.0,0.33
+nevoeiro noite autoestrada,"Durante a noite com nevoeiro, numa autoestrada, faróis são visíveis na névoa.","Durante a noite com nevoeiro, numa autoestrada, faróis são visíveis na névoa.",1.0,0.33
+céu_limpo amanhecer autoestrada,"Ao amanhecer com céu limpo, numa autoestrada, o nascer do sol é visível.","Ao amanhecer com céu limpo, numa autoestrada, o nascer do sol é visível.",1.0,0.33
+nevoeiro noite autoestrada,"Durante a noite com nevoeiro, numa autoestrada, faróis são visíveis na névoa.","Durante a noite com nevoeiro, numa autoestrada, faróis são visíveis na névoa.",1.0,0.33
+passadeira sinal_de_passadeira zona_residencial,Sinal de passadeira em zona residencial na imagem.,Sinal de passadeira em zona residencial na imagem.,1.0,0.33
+chuva anoitecer cidade,"Ao anoitecer com chuva, numa cidade, as ruas estão brilhantes e pedestres estão na rua.","Ao anoitecer com chuva, numa cidade, as ruas estão brilhantes e pedestres estão na rua.",1.0,0.33
+céu_limpo noite autoestrada,"Durante a noite com céu limpo, numa autoestrada, estrelas podem estar visíveis.","Durante a noite com céu limpo, numa autoestrada, estrelas podem estar visíveis.",1.0,0.33
+passadeira dia túnel,"Durante o dia, uma passadeira é claramente demarcada no interior do túnel.","Durante o dia, uma passadeira é claramente demarcada no interior do túnel.",1.0,0.33
+céu_limpo noite parque_de_estacionamento,"Durante a noite com céu limpo, num parque de estacionamento, está vazio e iluminado.","Durante a noite com céu limpo, num parque de estacionamento, está vazio e iluminado.",1.0,0.33
+vento anoitecer cidade,"Na cidade, o vento é perceptível ao anoitecer.","Na cidade, o vento é perceptível ao anoitecer.",1.0,0.33
+peões nublado anoitecer,Peões com céu nublado ao anoitecer.,Peões com céu nublado ao anoitecer.,1.0,0.33
+carros sinal_de_limite_de_velocidade vento,Carros perto de sinal de limite de velocidade com vento na fotografia.,Carros perto de sinal de limite de velocidade com vento na fotografia.,1.0,0.33
+chuva noite túnel,"Durante a noite com chuva, num túnel, a entrada está molhada e o interior iluminado.","Durante a noite com chuva, num túnel, a entrada está molhada e o interior iluminado.",1.0,0.33
+chuva dia autoestrada,"Durante o dia com chuva, numa autoestrada, o spray de água dos pneus é visível.","Durante o dia com chuva, numa autoestrada, o spray de água dos pneus é visível.",1.0,0.33
+vento dia zona_residencial,"Durante o dia com vento, numa zona residencial, árvores estão a abanar.","Durante o dia com vento, numa zona residencial, árvores estão a abanar.",1.0,0.33
+céu_limpo amanhecer túnel,"Ao amanhecer com céu limpo, num túnel, a luz do sol é visível na entrada/saída.","Ao amanhecer com céu limpo, num túnel, a luz do sol é visível na entrada/saída.",1.0,0.33
+céu_limpo amanhecer autoestrada,"Ao amanhecer com céu limpo, numa autoestrada, o nascer do sol é visível.","Ao amanhecer com céu limpo, numa autoestrada, o nascer do sol é visível.",1.0,0.33
+vento noite parque_de_estacionamento,"Durante a noite com vento, num parque de estacionamento, está vazio e iluminado.","Durante a noite com vento, num parque de estacionamento, está vazio e iluminado.",1.0,0.33
+passadeira sinal_de_stop sinal_de_passadeira,Um sinal de stop e um sinal de passadeira estão presentes.,Um sinal de stop e um sinal de passadeira estão instalados.,0.8932,0.33
+chuva noite parque_de_estacionamento,"Durante a noite com chuva, num parque de estacionamento, o chão está molhado e luzes estão refletidas, nesta imagem.","Durante a noite com chuva, num parque de estacionamento, o chão está molhado e luzes estão acesas.",0.8313,0.33
+chuva noite parque_de_estacionamento,"Durante a noite com chuva, num parque de estacionamento, o chão está molhado e luzes estão refletidas, nesta imagem.","Durante a noite com chuva, num parque de estacionamento, o chão está molhado e luzes estão acesas.",0.8313,0.33
+chuva noite parque_de_estacionamento,"Durante a noite com chuva, num parque de estacionamento, o chão está molhado e luzes estão refletidas, na imagem.","Durante a noite com chuva, num parque de estacionamento, o chão está molhado e luzes estão acesas.",0.8313,0.33
+chuva anoitecer cidade,"Ao anoitecer com chuva, numa cidade, as ruas estão brilhantes e pedestres estão na rua, nesta fotografia.","Ao anoitecer com chuva, numa cidade, as ruas estão brilhantes e pedestres estão na rua.",0.8099,0.33
+céu_limpo amanhecer túnel,"Ao amanhecer com céu limpo, num túnel, a luz do sol é visível na entrada ou saída.","Ao amanhecer com céu limpo, num túnel, a luz do sol é visível na entrada/saída.",0.8099,0.33
+chuva anoitecer cidade,"Ao anoitecer com chuva, numa cidade, as ruas estão brilhantes e pedestres estão na rua, nesta fotografia.","Ao anoitecer com chuva, numa cidade, as ruas estão brilhantes e pedestres estão na rua.",0.8099,0.33
+chuva dia autoestrada,"Durante o dia com chuva, numa autoestrada, o spray de água dos pneus é visível, na foto.","Durante o dia com chuva, numa autoestrada, o spray de água dos pneus é visível.",0.8099,0.33
+céu_limpo noite parque_de_estacionamento,"Durante a noite com céu limpo, num parque de estacionamento, está vazio e iluminado, nesta imagem.","Durante a noite com céu limpo, num parque de estacionamento, está vazio e iluminado.",0.7969,0.33
+nublado dia túnel,"Durante o dia com céu nublado, num túnel, a luz é constante no interior.","Durante o dia com céu nublado, num túnel, a luz é constante no interior, nesta imagem.",0.7917,0.33
+céu_limpo amanhecer autoestrada,"Ao amanhecer com céu limpo, numa autoestrada, o nascer do sol é visível, nesta imagem.","Ao amanhecer com céu limpo, numa autoestrada, o nascer do sol é visível.",0.7821,0.33
+céu_limpo dia cidade,"Durante o dia com céu limpo, numa cidade, pedestres estão presentes nas ruas.","Durante o dia com céu limpo, numa cidade, pedestres estão presentes nas ruas, nesta imagem.",0.776,0.33
+chuva dia zona_residencial,"Durante o dia com chuva, numa zona residencial, um pedestre está na rua.","Durante o dia com chuva, numa zona residencial, um pedestre está na rua, nesta imagem.",0.776,0.33
+chuva amanhecer túnel,"Ao amanhecer com chuva, num túnel, a entrada está escura e molhada.","Ao amanhecer com chuva, num túnel, a entrada está molhada e molhada.",0.7692,0.33
+céu_limpo dia autoestrada,"Durante o dia com céu limpo, numa autoestrada, o asfalto está visível.","Durante o dia com céu limpo, numa autoestrada, o tráfego está visível.",0.7692,0.33
+chuva amanhecer túnel,"Ao amanhecer com chuva, num túnel, a entrada está molhada e as luzes acesas.","Ao amanhecer com chuva, num túnel, a entrada está molhada e molhada.",0.7649,0.33
+chuva amanhecer túnel,"Ao amanhecer com chuva, num túnel, a entrada está molhada e as luzes acesas.","Ao amanhecer com chuva, num túnel, a entrada está molhada e molhada.",0.7649,0.33
+nublado anoitecer zona_residencial,"Ao anoitecer com céu nublado, numa zona residencial, as luzes das casas estão acesas.","Ao anoitecer com céu nublado, numa zona residencial, as luzes estão acesas.",0.7341,0.33
+céu_limpo anoitecer zona_residencial,"Ao anoitecer com céu limpo, numa zona residencial, as luzes estão acesas.","Ao anoitecer com céu limpo, numa zona residencial, as luzes das casas estão acesas.",0.7272,0.33
+camiões céu_limpo amanhecer,Camiões sob céu limpo ao amanhecer na fotografia.,Camiões com céu limpo ao amanhecer na fotografia.,0.7071,0.33
+camiões céu_limpo amanhecer,Camiões sob céu limpo ao amanhecer na fotografia.,Camiões com céu limpo ao amanhecer na fotografia.,0.7071,0.33
+neve dia autoestrada,"Durante o dia, a autoestrada na imagem está coberta de neve.","Durante o dia, a autoestrada na fotografia está coberta de neve.",0.7017,0.33
+peão ciclista passadeira sinal_de_passadeira noite zona_residencial,"Um ciclista e um peão estão na zona residencial à noite, perto de um sinal de passadeira.",Um ciclista e um peão estão na zona residencial à a um sinal de passadeira.,0.7004,0.33
+nublado amanhecer túnel,"Ao amanhecer com céu nublado, num túnel, a entrada é visível e as luzes estão acesas.","Ao amanhecer nublado, num túnel, a entrada é visível e as luzes estão acesas no interior.",0.6968,0.33
+nublado amanhecer túnel,"Ao amanhecer com céu nublado, num túnel, a entrada é visível e as luzes estão acesas.","Ao amanhecer nublado, num túnel, a entrada é visível e as luzes estão acesas no interior.",0.6968,0.33
+céu_limpo anoitecer zona_residencial,"Ao anoitecer com céu limpo, numa zona residencial, as luzes estão acesas, nesta fotografia.","Ao anoitecer com céu limpo, numa zona residencial, as luzes das casas estão acesas.",0.6931,0.33
+céu_limpo anoitecer zona_residencial,"Ao anoitecer com céu limpo, numa zona residencial, as luzes estão acesas, nesta fotografia.","Ao anoitecer com céu limpo, numa zona residencial, as luzes das casas estão acesas.",0.6931,0.33
+passadeira semáforo sinal_de_passadeira,Um sinal de passadeira está próximo a um semáforo nesta fotografia.,Um sinal de passadeira está próximo a um semáforo.,0.6913,0.33
+chuva amanhecer túnel,"Ao amanhecer com chuva, num túnel, a entrada está molhada e as luzes acesas, nesta fotografia.","Ao amanhecer com chuva, num túnel, a entrada está molhada e molhada.",0.6475,0.33
+passadeira sinal_de_stop túnel,Um sinal de stop e uma passadeira estão presentes perto do túnel.,Um sinal de stop e uma passadeira estão no túnel.,0.6407,0.33
+vento dia cidade,"Durante o dia com vento, numa cidade, um pedestre está na rua, nesta imagem.","Durante o dia com vento, numa cidade, pedestres estão na rua, nesta imagem.",0.6207,0.33
+vento dia cidade,"Durante o dia com vento, numa cidade, um pedestre está na rua, nesta imagem.","Durante o dia com vento, numa cidade, pedestres estão na rua, nesta imagem.",0.6207,0.33
+céu_limpo dia autoestrada,"Durante o dia com céu limpo, numa autoestrada, o asfalto está visível, nesta imagem.","Durante o dia com céu limpo, numa autoestrada, o tráfego está visível.",0.6173,0.33
+nublado amanhecer túnel,"Ao amanhecer com céu nublado, num túnel, a entrada é visível e as luzes estão acesas, nesta fotografia.","Ao amanhecer nublado, num túnel, a entrada é visível e as luzes estão acesas no interior.",0.6149,0.33
+céu_limpo noite autoestrada,"Durante a noite com céu limpo, numa autoestrada, a lua é visível.","Durante a noite com céu limpo, numa autoestrada, estrelas podem estar visíveis.",0.6132,0.33
+nublado dia zona_residencial,"Durante o dia com céu nublado, numa zona residencial, pedestres estão na rua, nesta fotografia.","Durante o dia com céu nublado, numa zona residencial, um pedestre está na rua, nesta imagem.",0.6026,0.33
+céu_limpo dia autoestrada,"Durante o dia com céu limpo, numa autoestrada, o sol é visível, nesta imagem.","Durante o dia com céu limpo, numa autoestrada, o tráfego está visível.",0.6013,0.33
+nublado anoitecer zona_residencial,"Ao anoitecer com céu nublado, numa zona residencial, as luzes das casas estão acesas, nesta imagem.","Ao anoitecer com céu nublado, numa zona residencial, as luzes estão acesas.",0.5922,0.33
+nublado anoitecer zona_residencial,"Ao anoitecer com céu nublado, numa zona residencial, as luzes das casas estão acesas, nesta imagem.","Ao anoitecer com céu nublado, numa zona residencial, as luzes estão acesas.",0.5922,0.33
+nublado anoitecer zona_residencial,"Ao anoitecer nublado, numa zona residencial, as luzes estão acesas, nesta fotografia.","Ao anoitecer com céu nublado, numa zona residencial, as luzes estão acesas.",0.5707,0.33
+céu_limpo noite autoestrada,"Numa autoestrada, durante a noite com céu limpo, estrelas podem estar visíveis.","Durante a noite com céu limpo, numa autoestrada, estrelas podem estar visíveis.",0.5452,0.33
+vento dia cidade,"Durante o dia com vento, numa cidade, pedestres estão na rua e o céu é visível, nesta imagem.","Durante o dia com vento, numa cidade, pedestres estão na rua, nesta imagem.",0.5385,0.33
+passadeira amanhecer parque_de_estacionamento,"Ao amanhecer, um pedestre utiliza a passadeira dentro do parque de estacionamento na foto.","Ao amanhecer, um pedestre utiliza a passadeira do parque de estacionamento.",0.5342,0.33
+carro sinal_de_stop neve,Carro perto de sinal de stop com neve na foto.,Um carro perto de sinal de stop com neve.,0.5256,0.33
+céu_limpo noite autoestrada,"Durante a noite com céu limpo, numa autoestrada, faróis iluminam a estrada, na imagem.","Durante a noite com céu limpo, numa autoestrada, estrelas podem estar visíveis.",0.5191,0.33
+nublado dia cidade,"Durante o dia com céu nublado, numa cidade, há movimento normal de automóveis e pedestres.","Durante o dia com céu nublado, numa cidade, pedestres estão presentes e pedestres, nesta imagem.",0.4901,0.33
+nublado dia túnel,"Num túnel, durante o dia com céu nublado, a luz é constante no interior.","Durante o dia com céu nublado, num túnel, a luz é constante no interior, nesta imagem.",0.4689,0.33
+vento dia zona_residencial,"Numa zona residencial, durante o dia com vento, árvores estão a abanar.","Durante o dia com vento, numa zona residencial, árvores estão a abanar.",0.466,0.33
+céu_limpo dia túnel,"Durante o dia com céu limpo, num túnel, a estrutura do túnel é visível, nesta imagem.","Durante o dia com céu limpo, num túnel, a entrada e saída são visíveis e o interior está iluminado.",0.4246,0.33
+céu_limpo dia túnel,"Durante o dia com céu limpo, num túnel, a estrutura do túnel é visível, nesta imagem.","Durante o dia com céu limpo, num túnel, a entrada e saída são visíveis e o interior está iluminado.",0.4246,0.33
+céu_limpo dia autoestrada,"Durante o dia com céu limpo, sinais de stop <unk> se na autoestrada.","Durante o dia com céu limpo, numa autoestrada, o tráfego está visível.",0.3839,0.33
+chuva noite túnel,"Durante a noite com chuva, num túnel, o interior está iluminado e há reflexos no chão, nesta fotografia.","Durante a noite com chuva, num túnel, a entrada está molhada e o interior iluminado.",0.3812,0.33
+nublado dia túnel,"Durante o dia nublado, num túnel, a iluminação artificial está acesa no interior, nesta imagem.","Durante o dia com céu nublado, num túnel, a luz é constante no interior, nesta imagem.",0.3767,0.33
+céu_limpo dia autoestrada,"Numa autoestrada, durante o dia com céu limpo, o sol é visível.","Durante o dia com céu limpo, numa autoestrada, o tráfego está visível.",0.3566,0.33
+carro ciclista semáforo céu_limpo anoitecer zona_residencial,"Zona residencial, anoitecer, céu limpo: Carro estacionado, ciclista passa, semáforo fica vermelho.","Zona residencial, anoitecer, céu limpo: ciclista carro passa,",0.3411,0.33
+autocarro camiões peão neve dia parque_de_estacionamento,"Parque de estacionamento durante o dia com neve: Camiões parados, autocarro manobra, peão presente.","No parque de estacionamento durante o dia com neve, um autocarro e um autocarro está na via.",0.2928,0.33
+neve dia cidade,"Durante o dia com neve, na cidade, pedestres caminham pela calçada.","Durante o dia com neve, numa cidade, há lama nas ruas e pedestres na calçada.",0.285,0.33
+céu_limpo dia túnel,"Num túnel, durante o dia com céu limpo, o interior está iluminado e a saída é visível.","Durante o dia com céu limpo, num túnel, a entrada e saída são visíveis e o interior está iluminado.",0.2805,0.33
+chuva noite parque_de_estacionamento,"À noite com chuva, no parque de estacionamento, o piso reflete a iluminação nesta fotografia.","Durante a noite com chuva, num parque de estacionamento, o chão está molhado e luzes estão acesas.",0.2141,0.33
+sinal_de_limite_de_velocidade noite cidade,Sinal de limite de velocidade à noite na cidade na fotografia.,"Na cidade, um sinal de limite de velocidade está na cidade durante a noite.",0.2114,0.33
+céu_limpo anoitecer zona_residencial,"Numa zona residencial, ao anoitecer com céu limpo, o céu está visível.","Ao anoitecer com céu limpo, numa zona residencial, as luzes das casas estão acesas.",0.2114,0.33
+chuva amanhecer túnel,"Num túnel, ao amanhecer com chuva, a entrada está escura e molhada.","Ao amanhecer com chuva, num túnel, a entrada está molhada e molhada.",0.2083,0.33
+chuva noite túnel,"Num túnel, durante a noite com chuva, o interior está iluminado e há reflexos no chão.","Durante a noite com chuva, num túnel, a entrada está molhada e o interior iluminado.",0.2026,0.33
+passadeira sinal_de_passadeira cidade,Sinal de passadeira na cidade na imagem.,Um sinal de passadeira na cidade.,0.1979,0.33
+céu_limpo amanhecer cidade,"Numa cidade, ao amanhecer com céu limpo, os primeiros raios de sol são visíveis.","Ao amanhecer com céu limpo, numa cidade, pedestres estão na rua, nesta imagem.",0.1893,0.33
+camiões neve parque_de_estacionamento,Camiões com neve num parque de estacionamento.,Camiões com neve em parque de estacionamento na imagem.,0.1817,0.33
+camiões vento parque_de_estacionamento,Camiões com vento num parque de estacionamento.,Camiões com vento em parque de estacionamento na imagem.,0.1817,0.33
+autocarro peões passadeira neve dia zona_residencial,"Numa zona residencial, durante o dia com neve, um autocarro está parado perto de peões e de uma passadeira <unk>","Peões atravessam na passadeira com neve, na zona residencial durante o dia com neve.",0.1431,0.33
+passadeira amanhecer cidade,Sinais de passadeira estão na cidade ao amanhecer.,"Na cidade, ao amanhecer, sinais de passadeira estão presentes na imagem.",0.1319,0.33
+neve dia cidade,"Numa cidade, durante o dia com neve derretida, o chão está molhado e há neve nas bermas.","Durante o dia com neve, numa cidade, há lama nas ruas e pedestres na calçada.",0.0908,0.33
+passadeira sinal_de_passadeira autoestrada,Sinal de passadeira em autoestrada na imagem.,Um sinal de passadeira está na autoestrada.,0.0907,0.33
+passadeira sinal_de_passadeira parque_de_estacionamento,Sinal de passadeira em parque de estacionamento na imagem.,Um sinal de passadeira num parque de estacionamento.,0.0889,0.33
+chuva amanhecer parque_de_estacionamento,"No parque de estacionamento, chuva cai durante o amanhecer.","Ao amanhecer com chuva, num parque de estacionamento, o chão está molhado e carros estão estacionados.",0.0844,0.33
+vento anoitecer cidade,Há vento na cidade ao anoitecer.,"Na cidade, o vento é perceptível ao anoitecer.",0.0788,0.33
+sinal_de_stop dia zona_residencial,"Sinal de stop na zona residencial, dia chuvoso.","Durante o dia com chuva, numa zona residencial, um pedestre está na zona residencial.",0.0584,0.33
+camiões céu_limpo autoestrada,Camiões circulam na autoestrada com céu limpo.,"Na autoestrada, com céu limpo, numa autoestrada, camiões estão na via.",0.0574,0.33
+semáforos noite túnel,"À noite, semáforos iluminam o interior do túnel.","No túnel, à noite, semáforos estão operacionais, como mostra esta imagem.",0.0519,0.33
+vento noite parque_de_estacionamento,"Parque de estacionamento, noite, vento: <unk> do vento a <unk>","Durante a noite com vento, num parque de estacionamento, está vazio e iluminado.",0.049,0.33
+nevoeiro amanhecer zona_residencial,Amanhecer com nevoeiro numa zona residencial.,"Ao amanhecer com nevoeiro, numa zona residencial, a visibilidade está reduzida e faróis dos",0.0457,0.33
+neve dia autoestrada,Neve está na autoestrada durante o dia.,"Durante o dia, a autoestrada na fotografia está coberta de neve.",0.0305,0.33
+neve dia autoestrada,Neve está na autoestrada durante o dia.,"Durante o dia, a autoestrada na fotografia está coberta de neve.",0.0305,0.33
+peões dia zona_residencial,Peões estão na calçada da zona residencial durante o dia.,Peões atravessam na zona residencial; é dia e o céu está limpo.,0.0283,0.33
+semáforos noite túnel,"À noite, a iluminação dos semáforos é visível no túnel.","No túnel, à noite, semáforos estão operacionais, como mostra esta imagem.",0.0257,0.33
+semáforos noite túnel,Semáforos estão no túnel à noite.,"No túnel, à noite, semáforos estão operacionais, como mostra esta imagem.",0.0257,0.33
+nublado amanhecer cidade,"Ao amanhecer, o céu nublado cobre a cidade nesta imagem.","Ao amanhecer nublado, numa cidade, um pedestre está na rua, nesta fotografia.",0.0238,0.33
+céu_limpo anoitecer zona_residencial,"Zona residencial, anoitecer, céu limpo: <unk> de estrelas <unk>","Ao anoitecer com céu limpo, numa zona residencial, as luzes das casas estão acesas.",0.0209,0.33
+autocarro peões passadeira neve dia zona_residencial,"Zona residencial, dia, neve: Autocarro <unk> peões caminham com <unk> passadeira <unk>","Peões atravessam na passadeira com neve, na zona residencial durante o dia com neve.",0.0209,0.33
+nevoeiro noite autoestrada,"Autoestrada, noite, nevoeiro denso: <unk> na berma pode ser <unk>","Durante a noite com nevoeiro, numa autoestrada, faróis são visíveis na névoa.",0.02,0.33
+ciclistas passadeira autoestrada,Ciclistas a andar na passadeira ao pôr do sol numa autoestrada.,Ciclistas numa passadeira na imagem.,0.0194,0.33
+carros peão passadeira chuva amanhecer zona_residencial,"Zona residencial, amanhecer, chuva forte: <unk> carros, peão com guarda-chuva na passadeira.","Ao amanhecer com chuva, numa zona residencial, um peão está na via perto de um peão está na calçada.",0.0192,0.33
+camião nevoeiro zona_residencial,Camião sob nevoeiro em zona residencial na fotografia.,"Na zona residencial, com nevoeiro, um camião está na via perto de um sinal de limite.",0.0187,0.33
+camião noite túnel,"Camião no túnel à noite, vê-se sinalização.","Durante a noite, um camião passa por um sinal de limite de velocidade.",0.0187,0.33
+nublado dia cidade,"Cidade, dia, céu nublado: Dia <unk> movimento <unk>","Durante o dia com céu nublado, numa cidade, pedestres estão presentes e pedestres, nesta imagem.",0.0166,0.33
+neve dia cidade,"Cidade, dia, neve a cair: Flocos <unk> trânsito <unk>","Durante o dia com neve, numa cidade, há lama nas ruas e pedestres na calçada.",0,0.33
+carro autocarro camião peões ciclistas dia cidade,"Um carro, um autocarro, um camião, peões e ciclistas estão na cidade durante o dia.","Um carro, um autocarro e um autocarro estão presentes e um semáforo na cidade durante o dia.",0.3101,0.29
+carros autocarro peões passadeira semáforo dia cidade,"Na cidade, durante o dia chuvoso, peões usam a passadeira, carros esperam no semáforo, um autocarro <unk>","Na cidade, durante o dia com céu limpo, peões estão perto de um semáforo.",0.2334,0.29
+peões passadeira semáforo chuva vento noite zona_residencial,"Na zona residencial, à noite com chuva e vento, peões utilizam a passadeira iluminada por um semáforo.",Peões atravessam na zona residencial à noite com chuva e o dia com vento.,0.2246,0.29
+carro sinal_de_stop noite parque_de_estacionamento,"À noite, no parque de estacionamento, um carro está parado antes do sinal de stop, nesta imagem.","À noite, no parque de estacionamento, um carro está parado antes do sinal de stop nesta imagem.",0.8482,0.25
+carro sinal_de_limite_de_velocidade noite túnel,"À noite, dentro do túnel, um carro circula perto de um sinal de limite de velocidade, nesta fotografia.","À noite, dentro do túnel, um carro circula perto de um sinal de limite de velocidade.",0.8213,0.25
+passadeiras céu_limpo dia cidade,"Durante o dia com céu limpo, numa cidade, pedestres estão nas passadeiras, nesta fotografia.","Durante o dia com céu limpo, numa cidade, pedestres estão nas passadeiras.",0.7649,0.25
+carros vento amanhecer cidade,"Ao amanhecer com vento, numa cidade, há pouco movimento de carros, nesta fotografia.","Ao amanhecer com vento, numa cidade, há pouco movimento de carros.",0.7447,0.25
+sinal_de_stop nevoeiro amanhecer cidade,"Ao amanhecer com nevoeiro, na cidade, um sinal de stop está presente, como visto nesta imagem.","Ao amanhecer com nevoeiro, na cidade, um sinal de stop está presente.",0.6475,0.25
+carro sinal_de_limite_de_velocidade noite túnel,"À noite, dentro do túnel, um carro circula adjacente a um sinal de limite de velocidade na foto.","À noite, dentro do túnel, um carro circula perto de um sinal de limite de velocidade.",0.5947,0.25
+passadeira chuva dia zona_residencial,"Durante o dia com chuva, numa zona residencial, um pedestre está na passadeira.","Durante o dia com chuva, numa zona residencial, um pedestre com guarda-chuva está na passadeira, nesta fotografia.",0.5857,0.25
+carro sinal_de_stop noite parque_de_estacionamento,"À noite, no parque de estacionamento, um carro está parado no sinal de stop.","À noite, no parque de estacionamento, um carro está parado antes do sinal de stop nesta imagem.",0.5857,0.25
+camiões neve noite parque_de_estacionamento,"Camiões estão no parque de estacionamento à noite, com neve a cair.",Camiões estão no parque de estacionamento à noite com neve.,0.5409,0.25
+carro sinal_de_stop dia túnel,Um carro aproxima-se do sinal de stop no túnel; é dia e o céu está limpo.,Um carro aproxima-se do sinal de stop no túnel; está limpo.,0.5403,0.25
+peões passadeira noite zona_residencial,"À noite, peões atravessam na passadeira da zona residencial.",Peões atravessam na passadeira da zona residencial à noite.,0.4463,0.25
+peões passadeira noite zona_residencial,"À noite, peões atravessam na passadeira da zona residencial.",Peões atravessam na passadeira da zona residencial à noite.,0.4463,0.25
+carro passadeira céu_limpo zona_residencial,Carro numa passadeira sob céu limpo em zona residencial na fotografia.,Carro numa passadeira com céu limpo na zona residencial na fotografia.,0.3782,0.25
+camião sinal_de_limite_de_velocidade noite túnel,"Dentro de um túnel, durante a noite, um camião circula perto de um sinal de limite de velocidade iluminado.","Durante a noite, um camião passa por um sinal de limite de velocidade no túnel.",0.3769,0.25
+peões semáforo noite zona_residencial,Peões esperam no semáforo da zona residencial à noite enquanto chove.,Peões atravessam na zona residencial à noite perto de um semáforo.,0.2481,0.25
+peões semáforo noite zona_residencial,Peões esperam num semáforo de uma zona residencial à noite enquanto chove.,Peões atravessam na zona residencial à noite perto de um semáforo.,0.2371,0.25
+carro sinal_de_stop noite parque_de_estacionamento,Um carro aproxima-se do sinal de stop no parque de estacionamento à noite.,"À noite, no parque de estacionamento, um carro está parado antes do sinal de stop nesta imagem.",0.2141,0.25
+ciclistas vento anoitecer zona_residencial,"Há vento numa zona residencial ao anoitecer, ciclistas circulam.",Ciclistas com vento na zona residencial ao anoitecer.,0.1565,0.25
+camiões nublado dia parque_de_estacionamento,Camiões circulam no parque de estacionamento durante o dia com céu nublado.,"Camiões e o dia nublado, no parque de estacionamento, automóveis estão estacionados.",0.1393,0.25
+passadeira céu_limpo amanhecer autoestrada,Passadeira visível na autoestrada ao amanhecer com céu limpo.,"Ao amanhecer com céu limpo, numa autoestrada, o nascer do sol é visível na fotografia.",0.1055,0.25
+ciclistas neve anoitecer zona_residencial,"Na zona residencial, ao anoitecer com neve, ciclistas são <unk>",Ciclistas com neve ao zona residencial ao anoitecer.,0.0293,0.25
+carro peão ciclista passadeira semáforo nevoeiro amanhecer cidade,"Na cidade, ao amanhecer com nevoeiro, um carro está parado no semáforo, um peão está na passadeira e um ciclista aproxima-se.","Cidade, amanhecer, nevoeiro: Ciclista no ciclista espera no semáforo da passadeira,",0.0103,0.25
+carros sinal_de_limite_de_velocidade chuva dia túnel,"Túnel, dia, chuva: Carros com luzes acesas, sinal de limite de velocidade visível.","Num túnel, durante o dia com chuva, um sinal de limite de velocidade.",0.2045,0.2
+autocarros céu_limpo,Autocarros com céu limpo na foto.,Autocarros com céu limpo na foto.,1.0,0.0
+sinal_de_limite_de_velocidade noite túnel,"À noite, um sinal de limite de velocidade é visível no túnel.","À noite, um sinal de limite de velocidade ilumina o interior do túnel.",0.5761,0.0
+sinal_de_limite_de_velocidade cidade,Um sinal de limite de velocidade está instalado na cidade.,"Na cidade, um sinal de limite de velocidade está na cidade.",0.5193,0.0
+sinal_de_stop autoestrada,Sinal de stop na autoestrada.,Um sinal de stop na autoestrada.,0.5081,0.0
+camiões,Camiões estão na via.,Camiões estão na imagem.,0.4315,0.0
+passadeira sinal_de_stop parque_de_estacionamento,Um sinal de stop está localizado perto de uma passadeira no parque de estacionamento.,Um sinal de stop está no parque de estacionamento.,0.429,0.0
+sinal_de_limite_de_velocidade noite,Sinal de limite de velocidade à noite na fotografia.,"À noite, um sinal de limite de velocidade à noite.",0.3928,0.0
+sinal_de_stop,Um sinal de stop perto de um <unk>,Um sinal de stop é visível na imagem.,0.3457,0.0
+sinal_de_limite_de_velocidade noite túnel,Um sinal de limite de velocidade é visível no túnel à noite.,"À noite, um sinal de limite de velocidade ilumina o interior do túnel.",0.2892,0.0
+sinal_de_limite_de_velocidade zona_residencial,Sinal de limite de velocidade em zona residencial na fotografia.,"Na zona residencial, um sinal de limite de velocidade está na",0.2597,0.0
+peões céu_limpo,Peões sob céu limpo na imagem.,Peões com céu limpo na foto.,0.2512,0.0
+ciclistas cidade,Ciclistas circulam na cidade.,"Na cidade, o circulam na cidade.",0.2338,0.0
+nublado,O céu apresenta-se nublado.,O céu está nublado.,0.1862,0.0
+amanhecer zona_residencial,O céu está limpo na zona residencial ao amanhecer.,"Ao zona residencial, o céu está limpo e a via na zona residencial.",0.1224,0.0
+peões amanhecer,Peões ao amanhecer na fotografia.,Peões com o céu nublado na fotografia.,0.0907,0.0
+passadeiras neve zona_residencial,"Na zona residencial, passadeiras estão cobertas pela neve.",Cobertas na zona residencial estão cobertas de neve.,0.0847,0.0
+semáforo zona_residencial,Semáforo em zona residencial na imagem.,Semáforo zona residencial durante o céu está limpo.,0.0788,0.0
+passadeiras semáforos,Semáforos e passadeiras estão juntos.,Na estão presentes na zona residencial.,0.0376,0.0
+camiões,Camiões com o céu cheio de nuvens.,Camiões estão na imagem.,0.0288,0.0
+zona_residencial,A área retratada é uma zona residencial.,"Na zona residencial, é dia e um pedestre está na calçada.",0.0257,0.0
+nublado cidade,Chove na cidade e o céu está nublado.,"Na cidade, chove sob um céu nublado, como visto na fotografia.",0.0257,0.0
+zona_residencial,Pedestres são vistos a caminhar na zona residencial.,"Na zona residencial, é dia e um pedestre está na calçada.",0.0257,0.0
+neve autoestrada,Neve cobre a autoestrada.,"Na autoestrada, ao anoitecer com neve, a estrada está visível.",0.0235,0.0
+zona_residencial,Um sinal de velocidade numa zona residencial.,"Na zona residencial, é dia e um pedestre está na calçada.",0.0216,0.0
+peões,<unk> peões.,Peões estão parados na,0,0.0
+cidade,No <unk> da cidade.,"Na cidade, o céu está de limite de velocidade são visíveis.",0,0.0
