@@ -1,4 +1,4 @@
-import generateDescriptionRequest from "@/app/types/GenerateDescriptionRequest";
+import GenerateDescriptionRequest from "@/app/types/GenerateDescriptionRequest";
 import Message from "@/app/types/Message";
 
 export type ImageAnalysisResult = {
@@ -283,7 +283,7 @@ export async function answerQuizQuestion(
 }
 
 export async function generateDescriptionSeq2seq(
-  request: generateDescriptionRequest
+  request: GenerateDescriptionRequest
 ) {
   try {
     const response = await fetch(`/api/proxy/description/generate/seq2seq`, {
@@ -291,7 +291,7 @@ export async function generateDescriptionSeq2seq(
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ request }),
+      body: JSON.stringify(request),
     });
 
     if (!response.ok) {

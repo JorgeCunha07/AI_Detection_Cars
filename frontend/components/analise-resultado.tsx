@@ -11,6 +11,7 @@ import {
   type ImageAnalysisResult,
 } from "@/lib/api-service";
 import { DescriptionGenerator } from "./description-generator";
+import { translateLabel } from "@/lib/utils";
 
 interface AnaliseResultadoProps {
   imageUrl: string | null;
@@ -190,12 +191,12 @@ export function AnaliseResultado({
               />
               <div className="mt-4">
                 <h4 className="font-semibold text-blue-600 mb-2">
-                  Elementos detectados:
+                  Elementos detetados:
                 </h4>
                 <ul className="list-disc pl-5 space-y-1">
                   {dataset1Result.labels.map((label, index) => (
                     <li key={index}>
-                      {label}{" "}
+                      {translateLabel(label)}{" "}
                       {dataset1Result.counts && dataset1Result.counts[label] > 1
                         ? `(${dataset1Result.counts[label]})`
                         : ""}
@@ -218,12 +219,12 @@ export function AnaliseResultado({
               />
               <div className="mt-4">
                 <h4 className="font-semibold text-blue-600 mb-2">
-                  Elementos detectados:
+                  Elementos detetados:
                 </h4>
                 <ul className="list-disc pl-5 space-y-1">
                   {dataset2Result.labels.map((label, index) => (
                     <li key={index}>
-                      {label}{" "}
+                      {translateLabel(label)}{" "}
                       {dataset2Result.counts && dataset2Result.counts[label] > 1
                         ? `(${dataset2Result.counts[label]})`
                         : ""}
@@ -234,13 +235,17 @@ export function AnaliseResultado({
             </div>
           )}
         </div>
-
-        <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-          <h3 className="text-xl font-semibold mb-4 text-blue-700">
-            Análise Combinada:
-          </h3>
-          <p>{gerarDescricaoCombinada()}</p>
-        </div>
+        <DescriptionGenerator
+          results={
+            dataset1Result && dataset2Result
+              ? [dataset1Result, dataset2Result]
+              : dataset1Result
+              ? [dataset1Result]
+              : dataset2Result
+              ? [dataset2Result]
+              : []
+          }
+        />
       </div>
     );
   }
@@ -278,15 +283,15 @@ export function AnaliseResultado({
           <h3 className="text-xl font-semibold mb-4 text-blue-700">
             Análise da Situação:
           </h3>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div>
             <div>
               <h4 className="font-semibold text-blue-600 mb-2">
-                Elementos detectados:
+                Elementos detetados:
               </h4>
               <ul className="list-disc pl-5 space-y-1">
                 {defaultResult.labels.map((label, index) => (
                   <li key={index}>
-                    {label}{" "}
+                    {translateLabel(label)}{" "}
                     {defaultResult.counts && defaultResult.counts[label] > 1
                       ? `(${defaultResult.counts[label]})`
                       : ""}
@@ -294,11 +299,11 @@ export function AnaliseResultado({
                 ))}
               </ul>
             </div>
-            {defaultResult.labels && defaultResult.labels.length > 0 && (
-              <DescriptionGenerator />
-            )}
           </div>
         </div>
+        {defaultResult.labels && defaultResult.labels.length > 0 && (
+          <DescriptionGenerator results={[defaultResult]} />
+        )}
       </div>
     );
   }
