@@ -1,5 +1,5 @@
 import json
-
+import re
 from pathlib import Path
 from sentence_transformers import SentenceTransformer, util
 
@@ -18,25 +18,38 @@ with open(artigos_path, encoding="utf-8") as f:
 textos = [artigo["text"] for artigo in artigos_json]
 referencias = [artigo["reference"] for artigo in artigos_json]
 
-# Pré-computar os embeddings
+# Pré-computar os embeddings dos textos
 embeddings = model.encode(textos, convert_to_tensor=True)
 
-# Função de pesquisa
-def pesquisar_artigo(pergunta):
-    pergunta_lower = pergunta.lower().strip()
-    
-    # Tenta encontrar "artigo x" diretamente no campo "article"
-    for i, artigo in enumerate(artigos_json):
-        if artigo["article"].lower() in pergunta_lower:
-            return {
-                "pergunta": pergunta,
-                "artigo_encontrado": artigo["reference"],
-                "conteudo": artigo["text"],
-                "score_similaridade": 1.0,
-                "metodo": "match direto"
-            }
+def extrair_numero(texto):
+    """
+    Extrai e retorna o primeiro número encontrado no texto.
+    Se nenhum número for encontrado, retorna None.
+    """
+    match = re.search(r'\d+', texto)
+    if match:
+        return int(match.group())
+    return None
 
-    # Se falhar, usa pesquisa semântica
+def pesquisar_artigo(pergunta):
+    pergunta_normalizada = pergunta.lower().strip()
+    # Tenta extrair um número da consulta (ex.: de "artigo 123", extrai 123)
+    numero_query = extrair_numero(pergunta_normalizada)
+    
+    # Busca de match direto: percorre os artigos extraindo o número de cada campo "article"
+    if numero_query is not None:
+        for artigo in artigos_json:
+            numero_artigo = extrair_numero(artigo["article"].lower())
+            if numero_artigo == numero_query:
+                return {
+                    "pergunta": pergunta,
+                    "artigo_encontrado": artigo["reference"],
+                    "conteudo": artigo["text"],
+                    "score_similaridade": 1.0,
+                    "metodo": "match direto - normalizado"
+                }
+    
+    # Se não encontrar match direto, utiliza a pesquisa semântica
     emb_pergunta = model.encode(pergunta, convert_to_tensor=True)
     similaridades = util.cos_sim(emb_pergunta, embeddings)[0]
     idx = int(similaridades.argmax())
@@ -47,3 +60,8 @@ def pesquisar_artigo(pergunta):
         "score_similaridade": float(similaridades[idx]),
         "metodo": "semantico"
     }
+
+# Exemplo de uso
+#consulta = "artigo 123"
+#resultado = pesquisar_artigo(consulta)
+#print(resultado)
