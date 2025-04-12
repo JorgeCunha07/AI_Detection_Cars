@@ -240,7 +240,8 @@ export async function getNextQuizQuestion(): Promise<Message[]> {
 
 export async function answerQuizQuestion(
   question: string,
-  answer: string
+  answer: string,
+  metodo: string
 ): Promise<Message> {
   try {
     const response = await fetch(`/api/proxy/chatbot/quiz/responder`, {
@@ -251,6 +252,7 @@ export async function answerQuizQuestion(
       body: JSON.stringify({
         pergunta: question,
         resposta: answer,
+        metodo: metodo
       }),
     });
 

@@ -29,7 +29,7 @@ def similaridade_basica(a, b):
     return SequenceMatcher(None, a, b).ratio()
 
 # Função principal para validação da resposta
-def validar_resposta(pergunta, resposta_usuario, metodo_semantico="sbert"):
+def validar_resposta(pergunta, resposta_usuario, metodo_semantico):
     pergunta_limpa = limpar_texto(pergunta)
     resposta_limpa = limpar_texto(resposta_usuario)
 
