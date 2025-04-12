@@ -11,6 +11,10 @@ import {
   type ImageAnalysisResult,
 } from "@/lib/api-service";
 import { DescriptionGenerator } from "./description-generator";
+import { translateLabel } from "@/lib/utils";
+import Tabs from "./Tabs";
+import { ChatAssistente } from "./chat-assistente";
+import Message from "@/app/types/Message";
 
 interface AnaliseResultadoProps {
   imageUrl: string | null;
@@ -41,6 +45,22 @@ export function AnaliseResultado({
     useState<ImageAnalysisResult | null>(null);
   const [defaultResult, setDefaultResult] =
     useState<ImageAnalysisResult | null>(null);
+
+  const tabs = [
+    { id: "conversa", label: "Conversa" },
+    { id: "quiz", label: "Quiz" },
+    { id: "pesquisa", label: "Pesquisa" },
+  ];
+
+  const initialMessages: Message[] = [
+    { id: "1", content: "Bem-vindo ao chat!", role: "assistant" },
+    {
+      id: "2",
+      content: "Bem-vindo ao quiz!\nPara começar, escreva 'começar'",
+      role: "assistant",
+    },
+    { id: "3", content: "Bem-vindo à pesquisa!", role: "assistant" },
+  ];
 
   useEffect(() => {
     async function fetchAnalysis() {
@@ -190,12 +210,12 @@ export function AnaliseResultado({
               />
               <div className="mt-4">
                 <h4 className="font-semibold text-blue-600 mb-2">
-                  Elementos detectados:
+                  Elementos detetados:
                 </h4>
                 <ul className="list-disc pl-5 space-y-1">
                   {dataset1Result.labels.map((label, index) => (
                     <li key={index}>
-                      {label}{" "}
+                      {translateLabel(label)}{" "}
                       {dataset1Result.counts && dataset1Result.counts[label] > 1
                         ? `(${dataset1Result.counts[label]})`
                         : ""}
@@ -218,12 +238,12 @@ export function AnaliseResultado({
               />
               <div className="mt-4">
                 <h4 className="font-semibold text-blue-600 mb-2">
-                  Elementos detectados:
+                  Elementos detetados:
                 </h4>
                 <ul className="list-disc pl-5 space-y-1">
                   {dataset2Result.labels.map((label, index) => (
                     <li key={index}>
-                      {label}{" "}
+                      {translateLabel(label)}{" "}
                       {dataset2Result.counts && dataset2Result.counts[label] > 1
                         ? `(${dataset2Result.counts[label]})`
                         : ""}
@@ -234,13 +254,32 @@ export function AnaliseResultado({
             </div>
           )}
         </div>
-
-        <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-          <h3 className="text-xl font-semibold mb-4 text-blue-700">
-            Análise Combinada:
-          </h3>
-          <p>{gerarDescricaoCombinada()}</p>
-        </div>
+        <DescriptionGenerator
+          results={
+            dataset1Result && dataset2Result
+              ? [dataset1Result, dataset2Result]
+              : dataset1Result
+              ? [dataset1Result]
+              : dataset2Result
+              ? [dataset2Result]
+              : []
+          }
+        />
+        {/* Componente de Chat */}
+        <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 mb-4">
+          Tire as suas dúvidas sobre esta situação:
+        </h3>
+        <Tabs tabs={tabs}>
+          <ChatAssistente
+            initialMessages={[initialMessages[0]]}
+            type="conversa"
+          />
+          <ChatAssistente initialMessages={[initialMessages[1]]} type="quiz" />
+          <ChatAssistente
+            initialMessages={[initialMessages[2]]}
+            type="pesquisa"
+          />
+        </Tabs>
       </div>
     );
   }
@@ -278,15 +317,15 @@ export function AnaliseResultado({
           <h3 className="text-xl font-semibold mb-4 text-blue-700">
             Análise da Situação:
           </h3>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div>
             <div>
               <h4 className="font-semibold text-blue-600 mb-2">
-                Elementos detectados:
+                Elementos detetados:
               </h4>
               <ul className="list-disc pl-5 space-y-1">
                 {defaultResult.labels.map((label, index) => (
                   <li key={index}>
-                    {label}{" "}
+                    {translateLabel(label)}{" "}
                     {defaultResult.counts && defaultResult.counts[label] > 1
                       ? `(${defaultResult.counts[label]})`
                       : ""}
@@ -294,11 +333,27 @@ export function AnaliseResultado({
                 ))}
               </ul>
             </div>
-            {defaultResult.labels && defaultResult.labels.length > 0 && (
-              <DescriptionGenerator />
-            )}
           </div>
         </div>
+        {defaultResult.labels && defaultResult.labels.length > 0 && (
+          <DescriptionGenerator results={[defaultResult]} />
+        )}
+
+        {/* Componente de Chat */}
+        <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 mb-4">
+          Tire as suas dúvidas sobre esta situação:
+        </h3>
+        <Tabs tabs={tabs}>
+          <ChatAssistente
+            initialMessages={[initialMessages[0]]}
+            type="conversa"
+          />
+          <ChatAssistente initialMessages={[initialMessages[1]]} type="quiz" />
+          <ChatAssistente
+            initialMessages={[initialMessages[2]]}
+            type="pesquisa"
+          />
+        </Tabs>
       </div>
     );
   }
