@@ -24,18 +24,6 @@ export default function AnalisePage() {
   const [selectedModelDataset2, setSelectedModelDataset2] =
     useState<string>("");
 
-  const tabs = [
-    { id: "conversa", label: "Conversa" },
-    { id: "quiz", label: "Quiz" },
-    { id: "pesquisa", label: "Pesquisa" },
-  ];
-
-  const initialMessages: Message[] = [
-    { id: "1", content: "Bem-vindo ao chat!", role: "assistant" },
-    { id: "2", content: "Bem-vindo ao quiz!\nPara começar, escreva 'começar'", role: "assistant" },
-    { id: "3", content: "Bem-vindo à pesquisa!", role: "assistant" },
-  ];
-
   useEffect(() => {
     // Recuperar dados do localStorage
     const storedImage = localStorage.getItem("analyzedImage");
@@ -163,25 +151,6 @@ export default function AnalisePage() {
             selectedModelDataset1={selectedModelDataset1}
             selectedModelDataset2={selectedModelDataset2}
           />
-
-          {/* Componente de Chat */}
-          <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 mb-4">
-            Tire as suas dúvidas sobre esta situação:
-          </h3>
-          <Tabs tabs={tabs}>
-            <ChatAssistente
-              initialMessages={[initialMessages[0]]}
-              type="conversa"
-            />
-            <ChatAssistente
-              initialMessages={[initialMessages[1]]}
-              type="quiz"
-            />
-            <ChatAssistente
-              initialMessages={[initialMessages[2]]}
-              type="pesquisa"
-            />
-          </Tabs>
         </CardContent>
       </Card>
     </div>

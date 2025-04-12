@@ -12,6 +12,7 @@ import {
   transformLabelsWithSpaces,
   translateLabel,
 } from "@/lib/utils";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "./ui/select";
 
 interface DescriptionGeneratorProps {
   results: ImageAnalysisResult[];
@@ -21,6 +22,9 @@ export function DescriptionGenerator({ results }: DescriptionGeneratorProps) {
   const [description, setDescription] = useState<String>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [labels, setLabels] = useState<string[]>([]);
+  const [mostrarOpcoesAvancadas, setMostrarOpcoesAvancadas] =
+    useState<boolean>(false);
+const [selectedMode, setSelectedMode] = useState<string>("topk");
 
   const mergeLabelsAnalyzed = () => {
     const labels: string[] = [];
@@ -55,8 +59,6 @@ export function DescriptionGenerator({ results }: DescriptionGeneratorProps) {
   };
 
   const generateDescription = async () => {
-    setIsLoading(true);
-
     const request: GenerateDescriptionRequest = {
       labels: labels,
       mode: "topk",
@@ -69,6 +71,8 @@ export function DescriptionGenerator({ results }: DescriptionGeneratorProps) {
   };
 
   useEffect(() => {
+    setIsLoading(true);
+
     setLabels(mergeLabelsAnalyzed());
 
     if (labels.length > 0) {
@@ -87,7 +91,51 @@ export function DescriptionGenerator({ results }: DescriptionGeneratorProps) {
         </div>
       )}
       {description && !isLoading && (
-        <p className="text-gray-700">{description}</p>
+        <>
+          <p className="text-gray-700">{description}</p>
+          <div className="flex items-center gap-2 mt-4">
+            <input
+              type="checkbox"
+              id="opcoes-avancadas"
+              checked={mostrarOpcoesAvancadas}
+              onChange={(e) => {
+                setMostrarOpcoesAvancadas(e.target.checked);
+              }}
+              className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+            />
+            <label
+              htmlFor="opcoes-avancadas"
+              className="text-sm font-medium text-gray-700"
+            >
+              Mostrar opções avançadas
+            </label>
+          </div>
+          {/* {mostrarOpcoesAvancadas && (
+            <Select
+              value={selectedModelDataset1}
+              onValueChange={setSelectedModelDataset1}
+              disabled={isLoadingModels || availableModelsDataset1.length === 0}
+            >
+              <SelectTrigger className="w-[200px]">
+                <SelectValue
+                  placeholder={
+                    isLoadingModels ? "Carregando..." : "Selecione o modelo"
+                  }
+                />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Modelo Dataset 1</SelectLabel>
+                  {availableModelsDataset1.map((model) => (
+                    <SelectItem key={model} value={model}>
+                      {model}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          )} */}
+        </>
       )}
     </div>
   );
