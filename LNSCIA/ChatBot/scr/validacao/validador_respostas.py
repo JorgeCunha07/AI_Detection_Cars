@@ -50,6 +50,7 @@ def validar_resposta(pergunta, resposta_usuario, metodo_semantico="sbert"):
 
             # Método semântico SBERT
             if metodo_semantico == "sbert":
+                print("Usando sbert para validação...")
                 emb_user = sbert_model.encode(resposta_usuario, convert_to_tensor=True)
                 emb_refs = sbert_model.encode(corretas, convert_to_tensor=True)
                 score = float(util.cos_sim(emb_user, emb_refs).max())
@@ -58,6 +59,7 @@ def validar_resposta(pergunta, resposta_usuario, metodo_semantico="sbert"):
 
             # Método semântico com Transformer (usando saída de regressão)
             elif metodo_semantico == "transformer":
+                print("Usando Transformer para validação...")
                 transformer_model.eval()
                 scores = []
                 for ref in corretas:

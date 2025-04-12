@@ -21,6 +21,7 @@ class PerguntaRequest(BaseModel):
 class RespostaQuizRequest(BaseModel):
     pergunta: str
     resposta: str
+    metodo: str
 
 
 # Endpoint: Modo conversa (chat)
@@ -52,7 +53,7 @@ def obter_pergunta():
 # Endpoint: Validar resposta ao quiz
 @router.post("/quiz/responder")
 def responder_quiz(dados: RespostaQuizRequest):
-    return validar_resposta(dados.pergunta, dados.resposta)
+    return validar_resposta(dados.pergunta, dados.resposta, dados.metodo)
 
 
 # Endpoint: Modo pesquisa (semântica)

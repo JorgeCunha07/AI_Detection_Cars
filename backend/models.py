@@ -19,7 +19,7 @@ from torchvision.models.detection.rpn import AnchorGenerator
 from torchvision.ops import MultiScaleRoIAlign
 from model_registry import build_simple_cnn_backbone
 from multi_task_model import MultiTaskModel
-from modelos_scratch import build_scratch_model
+#from modelos_scratch import build_scratch_model
 
 sys.modules['__main__'].MultiTaskModel = MultiTaskModel
 
