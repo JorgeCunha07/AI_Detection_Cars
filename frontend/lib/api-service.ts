@@ -267,6 +267,8 @@ export async function answerQuizQuestion(
       content: `${data.correto === true ? "✅ Correto\n" : "❌ Incorreto\n"}${
         data.metodo ? "\nmétodo: " + data.metodo : ""
       }${
+        typeof data.score !== 'undefined' ? "\nscore: " + data.score : ""
+      }${
         data.respostas_aceites
           ? "\nRespostas corretas:\n-" + data.respostas_aceites.join("\n-")
           : ""
@@ -283,6 +285,7 @@ export async function answerQuizQuestion(
     } as Message;
   }
 }
+
 
 export async function generateDescriptionSeq2seq(
   request: GenerateDescriptionRequest
