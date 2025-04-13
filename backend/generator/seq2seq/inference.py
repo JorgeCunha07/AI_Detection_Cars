@@ -37,7 +37,7 @@ def generate_sentence(
         mode: Literal["greedy", "topk", "beam"] = "greedy",
         topk: int = 5,
         beam_width: int = 3,
-        temperature: float = 1.0,
+        temperature: float = 1.5,
         device: str = "cuda" if torch.cuda.is_available() else "cpu",
 ) -> str:
     model.eval()

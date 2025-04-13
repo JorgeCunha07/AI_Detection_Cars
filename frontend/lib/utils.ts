@@ -121,10 +121,6 @@ export function getLabelPlural(label: string): string {
   }
 }
 
-export function filterLabelsForDescription(labels: string[]): string[] {
-  return labels.filter((label) => labelsForDescription.includes(label));
-}
-
 export function transformLabelsWithSpaces(labels: string[]): string[] {
   return labels.map((label) => label.replace(/ /g, "_"));
 }

@@ -1,4 +1,4 @@
-import { Loader2 } from "lucide-react";
+import { Loader2, RotateCw } from "lucide-react";
 import { useEffect, useState } from "react";
 import {
   generateDescriptionSeq2seq,
@@ -6,13 +6,23 @@ import {
 } from "@/lib/api-service";
 import GenerateDescriptionRequest from "@/app/types/GenerateDescriptionRequest";
 import {
-  filterLabelsForDescription,
   getLabelPlural,
   isLabelValidForDescription,
   transformLabelsWithSpaces,
   translateLabel,
 } from "@/lib/utils";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "./ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
+import { Input } from "./ui/input";
+import { Slider } from "./ui/slider";
+import { Button } from "./ui/button";
 
 interface DescriptionGeneratorProps {
   results: ImageAnalysisResult[];
@@ -24,7 +34,13 @@ export function DescriptionGenerator({ results }: DescriptionGeneratorProps) {
   const [labels, setLabels] = useState<string[]>([]);
   const [mostrarOpcoesAvancadas, setMostrarOpcoesAvancadas] =
     useState<boolean>(false);
-const [selectedMode, setSelectedMode] = useState<string>("topk");
+
+  const [selectedMode, setSelectedMode] = useState<string>("topk");
+  const [topkValue, setTopkValue] = useState<number>(5);
+  const [topkTemperature, setTopkTemperature] = useState<number[]>([1.5]);
+  const [beamWidth, setBeamWidth] = useState<number>(3);
+
+  const availableModes = ["topk", "greedy", "beam"];
 
   const mergeLabelsAnalyzed = () => {
     const labels: string[] = [];
@@ -61,9 +77,13 @@ const [selectedMode, setSelectedMode] = useState<string>("topk");
   const generateDescription = async () => {
     const request: GenerateDescriptionRequest = {
       labels: labels,
-      mode: "topk",
-      temperature: 1.5,
+      mode: selectedMode,
+      topk: topkValue,
+      beam_width: beamWidth,
+      temperature: topkTemperature[0],
     };
+
+    if (!mostrarOpcoesAvancadas) request.mode = "greedy";
 
     const apiResponse = await generateDescriptionSeq2seq(request);
     setDescription(apiResponse);
@@ -82,7 +102,9 @@ const [selectedMode, setSelectedMode] = useState<string>("topk");
 
   return (
     <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-      <h3 className="text-xl font-semibold mb-4 text-blue-700">Descrição:</h3>
+      <h3 className="text-xl font-semibold mb-4 text-blue-700">
+        Descrição para [{labels.join(", ")}]:
+      </h3>
       {isLoading && (
         <div className="flex justify-start">
           <div className="max-w-[80%] p-3 rounded-lg bg-secondary text-secondary-foreground">
@@ -110,31 +132,60 @@ const [selectedMode, setSelectedMode] = useState<string>("topk");
               Mostrar opções avançadas
             </label>
           </div>
-          {/* {mostrarOpcoesAvancadas && (
-            <Select
-              value={selectedModelDataset1}
-              onValueChange={setSelectedModelDataset1}
-              disabled={isLoadingModels || availableModelsDataset1.length === 0}
-            >
-              <SelectTrigger className="w-[200px]">
-                <SelectValue
-                  placeholder={
-                    isLoadingModels ? "Carregando..." : "Selecione o modelo"
-                  }
-                />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Modelo Dataset 1</SelectLabel>
-                  {availableModelsDataset1.map((model) => (
-                    <SelectItem key={model} value={model}>
-                      {model}
-                    </SelectItem>
-                  ))}
-                </SelectGroup>
-              </SelectContent>
-            </Select>
-          )} */}
+          {mostrarOpcoesAvancadas && (
+            <div className="mt-4 flex flex-col max-w-[200px]">
+              <Select value={selectedMode} onValueChange={setSelectedMode}>
+                <SelectTrigger className="w-[200px]">
+                  <SelectValue placeholder={"Selecione o método"} />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Modo</SelectLabel>
+                    {availableModes.map((mode) => (
+                      <SelectItem key={mode} value={mode}>
+                        {mode}
+                      </SelectItem>
+                    ))}
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+              {selectedMode === "topk" && (
+                <div className="mt-4">
+                  <p className="mt-2 text-sm">Topk number:</p>
+                  <Input
+                    value={topkValue}
+                    onChange={(e) => setTopkValue(+e.target.value)}
+                  />
+                  <div className="flex flex-row items-center mt-4">
+                    <div className="w-64">
+                      <Slider
+                        value={topkTemperature}
+                        onValueChange={setTopkTemperature}
+                        min={1.0}
+                        max={2.0}
+                        step={0.1}
+                      />
+                      <p className="mt-2 text-sm">
+                        Temperature: {topkTemperature[0]}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {selectedMode === "beam" && (
+                <div className="mt-4">
+                  <p className="mt-2 text-sm">Beam width:</p>
+                  <Input
+                    value={beamWidth}
+                    onChange={(e) => setBeamWidth(+e.target.value)}
+                  />
+                </div>
+              )}
+              <Button onClick={generateDescription} className="mt-2">
+                <RotateCw />
+              </Button>
+            </div>
+          )}
         </>
       )}
     </div>
