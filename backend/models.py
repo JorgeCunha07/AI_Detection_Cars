@@ -157,7 +157,7 @@ class DetectorDataSet1(BaseDetector):
             class_ids = [int(cls) for cls in results.boxes.cls]
             for box, cls, conf in zip(results.boxes.xyxy, class_ids, results.boxes.conf):
                 score = float(conf)
-                if score < 0.5:
+                if score < 0.2:
                     continue
                 x1, y1, x2, y2 = map(int, box.tolist())
                 label = class_map.get(cls, f"class_{cls}")
@@ -177,7 +177,7 @@ class DetectorDataSet1(BaseDetector):
             rcnn_model.eval()
             with torch.no_grad():
                 outputs = rcnn_model([image_tensor])[0]
-            min_score = 0.5
+            min_score = 0.2
             for i in range(len(outputs["boxes"])):
                 score = outputs["scores"][i].item()
                 if score >= min_score:
