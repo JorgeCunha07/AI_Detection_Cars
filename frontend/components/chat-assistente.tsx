@@ -14,6 +14,8 @@ import {
   sendChatMessage,
   sendSearchMessage,
 } from "@/lib/api-service";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 
 interface ChatAssistenteProps {
   initialMessages?: Message[];
@@ -33,6 +35,9 @@ export function ChatAssistente({
   const [selectedChatModel, setSelectedChatModel] = useState<
     string | undefined
   >();
+  const [validationMethod, setValidationMethod] = useState<
+    "sbert" | "transformer"
+  >("sbert");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInput(e.target.value);
@@ -98,7 +103,8 @@ export function ChatAssistente({
           setIsLoading(true);
           const apiResponseToQuizQuestion = await answerQuizQuestion(
             lastQuestion,
-            input
+            input,
+            validationMethod // Adicione o método como parâmetro
           ).finally(() => {
             setIsLoading(false);
           });
@@ -124,6 +130,20 @@ export function ChatAssistente({
 
   return (
     <div className="space-y-4">
+      {type === "quiz" && (
+        <div className="flex items-center space-x-2 mb-4">
+          <Switch
+            id="validation-method"
+            checked={validationMethod === "transformer"}
+            onCheckedChange={(checked) =>
+              setValidationMethod(checked ? "transformer" : "sbert")
+            }
+          />
+          <Label htmlFor="validation-method">
+            Método: {validationMethod === "sbert" ? "BERT" : "Transformer"}
+          </Label>
+        </div>
+      )}
       <MessageContainer messages={messages} isLoading={isLoading} />
       <form onSubmit={handleSubmit} className="flex space-x-2">
         <Textarea

@@ -60,7 +60,7 @@ def modo_quiz():
                     print(f"   - {r}")
                 continue  # Pergunta outra vez sem sair
 
-            resultado = validar_resposta(pergunta, resposta)
+            resultado = validar_resposta(pergunta, resposta, "transformer")
 
             if resultado.get("correto"):
                 print(f"✅ Correto! Método: {resultado.get('metodo', 'desconhecido')}\n")

@@ -19,6 +19,7 @@ from torchvision.models.detection.rpn import AnchorGenerator
 from torchvision.ops import MultiScaleRoIAlign
 from model_registry import build_simple_cnn_backbone
 from multi_task_model import MultiTaskModel
+#from modelos_scratch import build_scratch_model
 
 sys.modules['__main__'].MultiTaskModel = MultiTaskModel
 
@@ -261,54 +262,96 @@ class DetectorDataSet2(BaseDetector):
             time_map = json.load(f)
         return cat_map, weather_map, scene_map, time_map
 
-    @staticmethod
     def get_detections(model_name: str, base64_image: str):
         """
         Executa o modelo multi-tarefa do DataSet2.
         Retorna:
           - status: 200 ou dicionário de erro.
           - detection_list: lista de detecções com {"category", "score", "box"}.
-          - label_counts: dicionário com as contagens dos rótulos de detecção.
+          - label_counts: dicionário com a contagem dos rótulos de detecção.
           - global_attributes: dicionário com {"weather", "scene", "timeofday"}.
         """
         model_path = os.path.join("modelsAvailable", "2", f"{model_name}.pth")
         if not os.path.exists(model_path):
             return {"error": f"Modelo '{model_name}' não encontrado em DataSet2."}, 404, [], {}, {}
+
+        # Carrega os mappings e cria os inversos
         cat_map, weather_map, scene_map, time_map = DetectorDataSet2.load_mappings()
-        # Cria os mapeamentos inversos para converter os valores numéricos retornados pelo modelo em rótulos
         inv_cat = invert_mapping(cat_map)
         inv_weather = invert_mapping(weather_map)
         inv_scene = invert_mapping(scene_map)
         inv_time = invert_mapping(time_map)
 
         transform = transforms.Compose([transforms.ToTensor()])
-        multi_task_model = torch.load(model_path, map_location="cpu")
+
+        # Lógica para carregar o modelo
+        # Se for tradicional (e salvo completo), espera os submódulos:
+        if re.search(r"rcnn|mobilenet|vgg", model_name, re.IGNORECASE):
+            multi_task_model = torch.load(model_path, map_location="cpu")
+        # Se for YOLO, retorna erro (exemplo)
+        elif re.search(r"yolo", model_name, re.IGNORECASE):
+            return {"error": "Modelo YOLO não implementado nesta função."}, 501, [], {}, {}
+        # Se for um dos modelos scratch
+        elif re.search(r"multiscale|tinyyolo|sharedtask|attention|pyramid", model_name, re.IGNORECASE):
+            # Supondo que você salvou apenas o state dict para os scratch,
+            # instancie o modelo dinamicamente usando o modelos_scratch.
+            multi_task_model = build_scratch_model(model_name)
+            state_dict = torch.load(model_path, map_location="cpu")
+            multi_task_model.load_state_dict(state_dict)
+        else:
+            return {"error": "Tipo de modelo não reconhecido no nome."}, 404, [], {}, {}
+
         multi_task_model.eval()
+
+        # Decodifica a imagem de base64
         try:
             pil_image, temp_path = BaseDetector.decode_image(base64_image)
         except ValueError as e:
             return {"error": str(e)}, 400, [], {}, {}
+
         input_image = transform(pil_image).unsqueeze(0)
-        detection_list = []
+
         with torch.no_grad():
-            detections = multi_task_model.detection_model([input_image.squeeze(0)])
-            feats = multi_task_model.backbone(input_image)
-            pooled = multi_task_model.attr_pool(feats).view(input_image.size(0), -1)
-            weather_logits = multi_task_model.fc_weather(pooled)
-            scene_logits = multi_task_model.fc_scene(pooled)
-            time_logits = multi_task_model.fc_timeofday(pooled)
-            weather_pred = int(torch.argmax(weather_logits, dim=1).item())
-            scene_pred = int(torch.argmax(scene_logits, dim=1).item())
-            timeofday_pred = int(torch.argmax(time_logits, dim=1).item())
-            global_attributes = {
-                "weather": inv_weather.get(weather_pred, str(weather_pred)),
-                "scene": inv_scene.get(scene_pred, str(scene_pred)),
-                "timeofday": inv_time.get(timeofday_pred, str(timeofday_pred))
-            }
+            # Aqui tentamos chamar o modelo; para os tradicionais, ele pode não retornar uma tupla
+            output = multi_task_model([input_image.squeeze(0)])
+            # Se o modelo retornar uma tupla, assume-se que é um modelo scratch
+            if isinstance(output, tuple) and len(output) == 2:
+                detections, attr_out = output
+            else:
+                # Se não for uma tupla, assume que é o modelo tradicional
+                detections = multi_task_model.detection_model([input_image.squeeze(0)])
+                feats = multi_task_model.backbone(input_image)
+                pooled = multi_task_model.attr_pool(feats).view(input_image.size(0), -1)
+                weather_logits = multi_task_model.fc_weather(pooled)
+                scene_logits = multi_task_model.fc_scene(pooled)
+                time_logits = multi_task_model.fc_timeofday(pooled)
+                attr_out = {"weather": weather_logits, "scene": scene_logits, "timeofday": time_logits}
+
+            if attr_out:
+                weather_logits = attr_out.get("weather")
+                scene_logits = attr_out.get("scene")
+                time_logits = attr_out.get("timeofday")
+                weather_pred = int(torch.argmax(weather_logits, dim=1).item())
+                scene_pred = int(torch.argmax(scene_logits, dim=1).item())
+                timeofday_pred = int(torch.argmax(time_logits, dim=1).item())
+                global_attributes = {
+                    "weather": inv_weather.get(weather_pred, str(weather_pred)),
+                    "scene": inv_scene.get(scene_pred, str(scene_pred)),
+                    "timeofday": inv_time.get(timeofday_pred, str(timeofday_pred))
+                }
+            else:
+                global_attributes = {}
+
+            # Processa as detecções
             det = detections[0]
+            # Se det não for um dicionário, tenta acessar o primeiro elemento
+            if not isinstance(det, dict):
+                det = det[0]
             boxes = det["boxes"].cpu().numpy().tolist()
             labels_det = det["labels"].cpu().numpy().tolist()
-            scores = det["scores"].cpu().numpy().tolist()
+            scores = det["scores"].cpu().numpy().tolist() if "scores" in det else [1.0] * len(labels_det)
+
+            detection_list = []
             for bbox, lbl, sc in zip(boxes, labels_det, scores):
                 if sc < 0.5:
                     continue
@@ -320,10 +363,13 @@ class DetectorDataSet2(BaseDetector):
                 })
         detection_labels = [d["category"] for d in detection_list]
         label_counts = dict(Counter(detection_labels))
-        for attr in [global_attributes["weather"], global_attributes["scene"], global_attributes["timeofday"]]:
+        # Adiciona as contagens dos atributos, se disponíveis
+        for attr in global_attributes.values():
             label_counts[attr] = label_counts.get(attr, 0) + 1
+
         BaseDetector.cleanup_temp(temp_path)
         return 200, detection_list, label_counts, global_attributes
+
 
 ###########################
 # Funções para o Frontend (mantidas)

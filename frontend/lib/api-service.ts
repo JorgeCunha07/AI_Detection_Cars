@@ -240,7 +240,8 @@ export async function getNextQuizQuestion(): Promise<Message[]> {
 
 export async function answerQuizQuestion(
   question: string,
-  answer: string
+  answer: string,
+  metodo: string
 ): Promise<Message> {
   try {
     const response = await fetch(`/api/proxy/chatbot/quiz/responder`, {
@@ -251,6 +252,7 @@ export async function answerQuizQuestion(
       body: JSON.stringify({
         pergunta: question,
         resposta: answer,
+        metodo: metodo
       }),
     });
 
@@ -264,6 +266,8 @@ export async function answerQuizQuestion(
       id: (Date.now() + 1).toString(),
       content: `${data.correto === true ? "✅ Correto\n" : "❌ Incorreto\n"}${
         data.metodo ? "\nmétodo: " + data.metodo : ""
+      }${
+        typeof data.score !== 'undefined' ? "\nscore: " + data.score : ""
       }${
         data.respostas_aceites
           ? "\nRespostas corretas:\n-" + data.respostas_aceites.join("\n-")
@@ -281,6 +285,7 @@ export async function answerQuizQuestion(
     } as Message;
   }
 }
+
 
 export async function generateDescriptionSeq2seq(
   request: GenerateDescriptionRequest

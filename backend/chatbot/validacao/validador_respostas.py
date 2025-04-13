@@ -1,10 +1,10 @@
 import json
-import os
+import torch
+
 from pathlib import Path
 from difflib import SequenceMatcher
 from sentence_transformers import SentenceTransformer, util
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
-import torch
 
 # Caminho para questoes.json
 base_dir = Path(__file__).resolve().parent
@@ -29,7 +29,7 @@ def similaridade_basica(a, b):
     return SequenceMatcher(None, a, b).ratio()
 
 # Função principal para validação da resposta
-def validar_resposta(pergunta, resposta_usuario, metodo_semantico="sbert"):
+def validar_resposta(pergunta, resposta_usuario, metodo_semantico):
     pergunta_limpa = limpar_texto(pergunta)
     resposta_limpa = limpar_texto(resposta_usuario)
 
@@ -50,6 +50,7 @@ def validar_resposta(pergunta, resposta_usuario, metodo_semantico="sbert"):
 
             # Método semântico SBERT
             if metodo_semantico == "sbert":
+                print("Usando sbert para validação...")
                 emb_user = sbert_model.encode(resposta_usuario, convert_to_tensor=True)
                 emb_refs = sbert_model.encode(corretas, convert_to_tensor=True)
                 score = float(util.cos_sim(emb_user, emb_refs).max())
@@ -58,6 +59,7 @@ def validar_resposta(pergunta, resposta_usuario, metodo_semantico="sbert"):
 
             # Método semântico com Transformer (usando saída de regressão)
             elif metodo_semantico == "transformer":
+                print("Usando Transformer para validação...")
                 transformer_model.eval()
                 scores = []
                 for ref in corretas:
