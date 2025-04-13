@@ -97,6 +97,8 @@ export function translateLabel(label: string): string {
       return "semáforo";
     case "overcast":
       return "nublado";
+    case "partly cloudy":
+      return "parcialmente nublado"
     default:
       return label;
   }
