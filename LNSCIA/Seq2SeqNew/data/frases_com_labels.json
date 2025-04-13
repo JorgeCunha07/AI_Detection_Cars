@@ -22311,14 +22311,6 @@
     "description": "Na imagem, semáforos."
   },
   {
-    "labels": [],
-    "description": "Vê-se sinais de stop."
-  },
-  {
-    "labels": [],
-    "description": "Sinais de limite de velocidade na foto."
-  },
-  {
     "labels": ["passadeira"],
     "description": "Sinais de passadeira na imagem."
   },
@@ -23394,14 +23386,6 @@
     "description": "Na imagem, sinais de passadeira."
   },
   {
-    "labels": [],
-    "description": "Vê-se sinais de limite de velocidade."
-  },
-  {
-    "labels": [],
-    "description": "Sinais de stop na foto."
-  },
-  {
     "labels": ["passadeira"],
     "description": "Passadeira e céu azul na fotografia."
   },
@@ -23816,14 +23800,6 @@
   {
     "labels": ["passadeiras", "nublado", "anoitecer", "cidade"],
     "description": "Passadeiras ao anoitecer com céu nublado numa cidade na imagem."
-  },
-  {
-    "labels": [],
-    "description": "Foto de sinais de limite de velocidade."
-  },
-  {
-    "labels": [],
-    "description": "Na imagem, sinais de stop."
   },
   {
     "labels": ["passadeiras"],
@@ -24241,10 +24217,6 @@
     "description": "A fotografia ilustra semáforos."
   },
   {
-    "labels": [],
-    "description": "Na imagem, sinais de trânsito."
-  },
-  {
     "labels": ["vento"],
     "description": "O tempo está com vento nesta cena."
   },
@@ -24301,10 +24273,6 @@
     "description": "A fotografia foi captada ao anoitecer."
   },
   {
-    "labels": [],
-    "description": "A fotografia ilustra sinais de trânsito."
-  },
-  {
     "labels": ["passadeiras"],
     "description": "Na imagem, observam-se passadeiras."
   },
@@ -24357,10 +24325,6 @@
     "description": "A imagem exibe passadeiras."
   },
   {
-    "labels": [],
-    "description": "O céu apresenta-se limpo."
-  },
-  {
     "labels": ["dia"],
     "description": "A fotografia foi captada durante o dia."
   },
@@ -24383,10 +24347,6 @@
   {
     "labels": ["parque_de_estacionamento"],
     "description": "Esta imagem mostra um parque de estacionamento."
-  },
-  {
-    "labels": [],
-    "description": "A fotografia apresenta sinais de trânsito."
   },
   {
     "labels": ["passadeira", "sinal_de_passadeira"],
@@ -24453,10 +24413,6 @@
     "description": "A cena decorre num parque de estacionamento."
   },
   {
-    "labels": [],
-    "description": "A fotografia mostra sinais de trânsito."
-  },
-  {
     "labels": ["túnel"],
     "description": "A localização é um túnel."
   },
@@ -24501,10 +24457,6 @@
     "description": "A fotografia ilustra um sinal de limite de velocidade."
   },
   {
-    "labels": [],
-    "description": "Na imagem, observam-se sinais de trânsito."
-  },
-  {
     "labels": ["passadeira", "sinal_de_passadeira"],
     "description": "A fotografia ilustra um sinal de passadeira."
   },
@@ -24515,10 +24467,6 @@
   {
     "labels": ["sinal_de_stop"],
     "description": "Na imagem distingue-se um sinal de stop."
-  },
-  {
-    "labels": [],
-    "description": "O céu surge limpo nesta fotografia."
   },
   {
     "labels": ["noite"],
@@ -24625,20 +24573,12 @@
     "description": "A cena desenrola-se num parque de estacionamento."
   },
   {
-    "labels": [],
-    "description": "A imagem ilustra sinais de trânsito."
-  },
-  {
     "labels": ["passadeiras"],
     "description": "Passadeiras são visíveis na fotografia."
   },
   {
     "labels": ["sinal_de_stop"],
     "description": "Um sinal de stop é evidente na imagem."
-  },
-  {
-    "labels": [],
-    "description": "O céu surge limpo nesta cena."
   },
   {
     "labels": ["amanhecer"],
@@ -24725,20 +24665,12 @@
     "description": "A imagem identifica uma autoestrada."
   },
   {
-    "labels": [],
-    "description": "A fotografia evidencia sinais de trânsito."
-  },
-  {
     "labels": ["passadeiras"],
     "description": "Passadeiras são notórias na imagem."
   },
   {
     "labels": ["sinal_de_stop"],
     "description": "Um sinal de stop surge na fotografia."
-  },
-  {
-    "labels": [],
-    "description": "O céu surge limpo na cena."
   },
   {
     "labels": ["dia"],
@@ -25005,10 +24937,6 @@
     "description": "Semáforos são visíveis nesta fotografia."
   },
   {
-    "labels": [],
-    "description": "Sinais de trânsito estão presentes na imagem."
-  },
-  {
     "labels": ["vento"],
     "description": "O vento é uma condição climática na cena."
   },
@@ -25157,10 +25085,6 @@
     "description": "A cena se passa numa autoestrada."
   },
   {
-    "labels": [],
-    "description": "Na imagem, sinais de trânsito podem ser observados."
-  },
-  {
     "labels": ["sinal_de_stop"],
     "description": "A foto destaca um sinal de stop."
   },
@@ -25215,10 +25139,6 @@
   {
     "labels": ["semáforos"],
     "description": "Semáforos visíveis nesta fotografia."
-  },
-  {
-    "labels": [],
-    "description": "Sinais de trânsito presentes na imagem."
   },
   {
     "labels": ["vento"],
@@ -25341,10 +25261,6 @@
     "description": "Na fotografia, um sinal de stop observável."
   },
   {
-    "labels": [],
-    "description": "Na imagem, sinais de trânsito observáveis."
-  },
-  {
     "labels": ["semáforo"],
     "description": "Visualiza-se um semáforo na imagem."
   },
@@ -25403,10 +25319,6 @@
   {
     "labels": ["semáforos"],
     "description": "Semáforos são notáveis nesta fotografia."
-  },
-  {
-    "labels": [],
-    "description": "Sinais de trânsito estão presentes na foto."
   },
   {
     "labels": ["vento"],
@@ -25523,9 +25435,5 @@
   {
     "labels": ["autoestrada"],
     "description": "A cena ocorre numa autoestrada."
-  },
-  {
-    "labels": [],
-    "description": "Na imagem, sinais de trânsito são observáveis."
   }
 ]
