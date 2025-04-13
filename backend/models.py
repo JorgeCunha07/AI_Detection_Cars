@@ -19,7 +19,7 @@ from torchvision.models.detection.rpn import AnchorGenerator
 from torchvision.ops import MultiScaleRoIAlign
 from model_registry import build_simple_cnn_backbone
 from multi_task_model import MultiTaskModel
-#from modelos_scratch import build_scratch_model
+from modelos_scratch import build_fasterrcnn_model
 
 sys.modules['__main__'].MultiTaskModel = MultiTaskModel
 
@@ -292,10 +292,10 @@ class DetectorDataSet2(BaseDetector):
         elif re.search(r"yolo", model_name, re.IGNORECASE):
             return {"error": "Modelo YOLO não implementado nesta função."}, 501, [], {}, {}
         # Se for um dos modelos scratch
-        elif re.search(r"multiscale|tinyyolo|sharedtask|attention|pyramid", model_name, re.IGNORECASE):
+        elif re.search(r"simplecnn|midcnn|deepcnn", model_name, re.IGNORECASE):
             # Supondo que você salvou apenas o state dict para os scratch,
             # instancie o modelo dinamicamente usando o modelos_scratch.
-            multi_task_model = build_scratch_model(model_name)
+            multi_task_model = build_fasterrcnn_model(model_name)
             state_dict = torch.load(model_path, map_location="cpu")
             multi_task_model.load_state_dict(state_dict)
         else:
