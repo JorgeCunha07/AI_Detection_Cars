@@ -84,22 +84,41 @@ class BaseDetector:
     @staticmethod
     def draw_detections_with_bg(pil_image: Image.Image, detections: list, color: tuple, font: ImageFont.FreeTypeFont):
         """
-        Desenha os bounding boxes e os textos das detecções com fundo para o texto.
-        :param pil_image: imagem PIL onde os resultados serão desenhados.
-        :param detections: lista de detecções, cada uma um dicionário com {"category", "score", "box"}.
-        :param color: cor para o contorno e fundo (RGB), ex.: (0, 255, 0).
-        :param font: fonte PIL utilizada para o texto.
+        Desenha bounding boxes e rótulos diretamente sobre a imagem, com sombra e fonte adaptável à resolução.
         """
         draw = ImageDraw.Draw(pil_image)
+
+        # Ajusta dinamicamente o tamanho da fonte com base na altura da imagem
+        image_w, image_h = pil_image.size
+        base_font_size = max(10, int(image_h * 0.025))  # 2.5% da altura, mínimo 10
+
+        try:
+            font = ImageFont.truetype("arial.ttf", base_font_size)
+        except:
+            font = ImageFont.load_default()
+
         for det in detections:
             x1, y1, x2, y2 = det["box"]
-            text = f"{det['category']}:{det['score']:.2f}"
-            # Desenha a bounding box com uma largura maior para destacar
-            draw.rectangle([x1, y1, x2, y2], outline=color, width=3)
-            # Calcula a posição do texto: tenta acima do box, mas se não couber, desenha dentro
-            text_x = x1
-            text_y = y1 - 24 if (y1 - 24) > 0 else y1
-            BaseDetector.draw_text_with_background(draw, (text_x, text_y), text, font, text_color=(255, 255, 255), bg_color=(0, 0, 0))
+            label = det["category"]
+            score = det["score"]
+            text = f"{label}: {score:.2f}"
+
+            # Tamanho do texto e padding
+            text_w, text_h = BaseDetector.get_text_size(font, text)
+            padding = int(base_font_size * 0.3)
+
+            # Posição do texto
+            text_x = x1 + 2
+            text_y = y1 - text_h - padding if y1 - text_h - padding > 0 else y1 + 2
+
+            # Sombra leve
+            shadow_offset = 1
+            draw.text((text_x + shadow_offset, text_y + shadow_offset), text, font=font, fill=(0, 0, 0))  # sombra
+            draw.text((text_x, text_y), text, font=font, fill=(255, 255, 255))  # texto
+
+            # Bounding box
+            draw.rectangle([x1, y1, x2, y2], outline=color, width=2)
+
 
 def invert_mapping(mapping: dict) -> dict:
     """Cria um dicionário inverso a partir do mapping fornecido.
@@ -177,7 +196,7 @@ class DetectorDataSet1(BaseDetector):
             rcnn_model.eval()
             with torch.no_grad():
                 outputs = rcnn_model([image_tensor])[0]
-            min_score = 0.2
+            min_score = 0.5
             for i in range(len(outputs["boxes"])):
                 score = outputs["scores"][i].item()
                 if score >= min_score:
@@ -436,40 +455,66 @@ def detect_labels_DataSet2(model_name: str, base64_image: str):
 def detect_labels_DataSet3(base64_image: str):
     """
     Combina os resultados dos modelos de DataSet1 e DataSet2 em uma única imagem:
-      - Usa DetectorDataSet1 e DetectorDataSet2 para obter as detecções e atributos.
-      - Desenha os bounding boxes (verde para DataSet1 e azul para DataSet2) e os textos com fundo.
-      - Escreve os atributos globais no canto superior.
-      - Retorna a união dos rótulos e as contagens combinadas.
     """
     try:
         decoded_data = base64.b64decode(base64_image)
     except Exception as e:
         return {"error": f"Imagem base64 inválida: {str(e)}"}, 400
+
     pil_image = Image.open(BytesIO(decoded_data)).convert("RGB")
-    try:
-        font = ImageFont.truetype("arial.ttf", 20)
-    except Exception:
-        font = ImageFont.load_default()
-    status1, det_list1, counts1 = DetectorDataSet1.get_detections("best_yolo", base64_image)
+    image_w, image_h = pil_image.size
+    draw = ImageDraw.Draw(pil_image)
+
+    # Obtem as detecções
+    result = DetectorDataSet1.get_detections("best_yolo", base64_image)
+    status1, det_list1, counts1, *_ = result  # aceita 3 ou 4 sem erro
+
     if status1 != 200:
         return {"error": "Erro no DataSet1"}, status1
     status2, det_list2, counts2, attrs2 = DetectorDataSet2.get_detections("vgg16", base64_image)
     if status2 != 200:
         return {"error": "Erro no DataSet2"}, status2
+
+    # Desenha as detecções
+    try:
+        font = ImageFont.truetype("arial.ttf", 20)
+    except Exception:
+        font = ImageFont.load_default()
     BaseDetector.draw_detections_with_bg(pil_image, det_list1, (0, 255, 0), font)
     BaseDetector.draw_detections_with_bg(pil_image, det_list2, (0, 0, 255), font)
-    draw = ImageDraw.Draw(pil_image)
+
+    # === Ajusta o tamanho da fonte até o texto caber lateralmente ===
     attr_text = f"Weather: {attrs2['weather']}, Scene: {attrs2['scene']}, Time: {attrs2['timeofday']}"
+    max_width = image_w - 20
+    font_size = 20
+    min_font_size = 10
+
+    while font_size >= min_font_size:
+        try:
+            font = ImageFont.truetype("arial.ttf", font_size)
+        except Exception:
+            font = ImageFont.load_default()
+            break
+        text_width, _ = BaseDetector.get_text_size(font, attr_text)
+        if text_width <= max_width:
+            break
+        font_size -= 1  # Reduz até caber
+
+    # Desenha o texto ajustado
     BaseDetector.draw_text_with_background(draw, (10, 10), attr_text, font)
+
+    # Junta os resultados
     combined_counts = {}
     for k, v in counts1.items():
         combined_counts[k] = v
     for k, v in counts2.items():
         combined_counts[k] = combined_counts.get(k, 0) + v
+
     labels_ds1 = list({d["category"] for d in det_list1})
     labels_ds2 = list({d["category"] for d in det_list2})
     attrs_labels = list(attrs2.values())
     combined_labels = list(set(labels_ds1 + labels_ds2 + attrs_labels))
+
     final_image_base64 = BaseDetector.encode_image_pil_to_base64(pil_image)
     return {
         "labels": combined_labels,
