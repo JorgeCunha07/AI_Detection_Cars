@@ -4,9 +4,6 @@ mt5-descriptions/
 logs/
 *.log
 
-# Dataset files
-data/*
-
 # Env
 .venv/
 __pycache__/
