@@ -95,6 +95,8 @@ export function translateLabel(label: string): string {
       return "sinal de stop";
     case "trafic light signal":
       return "semáforo";
+    case "overcast":
+      return "nublado";
     default:
       return label;
   }
