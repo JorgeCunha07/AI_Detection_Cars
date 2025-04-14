@@ -5,10 +5,11 @@ from model.encoder import Encoder
 from model.decoder import Decoder
 from model.seq2seq import Seq2Seq
 from dataset import load_data
-from vocab import SOS, EOS, PAD
+from vocab import SOS, EOS, PAD, UNK
 from tqdm import tqdm
 import os
 import logging
+import string
 
 
 def generate_greedy(model, src_tensor, output_vocab, device, max_len=50):
@@ -26,7 +27,7 @@ def generate_greedy(model, src_tensor, output_vocab, device, max_len=50):
         for _ in range(max_len):
             output, hidden, cell, _ = model.decoder(input_token, hidden, cell, encoder_outputs)
             word_id = output.argmax(1).item()
-            word = output_vocab.idx2word.get(word_id, "<unk>")
+            word = output_vocab.idx2word.get(word_id, UNK)
 
             if word == EOS:
                 eos_count += 1
@@ -40,6 +41,9 @@ def generate_greedy(model, src_tensor, output_vocab, device, max_len=50):
     model.train(was_training)
     return " ".join(output_sentence)
 
+# Remove pontuacao do texto
+def clean(text):
+    return text.lower().translate(str.maketrans('', '', string.punctuation)).strip()
 
 def train_model(
         data_path: str = "data/frases_com_labels.json",
@@ -88,8 +92,14 @@ def train_model(
             coverage_losses = []
             for i in range(len(src)):
                 input_labels = train_dataset.input_vocab.decode(src[i].tolist()).split()
-                prediction = generated_texts[i].split()
-                coverage_hits = [label for label in input_labels if label in prediction]
+                
+                input_labels = [label.replace("_", " ") for label in input_labels]
+
+                prediction = generated_texts[i]
+
+                cleaned_prediction = clean(prediction)
+                coverage_hits = [label for label in input_labels if label.lower() in cleaned_prediction]
+                
                 score = len(coverage_hits) / len(input_labels) if input_labels else 0.0
                 focal_loss = (1.0 - score) ** 2
                 coverage_losses.append(focal_loss)

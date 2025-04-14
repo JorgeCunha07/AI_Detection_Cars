@@ -77,13 +77,13 @@ def evaluate_model(
         bleu = sentence_bleu([ref_tokens], pred_tokens, smoothing_function=smoothie)
 
         # Cobertura de labels
-        input_text = val_dataset.input_vocab.decode(src[0].tolist())
+        input_text = val_dataset.input_vocab.decode(src[0].tolist()).split()
 
-        input_text_formatted = input_text.replace("_", " ")
-        input_labels = input_text_formatted.split()
+        input_text_formatted = [label.replace("_", " ") for label in input_text]
+        input_labels = input_text_formatted
 
-        cleaned_pred_tokens = [clean(token) for token in pred_tokens]
-        coverage_hits = [label for label in input_labels if label.lower() in cleaned_pred_tokens]
+        cleaned_pred_text = clean(pred_text)
+        coverage_hits = [label for label in input_labels if label.lower() in cleaned_pred_text]
         label_coverage = len(coverage_hits) / len(input_labels) if input_labels else 0.0
 
         results.append({
