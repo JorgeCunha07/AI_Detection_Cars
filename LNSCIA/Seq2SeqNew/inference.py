@@ -110,14 +110,18 @@ def generate_sentence(
     return " ".join(output_sentence)
 
 
-# sentence = generate_sentence(
-#     labels=["carro", "peão", "sinal_de_transito", "autocarros", "ciclista"],
-#     model=model,
-#     input_vocab=input_vocab,
-#     output_vocab=output_vocab,
-#     mode="topk",  # beam, "greedy" ou "topk"
-#     beam_width=4,
-#     temperature=1.5
-# )
+model_seq2seq, input_vocab_seq2seq, output_vocab_seq2seq = load_model(
+    model_path="checkpoints/model_epoch50.pt",
+    input_vocab_path="checkpoints/input_vocab.pkl",
+    output_vocab_path="checkpoints/output_vocab.pkl"
+)
 
-# print("Frase gerada:", sentence)
+sentence = generate_sentence(
+    labels=['cidade', 'dia', 'peões', 'passadeiras', 'semáforos'],
+    model=model_seq2seq,
+    input_vocab=input_vocab_seq2seq,
+    output_vocab=output_vocab_seq2seq,
+    mode="beam",  # beam, "greedy" ou "topk"
+)
+
+print("Frase gerada:", sentence)

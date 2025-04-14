@@ -72,7 +72,7 @@ def train_model(
         total_loss_accum = 0
         loop = tqdm(train_loader, desc=f"Epoch {epoch}/{epochs}")
 
-        alpha = min(1.0, epoch * 0.1)  # aumenta progressivamente
+        alpha = min(2.0, 0.2 * epoch)  # aumenta progressivamente
 
         for src, tgt in loop:
             src, tgt = src.to(device), tgt.to(device)
