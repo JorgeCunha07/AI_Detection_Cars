@@ -35,9 +35,9 @@ export function DescriptionGenerator({ results }: DescriptionGeneratorProps) {
   const [mostrarOpcoesAvancadas, setMostrarOpcoesAvancadas] =
     useState<boolean>(false);
 
-  const [selectedMode, setSelectedMode] = useState<string>("topk");
-  const [topkValue, setTopkValue] = useState<number>(5);
-  const [topkTemperature, setTopkTemperature] = useState<number[]>([1.5]);
+  const [selectedMode, setSelectedMode] = useState<string>("greedy");
+  const [topkValue, setTopkValue] = useState<number>(3);
+  const [topkTemperature, setTopkTemperature] = useState<number[]>([0.8]);
   const [beamWidth, setBeamWidth] = useState<number>(3);
 
   const availableModes = ["topk", "greedy", "beam"];
@@ -161,7 +161,7 @@ export function DescriptionGenerator({ results }: DescriptionGeneratorProps) {
                       <Slider
                         value={topkTemperature}
                         onValueChange={setTopkTemperature}
-                        min={1.0}
+                        min={0.8}
                         max={2.0}
                         step={0.1}
                       />
