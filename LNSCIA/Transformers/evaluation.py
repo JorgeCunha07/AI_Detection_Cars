@@ -70,5 +70,5 @@ for i in range(10):
     print("------")
 
 print(f"\n📊 BLEU score médio: {bleu_score['bleu']:.4f}")
-print(f"📊 ROUGE-L F1 score: {rouge_score['rougeL']:.4f}")
+print(f"📊 ROUGE-L F1 score: {rouge_score['rougeL']:.4f}") 
 print(f"📊 Cobertura de labels no texto gerado: {coverage_score:.2%}")

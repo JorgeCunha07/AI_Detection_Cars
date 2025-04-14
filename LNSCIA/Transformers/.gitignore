@@ -1,5 +1,5 @@
 # Model checkpoints
-modelo-final/model.safetensors
+!modelo-final/model.safetensors
 mt5-descriptions/
 logs/
 *.log

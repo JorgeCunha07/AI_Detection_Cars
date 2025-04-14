@@ -5,9 +5,10 @@ from model.encoder import Encoder
 from model.decoder import Decoder
 from model.seq2seq import Seq2Seq
 from dataset import load_data
-from vocab import Vocab, SOS, EOS, PAD
+from vocab import Vocab, SOS, EOS, PAD, UNK
 import os
 import csv
+import string
 
 
 def evaluate_model(
@@ -38,6 +39,10 @@ def evaluate_model(
     smoothie = SmoothingFunction().method4
     results = []
 
+    # Remove pontuacao do texto
+    def clean(text):
+        return text.lower().translate(str.maketrans('', '', string.punctuation)).strip()
+
     def generate(input_tensor):
         encoder_outputs, hidden, cell = model.encoder(input_tensor)
         input_token = torch.tensor([output_vocab.word2idx[SOS]], dtype=torch.long).to(device)
@@ -46,7 +51,7 @@ def evaluate_model(
         for _ in range(30):
             output, hidden, cell, _ = model.decoder(input_token, hidden, cell, encoder_outputs)
             top1 = output.argmax(1).item()
-            word = output_vocab.idx2word.get(top1, "<unk>")
+            word = output_vocab.idx2word.get(top1, UNK)
             if word in [SOS, EOS]:
                 break
             output_sentence.append(word)
@@ -73,8 +78,12 @@ def evaluate_model(
 
         # Cobertura de labels
         input_text = val_dataset.input_vocab.decode(src[0].tolist())
-        input_labels = input_text.split()
-        coverage_hits = [label for label in input_labels if label in pred_tokens]
+
+        input_text_formatted = input_text.replace("_", " ")
+        input_labels = input_text_formatted.split()
+
+        cleaned_pred_tokens = [clean(token) for token in pred_tokens]
+        coverage_hits = [label for label in input_labels if label.lower() in cleaned_pred_tokens]
         label_coverage = len(coverage_hits) / len(input_labels) if input_labels else 0.0
 
         results.append({
@@ -109,7 +118,7 @@ def evaluate_model(
 
 evaluate_model(
     data_path="data/frases_com_labels.json",
-    model_path="checkpoints/model_epoch10.pt",
+    model_path="checkpoints/model_epoch50.pt",
     input_vocab_path="checkpoints/input_vocab.pkl",
     output_vocab_path="checkpoints/output_vocab.pkl",
     result_csv_path="results/eval_results.csv"

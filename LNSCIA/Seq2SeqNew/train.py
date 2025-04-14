@@ -119,7 +119,7 @@ def train_model(
 model, input_vocab, output_vocab = train_model(
     data_path="data/frases_com_labels.json",
     save_dir="checkpoints",
-    epochs=30,
+    epochs=50,
     batch_size=16,
     lr=0.0003,
 )
