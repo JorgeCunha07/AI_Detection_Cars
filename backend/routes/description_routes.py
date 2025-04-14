@@ -8,7 +8,7 @@ router = APIRouter()
 
 # Load model once when the server starts
 model_seq2seq, input_vocab_seq2seq, output_vocab_seq2seq = load_model(
-    model_path="generator/seq2seq/checkpoints/model_epoch30.pt",
+    model_path="generator/seq2seq/checkpoints/model_epoch50.pt",
     input_vocab_path="generator/seq2seq/checkpoints/input_vocab.pkl",
     output_vocab_path="generator/seq2seq/checkpoints/output_vocab.pkl"
 )
